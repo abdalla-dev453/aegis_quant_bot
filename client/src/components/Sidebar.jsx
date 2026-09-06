@@ -27,7 +27,7 @@ const formatTime = (timeZone) => {
   }).format(new Date());
 };
 
-export default function Sidebar({ activePage, onNavigate }) {
+export default function Sidebar({ activePage, onNavigate, connected = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const local = useClock(undefined);
   const utc = useClock("UTC");
@@ -49,7 +49,7 @@ export default function Sidebar({ activePage, onNavigate }) {
           </span>
           <span className="text-xs font-semibold tracking-wide text-ink">AEGIS QUANT</span>
         </div>
-        
+
         {/* Animated Hamburger Trigger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -94,11 +94,13 @@ export default function Sidebar({ activePage, onNavigate }) {
           <ClockRow label="NY MKT" value={nyMkt} />
         </div>
 
-        {/* Active Engine Connections */}
+        {/* Engine connection status — driven by real feed state, not hardcoded */}
         <div className="space-y-3 border-b border-border px-5 py-4">
-          <StatusRow label="MT5 Connected" detail="Ping: 12ms" ok />
-          <StatusRow label="AI Brain Sync" detail="Active · live" ok />
-          <StatusRow label="News API" detail="Live feed" ok />
+          <StatusRow
+            label="Bot Feed"
+            detail={connected ? "Connected · live" : "Offline"}
+            ok={connected}
+          />
         </div>
 
         {/* Navigation Items (Smooth button animations) */}
@@ -122,13 +124,13 @@ export default function Sidebar({ activePage, onNavigate }) {
           })}
         </nav>
 
-        {/* Hardware Status Monitoring footer */}
+        {/* System Health footer */}
         <div className="border-t border-border px-5 py-4">
           <div className="mb-2 text-[10px] uppercase tracking-wider text-ink-faint">System Health</div>
           <div className="flex gap-4 font-mono text-[11px] text-ink-dim">
-            <span>CPU 24%</span>
-            <span>MEM 42%</span>
-            <span className="text-bull animate-pulse">NET OK</span>
+            <span className={connected ? "text-bull animate-pulse" : "text-bear"}>
+              {connected ? "NET OK" : "NET DOWN"}
+            </span>
           </div>
         </div>
       </aside>

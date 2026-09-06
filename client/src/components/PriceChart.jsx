@@ -7,8 +7,8 @@ export default function PriceChart({ symbol, series }) {
 
   return (
     <Panel
-      title={`${symbol} · H1 · Line`}
-      badge={<span className="font-mono text-[12px] text-ink">{last?.price.toFixed(5)}</span>}
+      title={`${symbol || "—"} · H1 · Line`}
+      badge={<span className="font-mono text-[12px] text-ink">{last ? last.price.toFixed(5) : "--"}</span>}
       className="flex-1"
     >
       <div className="mb-2 flex items-center gap-4 text-[11px]">

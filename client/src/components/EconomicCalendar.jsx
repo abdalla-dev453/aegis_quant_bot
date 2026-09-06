@@ -8,9 +8,10 @@ function formatCountdown(totalSeconds) {
 }
 
 export default function EconomicCalendar({ calendar }) {
+  const event = calendar?.nextEvent;
   return (
     <Panel title="Economic Calendar / Sentiment">
-      {calendar.autoHaltActive && (
+      {calendar?.autoHaltActive && (
         <div className="mb-3 flex items-start gap-2 rounded-md border border-warn/30 bg-warn-dim px-3 py-2">
           <WarnIcon />
           <div>
@@ -24,20 +25,22 @@ export default function EconomicCalendar({ calendar }) {
         </div>
       )}
 
-      <div className="flex items-center justify-between rounded-md border border-border bg-surface-alt px-3 py-2.5">
-        <div className="flex items-center gap-2">
-          <span className="rounded bg-bear-dim px-1.5 py-0.5 text-[9px] font-semibold uppercase text-bear">
-            {calendar.nextEvent.impact}
-          </span>
-          <div>
-            <div className="text-[12px] text-ink">{calendar.nextEvent.name}</div>
-            <div className="text-[10px] text-ink-faint">
-              {calendar.nextEvent.currency} · {calendar.nextEvent.timeUtc} UTC
+      {event && (
+        <div className="flex items-center justify-between rounded-md border border-border bg-surface-alt px-3 py-2.5">
+          <div className="flex items-center gap-2">
+            <span className="rounded bg-bear-dim px-1.5 py-0.5 text-[9px] font-semibold uppercase text-bear">
+              {event.impact}
+            </span>
+            <div>
+              <div className="text-[12px] text-ink">{event.name}</div>
+              <div className="text-[10px] text-ink-faint">
+                {event.currency} · {event.timeUtc} UTC
+              </div>
             </div>
           </div>
+          <span className="font-mono text-[11px] text-ink-dim">{event.minutesAway}m</span>
         </div>
-        <span className="font-mono text-[11px] text-ink-dim">{calendar.nextEvent.minutesAway}m</span>
-      </div>
+      )}
     </Panel>
   );
 }

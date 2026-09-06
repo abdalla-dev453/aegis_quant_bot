@@ -1,10 +1,6 @@
 import React from "react";
 import Panel from "./Panel.jsx";
-
-function fmtPrice(symbol, value) {
-  const digits = symbol === "USDJPY" ? 3 : symbol === "XAUUSD" ? 2 : 5;
-  return value.toFixed(digits);
-}
+import { formatPrice } from "../lib/botFeed.js";
 
 export default function PositionsTable({ positions }) {
   return (
@@ -50,10 +46,10 @@ export default function PositionsTable({ positions }) {
                     </span>
                   </td>
                   <td className="py-2 text-ink-dim">{p.lot.toFixed(2)}</td>
-                  <td className="py-2 text-ink-dim">{fmtPrice(p.symbol, p.entry)}</td>
-                  <td className="py-2 text-ink">{fmtPrice(p.symbol, p.current)}</td>
-                  <td className="py-2 text-bear/80">{fmtPrice(p.symbol, p.sl)}</td>
-                  <td className="py-2 text-bull/80">{fmtPrice(p.symbol, p.tp)}</td>
+                  <td className="py-2 text-ink-dim">{formatPrice(p.symbol, p.entry, p.digits)}</td>
+                  <td className="py-2 text-ink">{formatPrice(p.symbol, p.current, p.digits)}</td>
+                  <td className="py-2 text-bear/80">{formatPrice(p.symbol, p.sl, p.digits)}</td>
+                  <td className="py-2 text-bull/80">{formatPrice(p.symbol, p.tp, p.digits)}</td>
                   <td className="py-2 text-ink-faint">{p.trailing ? "on" : "off"}</td>
                   <td className={`py-2 text-right font-semibold ${pnlPositive ? "text-bull" : "text-bear"}`}>
                     {pnlPositive ? "+" : ""}${p.pnl.toFixed(2)}

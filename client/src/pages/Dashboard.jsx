@@ -10,7 +10,7 @@ import Footer from "../components/Footer.jsx";
 import { useBotFeed } from "../lib/useBotFeed.js";
 
 export default function Dashboard() {
-  const { account, risk, performance, confluence, calendar, positions, priceSeries, logs } = useBotFeed();
+  const { account, risk, performance, confluence, calendar, positions, priceSeries, logs, connected } = useBotFeed();
 
   const totalFloat = positions.reduce((sum, p) => sum + p.pnl, 0);
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" });
@@ -19,7 +19,7 @@ export default function Dashboard() {
     <div className="flex h-full flex-1 flex-col overflow-hidden">
       <TopBar
         title="Command Dashboard"
-        subtitle={`${today} · NY Session Active · Auto-Mode: ENABLED`}
+        subtitle={`${today} · ${connected ? "Feed Connected" : "Feed Offline"} · Auto-Mode: ENABLED`}
       />
 
       <div className="flex-1 space-y-4 overflow-y-auto px-8 py-5">
@@ -31,7 +31,7 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <PriceChart symbol="EURUSD" series={priceSeries} />
+            <PriceChart symbol={priceSeries.symbol} series={priceSeries.points} />
           </div>
           <div className="space-y-4">
             <ConfluenceGauge confluence={confluence} />
@@ -47,7 +47,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <Footer totalFloat={totalFloat} />
+      <Footer totalFloat={totalFloat} riskPerTradePct={risk.riskPerTradePct} />
     </div>
   );
 }
