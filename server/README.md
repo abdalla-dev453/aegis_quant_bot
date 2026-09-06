@@ -25,13 +25,13 @@ pip install -r requirements.txt
 
 ## File map
 
-| File              | Responsibility |
-|-------------------|----------------|
-| `config.py`       | All settings — credentials, symbols, indicator/risk params. No side effects. |
-| `data_provider.py`| MT5 connection lifecycle, reconnection, candle/account data fetching. |
-| `strategy.py`      | Indicators, mock sentiment engine, news blackout, confluence signal fusion. |
-| `execution.py`    | Lot sizing, SL/TP calculation, `order_send`, trailing stop management. |
-| `main.py`         | Async loop — polls for newly closed candles per symbol, dispatches signals. |
+| File               | Responsibility                                                               |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `config.py`        | All settings — credentials, symbols, indicator/risk params. No side effects. |
+| `data_provider.py` | MT5 connection lifecycle, reconnection, candle/account data fetching.        |
+| `strategy.py`      | Indicators, mock sentiment engine, news blackout, confluence signal fusion.  |
+| `execution.py`     | Lot sizing, SL/TP calculation, `order_send`, trailing stop management.       |
+| `main.py`          | Async loop — polls for newly closed candles per symbol, dispatches signals.  |
 
 ## Known limitations to address before going live
 
@@ -41,27 +41,21 @@ pip install -r requirements.txt
    Trading Economics, Finnhub, or a licensed news-sentiment provider) —
    keep the `SentimentReading` return contract the same so nothing else
    needs to change.
-2. **Trailing stop's "original risk" tracking is approximate.** Once a
-   position's SL has been trailed once, `execution.py` can no longer
-   recover the *original* SL distance from `pos.sl` alone (it's already
-   moved). For production, persist `{ticket: original_sl_distance}` in a
-   small local store (SQLite/JSON) when the order is first placed, and read
-   from that instead of re-deriving it from the live position object.
-3. **No backtest harness included.** This is live/paper-execution code.
+2. **No backtest harness included.** This is live/paper-execution code.
    Validate the strategy logic in `strategy.py` against historical data
    (e.g. via `backtesting.py` or a custom vectorized backtest) before
    running it against a funded account.
-4. **Single-process, single-machine.** No distributed locking — don't run
+3. **Single-process, single-machine.** No distributed locking — don't run
    two instances of `main.py` against the same account/magic number
    simultaneously, or `max_concurrent_positions` accounting will race.
-5. **`deviation_points` (slippage tolerance) and `atr_sl_multiplier` /
+4. **`deviation_points` (slippage tolerance) and `atr_sl_multiplier` /
    `atr_tp_multiplier`** are reasonable starting defaults, not tuned
    values — backtest and adjust per symbol.
 
 ## Architecture notes
 
-- **Multi-timeframe confluence**: H4 EMA50/200 sets directional *bias*, H1
-  EMA50/200 gives the *trigger*. A signal only fires when both agree —
+- **Multi-timeframe confluence**: H4 EMA50/200 sets directional _bias_, H1
+  EMA50/200 gives the _trigger_. A signal only fires when both agree —
   this is what makes it genuinely multi-timeframe rather than checking the
   same crossover twice.
 - **Never trades on a forming candle**: `data_provider.get_rates()` uses

@@ -1,5 +1,7 @@
 server/venv/
 server/*.log
+server/position_state.json
+server/position_state.tmp
 .env
 .env.*
 !.env.example

@@ -270,9 +270,14 @@ def is_news_blackout(sentiment: SentimentReading) -> bool:
     (30 min before / 30 min after by default). `minutes_to_next_event` is
     positive if the event is upcoming, negative if it already occurred.
     """
-    if sentiment.next_high_impact_event not in NEWS_CONFIG.high_impact_events:
-        return False
     if sentiment.minutes_to_next_event is None:
+        return False
+
+    is_high_impact = (
+        sentiment.next_event_impact == "HIGH"
+        or (sentiment.next_high_impact_event or "") in NEWS_CONFIG.high_impact_events
+    )
+    if not is_high_impact:
         return False
 
     m = sentiment.minutes_to_next_event

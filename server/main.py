@@ -36,8 +36,10 @@ from data_provider import (
     MT5ConnectionError,
     get_rates,
     initialize_connection,
+    mt5,
     shutdown_connection,
-    validate_symbols,
+    resolve_and_validate_symbols,
+    resolved_symbol,
 )
 from execution import place_order, manage_trailing_stops
 from strategy import TradeDirection, compute_indicators, generate_signal
@@ -130,7 +132,7 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             tracker.mark_seen(symbol, latest_candle_time)
             return
 
-        signal = generate_signal(symbol, df_h1, df_h4)
+        signal = await asyncio.to_thread(generate_signal, symbol, df_h1, df_h4)
         tracker.mark_seen(symbol, latest_candle_time)
 
         logger.info(
@@ -190,19 +192,28 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
     backoff = ErrorBackoff()
 
     while not stop_event.is_set():
+        if mt5 is None:
+            await stop_event.wait()
+            continue
+
         had_error = False
-        for sym_cfg in TRADING_SYMBOLS:
-            if stop_event.is_set():
-                break
-            try:
-                await evaluate_symbol(sym_cfg.name, tracker)
-                backoff.record_success()
-            except MT5ConnectionError as e:
-                had_error = True
-                logger.error("%s: connection error: %s", sym_cfg.name, e)
-            except Exception:
-                had_error = True
-                logger.exception("%s: unexpected error in loop", sym_cfg.name)
+        if not stop_event.is_set():
+            results = await asyncio.gather(
+                *(
+                    evaluate_symbol(resolved_symbol(sym_cfg.name), tracker)
+                    for sym_cfg in TRADING_SYMBOLS
+                ),
+                return_exceptions=True,
+            )
+            for sym_cfg, result in zip(TRADING_SYMBOLS, results):
+                if isinstance(result, MT5ConnectionError):
+                    had_error = True
+                    logger.error("%s: connection error: %s", sym_cfg.name, result)
+                elif isinstance(result, Exception):
+                    had_error = True
+                    logger.exception("%s: unexpected error in loop", sym_cfg.name, exc_info=result)
+                else:
+                    backoff.record_success()
 
         try:
             await asyncio.to_thread(manage_trailing_stops)
@@ -234,10 +245,10 @@ async def main() -> None:
     start_dashboard_api()
     try:
         initialize_connection()
-        validate_symbols()
+        resolve_and_validate_symbols()
         update(connected=True)
     except MT5ConnectionError:
-        logger.exception(
+        logger.error(
             "MT5 unavailable at startup; enter credentials in the dashboard Settings page."
         )
 

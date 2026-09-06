@@ -70,6 +70,7 @@ class ConnectionState:
 _state = ConnectionState()
 _runtime_credentials: dict[str, Any] = {}
 _mt5_lock = RLock()
+_symbol_resolution: dict[str, str] = {}
 
 
 @contextmanager
@@ -226,18 +227,44 @@ def shutdown_connection() -> None:
             logger.info("MT5 connection shut down cleanly.")
 
 
+def _resolve_symbol_name(base_name: str) -> str | None:
+    if mt5.symbol_info(base_name) is not None:
+        return base_name
+    for suffix in ["", ".a", ".pro", ".raw", "-ECN", "m", ".c"]:
+        candidate = f"{base_name}{suffix}"
+        if mt5.symbol_info(candidate) is not None:
+            return candidate
+    for symbol_info in mt5.symbols_get() or ():
+        if symbol_info.name.upper().startswith(base_name.upper()):
+            return symbol_info.name
+    return None
+
+
 @mt5_serialized
-def validate_symbols() -> None:
-    """Confirm every configured symbol exists and is visible in Market Watch."""
+def resolve_and_validate_symbols() -> dict[str, str]:
+    """Resolve configured symbols to broker names and make them visible."""
     require_mt5_runtime()
+    resolved: dict[str, str] = {}
     for sym_cfg in TRADING_SYMBOLS:
-        info = mt5.symbol_info(sym_cfg.name)
-        if info is None:
-            raise MT5ConnectionError(f"Symbol '{sym_cfg.name}' not found on this broker/server.")
+        actual = _resolve_symbol_name(sym_cfg.name)
+        if actual is None:
+            raise MT5ConnectionError(
+                f"Could not resolve '{sym_cfg.name}' under any suffix variant."
+            )
+        info = mt5.symbol_info(actual)
         if not info.visible:
-            if not mt5.symbol_select(sym_cfg.name, True):
-                raise MT5ConnectionError(f"Could not add '{sym_cfg.name}' to Market Watch.")
-            logger.info("Symbol %s added to Market Watch.", sym_cfg.name)
+            if not mt5.symbol_select(actual, True):
+                raise MT5ConnectionError(f"Could not add '{actual}' to Market Watch.")
+            logger.info("Symbol %s added to Market Watch.", actual)
+        if actual != sym_cfg.name:
+            logger.warning("Symbol '%s' resolved to broker name '%s'.", sym_cfg.name, actual)
+        resolved[sym_cfg.name] = actual
+    _symbol_resolution.update(resolved)
+    return resolved
+
+
+def resolved_symbol(base_name: str) -> str:
+    return _symbol_resolution.get(base_name, base_name)
 
 
 @mt5_serialized

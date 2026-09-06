@@ -12,9 +12,12 @@ from __future__ import annotations
 
 import logging
 import logging.handlers
+import datetime
+import json
 import math
 import threading
 from collections import namedtuple
+from pathlib import Path
 from queue import Queue, Empty
 from typing import Any, Dict, Tuple, cast
 
@@ -146,6 +149,85 @@ class OrderError(RuntimeError):
 MAX_SINGLE_ORDER_LOTS = 50.0  # never send an order larger than this
 MAX_MARGIN_UTILIZATION_PCT = 80.0  # refuse trades that would push margin use past this
 
+_POSITION_STATE_FILE = Path("position_state.json")
+_position_state_lock = threading.Lock()
+_original_risk_by_ticket: Dict[int, float] = {}
+
+
+def _load_position_state() -> None:
+    global _original_risk_by_ticket
+    if _POSITION_STATE_FILE.exists():
+        try:
+            with open(_POSITION_STATE_FILE, "r") as state_file:
+                _original_risk_by_ticket = {
+                    int(ticket): float(risk) for ticket, risk in json.load(state_file).items()
+                }
+        except Exception:
+            logger.exception("Failed to load position_state.json; starting empty.")
+            _original_risk_by_ticket = {}
+
+
+def _save_position_state() -> None:
+    with _position_state_lock:
+        try:
+            temporary_file = _POSITION_STATE_FILE.with_suffix(".tmp")
+            with open(temporary_file, "w") as state_file:
+                json.dump(_original_risk_by_ticket, state_file)
+            temporary_file.replace(_POSITION_STATE_FILE)
+        except Exception:
+            logger.exception("Failed to persist position_state.json")
+
+
+def _record_original_risk(ticket: int, risk_distance: float) -> None:
+    with _position_state_lock:
+        _original_risk_by_ticket[ticket] = risk_distance
+    _save_position_state()
+
+
+def _get_original_risk(ticket: int, fallback: float) -> float:
+    with _position_state_lock:
+        return _original_risk_by_ticket.get(ticket, fallback)
+
+
+_daily_guard_lock = threading.Lock()
+_day_start_equity: float | None = None
+_day_start_date: datetime.date | None = None
+_trading_halted_today = False
+
+
+def _refresh_daily_guard() -> None:
+    global _day_start_equity, _day_start_date, _trading_halted_today
+    today = datetime.datetime.now(datetime.timezone.utc).date()
+    with _daily_guard_lock:
+        if _day_start_date != today:
+            _day_start_date = today
+            _day_start_equity = get_account_equity()
+            _trading_halted_today = False
+            logger.info("Daily risk guard reset. Baseline equity=%.2f", _day_start_equity)
+
+
+def check_daily_loss_guard() -> bool:
+    global _trading_halted_today
+    _refresh_daily_guard()
+    if _trading_halted_today:
+        return True
+    current_equity = get_account_equity()
+    if _day_start_equity and _day_start_equity > 0:
+        drawdown_pct = (_day_start_equity - current_equity) / _day_start_equity * 100.0
+        if drawdown_pct >= RISK.max_daily_loss_pct:
+            with _daily_guard_lock:
+                _trading_halted_today = True
+            logger.error(
+                "Daily loss limit hit: %.2f%% (limit %.2f%%). Entries halted for today.",
+                drawdown_pct,
+                RISK.max_daily_loss_pct,
+            )
+            return True
+    return False
+
+
+_load_position_state()
+
 
 # ---------------------------------------------------------------------------
 # Position sizing
@@ -191,21 +273,19 @@ def calculate_lot_size(symbol: str, sl_distance_price: float) -> float:
             f"Computed lot size {lots} exceeds hard ceiling {MAX_SINGLE_ORDER_LOTS} for {symbol}"
         )
 
-    # --- Negative margin protection: refuse trades that would over-lever ---
+    # --- Negative margin protection: use the broker's own calculation ---
     account = mt5.account_info()
-    if account is not None and account.margin_free is not None:
-        tick = mt5.symbol_info_tick(symbol)
-        if tick is not None:
-            approx_margin = (lots * sym.info.trade_contract_size * tick.ask) / max(
-                account.leverage or 100, 1
+    tick = mt5.symbol_info_tick(symbol)
+    margin_needed = (
+        mt5.order_calc_margin(mt5.ORDER_TYPE_BUY, symbol, lots, tick.ask) if tick else None
+    )
+    if margin_needed is not None and account is not None and account.equity > 0:
+        projected = ((account.margin or 0.0) + margin_needed) / account.equity * 100.0
+        if projected > MAX_MARGIN_UTILIZATION_PCT:
+            raise OrderError(
+                f"Margin utilization would reach {projected:.1f}% "
+                f"(ceiling {MAX_MARGIN_UTILIZATION_PCT:.0f}%) for {symbol} — order blocked"
             )
-            if account.margin > 0 or approx_margin > 0:
-                projected = ((account.margin or 0.0) + approx_margin) / account.equity * 100.0
-                if account.equity > 0 and projected > MAX_MARGIN_UTILIZATION_PCT:
-                    raise OrderError(
-                        f"Margin utilization would reach {projected:.1f}% "
-                        f"(ceiling {MAX_MARGIN_UTILIZATION_PCT:.0f}%) for {symbol} — order blocked"
-                    )
 
     logger.info(
         "Lot sizing %s: equity=%.2f risk_amt=%.2f sl_dist=%.5f -> raw=%.4f lots=%.2f",
@@ -278,6 +358,11 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
     require_mt5_runtime()
     ensure_connected()
 
+    if check_daily_loss_guard():
+        logger.info("Skipping %s %s: daily loss guard active.", symbol, direction.value)
+        return None
+
+    # Keep the cap global across this bot's symbols, matching the configured risk limit.
     open_positions = get_open_positions(magic=RISK.magic_number)
     if len(open_positions) >= RISK.max_concurrent_positions:
         logger.info(
@@ -331,7 +416,7 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
         "price": entry_price,
         "sl": sl,
         "tp": tp,
-        "deviation": max(int(RISK.deviation_points), 20),
+        "deviation": max(int(RISK.deviation_points), 20),  # broker-safe minimum tolerance
         "magic": RISK.magic_number,
         "comment": "confluence-bot",
         "type_time": mt5.ORDER_TIME_GTC,
@@ -391,6 +476,8 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
         result.order,
         slippage,
     )
+    if result.order:
+        _record_original_risk(int(result.order), sl_distance)
     return result._asdict()
 
 
@@ -410,6 +497,14 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
     require_mt5_runtime()
     ensure_connected()
     positions = get_open_positions(symbol=symbol, magic=RISK.magic_number)
+    if symbol is None:
+        open_tickets = {p.ticket for p in positions}
+        stale = set(_original_risk_by_ticket) - open_tickets
+        for ticket in stale:
+            with _position_state_lock:
+                _original_risk_by_ticket.pop(ticket, None)
+        if stale:
+            _save_position_state()
     if not positions:
         return  # fast-path: nothing to manage
 
@@ -435,13 +530,8 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
         is_buy = pos.type == mt5.POSITION_TYPE_BUY
         current_price = tick.bid if is_buy else tick.ask
 
-        # Original risk distance = |entry - original SL|. We don't have the
-        # "original" SL stored separately once it's been trailed, so we use
-        # the initial risk distance implied by entry vs current SL only on
-        # the FIRST trail (before sl has moved away from its opening value
-        # this still equals the original risk — a persistent per-ticket
-        # store is recommended for production to track this exactly).
-        original_risk = abs(pos.price_open - pos.sl) if pos.sl else None
+        fallback = abs(pos.price_open - pos.sl) if pos.sl else 0.0
+        original_risk = _get_original_risk(pos.ticket, fallback)
         if not original_risk or original_risk <= 0:
             continue
 

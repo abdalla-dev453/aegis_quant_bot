@@ -116,6 +116,7 @@ class IndicatorConfig:
 @dataclass(frozen=True)
 class RiskConfig:
     risk_per_trade_pct: float = 1.5  # % of equity risked per trade
+    max_daily_loss_pct: float = 4.0  # halt new entries for the rest of the day past this drawdown
     atr_sl_multiplier: float = 1.5  # SL = entry -/+ (ATR * multiplier)
     atr_tp_multiplier: float = 3.0  # TP = entry -/+ (ATR * multiplier) -> 2:1 default
     trailing_trigger_rr: float = 1.0  # start trailing once trade hits 1:1 RR
