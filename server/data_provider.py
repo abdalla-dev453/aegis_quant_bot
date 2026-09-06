@@ -65,6 +65,17 @@ class ConnectionState:
 
 
 _state = ConnectionState()
+_runtime_credentials: dict[str, Any] = {}
+
+
+def configure_runtime_credentials(
+    login: int, password: str, server: str, terminal_path: str | None = None
+) -> None:
+    """Set session-only credentials supplied by the protected settings API."""
+    _runtime_credentials.clear()
+    _runtime_credentials.update(
+        login=login, password=password, server=server, terminal_path=terminal_path
+    )
 
 
 def _exponential_backoff_delay(attempt: int, base: float, max_delay: float) -> float:
@@ -94,13 +105,17 @@ def initialize_connection(
 
     for attempt in range(1, max_retries + 1):
         kwargs = {}
-        if CREDENTIALS.terminal_path:
-            kwargs["path"] = CREDENTIALS.terminal_path
+        login = _runtime_credentials.get("login", CREDENTIALS.login)
+        password = _runtime_credentials.get("password", CREDENTIALS.password)
+        server = _runtime_credentials.get("server", CREDENTIALS.server)
+        terminal_path = _runtime_credentials.get("terminal_path", CREDENTIALS.terminal_path)
+        if terminal_path:
+            kwargs["path"] = terminal_path
 
         ok = mt5.initialize(
-            login=CREDENTIALS.login or None,
-            password=CREDENTIALS.password or None,
-            server=CREDENTIALS.server or None,
+            login=login or None,
+            password=password or None,
+            server=server or None,
             timeout=CREDENTIALS.timeout_ms,
             **kwargs,
         )

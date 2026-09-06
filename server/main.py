@@ -14,8 +14,10 @@ from __future__ import annotations
 import asyncio
 import logging
 import logging.handlers
+import os
 import signal
 import sys
+import threading
 
 import pandas as pd
 
@@ -39,8 +41,30 @@ from data_provider import (
 )
 from execution import place_order, manage_trailing_stops
 from strategy import TradeDirection, compute_indicators, generate_signal
+from runtime_state import add_log, update
 
 logger = logging.getLogger("trading_bot.main")
+
+
+def start_dashboard_api() -> None:
+    try:
+        import uvicorn
+        from api import app
+
+        api_thread = threading.Thread(
+            target=uvicorn.run,
+            args=(app,),
+            kwargs={
+                "host": os.getenv("API_HOST", "127.0.0.1"),
+                "port": int(os.getenv("API_PORT", "8000")),
+                "log_level": "warning",
+            },
+            daemon=True,
+        )
+        api_thread.start()
+        logger.info("Dashboard API listening on http://127.0.0.1:8000")
+    except Exception:
+        logger.exception("Dashboard API failed to start; trading loop will continue.")
 
 
 def setup_logging() -> None:
@@ -118,6 +142,21 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             signal.direction.value,
             signal.reason,
         )
+        technical = (
+            1.0
+            if signal.technical_trend.value == "bullish"
+            else -1.0 if signal.technical_trend.value == "bearish" else 0.0
+        )
+        update(
+            last_signal={
+                "composite": technical,
+                "label": signal.technical_trend.value.upper(),
+                "technical": technical,
+                "sentiment": signal.sentiment_score,
+                "momentum": technical if signal.direction != TradeDirection.NONE else 0.0,
+            }
+        )
+        add_log("INFO", f"{symbol} {signal.direction.value}: {signal.reason}")
 
         if signal.direction in (TradeDirection.BUY, TradeDirection.SELL):
             await asyncio.to_thread(place_order, symbol, signal.direction, signal.atr)
@@ -192,12 +231,15 @@ async def main() -> None:
         RISK.risk_per_trade_pct,
     )
 
+    start_dashboard_api()
     try:
         initialize_connection()
         validate_symbols()
+        update(connected=True)
     except MT5ConnectionError:
-        logger.exception("Fatal: could not establish MT5 connection at startup. Exiting.")
-        return
+        logger.exception(
+            "MT5 unavailable at startup; enter credentials in the dashboard Settings page."
+        )
 
     stop_event = asyncio.Event()
 
@@ -215,6 +257,7 @@ async def main() -> None:
         await trading_loop(stop_event)
     finally:
         logger.info("Shutting down...")
+        update(connected=False)
         shutdown_connection()
 
 

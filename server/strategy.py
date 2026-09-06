@@ -196,6 +196,9 @@ class SentimentReading:
     minutes_to_next_event: (
         float | None
     )  # negative if the event already started/passed within window
+    next_event_currency: str | None = None
+    next_event_impact: str = "HIGH"
+    next_event_time_utc: str | None = None
 
 
 def _neutral_reading() -> SentimentReading:
@@ -252,6 +255,9 @@ def analyze_market_sentiment(symbol: str) -> SentimentReading:
             headline_count=len(headlines),
             next_high_impact_event=event_name,
             minutes_to_next_event=minutes_f,
+            next_event_currency=event.get("currency"),
+            next_event_impact=str(event.get("impact", "HIGH")).upper(),
+            next_event_time_utc=event.get("time_utc") or event.get("timeUtc"),
         )
     except (KeyError, TypeError, ValueError) as e:
         logger.warning("Malformed sentiment payload for %s (%s) — using neutral.", symbol, e)
