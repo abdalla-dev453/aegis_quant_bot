@@ -264,9 +264,9 @@ def _retcode_to_text(code: int) -> str:
     return mapping.get(code, f"UNKNOWN_{code}")
 
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------
 # Order placement
-# ---------------------------------------------------------------------------
+#----------------------------------------------------------------
 def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | None:
     """
     Sizes, prices, and sends a market order with SL/TP attached. Returns the
