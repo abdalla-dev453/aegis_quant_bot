@@ -2,24 +2,17 @@ import { useState } from "react";
 import Sidebar from "./components/Sidebar.jsx";
 import { useBotFeed } from "./lib/useBotFeed.js";
 import Dashboard from "./pages/Dashboard.jsx";
+import Logs from "./pages/Logs.jsx";
 import PerformanceMatrix from "./pages/PerformanceMatrix.jsx";
-import Placeholder from "./pages/Placeholder.jsx";
+import Settings from "./pages/Settings.jsx";
+import StrategyBuilder from "./pages/StrategyBuilder.jsx";
 
 const PAGES = {
   dashboard: Dashboard,
   performance: PerformanceMatrix,
-  strategy: () => (
-    <Placeholder title="Strategy Builder" note="Rule editor UI goes here." />
-  ),
-  logs: () => (
-    <Placeholder title="Logs" note="Full searchable log history goes here." />
-  ),
-  settings: () => (
-    <Placeholder
-      title="Settings"
-      note="Risk params, credentials, symbol config go here."
-    />
-  ),
+  strategy: StrategyBuilder,
+  logs: Logs,
+  settings: Settings,
 };
 
 export default function App() {

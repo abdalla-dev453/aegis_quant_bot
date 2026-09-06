@@ -38,6 +38,30 @@ async function apiGet(path, { timeoutMs = 5000 } = {}) {
   }
 }
 
+async function apiPost(path, body, { timeoutMs = 10000 } = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+    const payload = await res.json().catch(() => ({}));
+    if (!res.ok)
+      throw new Error(
+        payload.detail ?? `API ${path} failed: HTTP ${res.status}`,
+      );
+    return payload;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Coercion helpers — a partial/NaN payload must never crash the UI.
 // ---------------------------------------------------------------------------
@@ -151,7 +175,10 @@ export async function fetchPriceSeries() {
         ema200: num(d.ema200),
       }))
     : [];
-  return { symbol: Array.isArray(payload) ? "" : String(payload?.symbol ?? ""), points };
+  return {
+    symbol: Array.isArray(payload) ? "" : String(payload?.symbol ?? ""),
+    points,
+  };
 }
 
 export async function fetchLogs() {
@@ -165,11 +192,34 @@ export async function fetchLogs() {
   }));
 }
 
+export async function fetchSettings() {
+  const d = await apiGet("/api/settings");
+  return {
+    credentialsConfigured: Boolean(d.credentialsConfigured),
+    symbols: Array.isArray(d.symbols) ? d.symbols.map(String) : [],
+    timeframeTrigger: String(d.timeframeTrigger ?? "H1"),
+    timeframeBias: String(d.timeframeBias ?? "H4"),
+    riskPerTradePct: num(d.riskPerTradePct),
+    atrStopMultiplier: num(d.atrStopMultiplier),
+    atrTakeProfitMultiplier: num(d.atrTakeProfitMultiplier),
+    maxConcurrentPositions: Math.max(
+      0,
+      Math.trunc(num(d.maxConcurrentPositions)),
+    ),
+    magicNumber: String(d.magicNumber ?? ""),
+  };
+}
+
+export function saveCredentials(credentials) {
+  return apiPost("/api/settings/credentials", credentials);
+}
+
 /**
  * Format a price with the correct decimal precision for a symbol.
  * Prefers server-provided digits; falls back to a broker-neutral heuristic.
  */
 export function formatPrice(symbol, value, digits) {
-  const d = digits ?? (symbol === "XAUUSD" ? 2 : symbol.endsWith("JPY") ? 3 : 5);
+  const d =
+    digits ?? (symbol === "XAUUSD" ? 2 : symbol.endsWith("JPY") ? 3 : 5);
   return num(value).toFixed(d);
 }
