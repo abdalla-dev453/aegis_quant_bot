@@ -49,6 +49,7 @@ Do not run the Python bot and an EA against the same account and symbol at the s
    $env:MT5_PASSWORD = "your-password"
    $env:MT5_SERVER = "YourBroker-Demo"
    $env:MT5_TERMINAL_PATH = "C:\Program Files\MetaTrader 5\terminal64.exe"
+   $env:API_TOKEN = "generate-a-long-random-token"
    ```
 
 6. Configure symbols and risk in `server/config.py`, or adapt the configuration to load all operational values from environment variables or a secrets manager.
@@ -59,6 +60,20 @@ Do not run the Python bot and an EA against the same account and symbol at the s
    ```
 
 8. Watch the console and `trading_bot.log`. Stop it with `Ctrl+C`.
+
+The server API requires the `X-API-Key` header on every route. Start the
+dashboard with the same token in a second terminal:
+
+```powershell
+cd client
+npm install
+$env:VITE_API_BASE = "http://127.0.0.1:8000"
+$env:VITE_API_TOKEN = $env:API_TOKEN
+npm run dev -- --host 127.0.0.1
+```
+
+Use HTTPS or a private network before using live credentials. Never commit
+`API_TOKEN`, `VITE_API_TOKEN`, or MT5 credentials.
 
 If the terminal, login, credentials, or symbols are unavailable, the bot should stop or skip the affected operation rather than place an order.
 

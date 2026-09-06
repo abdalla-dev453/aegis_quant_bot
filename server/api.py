@@ -3,11 +3,15 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
+from collections import defaultdict, deque
+import hmac
 import os
+from pathlib import Path
 import time
+from threading import Lock
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -19,12 +23,55 @@ from data_provider import (
     get_rates,
     initialize_connection,
     mt5,
+    mt5_operation_lock,
     shutdown_connection,
 )
 from runtime_state import read
 from strategy import analyze_market_sentiment, compute_indicators
 
 app = FastAPI(title="Aegis Quant API", version="1.0.0")
+API_TOKEN = os.getenv("API_TOKEN", "")
+_rate_lock = Lock()
+_rate_windows: dict[tuple[str, str], deque[float]] = defaultdict(deque)
+_MAX_RATE_KEYS = 10000
+
+
+def require_api_token(x_api_key: str | None = Header(default=None)) -> None:
+    if not API_TOKEN or not x_api_key or not hmac.compare_digest(x_api_key, API_TOKEN):
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
+
+def rate_limit(request: Request, bucket: str, limit: int, window_seconds: int = 60) -> None:
+    now = time.monotonic()
+    client = request.client.host if request.client else "unknown"
+    key = (client, bucket)
+    with _rate_lock:
+        if len(_rate_windows) >= _MAX_RATE_KEYS and key not in _rate_windows:
+            _rate_windows.clear()
+        timestamps = _rate_windows[key]
+        while timestamps and now - timestamps[0] >= window_seconds:
+            timestamps.popleft()
+        if len(timestamps) >= limit:
+            raise HTTPException(status_code=429, detail="Rate limit exceeded")
+        timestamps.append(now)
+
+
+def read_limit(request: Request) -> None:
+    rate_limit(request, "read", 120)
+
+
+def credentials_limit(request: Request) -> None:
+    rate_limit(request, "credentials", 3)
+
+
+def protected(request: Request, _: None = Depends(require_api_token)) -> None:
+    read_limit(request)
+
+
+def protected_credentials(request: Request, _: None = Depends(require_api_token)) -> None:
+    credentials_limit(request)
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -35,8 +82,8 @@ app.add_middleware(
         if origin.strip()
     ],
     allow_credentials=False,
-    allow_methods=["GET"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Accept", "Content-Type", "X-API-Key"],
 )
 
 _calendar_cache: tuple[float, dict[str, Any]] | None = None
@@ -51,44 +98,47 @@ class CredentialsPayload(BaseModel):
 
 
 def _account() -> Any:
-    ensure_connected()
-    return mt5.account_info()
+    with mt5_operation_lock():
+        ensure_connected()
+        return mt5.account_info()
 
 
 def _position_rows() -> list[dict[str, Any]]:
-    rows = []
-    for pos in get_open_positions(magic=RISK.magic_number):
-        rows.append(
-            {
-                "ticket": str(pos.ticket),
-                "symbol": pos.symbol,
-                "type": "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL",
-                "lot": float(pos.volume),
-                "entry": float(pos.price_open),
-                "sl": float(pos.sl),
-                "tp": float(pos.tp),
-                "trailing": False,
-                "current": float(pos.price_current),
-                "pnl": float(pos.profit),
-                "digits": int(getattr(mt5.symbol_info(pos.symbol), "digits", 5)),
-            }
-        )
-    return rows
+    with mt5_operation_lock():
+        rows = []
+        for pos in get_open_positions(magic=RISK.magic_number):
+            rows.append(
+                {
+                    "ticket": str(pos.ticket),
+                    "symbol": pos.symbol,
+                    "type": "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL",
+                    "lot": float(pos.volume),
+                    "entry": float(pos.price_open),
+                    "sl": float(pos.sl),
+                    "tp": float(pos.tp),
+                    "trailing": False,
+                    "current": float(pos.price_current),
+                    "pnl": float(pos.profit),
+                    "digits": int(getattr(mt5.symbol_info(pos.symbol), "digits", 5)),
+                }
+            )
+        return rows
 
 
 def _history_deals(days: int = 90) -> list[Any]:
-    ensure_connected()
-    now = datetime.now(timezone.utc).replace(tzinfo=None)
-    start = now - timedelta(days=days)
-    deals = mt5.history_deals_get(start, now)
-    if deals is None:
-        return []
-    return [
-        deal
-        for deal in deals
-        if getattr(deal, "magic", None) == RISK.magic_number
-        and getattr(deal, "entry", None) in (mt5.DEAL_ENTRY_OUT, mt5.DEAL_ENTRY_OUT_BY)
-    ]
+    with mt5_operation_lock():
+        ensure_connected()
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
+        start = now - timedelta(days=days)
+        deals = mt5.history_deals_get(start, now)
+        if deals is None:
+            return []
+        return [
+            deal
+            for deal in deals
+            if getattr(deal, "magic", None) == RISK.magic_number
+            and getattr(deal, "entry", None) in (mt5.DEAL_ENTRY_OUT, mt5.DEAL_ENTRY_OUT_BY)
+        ]
 
 
 def _deal_net(deal: Any) -> float:
@@ -99,13 +149,14 @@ def _deal_net(deal: Any) -> float:
     )
 
 
-@app.get("/api/health")
+@app.get("/api/health", dependencies=[Depends(protected)])
 def health() -> dict[str, Any]:
     state = read()
-    return {"ok": True, "connected": state["connected"], "service": "aegis-quant"}
+    connected = bool(state["connected"])
+    return {"ok": connected, "connected": connected, "service": "aegis-quant"}
 
 
-@app.get("/api/settings")
+@app.get("/api/settings", dependencies=[Depends(protected)])
 def settings() -> dict[str, Any]:
     return {
         "credentialsConfigured": _credentials_configured,
@@ -120,28 +171,34 @@ def settings() -> dict[str, Any]:
     }
 
 
-@app.post("/api/settings/credentials")
+@app.post("/api/settings/credentials", dependencies=[Depends(protected_credentials)])
 def save_credentials(payload: CredentialsPayload) -> dict[str, Any]:
     global _credentials_configured
     try:
-        configure_runtime_credentials(
-            payload.login, payload.password, payload.server, payload.terminal_path
-        )
-        shutdown_connection()
-        initialize_connection()
+        if payload.terminal_path:
+            terminal = Path(payload.terminal_path).expanduser().resolve()
+            if terminal.name.lower() != "terminal64.exe" or not terminal.is_file():
+                raise ValueError("Invalid MT5 terminal path")
+        with mt5_operation_lock():
+            configure_runtime_credentials(
+                payload.login, payload.password, payload.server, payload.terminal_path
+            )
+            shutdown_connection()
+            initialize_connection()
         _credentials_configured = True
         return {"ok": True, "connected": True, "message": "MT5 connection established."}
-    except Exception as exc:
+    except Exception:
         _credentials_configured = False
-        raise HTTPException(status_code=400, detail=f"MT5 connection failed: {exc}") from exc
+        raise HTTPException(status_code=400, detail="MT5 connection failed")
 
 
-@app.get("/api/account")
+@app.get("/api/account", dependencies=[Depends(protected)])
 def account() -> dict[str, float]:
     info = _account()
     now = datetime.now(timezone.utc)
     day_start = now.replace(hour=0, minute=0, second=0, microsecond=0).replace(tzinfo=None)
-    deals = mt5.history_deals_get(day_start, now.replace(tzinfo=None)) or []
+    with mt5_operation_lock():
+        deals = mt5.history_deals_get(day_start, now.replace(tzinfo=None)) or []
     realized_today = sum(
         _deal_net(deal) for deal in deals if getattr(deal, "magic", None) == RISK.magic_number
     )
@@ -155,12 +212,12 @@ def account() -> dict[str, float]:
     }
 
 
-@app.get("/api/positions")
+@app.get("/api/positions", dependencies=[Depends(protected)])
 def positions() -> list[dict[str, Any]]:
     return _position_rows()
 
 
-@app.get("/api/risk")
+@app.get("/api/risk", dependencies=[Depends(protected)])
 def risk() -> dict[str, Any]:
     info = _account()
     margin = float(info.margin or 0.0)
@@ -178,7 +235,7 @@ def risk() -> dict[str, Any]:
     }
 
 
-@app.get("/api/confluence")
+@app.get("/api/confluence", dependencies=[Depends(protected)])
 def confluence() -> dict[str, Any]:
     signal = read().get("last_signal", {})
     return {
@@ -190,7 +247,7 @@ def confluence() -> dict[str, Any]:
     }
 
 
-@app.get("/api/calendar")
+@app.get("/api/calendar", dependencies=[Depends(protected)])
 def calendar() -> dict[str, Any]:
     global _calendar_cache
     now = time.monotonic()
@@ -219,7 +276,7 @@ def calendar() -> dict[str, Any]:
     return _calendar_cache[1]
 
 
-@app.get("/api/performance")
+@app.get("/api/performance", dependencies=[Depends(protected)])
 def performance() -> dict[str, Any]:
     results = [_deal_net(deal) for deal in _history_deals()]
     wins = [value for value in results if value > 0]
@@ -235,7 +292,7 @@ def performance() -> dict[str, Any]:
     }
 
 
-@app.get("/api/equity-curve")
+@app.get("/api/equity-curve", dependencies=[Depends(protected)])
 def equity_curve() -> list[dict[str, Any]]:
     info = _account()
     deals = sorted(_history_deals(days=30), key=lambda deal: deal.time)
@@ -256,7 +313,7 @@ def equity_curve() -> list[dict[str, Any]]:
     return points
 
 
-@app.get("/api/price-series")
+@app.get("/api/price-series", dependencies=[Depends(protected)])
 def price_series() -> dict[str, Any]:
     symbol = TRADING_SYMBOLS[0].name
     frame = compute_indicators(get_rates(symbol, "H1", 120)).tail(100)
@@ -275,6 +332,6 @@ def price_series() -> dict[str, Any]:
     }
 
 
-@app.get("/api/logs")
+@app.get("/api/logs", dependencies=[Depends(protected)])
 def logs() -> list[dict[str, Any]]:
     return read().get("logs", [])

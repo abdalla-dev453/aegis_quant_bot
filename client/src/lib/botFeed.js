@@ -18,37 +18,35 @@
  */
 
 const API_BASE = import.meta.env?.VITE_API_BASE ?? "http://localhost:8000";
+const API_TOKEN = import.meta.env?.VITE_API_TOKEN ?? "";
 
 // Symbols come from the server (TRADING_SYMBOLS in config.py) inside the
 // /api/price-series and /api/positions payloads — no client-side list.
 
-/** Small fetch wrapper: JSON, timeout, and normalized error handling. */
-async function apiGet(path, { timeoutMs = 5000 } = {}) {
+/** Shared request wrapper: JSON, timeout, and normalized error handling. */
+async function apiRequest(
+  path,
+  { method = "GET", body, timeoutMs = 5000 } = {},
+) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch(`${API_BASE}${path}`, {
-      headers: { Accept: "application/json" },
-      signal: controller.signal,
-    });
-    if (!res.ok) throw new Error(`API ${path} failed: HTTP ${res.status}`);
-    return await res.json();
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-async function apiPost(path, body, { timeoutMs = 10000 } = {}) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const res = await fetch(`${API_BASE}${path}`, {
-      method: "POST",
+      method,
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
+        ...(API_TOKEN ? { "X-API-Key": API_TOKEN } : {}),
       },
-      body: JSON.stringify(body),
+      ...(body === undefined
+        ? {}
+        : {
+            body: JSON.stringify(body),
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              ...(API_TOKEN ? { "X-API-Key": API_TOKEN } : {}),
+            },
+          }),
       signal: controller.signal,
     });
     const payload = await res.json().catch(() => ({}));
@@ -60,6 +58,10 @@ async function apiPost(path, body, { timeoutMs = 10000 } = {}) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function apiGet(path, options) {
+  return apiRequest(path, options);
 }
 
 // ---------------------------------------------------------------------------
@@ -211,7 +213,11 @@ export async function fetchSettings() {
 }
 
 export function saveCredentials(credentials) {
-  return apiPost("/api/settings/credentials", credentials);
+  return apiRequest("/api/settings/credentials", {
+    method: "POST",
+    body: credentials,
+    timeoutMs: 10000,
+  });
 }
 
 /**

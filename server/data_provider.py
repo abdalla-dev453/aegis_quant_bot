@@ -12,6 +12,9 @@ from __future__ import annotations
 import logging
 import random
 import time
+from contextlib import contextmanager
+from functools import wraps
+from threading import RLock
 from dataclasses import dataclass
 from typing import Any, cast
 
@@ -66,16 +69,34 @@ class ConnectionState:
 
 _state = ConnectionState()
 _runtime_credentials: dict[str, Any] = {}
+_mt5_lock = RLock()
+
+
+@contextmanager
+def mt5_operation_lock():
+    """Serialize MT5 IPC and connection operations across worker/API threads."""
+    with _mt5_lock:
+        yield
+
+
+def mt5_serialized(function):
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        with _mt5_lock:
+            return function(*args, **kwargs)
+
+    return wrapper
 
 
 def configure_runtime_credentials(
     login: int, password: str, server: str, terminal_path: str | None = None
 ) -> None:
     """Set session-only credentials supplied by the protected settings API."""
-    _runtime_credentials.clear()
-    _runtime_credentials.update(
-        login=login, password=password, server=server, terminal_path=terminal_path
-    )
+    with _mt5_lock:
+        _runtime_credentials.clear()
+        _runtime_credentials.update(
+            login=login, password=password, server=server, terminal_path=terminal_path
+        )
 
 
 def _exponential_backoff_delay(attempt: int, base: float, max_delay: float) -> float:
@@ -96,6 +117,14 @@ def initialize_connection(
     Raises:
         MT5ConnectionError: if all retries are exhausted.
     """
+    with _mt5_lock:
+        _initialize_connection(max_retries, initial_delay)
+
+
+def _initialize_connection(
+    max_retries: int = MAX_RECONNECT_ATTEMPTS,
+    initial_delay: float = INITIAL_BACKOFF_SECONDS,
+) -> None:
     require_mt5_runtime()
 
     try:
@@ -173,28 +202,31 @@ def ensure_connected() -> None:
     Cheap liveness check used before every trading action. Reconnects once
     if the terminal has dropped (e.g. terminal restarted, network hiccup).
     """
-    require_mt5_runtime()
-    info = mt5.terminal_info()
-    if info is None:
-        logger.warning(
-            "MT5 terminal_info() returned None — connection appears lost. Reconnecting..."
-        )
-        _state.connected = False
-        initialize_connection()
-        return
+    with _mt5_lock:
+        require_mt5_runtime()
+        info = mt5.terminal_info()
+        if info is None:
+            logger.warning(
+                "MT5 terminal_info() returned None — connection appears lost. Reconnecting..."
+            )
+            _state.connected = False
+            _initialize_connection()
+            return
 
-    if not _state.connected:
-        logger.info("Connection alive but state unsynced — refreshing.")
-        _state.connected = True
+        if not _state.connected:
+            logger.info("Connection alive but state unsynced — refreshing.")
+            _state.connected = True
 
 
 def shutdown_connection() -> None:
-    if _state.connected:
-        mt5.shutdown()
-        _state.connected = False
-        logger.info("MT5 connection shut down cleanly.")
+    with _mt5_lock:
+        if _state.connected:
+            mt5.shutdown()
+            _state.connected = False
+            logger.info("MT5 connection shut down cleanly.")
 
 
+@mt5_serialized
 def validate_symbols() -> None:
     """Confirm every configured symbol exists and is visible in Market Watch."""
     require_mt5_runtime()
@@ -208,6 +240,7 @@ def validate_symbols() -> None:
             logger.info("Symbol %s added to Market Watch.", sym_cfg.name)
 
 
+@mt5_serialized
 def validate_symbol_trade_constraints(
     symbol: str, entry_price: float, sl: float, tp: float
 ) -> None:
@@ -243,6 +276,7 @@ def validate_symbol_trade_constraints(
         )
 
 
+@mt5_serialized
 def get_rates(symbol: str, timeframe_key: str, n_bars: int) -> pd.DataFrame:
     """
     Fetch the last `n_bars` completed candles for `symbol` on `timeframe_key`
@@ -317,6 +351,7 @@ def get_latest_closed_candle_time(symbol: str, timeframe_key: str) -> pd.Timesta
     return pd.Timestamp(df.index[-1])
 
 
+@mt5_serialized
 def get_account_equity() -> float:
     require_mt5_runtime()
     ensure_connected()
@@ -326,6 +361,7 @@ def get_account_equity() -> float:
     return float(info.equity)
 
 
+@mt5_serialized
 def get_symbol_info(symbol: str):
     require_mt5_runtime()
     ensure_connected()
@@ -335,6 +371,7 @@ def get_symbol_info(symbol: str):
     return info
 
 
+@mt5_serialized
 def get_open_positions(symbol: str | None = None, magic: int | None = None) -> list:
     require_mt5_runtime()
     ensure_connected()

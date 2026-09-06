@@ -1,1 +1,6 @@
 server/venv/
+server/*.log
+.env
+.env.*
+!.env.example
+*.exe

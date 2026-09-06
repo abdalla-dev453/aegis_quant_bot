@@ -28,6 +28,7 @@ from data_provider import (
     ensure_connected,
     get_account_equity,
     get_open_positions,
+    mt5_serialized,
 )
 from strategy import TradeDirection
 
@@ -266,7 +267,8 @@ def _retcode_to_text(code: int) -> str:
 
 # ------------------------------------------------------------------
 # Order placement
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
+@mt5_serialized
 def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | None:
     """
     Sizes, prices, and sends a market order with SL/TP attached. Returns the
@@ -395,6 +397,7 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
 # ---------------------------------------------------------------------------
 # Trailing stop management
 # ---------------------------------------------------------------------------
+@mt5_serialized
 def manage_trailing_stops(symbol: str | None = None) -> None:
     """
     For every open position opened by this bot (matched by magic number):
