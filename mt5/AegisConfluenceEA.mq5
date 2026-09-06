@@ -1,418 +1,315 @@
 #property copyright "Aegis Quant"
-#property version   "1.00"
+#property version   "2.00"
 #property strict
 
-#include <Trade/Trade.mqh>
-
-input string   InpSymbol            = "";                     // Empty uses current chart symbol
-input ENUM_TIMEFRAMES InpTriggerTF  = PERIOD_H1;             // Signal trigger timeframe
-input ENUM_TIMEFRAMES InpBiasTF     = PERIOD_H4;             // Bias timeframe
-input int      InpSlowEma           = 200;
-input int      InpFastEma           = 50;
-input int      InpRsiPeriod         = 14;
-input int      InpAtrPeriod         = 14;
-input double   InpRiskPerTradePct   = 1.5;
-input double   InpAtrStopMult       = 1.5;
-input double   InpAtrTpMult         = 3.0;
-input int      InpMaxConcurrentPositions = 3;
-input ulong    InpMagicNumber       = 990011;
-input int      InpDeviationPoints   = 20;
-input int      InpBarsToLoad        = 400;
-input bool     InpAllowBuy          = true;
-input bool     InpAllowSell         = true;
-input bool     InpUseNewsBlackout   = true;
-input int      InpNewsBlackoutMinutes = 30;
+input string InpSymbol = "";
+input ENUM_TIMEFRAMES InpTriggerTF = PERIOD_H1;
+input ENUM_TIMEFRAMES InpBiasTF = PERIOD_H4;
+input int InpFastEma = 50;
+input int InpSlowEma = 200;
+input int InpRsiPeriod = 14;
+input int InpAtrPeriod = 14;
+input int InpBarsToLoad = 250;
+input double InpRiskPerTradePct = 1.0;
+input double InpMaxDailyDrawdownPct = 3.0;
+input double InpMaxSpreadPoints = 30.0;
+input double InpAtrStopMult = 1.5;
+input double InpAtrTpMult = 3.0;
+input double InpAtrTrailMult = 1.25;
+input double InpBreakevenR = 1.0;
+input int InpDeviationPoints = 20;
+input int InpMaxExecutionRetries = 2;
+input ulong InpMagicNumber = 990011;
+input int InpMaxConcurrentPositions = 3;
+input double InpMaxLot = 50.0;
+input bool InpAllowBuy = true;
+input bool InpAllowSell = true;
+input bool InpUseAsyncExecution = true;
+input bool InpUseNewsBlackout = true;
+input bool InpUseEconomicCalendar = true;
+input int InpNewsBlackoutMinutes = 30;
 input datetime InpNextNewsTimestamp = 0;
+input string InpNewsCurrency = "";
 
-CTrade trade;
-string g_symbol = "";
-datetime g_lastBarTime = 0;
+string g_symbol;
+datetime g_lastBar = 0;
+datetime g_day = 0;
+double g_dayStartEquity = 0.0;
+ulong g_pendingRequest = 0;
+int g_fastTrigger = INVALID_HANDLE;
+int g_slowTrigger = INVALID_HANDLE;
+int g_fastBias = INVALID_HANDLE;
+int g_slowBias = INVALID_HANDLE;
+int g_rsi = INVALID_HANDLE;
+int g_atr = INVALID_HANDLE;
 
-struct SignalInfo
-{
-   int direction;
-   double atr;
-   double entry;
-   double sl;
-   double tp;
-   string reason;
-};
+void Log(const string message) { PrintFormat("[AegisQuant] %s", message); }
 
 int OnInit()
 {
-   trade.SetExpertMagicNumber(InpMagicNumber);
-   trade.SetDeviationInPoints(InpDeviationPoints);
-   trade.SetTypeFilling(ORDER_FILLING_IOC);
-
    g_symbol = StringLen(InpSymbol) > 0 ? InpSymbol : _Symbol;
-   if(!SymbolSelect(g_symbol, true))
-   {
-      PrintFormat("EA init failed: could not select symbol '%s'.", g_symbol);
-      return(INIT_FAILED);
-   }
-
-   if(!IsMarketOpenAndTradeable(g_symbol))
-   {
-      PrintFormat("EA init failed: symbol '%s' is not tradeable on this broker/server.", g_symbol);
-      return(INIT_FAILED);
-   }
-
-   // Warm start: the first candle time will trigger an evaluation once a new closed bar arrives.
-   g_lastBarTime = 0;
-   return(INIT_SUCCEEDED);
+   if(!SymbolSelect(g_symbol, true) || !IsTradeable()) return INIT_FAILED;
+   g_fastTrigger = iMA(g_symbol, InpTriggerTF, InpFastEma, 0, MODE_EMA, PRICE_CLOSE);
+   g_slowTrigger = iMA(g_symbol, InpTriggerTF, InpSlowEma, 0, MODE_EMA, PRICE_CLOSE);
+   g_fastBias = iMA(g_symbol, InpBiasTF, InpFastEma, 0, MODE_EMA, PRICE_CLOSE);
+   g_slowBias = iMA(g_symbol, InpBiasTF, InpSlowEma, 0, MODE_EMA, PRICE_CLOSE);
+   g_rsi = iRSI(g_symbol, InpTriggerTF, InpRsiPeriod, PRICE_CLOSE);
+   g_atr = iATR(g_symbol, InpTriggerTF, InpAtrPeriod);
+   if(g_fastTrigger == INVALID_HANDLE || g_slowTrigger == INVALID_HANDLE ||
+      g_fastBias == INVALID_HANDLE || g_slowBias == INVALID_HANDLE ||
+      g_rsi == INVALID_HANDLE || g_atr == INVALID_HANDLE) return INIT_FAILED;
+   ResetDailyBaseline();
+   Log(StringFormat("initialized symbol=%s async=%s", g_symbol, InpUseAsyncExecution ? "true" : "false"));
+   return INIT_SUCCEEDED;
 }
 
 void OnDeinit(const int reason)
 {
-   // Intentionally left blank for a minimal scaffold.
-   // In a fuller implementation, release the indicator handles here.
+   if(g_fastTrigger != INVALID_HANDLE) IndicatorRelease(g_fastTrigger);
+   if(g_slowTrigger != INVALID_HANDLE) IndicatorRelease(g_slowTrigger);
+   if(g_fastBias != INVALID_HANDLE) IndicatorRelease(g_fastBias);
+   if(g_slowBias != INVALID_HANDLE) IndicatorRelease(g_slowBias);
+   if(g_rsi != INVALID_HANDLE) IndicatorRelease(g_rsi);
+   if(g_atr != INVALID_HANDLE) IndicatorRelease(g_atr);
 }
 
 void OnTick()
 {
-   if(StringLen(g_symbol) == 0)
-      return;
-
-   if(!IsMarketOpenAndTradeable(g_symbol))
-      return;
-
-   if(IsNewsBlackoutActive())
-   {
-      PrintFormat("[AegisQuant] News blackout active for %s; skipping new entry.", g_symbol);
-      return;
-   }
-
-   if(!IsNewClosedBar(g_symbol, InpTriggerTF, g_lastBarTime))
-      return;
-
-   SignalInfo signal = EvaluateSignal(g_symbol);
-   if(signal.direction == 0)
-      return;
-
-   if(!TradeAllowedForDirection(signal.direction))
-      return;
-
-   if(!ValidateTradeContext(g_symbol, signal.entry, signal.sl, signal.tp))
-   {
-      PrintFormat("Trade context rejected for %s: %s", g_symbol, signal.reason);
-      return;
-   }
-
-   double lotSize = CalculateLotSize(g_symbol, MathAbs(signal.entry - signal.sl));
-   if(lotSize <= 0.0)
-   {
-      PrintFormat("Risk sizing rejected for %s: %s", g_symbol, signal.reason);
-      return;
-   }
-
-   int orderType = signal.direction > 0 ? ORDER_TYPE_BUY : ORDER_TYPE_SELL;
-   double price = signal.entry;
-   if(signal.direction > 0)
-      price = SymbolInfoDouble(g_symbol, SYMBOL_ASK);
-   else
-      price = SymbolInfoDouble(g_symbol, SYMBOL_BID);
-
-   if(price <= 0.0)
-      return;
-
-   bool sent = SendOrder(g_symbol, orderType, price, signal.sl, signal.tp, lotSize, signal.reason);
-   if(sent)
-      PrintFormat("Order sent: %s %s lots=%.2f entry=%.5f sl=%.5f tp=%.5f",
-                  g_symbol,
-                  signal.direction > 0 ? "BUY" : "SELL",
-                  lotSize,
-                  price,
-                  signal.sl,
-                  signal.tp);
+   ResetDailyBaseline();
+   ManagePositions();
+   if(!IsNewClosedBar() || !IsTradeable() || IsRiskBlocked() || IsNewsBlackout()) return;
+   EvaluateAndTrade();
 }
 
-bool IsMarketOpenAndTradeable(string symbol)
+void OnTradeTransaction(const MqlTradeTransaction &transaction, const MqlTradeRequest &request,
+                        const MqlTradeResult &result)
 {
-   if(!SymbolSelect(symbol, true))
-      return false;
-
-   int tradeMode = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_MODE);
-   if(tradeMode != SYMBOL_TRADE_MODE_FULL)
-      return false;
-
-   return SymbolInfoDouble(symbol, SYMBOL_ASK) > 0.0 && SymbolInfoDouble(symbol, SYMBOL_BID) > 0.0;
+   if(transaction.request_id != g_pendingRequest && result.request_id != g_pendingRequest) return;
+   if(transaction.type == TRADE_TRANSACTION_DEAL_ADD)
+      Log(StringFormat("async fill deal=%I64u price=%s volume=%s", transaction.deal,
+                       DoubleToString(transaction.price, _Digits), DoubleToString(transaction.volume, 2)));
+   if(result.retcode != 0 && result.retcode != TRADE_RETCODE_PLACED)
+      Log(StringFormat("async result retcode=%u comment=%s", result.retcode, result.comment));
+   if(transaction.type == TRADE_TRANSACTION_REQUEST) g_pendingRequest = 0;
 }
 
-bool IsNewsBlackoutActive()
+bool IsTradeable()
 {
-   if(!InpUseNewsBlackout)
-      return false;
-
-   if(InpNextNewsTimestamp <= 0)
-      return false;
-
-   datetime now = TimeCurrent();
-   datetime startWindow = InpNextNewsTimestamp - InpNewsBlackoutMinutes * 60;
-   datetime endWindow = InpNextNewsTimestamp + InpNewsBlackoutMinutes * 60;
-
-   return now >= startWindow && now <= endWindow;
+   return (int)SymbolInfoInteger(g_symbol, SYMBOL_TRADE_MODE) == SYMBOL_TRADE_MODE_FULL &&
+          SymbolInfoDouble(g_symbol, SYMBOL_BID) > 0.0 && SymbolInfoDouble(g_symbol, SYMBOL_ASK) > 0.0;
 }
 
-bool IsNewClosedBar(string symbol, ENUM_TIMEFRAMES tf, datetime &lastBarTime)
+void ResetDailyBaseline()
 {
-   datetime currentTime = (datetime)SeriesInfoInteger(symbol, tf, SERIES_LASTBAR_DATE);
-   if(currentTime <= 0)
-      return false;
-
-   if(lastBarTime == 0 || currentTime > lastBarTime)
+   datetime today = StringToTime(TimeToString(TimeCurrent(), TIME_DATE));
+   if(today != g_day || g_dayStartEquity <= 0.0)
    {
-      lastBarTime = currentTime;
+      g_day = today;
+      g_dayStartEquity = AccountInfoDouble(ACCOUNT_EQUITY);
+   }
+}
+
+bool IsRiskBlocked()
+{
+   if(g_dayStartEquity <= 0.0 || InpMaxDailyDrawdownPct <= 0.0) return false;
+   double lossPct = 100.0 * (g_dayStartEquity - AccountInfoDouble(ACCOUNT_EQUITY)) / g_dayStartEquity;
+   if(lossPct >= InpMaxDailyDrawdownPct)
+   {
+      Log(StringFormat("daily drawdown guard active loss=%.2f%%", lossPct));
       return true;
    }
-
    return false;
 }
 
-SignalInfo EvaluateSignal(string symbol)
+bool IsNewsBlackout()
 {
-   SignalInfo sig = {0,0.0,0.0,0.0,0.0,""};
-
-   MqlRates h1[];
-   MqlRates h4[];
-   ArraySetAsSeries(h1, true);
-   ArraySetAsSeries(h4, true);
-
-   int h1Copied = CopyRates(symbol, InpTriggerTF, 0, InpBarsToLoad, h1);
-   int h4Copied = CopyRates(symbol, InpBiasTF, 0, InpBarsToLoad, h4);
-
-   if(h1Copied < InpBarsToLoad || h4Copied < InpBarsToLoad)
+   if(!InpUseNewsBlackout) return false;
+   datetime now = TimeCurrent();
+   if(InpNextNewsTimestamp > 0 && now >= InpNextNewsTimestamp - InpNewsBlackoutMinutes * 60 &&
+      now <= InpNextNewsTimestamp + InpNewsBlackoutMinutes * 60) return true;
+   if(!InpUseEconomicCalendar) return false;
+   MqlCalendarValue values[];
+   int count = CalendarValueHistory(values, now - InpNewsBlackoutMinutes * 60,
+                                    now + InpNewsBlackoutMinutes * 60, NULL, InpNewsCurrency);
+   for(int i = 0; i < count; i++)
    {
-      sig.reason = "Insufficient bars downloaded from broker/server";
-      return sig;
+      MqlCalendarEvent event;
+      if(CalendarEventById(values[i].event_id, event) && event.importance == CALENDAR_IMPORTANCE_HIGH) return true;
    }
-
-   double emaFastH1[];
-   double emaSlowH1[];
-   double emaFastH4[];
-   double emaSlowH4[];
-   double rsiH1[];
-   double atrH1[];
-   ArraySetAsSeries(emaFastH1, true);
-   ArraySetAsSeries(emaSlowH1, true);
-   ArraySetAsSeries(emaFastH4, true);
-   ArraySetAsSeries(emaSlowH4, true);
-   ArraySetAsSeries(rsiH1, true);
-   ArraySetAsSeries(atrH1, true);
-
-   int emaFastHandleH1 = iMA(symbol, InpTriggerTF, InpFastEma, 0, MODE_EMA, PRICE_CLOSE);
-   int emaSlowHandleH1 = iMA(symbol, InpTriggerTF, InpSlowEma, 0, MODE_EMA, PRICE_CLOSE);
-   int emaFastHandleH4 = iMA(symbol, InpBiasTF, InpFastEma, 0, MODE_EMA, PRICE_CLOSE);
-   int emaSlowHandleH4 = iMA(symbol, InpBiasTF, InpSlowEma, 0, MODE_EMA, PRICE_CLOSE);
-   int rsiHandleH1 = iRSI(symbol, InpTriggerTF, InpRsiPeriod, PRICE_CLOSE);
-   int atrHandleH1 = iATR(symbol, InpTriggerTF, InpAtrPeriod);
-
-   if(emaFastHandleH1 == INVALID_HANDLE || emaSlowHandleH1 == INVALID_HANDLE ||
-      emaFastHandleH4 == INVALID_HANDLE || emaSlowHandleH4 == INVALID_HANDLE ||
-      rsiHandleH1 == INVALID_HANDLE || atrHandleH1 == INVALID_HANDLE)
-   {
-      sig.reason = "Indicator handles failed to initialize";
-      return sig;
-   }
-
-   int copied = CopyBuffer(emaFastHandleH1, 0, 0, 3, emaFastH1);
-   copied += CopyBuffer(emaSlowHandleH1, 0, 0, 3, emaSlowH1);
-   copied += CopyBuffer(emaFastHandleH4, 0, 0, 3, emaFastH4);
-   copied += CopyBuffer(emaSlowHandleH4, 0, 0, 3, emaSlowH4);
-   copied += CopyBuffer(rsiHandleH1, 0, 0, 3, rsiH1);
-   copied += CopyBuffer(atrHandleH1, 0, 0, 3, atrH1);
-
-   IndicatorRelease(emaFastHandleH1);
-   IndicatorRelease(emaSlowHandleH1);
-   IndicatorRelease(emaFastHandleH4);
-   IndicatorRelease(emaSlowHandleH4);
-   IndicatorRelease(rsiHandleH1);
-   IndicatorRelease(atrHandleH1);
-
-   if(copied < 6)
-   {
-      sig.reason = "Indicator buffer sync incomplete";
-      return sig;
-   }
-
-   double fastH1 = emaFastH1[0];
-   double slowH1 = emaSlowH1[0];
-   double fastH4 = emaFastH4[0];
-   double slowH4 = emaSlowH4[0];
-   double rsi = rsiH1[0];
-   double atr = atrH1[0];
-
-   if(!isfinite(fastH1) || !isfinite(slowH1) || !isfinite(fastH4) || !isfinite(slowH4) || !isfinite(rsi) || !isfinite(atr) || atr <= 0.0)
-   {
-      sig.reason = "Indicator data degenerate / invalid";
-      return sig;
-   }
-
-   double sentimentScore = 0.0;
-   bool newsBlackout = IsNewsBlackoutActive();
-
-   bool longBias = fastH4 > slowH4;
-   bool shortBias = fastH4 < slowH4;
-   bool longTrigger = fastH1 > slowH1;
-   bool shortTrigger = fastH1 < slowH1;
-   bool rsiLongConfirm = rsi >= 52.0 && rsi < 70.0;
-   bool rsiShortConfirm = rsi <= 48.0 && rsi > 30.0;
-
-   if(longBias && longTrigger && rsiLongConfirm && sentimentScore >= 0.5 && !newsBlackout)
-   {
-      sig.direction = 1;
-      sig.atr = atr;
-      sig.entry = SymbolInfoDouble(symbol, SYMBOL_ASK);
-      sig.sl = sig.entry - MathMax(atr * InpAtrStopMult, GetBrokerStopLevel(symbol) * SymbolInfoDouble(symbol, SYMBOL_POINT));
-      sig.tp = sig.entry + (atr * InpAtrTpMult);
-      sig.reason = "Multi-timeframe bullish confluence";
-      return sig;
-   }
-
-   if(shortBias && shortTrigger && rsiShortConfirm && sentimentScore <= -0.5 && !newsBlackout)
-   {
-      sig.direction = -1;
-      sig.atr = atr;
-      sig.entry = SymbolInfoDouble(symbol, SYMBOL_BID);
-      sig.sl = sig.entry + MathMax(atr * InpAtrStopMult, GetBrokerStopLevel(symbol) * SymbolInfoDouble(symbol, SYMBOL_POINT));
-      sig.tp = sig.entry - (atr * InpAtrTpMult);
-      sig.reason = "Multi-timeframe bearish confluence";
-      return sig;
-   }
-
-   sig.reason = "No valid signal";
-   return sig;
-}
-
-bool TradeAllowedForDirection(int direction)
-{
-   if(direction > 0)
-      return InpAllowBuy;
-   if(direction < 0)
-      return InpAllowSell;
    return false;
 }
 
-double CalculateLotSize(string symbol, double slDistanceInPrice)
+bool IsNewClosedBar()
 {
-   if(slDistanceInPrice <= 0.0)
-      return 0.0;
+   datetime bar = (datetime)SeriesInfoInteger(g_symbol, InpTriggerTF, SERIES_LASTBAR_DATE);
+   if(bar <= 0 || bar <= g_lastBar) return false;
+   g_lastBar = bar;
+   return true;
+}
 
+bool ReadValue(const int handle, const int shift, double &value)
+{
+   if(handle == INVALID_HANDLE || BarsCalculated(handle) < InpBarsToLoad) return false;
+   double buffer[1];
+   if(CopyBuffer(handle, 0, shift, 1, buffer) != 1 || !MathIsValidNumber(buffer[0])) return false;
+   value = buffer[0];
+   return true;
+}
+
+int CountPositions()
+{
+   int count = 0;
+   for(int i = PositionsTotal() - 1; i >= 0; i--)
+   {
+      ulong ticket = PositionGetTicket(i);
+      if(ticket > 0 && PositionGetString(POSITION_SYMBOL) == g_symbol &&
+         (ulong)PositionGetInteger(POSITION_MAGIC) == InpMagicNumber) count++;
+   }
+   return count;
+}
+
+void EvaluateAndTrade()
+{
+   if(CountPositions() >= InpMaxConcurrentPositions) return;
+   double fastT, slowT, fastB, slowB, rsi, atr, previousRsi;
+   if(!ReadValue(g_fastTrigger, 1, fastT) || !ReadValue(g_slowTrigger, 1, slowT) ||
+      !ReadValue(g_fastBias, 1, fastB) || !ReadValue(g_slowBias, 1, slowB) ||
+      !ReadValue(g_rsi, 1, rsi) || !ReadValue(g_rsi, 2, previousRsi) ||
+      !ReadValue(g_atr, 1, atr) || atr <= 0.0) return;
+   int direction = 0;
+   if(InpAllowBuy && fastB > slowB && fastT > slowT && rsi >= 52.0 && rsi < 70.0 && rsi > previousRsi) direction = 1;
+   if(InpAllowSell && fastB < slowB && fastT < slowT && rsi <= 48.0 && rsi > 30.0 && rsi < previousRsi) direction = -1;
+   Log(StringFormat("signal trend=%s rsi=%.2f atr=%s direction=%d", fastT >= slowT ? "up" : "down",
+                    rsi, DoubleToString(atr, _Digits), direction));
+   if(direction != 0) SubmitEntry(direction, atr);
+}
+
+double NormalizePrice(const double price) { return NormalizeDouble(price, (int)SymbolInfoInteger(g_symbol, SYMBOL_DIGITS)); }
+
+double NormalizeVolume(double volume)
+{
+   double step = SymbolInfoDouble(g_symbol, SYMBOL_VOLUME_STEP);
+   double minimum = SymbolInfoDouble(g_symbol, SYMBOL_VOLUME_MIN);
+   double maximum = MathMin(SymbolInfoDouble(g_symbol, SYMBOL_VOLUME_MAX), InpMaxLot);
+   if(step <= 0.0 || maximum < minimum) return 0.0;
+   volume = MathFloor(volume / step) * step;
+   if(volume < minimum) return 0.0;
+   return MathMin(volume, maximum);
+}
+
+double CalculateVolume(const double stopDistance)
+{
+   double tickSize = SymbolInfoDouble(g_symbol, SYMBOL_TRADE_TICK_SIZE);
+   double tickValue = SymbolInfoDouble(g_symbol, SYMBOL_TRADE_TICK_VALUE_LOSS);
    double equity = AccountInfoDouble(ACCOUNT_EQUITY);
-   if(equity <= 0.0)
-      return 0.0;
-
-   double riskAmount = equity * (InpRiskPerTradePct / 100.0);
-   double tickSize = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_SIZE);
-   double tickValue = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_VALUE);
-   if(tickSize <= 0.0 || tickValue <= 0.0)
-      return 0.0;
-
-   double slDistanceTicks = slDistanceInPrice / tickSize;
-   double valuePerLot = slDistanceTicks * tickValue;
-   if(valuePerLot <= 0.0)
-      return 0.0;
-
-   double rawLots = riskAmount / valuePerLot;
-   double volumeStep = SymbolInfoDouble(symbol, SYMBOL_VOLUME_STEP);
-   if(volumeStep <= 0.0)
-      volumeStep = 0.01;
-
-   double lots = MathFloor(rawLots / volumeStep) * volumeStep;
-   double minLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
-   double maxLot = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MAX);
-   if(minLot > 0.0)
-      lots = MathMax(lots, minLot);
-   if(maxLot > 0.0)
-      lots = MathMin(lots, maxLot);
-
-   return lots;
+   if(stopDistance <= 0.0 || tickSize <= 0.0 || tickValue <= 0.0 || equity <= 0.0) return 0.0;
+   return NormalizeVolume((equity * InpRiskPerTradePct / 100.0) / ((stopDistance / tickSize) * tickValue));
 }
 
-bool ValidateTradeContext(string symbol, double entryPrice, double slPrice, double tpPrice)
+int FillingMode()
 {
-   int tradeMode = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_MODE);
-   if(tradeMode != SYMBOL_TRADE_MODE_FULL)
-      return false;
-
-   int stopLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
-   int freezeLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_FREEZE_LEVEL);
-   double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
-
-   if(stopLevel > 0)
-   {
-      double minAllowed = stopLevel * point;
-      if(MathAbs(entryPrice - slPrice) < minAllowed || MathAbs(tpPrice - entryPrice) < minAllowed)
-         return false;
-   }
-
-   if(freezeLevel > 0)
-   {
-      double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
-      double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
-      if(MathAbs(ask - bid) > freezeLevel * point)
-         return false;
-   }
-
-   return entryPrice > 0.0 && slPrice > 0.0 && tpPrice > 0.0;
+   int flags = (int)SymbolInfoInteger(g_symbol, SYMBOL_FILLING_MODE);
+   if((flags & SYMBOL_FILLING_FOK) != 0) return ORDER_FILLING_FOK;
+   if((flags & SYMBOL_FILLING_IOC) != 0) return ORDER_FILLING_IOC;
+   return ORDER_FILLING_RETURN;
 }
 
-double GetBrokerStopLevel(string symbol)
+bool IsTransientRetcode(const uint retcode)
 {
-   int stopLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
-   double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
-   if(stopLevel <= 0 || point <= 0.0)
-      return 0.0;
-   return stopLevel * point;
+   return retcode == TRADE_RETCODE_REQUOTE || retcode == TRADE_RETCODE_PRICE_CHANGED ||
+          retcode == TRADE_RETCODE_OFF_QUOTES || retcode == TRADE_RETCODE_TIMEOUT ||
+          retcode == TRADE_RETCODE_CONNECTION || retcode == TRADE_RETCODE_BROKER_BUSY ||
+          retcode == TRADE_RETCODE_TOO_MANY_REQUESTS;
 }
 
-bool SendOrder(string symbol, int orderType, double price, double sl, double tp, double volume, string comment)
+void SubmitEntry(const int direction, const double atr)
+{
+   double bid = SymbolInfoDouble(g_symbol, SYMBOL_BID);
+   double ask = SymbolInfoDouble(g_symbol, SYMBOL_ASK);
+   double point = SymbolInfoDouble(g_symbol, SYMBOL_POINT);
+   if(point <= 0.0 || (ask - bid) / point > InpMaxSpreadPoints) return;
+   double entry = direction > 0 ? ask : bid;
+   double stopDistance = MathMax(atr * InpAtrStopMult,
+                                 (double)SymbolInfoInteger(g_symbol, SYMBOL_TRADE_STOPS_LEVEL) * point);
+   double targetDistance = MathMax(atr * InpAtrTpMult, stopDistance);
+   double sl = direction > 0 ? entry - stopDistance : entry + stopDistance;
+   double tp = direction > 0 ? entry + targetDistance : entry - targetDistance;
+   sl = NormalizePrice(sl); tp = NormalizePrice(tp);
+   double volume = CalculateVolume(stopDistance);
+   if(volume <= 0.0) return;
+   MqlTradeRequest request = {};
+   MqlTradeResult result = {};
+   request.action = TRADE_ACTION_DEAL;
+   request.magic = InpMagicNumber;
+   request.symbol = g_symbol;
+   request.volume = volume;
+   request.type = direction > 0 ? ORDER_TYPE_BUY : ORDER_TYPE_SELL;
+   request.price = entry;
+   request.sl = sl;
+   request.tp = tp;
+   request.deviation = InpDeviationPoints;
+   request.type_filling = FillingMode();
+   request.type_time = ORDER_TIME_GTC;
+   request.comment = "AegisConfluence";
+   MqlTradeCheckResult check = {};
+   if(!InpUseAsyncExecution && OrderCheck(request, check) == false)
+   {
+      Log(StringFormat("order preflight rejected retcode=%u comment=%s", check.retcode, check.comment));
+      return;
+   }
+   bool sent = false;
+   int attempts = InpUseAsyncExecution ? 1 : MathMax(1, InpMaxExecutionRetries + 1);
+   for(int attempt = 0; attempt < attempts; attempt++)
+   {
+      sent = InpUseAsyncExecution ? OrderSendAsync(request, result) : OrderSend(request, result);
+      if(sent || !IsTransientRetcode(result.retcode)) break;
+      Log(StringFormat("transient execution failure attempt=%d retcode=%u", attempt + 1, result.retcode));
+   }
+   Log(StringFormat("entry %s sent=%s retcode=%u volume=%s comment=%s", direction > 0 ? "BUY" : "SELL",
+                    sent ? "true" : "false", result.retcode, DoubleToString(volume, 2), result.comment));
+   if(sent && InpUseAsyncExecution && result.request_id > 0) g_pendingRequest = result.request_id;
+}
+
+void ManagePositions()
+{
+   double atr;
+   if(!ReadValue(g_atr, 1, atr) || atr <= 0.0) return;
+   double bid = SymbolInfoDouble(g_symbol, SYMBOL_BID);
+   double ask = SymbolInfoDouble(g_symbol, SYMBOL_ASK);
+   double point = SymbolInfoDouble(g_symbol, SYMBOL_POINT);
+   double minimumDistance = (double)SymbolInfoInteger(g_symbol, SYMBOL_TRADE_STOPS_LEVEL) * point;
+   for(int i = PositionsTotal() - 1; i >= 0; i--)
+   {
+      ulong ticket = PositionGetTicket(i);
+      if(ticket == 0 || PositionGetString(POSITION_SYMBOL) != g_symbol ||
+         (ulong)PositionGetInteger(POSITION_MAGIC) != InpMagicNumber) continue;
+      long type = PositionGetInteger(POSITION_TYPE);
+      double open = PositionGetDouble(POSITION_PRICE_OPEN);
+      double oldSl = PositionGetDouble(POSITION_SL);
+      double tp = PositionGetDouble(POSITION_TP);
+      double price = type == POSITION_TYPE_BUY ? bid : ask;
+      double risk = MathAbs(open - oldSl);
+      if(risk <= point) continue;
+      double candidate = type == POSITION_TYPE_BUY ? price - atr * InpAtrTrailMult : price + atr * InpAtrTrailMult;
+      if(type == POSITION_TYPE_BUY && price - open >= risk * InpBreakevenR) candidate = MathMax(candidate, open);
+      if(type == POSITION_TYPE_SELL && open - price >= risk * InpBreakevenR) candidate = MathMin(candidate, open);
+      candidate = NormalizePrice(candidate);
+      bool improves = type == POSITION_TYPE_BUY ? candidate > oldSl + point : candidate < oldSl - point;
+      bool valid = type == POSITION_TYPE_BUY ? price - candidate >= minimumDistance : candidate - price >= minimumDistance;
+      if(improves && valid) ModifyPosition(ticket, candidate, tp);
+   }
+}
+
+void ModifyPosition(const ulong ticket, const double sl, const double tp)
 {
    MqlTradeRequest request = {};
-   MqlTradeResult  result  = {};
-
-   ZeroMemory(request);
-   ZeroMemory(result);
-
-   request.action      = TRADE_ACTION_DEAL;
-   request.magic       = InpMagicNumber;
-   request.symbol      = symbol;
-   request.volume      = volume;
-   request.type        = orderType;
-   request.price       = price;
-   request.sl          = sl;
-   request.tp          = tp;
-   request.deviation   = InpDeviationPoints;
-   request.comment     = comment;
-   request.type_filling = ORDER_FILLING_IOC;
-   request.type_time    = ORDER_TIME_GTC;
-
-   bool sent = trade.OrderSend(request, result);
-   if(!sent)
-   {
-      PrintFormat("OrderSend returned false for %s: retcode=%d comment=%s", symbol, result.retcode, result.comment);
-      return false;
-   }
-
-   switch(result.retcode)
-   {
-      case TRADE_RETCODE_DONE:
-         return true;
-      case TRADE_RETCODE_REQUOTE:
-      case TRADE_RETCODE_PRICE_CHANGED:
-      case TRADE_RETCODE_OFF_QUOTES:
-      case TRADE_RETCODE_TIMEOUT:
-      case TRADE_RETCODE_CONNECTION:
-      case TRADE_RETCODE_BROKER_BUSY:
-         PrintFormat("Broker returned transient execution issue for %s: retcode=%d comment=%s",
-                     symbol, result.retcode, result.comment);
-         return false;
-      case TRADE_RETCODE_INVALID_STOPS:
-         PrintFormat("Invalid stop levels for %s: retcode=%d comment=%s",
-                     symbol, result.retcode, result.comment);
-         return false;
-      default:
-         PrintFormat("Order rejected for %s: retcode=%d comment=%s",
-                     symbol, result.retcode, result.comment);
-         return false;
-   }
+   MqlTradeResult result = {};
+   request.action = TRADE_ACTION_SLTP;
+   request.position = ticket;
+   request.symbol = g_symbol;
+   request.magic = InpMagicNumber;
+   request.sl = sl;
+   request.tp = tp;
+   if(!OrderSend(request, result) || result.retcode != TRADE_RETCODE_DONE)
+      Log(StringFormat("stop update failed ticket=%I64u retcode=%u comment=%s", ticket, result.retcode, result.comment));
 }
