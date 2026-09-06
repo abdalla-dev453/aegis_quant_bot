@@ -36,7 +36,10 @@ _rate_windows: dict[tuple[str, str], deque[float]] = defaultdict(deque)
 _MAX_RATE_KEYS = 10000
 
 
-def require_api_token(x_api_key: str | None = Header(default=None)) -> None:
+def require_api_token(request: Request, x_api_key: str | None = Header(default=None)) -> None:
+    client_host = request.client.host if request.client else ""
+    if not API_TOKEN and client_host in {"127.0.0.1", "::1", "localhost"}:
+        return
     if not API_TOKEN or not x_api_key or not hmac.compare_digest(x_api_key, API_TOKEN):
         raise HTTPException(status_code=401, detail="Unauthorized")
 

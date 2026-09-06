@@ -18,21 +18,21 @@ export default function TopBar({ title, subtitle }) {
   }, []);
 
   return (
-    <header className="flex items-center justify-between border-b border-border px-8 py-5">
-      <div>
+    <header className="relative z-50 flex flex-col gap-4 border-b border-border px-4 py-4 sm:px-6 sm:py-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="min-w-0">
         <h1 className="text-lg font-semibold text-ink">{title}</h1>
-        <p className="mt-0.5 text-[12px] text-ink-faint">{subtitle}</p>
+        <p className="mt-0.5 truncate text-[12px] text-ink-faint">{subtitle}</p>
       </div>
 
-      <div className="flex items-center gap-3">
-        <div ref={themeMenuRef} className="relative">
+      <div className="flex w-full flex-wrap items-center justify-end gap-2 sm:gap-3 lg:w-auto">
+        <div ref={themeMenuRef} className="relative shrink-0">
           <button
             onClick={() => setThemeMenuOpen((open) => !open)}
             aria-expanded={themeMenuOpen}
             aria-haspopup="menu"
             aria-label="Choose theme"
             title="Choose theme"
-            className="theme-control flex items-center gap-2 rounded-md border border-border bg-surface-alt px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-wide text-ink-dim transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-ink"
+            className="theme-control flex min-h-10 items-center gap-2 rounded-md border border-border bg-surface-alt px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-ink-dim transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-ink"
           >
             <span className="text-sm leading-none" aria-hidden="true">
               {themeMode === "light" ? "☼" : themeMode === "dark" ? "◐" : "◌"}
@@ -42,7 +42,7 @@ export default function TopBar({ title, subtitle }) {
 
           {themeMenuOpen && (
             <div
-              className="theme-menu absolute right-0 top-full z-30 mt-2 w-36 rounded-lg border border-border bg-surface p-1.5 shadow-panel"
+              className="theme-menu absolute right-0 top-full z-60 mt-2 w-36 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-surface p-1.5 shadow-panel"
               role="menu"
             >
               {["light", "dark", "system"].map((mode) => (
@@ -66,7 +66,7 @@ export default function TopBar({ title, subtitle }) {
 
         <button
           onClick={() => setLive((v) => !v)}
-          className={`flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${
+          className={`flex min-h-10 shrink-0 items-center gap-1.5 rounded-md border px-3 py-2 text-[11px] font-medium uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${
             live
               ? "border-bull/30 bg-bull-dim text-bull"
               : "border-border bg-surface-alt text-ink-faint"
@@ -75,14 +75,18 @@ export default function TopBar({ title, subtitle }) {
           <span
             className={`h-1.5 w-1.5 rounded-full ${live ? "bg-bull" : "bg-ink-faint"}`}
           />
-          {live ? "Live Trading" : "Paused"}
+          <span className="hidden sm:inline">
+            {live ? "Live Trading" : "Paused"}
+          </span>
+          <span className="sm:hidden">{live ? "Live" : "Off"}</span>
         </button>
 
         <button
           onClick={() => setConfirmHalt(true)}
-          className="rounded-md border border-bear/30 bg-bear-dim px-3 py-1.5 text-[11px] font-medium uppercase tracking-wide text-bear transition-all duration-200 hover:-translate-y-0.5 hover:bg-bear/20"
+          className="min-h-10 shrink-0 rounded-md border border-bear/30 bg-bear-dim px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-bear transition-all duration-200 hover:-translate-y-0.5 hover:bg-bear/20"
         >
-          Emergency Halt
+          <span className="hidden sm:inline">Emergency Halt</span>
+          <span className="sm:hidden">Halt</span>
         </button>
       </div>
 

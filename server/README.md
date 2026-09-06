@@ -8,20 +8,30 @@ management with 1:1 RR trailing stops.
 
 ```bash
 # Windows only — the MetaTrader5 package wraps the native terminal API
-pip install -r requirements.txt
+venv\Scripts\python -m pip install -r requirements.txt
 ```
 
-1. Open MT5, log into your (ideally **demo**) account once manually so the
+1. Copy `.env.example` to a local environment file or export its values in
+   the shell. Never commit real credentials or API tokens.
+2. Open MT5, log into your (ideally **demo**) account once manually so the
    terminal has cached the session.
-2. Set `MT5_LOGIN`, `MT5_PASSWORD`, `MT5_SERVER` as environment variables
-   (don't hardcode them in `config.py` for anything beyond local testing).
-3. Adjust `TRADING_SYMBOLS` and `RISK` in `config.py` to match your broker's
+3. Set `MT5_LOGIN`, `MT5_PASSWORD`, and `MT5_SERVER` as environment variables
+   (don't hardcode them in `config.py`).
+4. For a local dashboard, leave `API_TOKEN` empty. Loopback requests are
+   allowed automatically. For any non-local deployment, set `API_TOKEN` and
+   the matching `VITE_API_TOKEN` in `client/.env`.
+5. Adjust `TRADING_SYMBOLS` and `RISK` in `config.py` to match your broker's
    symbol names (e.g. some brokers suffix `.a`, `EURUSD.pro`, etc.) and your
    real risk tolerance.
-4. Run:
+6. Run:
+
    ```bash
    python main.py
    ```
+
+The frontend defaults to `http://localhost:8000` and starts in `System` theme
+mode. Use the theme menu in the top bar to choose `Light`, `Dark`, or `System`;
+the selection is saved in the browser.
 
 ## File map
 

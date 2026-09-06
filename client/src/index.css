@@ -69,6 +69,7 @@ body,
 body {
   @apply bg-canvas text-ink antialiased;
   font-feature-settings: "tnum" 1;
+  overflow-x: hidden;
 }
 
 .page-transition {
