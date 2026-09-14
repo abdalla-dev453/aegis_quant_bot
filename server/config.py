@@ -15,7 +15,14 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Final
+
+from dotenv import load_dotenv
+
+# Load only this service's local file, never overwrite explicitly supplied
+# deployment secrets, and keep .env out of version control.
+load_dotenv(Path(__file__).with_name(".env"), override=False)
 
 
 # -------------------------------------------------------------
@@ -23,9 +30,9 @@ from typing import Final
 # -------------------------------------------------------------
 @dataclass(frozen=True)
 class MT5Credentials:
-    login: int = int(os.getenv("MT5_LOGIN") or "0")
-    password: str = os.getenv("MT5_PASSWORD") or ""
-    server: str = os.getenv("MT5_SERVER") or ""
+    login: int | None = None
+    password: str | None = None
+    server: str | None = None
 
     # Full path to terminal64.exe. Leave None to let MT5 auto-detect an
     # already-running terminal instance instead of launching a new one.
@@ -54,8 +61,13 @@ class MT5Credentials:
 @dataclass(frozen=True)
 class NewsAPIConfig:
     api_key: str = os.getenv("NEWS_API_KEY", "")
-    base_url: str = os.getenv("NEWS_API_BASE_URL", "https://api.example-economic-calendar.com/v1")
+    news_api_url: str = os.getenv("NEWS_API_URL", "https://newsapi.org/v2/everything")
     api_timeout_seconds: int = 10
+    cache_seconds: int = 60
+    yahoo_rss_url: str = os.getenv(
+        "YAHOO_FINANCE_RSS_URL",
+        "https://feeds.finance.yahoo.com/rss/2.0/headline?s=EURUSD%3DX%2CGBPUSD%3DX%2CGC%3DF&region=US&lang=en-US",
+    )
 
     # How long before/after a high-impact release the bot refuses new trades
     blackout_minutes_before: int = 30
@@ -69,6 +81,22 @@ class NewsAPIConfig:
         "FOMC Statement",
         "GDP",
     )
+
+
+@dataclass(frozen=True)
+class AIConfig:
+    provider: str = os.getenv("AI_PROVIDER", "openai").lower()
+    model: str = os.getenv("OPENAI_MODEL", "gpt-4o")
+    api_key: str = os.getenv("OPENAI_API_KEY", "")
+    timeout_seconds: float = float(os.getenv("OPENAI_TIMEOUT_SECONDS", "30"))
+
+    def validate(self) -> None:
+        if self.provider != "openai":
+            raise ValueError("Only AI_PROVIDER=openai is supported by this deployment.")
+        if not self.api_key:
+            raise ValueError("Missing OPENAI_API_KEY. Set it in server/.env or the environment.")
+        if self.timeout_seconds <= 0:
+            raise ValueError("OPENAI_TIMEOUT_SECONDS must be greater than zero.")
 
 
 # -----------------------------------------------
@@ -117,6 +145,11 @@ class IndicatorConfig:
 class RiskConfig:
     risk_per_trade_pct: float = 1.5  # % of equity risked per trade
     max_daily_loss_pct: float = 4.0  # halt new entries for the rest of the day past this drawdown
+    # This is intentionally independent of the daily-loss guard.  It is a
+    # high-water-mark circuit breaker and remains latched until manually reset.
+    max_drawdown_from_peak_pct: float = 8.0
+    max_trades_per_day: int = 6
+    correlation_threshold: float = 0.70
     atr_sl_multiplier: float = 1.5  # SL = entry -/+ (ATR * multiplier)
     atr_tp_multiplier: float = 3.0  # TP = entry -/+ (ATR * multiplier) -> 2:1 default
     trailing_trigger_rr: float = 1.0  # start trailing once trade hits 1:1 RR
@@ -124,6 +157,29 @@ class RiskConfig:
     max_concurrent_positions: int = 3
     magic_number: int = 990011
     deviation_points: int = 20  # max slippage tolerance
+
+
+@dataclass(frozen=True)
+class ExecutionConfig:
+    """Live order submission is opt-in; paper is the safe deployment default."""
+
+    mode: str = os.getenv("TRADING_MODE", "paper").lower()
+
+    def validate(self) -> None:
+        if self.mode not in {"paper", "live"}:
+            raise ValueError("TRADING_MODE must be either 'paper' or 'live'.")
+
+    @property
+    def live_orders_enabled(self) -> bool:
+        return self.mode == "live"
+
+
+# Correlations used as a conservative pre-trade exposure guard.  Keep this
+# explicit (rather than pretending a short price history is a reliable
+# estimate) and extend it when adding tradable symbols.
+SYMBOL_CORRELATIONS: Final[dict[tuple[str, str], float]] = {
+    ("EURUSD", "GBPUSD"): 0.85,
+}
 
 
 # ----------------------------------------------------------
@@ -148,8 +204,10 @@ class LoggingConfig:
 # Single point of truth every other module imports.
 CREDENTIALS = MT5Credentials()
 NEWS_CONFIG = NewsAPIConfig()
+AI = AIConfig()
 INDICATORS = IndicatorConfig()
 RISK = RiskConfig()
+EXECUTION = ExecutionConfig()
 STRATEGY = StrategyConfig()
 LOGGING = LoggingConfig()
 

@@ -95,11 +95,18 @@ export async function fetchRisk() {
   return {
     drawdownPct: num(d.drawdownPct),
     maxDrawdownCeilingPct: num(d.maxDrawdownCeilingPct, 5.0),
+    dailyLossCeilingPct: num(d.dailyLossCeilingPct, 4.0),
     marginUtilizedPct: num(d.marginUtilizedPct),
     openPositions: Math.max(0, Math.trunc(num(d.openPositions))),
-    dailyVaR: num(d.dailyVaR),
+    tradesToday: Math.max(0, Math.trunc(num(d.tradesToday))),
+    maxTradesPerDay: Math.max(0, Math.trunc(num(d.maxTradesPerDay))),
+    peakDrawdownHalted: Boolean(d.peakDrawdownHalted),
     riskPerTradePct: d.riskPerTradePct != null ? num(d.riskPerTradePct) : null,
   };
+}
+
+export function resetPeakDrawdownGuard() {
+  return apiRequest("/api/risk/reset-peak-drawdown", { method: "POST" });
 }
 
 export async function fetchPerformance() {

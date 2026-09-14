@@ -1,5 +1,7 @@
 import { lazy, Suspense, useState } from "react";
 import Sidebar from "./components/Sidebar.jsx";
+import CookieBanner from "./components/CookieBanner.jsx";
+import MobileCTA from "./components/MobileCTA.jsx";
 import { ThemeProvider } from "./lib/theme.js";
 import { useBotFeed } from "./lib/useBotFeed.js";
 
@@ -8,6 +10,8 @@ const Logs = lazy(() => import("./pages/Logs.jsx"));
 const PerformanceMatrix = lazy(() => import("./pages/PerformanceMatrix.jsx"));
 const Settings = lazy(() => import("./pages/Settings.jsx"));
 const StrategyBuilder = lazy(() => import("./pages/StrategyBuilder.jsx"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy.jsx"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService.jsx"));
 
 const PAGES = {
   dashboard: Dashboard,
@@ -15,6 +19,8 @@ const PAGES = {
   strategy: StrategyBuilder,
   logs: Logs,
   settings: Settings,
+  privacy: PrivacyPolicy,
+  terms: TermsOfService,
 };
 
 export default function App() {
@@ -31,7 +37,7 @@ export default function App() {
           connected={connected}
         />
 
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto pb-20 md:pb-0">
           <Suspense
             fallback={
               <div className="page-transition p-6 text-sm text-ink-dim">
@@ -45,6 +51,8 @@ export default function App() {
           </Suspense>
         </main>
       </div>
+      <MobileCTA />
+      <CookieBanner />
     </ThemeProvider>
   );
 }

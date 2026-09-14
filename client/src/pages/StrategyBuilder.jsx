@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Panel from "../components/Panel.jsx";
 import TopBar from "../components/TopBar.jsx";
 import { fetchSettings } from "../lib/botFeed.js";
+import { SkeletonCard, SkeletonRow } from "../components/SkeletonLoaders.jsx";
 
 const EMPTY = {
   symbols: [],
@@ -18,6 +19,7 @@ export default function StrategyBuilder() {
   const [settings, setSettings] = useState(EMPTY);
   const [status, setStatus] = useState("Loading server configuration...");
   const [draft, setDraft] = useState({ risk: "", stop: "", target: "" });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchSettings()
@@ -29,8 +31,12 @@ export default function StrategyBuilder() {
           target: String(data.atrTakeProfitMultiplier),
         });
         setStatus("Connected to server configuration");
+        setLoading(false);
       })
-      .catch((error) => setStatus(error.message));
+      .catch((error) => {
+        setStatus(error.message);
+        setLoading(false);
+      });
   }, []);
 
   const validate = () => {
@@ -62,23 +68,31 @@ export default function StrategyBuilder() {
       />
       <div className="grid flex-1 gap-4 overflow-y-auto px-8 py-5 lg:grid-cols-2">
         <Panel title="Server-authoritative strategy">
-          <div className="grid grid-cols-2 gap-3 text-[12px]">
-            <Value
-              label="Trigger timeframe"
-              value={settings.timeframeTrigger}
-            />
-            <Value label="Bias timeframe" value={settings.timeframeBias} />
-            <Value label="Symbols" value={settings.symbols.join(", ") || "-"} />
-            <Value label="Magic number" value={settings.magicNumber || "-"} />
-            <Value
-              label="Max positions"
-              value={settings.maxConcurrentPositions}
-            />
-            <Value
-              label="Risk per trade"
-              value={`${settings.riskPerTradePct}%`}
-            />
-          </div>
+          {!loading ? (
+            <div className="grid grid-cols-2 gap-3 text-[12px]">
+              <Value
+                label="Trigger timeframe"
+                value={settings.timeframeTrigger}
+              />
+              <Value label="Bias timeframe" value={settings.timeframeBias} />
+              <Value label="Symbols" value={settings.symbols.join(", ") || "-"} />
+              <Value label="Magic number" value={settings.magicNumber || "-"} />
+              <Value
+                label="Max positions"
+                value={settings.maxConcurrentPositions}
+              />
+              <Value
+                label="Risk per trade"
+                value={`${settings.riskPerTradePct}%`}
+              />
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+            </div>
+          )}
           <p className="mt-4 border-t border-border pt-3 text-[11px] leading-relaxed text-ink-faint">
             Entries require H1/H4 EMA agreement, rising or falling RSI
             confirmation, ATR stops, and sentiment confirmation. This screen

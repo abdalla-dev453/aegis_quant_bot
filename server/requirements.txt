@@ -3,3 +3,11 @@ pandas_ta==0.4.71b0
 MetaTrader5>=5.0.45; platform_system == "Windows"
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+openai>=1.0.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+requests>=2.31.0
+mt5linux>=0.1.0; platform_system == "Linux"
+prometheus-client>=0.19.0

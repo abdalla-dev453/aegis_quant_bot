@@ -24,7 +24,7 @@ export function AccountCard({ account }) {
   );
 }
 
-export function RiskCard({ risk }) {
+export function RiskCard({ risk, onResetPeakGuard }) {
   const pct = Math.min(100, (risk.drawdownPct / risk.maxDrawdownCeilingPct) * 100);
   return (
     <Panel title="Risk Exposure · Live">
@@ -44,8 +44,19 @@ export function RiskCard({ risk }) {
         <Metric label="Margin Utilized" value={`${risk.marginUtilizedPct.toFixed(1)}%`} />
         <Metric label="Open Positions" value={risk.openPositions} />
         <Metric label="Max DD Ceiling" value={`${risk.maxDrawdownCeilingPct.toFixed(2)}%`} />
-        <Metric label="Daily VaR" value={money(risk.dailyVaR)} />
+        <Metric label="Daily Loss Limit" value={`${risk.dailyLossCeilingPct.toFixed(2)}%`} />
+        <Metric label="Trades Today" value={`${risk.tradesToday} / ${risk.maxTradesPerDay}`} />
+        <Metric label="Peak Guard" value={risk.peakDrawdownHalted ? "HALTED" : "ACTIVE"} tone={risk.peakDrawdownHalted ? "bear" : "bull"} />
       </div>
+      {risk.peakDrawdownHalted && (
+        <button
+          type="button"
+          className="mt-4 rounded border border-bear/50 px-2 py-1 text-[10px] uppercase tracking-wider text-bear hover:bg-bear/10"
+          onClick={onResetPeakGuard}
+        >
+          Manually reset peak guard
+        </button>
+      )}
     </Panel>
   );
 }

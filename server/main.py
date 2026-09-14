@@ -23,6 +23,9 @@ import pandas as pd
 
 from config import (
     CANDLES_TO_FETCH,
+    AI,
+    EXECUTION,
+    INDICATORS,
     LOGGING,
     RISK,
     STRATEGY,
@@ -42,7 +45,9 @@ from data_provider import (
     resolved_symbol,
 )
 from execution import place_order, manage_trailing_stops
-from strategy import TradeDirection, compute_indicators, generate_signal
+from strategy import TradeDirection, compute_indicators
+from ai_engine import ProposalAction, propose_trade, validate_ai_configuration
+from news_provider import get_latest_high_impact_news
 from runtime_state import add_log, update
 
 logger = logging.getLogger("trading_bot.main")
@@ -132,36 +137,61 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             tracker.mark_seen(symbol, latest_candle_time)
             return
 
-        signal = await asyncio.to_thread(generate_signal, symbol, df_h1, df_h4)
         tracker.mark_seen(symbol, latest_candle_time)
-
-        logger.info(
-            "%s | candle=%s | trend=%s | sentiment=%+.2f | signal=%s | reason=%s",
-            symbol,
-            latest_candle_time,
-            signal.technical_trend.value,
-            signal.sentiment_score,
-            signal.direction.value,
-            signal.reason,
+        h1_last, h4_last = df_h1.iloc[-1], df_h4.iloc[-1]
+        market_context = {
+            "candle_time_utc": latest_candle_time.isoformat(),
+            "trigger_timeframe": TIMEFRAME_TRIGGER,
+            "bias_timeframe": TIMEFRAME_BIAS,
+            "h1": {
+                "close": float(h1_last["close"]),
+                "ema_fast": float(h1_last[f"ema_{INDICATORS.ema_fast}"]),
+                "ema_slow": float(h1_last[f"ema_{INDICATORS.ema_slow}"]),
+                "rsi": float(h1_last["rsi"]),
+                "atr": float(h1_last["atr"]),
+            },
+            "h4": {
+                "close": float(h4_last["close"]),
+                "ema_fast": float(h4_last[f"ema_{INDICATORS.ema_fast}"]),
+                "ema_slow": float(h4_last[f"ema_{INDICATORS.ema_slow}"]),
+                "rsi": float(h4_last["rsi"]),
+                "atr": float(h4_last["atr"]),
+            },
+        }
+        news_result = await asyncio.to_thread(get_latest_high_impact_news, 10, 24)
+        proposal = await propose_trade(
+            symbol, market_context, news_result.items, news_result.warning
         )
-        technical = (
-            1.0
-            if signal.technical_trend.value == "bullish"
-            else -1.0 if signal.technical_trend.value == "bearish" else 0.0
-        )
+        direction = {
+            ProposalAction.BUY: TradeDirection.BUY,
+            ProposalAction.SELL: TradeDirection.SELL,
+            ProposalAction.HOLD: TradeDirection.NONE,
+        }[proposal.action]
+        technical = 1.0 if direction == TradeDirection.BUY else -1.0 if direction == TradeDirection.SELL else 0.0
+        logger.info("%s | candle=%s | AI action=%s | confidence=%.2f | reason=%s", symbol, latest_candle_time, proposal.action.value, proposal.confidence_score, proposal.reasoning)
         update(
             last_signal={
                 "composite": technical,
-                "label": signal.technical_trend.value.upper(),
+                "label": proposal.action.value,
                 "technical": technical,
-                "sentiment": signal.sentiment_score,
-                "momentum": technical if signal.direction != TradeDirection.NONE else 0.0,
+                "sentiment": 0.0,
+                "momentum": technical,
             }
         )
-        add_log("INFO", f"{symbol} {signal.direction.value}: {signal.reason}")
+        add_log("INFO", f"{symbol} AI {proposal.action.value}: {proposal.reasoning}")
 
-        if signal.direction in (TradeDirection.BUY, TradeDirection.SELL):
-            await asyncio.to_thread(place_order, symbol, signal.direction, signal.atr)
+        if direction in (TradeDirection.BUY, TradeDirection.SELL):
+            audit_context = {
+                "candle_time": latest_candle_time.isoformat(),
+                "ai_confidence_score": proposal.confidence_score,
+                "ai_market_context": market_context,
+                "live_news": news_result.items,
+                "news_warning": news_result.warning,
+            }
+            await asyncio.to_thread(
+                place_order, symbol, direction, float(h1_last["atr"]), proposal.reasoning,
+                audit_context, proposal.volume, proposal.stop_loss, proposal.take_profit,
+            )
 
     except MT5ConnectionError as e:
         logger.error("%s: connection error during evaluation: %s", symbol, e)
@@ -236,8 +266,16 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
 
 async def main() -> None:
     setup_logging()
+    try:
+        validate_ai_configuration()
+        EXECUTION.validate()
+    except ValueError as exc:
+        logger.critical("AI initialization aborted: %s", exc)
+        return
     logger.info(
-        "Starting trading bot | symbols=%s | risk/trade=%.2f%%",
+        "Starting AI trading bot | mode=%s | model=%s | symbols=%s | risk/trade=%.2f%%",
+        EXECUTION.mode,
+        AI.model,
         [s.name for s in TRADING_SYMBOLS],
         RISK.risk_per_trade_pct,
     )

@@ -1,0 +1,20 @@
+{
+  "name": "Onyx FX — Algorithmic Trading Engine",
+  "short_name": "Onyx FX",
+  "description": "AI-driven algorithmic trading with real-time MT5 execution and institutional risk management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d14",
+  "theme_color": "#0a0d14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business", "productivity"],
+  "screenshots": []
+}

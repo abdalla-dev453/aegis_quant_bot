@@ -26,7 +26,7 @@ try:
 except ImportError:  # pragma: no cover - Linux/test environment only.
     mt5 = cast(Any, None)
 
-from config import RISK
+from config import EXECUTION, RISK, SYMBOL_CORRELATIONS
 from data_provider import (
     ensure_connected,
     get_account_equity,
@@ -193,16 +193,21 @@ _daily_guard_lock = threading.Lock()
 _day_start_equity: float | None = None
 _day_start_date: datetime.date | None = None
 _trading_halted_today = False
+_trades_today = 0
+_trades_today_date: datetime.date | None = None
+_peak_equity: float | None = None
+_peak_equity_halted = False
 
 
 def _refresh_daily_guard() -> None:
-    global _day_start_equity, _day_start_date, _trading_halted_today
+    global _day_start_equity, _day_start_date, _trading_halted_today, _trades_today, _trades_today_date
     today = datetime.datetime.now(datetime.timezone.utc).date()
     with _daily_guard_lock:
         if _day_start_date != today:
             _day_start_date = today
             _day_start_equity = get_account_equity()
             _trading_halted_today = False
+            _trades_today_date, _trades_today = today, 0
             logger.info("Daily risk guard reset. Baseline equity=%.2f", _day_start_equity)
 
 
@@ -221,6 +226,97 @@ def check_daily_loss_guard() -> bool:
                 "Daily loss limit hit: %.2f%% (limit %.2f%%). Entries halted for today.",
                 drawdown_pct,
                 RISK.max_daily_loss_pct,
+            )
+            return True
+    return False
+
+
+def check_max_drawdown_guard() -> bool:
+    """Latch trading after the configured peak-to-equity drawdown is hit."""
+    global _peak_equity, _peak_equity_halted
+    equity = get_account_equity()
+    with _daily_guard_lock:
+        if _peak_equity is None or equity > _peak_equity:
+            _peak_equity = equity
+        if _peak_equity_halted:
+            return True
+        drawdown_pct = (
+            (_peak_equity - equity) / _peak_equity * 100.0 if _peak_equity else 0.0
+        )
+        if drawdown_pct >= RISK.max_drawdown_from_peak_pct:
+            _peak_equity_halted = True
+            logger.error(
+                "Peak drawdown limit hit: %.2f%% (limit %.2f%%). Manual reset required.",
+                drawdown_pct,
+                RISK.max_drawdown_from_peak_pct,
+            )
+            return True
+    return False
+
+
+def reset_max_drawdown_guard() -> None:
+    """Manually re-enable entries, establishing the current equity as the new peak."""
+    global _peak_equity, _peak_equity_halted
+    equity = get_account_equity()
+    with _daily_guard_lock:
+        _peak_equity = equity
+        _peak_equity_halted = False
+    logger.warning("Peak drawdown guard manually reset. New peak equity=%.2f", equity)
+
+
+def risk_guard_status() -> dict[str, float | bool | int]:
+    """Return the live circuit-breaker state for the monitoring API."""
+    equity = get_account_equity()
+    with _daily_guard_lock:
+        peak = _peak_equity if _peak_equity is not None else equity
+        peak_drawdown = (peak - equity) / peak * 100.0 if peak > 0 else 0.0
+        return {
+            "peakDrawdownPct": max(0.0, peak_drawdown),
+            "peakDrawdownHalted": _peak_equity_halted,
+            "tradesToday": _trades_today,
+        }
+
+
+def check_max_trades_guard() -> bool:
+    _refresh_daily_guard()
+    with _daily_guard_lock:
+        return _trades_today >= RISK.max_trades_per_day
+
+
+def _record_filled_trade() -> None:
+    global _trades_today
+    _refresh_daily_guard()
+    with _daily_guard_lock:
+        _trades_today += 1
+
+
+def _canonical_symbol(symbol: str) -> str:
+    """Map common broker suffixes to the configured base symbol."""
+    for candidate in {part for pair in SYMBOL_CORRELATIONS for part in pair}:
+        if symbol.upper().startswith(candidate):
+            return candidate
+    return symbol.upper()
+
+
+def is_correlated_exposure_blocked(
+    symbol: str, direction: TradeDirection, open_positions: list[Any]
+) -> bool:
+    """Block same-direction entries with a configured, highly correlated exposure."""
+    candidate = _canonical_symbol(symbol)
+    requested_is_buy = direction == TradeDirection.BUY
+    for position in open_positions:
+        position_symbol = _canonical_symbol(str(position.symbol))
+        pair = tuple(sorted((candidate, position_symbol)))
+        correlation = SYMBOL_CORRELATIONS.get(pair, 0.0)
+        position_is_buy = position.type == mt5.POSITION_TYPE_BUY
+        if (
+            candidate != position_symbol
+            and correlation >= RISK.correlation_threshold
+            and requested_is_buy == position_is_buy
+        ):
+            logger.warning(
+                "Skipping %s %s: correlated %s exposure already open (rho=%.2f).",
+                symbol, direction.value, position.symbol, correlation,
             )
             return True
     return False
@@ -349,7 +445,16 @@ def _retcode_to_text(code: int) -> str:
 # Order placement
 # ----------------------------------------------------------------
 @mt5_serialized
-def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | None:
+def place_order(
+    symbol: str,
+    direction: TradeDirection,
+    atr: float,
+    signal_reason: str = "",
+    audit_context: dict[str, Any] | None = None,
+    requested_volume: float | None = None,
+    requested_stop_loss: float | None = None,
+    requested_take_profit: float | None = None,
+) -> dict | None:
     """
     Sizes, prices, and sends a market order with SL/TP attached. Returns the
     MT5 order result as a dict on success, None on failure (never raises for
@@ -360,6 +465,12 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
 
     if check_daily_loss_guard():
         logger.info("Skipping %s %s: daily loss guard active.", symbol, direction.value)
+        return None
+    if check_max_drawdown_guard():
+        logger.info("Skipping %s %s: peak drawdown guard active.", symbol, direction.value)
+        return None
+    if check_max_trades_guard():
+        logger.info("Skipping %s %s: daily trade limit reached (%d).", symbol, direction.value, RISK.max_trades_per_day)
         return None
 
     # Keep the cap global across this bot's symbols, matching the configured risk limit.
@@ -373,6 +484,8 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
             RISK.max_concurrent_positions,
         )
         return None
+    if is_correlated_exposure_blocked(symbol, direction, open_positions):
+        return None
 
     tick = mt5.symbol_info_tick(symbol)
     if tick is None:
@@ -385,9 +498,28 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
         return None
 
     try:
-        sl, tp = calculate_sl_tp(symbol, direction, entry_price, atr)
+        if requested_stop_loss is None or requested_take_profit is None:
+            sl, tp = calculate_sl_tp(symbol, direction, entry_price, atr)
+        else:
+            sl, tp = requested_stop_loss, requested_take_profit
+            if direction == TradeDirection.BUY and not (sl < entry_price < tp):
+                raise OrderError("BUY proposal must have stop_loss < entry < take_profit")
+            if direction == TradeDirection.SELL and not (tp < entry_price < sl):
+                raise OrderError("SELL proposal must have take_profit < entry < stop_loss")
         sl_distance = abs(entry_price - sl)
-        lots = calculate_lot_size(symbol, sl_distance)
+        max_risk_lots = calculate_lot_size(symbol, sl_distance)
+        lots = requested_volume if requested_volume is not None else max_risk_lots
+        if requested_volume is not None and requested_volume > max_risk_lots:
+            raise OrderError(
+                f"AI volume {requested_volume} exceeds risk-capped volume {max_risk_lots}"
+            )
+        sym = _get_symbol(symbol)
+        if lots < sym.info.volume_min or lots > sym.info.volume_max:
+            raise OrderError(f"AI volume {lots} is outside broker bounds for {symbol}")
+        # Always round down: an AI-proposed volume must never be rounded into
+        # a larger-than-approved risk exposure.
+        lots = math.floor(lots / sym.step) * sym.step
+        lots = round(lots, sym.step_decimals)
     except OrderError as e:
         logger.error("Pre-trade calculation failed for %s: %s", symbol, e)
         return None
@@ -418,10 +550,28 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
         "tp": tp,
         "deviation": max(int(RISK.deviation_points), 20),  # broker-safe minimum tolerance
         "magic": RISK.magic_number,
-        "comment": "confluence-bot",
+        "comment": "ai-proposal-bot",
         "type_time": mt5.ORDER_TIME_GTC,
         "type_filling": mt5.ORDER_FILLING_IOC,
     }
+
+    # Broker-side preflight catches account/symbol constraints which can only
+    # be known by the trade server at this instant. A successful check still
+    # does not replace the retcode validation after order_send.
+    check = mt5.order_check(request)
+    acceptable_check_codes = {0, getattr(mt5, "TRADE_RETCODE_DONE", 0)}
+    if check is None or getattr(check, "retcode", None) not in acceptable_check_codes:
+        logger.error(
+            "Broker order_check rejected %s %s: %s",
+            symbol, direction.value, getattr(check, "comment", mt5.last_error()),
+        )
+        return None
+
+    if not EXECUTION.live_orders_enabled:
+        logger.warning(
+            "PAPER MODE: order_send suppressed for %s %s. Request=%s", symbol, direction.value, request
+        )
+        return {"paper": True, "request": request}
 
     result = mt5.order_send(request)
     if result is None:
@@ -478,6 +628,20 @@ def place_order(symbol: str, direction: TradeDirection, atr: float) -> dict | No
     )
     if result.order:
         _record_original_risk(int(result.order), sl_distance)
+    _record_filled_trade()
+    audit_record = {
+        "ticket": int(result.order or 0),
+        "symbol": symbol,
+        "direction": direction.value,
+        "fill_price": fill_price,
+        "volume": lots,
+        "sl": sl,
+        "tp": tp,
+        "atr": atr,
+        "reason": signal_reason or "not supplied",
+        **(audit_context or {}),
+    }
+    logger.info("TRADE_AUDIT %s", json.dumps(audit_record, sort_keys=True, default=str))
     return result._asdict()
 
 

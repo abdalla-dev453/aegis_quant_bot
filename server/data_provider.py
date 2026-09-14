@@ -10,6 +10,7 @@ reconnection logic lives in exactly one place.
 from __future__ import annotations
 
 import logging
+import os
 import random
 import time
 from contextlib import contextmanager
@@ -24,6 +25,18 @@ try:
     import MetaTrader5 as mt5
 except ImportError:  # pragma: no cover - Linux/test environment only.
     mt5 = cast(Any, None)
+    if os.getenv("MT5LINUX_ENABLED", "").lower() in {"1", "true", "yes"}:
+        try:
+            # mt5linux starts a bridge/container during construction.  Make
+            # that an explicit deployment choice rather than an import side
+            # effect so APIs, tests, and health tooling remain safe to load.
+            from mt5linux import MetaTrader5
+
+            mt5 = MetaTrader5()
+        except Exception as exc:
+            logging.getLogger("trading_bot.data_provider").error(
+                "MT5LINUX_ENABLED but terminal bridge could not start: %s", exc
+            )
 
 from config import (
     CREDENTIALS,
@@ -128,24 +141,29 @@ def _initialize_connection(
 ) -> None:
     require_mt5_runtime()
 
-    try:
-        CREDENTIALS.validate_live_trade_config()
-    except ValueError as exc:
-        raise MT5ConnectionError(str(exc)) from exc
+    # Determine credentials: runtime (from API) takes priority over config (.env)
+    login = _runtime_credentials.get("login", CREDENTIALS.login)
+    password = _runtime_credentials.get("password", CREDENTIALS.password)
+    server = _runtime_credentials.get("server", CREDENTIALS.server)
+    terminal_path = _runtime_credentials.get("terminal_path", CREDENTIALS.terminal_path)
+
+    # Validate that we have at least one complete set of credentials
+    if not (login and password and server):
+        raise MT5ConnectionError(
+            "MT5 credentials not configured. Provide login, password, and server "
+            "via the frontend login form (POST /api/settings/credentials) or set "
+            "MT5_LOGIN, MT5_PASSWORD, MT5_SERVER in the environment for local development."
+        )
 
     for attempt in range(1, max_retries + 1):
         kwargs = {}
-        login = _runtime_credentials.get("login", CREDENTIALS.login)
-        password = _runtime_credentials.get("password", CREDENTIALS.password)
-        server = _runtime_credentials.get("server", CREDENTIALS.server)
-        terminal_path = _runtime_credentials.get("terminal_path", CREDENTIALS.terminal_path)
         if terminal_path:
             kwargs["path"] = terminal_path
 
         ok = mt5.initialize(
-            login=login or None,
-            password=password or None,
-            server=server or None,
+            login=login,
+            password=password,
+            server=server,
             timeout=CREDENTIALS.timeout_ms,
             **kwargs,
         )

@@ -25,9 +25,12 @@ class AccountState:
 class RiskState:
     drawdownPct: float
     maxDrawdownCeilingPct: float
+    dailyLossCeilingPct: float
     marginUtilizedPct: float
     openPositions: int
-    dailyVaR: float
+    tradesToday: int
+    maxTradesPerDay: int
+    peakDrawdownHalted: bool
     riskPerTradePct: float | None = None  # from config.RISK.risk_per_trade_pct
 
 

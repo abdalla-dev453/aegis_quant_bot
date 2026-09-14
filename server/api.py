@@ -15,7 +15,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from config import CREDENTIALS, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS
+from config import CREDENTIALS, EXECUTION, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS
 from data_provider import (
     configure_runtime_credentials,
     ensure_connected,
@@ -24,10 +24,17 @@ from data_provider import (
     initialize_connection,
     mt5,
     mt5_operation_lock,
+    resolve_and_validate_symbols,
     shutdown_connection,
 )
 from runtime_state import read
-from strategy import analyze_market_sentiment, compute_indicators
+from strategy import compute_indicators
+from execution import reset_max_drawdown_guard, risk_guard_status
+from news_provider import get_latest_high_impact_news
+
+import time as time_mod
+from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
+from fastapi.responses import Response
 
 app = FastAPI(title="Aegis Quant API", version="1.0.0")
 API_TOKEN = os.getenv("API_TOKEN", "")
@@ -90,7 +97,6 @@ app.add_middleware(
 )
 
 _calendar_cache: tuple[float, dict[str, Any]] | None = None
-_credentials_configured = CREDENTIALS.is_configured()
 
 
 class CredentialsPayload(BaseModel):
@@ -156,13 +162,42 @@ def _deal_net(deal: Any) -> float:
 def health() -> dict[str, Any]:
     state = read()
     connected = bool(state["connected"])
-    return {"ok": connected, "connected": connected, "service": "aegis-quant"}
+    mt5_healthy = False
+    last_candle_age_seconds = None
+    terminal_info_str = None
+
+    try:
+        with mt5_operation_lock():
+            info = mt5.terminal_info()
+            if info and info.connected:
+                mt5_healthy = True
+                terminal_info_str = f"{info.name} build {info.build}"
+                # Check data freshness on primary symbol
+                primary = TRADING_SYMBOLS[0].name
+                rates = mt5.copy_rates_from_pos(primary, mt5.TIMEFRAME_H1, 1)
+                if rates is not None and len(rates) > 0:
+                    import time as time_mod
+                    last_candle_age_seconds = time_mod.time() - rates[0]["time"]
+    except Exception:
+        pass
+
+    return {
+        "ok": connected and mt5_healthy,
+        "connected": connected,
+        "mt5_healthy": mt5_healthy,
+        "terminal": terminal_info_str,
+        "last_candle_age_seconds": last_candle_age_seconds,
+        "service": "aegis-quant",
+        "tradingMode": EXECUTION.mode,
+    }
 
 
 @app.get("/api/settings", dependencies=[Depends(protected)])
 def settings() -> dict[str, Any]:
+    state = read()
     return {
-        "credentialsConfigured": _credentials_configured,
+        "credentialsConfigured": bool(state.get("connected")),
+        "tradingMode": EXECUTION.mode,
         "symbols": [symbol.name for symbol in TRADING_SYMBOLS],
         "timeframeTrigger": "H1",
         "timeframeBias": "H4",
@@ -170,13 +205,15 @@ def settings() -> dict[str, Any]:
         "atrStopMultiplier": RISK.atr_sl_multiplier,
         "atrTakeProfitMultiplier": RISK.atr_tp_multiplier,
         "maxConcurrentPositions": RISK.max_concurrent_positions,
+        "maxDailyLossPct": RISK.max_daily_loss_pct,
+        "maxDrawdownFromPeakPct": RISK.max_drawdown_from_peak_pct,
+        "maxTradesPerDay": RISK.max_trades_per_day,
         "magicNumber": RISK.magic_number,
     }
 
 
 @app.post("/api/settings/credentials", dependencies=[Depends(protected_credentials)])
 def save_credentials(payload: CredentialsPayload) -> dict[str, Any]:
-    global _credentials_configured
     try:
         if payload.terminal_path:
             terminal = Path(payload.terminal_path).expanduser().resolve()
@@ -188,10 +225,11 @@ def save_credentials(payload: CredentialsPayload) -> dict[str, Any]:
             )
             shutdown_connection()
             initialize_connection()
-        _credentials_configured = True
-        return {"ok": True, "connected": True, "message": "MT5 connection established."}
+            resolve_and_validate_symbols()
+        state = read()
+        connected = bool(state.get("connected"))
+        return {"ok": True, "connected": connected, "message": "MT5 connection established."}
     except Exception:
-        _credentials_configured = False
         raise HTTPException(status_code=400, detail="MT5 connection failed")
 
 
@@ -225,17 +263,25 @@ def risk() -> dict[str, Any]:
     info = _account()
     margin = float(info.margin or 0.0)
     equity = float(info.equity or 0.0)
-    today_pnl = account()["todaysPnl"]
-    start_equity = equity - today_pnl
-    drawdown = max(0.0, (start_equity - equity) / start_equity * 100.0) if start_equity > 0 else 0.0
+    guard = risk_guard_status()
     return {
-        "drawdownPct": drawdown,
-        "maxDrawdownCeilingPct": 3.0,
+        "drawdownPct": guard["peakDrawdownPct"],
+        "maxDrawdownCeilingPct": RISK.max_drawdown_from_peak_pct,
+        "dailyLossCeilingPct": RISK.max_daily_loss_pct,
         "marginUtilizedPct": margin / equity * 100.0 if equity else 0.0,
         "openPositions": len(_position_rows()),
-        "dailyVaR": 0.0,
+        "tradesToday": guard["tradesToday"],
+        "maxTradesPerDay": RISK.max_trades_per_day,
+        "peakDrawdownHalted": guard["peakDrawdownHalted"],
         "riskPerTradePct": RISK.risk_per_trade_pct,
     }
+
+
+@app.post("/api/risk/reset-peak-drawdown", dependencies=[Depends(protected_credentials)])
+def reset_peak_drawdown() -> dict[str, Any]:
+    """Explicit operator action; never reset the peak-drawdown latch automatically."""
+    reset_max_drawdown_guard()
+    return {"ok": True, "message": "Peak drawdown guard reset."}
 
 
 @app.get("/api/confluence", dependencies=[Depends(protected)])
@@ -255,25 +301,16 @@ def calendar() -> dict[str, Any]:
     global _calendar_cache
     now = time.monotonic()
     if _calendar_cache is None or now - _calendar_cache[0] >= 30.0:
-        reading = analyze_market_sentiment(TRADING_SYMBOLS[0].name)
-        event = (
-            {
-                "name": reading.next_high_impact_event,
-                "currency": reading.next_event_currency or "",
-                "impact": reading.next_event_impact,
-                "timeUtc": reading.next_event_time_utc or "",
-                "minutesAway": reading.minutes_to_next_event or 0.0,
-            }
-            if reading.next_high_impact_event
-            else None
-        )
-        active = reading.minutes_to_next_event is not None and abs(
-            reading.minutes_to_next_event
-        ) <= max(NEWS_CONFIG.blackout_minutes_before, NEWS_CONFIG.blackout_minutes_after)
+        news = get_latest_high_impact_news(limit=10, hours=24)
+        first = news.items[0] if news.items else None
         payload = {
-            "autoHaltActive": active,
-            "autoHaltEtaSeconds": max(0, int((reading.minutes_to_next_event or 0) * 60)),
-            "nextEvent": event,
+            "autoHaltActive": False,
+            "autoHaltEtaSeconds": 0,
+            "nextEvent": ({
+                "name": first["title"], "currency": first["currency_affected"],
+                "impact": first["impact_level"], "timeUtc": first["timestamp"], "minutesAway": 0.0,
+            } if first else None),
+            "warning": news.warning,
         }
         _calendar_cache = (now, payload)
     return _calendar_cache[1]
@@ -333,6 +370,34 @@ def price_series() -> dict[str, Any]:
         "symbol": symbol,
         "points": points,
     }
+
+
+# --- Prometheus Metrics ---
+API_REQUESTS = Counter("aegis_api_requests_total", "Total API requests", ["method", "endpoint", "status"])
+API_LATENCY = Histogram("aegis_api_latency_seconds", "API request latency", ["method", "endpoint"])
+MT5_CONNECTED = Gauge("aegis_mt5_connected", "MT5 connection status (1=connected)")
+MT5_LAST_CANDLE_AGE = Gauge("aegis_mt5_last_candle_age_seconds", "Age of last H1 candle in seconds")
+AI_REQUESTS = Counter("aegis_ai_requests_total", "Total AI requests", ["result"])
+AI_LATENCY = Histogram("aegis_ai_latency_seconds", "AI request latency")
+ORDERS_PLACED = Counter("aegis_orders_placed_total", "Total orders placed", ["symbol", "direction", "result"])
+POSITIONS_OPEN = Gauge("aegis_positions_open", "Current open positions")
+EQUITY = Gauge("aegis_account_equity", "Account equity")
+DRAWDOWN = Gauge("aegis_drawdown_percent", "Current drawdown percent")
+
+
+@app.middleware("http")
+async def metrics_middleware(request: Request, call_next):
+    start = time_mod.time()
+    response = await call_next(request)
+    duration = time_mod.time() - start
+    API_REQUESTS.labels(method=request.method, endpoint=request.url.path, status=response.status_code).inc()
+    API_LATENCY.labels(method=request.method, endpoint=request.url.path).observe(duration)
+    return response
+
+
+@app.get("/metrics")
+def metrics() -> Response:
+    return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
 
 @app.get("/api/logs", dependencies=[Depends(protected)])

@@ -2,9 +2,10 @@ import { useMemo, useState } from "react";
 import Panel from "../components/Panel.jsx";
 import TopBar from "../components/TopBar.jsx";
 import { useBotFeed } from "../lib/useBotFeed.js";
+import { SkeletonList } from "../components/SkeletonLoaders.jsx";
 
 export default function Logs() {
-  const { logs, connected } = useBotFeed();
+  const { logs, connected, loading } = useBotFeed();
   const [query, setQuery] = useState("");
   const [level, setLevel] = useState("ALL");
   const filtered = useMemo(
@@ -45,7 +46,9 @@ export default function Logs() {
             </select>
           </div>
           <div className="divide-y divide-border">
-            {filtered.length === 0 ? (
+            {loading.logs ? (
+              <SkeletonList items={8} />
+            ) : filtered.length === 0 ? (
               <div className="py-8 text-center text-[12px] text-ink-faint">
                 No matching log entries.
               </div>

@@ -8,17 +8,17 @@ out, which makes it unit-testable without a live terminal.
 
 from __future__ import annotations
 
-import json
 import logging
 import math
-import urllib.request
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from enum import Enum
 
 import pandas as pd
 import pandas_ta as ta
 
 from config import INDICATORS, NEWS_CONFIG, STRATEGY
+from news_provider import get_latest_high_impact_news
 
 logger = logging.getLogger("trading_bot.strategy")
 
@@ -186,7 +186,7 @@ def has_multi_timeframe_ema_rsi_confirmation(
 
 
 # ---------------------------------------------------------------------------
-# Fundamental / sentiment engine (PLACEHOLDER)
+# Fundamental / sentiment compatibility adapter
 # ---------------------------------------------------------------------------
 @dataclass
 class SentimentReading:
@@ -209,59 +209,24 @@ def _neutral_reading() -> SentimentReading:
 
 
 def analyze_market_sentiment(symbol: str) -> SentimentReading:
-    """
-    Fetches sentiment + next high-impact event from the configured news API
-    (NEWS_CONFIG.base_url / NEWS_CONFIG.api_key).
-
-    Fail-safe by design: any network / payload / auth problem returns a
-    NEUTRAL reading. The bot must never crash or trade on garbage because a
-    third-party feed hiccupped. NOTE: with no real API key configured the
-    request will simply fail and the neutral fallback is used.
-    """
-    if not NEWS_CONFIG.api_key or not NEWS_CONFIG.base_url:
-        logger.warning("News API not configured (%s) — using neutral sentiment.", symbol)
+    """Compatibility adapter backed by the live terminal/RSS news pipeline."""
+    result = get_latest_high_impact_news(limit=10, hours=24)
+    if not result.items:
+        if result.warning:
+            logger.warning("Live news unavailable for %s: %s", symbol, result.warning)
         return _neutral_reading()
-
-    url = f"{NEWS_CONFIG.base_url.rstrip('/')}/sentiment"
-    req = urllib.request.Request(
-        url,
-        headers={
-            "Authorization": f"Bearer {NEWS_CONFIG.api_key}",
-            "Accept": "application/json",
-            "X-Symbol": symbol,
-        },
+    item = result.items[0]
+    event_time = datetime.fromisoformat(item["timestamp"].replace("Z", "+00:00"))
+    minutes = (event_time - datetime.now(timezone.utc)).total_seconds() / 60.0
+    return SentimentReading(
+        score=0.0,
+        headline_count=len(result.items),
+        next_high_impact_event=item["title"],
+        minutes_to_next_event=minutes,
+        next_event_currency=item["currency_affected"],
+        next_event_impact=item["impact_level"],
+        next_event_time_utc=item["timestamp"],
     )
-
-    try:
-        with urllib.request.urlopen(req, timeout=NEWS_CONFIG.api_timeout_seconds) as resp:
-            payload = json.loads(resp.read().decode("utf-8"))
-    except Exception as e:
-        logger.warning("Sentiment fetch failed for %s (%s) — using neutral sentiment.", symbol, e)
-        return _neutral_reading()
-
-    try:
-        headlines = payload.get("headlines", [])
-        scores = [float(h["sentiment"]) for h in headlines if math.isfinite(float(h["sentiment"]))]
-        aggregate = round(sum(scores) / len(scores), 3) if scores else 0.0
-        aggregate = max(-1.0, min(1.0, aggregate))
-
-        event = payload.get("next_event") or {}
-        event_name = event.get("name")
-        minutes = event.get("minutes_away")
-        minutes_f = float(minutes) if minutes is not None else None
-
-        return SentimentReading(
-            score=aggregate,
-            headline_count=len(headlines),
-            next_high_impact_event=event_name,
-            minutes_to_next_event=minutes_f,
-            next_event_currency=event.get("currency"),
-            next_event_impact=str(event.get("impact", "HIGH")).upper(),
-            next_event_time_utc=event.get("time_utc") or event.get("timeUtc"),
-        )
-    except (KeyError, TypeError, ValueError) as e:
-        logger.warning("Malformed sentiment payload for %s (%s) — using neutral.", symbol, e)
-        return _neutral_reading()
 
 
 def is_news_blackout(sentiment: SentimentReading) -> bool:
@@ -273,9 +238,13 @@ def is_news_blackout(sentiment: SentimentReading) -> bool:
     if sentiment.minutes_to_next_event is None:
         return False
 
-    is_high_impact = (
-        sentiment.next_event_impact == "HIGH"
-        or (sentiment.next_high_impact_event or "") in NEWS_CONFIG.high_impact_events
+    # Trust an explicit feed impact level.  Name matching is only a fallback
+    # for legacy feeds that omit impact entirely; it must not turn a LOW event
+    # into a blackout simply because its title contains a familiar keyword.
+    declared_impact = sentiment.next_event_impact.upper()
+    is_high_impact = declared_impact == "HIGH" or (
+        declared_impact not in {"HIGH", "MEDIUM", "LOW"}
+        and (sentiment.next_high_impact_event or "") in NEWS_CONFIG.high_impact_events
     )
     if not is_high_impact:
         return False

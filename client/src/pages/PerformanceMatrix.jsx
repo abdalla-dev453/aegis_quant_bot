@@ -4,9 +4,10 @@ import EquityCurveChart from "../components/EquityCurveChart.jsx";
 import Panel from "../components/Panel.jsx";
 import { PerformanceCard } from "../components/StatCards.jsx";
 import { useBotFeed } from "../lib/useBotFeed.js";
+import { SkeletonStatCard, SkeletonChart, SkeletonCard } from "../components/SkeletonLoaders.jsx";
 
 export default function PerformanceMatrix() {
-  const { performance, equityCurve, positions } = useBotFeed();
+  const { performance, equityCurve, positions, loading } = useBotFeed();
 
   const winners = positions.filter((p) => p.pnl >= 0).length;
   const losers = positions.length - winners;
@@ -18,18 +19,30 @@ export default function PerformanceMatrix() {
       <div className="flex-1 space-y-4 overflow-y-auto px-8 py-5">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <EquityCurveChart series={equityCurve} />
+            {loading.equityCurve ? (
+              <SkeletonChart height={320} />
+            ) : (
+              <EquityCurveChart series={equityCurve} />
+            )}
           </div>
-          <PerformanceCard performance={performance} />
+          {loading.performance ? (
+            <SkeletonStatCard />
+          ) : (
+            <PerformanceCard performance={performance} />
+          )}
         </div>
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <Panel title="Open Trade Split">
-            <div className="flex items-center justify-around py-2">
-              <SplitStat label="Winning" value={winners} tone="bull" />
-              <SplitStat label="Losing" value={losers} tone="bear" />
-            </div>
-          </Panel>
+          {loading.positions ? (
+            <SkeletonCard className="lg:col-span-1" />
+          ) : (
+            <Panel title="Open Trade Split">
+              <div className="flex items-center justify-around py-2">
+                <SplitStat label="Winning" value={winners} tone="bull" />
+                <SplitStat label="Losing" value={losers} tone="bear" />
+              </div>
+            </Panel>
+          )}
           <Panel title="Expectancy">
             <div className="py-2 text-center">
               <div className="font-mono text-2xl font-semibold text-ink">

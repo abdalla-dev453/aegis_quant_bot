@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Panel from "../components/Panel.jsx";
 import TopBar from "../components/TopBar.jsx";
 import { fetchSettings, saveCredentials } from "../lib/botFeed.js";
+import { SkeletonCard, SkeletonRow } from "../components/SkeletonLoaders.jsx";
 
 export default function Settings() {
   const [settings, setSettings] = useState(null);
@@ -13,14 +14,19 @@ export default function Settings() {
   });
   const [status, setStatus] = useState("Loading server settings...");
   const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchSettings()
       .then((data) => {
         setSettings(data);
         setStatus("Ready");
+        setLoading(false);
       })
-      .catch((error) => setStatus(error.message));
+      .catch((error) => {
+        setStatus(error.message);
+        setLoading(false);
+      });
   }, []);
 
   const submit = async (event) => {
@@ -51,47 +57,56 @@ export default function Settings() {
       />
       <div className="grid flex-1 gap-4 overflow-y-auto px-8 py-5 lg:grid-cols-2">
         <Panel title="MT5 account connection">
-          <form onSubmit={submit} className="space-y-3">
-            <Field
-              label="Account login"
-              type="number"
-              value={form.login}
-              onChange={(value) => setForm({ ...form, login: value })}
-              required
-            />
-            <Field
-              label="Password"
-              type="password"
-              value={form.password}
-              onChange={(value) => setForm({ ...form, password: value })}
-              required
-            />
-            <Field
-              label="Broker server"
-              value={form.server}
-              onChange={(value) => setForm({ ...form, server: value })}
-              placeholder="Broker-Demo"
-              required
-            />
-            <Field
-              label="Terminal path (optional)"
-              value={form.terminal_path}
-              onChange={(value) => setForm({ ...form, terminal_path: value })}
-              placeholder="C:\\Program Files\\MetaTrader 5\\terminal64.exe"
-            />
-            <button
-              disabled={saving}
-              className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white disabled:cursor-wait disabled:opacity-60"
-            >
-              {saving ? "Connecting..." : "Connect MT5"}
-            </button>
-            <p className="text-[11px] leading-relaxed text-ink-faint">
-              Credentials are sent to the server for this session only. The API
-              does not return or persist the password. Use HTTPS or a private
-              network before entering live credentials.
-            </p>
-            <div className="text-[11px] text-ink-dim">{status}</div>
-          </form>
+          {!loading ? (
+            <form onSubmit={submit} className="space-y-3">
+              <Field
+                label="Account login"
+                type="number"
+                value={form.login}
+                onChange={(value) => setForm({ ...form, login: value })}
+                required
+              />
+              <Field
+                label="Password"
+                type="password"
+                value={form.password}
+                onChange={(value) => setForm({ ...form, password: value })}
+                required
+              />
+              <Field
+                label="Broker server"
+                value={form.server}
+                onChange={(value) => setForm({ ...form, server: value })}
+                placeholder="Broker-Demo"
+                required
+              />
+              <Field
+                label="Terminal path (optional)"
+                value={form.terminal_path}
+                onChange={(value) => setForm({ ...form, terminal_path: value })}
+                placeholder="C:\\Program Files\\MetaTrader 5\\terminal64.exe"
+              />
+              <button
+                disabled={saving}
+                className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white disabled:cursor-wait disabled:opacity-60 w-full sm:w-auto"
+              >
+                {saving ? "Connecting..." : "Connect MT5"}
+              </button>
+              <p className="text-[11px] leading-relaxed text-ink-faint">
+                Credentials are sent to the server for this session only. The API
+                does not return or persist the password. Use HTTPS or a private
+                network before entering live credentials.
+              </p>
+              <div className="text-[11px] text-ink-dim">{status}</div>
+            </form>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={1} />
+            </div>
+          )}
         </Panel>
 
         <Panel title="Effective server configuration">
@@ -125,7 +140,12 @@ export default function Settings() {
               <Row label="Magic number" value={settings.magicNumber} />
             </div>
           ) : (
-            <div className="text-[12px] text-ink-faint">{status}</div>
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+            </div>
           )}
         </Panel>
       </div>

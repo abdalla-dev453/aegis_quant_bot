@@ -42,7 +42,7 @@ GET  /api/performance    -> from a trade-history log/DB you maintain
 GET  /api/positions      -> from execution.get_open_positions()
 GET  /api/equity-curve   -> from a periodically-sampled equity log
 GET  /api/confluence     -> from strategy.generate_signal()'s components
-GET  /api/calendar       -> from strategy.analyze_market_sentiment()
+GET  /api/calendar       -> from server/news_provider.py live news ingestion
 WS   /ws/logs            -> tail of the bot's log file/handler
 ```
 

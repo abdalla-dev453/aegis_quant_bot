@@ -2,9 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0d14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client</title>
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="alternate icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="description" content="Onyx FX — Algorithmic trading engine with AI-driven market analysis, real-time MT5 execution, and institutional-grade risk management." />
+    <meta name="keywords" content="algorithmic trading, MT5, MetaTrader 5, AI trading, forex bot, automated trading, quantitative finance" />
+    <meta property="og:title" content="Onyx FX | Algorithmic Trading Engine" />
+    <meta property="og:description" content="AI-driven algorithmic trading with real-time MT5 execution and institutional risk management." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Onyx FX | Algorithmic Trading Engine" />
+    <meta name="twitter:description" content="AI-driven algorithmic trading with real-time MT5 execution." />
+    <title>Onyx FX — Algorithmic Trading Engine</title>
+    <script>
+      // Prevent flash of wrong theme on load
+      (function() {
+        var theme = localStorage.getItem('theme');
+        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (theme === 'dark' || (!theme && systemDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
