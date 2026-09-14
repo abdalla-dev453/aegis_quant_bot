@@ -47,7 +47,7 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
           <span className="flex h-5 w-5 items-center justify-center rounded-full bg-bull-dim text-bull">
             <CheckIcon />
           </span>
-          <span className="text-xs font-semibold tracking-wide text-ink">AEGIS QUANT</span>
+          <span className="text-xs font-semibold tracking-wide text-ink">Onyx FX</span>
         </div>
 
         {/* Animated Hamburger Trigger Button */}
@@ -82,7 +82,7 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
             <CheckIcon />
           </span>
           <div>
-            <div className="text-sm font-semibold tracking-wide text-ink">AEGIS QUANT</div>
+            <div className="text-sm font-semibold tracking-wide text-ink">Onyx FX</div>
             <div className="text-[10px] uppercase tracking-wider text-ink-faint">Algo Engine v3.4.1</div>
           </div>
         </div>
