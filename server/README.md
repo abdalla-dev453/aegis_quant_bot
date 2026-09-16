@@ -82,3 +82,7 @@ the selection is saved in the browser.
 - **Position sizing is broker-aware**: uses `symbol_info().trade_tick_value`
   / `trade_tick_size` rather than a hardcoded pip value, so 1.5% risk is
   accurate across FX pairs, JPY pairs, and metals alike.
+
+## Deployment
+
+Use [`../deploy/DEPLOYMENT.md`](../deploy/DEPLOYMENT.md) for the systemd service, Nginx reverse proxy, environment setup, health checks, and demo-account acceptance gate. The default deployment mode is paper trading.

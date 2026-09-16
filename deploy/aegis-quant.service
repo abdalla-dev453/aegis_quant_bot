@@ -1,0 +1,28 @@
+[Unit]
+Description=Aegis Quant MT5 AI trading bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+NotifyAccess=main
+User=aegis
+Group=aegis
+WorkingDirectory=/opt/aegis-quant/server
+EnvironmentFile=/etc/aegis-quant.env
+ExecStart=/opt/aegis-quant/.venv/bin/python /opt/aegis-quant/server/main.py
+Restart=on-failure
+RestartSec=10
+WatchdogSec=120
+TimeoutStopSec=45
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ReadWritePaths=/opt/aegis-quant/server /var/log/aegis-quant
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

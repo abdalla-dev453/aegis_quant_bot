@@ -16,13 +16,16 @@ import logging
 import logging.handlers
 import os
 import signal
+import socket
 import sys
 import threading
+import time
 
 import pandas as pd
 
 from config import (
     CANDLES_TO_FETCH,
+    DEPLOYMENT,
     AI,
     EXECUTION,
     INDICATORS,
@@ -53,25 +56,48 @@ from runtime_state import add_log, update
 logger = logging.getLogger("trading_bot.main")
 
 
-def start_dashboard_api() -> None:
-    try:
-        import uvicorn
-        from api import app
+def _systemd_notify(message: str) -> None:
+    notify_socket = os.getenv("NOTIFY_SOCKET")
+    if not notify_socket:
+        return
+    with socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM) as notifier:
+        notifier.sendto(message.encode(), notify_socket)
 
-        api_thread = threading.Thread(
-            target=uvicorn.run,
-            args=(app,),
-            kwargs={
-                "host": os.getenv("API_HOST", "127.0.0.1"),
-                "port": int(os.getenv("API_PORT", "8000")),
-                "log_level": "warning",
-            },
-            daemon=True,
-        )
-        api_thread.start()
-        logger.info("Dashboard API listening on http://127.0.0.1:8000")
-    except Exception:
-        logger.exception("Dashboard API failed to start; trading loop will continue.")
+
+def notify_systemd(message: str) -> None:
+    try:
+        _systemd_notify(message)
+    except OSError:
+        logger.debug("systemd notification failed", exc_info=True)
+
+
+def start_dashboard_api() -> None:
+    import uvicorn
+    from api import app
+
+    config = uvicorn.Config(
+        app,
+        host=DEPLOYMENT.api_host,
+        port=DEPLOYMENT.api_port,
+        log_level="warning",
+    )
+    server = uvicorn.Server(config)
+    server.install_signal_handlers = lambda: None
+    api_thread = threading.Thread(target=server.run, daemon=True)
+    api_thread.start()
+
+    for _ in range(100):
+        if server.started:
+            logger.info(
+                "Dashboard API listening on http://%s:%s",
+                DEPLOYMENT.api_host,
+                DEPLOYMENT.api_port,
+            )
+            return
+        if not api_thread.is_alive():
+            raise RuntimeError("Dashboard API failed to start")
+        time.sleep(0.1)
+    raise RuntimeError("Dashboard API did not become ready within 10 seconds")
 
 
 def setup_logging() -> None:
@@ -223,8 +249,12 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
 
     while not stop_event.is_set():
         if mt5 is None:
-            await stop_event.wait()
-            continue
+            notify_systemd("WATCHDOG=1")
+            try:
+                await asyncio.wait_for(stop_event.wait(), timeout=30)
+            except asyncio.TimeoutError:
+                continue
+            break
 
         had_error = False
         if not stop_event.is_set():
@@ -252,6 +282,8 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
         except Exception:
             logger.exception("Unexpected error while managing trailing stops")
 
+        notify_systemd("WATCHDOG=1")
+
         poll = STRATEGY.loop_poll_seconds
         if had_error:
             extra = backoff.record_failure()
@@ -269,9 +301,10 @@ async def main() -> None:
     try:
         validate_ai_configuration()
         EXECUTION.validate()
+        DEPLOYMENT.validate()
     except ValueError as exc:
-        logger.critical("AI initialization aborted: %s", exc)
-        return
+        logger.critical("Initialization aborted: %s", exc)
+        raise SystemExit(1) from exc
     logger.info(
         "Starting AI trading bot | mode=%s | model=%s | symbols=%s | risk/trade=%.2f%%",
         EXECUTION.mode,
@@ -281,6 +314,7 @@ async def main() -> None:
     )
 
     start_dashboard_api()
+    notify_systemd("READY=1")
     try:
         initialize_connection()
         resolve_and_validate_symbols()
@@ -306,6 +340,7 @@ async def main() -> None:
         await trading_loop(stop_event)
     finally:
         logger.info("Shutting down...")
+        notify_systemd("STOPPING=1")
         update(connected=False)
         shutdown_connection()
 

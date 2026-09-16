@@ -51,39 +51,12 @@ async def _call_openai(...):
     ...
 ```
 
-### 3. **MT5 Connection - No Health Endpoint for Load Balancer**
-**File:** `server/api.py:157-166`
+### 3. **MT5 Connection - Health Endpoint Readiness**
+**File:** `server/api.py:157-205`
 
-**Problem:** `/api/health` only returns connection state but doesn't check MT5 terminal health, data freshness, or order execution capability.
+**Problem:** `/api/health` only returned connection state and always used HTTP 200, so a load balancer could route traffic to a disconnected or stale MT5 service.
 
-**Fix:** Enhance health check:
-```python
-@app.get("/api/health")
-def health():
-    state = read()
-    mt5_healthy = False
-    last_candle_age = None
-    
-    try:
-        with mt5_operation_lock():
-            info = mt5.terminal_info()
-            if info and info.connected:
-                mt5_healthy = True
-                rates = mt5.copy_rates_from_pos("EURUSD", mt5.TIMEFRAME_H1, 1)
-                if rates is not None:
-                    last_candle_age = time.time() - rates[0]['time']
-    except:
-        pass
-    
-    return {
-        "ok": state["connected"] and mt5_healthy,
-        "connected": state["connected"],
-        "mt5_healthy": mt5_healthy,
-        "last_candle_age_seconds": last_candle_age,
-        "service": "aegis-quant",
-        "tradingMode": EXECUTION.mode,
-    }
-```
+**Resolved:** The endpoint now checks terminal connectivity, closed-candle freshness, and returns HTTP 503 when readiness fails. A separate unauthenticated `/healthz` endpoint provides process liveness for systemd and load balancers.
 
 ### 4. **Data Provider - Blocking Calls in Async Context**
 **File:** `server/data_provider.py:324-390`
@@ -234,7 +207,7 @@ def rate_limit(request: Request, bucket: str, limit: int, window: int = 60):
 ## Low-Priority / Nice to Have
 
 ### 13. **Metrics / Observability**
-- Add Prometheus metrics endpoint (`/metrics`)
+- Prometheus `/metrics` endpoint and request/latency gauges are present.
 - Track: orders placed, latency percentiles, AI API latency, MT5 IPC latency
 - Add structured logging (JSON) for log aggregation
 
@@ -244,8 +217,7 @@ def rate_limit(request: Request, bucket: str, limit: int, window: int = 60):
 - Chaos testing: network partition, MT5 restart, API timeout
 
 ### 15. **Deployment Hardening**
-- systemd service with `Restart=on-failure`, `WatchdogSec=60`
-- Run as non-root user
+- systemd service with `Restart=on-failure`, `WatchdogSec=120`, non-root user, and restricted filesystem paths
 - SELinux/AppArmor profile
 - Separate data directory with restricted permissions
 
@@ -312,9 +284,9 @@ out["atr"] = talib.ATR(out["high"].values, out["low"].values, out["close"].value
 
 - [ ] Fix all Critical Issues (#1-5)
 - [ ] Implement High-Priority Optimizations (#6-9)
-- [ ] Add health endpoint with MT5 terminal check
-- [ ] Add Prometheus metrics endpoint
-- [ ] Configure systemd service with watchdog
+- [x] Add health endpoint with MT5 terminal and candle-freshness checks
+- [x] Add Prometheus metrics endpoint
+- [x] Configure systemd service with watchdog and non-root hardening
 - [ ] Run load test: 1000 orders simulated, verify <100ms p99
 - [ ] Chaos test: kill MT5 terminal, verify auto-reconnect
 - [ ] Chaos test: block OpenAI API, verify circuit breaker
