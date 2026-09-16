@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Panel from "../components/Panel.jsx";
 import TopBar from "../components/TopBar.jsx";
 import { fetchSettings, saveCredentials } from "../lib/botFeed.js";
-import { SkeletonCard, SkeletonRow } from "../components/SkeletonLoaders.jsx";
+import { SkeletonRow } from "../components/SkeletonLoaders.jsx";
 
 export default function Settings() {
   const [settings, setSettings] = useState(null);
@@ -87,6 +87,7 @@ export default function Settings() {
                 placeholder="C:\\Program Files\\MetaTrader 5\\terminal64.exe"
               />
               <button
+                type="submit"
                 disabled={saving}
                 className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white disabled:cursor-wait disabled:opacity-60 w-full sm:w-auto"
               >
@@ -97,7 +98,9 @@ export default function Settings() {
                 does not return or persist the password. Use HTTPS or a private
                 network before entering live credentials.
               </p>
-              <div className="text-[11px] text-ink-dim">{status}</div>
+              <p role="status" aria-live="polite" className="text-[11px] text-ink-dim">
+                {status}
+              </p>
             </form>
           ) : (
             <div className="space-y-3">

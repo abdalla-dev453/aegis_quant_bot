@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 from collections import defaultdict, deque
 import hmac
+import logging
 import os
 from pathlib import Path
 import time
@@ -15,7 +16,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from config import CREDENTIALS, EXECUTION, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS
+from config import CREDENTIALS, DEPLOYMENT, EXECUTION, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS
 from data_provider import (
     configure_runtime_credentials,
     ensure_connected,
@@ -27,16 +28,17 @@ from data_provider import (
     resolve_and_validate_symbols,
     shutdown_connection,
 )
-from runtime_state import read
+from runtime_state import read, update
 from strategy import compute_indicators
 from execution import reset_max_drawdown_guard, risk_guard_status
 from news_provider import get_latest_high_impact_news
 
 import time as time_mod
 from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
-from fastapi.responses import Response
+from fastapi.responses import JSONResponse, Response
 
 app = FastAPI(title="Aegis Quant API", version="1.0.0")
+logger = logging.getLogger("trading_bot.api")
 API_TOKEN = os.getenv("API_TOKEN", "")
 _rate_lock = Lock()
 _rate_windows: dict[tuple[str, str], deque[float]] = defaultdict(deque)
@@ -84,13 +86,7 @@ def protected_credentials(request: Request, _: None = Depends(require_api_token)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        origin.strip()
-        for origin in os.getenv(
-            "CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
-        ).split(",")
-        if origin.strip()
-    ],
+    allow_origins=list(DEPLOYMENT.cors_origins),
     allow_credentials=False,
     allow_methods=["GET", "POST"],
     allow_headers=["Accept", "Content-Type", "X-API-Key"],
@@ -159,10 +155,11 @@ def _deal_net(deal: Any) -> float:
 
 
 @app.get("/api/health", dependencies=[Depends(protected)])
-def health() -> dict[str, Any]:
+def health() -> JSONResponse:
     state = read()
     connected = bool(state["connected"])
     mt5_healthy = False
+    data_fresh = False
     last_candle_age_seconds = None
     terminal_info_str = None
 
@@ -172,23 +169,39 @@ def health() -> dict[str, Any]:
             if info and info.connected:
                 mt5_healthy = True
                 terminal_info_str = f"{info.name} build {info.build}"
-                # Check data freshness on primary symbol
                 primary = TRADING_SYMBOLS[0].name
                 rates = mt5.copy_rates_from_pos(primary, mt5.TIMEFRAME_H1, 1)
                 if rates is not None and len(rates) > 0:
-                    import time as time_mod
                     last_candle_age_seconds = time_mod.time() - rates[0]["time"]
+                    data_fresh = (
+                        0
+                        <= last_candle_age_seconds
+                        <= DEPLOYMENT.max_candle_age_seconds
+                    )
     except Exception:
-        pass
+        logger.debug("Health check could not inspect MT5", exc_info=True)
 
-    return {
-        "ok": connected and mt5_healthy,
+    healthy = connected and mt5_healthy and data_fresh
+    payload = {
+        "ok": healthy,
         "connected": connected,
         "mt5_healthy": mt5_healthy,
+        "data_fresh": data_fresh,
         "terminal": terminal_info_str,
         "last_candle_age_seconds": last_candle_age_seconds,
+        "max_candle_age_seconds": DEPLOYMENT.max_candle_age_seconds,
         "service": "aegis-quant",
         "tradingMode": EXECUTION.mode,
+    }
+    return JSONResponse(status_code=200 if healthy else 503, content=payload)
+
+
+@app.get("/healthz", include_in_schema=False)
+def healthz() -> dict[str, Any]:
+    return {
+        "status": "ok",
+        "service": "aegis-quant",
+        "version": app.version,
     }
 
 
@@ -226,11 +239,19 @@ def save_credentials(payload: CredentialsPayload) -> dict[str, Any]:
             shutdown_connection()
             initialize_connection()
             resolve_and_validate_symbols()
-        state = read()
-        connected = bool(state.get("connected"))
-        return {"ok": True, "connected": connected, "message": "MT5 connection established."}
-    except Exception:
-        raise HTTPException(status_code=400, detail="MT5 connection failed")
+        update(connected=True)
+        return {
+            "ok": True,
+            "connected": True,
+            "message": "MT5 connection established.",
+        }
+    except Exception as exc:
+        logger.exception("MT5 connection attempt failed")
+        update(connected=False)
+        raise HTTPException(
+            status_code=400,
+            detail=f"MT5 connection failed: {exc}",
+        ) from exc
 
 
 @app.get("/api/account", dependencies=[Depends(protected)])

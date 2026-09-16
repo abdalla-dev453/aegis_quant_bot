@@ -25,6 +25,16 @@ from dotenv import load_dotenv
 load_dotenv(Path(__file__).with_name(".env"), override=False)
 
 
+def _env_int(name: str, default: int) -> int:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    try:
+        return int(value)
+    except ValueError as exc:
+        raise ValueError(f"{name} must be an integer") from exc
+
+
 # -------------------------------------------------------------
 # MT5 terminal / account credentials
 # -------------------------------------------------------------
@@ -99,9 +109,32 @@ class AIConfig:
             raise ValueError("OPENAI_TIMEOUT_SECONDS must be greater than zero.")
 
 
+@dataclass(frozen=True)
+class DeploymentConfig:
+    api_host: str = os.getenv("API_HOST", "127.0.0.1")
+    api_port: int = _env_int("API_PORT", 8000)
+    cors_origins: tuple[str, ...] = tuple(
+        origin.strip()
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173",
+        ).split(",")
+        if origin.strip()
+    )
+    max_candle_age_seconds: int = _env_int("MAX_CANDLE_AGE_SECONDS", 7200)
+
+    def validate(self) -> None:
+        if not self.api_host:
+            raise ValueError("API_HOST must not be empty")
+        if not 1 <= self.api_port <= 65535:
+            raise ValueError("API_PORT must be between 1 and 65535")
+        if self.max_candle_age_seconds <= 0:
+            raise ValueError("MAX_CANDLE_AGE_SECONDS must be greater than zero")
+
+
 # -----------------------------------------------
 # Symbols & timeframes
-# ---------------------------------
+# -----------------------------------------------
 @dataclass(frozen=True)
 class SymbolConfig:
     name: str
@@ -197,7 +230,7 @@ class StrategyConfig:
 # ------------------------------------------------------------
 @dataclass(frozen=True)
 class LoggingConfig:
-    log_file: str = "trading_bot.log"
+    log_file: str = os.getenv("LOG_FILE", "trading_bot.log")
     level: str = os.getenv("LOG_LEVEL", "INFO")
 
 
@@ -205,6 +238,7 @@ class LoggingConfig:
 CREDENTIALS = MT5Credentials()
 NEWS_CONFIG = NewsAPIConfig()
 AI = AIConfig()
+DEPLOYMENT = DeploymentConfig()
 INDICATORS = IndicatorConfig()
 RISK = RiskConfig()
 EXECUTION = ExecutionConfig()
