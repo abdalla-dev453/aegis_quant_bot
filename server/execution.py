@@ -33,6 +33,7 @@ from data_provider import (
     get_open_positions,
     mt5_serialized,
 )
+from runtime_state import control_state
 from strategy import TradeDirection
 
 logger = logging.getLogger("trading_bot.execution")
@@ -462,6 +463,17 @@ def place_order(
     """
     require_mt5_runtime()
     ensure_connected()
+
+    control = control_state()
+    if control["status"] != "RUNNING" or not control["entriesAllowed"]:
+        logger.info(
+            "Skipping %s %s: runtime control=%s entriesAllowed=%s",
+            symbol,
+            direction.value,
+            control["status"],
+            control["entriesAllowed"],
+        )
+        return None
 
     if check_daily_loss_guard():
         logger.info("Skipping %s %s: daily loss guard active.", symbol, direction.value)
