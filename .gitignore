@@ -7,3 +7,12 @@ server/position_state.tmp
 .env.*
 !.env.example
 *.exe
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.kilo/
+execution.log
+oracle_deployemnt_strategy
