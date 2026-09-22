@@ -227,6 +227,75 @@ export function saveCredentials(credentials) {
   });
 }
 
+export async function fetchControl() {
+  const d = await apiGet("/api/control");
+  return {
+    status: String(d.status ?? "RUNNING"),
+    entriesAllowed: Boolean(d.entriesAllowed),
+    managementAllowed: Boolean(d.managementAllowed),
+    reason: d.reason ?? null,
+    source: String(d.source ?? "STARTUP"),
+    changedAt: String(d.changedAt ?? ""),
+    revision: Number.isFinite(Number(d.revision)) ? Number(d.revision) : 0,
+  };
+}
+
+export async function setControl(status, reason) {
+  return apiRequest("/api/control", {
+    method: "POST",
+    body: { status, reason: reason ?? null, source: "UI" },
+    timeoutMs: 10000,
+  });
+}
+
+export async function fetchProposals() {
+  const rows = await apiGet("/api/proposals");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({
+    symbol: String(d.symbol ?? ""),
+    action: String(d.action ?? "HOLD"),
+    volume: num(d.volume),
+    stop_loss: num(d.stop_loss),
+    take_profit: num(d.take_profit),
+    confidence_score: num(d.confidence_score),
+    reasoning: String(d.reasoning ?? ""),
+    status: String(d.status ?? "received"),
+    blocked_by: d.blocked_by ? String(d.blocked_by) : null,
+    signal_reason: d.signal_reason ? String(d.signal_reason) : null,
+    candle_time: String(d.candle_time ?? ""),
+  }));
+}
+
+export async function fetchOrders() {
+  const rows = await apiGet("/api/orders");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({
+    ticket: String(d.ticket ?? ""),
+    symbol: String(d.symbol ?? ""),
+    direction: String(d.direction ?? ""),
+    fill_price: num(d.fill_price),
+    volume: num(d.volume),
+    sl: num(d.sl),
+    tp: num(d.tp),
+    atr: num(d.atr),
+    reason: String(d.reason ?? ""),
+    pnl: num(d.pnl),
+    status: String(d.status ?? "filled"),
+  }));
+}
+
+export async function fetchTradeAnalysis() {
+  const d = await apiGet("/api/trade-analysis");
+  const summary = d.summary ?? { totalTrades: 0, netPnl: 0.0 };
+  return {
+    summary: {
+      totalTrades: Math.max(0, Math.trunc(num(summary.totalTrades))),
+      netPnl: num(summary.netPnl),
+    },
+    recentTrades: Array.isArray(d.recentTrades) ? d.recentTrades : [],
+  };
+}
+
 /**
  * Format a price with the correct decimal precision for a symbol.
  * Prefers server-provided digits; falls back to a broker-neutral heuristic.
@@ -235,4 +304,36 @@ export function formatPrice(symbol, value, digits) {
   const d =
     digits ?? (symbol === "XAUUSD" ? 2 : symbol.endsWith("JPY") ? 3 : 5);
   return num(value).toFixed(d);
+}
+
+// ---------------------------------------------------------------------------
+// Advanced Features API Accessors
+// ---------------------------------------------------------------------------
+
+export async function fetchAdvancedAnalysisStatus() {
+  const d = await apiGet("/api/advanced-analysis");
+  return {
+    enabled: d.enabled || {},
+    config: d.config || {}
+  };
+}
+
+export async function fetchSelfHealingStatus() {
+  return await apiGet("/api/self-healing");
+}
+
+export async function fetchAdaptiveOptimizationStatus() {
+  return await apiGet("/api/adaptive-optimization");
+}
+
+export async function runAdaptiveOptimization() {
+  return await apiRequest("/api/adaptive-optimization/run", { method: "POST" });
+}
+
+export async function fetchPortfolioRiskStatus() {
+  return await apiGet("/api/portfolio-risk");
+}
+
+export async function fetchSystemHealth() {
+  return await apiGet("/api/system-health");
 }
