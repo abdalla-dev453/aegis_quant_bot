@@ -6,6 +6,8 @@ import ConfluenceGauge from "../components/ConfluenceGauge.jsx";
 import EconomicCalendar from "../components/EconomicCalendar.jsx";
 import ExecutionLog from "../components/ExecutionLog.jsx";
 import PositionsTable from "../components/PositionsTable.jsx";
+import TradeAnalysis from "../components/TradeAnalysis.jsx";
+import RecentOrders from "../components/RecentOrders.jsx";
 import Footer from "../components/Footer.jsx";
 import { useBotFeed } from "../lib/useBotFeed.js";
 import { resetPeakDrawdownGuard } from "../lib/botFeed.js";
@@ -18,7 +20,7 @@ import {
 } from "../components/SkeletonLoaders.jsx";
 
 export default function Dashboard() {
-  const { account, risk, performance, confluence, calendar, positions, priceSeries, logs, connected, loading } = useBotFeed();
+  const { account, risk, performance, confluence, calendar, control, proposals, tradeAnalysis, positions, priceSeries, logs, connected, loading } = useBotFeed();
 
   const totalFloat = positions.reduce((sum, p) => sum + p.pnl, 0);
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" });
@@ -34,7 +36,16 @@ export default function Dashboard() {
     <div className="flex h-full flex-1 flex-col overflow-hidden">
       <TopBar
         title="Command Dashboard"
-        subtitle={`${today} · ${connected ? "Feed Connected" : "Feed Offline"} · Auto-Mode: ENABLED`}
+        subtitle={`${today} · ${connected ? "Feed Connected" : "Feed Offline"} · Mode: ${control?.status ?? "RUNNING"}`}
+        control={control}
+        setControl={async (status, reason) => {
+          try {
+            const { setControl } = await import("../lib/botFeed.js");
+            await setControl(status, reason);
+          } catch (error) {
+            console.error("Unable to update control", error);
+          }
+        }}
       />
 
       <div className="flex-1 space-y-4 overflow-y-auto px-8 py-5">
@@ -90,6 +101,19 @@ export default function Dashboard() {
             <SkeletonList items={5} />
           ) : (
             <ExecutionLog logs={logs} />
+          )}
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {loading.tradeAnalysis ? (
+            <SkeletonStatCard />
+          ) : (
+            <TradeAnalysis tradeAnalysis={tradeAnalysis} />
+          )}
+          {loading.proposals ? (
+            <SkeletonList items={3} />
+          ) : (
+            <RecentOrders orders={proposals} />
           )}
         </div>
       </div>

@@ -17,6 +17,10 @@ const EMPTY = {
   performance: { winRatePct: 0, profitFactor: 0, totalTrades: 0, avgWin: 0, avgLoss: 0 },
   confluence: { composite: 0, label: "NEUTRAL", technical: 0, sentiment: 0, momentum: 0 },
   calendar: { autoHaltActive: false, autoHaltEtaSeconds: 0, nextEvent: null },
+  control: { status: "RUNNING", entriesAllowed: true, managementAllowed: true, reason: null, source: "STARTUP", changedAt: "", revision: 0 },
+  proposals: [],
+  orders: [],
+  tradeAnalysis: { summary: { totalTrades: 0, netPnl: 0.0 }, recentTrades: [] },
 };
 
 const INTEGRALS = [
@@ -25,6 +29,8 @@ const INTEGRALS = [
   ["performance", feed.fetchPerformance, 10000],
   ["confluence", feed.fetchConfluence, 3000],
   ["calendar", feed.fetchCalendar, 5000],
+  ["control", feed.fetchControl, 3000],
+  ["tradeAnalysis", feed.fetchTradeAnalysis, 10000],
 ];
 
 export function useBotFeed() {
@@ -33,6 +39,10 @@ export function useBotFeed() {
   const [performance, setPerformance] = useState(EMPTY.performance);
   const [confluence, setConfluence] = useState(EMPTY.confluence);
   const [calendar, setCalendar] = useState(EMPTY.calendar);
+  const [control, setControl] = useState(EMPTY.control);
+  const [proposals, setProposals] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [tradeAnalysis, setTradeAnalysis] = useState(EMPTY.tradeAnalysis);
   const [positions, setPositions] = useState([]);
   const [priceSeries, setPriceSeries] = useState({ symbol: "", points: [] });
   const [equityCurve, setEquityCurve] = useState([]);
@@ -44,6 +54,8 @@ export function useBotFeed() {
     performance: true,
     confluence: true,
     calendar: true,
+    control: true,
+    tradeAnalysis: true,
     positions: true,
     priceSeries: true,
     equityCurve: true,
@@ -63,6 +75,8 @@ export function useBotFeed() {
         performance: setPerformance,
         confluence: setConfluence,
         calendar: setCalendar,
+        control: setControl,
+        tradeAnalysis: setTradeAnalysis,
       }[key];
       const tick = async () => {
         try {
@@ -95,15 +109,21 @@ export function useBotFeed() {
         setLoading((prev) => ({ ...prev, [loadingKey]: false }));
       }
     };
+    const proposalsTick = () => poll(feed.fetchProposals, setProposals, "proposals");
+    const ordersTick = () => poll(feed.fetchOrders, setOrders, "orders");
     const positionsTick = () => poll(feed.fetchPositions, setPositions, "positions");
     const seriesTick = () => poll(feed.fetchPriceSeries, setPriceSeries, "priceSeries");
     const curveTick = () => poll(feed.fetchEquityCurve, setEquityCurve, "equityCurve");
     const logsTick = () => poll(feed.fetchLogs, setLogs, "logs");
 
+    proposalsTick();
+    ordersTick();
     positionsTick();
     seriesTick();
     curveTick();
     logsTick();
+    timers.push(setInterval(proposalsTick, 5000));
+    timers.push(setInterval(ordersTick, 5000));
     timers.push(setInterval(positionsTick, 3000));
     timers.push(setInterval(seriesTick, 8000));
     timers.push(setInterval(curveTick, 60000));
@@ -125,5 +145,5 @@ export function useBotFeed() {
     return () => timers.forEach(clearInterval);
   }, []);
 
-  return { account, risk, performance, confluence, calendar, positions, priceSeries, equityCurve, logs, connected, loading };
+  return { account, risk, performance, confluence, calendar, control, proposals, orders, tradeAnalysis, positions, priceSeries, equityCurve, logs, connected, loading };
 }
