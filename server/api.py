@@ -16,7 +16,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from config import CREDENTIALS, DEPLOYMENT, EXECUTION, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS
+from config import CREDENTIALS, DEPLOYMENT, EXECUTION, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS, ADVANCED_ANALYSIS, PREDICTION, ADVANCED_RISK
 from data_provider import (
     configure_runtime_credentials,
     ensure_connected,
@@ -28,10 +28,14 @@ from data_provider import (
     resolve_and_validate_symbols,
     shutdown_connection,
 )
-from runtime_state import read, update
+from runtime_state import read, record_proposal, record_order, control_state, set_control, update
 from strategy import compute_indicators
 from execution import reset_max_drawdown_guard, risk_guard_status
 from news_provider import get_latest_high_impact_news
+from advanced_technical_analysis import detect_market_regime, detect_support_resistance
+from self_healing import self_healing_manager
+from adaptive_optimization import adaptive_optimizer
+from portfolio_risk_manager import portfolio_risk_manager
 
 import time as time_mod
 from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
@@ -100,6 +104,12 @@ class CredentialsPayload(BaseModel):
     password: str = Field(min_length=1)
     server: str = Field(min_length=1)
     terminal_path: str | None = None
+
+
+class ControlPayload(BaseModel):
+    status: str = Field(..., pattern="^(RUNNING|PAUSED|HALTED)$")
+    reason: str | None = None
+    source: str = "OPERATOR"
 
 
 def _account() -> Any:
@@ -305,6 +315,31 @@ def reset_peak_drawdown() -> dict[str, Any]:
     return {"ok": True, "message": "Peak drawdown guard reset."}
 
 
+@app.get("/api/control", dependencies=[Depends(protected)])
+def get_control() -> dict[str, Any]:
+    return control_state()
+
+
+@app.post("/api/control", dependencies=[Depends(protected_credentials)])
+def set_control(payload: ControlPayload) -> dict[str, Any]:
+    return set_control(payload.status, payload.reason, payload.source)
+
+
+@app.get("/api/proposals", dependencies=[Depends(protected)])
+def proposals() -> list[dict[str, Any]]:
+    return read().get("proposals", [])
+
+
+@app.get("/api/orders", dependencies=[Depends(protected)])
+def orders() -> list[dict[str, Any]]:
+    return read().get("orders", [])
+
+
+@app.get("/api/trade-analysis", dependencies=[Depends(protected)])
+def trade_analysis() -> dict[str, Any]:
+    return read().get("trade_analysis", {"summary": {"totalTrades": 0, "netPnl": 0.0}, "recentTrades": []})
+
+
 @app.get("/api/confluence", dependencies=[Depends(protected)])
 def confluence() -> dict[str, Any]:
     signal = read().get("last_signal", {})
@@ -424,3 +459,98 @@ def metrics() -> Response:
 @app.get("/api/logs", dependencies=[Depends(protected)])
 def logs() -> list[dict[str, Any]]:
     return read().get("logs", [])
+
+
+# ---------------------------------------------------------------------------
+# Advanced Features API Endpoints
+# ---------------------------------------------------------------------------
+
+@app.get("/api/advanced-analysis", dependencies=[Depends(protected)])
+def advanced_analysis_status() -> dict[str, Any]:
+    """Get status of advanced technical analysis features"""
+    return {
+        "enabled": {
+            "adx": ADVANCED_ANALYSIS.use_adx,
+            "macd": ADVANCED_ANALYSIS.use_macd,
+            "volume_confirmation": ADVANCED_ANALYSIS.use_volume_confirmation,
+            "regime_detection": ADVANCED_ANALYSIS.enable_regime_detection,
+            "level_detection": ADVANCED_ANALYSIS.enable_level_detection
+        },
+        "config": {
+            "adx_period": ADVANCED_ANALYSIS.adx_period,
+            "adx_threshold": ADVANCED_ANALYSIS.adx_trend_threshold,
+            "volume_threshold": ADVANCED_ANALYSIS.volume_surge_threshold,
+            "pivot_lookback": ADVANCED_ANALYSIS.pivot_lookback_period
+        }
+    }
+
+
+@app.get("/api/self-healing", dependencies=[Depends(protected)])
+def self_healing_status() -> dict[str, Any]:
+    """Get self-healing system status"""
+    return self_healing_manager.get_recovery_status()
+
+
+@app.get("/api/adaptive-optimization", dependencies=[Depends(protected)])
+def adaptive_optimization_status() -> dict[str, Any]:
+    """Get adaptive optimization status"""
+    return adaptive_optimizer.get_optimization_status()
+
+
+@app.post("/api/adaptive-optimization/run", dependencies=[Depends(protected_credentials)])
+def run_optimization() -> dict[str, Any]:
+    """Manually trigger an optimization cycle"""
+    result = adaptive_optimizer.run_optimization_cycle()
+    return result
+
+
+@app.get("/api/portfolio-risk", dependencies=[Depends(protected)])
+def portfolio_risk_status() -> dict[str, Any]:
+    """Get portfolio risk analysis status"""
+    return portfolio_risk_manager.get_risk_summary()
+
+
+@app.get("/api/system-health", dependencies=[Depends(protected)])
+def system_health() -> dict[str, Any]:
+    """Comprehensive system health check"""
+    try:
+        # Basic health checks
+        state = read()
+        connected = bool(state.get("connected"))
+        
+        # Advanced system status
+        self_healing = self_healing_manager.get_recovery_status()
+        portfolio_risk = portfolio_risk_manager.get_risk_summary()
+        adaptive_opt = adaptive_optimizer.get_optimization_status()
+        
+        return {
+            "connected": connected,
+            "self_healing": self_healing,
+            "portfolio_risk": portfolio_risk,
+            "adaptive_optimization": adaptive_opt,
+            "advanced_analysis": {
+                "enabled": ADVANCED_ANALYSIS.use_adx or ADVANCED_ANALYSIS.use_macd,
+                "features": {
+                    "adx": ADVANCED_ANALYSIS.use_adx,
+                    "macd": ADVANCED_ANALYSIS.use_macd,
+                    "regime_detection": ADVANCED_ANALYSIS.enable_regime_detection
+                }
+            },
+            "prediction": {
+                "enabled": PREDICTION.enable_price_prediction or PREDICTION.enable_pattern_detection,
+                "features": {
+                    "price_prediction": PREDICTION.enable_price_prediction,
+                    "pattern_detection": PREDICTION.enable_pattern_detection,
+                    "volatility_forecasting": PREDICTION.enable_volatility_forecasting
+                }
+            },
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+    except Exception as e:
+        logger.exception("Error in system health check")
+        return {
+            "error": str(e),
+            "status": "error",
+            "connected": False,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
