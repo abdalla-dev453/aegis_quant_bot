@@ -234,6 +234,122 @@ class LoggingConfig:
     level: str = os.getenv("LOG_LEVEL", "INFO")
 
 
+# ---------------------------------------------------------------
+# Advanced Analysis Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class AdvancedAnalysisConfig:
+    # Trend analysis enhancements
+    use_adx: bool = True
+    adx_period: int = 14
+    adx_trend_threshold: float = 25.0
+    use_macd: bool = True
+    macd_fast: int = 12
+    macd_slow: int = 26
+    macd_signal: int = 9
+    
+    # Volume analysis
+    use_volume_confirmation: bool = True
+    volume_surge_threshold: float = 1.5
+    volume_lookback_period: int = 20
+    
+    # Market regime detection
+    enable_regime_detection: bool = True
+    regime_volatility_threshold: float = 0.02
+    regime_adx_threshold: float = 25.0
+    
+    # Support/Resistance levels
+    enable_level_detection: bool = True
+    pivot_lookback_period: int = 50
+    psychological_level_rounding: int = 100  # For round number detection
+
+
+# ---------------------------------------------------------------
+# Prediction & AI Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class PredictionConfig:
+    # Price prediction
+    enable_price_prediction: bool = False  # Opt-in feature
+    prediction_lookahead_bars: int = 5
+    prediction_confidence_threshold: float = 0.6
+    
+    # Pattern recognition
+    enable_pattern_detection: bool = True
+    pattern_confidence_threshold: float = 0.7
+    pattern_lookback_period: int = 100
+    
+    # Volatility forecasting
+    enable_volatility_forecasting: bool = True
+    volatility_forecast_horizon: int = 10
+    garch_model_enabled: bool = False  # Requires additional dependencies
+    
+    # Ensemble AI
+    enable_ensemble_ai: bool = False  # Opt-in feature
+    ai_weight_primary: float = 0.7
+    ai_weight_secondary: float = 0.3
+
+
+# ---------------------------------------------------------------
+# Self-Healing & Automation Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class SelfHealingConfig:
+    enable_self_healing: bool = True
+    max_recovery_attempts: int = 3
+    recovery_backoff_base: float = 5.0
+    recovery_backoff_max: float = 60.0
+    
+    # Data quality monitoring
+    enable_data_quality_checks: bool = True
+    max_nan_ratio: float = 0.1
+    min_data_points: int = 50
+    
+    # Connection health monitoring
+    connection_timeout_seconds: int = 30
+    max_connection_failures: int = 5
+
+
+# ---------------------------------------------------------------
+# Adaptive Optimization Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class AdaptiveConfig:
+    enable_adaptive_parameters: bool = True
+    optimization_window_days: int = 7
+    min_trades_for_optimization: int = 10
+    
+    # Performance thresholds for parameter adjustment
+    win_rate_lower_threshold: float = 0.4
+    win_rate_upper_threshold: float = 0.6
+    profit_factor_threshold: float = 1.5
+    
+    # Parameter adjustment ranges
+    rsi_adjustment_range: float = 5.0
+    sentiment_adjustment_range: float = 0.2
+    risk_adjustment_range: float = 0.5
+
+
+# ---------------------------------------------------------------
+# Advanced Risk Management Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class AdvancedRiskConfig:
+    # Portfolio-level controls
+    enable_portfolio_risk: bool = True
+    max_portfolio_exposure_pct: float = 10.0
+    max_correlation_exposure_pct: float = 5.0
+    max_currency_concentration_pct: float = 7.0
+    
+    # Dynamic volatility-based sizing
+    enable_volatility_adjusted_sizing: bool = True
+    volatility_lookback_period: int = 50
+    high_volatility_multiplier: float = 0.5
+    low_volatility_multiplier: float = 1.2
+    volatility_ratio_high: float = 1.5
+    volatility_ratio_low: float = 0.5
+
+
 # Single point of truth every other module imports.
 CREDENTIALS = MT5Credentials()
 NEWS_CONFIG = NewsAPIConfig()
@@ -244,6 +360,11 @@ RISK = RiskConfig()
 EXECUTION = ExecutionConfig()
 STRATEGY = StrategyConfig()
 LOGGING = LoggingConfig()
+ADVANCED_ANALYSIS = AdvancedAnalysisConfig()
+PREDICTION = PredictionConfig()
+SELF_HEALING = SelfHealingConfig()
+ADAPTIVE = AdaptiveConfig()
+ADVANCED_RISK = AdvancedRiskConfig()
 
 # Max retries / backoff ceiling for connection-level operations.
 MAX_RECONNECT_ATTEMPTS = 5

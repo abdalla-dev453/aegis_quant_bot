@@ -104,6 +104,49 @@ class EquityPoint:
     equity: float
 
 
+@dataclass
+class ControlState:
+    status: str  # "RUNNING" | "PAUSED" | "HALTED"
+    entriesAllowed: bool
+    managementAllowed: bool
+    reason: str | None
+    source: str
+    changedAt: str
+    revision: int
+
+
+@dataclass
+class TradeProposal:
+    action: str
+    symbol: str
+    volume: float
+    stop_loss: float | None
+    take_profit: float | None
+    confidence_score: float
+    reasoning: str
+    status: str = "received"
+    blocked_by: str | None = None
+
+
+@dataclass
+class OrderRecord:
+    ticket: int
+    symbol: str
+    direction: str
+    fill_price: float
+    volume: float
+    sl: float
+    tp: float
+    atr: float
+    reason: str
+    pnl: float = 0.0
+    status: str = "filled"
+
+
+@dataclass
+class TradeAnalysis:
+    summary: dict[str, Any]
+    recentTrades: list[dict[str, Any]]
 
 
 @dataclass
