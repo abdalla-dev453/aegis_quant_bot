@@ -37,6 +37,9 @@ from config import (
     TRADING_SYMBOLS,
     MAX_BACKOFF_SECONDS,
     INITIAL_BACKOFF_SECONDS,
+    ADVANCED_ANALYSIS,
+    PREDICTION,
+    ADVANCED_RISK,
 )
 from data_provider import (
     MT5ConnectionError,
@@ -48,12 +51,36 @@ from data_provider import (
     resolved_symbol,
 )
 from execution import place_order, manage_trailing_stops
-from strategy import TradeDirection, compute_indicators
+from strategy import TradeDirection, compute_indicators, generate_signal
 from ai_engine import ProposalAction, propose_trade, validate_ai_configuration
 from news_provider import get_latest_high_impact_news
-from runtime_state import add_log, update
+from runtime_state import add_log, control_state, record_order, record_proposal, set_control, update
+from advanced_technical_analysis import (
+    compute_advanced_indicators,
+    detect_market_regime,
+    detect_support_resistance,
+    analyze_trend_maturity,
+    analyze_volume,
+    calculate_adx,
+    calculate_macd,
+)
+from prediction_engine import (
+    PricePredictionEngine,
+    PatternRecognitionEngine,
+    VolatilityForecaster,
+)
+from self_healing import self_healing_manager, data_quality_checker
+from adaptive_optimization import adaptive_optimizer
+from intelligent_position_manager import IntelligentPositionManager
+from portfolio_risk_manager import portfolio_risk_manager
 
 logger = logging.getLogger("trading_bot.main")
+
+# Initialize advanced systems
+prediction_engine = PricePredictionEngine()
+pattern_engine = PatternRecognitionEngine()
+volatility_forecaster = VolatilityForecaster()
+position_manager = IntelligentPositionManager()
 
 
 def _systemd_notify(message: str) -> None:
@@ -163,8 +190,28 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             tracker.mark_seen(symbol, latest_candle_time)
             return
 
+        # Validate data quality
+        data_valid, data_error = data_quality_checker.validate_dataframe(df_h1, symbol)
+        if not data_valid:
+            logger.warning("%s: data quality check failed: %s", symbol, data_error)
+            tracker.mark_seen(symbol, latest_candle_time)
+            return
+
+        # Add advanced indicators if enabled
+        if ADVANCED_ANALYSIS.use_adx or ADVANCED_ANALYSIS.use_macd:
+            df_h1 = await asyncio.to_thread(compute_advanced_indicators, df_h1)
+            df_h4 = await asyncio.to_thread(compute_advanced_indicators, df_h4)
+
         tracker.mark_seen(symbol, latest_candle_time)
         h1_last, h4_last = df_h1.iloc[-1], df_h4.iloc[-1]
+        
+        # Advanced market analysis
+        market_regime = await asyncio.to_thread(detect_market_regime, df_h1)
+        sr_levels = await asyncio.to_thread(detect_support_resistance, df_h1)
+        trend_maturity = await asyncio.to_thread(analyze_trend_maturity, df_h1, df_h4)
+        volume_analysis = await asyncio.to_thread(analyze_volume, df_h1) if ADVANCED_ANALYSIS.use_volume_confirmation else None
+        
+        # Build enhanced market context
         market_context = {
             "candle_time_utc": latest_candle_time.isoformat(),
             "trigger_timeframe": TIMEFRAME_TRIGGER,
@@ -183,7 +230,54 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
                 "rsi": float(h4_last["rsi"]),
                 "atr": float(h4_last["atr"]),
             },
+            "advanced_analysis": {
+                "market_regime": market_regime.regime.value,
+                "regime_confidence": market_regime.confidence,
+                "support_levels": sr_levels.support_levels,
+                "resistance_levels": sr_levels.resistance_levels,
+                "trend_maturity": trend_maturity.stage,
+                "trend_strength": trend_maturity.strength_score,
+                "volume_surge": volume_analysis.surge_detected if volume_analysis else False,
+                "volume_ratio": volume_analysis.volume_ratio if volume_analysis else 0.0,
+            }
         }
+        
+        # Add ADX and MACD if available
+        if ADVANCED_ANALYSIS.use_adx and f'adx_{ADVANCED_ANALYSIS.adx_period}' in df_h1.columns:
+            adx_result = await asyncio.to_thread(calculate_adx, df_h1)
+            market_context["advanced_analysis"]["adx"] = adx_result.adx_value
+            market_context["advanced_analysis"]["trend_strength"] = adx_result.trend_strength.value
+        
+        if ADVANCED_ANALYSIS.use_macd and 'macd' in df_h1.columns:
+            macd_result = await asyncio.to_thread(calculate_macd, df_h1)
+            market_context["advanced_analysis"]["macd_signal"] = macd_result.signal_type
+        
+        # Pattern recognition if enabled
+        if PREDICTION.enable_pattern_detection:
+            patterns = await asyncio.to_thread(pattern_engine.detect_patterns, df_h1)
+            market_context["advanced_analysis"]["detected_patterns"] = [
+                {"pattern": p.pattern_name, "confidence": p.confidence, "direction": p.direction.value}
+                for p in patterns
+            ]
+        
+        # Volatility forecasting if enabled
+        if PREDICTION.enable_volatility_forecasting:
+            volatility_forecast = await asyncio.to_thread(volatility_forecaster.forecast_volatility, df_h1)
+            market_context["advanced_analysis"]["volatility_forecast"] = {
+                "regime": volatility_forecast.volatility_regime,
+                "expected_volatility": volatility_forecast.expected_volatility,
+                "breakout_probability": volatility_forecast.breakout_probability
+            }
+        
+        # Price prediction if enabled
+        if PREDICTION.enable_price_prediction:
+            price_prediction = await asyncio.to_thread(prediction_engine.predict_price_move, df_h1)
+            market_context["advanced_analysis"]["price_prediction"] = {
+                "direction": price_prediction.direction.value,
+                "confidence": price_prediction.confidence,
+                "target_price": price_prediction.target_price
+            }
+        
         news_result = await asyncio.to_thread(get_latest_high_impact_news, 10, 24)
         proposal = await propose_trade(
             symbol, market_context, news_result.items, news_result.warning
@@ -206,18 +300,93 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
         )
         add_log("INFO", f"{symbol} AI {proposal.action.value}: {proposal.reasoning}")
 
+        control = control_state()
+        proposal_record = {
+            "symbol": symbol,
+            "action": proposal.action.value,
+            "volume": proposal.volume,
+            "stop_loss": proposal.stop_loss,
+            "take_profit": proposal.take_profit,
+            "confidence_score": proposal.confidence_score,
+            "reasoning": proposal.reasoning,
+            "status": "received",
+            "candle_time": latest_candle_time.isoformat(),
+        }
+
+        if control["status"] != "RUNNING" or not control["entriesAllowed"]:
+            proposal_record["status"] = "blocked"
+            proposal_record["blocked_by"] = f"control={control['status']}"
+            record_proposal(proposal_record)
+            add_log("INFO", f"{symbol} proposal blocked by control={control['status']}")
+            return
+
         if direction in (TradeDirection.BUY, TradeDirection.SELL):
+            signal = generate_signal(symbol, df_h1, df_h4)
+            if signal.direction != direction:
+                proposal_record["status"] = "blocked"
+                proposal_record["blocked_by"] = "deterministic_strategy"
+                proposal_record["signal_reason"] = signal.reason
+                record_proposal(proposal_record)
+                add_log("INFO", f"{symbol} proposal blocked by deterministic gate: {signal.reason}")
+                return
+
+            # Portfolio risk check
+            if ADVANCED_RISK.enable_portfolio_risk:
+                portfolio_allowed, portfolio_reason = await asyncio.to_thread(
+                    portfolio_risk_manager.check_pre_trade_risk,
+                    symbol, direction.value, proposal.volume
+                )
+                if not portfolio_allowed:
+                    proposal_record["status"] = "blocked"
+                    proposal_record["blocked_by"] = "portfolio_risk"
+                    proposal_record["signal_reason"] = portfolio_reason
+                    record_proposal(proposal_record)
+                    add_log("INFO", f"{symbol} proposal blocked by portfolio risk: {portfolio_reason}")
+                    return
+
+            # Volatility-based position sizing adjustment
+            adjusted_volume = proposal.volume
+            if ADVANCED_RISK.enable_volatility_adjusted_sizing:
+                vol_adjustment = await asyncio.to_thread(
+                    position_manager.calculate_volatility_adjusted_size,
+                    symbol, proposal.volume, df_h1
+                )
+                adjusted_volume = vol_adjustment.adjusted_size
+                logger.info(f"{symbol} volume adjusted: {proposal.volume} -> {adjusted_volume} ({vol_adjustment.reason})")
+
+            record_proposal(proposal_record)
+
             audit_context = {
                 "candle_time": latest_candle_time.isoformat(),
                 "ai_confidence_score": proposal.confidence_score,
                 "ai_market_context": market_context,
                 "live_news": news_result.items,
                 "news_warning": news_result.warning,
+                "advanced_analysis": market_context.get("advanced_analysis", {}),
+                "volume_adjustment": adjusted_volume != proposal.volume
             }
-            await asyncio.to_thread(
+            result = await asyncio.to_thread(
                 place_order, symbol, direction, float(h1_last["atr"]), proposal.reasoning,
-                audit_context, proposal.volume, proposal.stop_loss, proposal.take_profit,
+                audit_context, adjusted_volume, proposal.stop_loss, proposal.take_profit,
             )
+            if result and result.get("order"):
+                record_order(
+                    {
+                        "ticket": int(result["order"]),
+                        "symbol": symbol,
+                        "direction": direction.value,
+                        "fill_price": float(result.get("price") or 0.0),
+                        "volume": float(result.get("volume") or 0.0),
+                        "sl": float(result.get("sl") or 0.0),
+                        "tp": float(result.get("tp") or 0.0),
+                        "atr": float(h1_last["atr"]),
+                        "reason": proposal.reasoning,
+                        "pnl": 0.0,
+                        "status": "filled",
+                    }
+                )
+        else:
+            record_proposal(proposal_record)
 
     except MT5ConnectionError as e:
         logger.error("%s: connection error during evaluation: %s", symbol, e)
@@ -269,18 +438,52 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
                 if isinstance(result, MT5ConnectionError):
                     had_error = True
                     logger.error("%s: connection error: %s", sym_cfg.name, result)
+                    # Attempt self-healing for connection errors
+                    self_healing_manager.diagnose_and_recover(result, {"symbol": sym_cfg.name})
                 elif isinstance(result, Exception):
                     had_error = True
                     logger.exception("%s: unexpected error in loop", sym_cfg.name, exc_info=result)
+                    # Attempt self-healing for general errors
+                    self_healing_manager.diagnose_and_recover(result, {"symbol": sym_cfg.name})
                 else:
                     backoff.record_success()
 
         try:
             await asyncio.to_thread(manage_trailing_stops)
+            
+            # Intelligent position management
+            if ADVANCED_RISK.enable_portfolio_risk:
+                portfolio_analysis = await asyncio.to_thread(portfolio_risk_manager.analyze_portfolio)
+                if portfolio_analysis.overall_health.value in ["danger", "critical"]:
+                    logger.warning("Portfolio health %s: %s", portfolio_analysis.overall_health.value, portfolio_analysis.risk_summary)
+                    add_log("WARN", f"Portfolio health: {portfolio_analysis.overall_health.value} - {portfolio_analysis.risk_summary}")
+                
+                # Intelligent position analysis
+                market_data = {
+                    "market_regime": portfolio_analysis.overall_health.value,
+                    "proximity_to_level": 0.5,  # Placeholder
+                    "data_quality": 1.0
+                }
+                position_analyses = await asyncio.to_thread(position_manager.analyze_all_positions, market_data)
+                for analysis in position_analyses:
+                    if analysis.recommendation.value != "hold":
+                        logger.info("Position %d %s: %s - %s", analysis.ticket, analysis.symbol, 
+                                   analysis.recommendation.value, analysis.reasoning)
+            
+            # Adaptive optimization check (periodic)
+            if ADAPTIVE.enable_adaptive_parameters:
+                # Run optimization every 24 hours or after certain number of trades
+                optimization_result = await asyncio.to_thread(adaptive_optimizer.run_optimization_cycle)
+                if optimization_result.get("adjustments_made", 0) > 0:
+                    logger.info("Adaptive optimization: %d adjustments made", optimization_result["adjustments_made"])
+                    add_log("INFO", f"Adaptive optimization completed: {optimization_result['adjustments_made']} adjustments")
+                    
         except MT5ConnectionError as e:
-            logger.error("Trailing stop management failed: %s", e)
+            logger.error("Position management failed: %s", e)
+            # Attempt self-healing
+            self_healing_manager.diagnose_and_recover(e, {"component": "position_management"})
         except Exception:
-            logger.exception("Unexpected error while managing trailing stops")
+            logger.exception("Unexpected error while managing positions")
 
         notify_systemd("WATCHDOG=1")
 
