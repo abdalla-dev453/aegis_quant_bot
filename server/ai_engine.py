@@ -10,10 +10,9 @@ from enum import Enum
 from pathlib import Path
 from typing import Any
 
+from config import AI
 from openai import AsyncOpenAI
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
-
-from config import AI
 
 logger = logging.getLogger("trading_bot.ai")
 _error_logger = logging.getLogger("trading_bot.ai.invalid_response")
@@ -54,7 +53,7 @@ class TradeProposal(BaseModel):
         return value.upper()
 
     @classmethod
-    def hold(cls, symbol: str, reason: str) -> "TradeProposal":
+    def hold(cls, symbol: str, reason: str) -> TradeProposal:
         return cls(
             action=ProposalAction.HOLD,
             symbol=symbol,
@@ -94,7 +93,7 @@ def _get_client() -> AsyncOpenAI:
 
 def _check_circuit() -> bool:
     """Check if circuit breaker allows requests."""
-    global _circuit_open, _circuit_failures, _circuit_last_failure
+    global _circuit_open, _circuit_failures
     if not _circuit_open:
         return True
     # Auto-reset after timeout

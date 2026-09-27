@@ -8,23 +8,19 @@ adaptive position sizing, and smart stop management.
 from __future__ import annotations
 
 import logging
-import math
 import threading
-from dataclasses import dataclass
-from datetime import datetime, timezone, timedelta
-from enum import Enum
-from typing import Any, Optional, Callable
 from collections import deque
+from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
+from enum import Enum
+from typing import Any
 
 import pandas as pd
-
-from config import ADVANCED_RISK, RISK, ADVANCED_ANALYSIS
-from data_provider import get_open_positions, ensure_connected, mt5
 from advanced_technical_analysis import (
-    detect_market_regime, 
-    detect_support_resistance,
-    MarketRegime
+    MarketRegime,
 )
+from config import ADVANCED_RISK, RISK
+from data_provider import ensure_connected, get_open_positions, mt5
 
 logger = logging.getLogger("trading_bot.intelligent_position_manager")
 
@@ -151,7 +147,7 @@ class IntelligentPositionManager:
             
             return analysis
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any analysis failure
             logger.error(f"Error analyzing position {position.ticket}: {e}")
             return self._default_analysis(position)
     
@@ -257,7 +253,7 @@ class IntelligentPositionManager:
             
             return False
             
-        except Exception:
+        except Exception:  # noqa: BLE001 - return False on any error
             return False
     
     def _check_momentum_divergence(self, position: Any, market_data: dict[str, Any]) -> bool:
@@ -274,12 +270,12 @@ class IntelligentPositionManager:
                 return True
             
             # Bearish divergence for bullish position
-            if position_direction == "bullish" and price_momentum > 0 and rsi < 50:
+            if position_direction == "bullish" and price_momentum > 0 and rsi < 50:  # noqa: SIM103
                 return True
             
             return False
             
-        except Exception:
+        except Exception:  # noqa: BLE001 - return False on any error
             return False
     
     def _calculate_tightened_stop(self, position: Any, market_data: dict[str, Any]) -> float:
@@ -364,7 +360,7 @@ class IntelligentPositionManager:
             
             return analyses
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any analysis failure
             logger.error(f"Error analyzing all positions: {e}")
             return []
     
@@ -431,7 +427,7 @@ class IntelligentPositionManager:
                 reason=reason
             )
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any calculation failure
             logger.error(f"Error calculating volatility adjustment for {symbol}: {e}")
             return VolatilityAdjustment(
                 symbol=symbol,
@@ -439,7 +435,7 @@ class IntelligentPositionManager:
                 adjusted_size=base_size,
                 volatility_ratio=1.0,
                 adjustment_factor=1.0,
-                reason=f"Error in calculation: {str(e)}"
+                reason=f"Error in calculation: {e!s}"
             )
     
     def get_position_summary(self) -> dict[str, Any]:

@@ -7,15 +7,15 @@ import logging.handlers
 import re
 import time
 import xml.etree.ElementTree as ET
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from threading import Lock
-from typing import Any, Iterable
+from typing import Any
 
 import requests
-
 from config import NEWS_CONFIG
 from data_provider import ensure_connected, mt5, mt5_operation_lock
 
@@ -38,7 +38,7 @@ _HIGH_IMPACT_TERMS = (
 _MEDIUM_IMPACT_TERMS = ("pmi", "retail sales", "manufacturing", "bond", "yield")
 _CURRENCIES = ("USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NZD", "XAU")
 _cache_lock = Lock()
-_cache: tuple[float, "NewsFetchResult"] | None = None
+_cache: tuple[float, NewsFetchResult] | None = None
 
 
 @dataclass(frozen=True)
@@ -212,7 +212,7 @@ def get_latest_high_impact_news(limit: int = 10, hours: int = 24) -> NewsFetchRe
         terminal_items: list[dict[str, str]] = []
         try:
             terminal_items = _terminal_news(start, now)
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - catch any MT5 failure
             _error_logger.error("MT5 terminal news retrieval failed: %s", exc)
 
         terminal_high = _recent_unique(terminal_items, start, limit)

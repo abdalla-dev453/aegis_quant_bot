@@ -22,57 +22,65 @@ import threading
 import time
 
 import pandas as pd
-
+from adaptive_optimization import adaptive_optimizer
+from advanced_technical_analysis import (
+    analyze_trend_maturity,
+    analyze_volume,
+    calculate_adx,
+    calculate_macd,
+    compute_advanced_indicators,
+    detect_market_regime,
+    detect_support_resistance,
+)
+from ai_engine import ProposalAction, propose_trade, validate_ai_configuration
 from config import (
-    CANDLES_TO_FETCH,
-    DEPLOYMENT,
+    ADAPTIVE,
+    ADVANCED_ANALYSIS,
+    ADVANCED_RISK,
     AI,
+    CANDLES_TO_FETCH,
+    CREDENTIALS,
+    DEPLOYMENT,
     EXECUTION,
     INDICATORS,
+    INITIAL_BACKOFF_SECONDS,
     LOGGING,
+    MAX_BACKOFF_SECONDS,
+    PREDICTION,
     RISK,
     STRATEGY,
     TIMEFRAME_BIAS,
     TIMEFRAME_TRIGGER,
     TRADING_SYMBOLS,
-    MAX_BACKOFF_SECONDS,
-    INITIAL_BACKOFF_SECONDS,
-    ADVANCED_ANALYSIS,
-    PREDICTION,
-    ADVANCED_RISK,
 )
 from data_provider import (
     MT5ConnectionError,
     get_rates,
     initialize_connection,
     mt5,
-    shutdown_connection,
+    mt5_operation_lock,
     resolve_and_validate_symbols,
     resolved_symbol,
+    shutdown_connection,
 )
-from execution import place_order, manage_trailing_stops
-from strategy import TradeDirection, compute_indicators, generate_signal
-from ai_engine import ProposalAction, propose_trade, validate_ai_configuration
+from execution import manage_trailing_stops, place_order
+from intelligent_position_manager import IntelligentPositionManager
 from news_provider import get_latest_high_impact_news
-from runtime_state import add_log, control_state, record_order, record_proposal, set_control, update
-from advanced_technical_analysis import (
-    compute_advanced_indicators,
-    detect_market_regime,
-    detect_support_resistance,
-    analyze_trend_maturity,
-    analyze_volume,
-    calculate_adx,
-    calculate_macd,
-)
+from portfolio_risk_manager import portfolio_risk_manager
 from prediction_engine import (
-    PricePredictionEngine,
     PatternRecognitionEngine,
+    PricePredictionEngine,
     VolatilityForecaster,
 )
-from self_healing import self_healing_manager, data_quality_checker
-from adaptive_optimization import adaptive_optimizer
-from intelligent_position_manager import IntelligentPositionManager
-from portfolio_risk_manager import portfolio_risk_manager
+from runtime_state import (
+    add_log,
+    control_state,
+    record_order,
+    record_proposal,
+    update,
+)
+from self_healing import data_quality_checker, self_healing_manager
+from strategy import TradeDirection, compute_indicators, generate_signal
 
 logger = logging.getLogger("trading_bot.main")
 
@@ -487,6 +495,21 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
 
         notify_systemd("WATCHDOG=1")
 
+        # Periodic MT5 connection health check (every ~5 minutes)
+        if not hasattr(trading_loop, "_last_connection_check"):
+            trading_loop._last_connection_check = 0.0
+        import time as time_mod
+        if time_mod.monotonic() - trading_loop._last_connection_check > 300:
+            trading_loop._last_connection_check = time_mod.monotonic()
+            try:
+                with mt5_operation_lock():
+                    if mt5.terminal_info() is None:
+                        logger.warning("MT5 terminal connection lost — attempting reconnect")
+                        initialize_connection()
+                        update(connected=True)
+            except Exception:
+                logger.debug("MT5 health check failed", exc_info=True)
+
         poll = STRATEGY.loop_poll_seconds
         if had_error:
             extra = backoff.record_failure()
@@ -505,6 +528,13 @@ async def main() -> None:
         validate_ai_configuration()
         EXECUTION.validate()
         DEPLOYMENT.validate()
+        
+        # Validate live trading requirements
+        if EXECUTION.live_orders_enabled:
+            CREDENTIALS.validate_live_trade_config()
+            logger.info("Live trading mode enabled - credentials validated")
+        else:
+            logger.info("Paper trading mode - no live credentials required")
     except ValueError as exc:
         logger.critical("Initialization aborted: %s", exc)
         raise SystemExit(1) from exc
@@ -518,14 +548,22 @@ async def main() -> None:
 
     start_dashboard_api()
     notify_systemd("READY=1")
+    
+    # Initialize MT5 connection
     try:
         initialize_connection()
         resolve_and_validate_symbols()
         update(connected=True)
-    except MT5ConnectionError:
-        logger.error(
-            "MT5 unavailable at startup; enter credentials in the dashboard Settings page."
-        )
+        logger.info("MT5 connection established and symbols validated")
+    except MT5ConnectionError as e:
+        if EXECUTION.live_orders_enabled:
+            logger.critical("Live mode requires MT5 connection at startup: %s", e)
+            raise SystemExit(1) from e
+        logger.warning("MT5 unavailable at startup (paper mode); will retry in loop: %s", e)
+    except Exception as e:
+        logger.error("Unexpected error during MT5 initialization: %s", e)
+        if EXECUTION.live_orders_enabled:
+            raise SystemExit(1) from e
 
     stop_event = asyncio.Event()
 

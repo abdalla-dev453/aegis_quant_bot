@@ -10,16 +10,16 @@ indices.
 
 from __future__ import annotations
 
-import logging
-import logging.handlers
 import datetime
 import json
+import logging
+import logging.handlers
 import math
 import threading
 from collections import namedtuple
 from pathlib import Path
-from queue import Queue, Empty
-from typing import Any, Dict, Tuple, cast
+from queue import Empty, Queue
+from typing import Any, cast
 
 try:
     import MetaTrader5 as mt5
@@ -33,6 +33,7 @@ from data_provider import (
     get_open_positions,
     mt5_serialized,
 )
+from metrics import ORDERS_PLACED
 from runtime_state import control_state
 from strategy import TradeDirection
 
@@ -61,8 +62,8 @@ class _QueueHandler(logging.Handler):
     def emit(self, record: logging.LogRecord) -> None:
         try:
             _logger_queue.put_nowait(record)
-        except Exception:
-            pass  # never block the hot path
+        except Exception:  # noqa: BLE001,S110 - never block the hot path
+            pass
 
 
 def _log_worker() -> None:
@@ -95,7 +96,7 @@ _SymbolData = namedtuple(
     "info tick_size tick_value step step_decimals min_stop_points",
 )
 
-_symbol_cache: Dict[str, _SymbolData] = {}
+_symbol_cache: dict[str, _SymbolData] = {}
 _cache_lock = threading.Lock()
 _MAX_CACHE_SIZE = 128
 
@@ -115,7 +116,7 @@ def _get_symbol(symbol: str) -> _SymbolData:
     tick_size = info.trade_tick_size or info.point
     tick_value = info.trade_tick_value
     step = info.volume_step or 0.01
-    step_decimals = max(0, -int(math.floor(math.log10(step))))
+    step_decimals = max(0, -math.floor(math.log10(step)))
     min_stop_points = max(info.trade_stops_level, 1) * info.point
 
     sym = _SymbolData(
@@ -152,7 +153,7 @@ MAX_MARGIN_UTILIZATION_PCT = 80.0  # refuse trades that would push margin use pa
 
 _POSITION_STATE_FILE = Path("position_state.json")
 _position_state_lock = threading.Lock()
-_original_risk_by_ticket: Dict[int, float] = {}
+_original_risk_by_ticket: dict[int, float] = {}
 
 
 def _load_position_state() -> None:
@@ -546,7 +547,7 @@ def place_order(
         from data_provider import validate_symbol_trade_constraints
 
         validate_symbol_trade_constraints(symbol, entry_price, sl, tp)
-    except Exception as exc:  # pragma: no cover - live MT5 broker guard
+    except Exception as exc:  # noqa: BLE001 - pragma: no cover - live MT5 broker guard
         logger.warning("Broker validation blocked %s %s: %s", symbol, direction.value, exc)
         return None
 
@@ -600,6 +601,9 @@ def place_order(
             code_name,
             result.comment,
         )
+        ORDERS_PLACED.labels(
+            symbol=symbol, direction=direction.value, result="rejected"
+        ).inc()
         if result.retcode in {
             mt5.TRADE_RETCODE_REQUOTE,
             mt5.TRADE_RETCODE_PRICE_CHANGED,
@@ -654,6 +658,9 @@ def place_order(
         **(audit_context or {}),
     }
     logger.info("TRADE_AUDIT %s", json.dumps(audit_record, sort_keys=True, default=str))
+    ORDERS_PLACED.labels(
+        symbol=symbol, direction=direction.value, result="filled"
+    ).inc()
     return result._asdict()
 
 
@@ -685,7 +692,7 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
         return  # fast-path: nothing to manage
 
     # Pre-fetch cached symbol info once per distinct symbol (not per position)
-    sym_map: Dict[str, _SymbolData] = {}
+    sym_map: dict[str, _SymbolData] = {}
     for pos in positions:
         if pos.symbol not in sym_map:
             try:

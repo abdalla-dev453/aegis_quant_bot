@@ -2,21 +2,27 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
-from collections import defaultdict, deque
 import hmac
 import logging
 import os
-from pathlib import Path
 import time
+import time as time_mod
+from collections import defaultdict, deque
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from threading import Lock
 from typing import Any
 
-from fastapi import Depends, FastAPI, Header, HTTPException, Request
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
-
-from config import CREDENTIALS, DEPLOYMENT, EXECUTION, INDICATORS, NEWS_CONFIG, RISK, TRADING_SYMBOLS, ADVANCED_ANALYSIS, PREDICTION, ADVANCED_RISK
+from adaptive_optimization import adaptive_optimizer
+from config import (
+    ADVANCED_ANALYSIS,
+    DEPLOYMENT,
+    EXECUTION,
+    INDICATORS,
+    PREDICTION,
+    RISK,
+    TRADING_SYMBOLS,
+)
 from data_provider import (
     configure_runtime_credentials,
     ensure_connected,
@@ -28,18 +34,31 @@ from data_provider import (
     resolve_and_validate_symbols,
     shutdown_connection,
 )
-from runtime_state import read, record_proposal, record_order, control_state, set_control, update
-from strategy import compute_indicators
 from execution import reset_max_drawdown_guard, risk_guard_status
-from news_provider import get_latest_high_impact_news
-from advanced_technical_analysis import detect_market_regime, detect_support_resistance
-from self_healing import self_healing_manager
-from adaptive_optimization import adaptive_optimizer
-from portfolio_risk_manager import portfolio_risk_manager
-
-import time as time_mod
-from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
+from metrics import (
+    API_LATENCY,
+    API_REQUESTS,
+    DRAWDOWN,
+    EQUITY,
+    MT5_CONNECTED,
+    MT5_LAST_CANDLE_AGE,
+    POSITIONS_OPEN,
+)
+from news_provider import get_latest_high_impact_news
+from portfolio_risk_manager import portfolio_risk_manager
+from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
+from pydantic import BaseModel, Field
+from runtime_state import (
+    control_state,
+    read,
+    set_control,
+    update,
+)
+from self_healing import self_healing_manager
+from strategy import compute_indicators
 
 app = FastAPI(title="Aegis Quant API", version="1.0.0")
 logger = logging.getLogger("trading_bot.api")
@@ -192,6 +211,9 @@ def health() -> JSONResponse:
         logger.debug("Health check could not inspect MT5", exc_info=True)
 
     healthy = connected and mt5_healthy and data_fresh
+    MT5_CONNECTED.set(1.0 if mt5_healthy else 0.0)
+    if last_candle_age_seconds is not None:
+        MT5_LAST_CANDLE_AGE.set(last_candle_age_seconds)
     payload = {
         "ok": healthy,
         "connected": connected,
@@ -267,6 +289,8 @@ def save_credentials(payload: CredentialsPayload) -> dict[str, Any]:
 @app.get("/api/account", dependencies=[Depends(protected)])
 def account() -> dict[str, float]:
     info = _account()
+    EQUITY.set(float(info.equity))
+    DRAWDOWN.set(max(0.0, (info.equity - (info.balance or info.equity)) / info.equity * 100 if info.equity else 0.0))
     now = datetime.now(timezone.utc)
     day_start = now.replace(hour=0, minute=0, second=0, microsecond=0).replace(tzinfo=None)
     with mt5_operation_lock():
@@ -286,6 +310,7 @@ def account() -> dict[str, float]:
 
 @app.get("/api/positions", dependencies=[Depends(protected)])
 def positions() -> list[dict[str, Any]]:
+    POSITIONS_OPEN.set(len(_position_rows()))
     return _position_rows()
 
 
@@ -321,7 +346,7 @@ def get_control() -> dict[str, Any]:
 
 
 @app.post("/api/control", dependencies=[Depends(protected_credentials)])
-def set_control(payload: ControlPayload) -> dict[str, Any]:
+def set_control_endpoint(payload: ControlPayload) -> dict[str, Any]:
     return set_control(payload.status, payload.reason, payload.source)
 
 
@@ -389,13 +414,9 @@ def performance() -> dict[str, Any]:
 
 
 @app.get("/api/equity-curve", dependencies=[Depends(protected)])
-def equity_curve() -> list[dict[str, Any]]:
+def equity_curve() -> dict[str, Any]:
     info = _account()
     deals = sorted(_history_deals(days=30), key=lambda deal: deal.time)
-    if not deals:
-        return [
-            {"date": datetime.now(timezone.utc).date().isoformat(), "equity": float(info.equity)}
-        ]
     current_equity = float(info.equity)
     daily: dict[str, float] = {}
     for deal in deals:
@@ -406,6 +427,10 @@ def equity_curve() -> list[dict[str, Any]]:
     for date, pnl in sorted(daily.items()):
         running += pnl
         points.append({"date": date, "equity": running})
+    points.append({
+        "date": datetime.now(timezone.utc).date().isoformat(),
+        "equity": current_equity,
+    })
     return points
 
 
@@ -428,17 +453,7 @@ def price_series() -> dict[str, Any]:
     }
 
 
-# --- Prometheus Metrics ---
-API_REQUESTS = Counter("aegis_api_requests_total", "Total API requests", ["method", "endpoint", "status"])
-API_LATENCY = Histogram("aegis_api_latency_seconds", "API request latency", ["method", "endpoint"])
-MT5_CONNECTED = Gauge("aegis_mt5_connected", "MT5 connection status (1=connected)")
-MT5_LAST_CANDLE_AGE = Gauge("aegis_mt5_last_candle_age_seconds", "Age of last H1 candle in seconds")
-AI_REQUESTS = Counter("aegis_ai_requests_total", "Total AI requests", ["result"])
-AI_LATENCY = Histogram("aegis_ai_latency_seconds", "AI request latency")
-ORDERS_PLACED = Counter("aegis_orders_placed_total", "Total orders placed", ["symbol", "direction", "result"])
-POSITIONS_OPEN = Gauge("aegis_positions_open", "Current open positions")
-EQUITY = Gauge("aegis_account_equity", "Account equity")
-DRAWDOWN = Gauge("aegis_drawdown_percent", "Current drawdown percent")
+# --- Prometheus Metrics (imported from metrics.py) ---
 
 
 @app.middleware("http")

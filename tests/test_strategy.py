@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import pandas as pd
 import pytest
-
 import strategy
 from strategy import SentimentReading, TradeDirection, Trend
 

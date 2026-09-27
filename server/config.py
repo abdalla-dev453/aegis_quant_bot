@@ -14,7 +14,7 @@ of hardcoding them here. The placeholders below are for local dev only.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Final
 
@@ -212,6 +212,8 @@ class ExecutionConfig:
 # estimate) and extend it when adding tradable symbols.
 SYMBOL_CORRELATIONS: Final[dict[tuple[str, str], float]] = {
     ("EURUSD", "GBPUSD"): 0.85,
+    ("EURUSD", "XAUUSD"): -0.3,
+    ("GBPUSD", "XAUUSD"): -0.2,
 }
 
 

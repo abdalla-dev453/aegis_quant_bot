@@ -10,21 +10,23 @@ from __future__ import annotations
 import logging
 import threading
 import time
-from dataclasses import dataclass
-from datetime import datetime, timezone, timedelta
-from enum import Enum
-from typing import Any, Callable, Optional
 from collections import deque
+from collections.abc import Callable
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from enum import Enum
+from typing import Any
 
+import numpy as np
+import pandas as pd
 from config import SELF_HEALING
 from data_provider import (
-    MT5ConnectionError, 
-    initialize_connection, 
-    shutdown_connection,
+    MT5ConnectionError,
     ensure_connected,
-    mt5
+    initialize_connection,
+    mt5,
+    shutdown_connection,
 )
-import pandas as pd
 
 logger = logging.getLogger("trading_bot.self_healing")
 
@@ -80,7 +82,7 @@ class HealthMonitor:
         self._lock = threading.Lock()
         self._check_interval = 30  # seconds
         self._running = False
-        self._monitor_thread: Optional[threading.Thread] = None
+        self._monitor_thread: threading.Thread | None = None
     
     def start_monitoring(self):
         """Start background health monitoring"""
@@ -105,7 +107,7 @@ class HealthMonitor:
             try:
                 self._check_system_health()
                 time.sleep(self._check_interval)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - catch any failure
                 logger.error(f"Error in health monitoring loop: {e}")
     
     def _check_system_health(self):
@@ -123,7 +125,7 @@ class HealthMonitor:
             # Check error rates
             self._check_error_rates()
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error checking system health: {e}")
     
     def _check_connection_health(self):
@@ -143,15 +145,28 @@ class HealthMonitor:
             
             self._update_metric("connection_health", health_score, status)
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error checking connection health: {e}")
             self._update_metric("connection_health", 0.0, HealthStatus.CRITICAL)
     
     def _check_data_quality(self):
-        """Check data quality metrics"""
-        # This would be implemented with actual data quality checks
-        # For now, placeholder
-        self._update_metric("data_quality", 1.0, HealthStatus.HEALTHY)
+        """Check data quality metrics using recent candle data"""
+        try:
+            from advanced_technical_analysis import compute_indicators
+            from data_provider import CANDLES_TO_FETCH, TIMEFRAME_BIAS, get_rates
+            df = get_rates("EURUSD", TIMEFRAME_BIAS, CANDLES_TO_FETCH)
+            df_ind = compute_indicators(df)
+            if df_ind.empty:
+                self._update_metric("data_quality", 0.3, HealthStatus.DEGRADED)
+                return
+            valid, _msg = data_quality_checker.validate_dataframe(df_ind, "EURUSD")
+            if valid:
+                self._update_metric("data_quality", 1.0, HealthStatus.HEALTHY)
+            else:
+                self._update_metric("data_quality", 0.4, HealthStatus.DEGRADED)
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.debug(f"Data quality check error: {e}")
+            self._update_metric("data_quality", 0.5, HealthStatus.DEGRADED)
     
     def _check_memory_health(self):
         """Check memory usage"""
@@ -174,7 +189,7 @@ class HealthMonitor:
         except ImportError:
             # psutil not available, use simple fallback
             self._update_metric("memory_health", 0.8, HealthStatus.HEALTHY)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error checking memory health: {e}")
             self._update_metric("memory_health", 0.5, HealthStatus.DEGRADED)
     
@@ -333,7 +348,7 @@ class SelfHealingManager:
             
             return success
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error during recovery attempt for {error_key}: {e}")
             return False
     
@@ -366,7 +381,7 @@ class SelfHealingManager:
             logger.info("Connection recovery successful")
             return True
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Connection recovery failed: {e}")
             return False
     
@@ -383,7 +398,7 @@ class SelfHealingManager:
             logger.info("Generic recovery completed (may not have resolved issue)")
             return True  # Return True to prevent infinite loops, even if not fully resolved
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Generic recovery failed: {e}")
             return False
     

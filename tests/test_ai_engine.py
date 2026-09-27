@@ -2,15 +2,16 @@
 
 from __future__ import annotations
 
-import pytest
 from types import SimpleNamespace
 
 import ai_engine
+import pytest
 from ai_engine import ProposalAction, TradeProposal
+from pydantic import ValidationError
 
 
 def test_trade_proposal_rejects_unknown_fields_and_invalid_confidence() -> None:
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         TradeProposal.model_validate(
             {
                 "action": "BUY",

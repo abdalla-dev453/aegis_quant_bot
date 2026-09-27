@@ -8,18 +8,16 @@ correlation risks, and concentration across multiple positions.
 from __future__ import annotations
 
 import logging
-import math
 import threading
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any, Optional
-from collections import defaultdict
-import numpy as np
-import pandas as pd
+from typing import Any
 
-from config import ADVANCED_RISK, RISK, SYMBOL_CORRELATIONS, TRADING_SYMBOLS
-from data_provider import get_open_positions, get_account_equity, ensure_connected, mt5
+import pandas as pd
+from config import ADVANCED_RISK, RISK, SYMBOL_CORRELATIONS
+from data_provider import ensure_connected, get_account_equity, get_open_positions, mt5
 
 logger = logging.getLogger("trading_bot.portfolio_risk_manager")
 
@@ -68,14 +66,15 @@ class PortfolioAnalysis:
     overall_health: PortfolioHealth
     total_exposure_usd: float
     exposure_percentage: float
-    currency_exposures: list[CurrencyExposure]
-    correlation_risk_score: float
-    concentration_risk_score: float
-    volatility_risk_score: float
-    alerts: list[RiskAlert]
-    risk_summary: str
-    recommended_actions: list[str]
-    timestamp: datetime
+    equity: float = 0.0
+    currency_exposures: list[CurrencyExposure] = ()
+    correlation_risk_score: float = 0.0
+    concentration_risk_score: float = 0.0
+    volatility_risk_score: float = 0.0
+    alerts: list[RiskAlert] = ()
+    risk_summary: str = ""
+    recommended_actions: list[str] = ()
+    timestamp: datetime | None = None
 
 
 class PortfolioRiskManager:
@@ -113,7 +112,7 @@ class PortfolioRiskManager:
             exposure_percentage = (total_exposure_usd / equity) * 100 if equity > 0 else 0.0
             
             # Analyze currency exposures
-            currency_exposures = self._analyze_currency_exposures(positions)
+            currency_exposures = self._analyze_currency_exposures(positions, equity)
             
             # Calculate correlation risk
             correlation_risk = self._calculate_correlation_risk(positions)
@@ -148,6 +147,7 @@ class PortfolioRiskManager:
                 overall_health=overall_health,
                 total_exposure_usd=total_exposure_usd,
                 exposure_percentage=exposure_percentage,
+                equity=equity,
                 currency_exposures=currency_exposures,
                 correlation_risk_score=correlation_risk,
                 concentration_risk_score=concentration_risk,
@@ -170,7 +170,7 @@ class PortfolioRiskManager:
             
             return analysis
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error analyzing portfolio: {e}")
             return self._empty_portfolio_analysis()
     
@@ -180,6 +180,7 @@ class PortfolioRiskManager:
             overall_health=PortfolioHealth.HEALTHY,
             total_exposure_usd=0.0,
             exposure_percentage=0.0,
+            equity=0.0,
             currency_exposures=[],
             correlation_risk_score=0.0,
             concentration_risk_score=0.0,
@@ -208,13 +209,13 @@ class PortfolioRiskManager:
                 position_value = position.volume * contract_size * current_price
                 total_exposure += position_value
                 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - catch any failure
                 logger.debug(f"Error calculating exposure for {position.symbol}: {e}")
                 continue
         
         return total_exposure
     
-    def _analyze_currency_exposures(self, positions: list) -> list[CurrencyExposure]:
+    def _analyze_currency_exposures(self, positions: list, equity: float) -> list[CurrencyExposure]:
         """Analyze exposure by currency"""
         currency_data = defaultdict(lambda: {
             'total_exposure': 0.0,
@@ -245,14 +246,13 @@ class PortfolioRiskManager:
                 else:
                     currency_data[currency]['short_volume'] += position.volume
                     
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - catch any failure
                 logger.debug(f"Error analyzing currency exposure for {position.symbol}: {e}")
                 continue
         
         # Convert to CurrencyExposure objects
-        equity = get_account_equity()
         exposures = []
-        
+
         for currency, data in currency_data.items():
             exposure_percentage = (data['total_exposure'] / equity) * 100 if equity > 0 else 0.0
             
@@ -365,7 +365,7 @@ class PortfolioRiskManager:
                 vol_score = min(1.0, volatility / 0.02)
                 volatility_scores.append(vol_score)
                 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - catch any failure
                 logger.debug(f"Error calculating volatility for {position.symbol}: {e}")
                 continue
         
@@ -544,12 +544,17 @@ class PortfolioRiskManager:
             # Get current portfolio analysis
             current_analysis = self.analyze_portfolio()
             
+            equity = current_analysis.equity or get_account_equity()
+            
             # Calculate new position exposure
             symbol_info = mt5.symbol_info(symbol)
             if symbol_info is None:
                 return False, f"Cannot get symbol info for {symbol}"
             
-            current_price = mt5.symbol_info_tick(symbol).ask if direction == "BUY" else mt5.symbol_info_tick(symbol).bid
+            tick = mt5.symbol_info_tick(symbol)
+            if tick is None:
+                return False, f"Cannot get tick for {symbol}"
+            current_price = tick.ask if direction == "BUY" else tick.bid
             position_value = volume * symbol_info.trade_contract_size * current_price
             
             # Check if new trade would exceed exposure limit
@@ -564,9 +569,10 @@ class PortfolioRiskManager:
             if current_analysis.correlation_risk_score > 0.5:
                 # Check if new position is correlated with existing ones
                 for exp in current_analysis.currency_exposures:
-                    if exp.currency in symbol and exp.net_direction == direction.lower():
-                        if new_exposure_pct > ADVANCED_RISK.max_correlation_exposure_pct:
-                            return False, f"Trade would exceed correlation exposure limit"
+                    if (exp.currency in symbol and 
+                        exp.net_direction == direction.lower() and
+                        new_exposure_pct > ADVANCED_RISK.max_correlation_exposure_pct):
+                        return False, "Trade would exceed correlation exposure limit"
             
             # Check concentration risk
             base_currency = self._extract_base_currency(symbol)
@@ -574,11 +580,11 @@ class PortfolioRiskManager:
                 if exp.currency == base_currency:
                     new_currency_exposure = exp.exposure_percentage + (position_value / equity) * 100
                     if new_currency_exposure > ADVANCED_RISK.max_currency_concentration_pct:
-                        return False, f"Trade would exceed currency concentration limit"
+                        return False, "Trade would exceed currency concentration limit"
             
             return True, "Trade within portfolio risk limits"
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error checking pre-trade risk: {e}")
             return True, "Error in risk check, allowing trade"  # Fail open
     
@@ -619,9 +625,12 @@ class PortfolioRiskManager:
                 "enabled": ADVANCED_RISK.enable_portfolio_risk
             }
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error getting risk summary: {e}")
             return {
                 "error": str(e),
                 "overall_health": "unknown"
             }
+
+
+portfolio_risk_manager = PortfolioRiskManager()

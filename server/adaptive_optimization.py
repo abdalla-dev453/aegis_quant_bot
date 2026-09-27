@@ -7,17 +7,15 @@ parameters based on recent performance metrics.
 
 from __future__ import annotations
 
+import json
 import logging
 import threading
-from dataclasses import dataclass
-from datetime import datetime, timezone, timedelta
-from enum import Enum
-from typing import Any, Optional
 from collections import deque
-import json
+from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
+from enum import Enum
 from pathlib import Path
-
-import pandas as pd
+from typing import Any
 
 # Optional numpy for statistical calculations
 try:
@@ -26,10 +24,59 @@ try:
 except ImportError:
     NUMPY_AVAILABLE = False
 
-from config import ADAPTIVE, INDICATORS, STRATEGY, RISK
+from config import ADAPTIVE, INDICATORS, RISK, STRATEGY
 from runtime_state import read
 
 logger = logging.getLogger("trading_bot.adaptive_optimization")
+
+_PARAMETER_OVERRIDES_FILE = Path("parameter_overrides.json")
+_parameter_overrides: dict[str, float] = {}
+
+
+def _load_overrides() -> None:
+    global _parameter_overrides
+    try:
+        if _PARAMETER_OVERRIDES_FILE.exists():
+            with open(_PARAMETER_OVERRIDES_FILE, "r") as f:
+                _parameter_overrides = {k: float(v) for k, v in json.load(f).items()}
+    except Exception:
+        logger.exception("Failed to load parameter overrides")
+        _parameter_overrides = {}
+
+
+def _save_overrides() -> None:
+    try:
+        with open(_PARAMETER_OVERRIDES_FILE, "w") as f:
+            json.dump(_parameter_overrides, f, indent=2)
+    except Exception:
+        logger.exception("Failed to save parameter overrides")
+
+
+_load_overrides()
+
+
+def get_effective_param(param_name: str, default_value: float) -> float:
+    """Return the effective parameter value, checking runtime overrides first."""
+    if param_name in _parameter_overrides:
+        return _parameter_overrides[param_name]
+    return default_value
+
+
+def get_all_effective_parameters() -> dict[str, float]:
+    """Return all parameters with overrides applied."""
+    from config import INDICATORS, RISK, STRATEGY
+    base = {
+        'rsi_overbought': getattr(INDICATORS, 'rsi_overbought', 70.0),
+        'rsi_oversold': getattr(INDICATORS, 'rsi_oversold', 30.0),
+        'sentiment_bullish_threshold': STRATEGY.sentiment_bullish_threshold,
+        'sentiment_bearish_threshold': STRATEGY.sentiment_bearish_threshold,
+        'risk_per_trade_pct': RISK.risk_per_trade_pct,
+        'atr_sl_multiplier': RISK.atr_sl_multiplier,
+        'atr_tp_multiplier': RISK.atr_tp_multiplier,
+    }
+    for key, value in _parameter_overrides.items():
+        base[key] = value
+    return base
 
 
 class OptimizationStatus(str, Enum):
@@ -100,8 +147,8 @@ class AdaptiveOptimizer:
             logger.info("Adaptive optimization disabled")
     
     def _get_current_parameters(self) -> dict[str, float]:
-        """Get current trading parameters from config"""
-        return {
+        """Get current trading parameters from config, with overrides applied."""
+        base = {
             'rsi_overbought': getattr(INDICATORS, 'rsi_overbought', 70.0),
             'rsi_oversold': getattr(INDICATORS, 'rsi_oversold', 30.0),
             'sentiment_bullish_threshold': STRATEGY.sentiment_bullish_threshold,
@@ -110,6 +157,9 @@ class AdaptiveOptimizer:
             'atr_sl_multiplier': RISK.atr_sl_multiplier,
             'atr_tp_multiplier': RISK.atr_tp_multiplier,
         }
+        for key, value in _parameter_overrides.items():
+            base[key] = value
+        return base
     
     def analyze_recent_performance(self) -> PerformanceMetrics:
         """
@@ -183,7 +233,7 @@ class AdaptiveOptimizer:
             
             return metrics
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any analysis failure
             logger.error(f"Error analyzing performance: {e}")
             return self._empty_performance_metrics()
     
@@ -226,12 +276,10 @@ class AdaptiveOptimizer:
         max_drawdown = 0.0
         
         for value in equity_curve:
-            if value > peak:
-                peak = value
+            peak = max(peak, value)
             
             drawdown = (peak - value) / peak if peak > 0 else 0.0
-            if drawdown > max_drawdown:
-                max_drawdown = drawdown
+            max_drawdown = max(max_drawdown, drawdown)
         
         return max_drawdown
     
@@ -454,14 +502,16 @@ class AdaptiveOptimizer:
         """
         if not adjustments:
             return False
-        
+
         with self._lock:
             for adjustment in adjustments:
                 self.adjustment_history.append(adjustment)
+                _parameter_overrides[adjustment.parameter_name] = adjustment.new_value
                 logger.info(
                     f"Adjusted {adjustment.parameter_name}: {adjustment.old_value:.3f} -> "
                     f"{adjustment.new_value:.3f} ({adjustment.direction.value}) - {adjustment.reason}"
                 )
+            _save_overrides()
         
         # Note: In a real implementation, this would update the actual configuration
         # For now, we just track the adjustments in memory
@@ -524,9 +574,9 @@ class AdaptiveOptimizer:
                     }
                     for adj in adjustments
                 ]
-            }
-            
-        except Exception as e:
+}
+        
+        except Exception as e:  # noqa: BLE001 - catch any cycle failure
             logger.error(f"Error in optimization cycle: {e}")
             return {
                 "status": "error",
@@ -590,7 +640,7 @@ class AdaptiveOptimizer:
             
             logger.info(f"Saved adjustment history to {file_path}")
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any file I/O failure
             logger.error(f"Error saving adjustment history: {e}")
 
 

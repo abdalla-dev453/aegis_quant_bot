@@ -16,7 +16,6 @@ from enum import Enum
 
 import pandas as pd
 import pandas_ta as ta
-
 from config import INDICATORS, NEWS_CONFIG, STRATEGY
 from news_provider import get_latest_high_impact_news
 
@@ -252,9 +251,7 @@ def is_news_blackout(sentiment: SentimentReading) -> bool:
     m = sentiment.minutes_to_next_event
     if 0 <= m <= NEWS_CONFIG.blackout_minutes_before:
         return True
-    if -NEWS_CONFIG.blackout_minutes_after <= m < 0:
-        return True
-    return False
+    return -NEWS_CONFIG.blackout_minutes_after <= m < 0
 
 
 # ---------------------------------------------------------------------------
@@ -339,6 +336,17 @@ def generate_signal(
         return TradeSignal(
             TradeDirection.SELL,
             "Technical bearish + sentiment confirms",
+            trend,
+            sentiment.score,
+            atr,
+        )
+
+    # Graceful degradation: if no sentiment data available, allow technical signal
+    if sentiment.score == 0.0 and sentiment.headline_count == 0:
+        direction = TradeDirection.BUY if trend == Trend.BULLISH else TradeDirection.SELL
+        return TradeSignal(
+            direction,
+            f"Technical {trend.value} (no sentiment data available)",
             trend,
             sentiment.score,
             atr,

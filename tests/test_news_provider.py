@@ -4,9 +4,8 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-import requests
-
 import news_provider
+import requests
 
 
 def test_normalize_record_returns_exact_live_news_schema() -> None:
@@ -33,7 +32,7 @@ def test_normalize_record_returns_exact_live_news_schema() -> None:
 def test_all_feed_failures_return_explicit_warning(monkeypatch) -> None:
     monkeypatch.setattr(news_provider, "_cache", None)
     monkeypatch.setattr(news_provider, "_terminal_news", lambda *_args: (_ for _ in ()).throw(RuntimeError("down")))
-    monkeypatch.setattr(news_provider, "_newsapi", lambda: [])
+    monkeypatch.setattr(news_provider, "_newsapi", list)
     monkeypatch.setattr(news_provider, "_yahoo_rss", lambda: (_ for _ in ()).throw(requests.Timeout("down")))
 
     result = news_provider.get_latest_high_impact_news()

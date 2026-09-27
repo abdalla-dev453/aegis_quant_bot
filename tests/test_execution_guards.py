@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
+import data_provider
 import execution
 import runtime_state
-import data_provider
 from strategy import TradeDirection
 
 

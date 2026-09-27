@@ -8,33 +8,29 @@ and volatility prediction using machine learning and statistical methods.
 from __future__ import annotations
 
 import logging
-import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any, Optional
-import json
-
-import pandas as pd
-import numpy as np
 from pathlib import Path
-import logging
+
+import numpy as np
+import pandas as pd
 
 logger = logging.getLogger("trading_bot.prediction_engine")
 
 # Optional ML dependencies
 try:
-    from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.model_selection import train_test_split
     import joblib
+    from sklearn.ensemble import GradientBoostingClassifier
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
     ML_AVAILABLE = True
 except ImportError:
     ML_AVAILABLE = False
     logger.warning("ML dependencies not available, using fallback predictions")
 
-from config import PREDICTION, ADVANCED_ANALYSIS, INDICATORS
 from advanced_technical_analysis import detect_support_resistance
+from config import ADVANCED_ANALYSIS, INDICATORS, PREDICTION
 
 
 class PredictionDirection(str, Enum):
@@ -120,7 +116,7 @@ class PricePredictionEngine:
                 logger.info("Loaded existing prediction model")
             else:
                 self._initialize_model()
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.warning(f"Could not load model, initializing new one: {e}")
             self._initialize_model()
     
@@ -227,9 +223,15 @@ class PricePredictionEngine:
                 return False
             
             # Split data
-            X_train, X_test, y_train, y_test = train_test_split(
-                X, y, test_size=0.2, random_state=42, stratify=y
-            )
+            try:
+                X_train, X_test, y_train, y_test = train_test_split(
+                    X, y, test_size=0.2, random_state=42,
+                    stratify=y if len(set(y)) > 1 and min(__import__("collections").Counter(y).values()) >= 2 else None,
+                )
+            except ValueError:
+                X_train, X_test, y_train, y_test = train_test_split(
+                    X, y, test_size=0.2, random_state=42,
+                )
             
             # Scale features
             X_train_scaled = self.scaler.fit_transform(X_train)
@@ -251,7 +253,7 @@ class PricePredictionEngine:
             
             return True
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error training model: {e}")
             return False
     
@@ -295,7 +297,7 @@ class PricePredictionEngine:
             try:
                 features_scaled = self.scaler.transform(features)
                 prediction_proba = self.model.predict_proba(features_scaled)[0]
-            except Exception:
+            except Exception:  # noqa: BLE001 - catch any failure
                 # Model not trained yet, use fallback
                 return self._fallback_prediction(df, lookahead_bars)
             
@@ -352,7 +354,7 @@ class PricePredictionEngine:
                 timestamp=datetime.now(timezone.utc).isoformat()
             )
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error predicting price move: {e}")
             return self._fallback_prediction(df, lookahead_bars)
     
@@ -481,7 +483,7 @@ class PatternRecognitionEngine:
             
             return patterns[:5]  # Return top 5 patterns
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error detecting patterns: {e}")
             return []
     
@@ -510,7 +512,7 @@ class PatternRecognitionEngine:
                 
                 if height_diff < 0.02:  # Within 2%
                     confidence = 0.8 - height_diff * 10
-                    current_price = df['close'].iloc[-1]
+                    _ = df['close'].iloc[-1]
                     neckline = min(recent_data['low'].iloc[peak1[0]:peak2[0]])
                     
                     patterns.append(PatternMatch(
@@ -523,7 +525,7 @@ class PatternRecognitionEngine:
                         timeframe="H1"
                     ))
         
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error detecting double top: {e}")
         
         return patterns
@@ -552,7 +554,7 @@ class PatternRecognitionEngine:
                 
                 if depth_diff < 0.02:
                     confidence = 0.8 - depth_diff * 10
-                    current_price = df['close'].iloc[-1]
+                    _ = df['close'].iloc[-1]
                     neckline = max(recent_data['high'].iloc[trough1[0]:trough2[0]])
                     
                     patterns.append(PatternMatch(
@@ -565,7 +567,7 @@ class PatternRecognitionEngine:
                         timeframe="H1"
                     ))
         
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error detecting double bottom: {e}")
         
         return patterns
@@ -610,7 +612,7 @@ class PatternRecognitionEngine:
                             timeframe="H1"
                         ))
         
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error detecting head and shoulders: {e}")
         
         return patterns
@@ -671,7 +673,7 @@ class PatternRecognitionEngine:
                         timeframe="H1"
                     ))
         
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error detecting triangles: {e}")
         
         return patterns
@@ -715,7 +717,7 @@ class PatternRecognitionEngine:
                         timeframe="H1"
                     ))
         
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.debug(f"Error detecting flags: {e}")
         
         return patterns
@@ -797,7 +799,7 @@ class VolatilityForecaster:
                 confidence=float(confidence)
             )
             
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error forecasting volatility: {e}")
             return self._default_forecast(df)
     

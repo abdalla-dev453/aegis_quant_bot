@@ -8,7 +8,7 @@ If you change a field here, change it there too — nothing else needs editing.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass
 from typing import Any
 
 

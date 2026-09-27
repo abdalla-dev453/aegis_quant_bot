@@ -11,12 +11,9 @@ import logging
 import math
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any
 
 import pandas as pd
 import pandas_ta as ta
-import numpy as np
-
 from config import ADVANCED_ANALYSIS, INDICATORS
 
 logger = logging.getLogger("trading_bot.advanced_technical_analysis")
@@ -151,7 +148,7 @@ def calculate_adx(df: pd.DataFrame, period: int = 14) -> ADXResult:
             trend_direction=trend_direction
         )
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error calculating ADX: {e}")
         return ADXResult(0.0, TrendStrength.NONE, 0.0, 0.0, "neutral")
 
@@ -209,7 +206,7 @@ def calculate_macd(df: pd.DataFrame, fast: int = 12, slow: int = 26, signal: int
             signal_type=signal_type
         )
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error calculating MACD: {e}")
         return MACDResult(0.0, 0.0, 0.0, "neutral")
 
@@ -262,7 +259,7 @@ def analyze_volume(df: pd.DataFrame, threshold: float = 1.5, lookback: int = 20)
             trend_confirmation=trend_confirmation
         )
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error analyzing volume: {e}")
         return VolumeAnalysis(0.0, 0.0, 0.0, False, "neutral")
 
@@ -328,14 +325,14 @@ def detect_market_regime(df: pd.DataFrame) -> MarketRegimeAnalysis:
             recommended_approach=recommended_approach
         )
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error detecting market regime: {e}")
         return MarketRegimeAnalysis(
             MarketRegime.UNCERTAIN, 0.0, 0.0, 0.0, "analysis_error"
         )
 
 
-def detect_support_resistance(df: pd.DataFrame, lookback: int = 50) -> SupportResistanceLevels:
+def detect_support_resistance(df: pd.DataFrame, lookback: int = 50, symbol: str = "") -> SupportResistanceLevels:
     """
     Detect key support and resistance levels using pivot analysis.
     
@@ -379,7 +376,7 @@ def detect_support_resistance(df: pd.DataFrame, lookback: int = 50) -> SupportRe
         support_levels = _cluster_levels(support_levels, clustering_threshold=0.001)
         
         # Add psychological levels (round numbers)
-        psychological_levels = _find_psychological_levels(current_price, recent_data)
+        psychological_levels = _find_psychological_levels(current_price, recent_data, symbol)
         resistance_levels.extend(psychological_levels['resistance'])
         support_levels.extend(psychological_levels['support'])
         
@@ -409,7 +406,7 @@ def detect_support_resistance(df: pd.DataFrame, lookback: int = 50) -> SupportRe
             proximity=float(proximity)
         )
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error detecting support/resistance: {e}")
         return SupportResistanceLevels([], [], 0.0, None, None, 0.0)
 
@@ -436,10 +433,19 @@ def _cluster_levels(levels: list[float], clustering_threshold: float) -> list[fl
     return clusters
 
 
-def _find_psychological_levels(current_price: float, df: pd.DataFrame) -> dict[str, list[float]]:
-    """Find psychological levels (round numbers)"""
-    rounding_base = ADVANCED_ANALYSIS.psychological_level_rounding
-    
+def _find_psychological_levels(current_price: float, df: pd.DataFrame, symbol: str = "") -> dict[str, list[float]]:
+    """Find psychological levels (round numbers), symbol-aware."""
+    # Determine rounding base from symbol type
+    symbol_upper = symbol.upper() if symbol else ""
+    if any(c in symbol_upper for c in ("XAU", "GOLD", "SILVER", "XAG")):
+        rounding_base = 10.0  # Gold/Silver: round to 10s
+    elif "JPY" in symbol_upper or "JPY" in symbol_upper:
+        rounding_base = 0.01  # JPY pairs: 2 decimals
+    elif any(c in symbol_upper for c in ("EUR", "GBP", "AUD", "NZD", "CAD", "CHF")):
+        rounding_base = 0.001  # Forex majors: 3 decimals
+    else:
+        rounding_base = ADVANCED_ANALYSIS.psychological_level_rounding
+
     # Calculate range of prices
     price_min = df['low'].min()
     price_max = df['high'].max()
@@ -482,11 +488,20 @@ def analyze_trend_maturity(df_h1: pd.DataFrame, df_h4: pd.DataFrame) -> TrendMat
         return TrendMaturityAnalysis("uncertain", 0.0, 0, 0.0, False)
     
     try:
-        # Get EMA values
-        ema_fast_h1 = df_h1[f'ema_{INDICATORS.ema_fast}'].iloc[-1]
-        ema_slow_h1 = df_h1[f'ema_{INDICATORS.ema_slow}'].iloc[-1]
-        ema_fast_h4 = df_h4[f'ema_{INDICATORS.ema_fast}'].iloc[-1]
-        ema_slow_h4 = df_h4[f'ema_{INDICATORS.ema_slow}'].iloc[-1]
+        # Get EMA values - validate columns exist first
+        ema_fast_col = f'ema_{INDICATORS.ema_fast}'
+        ema_slow_col = f'ema_{INDICATORS.ema_slow}'
+        if not all(col in df_h1.columns for col in [ema_fast_col, ema_slow_col, 'rsi']):
+            logger.warning("Trend maturity: missing indicator columns in H1 data")
+            return TrendMaturityAnalysis("uncertain", 0.0, 0, 0.0, False)
+        if not all(col in df_h4.columns for col in [ema_fast_col, ema_slow_col]):
+            logger.warning("Trend maturity: missing indicator columns in H4 data")
+            return TrendMaturityAnalysis("uncertain", 0.0, 0, 0.0, False)
+
+        ema_fast_h1 = df_h1[ema_fast_col].iloc[-1]
+        ema_slow_h1 = df_h1[ema_slow_col].iloc[-1]
+        ema_fast_h4 = df_h4[ema_fast_col].iloc[-1]
+        ema_slow_h4 = df_h4[ema_slow_col].iloc[-1]
         
         # Determine trend direction
         if ema_fast_h1 > ema_slow_h1 and ema_fast_h4 > ema_slow_h4:
@@ -547,7 +562,7 @@ def analyze_trend_maturity(df_h1: pd.DataFrame, df_h4: pd.DataFrame) -> TrendMat
             divergence_detected=divergence_detected
         )
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error analyzing trend maturity: {e}")
         return TrendMaturityAnalysis("uncertain", 0.0, 0, 0.0, False)
 
@@ -594,6 +609,6 @@ def compute_advanced_indicators(df: pd.DataFrame) -> pd.DataFrame:
         
         return df.dropna()
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - catch any calculation failure
         logger.error(f"Error computing advanced indicators: {e}")
         return df

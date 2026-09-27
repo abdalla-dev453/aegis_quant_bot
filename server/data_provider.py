@@ -14,9 +14,9 @@ import os
 import random
 import time
 from contextlib import contextmanager
+from dataclasses import dataclass
 from functools import wraps
 from threading import RLock
-from dataclasses import dataclass
 from typing import Any, cast
 
 import pandas as pd
@@ -33,17 +33,17 @@ except ImportError:  # pragma: no cover - Linux/test environment only.
             from mt5linux import MetaTrader5
 
             mt5 = MetaTrader5()
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - catch any init failure
             logging.getLogger("trading_bot.data_provider").error(
                 "MT5LINUX_ENABLED but terminal bridge could not start: %s", exc
             )
 
 from config import (
     CREDENTIALS,
-    TRADING_SYMBOLS,
-    MAX_RECONNECT_ATTEMPTS,
     INITIAL_BACKOFF_SECONDS,
     MAX_BACKOFF_SECONDS,
+    MAX_RECONNECT_ATTEMPTS,
+    TRADING_SYMBOLS,
 )
 
 logger = logging.getLogger("trading_bot.data_provider")
