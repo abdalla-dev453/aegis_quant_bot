@@ -124,12 +124,17 @@ class DeploymentConfig:
     max_candle_age_seconds: int = _env_int("MAX_CANDLE_AGE_SECONDS", 7200)
 
     def validate(self) -> None:
+        from urllib.parse import urlparse
         if not self.api_host:
             raise ValueError("API_HOST must not be empty")
         if not 1 <= self.api_port <= 65535:
             raise ValueError("API_PORT must be between 1 and 65535")
         if self.max_candle_age_seconds <= 0:
             raise ValueError("MAX_CANDLE_AGE_SECONDS must be greater than zero")
+        if os.getenv("TRADING_MODE", "paper").lower() == "live" and not os.getenv("API_TOKEN"):
+            raise ValueError("API_TOKEN is required for live trading")
+        if not self.cors_origins or any(origin == "*" or urlparse(origin).scheme not in {"http", "https"} or not urlparse(origin).netloc for origin in self.cors_origins):
+            raise ValueError("CORS_ORIGINS must contain absolute non-wildcard URLs")
 
 
 # -----------------------------------------------
