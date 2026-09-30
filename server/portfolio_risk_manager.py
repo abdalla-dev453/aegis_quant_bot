@@ -586,7 +586,7 @@ class PortfolioRiskManager:
             
         except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error checking pre-trade risk: {e}")
-            return True, "Error in risk check, allowing trade"  # Fail open
+            return False, f"Error in risk check, blocking trade: {e}"
     
     def get_risk_summary(self) -> dict[str, Any]:
         """Get current portfolio risk summary"""
