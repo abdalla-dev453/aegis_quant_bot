@@ -331,7 +331,9 @@ _load_position_state()
 # ---------------------------------------------------------------------------
 # Position sizing
 # ---------------------------------------------------------------------------
-def calculate_lot_size(symbol: str, sl_distance_price: float) -> float:
+def calculate_lot_size(
+    symbol: str, sl_distance_price: float, direction: TradeDirection = TradeDirection.BUY
+) -> float:
     """
     Position size such that a full stop-out costs exactly
     RISK.risk_per_trade_pct of current account equity.
