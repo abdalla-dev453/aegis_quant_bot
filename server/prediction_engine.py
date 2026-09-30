@@ -221,50 +221,46 @@ class PricePredictionEngine:
             if X is None or len(X) < 100:
                 logger.warning("Insufficient data for training")
                 return False
-            
-            # Split data
-            try:
-                X_train, X_test, y_train, y_test = train_test_split(
-                    X, y, test_size=0.2, random_state=42,
-                    stratify=y if len(set(y)) > 1 and min(__import__("collections").Counter(y).values()) >= 2 else None,
-                )
-            except ValueError:
-                X_train, X_test, y_train, y_test = train_test_split(
-                    X, y, test_size=0.2, random_state=42,
-                )
-            
+            class_counts = __import__("collections").Counter(y)
+            if len(class_counts) < 2 or min(class_counts.values()) < 5:
+                logger.warning("Refusing ML training: each class needs at least 5 samples (%s)", class_counts)
+                return False
+            X_train, X_test, y_train, y_test = train_test_split(
+                X, y, test_size=0.2, random_state=42, stratify=y
+            )
+
             # Scale features
             X_train_scaled = self.scaler.fit_transform(X_train)
             X_test_scaled = self.scaler.transform(X_test)
-            
+
             # Train model
             self.model.fit(X_train_scaled, y_train)
-            
+
             # Evaluate
             train_score = self.model.score(X_train_scaled, y_train)
             test_score = self.model.score(X_test_scaled, y_test)
-            
+
             logger.info(f"Model trained - Train score: {train_score:.3f}, Test score: {test_score:.3f}")
-            
+
             # Save model
             self.model_path.parent.mkdir(parents=True, exist_ok=True)
             joblib.dump(self.model, self.model_path)
             joblib.dump(self.scaler, self.scaler_path)
-            
+
             return True
-            
+
         except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error training model: {e}")
             return False
-    
+
     def predict_price_move(self, df: pd.DataFrame, lookahead_bars: int = 5) -> PricePrediction:
         """
         Predict likely price direction and magnitude.
-        
+
         Args:
             df: DataFrame with OHLCV and indicator data
             lookahead_bars: Number of bars to predict ahead
-            
+
         Returns:
             PricePrediction with direction, confidence, and targets
         """
