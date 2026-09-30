@@ -164,9 +164,10 @@ def _load_position_state() -> None:
                 _original_risk_by_ticket = {
                     int(ticket): float(risk) for ticket, risk in json.load(state_file).items()
                 }
-        except Exception:
-            logger.exception("Failed to load position_state.json; starting empty.")
-            _original_risk_by_ticket = {}
+        except Exception as exc:
+            logger.critical("Position state is corrupt; refusing startup: %s", exc)
+            raise RuntimeError("position_state.json is corrupt; restore a verified state file before trading") from exc
+
 
 
 def _save_position_state() -> None:
