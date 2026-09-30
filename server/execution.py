@@ -489,13 +489,14 @@ def place_order(
 
     # Keep the cap global across this bot's symbols, matching the configured risk limit.
     open_positions = get_open_positions(magic=RISK.magic_number)
-    if len(open_positions) >= RISK.max_concurrent_positions:
+    pending_orders = list(mt5.orders_get() or [])
+    managed_pending = [order for order in pending_orders if getattr(order, "magic", RISK.magic_number) == RISK.magic_number]
+    exposure_count = len(open_positions) + len(managed_pending)
+    if exposure_count >= RISK.max_concurrent_positions:
         logger.info(
-            "Skipping %s %s: max concurrent positions reached (%d/%d)",
-            symbol,
-            direction.value,
-            len(open_positions),
-            RISK.max_concurrent_positions,
+            "Skipping %s %s: max concurrent exposure reached (%d/%d; positions=%d pending=%d)",
+            symbol, direction.value, exposure_count, RISK.max_concurrent_positions,
+            len(open_positions), len(managed_pending),
         )
         return None
     if is_correlated_exposure_blocked(symbol, direction, open_positions):
