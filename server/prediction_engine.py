@@ -277,29 +277,29 @@ class PricePredictionEngine:
                 reasoning="Insufficient data for prediction",
                 timestamp=datetime.now(timezone.utc).isoformat()
             )
-        
+
         # If ML is not enabled, use fallback prediction
         if not self.ml_enabled:
             return self._fallback_prediction(df, lookahead_bars)
-        
+
         try:
             current_price = df['close'].iloc[-1]
-            
+
             # Extract features and predict
             features = self._extract_features(df)
             if features.size == 0:
                 return self._fallback_prediction(df, lookahead_bars)
-            
+
             try:
                 features_scaled = self.scaler.transform(features)
                 prediction_proba = self.model.predict_proba(features_scaled)[0]
             except Exception:  # noqa: BLE001 - catch any failure
                 # Model not trained yet, use fallback
                 return self._fallback_prediction(df, lookahead_bars)
-            
+
             # Get prediction
             prediction = self.model.predict(features_scaled)[0]
-            
+
             # Map prediction to direction
             if prediction == 1:
                 direction = PredictionDirection.UP
@@ -307,7 +307,7 @@ class PricePredictionEngine:
                 direction = PredictionDirection.DOWN
             else:
                 direction = PredictionDirection.SIDEWAYS
-            
+
             # Calculate confidence
             confidence = max(prediction_proba)
             if confidence >= 0.7:
@@ -316,27 +316,27 @@ class PricePredictionEngine:
                 confidence_level = PredictionConfidence.MEDIUM
             else:
                 confidence_level = PredictionConfidence.LOW
-            
+
             # Calculate target price based on ATR
             atr = df['atr'].iloc[-1] if 'atr' in df.columns else current_price * 0.001
             expected_move = atr * lookahead_bars * 0.5
-            
+
             if direction == PredictionDirection.UP:
                 target_price = current_price + expected_move
             elif direction == PredictionDirection.DOWN:
                 target_price = current_price - expected_move
             else:
                 target_price = current_price
-            
+
             # Get support/resistance levels
             sr_levels = detect_support_resistance(df.tail(ADVANCED_ANALYSIS.pivot_lookback_period))
-            
+
             # Calculate expected move percentage
             expected_move_pct = abs(expected_move / current_price) * 100
-            
+
             # Generate reasoning
             reasoning = self._generate_reasoning(df, direction, confidence, prediction_proba)
-            
+
             return PricePrediction(
                 direction=direction,
                 confidence=float(confidence),
@@ -349,26 +349,26 @@ class PricePredictionEngine:
                 reasoning=reasoning,
                 timestamp=datetime.now(timezone.utc).isoformat()
             )
-            
+
         except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error predicting price move: {e}")
             return self._fallback_prediction(df, lookahead_bars)
-    
+
     def _fallback_prediction(self, df: pd.DataFrame, lookahead_bars: int) -> PricePrediction:
         """Fallback prediction using simple technical analysis"""
         current_price = df['close'].iloc[-1]
-        
+
         # Simple trend-based prediction
         if f'ema_{INDICATORS.ema_fast}' in df.columns and f'ema_{INDICATORS.ema_slow}' in df.columns:
             ema_fast = df[f'ema_{INDICATORS.ema_fast}'].iloc[-1]
             ema_slow = df[f'ema_{INDICATORS.ema_slow}'].iloc[-1]
-            
+
             if ema_fast > ema_slow:
                 direction = PredictionDirection.UP
-                confidence = 0.6
+                confidence = 0.0
             elif ema_fast < ema_slow:
                 direction = PredictionDirection.DOWN
-                confidence = 0.6
+                confidence = 0.0
             else:
                 direction = PredictionDirection.SIDEWAYS
                 confidence = 0.4
