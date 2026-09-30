@@ -63,6 +63,7 @@ export function useBotFeed() {
   });
 
   const connectedRef = useRef(false);
+  const failuresRef = useRef(0);
 
   useEffect(() => {
     const timers = [];
@@ -82,14 +83,16 @@ export function useBotFeed() {
         try {
           setter(await fn());
           setLoading((prev) => ({ ...prev, [key]: false }));
+          failuresRef.current = 0;
           if (!connectedRef.current) {
             connectedRef.current = true;
             setConnected(true);
           }
         } catch {
-          // Endpoint unreachable — keep last good value; flag as disconnected.
+          // Keep the feed connected through transient failures; disconnect after 3.
+          failuresRef.current += 1;
           setLoading((prev) => ({ ...prev, [key]: false }));
-          if (connectedRef.current) {
+          if (failuresRef.current >= 3 && connectedRef.current) {
             connectedRef.current = false;
             setConnected(false);
           }
