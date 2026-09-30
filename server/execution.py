@@ -584,7 +584,8 @@ def place_order(
 
     if not EXECUTION.live_orders_enabled:
         logger.warning(
-            "PAPER MODE: order_send suppressed for %s %s. Request=%s", symbol, direction.value, request
+            "PAPER MODE: order_send suppressed for %s %s. Request details omitted from ledger.",
+            symbol, direction.value,
         )
         return {"paper": True, "request": request}
 
