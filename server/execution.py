@@ -522,7 +522,7 @@ def place_order(
             if direction == TradeDirection.SELL and not (tp < entry_price < sl):
                 raise OrderError("SELL proposal must have take_profit < entry < stop_loss")
         sl_distance = abs(entry_price - sl)
-        max_risk_lots = calculate_lot_size(symbol, sl_distance)
+        max_risk_lots = calculate_lot_size(symbol, sl_distance, direction)
         lots = requested_volume if requested_volume is not None else max_risk_lots
         if requested_volume is not None and requested_volume > max_risk_lots:
             raise OrderError(
