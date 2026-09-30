@@ -330,6 +330,9 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
 
         if direction in (TradeDirection.BUY, TradeDirection.SELL):
             signal = generate_signal(symbol, df_h1, df_h4)
+            if news_result.warning:
+                signal.direction = TradeDirection.NONE
+                signal.reason = f"News feed warning: {news_result.warning}"
             if signal.direction != direction:
                 proposal_record["status"] = "blocked"
                 proposal_record["blocked_by"] = "deterministic_strategy"
@@ -377,7 +380,7 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
                 place_order, symbol, direction, float(h1_last["atr"]), proposal.reasoning,
                 audit_context, adjusted_volume, proposal.stop_loss, proposal.take_profit,
             )
-            if result and result.get("order"):
+            if result and result.get("order") and EXECUTION.live_orders_enabled:
                 record_order(
                     {
                         "ticket": int(result["order"]),
