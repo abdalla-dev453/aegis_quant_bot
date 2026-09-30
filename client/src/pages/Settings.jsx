@@ -31,6 +31,10 @@ export default function Settings() {
 
   const submit = async (event) => {
     event.preventDefault();
+    if (window.location.protocol !== "https:" && !["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+      setStatus("Secure HTTPS connection required before sending broker credentials.");
+      return;
+    }
     setSaving(true);
     setStatus("Connecting to MT5...");
     try {
