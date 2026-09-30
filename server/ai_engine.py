@@ -41,7 +41,7 @@ class TradeProposal(BaseModel):
 
     action: ProposalAction
     symbol: str = Field(min_length=1)
-    volume: float = Field(ge=0.01)
+    volume: float = Field(ge=0.0)
     stop_loss: float | None = None
     take_profit: float | None = None
     confidence_score: float = Field(ge=0.0, le=1.0)
@@ -57,7 +57,7 @@ class TradeProposal(BaseModel):
         return cls(
             action=ProposalAction.HOLD,
             symbol=symbol,
-            volume=0.01,
+            volume=0.0,
             confidence_score=0.0,
             reasoning=reason,
         )
