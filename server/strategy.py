@@ -198,12 +198,13 @@ class SentimentReading:
     next_event_currency: str | None = None
     next_event_impact: str = "HIGH"
     next_event_time_utc: str | None = None
-
+    feed_available: bool = True
 
 def _neutral_reading() -> SentimentReading:
     """Neutral fallback used whenever the sentiment feed is unavailable."""
     return SentimentReading(
-        score=0.0, headline_count=0, next_high_impact_event=None, minutes_to_next_event=None
+        score=0.0, headline_count=0, next_high_impact_event=None, minutes_to_next_event=None,
+        feed_available=False,
     )
 
 
@@ -342,11 +343,10 @@ def generate_signal(
         )
 
     # Graceful degradation: if no sentiment data available, allow technical signal
-    if sentiment.score == 0.0 and sentiment.headline_count == 0:
-        direction = TradeDirection.BUY if trend == Trend.BULLISH else TradeDirection.SELL
+    if not sentiment.feed_available and STRATEGY.require_sentiment_feed:
         return TradeSignal(
-            direction,
-            f"Technical {trend.value} (no sentiment data available)",
+            TradeDirection.NONE,
+            "Sentiment feed unavailable; technical-only trading is blocked",
             trend,
             sentiment.score,
             atr,
