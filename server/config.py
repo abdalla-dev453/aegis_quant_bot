@@ -227,6 +227,7 @@ SYMBOL_CORRELATIONS: Final[dict[tuple[str, str], float]] = {
 # ------------------------------------------------------------
 @dataclass(frozen=True)
 class StrategyConfig:
+    require_sentiment_feed: bool = os.getenv("REQUIRE_SENTIMENT_FEED", "true").lower() == "true"
     sentiment_bullish_threshold: float = 0.5
     sentiment_bearish_threshold: float = -0.5
     loop_poll_seconds: int = 15  # how often the main loop checks for a new closed candle
