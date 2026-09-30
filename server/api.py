@@ -63,15 +63,14 @@ from strategy import compute_indicators
 app = FastAPI(title="Aegis Quant API", version="1.0.0")
 logger = logging.getLogger("trading_bot.api")
 API_TOKEN = os.getenv("API_TOKEN", "")
+if not API_TOKEN and os.getenv("TRADING_MODE", "paper").lower() == "live":
+    raise RuntimeError("API_TOKEN is required when TRADING_MODE=live")
 _rate_lock = Lock()
 _rate_windows: dict[tuple[str, str], deque[float]] = defaultdict(deque)
 _MAX_RATE_KEYS = 10000
 
 
 def require_api_token(request: Request, x_api_key: str | None = Header(default=None)) -> None:
-    client_host = request.client.host if request.client else ""
-    if not API_TOKEN and client_host in {"127.0.0.1", "::1", "localhost"}:
-        return
     if not API_TOKEN or not x_api_key or not hmac.compare_digest(x_api_key, API_TOKEN):
         raise HTTPException(status_code=401, detail="Unauthorized")
 
