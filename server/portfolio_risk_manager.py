@@ -276,10 +276,13 @@ class PortfolioRiskManager:
     
     def _extract_base_currency(self, symbol: str) -> str:
         """Extract base currency from symbol"""
-        # Simple extraction - assumes standard forex naming
-        if len(symbol) >= 6:
-            return symbol[:3]
-        return symbol
+        normalized = str(symbol).upper().split(".", 1)[0].split("-", 1)[0]
+        known_currencies = {"USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NZD", "XAU", "XAG"}
+        if len(normalized) >= 6:
+            base, quote = normalized[:3], normalized[3:6]
+            if base in known_currencies and quote in known_currencies:
+                return base
+        return {"XAUUSD": "XAU", "XAGUSD": "XAG"}.get(normalized, normalized)
     
     def _calculate_correlation_risk(self, positions: list) -> float:
         """Calculate correlation risk score (0.0-1.0)"""
