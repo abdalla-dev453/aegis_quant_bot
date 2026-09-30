@@ -375,9 +375,9 @@ def calculate_lot_size(symbol: str, sl_distance_price: float) -> float:
     # --- Negative margin protection: use the broker's own calculation ---
     account = mt5.account_info()
     tick = mt5.symbol_info_tick(symbol)
-    margin_needed = (
-        mt5.order_calc_margin(mt5.ORDER_TYPE_BUY, symbol, lots, tick.ask) if tick else None
-    )
+    order_type = mt5.ORDER_TYPE_BUY if direction == TradeDirection.BUY else mt5.ORDER_TYPE_SELL
+    price = tick.ask if direction == TradeDirection.BUY else tick.bid
+    margin_needed = mt5.order_calc_margin(order_type, symbol, lots, price) if tick else None
     if margin_needed is not None and account is not None and account.equity > 0:
         projected = ((account.margin or 0.0) + margin_needed) / account.equity * 100.0
         if projected > MAX_MARGIN_UTILIZATION_PCT:
