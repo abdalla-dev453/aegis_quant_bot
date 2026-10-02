@@ -104,13 +104,13 @@ class TestLotSize:
         lots = calculate_lot_size("EURUSD", 0.0100)
         assert lots * 100 == int(lots * 100)
 
-    def test_lot_clamped_to_min(self, monkeypatch):
+    def test_lot_size_above_broker_minimum_is_accepted(self, monkeypatch):
         monkeypatch.setattr(execution, "_get_symbol", lambda _s: _make_sym(
             info=SimpleNamespace(digits=5, volume_min=0.10, volume_max=100, point=0.0001),
             step=0.01,
         ))
         lots = calculate_lot_size("EURUSD", 0.0050)
-        assert lots >= 0.10
+        assert lots == pytest.approx(0.30)
 
     def test_lot_clamped_to_max(self, monkeypatch):
         monkeypatch.setattr(execution, "_get_symbol", lambda _s: _make_sym(

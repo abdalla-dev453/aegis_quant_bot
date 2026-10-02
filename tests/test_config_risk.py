@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
+from pathlib import Path
 
 
 def _run_config_check(**overrides: str) -> subprocess.CompletedProcess[str]:
@@ -16,6 +17,10 @@ def _run_config_check(**overrides: str) -> subprocess.CompletedProcess[str]:
     ):
         environment.pop(name, None)
     environment.update(overrides)
+    server_dir = str(Path(__file__).resolve().parents[1] / "server")
+    environment["PYTHONPATH"] = os.pathsep.join(
+        path for path in (server_dir, environment.get("PYTHONPATH", "")) if path
+    )
     return subprocess.run(
         [sys.executable, "-c", "from config import RISK; RISK.validate()"],
         check=False,
