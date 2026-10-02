@@ -1,5 +1,7 @@
 # Production Deployment Guide for Aegis Quant Trading Bot
 
+> **Legacy reference, not deployment authorization.** The current release status is **NO-GO for funded/live trading**. Follow [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md) for the paper-first deployment procedure and [PRODUCTION_RELEASE_CHECKLIST.md](PRODUCTION_RELEASE_CHECKLIST.md) for qualification gates. Values in this older document are not account-owner approvals; do not use its previous live-mode recommendation.
+
 ## Client-Server Compatibility Analysis ✅
 
 ### API Contract Verification
@@ -129,17 +131,17 @@ services:
     container_name: aegis-quant-bot
     restart: unless-stopped
     environment:
-      - TRADING_MODE=live
+      - TRADING_MODE=paper
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - API_TOKEN=${API_TOKEN}
-      - API_HOST=0.0.0.0
+      - API_HOST=127.0.0.1
       - API_PORT=8000
     volumes:
       - ./server/.env:/app/.env
       - ./models:/app/models
       - ./logs:/app/logs
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     network_mode: host  # Required for MT5 terminal access
     # Alternative: Use mt5linux bridge for containerized MT5 access
 ```
@@ -198,8 +200,8 @@ nssm start AegisQuant
 ### Production .env Template
 ```bash
 # Core Configuration
-TRADING_MODE=live
-API_HOST=0.0.0.0
+TRADING_MODE=paper
+API_HOST=127.0.0.1
 API_PORT=8000
 API_TOKEN=your_secure_token_here
 CORS_ORIGINS=http://localhost:5173,http://your-dashboard-domain
@@ -245,12 +247,12 @@ ADVANCED_RISK_MAX_PORTFOLIO_EXPOSURE_PCT=10.0
 ADVANCED_RISK_MAX_CORRELATION_EXPOSURE_PCT=5.0
 ADVANCED_RISK_MAX_CURRENCY_CONCENTRATION_PCT=7.0
 
-# Risk Management
-RISK_RISK_PER_TRADE_PCT=1.5
-RISK_MAX_DAILY_LOSS_PCT=4.0
-RISK_MAX_DRAWDOWN_FROM_PEAK_PCT=8.0
-RISK_MAX_TRADES_PER_DAY=6
-RISK_MAX_CONCURRENT_POSITIONS=3
+# Python risk setting names (source defaults shown here are not approved limits)
+RISK_PER_TRADE_PCT=1.5
+MAX_DAILY_LOSS_PCT=4.0
+MAX_DRAWDOWN_FROM_PEAK_PCT=8.0
+MAX_TRADES_PER_DAY=6
+MAX_CONCURRENT_POSITIONS=3
 
 # Logging
 LOG_FILE=trading_bot.log
@@ -389,9 +391,9 @@ LOG_LEVEL=INFO
 
 ## Conclusion
 
-### Production Readiness: ✅ READY
+### Production Readiness: NOT APPROVED
 
-The bot is **production-ready** with the following confidence levels:
+Do not treat this legacy feature overview as evidence of production readiness. The current release is **not approved** for funded/live trading. The source audit identifies unresolved account-identity, durable risk-state, aggregate-risk, order reconciliation, security, broker-validation, and forward-demo gates. See [PRODUCTION_RELEASE_CHECKLIST.md](PRODUCTION_RELEASE_CHECKLIST.md) for current status and required evidence.
 
 **High Confidence:**
 - Core trading logic (proven in existing system)
@@ -427,4 +429,4 @@ The bot is **production-ready** with the following confidence levels:
 - Consider: Ensemble AI (if additional budget)
 - Monitor: Prediction accuracy, cost/benefit
 
-The bot will **survive and perform at high speed** in production with the recommended configuration and gradual rollout strategy.
+No production reliability or performance claim is established by this legacy document. Complete the current release checklist and retain test evidence before any promotion.

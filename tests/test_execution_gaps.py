@@ -13,6 +13,8 @@ from execution import (
 )
 from strategy import TradeDirection
 
+_ORIGINAL_GET_SYMBOL = execution._get_symbol
+
 
 def _make_sym(**overrides):
     defaults = {
@@ -49,6 +51,43 @@ def _fake_mt5(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 class TestLotSize:
+    def test_symbol_metadata_refreshes_after_ttl(self, monkeypatch):
+        current_time = [100.0]
+        lookups = []
+        first_info = SimpleNamespace(
+            trade_tick_size=0.0001,
+            trade_tick_value=10.0,
+            point=0.0001,
+            volume_step=0.01,
+            trade_stops_level=10,
+        )
+        refreshed_info = SimpleNamespace(
+            trade_tick_size=0.0001,
+            trade_tick_value=20.0,
+            point=0.0001,
+            volume_step=0.01,
+            trade_stops_level=20,
+        )
+
+        monkeypatch.setattr(execution, "_symbol_cache", {})
+        monkeypatch.setattr(execution, "_get_symbol", _ORIGINAL_GET_SYMBOL)
+        monkeypatch.setattr(execution.time, "monotonic", lambda: current_time[0])
+        monkeypatch.setattr(
+            execution.mt5,
+            "symbol_info",
+            lambda _symbol: lookups.append(True) or (first_info if len(lookups) == 1 else refreshed_info),
+            raising=False,
+        )
+
+        initial = execution._get_symbol("EURUSD")
+        current_time[0] += execution._SYMBOL_CACHE_TTL_SECONDS + 1
+        refreshed = execution._get_symbol("EURUSD")
+
+        assert initial.tick_value == 10.0
+        assert refreshed.tick_value == 20.0
+        assert refreshed.min_stop_points == 0.002
+        assert len(lookups) == 2
+
     def test_basic_lot_size(self, monkeypatch):
         lots = calculate_lot_size("EURUSD", 0.0050)
         assert 0.01 <= lots <= 100.0
@@ -82,6 +121,24 @@ class TestLotSize:
         monkeypatch.setattr(execution, "get_account_equity", lambda: 500000.0)
         lots = calculate_lot_size("EURUSD", 0.0010)
         assert lots <= 1.0
+
+    def test_below_minimum_volume_is_rejected_to_preserve_risk(self, monkeypatch):
+        monkeypatch.setattr(execution, "get_account_equity", lambda: 1.0)
+
+        with pytest.raises(OrderError, match="below broker minimum"):
+            calculate_lot_size("EURUSD", 0.0050)
+
+    def test_sell_margin_check_uses_sell_order_type(self, monkeypatch):
+        calls = []
+        monkeypatch.setattr(
+            execution.mt5,
+            "order_calc_margin",
+            lambda order_type, *_: calls.append(order_type) or 100.0,
+        )
+
+        calculate_lot_size("EURUSD", 0.0050, TradeDirection.SELL)
+
+        assert calls == [execution.mt5.ORDER_TYPE_SELL]
 
 
 class TestSLTP:

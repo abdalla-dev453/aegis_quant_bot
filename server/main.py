@@ -531,6 +531,7 @@ async def main() -> None:
         validate_ai_configuration()
         EXECUTION.validate()
         DEPLOYMENT.validate()
+        RISK.validate()
         
         # Validate live trading requirements
         if EXECUTION.live_orders_enabled:

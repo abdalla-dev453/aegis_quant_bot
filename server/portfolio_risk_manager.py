@@ -75,6 +75,7 @@ class PortfolioAnalysis:
     risk_summary: str = ""
     recommended_actions: list[str] = ()
     timestamp: datetime | None = None
+    error: str | None = None
 
 
 class PortfolioRiskManager:
@@ -172,7 +173,12 @@ class PortfolioRiskManager:
             
         except Exception as e:  # noqa: BLE001 - catch any failure
             logger.error(f"Error analyzing portfolio: {e}")
-            return self._empty_portfolio_analysis()
+            analysis = self._empty_portfolio_analysis()
+            analysis.overall_health = PortfolioHealth.CRITICAL
+            analysis.risk_summary = f"Portfolio risk analysis unavailable: {e}"
+            analysis.recommended_actions = ["Block new entries until risk analysis recovers"]
+            analysis.error = str(e)
+            return analysis
     
     def _empty_portfolio_analysis(self) -> PortfolioAnalysis:
         """Return empty analysis when no positions exist"""
@@ -546,6 +552,9 @@ class PortfolioRiskManager:
         try:
             # Get current portfolio analysis
             current_analysis = self.analyze_portfolio()
+            if current_analysis.error:
+                logger.error("Blocking %s %s: portfolio analysis failed: %s", symbol, direction, current_analysis.error)
+                return False, f"Portfolio risk analysis unavailable: {current_analysis.error}"
             
             equity = current_analysis.equity or get_account_equity()
             

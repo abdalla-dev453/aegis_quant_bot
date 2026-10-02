@@ -2,6 +2,8 @@
 
 Aegis Quant is safe to deploy first in `TRADING_MODE=paper`. The service can run on a Windows host with the native MT5 terminal, or on Linux only when a tested `mt5linux` bridge is available. Do not expose the API or MT5 credentials directly to the public internet.
 
+Funded/live use is **not approved** by this runbook. The release candidate, owner-approval worksheet, demo acceptance criteria, and current blockers are tracked in [PRODUCTION_RELEASE_CHECKLIST.md](../PRODUCTION_RELEASE_CHECKLIST.md). The Python risk variables below configure only the Python runner; they do not configure the MQL5 EA.
+
 ## 1. Prepare the host
 
 Required:
@@ -68,6 +70,8 @@ MAX_CANDLE_AGE_SECONDS=7200
 
 `MT5_LOGIN`, `MT5_PASSWORD`, and `MT5_SERVER` may be left empty only when an operator will enter them through Settings after startup. They are required for an unattended service.
 
+The Python runner reads these risk settings from the environment: `RISK_PER_TRADE_PCT`, `MAX_DAILY_LOSS_PCT`, `MAX_DRAWDOWN_FROM_PEAK_PCT`, `MAX_TRADES_PER_DAY`, `CORRELATION_THRESHOLD`, `ATR_SL_MULTIPLIER`, `ATR_TP_MULTIPLIER`, `TRAILING_TRIGGER_RR`, `TRAILING_ATR_MULTIPLIER`, `MAX_CONCURRENT_POSITIONS`, and `DEVIATION_POINTS`. They are validated at startup. Set them only to the account owner's signed values; unset values use source defaults, which are not approved limits. These settings do not provide persistent guards or an aggregate open-risk limit.
+
 Build the frontend against the public origin and the same API token:
 
 ```bash
@@ -133,6 +137,8 @@ tail -f /opt/aegis-quant/server/trading_bot.log
 ```
 
 ## 6. Demo-account acceptance gate
+
+Use the complete staged qualification and evidence checklist in [PRODUCTION_RELEASE_CHECKLIST.md](../PRODUCTION_RELEASE_CHECKLIST.md). The market-week demo requirement below is a minimum gate, not permission to enable live trading.
 
 Before enabling `TRADING_MODE=live`, run at least one full market-week on a dedicated demo account and verify:
 

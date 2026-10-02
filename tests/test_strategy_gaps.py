@@ -188,7 +188,7 @@ class TestGenerateSignal:
         assert signal.direction == TradeDirection.NONE
         assert "ATR" in signal.reason
 
-    def test_neutral_drift_allows_both_directions(
+    def test_unavailable_sentiment_blocks_entries(
         self, monkeypatch: pytest.MonkeyPatch
     ) -> None:
         h1 = self._df(1.12, 1.10, 55.0, 53.0)
@@ -196,8 +196,8 @@ class TestGenerateSignal:
         monkeypatch.setattr(
             strategy,
             "analyze_market_sentiment",
-            lambda _s: SentimentReading(0.0, 0, None, None),
+            lambda _s: SentimentReading(0.0, 0, None, None, feed_available=False),
         )
         signal = generate_signal("EURUSD", h1, h4)
-        assert signal.direction == TradeDirection.BUY
-        assert "no sentiment" in signal.reason.lower()
+        assert signal.direction == TradeDirection.NONE
+        assert "unavailable" in signal.reason.lower()

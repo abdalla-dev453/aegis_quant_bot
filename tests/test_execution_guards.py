@@ -45,6 +45,7 @@ def test_place_order_respects_runtime_control(monkeypatch) -> None:
         TRADE_RETCODE_DONE=0,
         order_check=lambda _: SimpleNamespace(retcode=0, comment="ok"),
         order_send=lambda _: SimpleNamespace(order=1, retcode=0, price=1.1, comment="ok", _asdict=fake_asdict),
+        orders_get=lambda: [],
         symbol_info_tick=lambda _: SimpleNamespace(ask=1.1, bid=1.0),
         last_error=lambda: "",
         account_info=lambda: SimpleNamespace(equity=1000, balance=1000, margin=100, margin_free=900, margin_level=1000),

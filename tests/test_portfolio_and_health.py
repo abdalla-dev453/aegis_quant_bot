@@ -197,3 +197,18 @@ class TestPortfolioRiskCheckPreTrade:
         allowed, reason = portfolio_risk_manager.check_pre_trade_risk("EURUSD", "BUY", 0.1)
         assert allowed
         assert "disabled" in reason.lower()
+
+    def test_analysis_failure_blocks_pre_trade(self, monkeypatch):
+        import portfolio_risk_manager as portfolio_module
+
+        manager = PortfolioRiskManager()
+
+        def fail_connection():
+            raise RuntimeError("simulated MT5 outage")
+
+        monkeypatch.setattr(portfolio_module, "ensure_connected", fail_connection)
+
+        allowed, reason = manager.check_pre_trade_risk("EURUSD", "BUY", 0.1)
+
+        assert not allowed
+        assert "risk analysis unavailable" in reason.lower()

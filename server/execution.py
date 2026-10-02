@@ -16,6 +16,7 @@ import logging
 import logging.handlers
 import math
 import threading
+import time
 from collections import namedtuple
 from pathlib import Path
 from queue import Empty, Queue
@@ -96,17 +97,23 @@ _SymbolData = namedtuple(
     "info tick_size tick_value step step_decimals min_stop_points",
 )
 
-_symbol_cache: dict[str, _SymbolData] = {}
+_symbol_cache: dict[str, tuple[_SymbolData, float]] = {}
 _cache_lock = threading.Lock()
 _MAX_CACHE_SIZE = 128
+_SYMBOL_CACHE_TTL_SECONDS = 300
 
 
 def _get_symbol(symbol: str) -> _SymbolData:
-    """Return cached symbol metadata; populate lazily on first access."""
+    """Return short-lived cached metadata; refresh broker specs every five minutes."""
     require_mt5_runtime()
+    now = time.monotonic()
     with _cache_lock:
-        if symbol in _symbol_cache:
-            return _symbol_cache[symbol]
+        cached = _symbol_cache.get(symbol)
+        if cached is not None:
+            data, cached_at = cached
+            if now - cached_at < _SYMBOL_CACHE_TTL_SECONDS:
+                return data
+            _symbol_cache.pop(symbol, None)
 
     ensure_connected()
     info = mt5.symbol_info(symbol)
@@ -130,7 +137,7 @@ def _get_symbol(symbol: str) -> _SymbolData:
     with _cache_lock:
         if len(_symbol_cache) >= _MAX_CACHE_SIZE:
             _symbol_cache.pop(next(iter(_symbol_cache)))  # simple FIFO eviction
-        _symbol_cache[symbol] = sym
+        _symbol_cache[symbol] = (sym, now)
     return sym
 
 
@@ -363,9 +370,15 @@ def calculate_lot_size(
 
     raw_lots = risk_amount / value_per_lot
 
-    # Snap to the broker's allowed volume step and clamp to min/max.
+    # Snap down to the broker's volume step. Never raise a risk-sized order to
+    # the broker minimum, because that would exceed the requested risk budget.
     lots = math.floor(raw_lots / sym.step) * sym.step
-    lots = max(sym.info.volume_min, min(sym.info.volume_max, lots))
+    if lots < sym.info.volume_min:
+        raise OrderError(
+            f"Risk-sized volume {lots:.{sym.step_decimals}f} is below broker minimum "
+            f"{sym.info.volume_min} for {symbol}; order blocked to preserve risk limit"
+        )
+    lots = min(sym.info.volume_max, lots)
     lots = round(lots, sym.step_decimals)
 
     # --- Absolute guardrails ---

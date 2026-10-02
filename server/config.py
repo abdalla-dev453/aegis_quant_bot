@@ -13,6 +13,7 @@ of hardcoding them here. The placeholders below are for local dev only.
 
 from __future__ import annotations
 
+import math
 import os
 from dataclasses import dataclass
 from pathlib import Path
@@ -33,6 +34,16 @@ def _env_int(name: str, default: int) -> int:
         return int(value)
     except ValueError as exc:
         raise ValueError(f"{name} must be an integer") from exc
+
+
+def _env_float(name: str, default: float) -> float:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    try:
+        return float(value)
+    except ValueError as exc:
+        raise ValueError(f"{name} must be a number") from exc
 
 
 # -------------------------------------------------------------
@@ -181,20 +192,59 @@ class IndicatorConfig:
 # ----------------------------------------------------------
 @dataclass(frozen=True)
 class RiskConfig:
-    risk_per_trade_pct: float = 1.5  # % of equity risked per trade
-    max_daily_loss_pct: float = 4.0  # halt new entries for the rest of the day past this drawdown
+    risk_per_trade_pct: float = _env_float("RISK_PER_TRADE_PCT", 1.5)  # % of equity risked per trade
+    max_daily_loss_pct: float = _env_float("MAX_DAILY_LOSS_PCT", 4.0)  # halt new entries for the rest of the day past this drawdown
     # This is intentionally independent of the daily-loss guard.  It is a
     # high-water-mark circuit breaker and remains latched until manually reset.
-    max_drawdown_from_peak_pct: float = 8.0
-    max_trades_per_day: int = 6
-    correlation_threshold: float = 0.70
-    atr_sl_multiplier: float = 1.5  # SL = entry -/+ (ATR * multiplier)
-    atr_tp_multiplier: float = 3.0  # TP = entry -/+ (ATR * multiplier) -> 2:1 default
-    trailing_trigger_rr: float = 1.0  # start trailing once trade hits 1:1 RR
-    trailing_atr_multiplier: float = 1.0  # trailing distance once triggered
-    max_concurrent_positions: int = 3
+    max_drawdown_from_peak_pct: float = _env_float("MAX_DRAWDOWN_FROM_PEAK_PCT", 8.0)
+    max_trades_per_day: int = _env_int("MAX_TRADES_PER_DAY", 6)
+    correlation_threshold: float = _env_float("CORRELATION_THRESHOLD", 0.70)
+    atr_sl_multiplier: float = _env_float("ATR_SL_MULTIPLIER", 1.5)  # SL = entry -/+ (ATR * multiplier)
+    atr_tp_multiplier: float = _env_float("ATR_TP_MULTIPLIER", 3.0)  # TP = entry -/+ (ATR * multiplier) -> 2:1 default
+    trailing_trigger_rr: float = _env_float("TRAILING_TRIGGER_RR", 1.0)  # start trailing once trade hits 1:1 RR
+    trailing_atr_multiplier: float = _env_float("TRAILING_ATR_MULTIPLIER", 1.0)  # trailing distance once triggered
+    max_concurrent_positions: int = _env_int("MAX_CONCURRENT_POSITIONS", 3)
     magic_number: int = 990011
-    deviation_points: int = 20  # max slippage tolerance
+    deviation_points: int = _env_int("DEVIATION_POINTS", 20)  # max slippage tolerance
+
+    def validate(self) -> None:
+        float_settings = {
+            "RISK_PER_TRADE_PCT": self.risk_per_trade_pct,
+            "MAX_DAILY_LOSS_PCT": self.max_daily_loss_pct,
+            "MAX_DRAWDOWN_FROM_PEAK_PCT": self.max_drawdown_from_peak_pct,
+            "CORRELATION_THRESHOLD": self.correlation_threshold,
+            "ATR_SL_MULTIPLIER": self.atr_sl_multiplier,
+            "ATR_TP_MULTIPLIER": self.atr_tp_multiplier,
+            "TRAILING_TRIGGER_RR": self.trailing_trigger_rr,
+            "TRAILING_ATR_MULTIPLIER": self.trailing_atr_multiplier,
+        }
+        for name, value in float_settings.items():
+            if not math.isfinite(value):
+                raise ValueError(f"{name} must be finite")
+        percentages = {
+            "RISK_PER_TRADE_PCT": self.risk_per_trade_pct,
+            "MAX_DAILY_LOSS_PCT": self.max_daily_loss_pct,
+            "MAX_DRAWDOWN_FROM_PEAK_PCT": self.max_drawdown_from_peak_pct,
+        }
+        for name, value in percentages.items():
+            if not 0.0 < value <= 100.0:
+                raise ValueError(f"{name} must be greater than 0 and at most 100")
+        if self.max_trades_per_day < 1:
+            raise ValueError("MAX_TRADES_PER_DAY must be at least 1")
+        if self.max_concurrent_positions < 1:
+            raise ValueError("MAX_CONCURRENT_POSITIONS must be at least 1")
+        if not 0.0 <= self.correlation_threshold <= 1.0:
+            raise ValueError("CORRELATION_THRESHOLD must be between 0 and 1")
+        for name, value in (
+            ("ATR_SL_MULTIPLIER", self.atr_sl_multiplier),
+            ("ATR_TP_MULTIPLIER", self.atr_tp_multiplier),
+        ):
+            if value <= 0.0:
+                raise ValueError(f"{name} must be greater than 0")
+        if self.trailing_trigger_rr < 0.0 or self.trailing_atr_multiplier < 0.0:
+            raise ValueError("Trailing-stop multipliers must not be negative")
+        if self.deviation_points < 0:
+            raise ValueError("DEVIATION_POINTS must not be negative")
 
 
 @dataclass(frozen=True)
