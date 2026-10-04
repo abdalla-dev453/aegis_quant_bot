@@ -1,0 +1,36 @@
+{
+  "name": "@aegis-quant/web",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@aegis-quant/contracts": "workspace:*",
+    "@aegis-quant/ui": "workspace:*",
+    "@tanstack/react-query": "5.104.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lightweight-charts": "5.2.1",
+    "lucide-react": "0.577.0",
+    "next": "16.3.8",
+    "openapi-fetch": "0.15.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.15.30",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "oxlint": "1.86.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vitest": "3.2.4"
+  }
+}

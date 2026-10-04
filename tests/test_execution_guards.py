@@ -85,3 +85,64 @@ def test_place_order_respects_runtime_control(monkeypatch) -> None:
     result = execution.place_order("EURUSD", TradeDirection.BUY, 0.001, "test")
     assert result is not None
 
+
+def test_close_bot_positions_reports_broker_results(monkeypatch) -> None:
+    positions = [
+        SimpleNamespace(ticket=11, symbol="EURUSD", volume=0.1, type=0),
+        SimpleNamespace(ticket=12, symbol="GBPUSD", volume=0.2, type=1),
+    ]
+    requests = []
+    results = iter((
+        SimpleNamespace(retcode=100, comment="closed"),
+        SimpleNamespace(retcode=999, comment="market closed"),
+    ))
+    monkeypatch.setattr(execution, "ensure_connected", lambda: None)
+    monkeypatch.setattr(execution, "get_open_positions", lambda **_: positions)
+    monkeypatch.setattr(execution, "mt5", SimpleNamespace(
+        POSITION_TYPE_BUY=0,
+        TRADE_ACTION_DEAL=1,
+        ORDER_TYPE_BUY=0,
+        ORDER_TYPE_SELL=1,
+        ORDER_TIME_GTC=0,
+        ORDER_FILLING_IOC=0,
+        TRADE_RETCODE_DONE=100,
+        TRADE_RETCODE_DONE_PARTIAL=101,
+        symbol_info_tick=lambda _: SimpleNamespace(bid=1.1, ask=1.2),
+        order_send=lambda request: (requests.append(request), next(results))[1],
+        last_error=lambda: "",
+    ))
+
+    result = execution.close_bot_positions()
+
+    assert result == {
+        "closed": ["11"],
+        "failed": [{"ticket": "12", "error": "market closed"}],
+    }
+    assert requests[0]["type"] == execution.mt5.ORDER_TYPE_SELL
+    assert requests[0]["price"] == 1.1
+    assert requests[1]["type"] == execution.mt5.ORDER_TYPE_BUY
+    assert requests[1]["price"] == 1.2
+
+
+def test_trailing_stops_do_not_mutate_positions_in_paper_mode(monkeypatch) -> None:
+    monkeypatch.setattr(execution, "EXECUTION", SimpleNamespace(live_orders_enabled=False))
+    monkeypatch.setattr(
+        execution,
+        "ensure_connected",
+        lambda: (_ for _ in ()).throw(AssertionError("paper mode must not connect for trailing updates")),
+    )
+
+    execution.manage_trailing_stops()
+
+
+def test_trailing_stops_respect_halted_control(monkeypatch) -> None:
+    monkeypatch.setattr(execution, "EXECUTION", SimpleNamespace(live_orders_enabled=True))
+    monkeypatch.setattr(execution, "control_state", lambda: {"status": "HALTED", "managementAllowed": False})
+    monkeypatch.setattr(
+        execution,
+        "ensure_connected",
+        lambda: (_ for _ in ()).throw(AssertionError("HALTED must not connect for trailing updates")),
+    )
+
+    execution.manage_trailing_stops()
+

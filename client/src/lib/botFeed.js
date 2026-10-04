@@ -109,6 +109,10 @@ export function resetPeakDrawdownGuard() {
   return apiRequest("/api/risk/reset-peak-drawdown", { method: "POST" });
 }
 
+export function closeBotPositions() {
+  return apiRequest("/api/positions/close-all", { method: "POST", timeoutMs: 15000 });
+}
+
 export async function fetchPerformance() {
   const d = await apiGet("/api/performance");
   return {
@@ -205,6 +209,8 @@ export async function fetchSettings() {
   const d = await apiGet("/api/settings");
   return {
     credentialsConfigured: Boolean(d.credentialsConfigured),
+    aiConfigured: Boolean(d.aiConfigured),
+    tradingMode: String(d.tradingMode ?? "UNKNOWN").toUpperCase(),
     symbols: Array.isArray(d.symbols) ? d.symbols.map(String) : [],
     timeframeTrigger: String(d.timeframeTrigger ?? "H1"),
     timeframeBias: String(d.timeframeBias ?? "H4"),

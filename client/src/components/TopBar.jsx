@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "../lib/theme.js";
 
-export default function TopBar({ title, subtitle, control, setControl }) {
+export default function TopBar({ title, subtitle, control, setControl, onCloseAll, closeAllDisabled = false }) {
   const [confirmHalt, setConfirmHalt] = useState(false);
+  const [confirmResume, setConfirmResume] = useState(false);
+  const [haltError, setHaltError] = useState("");
+  const [resumeError, setResumeError] = useState("");
+  const [confirmCloseAll, setConfirmCloseAll] = useState(false);
+  const [closeAllError, setCloseAllError] = useState("");
+  const [closingAll, setClosingAll] = useState(false);
   const [themeMenuOpen, setThemeMenuOpen] = useState(false);
   const themeMenuRef = useRef(null);
   const { themeMode, setThemeMode } = useTheme();
@@ -21,7 +27,11 @@ export default function TopBar({ title, subtitle, control, setControl }) {
   }, []);
 
   const toggleLive = async () => {
-    if (isHalted) return;
+    if (isHalted) {
+      setResumeError("");
+      setConfirmResume(true);
+      return;
+    }
     try {
       await setControl(isRunning ? "PAUSED" : "RUNNING", isRunning ? "Operator paused" : "Operator resumed");
     } catch (error) {
@@ -29,13 +39,40 @@ export default function TopBar({ title, subtitle, control, setControl }) {
     }
   };
 
+  const resume = async () => {
+    setResumeError("");
+    try {
+      await setControl("RUNNING", "Operator resumed after emergency halt");
+      setConfirmResume(false);
+    } catch (error) {
+      setResumeError(error.message ?? "Unable to re-arm trading.");
+    }
+  };
+
   const halt = async () => {
+    setHaltError("");
     try {
       await setControl("HALTED", "Emergency halt requested from dashboard");
+      setConfirmHalt(false);
     } catch (error) {
-      console.error("Unable to halt trading", error);
+      setHaltError(error.message ?? "Unable to halt trading.");
     }
-    setConfirmHalt(false);
+  };
+
+  const closeAll = async () => {
+    setClosingAll(true);
+    setCloseAllError("");
+    try {
+      const result = await onCloseAll();
+      if (result.failed?.length) {
+        throw new Error(`${result.closed.length} closed; ${result.failed.length} failed. Check the execution log.`);
+      }
+      setConfirmCloseAll(false);
+    } catch (error) {
+      setCloseAllError(error.message ?? "Unable to close bot-managed positions.");
+    } finally {
+      setClosingAll(false);
+    }
   };
 
   return (
@@ -87,7 +124,6 @@ export default function TopBar({ title, subtitle, control, setControl }) {
 
         <button
           onClick={toggleLive}
-          disabled={isHalted}
           className={`flex min-h-10 shrink-0 items-center gap-1.5 rounded-md border px-3 py-2 text-[11px] font-medium uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 ${
             isRunning
               ? "border-bull/30 bg-bull-dim text-bull"
@@ -98,19 +134,28 @@ export default function TopBar({ title, subtitle, control, setControl }) {
             className={`h-1.5 w-1.5 rounded-full ${isRunning ? "bg-bull" : "bg-ink-faint"}`}
           />
           <span className="hidden sm:inline">
-            {isRunning ? "Live Trading" : status === "PAUSED" ? "Paused" : "Halted"}
+            {isRunning ? "Entries Enabled" : status === "PAUSED" ? "Paused" : "Re-arm Trading"}
           </span>
-          <span className="sm:hidden">{isRunning ? "Live" : status}</span>
+          <span className="sm:hidden">{isRunning ? "RUNNING" : status}</span>
         </button>
 
         <button
-          onClick={() => setConfirmHalt(true)}
+          onClick={() => { setHaltError(""); setConfirmHalt(true); }}
           disabled={isHalted}
           className="min-h-10 shrink-0 rounded-md border border-bear/30 bg-bear-dim px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-bear transition-all duration-200 hover:-translate-y-0.5 hover:bg-bear/20 disabled:cursor-not-allowed disabled:opacity-50"
         >
           <span className="hidden sm:inline">Emergency Halt</span>
           <span className="sm:hidden">Halt</span>
         </button>
+        {onCloseAll && (
+          <button
+            onClick={() => { setCloseAllError(""); setConfirmCloseAll(true); }}
+            disabled={closeAllDisabled || closingAll}
+            className="min-h-10 shrink-0 rounded-md border border-bear/30 bg-bear-dim px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-bear transition-colors hover:bg-bear/20 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            Close bot positions
+          </button>
+        )}
       </div>
 
       {confirmHalt && (
@@ -120,9 +165,9 @@ export default function TopBar({ title, subtitle, control, setControl }) {
               Confirm emergency halt
             </div>
             <p className="mt-2 text-[12px] leading-relaxed text-ink-dim">
-              This closes no positions automatically, but stops the bot from
-              opening or modifying any trade until you re-enable Live Trading.
+              This stops new entries and automated position management. Open positions stay open; use Close bot positions to request market closes.
             </p>
+            {haltError && <p role="alert" className="mt-3 text-[12px] text-bear">{haltError}</p>}
             <div className="mt-4 flex justify-end gap-2">
               <button
                 onClick={() => setConfirmHalt(false)}
@@ -135,6 +180,60 @@ export default function TopBar({ title, subtitle, control, setControl }) {
                 className="rounded-md bg-bear px-3 py-1.5 text-[12px] font-medium text-white hover:bg-bear/90"
               >
                 Halt trading
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {confirmResume && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="w-full max-w-sm rounded-lg border border-border bg-surface p-5">
+            <div className="text-sm font-semibold text-ink">Re-arm trading?</div>
+            <p className="mt-2 text-[12px] leading-relaxed text-ink-dim">
+              This restores automated position management. New entries can be sent only when the server execution mode is LIVE.
+            </p>
+            {resumeError && <p role="alert" className="mt-3 text-[12px] text-bear">{resumeError}</p>}
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                onClick={() => setConfirmResume(false)}
+                className="rounded-md px-3 py-1.5 text-[12px] text-ink-dim hover:text-ink"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={resume}
+                className="rounded-md bg-bull px-3 py-1.5 text-[12px] font-medium text-white hover:bg-bull/90"
+              >
+                Re-arm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {confirmCloseAll && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="w-full max-w-sm rounded-lg border border-border bg-surface p-5">
+            <div className="text-sm font-semibold text-ink">Close bot-managed positions?</div>
+            <p className="mt-2 text-[12px] leading-relaxed text-ink-dim">
+              This sends market close orders for all positions managed by Aegis Quant. Other account positions are untouched.
+            </p>
+            {closeAllError && <p role="alert" className="mt-3 text-[12px] text-bear">{closeAllError}</p>}
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                onClick={() => setConfirmCloseAll(false)}
+                disabled={closingAll}
+                className="rounded-md px-3 py-1.5 text-[12px] text-ink-dim hover:text-ink disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={closeAll}
+                disabled={closingAll}
+                className="rounded-md bg-bear px-3 py-1.5 text-[12px] font-medium text-white hover:bg-bear/90 disabled:opacity-50"
+              >
+                {closingAll ? "Closing..." : "Close positions"}
               </button>
             </div>
           </div>

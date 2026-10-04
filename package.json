@@ -1,0 +1,15 @@
+{
+  "name": "aegis-quant",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "openapi:generate": "PYTHONPATH=apps/api .venv/bin/python apps/api/app/openapi.py",
+    "lint": ".venv/bin/ruff check apps/api/app",
+    "typecheck": ".venv/bin/mypy apps/api/app",
+    "test": "PYTHONPATH=apps/api .venv/bin/pytest apps/api/tests && node --experimental-strip-types packages/contracts/src/index.test.ts",
+    "build": "pnpm run openapi:generate"
+  }
+}

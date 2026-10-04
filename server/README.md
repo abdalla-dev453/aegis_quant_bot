@@ -1,8 +1,8 @@
-# MT5 Confluence Trading Bot
+# Aegis Quant Python Service
 
-Python-driven MetaTrader 5 bot using GPT-4o for asynchronous, schema-validated
-trade proposals. Deterministic broker-aware risk controls remain the final
-execution authority.
+Python trading loop and FastAPI dashboard/control service. OpenAI produces
+schema-validated trade proposals; deterministic strategy, portfolio, broker,
+and execution checks remain authoritative.
 
 `TRADING_MODE=paper` is the default: it performs data, AI, and broker preflight
 checks but suppresses `order_send`. See `../deploy/DEPLOYMENT.md` before any
@@ -24,9 +24,10 @@ venv\Scripts\python -m pip install -r requirements.txt
    connecting to MT5 if its OpenAI credential is missing.
    On Linux, set `MT5LINUX_ENABLED=1` only after the mt5linux bridge has been
    configured; it is deliberately disabled by default.
-4. For a local dashboard, leave `API_TOKEN` empty. Loopback requests are
-   allowed automatically. For any non-local deployment, set `API_TOKEN` and
-   the matching `VITE_API_TOKEN` in `client/.env`.
+4. Set a non-empty `API_TOKEN` in `server/.env` and the matching
+   `VITE_API_TOKEN` in `client/.env`. The current API requires the token on
+   protected routes even in paper mode and on loopback; an empty token causes
+   dashboard API requests to return 401.
 5. Adjust `TRADING_SYMBOLS` and `RISK` in `config.py` to match your broker's
    symbol names (e.g. some brokers suffix `.a`, `EURUSD.pro`, etc.) and your
    real risk tolerance.
@@ -38,7 +39,8 @@ venv\Scripts\python -m pip install -r requirements.txt
 
 The frontend defaults to `http://localhost:8000` and starts in `System` theme
 mode. Use the theme menu in the top bar to choose `Light`, `Dark`, or `System`;
-the selection is saved in the browser.
+the selection is saved in the browser. `python main.py` starts both the API
+and the Python trading loop.
 
 ## File map
 
@@ -64,6 +66,13 @@ the selection is saved in the browser.
 3. **`deviation_points` (slippage tolerance) and `atr_sl_multiplier` /
    `atr_tp_multiplier`** are reasonable starting defaults, not tuned
    values — backtest and adjust per symbol.
+4. Paper mode suppresses new entries and automatic trailing-stop modifications.
+   HALTED also disables automatic position management. The explicit,
+   authenticated close-positions operator action remains available in either
+   execution mode and submits broker market orders for bot-owned positions.
+5. The dashboard reports execution mode separately from RUNNING/PAUSED/HALTED
+   operator control state. Re-arming HALTED through the dashboard requires
+   confirmation; direct authenticated API control changes remain possible.
 
 ## Architecture notes
 
@@ -82,6 +91,11 @@ the selection is saved in the browser.
 - **Position sizing is broker-aware**: uses `symbol_info().trade_tick_value`
   / `trade_tick_size` rather than a hardcoded pip value, so 1.5% risk is
   accurate across FX pairs, JPY pairs, and metals alike.
+
+- **Dashboard data is API-backed**: `client/src/lib/botFeed.js` polls the
+   FastAPI service; it is not backed by mock generators. Operator actions are
+   authenticated. The explicit close-positions action is limited to the
+   configured bot magic number and submits market close requests.
 
 ## Deployment
 
