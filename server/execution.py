@@ -32,10 +32,11 @@ from data_provider import (
     ensure_connected,
     get_account_equity,
     get_open_positions,
+    mt5_operation_lock,
     mt5_serialized,
 )
 from metrics import ORDERS_PLACED
-from runtime_state import control_state
+from runtime_state import add_log, control_state
 from strategy import TradeDirection
 
 logger = logging.getLogger("trading_bot.execution")
@@ -47,6 +48,48 @@ def require_mt5_runtime() -> None:
             "MetaTrader5 is not available in this runtime. This bot must run inside a "
             "Windows MT5 terminal with a live broker login."
         )
+
+
+def close_bot_positions() -> dict[str, list[dict[str, str]] | list[str]]:
+    """Close positions managed by this bot and report individual failures."""
+    require_mt5_runtime()
+    ensure_connected()
+    closed: list[str] = []
+    failed: list[dict[str, str]] = []
+
+    with mt5_operation_lock():
+        positions = get_open_positions(magic=RISK.magic_number)
+        for position in positions:
+            ticket = str(position.ticket)
+            tick = mt5.symbol_info_tick(position.symbol)
+            if tick is None:
+                failed.append({"ticket": ticket, "error": f"No price available for {position.symbol}"})
+                continue
+
+            is_buy = position.type == mt5.POSITION_TYPE_BUY
+            request = {
+                "action": mt5.TRADE_ACTION_DEAL,
+                "symbol": position.symbol,
+                "position": position.ticket,
+                "volume": position.volume,
+                "type": mt5.ORDER_TYPE_SELL if is_buy else mt5.ORDER_TYPE_BUY,
+                "price": tick.bid if is_buy else tick.ask,
+                "deviation": max(int(RISK.deviation_points), 20),
+                "magic": RISK.magic_number,
+                "comment": "Aegis operator close-all",
+                "type_time": mt5.ORDER_TIME_GTC,
+                "type_filling": mt5.ORDER_FILLING_IOC,
+            }
+            result = mt5.order_send(request)
+            if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
+                closed.append(ticket)
+            else:
+                detail = result.comment if result is not None else str(mt5.last_error())
+                if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE_PARTIAL:
+                    detail = detail or "Broker only partially closed position"
+                failed.append({"ticket": ticket, "error": detail or "Broker rejected close request"})
+
+    return {"closed": closed, "failed": failed}
 
 
 # ---------------------------------------------------------------------------
@@ -237,6 +280,7 @@ def check_daily_loss_guard() -> bool:
                 drawdown_pct,
                 RISK.max_daily_loss_pct,
             )
+            add_log("WARN", "Daily loss limit reached; trading blocked")
             return True
     return False
 
@@ -591,10 +635,12 @@ def place_order(
     check = mt5.order_check(request)
     acceptable_check_codes = {0, getattr(mt5, "TRADE_RETCODE_DONE", 0)}
     if check is None or getattr(check, "retcode", None) not in acceptable_check_codes:
+        reason = getattr(check, "comment", "") or str(mt5.last_error())
         logger.error(
             "Broker order_check rejected %s %s: %s",
-            symbol, direction.value, getattr(check, "comment", mt5.last_error()),
+            symbol, direction.value, reason,
         )
+        add_log("ERROR", f"Order rejected: {reason}")
         return None
 
     if not EXECUTION.live_orders_enabled:
@@ -619,6 +665,7 @@ def place_order(
             code_name,
             result.comment,
         )
+        add_log("ERROR", f"Order rejected: {result.comment or code_name}")
         ORDERS_PLACED.labels(
             symbol=symbol, direction=direction.value, result="rejected"
         ).inc()
@@ -695,6 +742,14 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
 
     Call this once per loop iteration from main.py.
     """
+    if not EXECUTION.live_orders_enabled:
+        logger.debug("Skipping trailing-stop updates in paper mode")
+        return
+    control = control_state()
+    if not control.get("managementAllowed", False):
+        logger.info("Skipping trailing-stop updates: runtime control=%s", control.get("status", "HALTED"))
+        return
+
     require_mt5_runtime()
     ensure_connected()
     positions = get_open_positions(symbol=symbol, magic=RISK.magic_number)

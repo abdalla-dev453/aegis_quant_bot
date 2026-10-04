@@ -18,6 +18,7 @@ const EMPTY = {
   confluence: { composite: 0, label: "NEUTRAL", technical: 0, sentiment: 0, momentum: 0 },
   calendar: { autoHaltActive: false, autoHaltEtaSeconds: 0, nextEvent: null },
   control: { status: "RUNNING", entriesAllowed: true, managementAllowed: true, reason: null, source: "STARTUP", changedAt: "", revision: 0 },
+  settings: { aiConfigured: false, tradingMode: "UNKNOWN" },
   proposals: [],
   orders: [],
   tradeAnalysis: { summary: { totalTrades: 0, netPnl: 0.0 }, recentTrades: [] },
@@ -30,6 +31,7 @@ const INTEGRALS = [
   ["confluence", feed.fetchConfluence, 3000],
   ["calendar", feed.fetchCalendar, 5000],
   ["control", feed.fetchControl, 3000],
+  ["settings", feed.fetchSettings, 15000],
   ["tradeAnalysis", feed.fetchTradeAnalysis, 10000],
 ];
 
@@ -40,6 +42,7 @@ export function useBotFeed() {
   const [confluence, setConfluence] = useState(EMPTY.confluence);
   const [calendar, setCalendar] = useState(EMPTY.calendar);
   const [control, setControl] = useState(EMPTY.control);
+  const [settings, setSettings] = useState(EMPTY.settings);
   const [proposals, setProposals] = useState([]);
   const [orders, setOrders] = useState([]);
   const [tradeAnalysis, setTradeAnalysis] = useState(EMPTY.tradeAnalysis);
@@ -77,6 +80,7 @@ export function useBotFeed() {
         confluence: setConfluence,
         calendar: setCalendar,
         control: setControl,
+        settings: setSettings,
         tradeAnalysis: setTradeAnalysis,
       }[key];
       const tick = async () => {
@@ -148,5 +152,5 @@ export function useBotFeed() {
     return () => timers.forEach(clearInterval);
   }, []);
 
-  return { account, risk, performance, confluence, calendar, control, proposals, orders, tradeAnalysis, positions, priceSeries, equityCurve, logs, connected, loading };
+  return { account, risk, performance, confluence, calendar, control, settings, proposals, orders, tradeAnalysis, positions, priceSeries, equityCurve, logs, connected, loading };
 }

@@ -16,3 +16,11 @@ __pycache__/
 .kilo/
 execution.log
 oracle_deployemnt_strategy
+node_modules/
+.pnpm-store/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+.next/

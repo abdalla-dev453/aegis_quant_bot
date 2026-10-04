@@ -16,6 +16,7 @@ from typing import Any
 from adaptive_optimization import adaptive_optimizer
 from config import (
     ADVANCED_ANALYSIS,
+    AI,
     DEPLOYMENT,
     EXECUTION,
     INDICATORS,
@@ -34,7 +35,7 @@ from data_provider import (
     resolve_and_validate_symbols,
     shutdown_connection,
 )
-from execution import reset_max_drawdown_guard, risk_guard_status
+from execution import close_bot_positions, reset_max_drawdown_guard, risk_guard_status
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
@@ -52,6 +53,7 @@ from portfolio_risk_manager import portfolio_risk_manager
 from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
 from pydantic import BaseModel, Field
 from runtime_state import (
+    add_log,
     control_state,
     read,
     set_control,
@@ -63,8 +65,9 @@ from strategy import compute_indicators
 app = FastAPI(title="Aegis Quant API", version="1.0.0")
 logger = logging.getLogger("trading_bot.api")
 API_TOKEN = os.getenv("API_TOKEN", "")
-if not API_TOKEN and os.getenv("TRADING_MODE", "paper").lower() == "live":
-    raise RuntimeError("API_TOKEN is required when TRADING_MODE=live")
+if not API_TOKEN.strip():
+    raise RuntimeError("API_TOKEN is required in all modes because protected API routes require it")
+API_TOKEN = API_TOKEN.strip()
 _rate_lock = Lock()
 _rate_windows: dict[tuple[str, str], deque[float]] = defaultdict(deque)
 _MAX_RATE_KEYS = 10000
@@ -241,6 +244,7 @@ def settings() -> dict[str, Any]:
     state = read()
     return {
         "credentialsConfigured": bool(state.get("connected")),
+        "aiConfigured": bool(AI.api_key),
         "tradingMode": EXECUTION.mode,
         "symbols": [symbol.name for symbol in TRADING_SYMBOLS],
         "timeframeTrigger": "H1",
@@ -311,6 +315,18 @@ def account() -> dict[str, float]:
 def positions() -> list[dict[str, Any]]:
     POSITIONS_OPEN.set(len(_position_rows()))
     return _position_rows()
+
+
+@app.post("/api/positions/close-all", dependencies=[Depends(protected_credentials)])
+def close_all_positions() -> dict[str, Any]:
+    result = close_bot_positions()
+    closed = result["closed"]
+    failed = result["failed"]
+    add_log(
+        "WARN" if failed else "INFO",
+        f"Operator close-all: closed {len(closed)} of {len(closed) + len(failed)} bot-managed positions",
+    )
+    return {"ok": not failed, **result}
 
 
 @app.get("/api/risk", dependencies=[Depends(protected)])
