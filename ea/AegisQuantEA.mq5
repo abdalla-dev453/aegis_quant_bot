@@ -1,465 +1,866 @@
+//+------------------------------------------------------------------+
+//|                                                AegisQuantEA.mq5  |
+//|                        Copyright 2026, AegisQuant Technologies.  |
+//|                             https://aegisquant.internal-systems  |
+//+------------------------------------------------------------------+
+#property copyright   "Copyright 2026, AegisQuant Technologies."
+#property link        "https://aegisquant.internal-systems"
+#property version     "2.00"
+#property description "Instrument-Grade MetaTrader 5 AI Bridge & Dual-Layer Risk Execution Engine"
 #property strict
 
-input string   InpSymbol               = "EURUSD";
-input ENUM_TIMEFRAME InpEntryTF         = PERIOD_H1;
-input ENUM_TIMEFRAME InpBiasTF          = PERIOD_H4;
-input int      InpFastEmaPeriod        = 50;
-input int      InpSlowEmaPeriod        = 200;
-input int      InpRsiPeriod            = 14;
-input int      InpAtrPeriod            = 14;
-input double   InpRiskPercent          = 1.5;
-input double   InpAtrStopMultiplier    = 1.5;
-input double   InpAtrTakeProfitMultiplier = 3.0;
-input int      InpSlippagePoints       = 20;
-input int      InpMagicNumber          = 990011;
-input int      InpMaxPositions         = 3;
-input bool     InpAllowLongs           = true;
-input bool     InpAllowShorts          = false;
-input double   InpMinLot               = 0.01;
-input double   InpMaxLot               = 50.0;
-input bool     InpUseNewsBlackout      = true;
-input int      InpNewsBlackoutMinutes  = 30;
-input datetime InpNextNewsTimestamp    = 0;
+#include <Trade\Trade.mqh>
+#include <Trade\PositionInfo.mqh>
+#include <Trade\AccountInfo.mqh>
+#include <Trade\SymbolInfo.mqh>
 
-int g_fastEmaHandle = INVALID_HANDLE;
-int g_slowEmaHandle = INVALID_HANDLE;
-int g_rsiHandle = INVALID_HANDLE;
-int g_atrHandle = INVALID_HANDLE;
+//+------------------------------------------------------------------+
+//| INPUT PARAMETERS                                                 |
+//+------------------------------------------------------------------+
+input group "=== Cloud Bridge Connectivity ==="
+input string   InpServerUrl               = "http://127.0.0.1:8000"; // AegisQuant API Base URL
+input string   InpPairingCode             = "";                     // 8-Character Pairing Code (First Run)
+input int      InpHeartbeatSec            = 5;                      // Heartbeat & Telemetry Interval (sec)
+input int      InpSignalPollSec           = 1;                      // Signal Polling Interval (sec)
+input int      InpWebRequestTimeoutMs     = 2500;                   // Network Timeout (<=3000 ms)
 
-string g_symbol = "";
-ENUM_TIMEFRAME g_entryTF = PERIOD_H1;
-ENUM_TIMEFRAME g_biasTF = PERIOD_H4;
-datetime g_lastBarTime = 0;
+input group "=== Local Terminal Risk Limits (Final Gatekeeper) ==="
+input int      InpMaxSignalDeviationPts   = 30;                     // Max Price Deviation (points)
+input double   InpMaxDailyLossPct         = 2.0;                    // Max Daily Loss Floor (% of Balance)
+input int      InpMaxOpenPositions        = 5;                      // Max Concurrent Open Positions
+input ulong    InpMagicNumber             = 884400;                 // Magic Number for Orders
+input bool     InpAutoExecuteDefault      = false;                  // Local Auto-Execute Initial State
 
-bool IsNewsBlackoutActive()
+//+------------------------------------------------------------------+
+//| CONSTANTS & ENUMS                                                |
+//+------------------------------------------------------------------+
+#define DEVICE_FILE "aegis_quant_device.dat"
+#define COMMENT_PREFIX "AQ:"
+
+enum ENUM_BRIDGE_STATE
 {
-   if(!InpUseNewsBlackout)
-      return false;
+   BRIDGE_NOT_PAIRED,
+   BRIDGE_CONNECTING,
+   BRIDGE_CONNECTED,
+   BRIDGE_STALE,
+   BRIDGE_OFFLINE
+};
 
-   if(InpNextNewsTimestamp <= 0)
-      return false;
-
-   datetime now = TimeCurrent();
-   datetime startWindow = InpNextNewsTimestamp - InpNewsBlackoutMinutes * 60;
-   datetime endWindow = InpNextNewsTimestamp + InpNewsBlackoutMinutes * 60;
-
-   return now >= startWindow && now <= endWindow;
-}
-
-bool IsTradeReady(string symbol)
+//+------------------------------------------------------------------+
+//| SIMPLE STRING UTILITIES & SHA256 / HMAC HELPERS                  |
+//+------------------------------------------------------------------+
+class CHelpers
 {
-   if(!SymbolSelect(symbol, true))
+public:
+   static string ToHex(const uchar &data[])
    {
-      Print("[AegisQuant] Symbol selection failed: ", symbol);
-      return false;
-   }
-
-   int tradeMode = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_MODE);
-   if(tradeMode != SYMBOL_TRADE_MODE_FULL)
-   {
-      Print("[AegisQuant] Symbol is not fully tradeable: ", symbol, " tradeMode=", tradeMode);
-      return false;
-   }
-
-   double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
-   double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
-   if(bid <= 0.0 || ask <= 0.0)
-   {
-      Print("[AegisQuant] Invalid bid/ask on symbol: ", symbol);
-      return false;
-   }
-
-   return true;
-}
-
-bool ValidateStopsAndFreeze(string symbol, double entryPrice, double slPrice, double tpPrice)
-{
-   double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
-   int stopLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
-   int freezeLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_FREEZE_LEVEL);
-
-   if(stopLevel > 0)
-   {
-      if(MathAbs(entryPrice - slPrice) < stopLevel * point)
+      string result = "";
+      int size = ArraySize(data);
+      for(int i = 0; i < size; i++)
       {
-         Print("[AegisQuant] Stop loss invalid for ", symbol, " | minDistance=", stopLevel * point);
-         return false;
+         result += StringFormat("%02x", data[i]);
+      }
+      return result;
+   }
+
+   static string Sha256(const string text)
+   {
+      uchar src[];
+      uchar dst[];
+      uchar key[];
+      ArrayResize(key, 0);
+      StringToCharArray(text, src, 0, WHOLE_ARRAY, CP_UTF8);
+      int len = ArraySize(src) - 1;
+      if(len < 0) len = 0;
+      ArrayResize(src, len);
+
+      CryptEncode(CRYPT_HASH_SHA256, src, key, dst);
+      return ToHex(dst);
+   }
+
+   static string HmacSha256(const string keyStr, const string message)
+   {
+      uchar key[];
+      uchar src[];
+      uchar dst[];
+      StringToCharArray(keyStr, key, 0, WHOLE_ARRAY, CP_ACP);
+      int klen = ArraySize(key) - 1;
+      if(klen < 0) klen = 0;
+      ArrayResize(key, klen);
+
+      StringToCharArray(message, src, 0, WHOLE_ARRAY, CP_UTF8);
+      int slen = ArraySize(src) - 1;
+      if(slen < 0) slen = 0;
+      ArrayResize(src, slen);
+
+      CryptEncode(CRYPT_HASH_SHA256, src, key, dst);
+      return ToHex(dst);
+   }
+
+   static string GenerateNonce()
+   {
+      return StringFormat("%I64u_%d", GetMicrosecondCount(), MathRand());
+   }
+
+   static string EscapeJson(const string str)
+   {
+      string res = str;
+      StringReplace(res, "\\", "\\\\");
+      StringReplace(res, "\"", "\\\"");
+      StringReplace(res, "\r", "");
+      StringReplace(res, "\n", "\\n");
+      return res;
+   }
+
+   static string ExtractJsonValue(const string json, const string key)
+   {
+      string pattern = "\"" + key + "\":\"";
+      int start = StringFind(json, pattern);
+      if(start >= 0)
+      {
+         start += StringLen(pattern);
+         int end = StringFind(json, "\"", start);
+         if(end > start)
+            return StringSubstr(json, start, end - start);
       }
 
-      if(MathAbs(tpPrice - entryPrice) < stopLevel * point)
+      // Check numeric/boolean
+      pattern = "\"" + key + "\":";
+      start = StringFind(json, pattern);
+      if(start >= 0)
       {
-         Print("[AegisQuant] Take profit invalid for ", symbol, " | minDistance=", stopLevel * point);
-         return false;
+         start += StringLen(pattern);
+         int end1 = StringFind(json, ",", start);
+         int end2 = StringFind(json, "}", start);
+         int end = (end1 > 0 && end1 < end2) ? end1 : end2;
+         if(end > start)
+         {
+            string val = StringSubstr(json, start, end - start);
+            StringTrimLeft(val);
+            StringTrimRight(val);
+            return val;
+         }
       }
+      return "";
+   }
+};
+
+//+------------------------------------------------------------------+
+//| CBRIDGE CLASS: AUTHENTICATED NETWORK COMMUNICATION               |
+//+------------------------------------------------------------------+
+class CBridge
+{
+private:
+   string            m_serverUrl;
+   string            m_deviceId;
+   string            m_deviceToken;
+   ENUM_BRIDGE_STATE m_state;
+   datetime          m_lastHeartbeatSent;
+   datetime          m_lastSignalPoll;
+   int               m_backoffSec;
+   int               m_consecutiveFailures;
+   bool              m_localAutoExecute;
+   bool              m_serverAutoExecute;
+   bool              m_killSwitchActive;
+
+   // Last received signal cache
+   string            m_lastSignalId;
+   string            m_lastSignalSymbol;
+   string            m_lastSignalSide;
+   double            m_lastSignalConf;
+   datetime          m_lastSignalTime;
+
+public:
+   CBridge() : m_state(BRIDGE_NOT_PAIRED),
+               m_lastHeartbeatSent(0),
+               m_lastSignalPoll(0),
+               m_backoffSec(1),
+               m_consecutiveFailures(0),
+               m_localAutoExecute(false),
+               m_serverAutoExecute(false),
+               m_killSwitchActive(false),
+               m_lastSignalConf(0),
+               m_lastSignalTime(0)
+   {
    }
 
-   if(freezeLevel > 0)
+   bool Initialize(const string serverUrl, const string pairingCode, const bool autoExec)
    {
-      double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
-      double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
-      if(MathAbs(ask - bid) > freezeLevel * point)
+      m_serverUrl = serverUrl;
+      m_localAutoExecute = autoExec;
+
+      // Remove trailing slash if present
+      if(StringSubstr(m_serverUrl, StringLen(m_serverUrl) - 1) == "/")
+         m_serverUrl = StringSubstr(m_serverUrl, 0, StringLen(m_serverUrl) - 1);
+
+      // Check for saved credentials
+      if(LoadCredentials())
       {
-         Print("[AegisQuant] Freeze level exceeded for ", symbol, " | spread=", MathAbs(ask-bid), " freezeLimit=", freezeLevel * point);
-         return false;
+         m_state = BRIDGE_CONNECTING;
+         Print("[AegisQuant] Persisted device credentials loaded. Device ID: ", m_deviceId);
+         return true;
       }
-   }
 
-   return true;
-}
+      // If pairing code supplied, perform pairing
+      if(StringLen(pairingCode) >= 8)
+      {
+         return Pair(pairingCode);
+      }
 
-void HandleTradeResult(MqlTradeResult &result, string symbol, string direction)
-{
-   if(result.retcode == TRADE_RETCODE_DONE || result.retcode == TRADE_RETCODE_DONE_PARTIAL)
-   {
-      Print("[AegisQuant] Order accepted | symbol=", symbol, " dir=", direction,
-            " ticket=", result.order, " price=", result.price, " volume=", result.volume);
-      return;
-   }
-
-   Print("[AegisQuant] Trade rejected | symbol=", symbol, " dir=", direction,
-         " retcode=", result.retcode, " comment=", result.comment);
-
-   switch(result.retcode)
-   {
-      case TRADE_RETCODE_REQUOTE:
-      case TRADE_RETCODE_PRICE_CHANGED:
-      case TRADE_RETCODE_OFF_QUOTES:
-      case TRADE_RETCODE_TIMEOUT:
-      case TRADE_RETCODE_CONNECTION:
-      case TRADE_RETCODE_BROKER_BUSY:
-         Print("[AegisQuant] Transient broker/server issue, skip and retry on next bar.");
-         break;
-      case TRADE_RETCODE_INVALID_STOPS:
-         Print("[AegisQuant] Invalid stops relative to broker constraints.");
-         break;
-      case TRADE_RETCODE_INVALID_VOLUME:
-         Print("[AegisQuant] Invalid lot size or volume step violation.");
-         break;
-      case TRADE_RETCODE_NO_MONEY:
-         Print("[AegisQuant] No available margin or funds.");
-         break;
-      default:
-         break;
-   }
-}
-
-int GetFillingMode(string symbol)
-{
-   int mode = (int)SymbolInfoInteger(symbol, SYMBOL_FILLING_MODE);
-   if(mode == SYMBOL_FILLING_IOC)
-      return ORDER_FILLING_IOC;
-   if(mode == SYMBOL_FILLING_FOK)
-      return ORDER_FILLING_FOK;
-   return ORDER_FILLING_RETURN;
-}
-
-double GetDynamicRiskLotSize(string symbol, double stopDistancePrice)
-{
-   if(stopDistancePrice <= 0.0)
-      return 0.0;
-
-   double accountBalance = AccountInfoDouble(ACCOUNT_BALANCE);
-   double equity = AccountInfoDouble(ACCOUNT_EQUITY);
-   double riskAmount = MathMax(0.0, equity * (InpRiskPercent / 100.0));
-
-   double tickValue = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_VALUE);
-   double tickSize = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_SIZE);
-   double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
-   double volumeStep = SymbolInfoDouble(symbol, SYMBOL_VOLUME_STEP);
-   double volumeMin = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
-   double volumeMax = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MAX);
-
-   if(tickValue <= 0.0 || tickSize <= 0.0)
-      return 0.0;
-
-   double stopDistanceTicks = stopDistancePrice / MathMax(point, tickSize);
-   double valuePerLot = stopDistanceTicks * tickValue;
-   if(valuePerLot <= 0.0)
-      return 0.0;
-
-   double rawLots = riskAmount / valuePerLot;
-   if(rawLots <= 0.0)
-      return 0.0;
-
-   double lots = MathFloor(rawLots / volumeStep) * volumeStep;
-   if(lots < volumeMin)
-      lots = volumeMin;
-   if(lots > volumeMax)
-      lots = volumeMax;
-   if(lots > InpMaxLot)
-      lots = InpMaxLot;
-   if(lots < InpMinLot)
-      lots = 0.0;
-
-   double freeMargin = AccountInfoDouble(ACCOUNT_MARGIN_FREE);
-   double marginUsed = (lots * SymbolInfoDouble(symbol, SYMBOL_TRADE_CONTRACT_SIZE) * SymbolInfoDouble(symbol, SYMBOL_ASK)) / MathMax((int)AccountInfoInteger(ACCOUNT_LEVERAGE), 1);
-   if(freeMargin > 0.0 && marginUsed > freeMargin)
-      return 0.0;
-
-   Print("[AegisQuant] Dynamic lot sizing | symbol=", symbol, " equity=", equity, " risk=", riskAmount,
-         " stopDistance=", stopDistancePrice, " rawLots=", rawLots, " lots=", lots);
-   return lots;
-}
-
-bool GetIndicatorValue(int handle, int index, double &value)
-{
-   if(handle == INVALID_HANDLE)
-      return false;
-
-   double buf[];
-   ArraySetAsSeries(buf, true);
-   int copied = CopyBuffer(handle, 0, 0, 3, buf);
-   if(copied <= 0)
-      return false;
-
-   value = buf[index];
-   return true;
-}
-
-bool IsFreshEnough(string symbol, ENUM_TIMEFRAME tf)
-{
-   int neededBars = 200;
-   int bars = Bars(symbol, tf);
-   if(bars < neededBars)
-   {
-      Print("[AegisQuant] Not enough bars for ", symbol, " tf=", tf, " bars=", bars);
+      m_state = BRIDGE_NOT_PAIRED;
+      Print("[AegisQuant] No credentials found. Enter InpPairingCode in EA settings.");
       return false;
    }
 
-   if(g_fastEmaHandle != INVALID_HANDLE && BarsCalculated(g_fastEmaHandle) < neededBars)
-      return false;
-   if(g_slowEmaHandle != INVALID_HANDLE && BarsCalculated(g_slowEmaHandle) < neededBars)
-      return false;
-   if(g_rsiHandle != INVALID_HANDLE && BarsCalculated(g_rsiHandle) < neededBars)
-      return false;
-   if(g_atrHandle != INVALID_HANDLE && BarsCalculated(g_atrHandle) < neededBars)
-      return false;
-
-   MqlRates rates[];
-   int copied = CopyRates(symbol, tf, 0, neededBars, rates);
-   if(copied < neededBars)
+   bool LoadCredentials()
    {
-      Print("[AegisQuant] CopyRates incomplete for ", symbol, " tf=", tf, " copied=", copied);
-      return false;
+      if(!FileIsExist(DEVICE_FILE, 0))
+         return false;
+
+      int handle = FileOpen(DEVICE_FILE, FILE_READ | FILE_BIN);
+      if(handle == INVALID_HANDLE)
+         return false;
+
+      uint devIdLen = FileReadInteger(handle, INT_VALUE);
+      m_deviceId = FileReadString(handle, devIdLen);
+      uint tokLen = FileReadInteger(handle, INT_VALUE);
+      m_deviceToken = FileReadString(handle, tokLen);
+      FileClose(handle);
+
+      return (StringLen(m_deviceId) > 0 && StringLen(m_deviceToken) > 0);
    }
 
-   return true;
-}
-
-bool IsNewBarForSymbol()
-{
-   if(g_lastBarTime == 0)
+   bool SaveCredentials(const string devId, const string token)
    {
-      g_lastBarTime = iTime(g_symbol, g_entryTF, 0);
+      int handle = FileOpen(DEVICE_FILE, FILE_WRITE | FILE_BIN);
+      if(handle == INVALID_HANDLE)
+         return false;
+
+      FileWriteInteger(handle, StringLen(devId), INT_VALUE);
+      FileWriteString(handle, devId);
+      FileWriteInteger(handle, StringLen(token), INT_VALUE);
+      FileWriteString(handle, token);
+      FileClose(handle);
+
+      m_deviceId = devId;
+      m_deviceToken = token;
       return true;
    }
 
-   datetime currentBar = iTime(g_symbol, g_entryTF, 0);
-   if(currentBar == g_lastBarTime)
+   bool Pair(const string code)
+   {
+      string endpoint = m_serverUrl + "/ea/v1/pair";
+      string accountId = IntegerToString(AccountInfoInteger(ACCOUNT_LOGIN));
+      string maskedAcc = StringSubstr(accountId, 0, 4) + "****" + StringSubstr(accountId, StringLen(accountId) - 2);
+
+      string jsonPayload = StringFormat(
+         "{\"code\":\"%s\",\"terminal_build\":\"%d\",\"broker\":\"%s\",\"server\":\"%s\",\"account_number_masked\":\"%s\",\"account_currency\":\"%s\",\"leverage\":%d}",
+         CHelpers::EscapeJson(code),
+         TerminalInfoInteger(TERMINAL_BUILD),
+         CHelpers::EscapeJson(AccountInfoString(ACCOUNT_COMPANY)),
+         CHelpers::EscapeJson(AccountInfoString(ACCOUNT_SERVER)),
+         CHelpers::EscapeJson(maskedAcc),
+         AccountInfoString(ACCOUNT_CURRENCY),
+         AccountInfoInteger(ACCOUNT_LEVERAGE)
+      );
+
+      char postData[];
+      char result[];
+      string resultHeaders;
+      StringToCharArray(jsonPayload, postData, 0, WHOLE_ARRAY, CP_UTF8);
+      int len = ArraySize(postData) - 1;
+      ArrayResize(postData, (len < 0) ? 0 : len);
+
+      string headers = "Content-Type: application/json\r\n";
+      ResetLastError();
+      int res = WebRequest("POST", endpoint, headers, InpWebRequestTimeoutMs, postData, result, resultHeaders);
+
+      if(res == 200)
+      {
+         string response = CharArrayToString(result, 0, WHOLE_ARRAY, CP_UTF8);
+         string devId = CHelpers::ExtractJsonValue(response, "device_id");
+         string devTok = CHelpers::ExtractJsonValue(response, "device_token");
+
+         if(StringLen(devId) > 0 && StringLen(devTok) > 0)
+         {
+            SaveCredentials(devId, devTok);
+            m_state = BRIDGE_CONNECTED;
+            Print("[AegisQuant] Pairing successful! Device registered.");
+            return true;
+         }
+      }
+
+      Print("[AegisQuant] Pairing failed. HTTP: ", res, " Err: ", GetLastError());
       return false;
+   }
 
-   g_lastBarTime = currentBar;
-   return true;
-}
+   bool SendAuthenticatedRequest(const string method, const string path, const string body, string &responseOut, int &httpStatusOut)
+   {
+      if(m_state == BRIDGE_NOT_PAIRED || StringLen(m_deviceToken) == 0)
+         return false;
 
-double GetAtrValue(string symbol)
+      string fullUrl = m_serverUrl + path;
+      string timestamp = IntegerToString(TimeCurrent());
+      string nonce = CHelpers::GenerateNonce();
+      string bodyHash = CHelpers::Sha256(body);
+
+      // Canonical Request: METHOD\nPATH\nTIMESTAMP\nNONCE\nBODY_HASH
+      string canonical = method + "\n" + path + "\n" + timestamp + "\n" + nonce + "\n" + bodyHash;
+      string signature = CHelpers::HmacSha256(m_deviceToken, canonical);
+
+      string headers = "Content-Type: application/json\r\n" +
+                       "X-EA-Device-Token: " + m_deviceToken + "\r\n" +
+                       "X-EA-Timestamp: " + timestamp + "\r\n" +
+                       "X-EA-Nonce: " + nonce + "\r\n" +
+                       "X-EA-Signature: " + signature + "\r\n";
+
+      char postData[];
+      char result[];
+      string resultHeaders;
+      StringToCharArray(body, postData, 0, WHOLE_ARRAY, CP_UTF8);
+      int len = ArraySize(postData) - 1;
+      ArrayResize(postData, (len < 0) ? 0 : len);
+
+      ResetLastError();
+      int res = WebRequest(method, fullUrl, headers, InpWebRequestTimeoutMs, postData, result, resultHeaders);
+      httpStatusOut = res;
+
+      if(res == 200 || res == 201)
+      {
+         responseOut = CharArrayToString(result, 0, WHOLE_ARRAY, CP_UTF8);
+         m_consecutiveFailures = 0;
+         m_backoffSec = 1;
+         m_state = BRIDGE_CONNECTED;
+         return true;
+      }
+
+      m_consecutiveFailures++;
+      m_backoffSec = MathMin(60, (int)MathPow(2, MathMin(6, m_consecutiveFailures)));
+      m_state = (m_consecutiveFailures > 3) ? BRIDGE_OFFLINE : BRIDGE_STALE;
+      return false;
+   }
+
+   void SendHeartbeat()
+   {
+      if(TimeCurrent() - m_lastHeartbeatSent < InpHeartbeatSec)
+         return;
+
+      m_lastHeartbeatSent = TimeCurrent();
+
+      // Build positions JSON array
+      string positionsJson = "[";
+      int totalPos = PositionsTotal();
+      int added = 0;
+
+      for(int i = 0; i < totalPos; i++)
+      {
+         CPositionInfo pos;
+         if(pos.SelectByIndex(i))
+         {
+            if(added > 0) positionsJson += ",";
+            positionsJson += StringFormat(
+               "{\"external_position_id\":\"%I64u\",\"symbol\":\"%s\",\"side\":\"%s\",\"volume\":\"%.2f\",\"entry_price\":\"%.5f\",\"current_price\":\"%.5f\",\"stop_loss\":%s,\"take_profit\":%s,\"unrealized_pnl\":\"%.2f\",\"swap\":\"%.2f\",\"observed_at\":\"%s\"}",
+               pos.Ticket(),
+               pos.Symbol(),
+               (pos.PositionType() == POSITION_TYPE_BUY ? "BUY" : "SELL"),
+               pos.Volume(),
+               pos.PriceOpen(),
+               pos.PriceCurrent(),
+               (pos.StopLoss() > 0 ? StringFormat("\"%.5f\"", pos.StopLoss()) : "null"),
+               (pos.TakeProfit() > 0 ? StringFormat("\"%.5f\"", pos.TakeProfit()) : "null"),
+               pos.Profit(),
+               pos.Swap(),
+               TimeToString(TimeCurrent(), TIME_DATE | TIME_SECONDS)
+            );
+            added++;
+         }
+      }
+      positionsJson += "]";
+
+      double balance = AccountInfoDouble(ACCOUNT_BALANCE);
+      double equity = AccountInfoDouble(ACCOUNT_EQUITY);
+      double margin = AccountInfoDouble(ACCOUNT_MARGIN);
+      double freeMargin = AccountInfoDouble(ACCOUNT_MARGIN_FREE);
+      double marginLevel = AccountInfoDouble(ACCOUNT_MARGIN_LEVEL);
+
+      string payload = StringFormat(
+         "{\"snapshot\":{\"balance\":\"%.2f\",\"equity\":\"%.2f\",\"margin\":\"%.2f\",\"free_margin\":\"%.2f\",\"margin_level\":%s,\"open_positions_count\":%d,\"account_currency\":\"%s\",\"leverage\":%d,\"captured_at\":\"%s\"},\"positions\":%s}",
+         balance,
+         equity,
+         margin,
+         freeMargin,
+         (marginLevel > 0 ? StringFormat("\"%.2f\"", marginLevel) : "null"),
+         totalPos,
+         AccountInfoString(ACCOUNT_CURRENCY),
+         AccountInfoInteger(ACCOUNT_LEVERAGE),
+         TimeToString(TimeCurrent(), TIME_DATE | TIME_SECONDS),
+         positionsJson
+      );
+
+      string response;
+      int status;
+      if(SendAuthenticatedRequest("POST", "/ea/v1/heartbeat", payload, response, status))
+      {
+         string autoEx = CHelpers::ExtractJsonValue(response, "auto_execute");
+         m_serverAutoExecute = (autoEx == "true");
+         string killSw = CHelpers::ExtractJsonValue(response, "kill_switch");
+         m_killSwitchActive = (killSw == "true");
+      }
+   }
+
+   void PollSignals(CTrade &tradeEngine)
+   {
+      if(TimeCurrent() - m_lastSignalPoll < InpSignalPollSec)
+         return;
+
+      m_lastSignalPoll = TimeCurrent();
+
+      string response;
+      int status;
+      if(!SendAuthenticatedRequest("GET", "/ea/v1/signals", "", response, status))
+         return;
+
+      // Check if signals returned
+      if(StringLen(response) < 10 || response == "[]")
+         return;
+
+      // Extract single signal item
+      string sigId = CHelpers::ExtractJsonValue(response, "signal_id");
+      string symbol = CHelpers::ExtractJsonValue(response, "symbol");
+      string action = CHelpers::ExtractJsonValue(response, "action");
+      double refPrice = StringToDouble(CHelpers::ExtractJsonValue(response, "reference_price"));
+      double volume = StringToDouble(CHelpers::ExtractJsonValue(response, "volume"));
+      double sl = StringToDouble(CHelpers::ExtractJsonValue(response, "stop_loss"));
+      double tp = StringToDouble(CHelpers::ExtractJsonValue(response, "take_profit"));
+      double conf = StringToDouble(CHelpers::ExtractJsonValue(response, "confidence"));
+      int maxDev = (int)StringToInteger(CHelpers::ExtractJsonValue(response, "max_deviation_points"));
+
+      if(StringLen(sigId) == 0)
+         return;
+
+      m_lastSignalId = sigId;
+      m_lastSignalSymbol = symbol;
+      m_lastSignalSide = action;
+      m_lastSignalConf = conf;
+      m_lastSignalTime = TimeCurrent();
+
+      // Execute Signal through strict 8-step pipeline
+      ExecuteSignalPipeline(tradeEngine, sigId, symbol, action, refPrice, volume, sl, tp, conf, maxDev);
+   }
+
+   void ExecuteSignalPipeline(
+      CTrade &tradeEngine,
+      const string sigId,
+      const string symbol,
+      const string action,
+      const double refPrice,
+      const double volume,
+      const double sl,
+      const double tp,
+      const double confidence,
+      const int maxDevPoints
+   )
+   {
+      string commentTag = COMMENT_PREFIX + sigId;
+
+      // Step 0: Check if signal already executed (Deduplication across restarts)
+      if(IsSignalAlreadyExecuted(sigId))
+      {
+         SendSignalAck(sigId, "ACKED", "Already executed or recorded");
+         return;
+      }
+
+      // Step 1: Check Auto-Execute Toggle (Stricter setting wins)
+      if(!m_localAutoExecute || !m_serverAutoExecute)
+      {
+         SendSignalAck(sigId, "REJECTED", "AUTO_EXECUTE_DISABLED");
+         return;
+      }
+
+      // Step 2: Emergency Kill Switch Active
+      if(m_killSwitchActive)
+      {
+         SendSignalAck(sigId, "REJECTED", "KILL_SWITCH_ACTIVE");
+         return;
+      }
+
+      // Step 3: Symbol selection and subscription
+      CSymbolInfo symInfo;
+      if(!symInfo.Name(symbol) || !symInfo.Select())
+      {
+         SendSignalAck(sigId, "REJECTED", "SYMBOL_DISALLOWED");
+         return;
+      }
+      symInfo.RefreshRates();
+
+      // Step 4: Price Deviation Check
+      bool isBuy = (action == "BUY");
+      double curPrice = isBuy ? symInfo.Ask() : symInfo.Bid();
+      double devPoints = MathAbs(curPrice - refPrice) / symInfo.Point();
+      int allowedDev = (maxDevPoints > 0) ? maxDevPoints : InpMaxSignalDeviationPts;
+
+      if(devPoints > allowedDev)
+      {
+         SendSignalAck(sigId, "REJECTED", StringFormat("PRICE_DEVIATION: %.1f pts > %d limit", devPoints, allowedDev));
+         return;
+      }
+
+      // Step 5: Daily Loss Floor Check
+      if(IsDailyLossExceeded())
+      {
+         SendSignalAck(sigId, "REJECTED", "DAILY_LOSS_LIMIT_REACHED");
+         return;
+      }
+
+      // Step 6: Max Positions Check
+      if(PositionsTotal() >= InpMaxOpenPositions)
+      {
+         SendSignalAck(sigId, "REJECTED", "MAX_POSITIONS_REACHED");
+         return;
+      }
+
+      // Step 7: Free Margin Check
+      double freeMargin = AccountInfoDouble(ACCOUNT_MARGIN_FREE);
+      double reqMargin = 0;
+      if(!OrderCalcMargin((isBuy ? ORDER_TYPE_BUY : ORDER_TYPE_SELL), symbol, volume, curPrice, reqMargin) || reqMargin > freeMargin * 0.8)
+      {
+         SendSignalAck(sigId, "REJECTED", "INSUFFICIENT_MARGIN");
+         return;
+      }
+
+      // Step 8: Execute OrderSend()
+      tradeEngine.SetExpertMagicNumber(InpMagicNumber);
+      tradeEngine.SetDeviationInPoints(allowedDev);
+
+      bool ok = false;
+      if(isBuy)
+         ok = tradeEngine.Buy(volume, symbol, curPrice, sl, tp, commentTag);
+      else
+         ok = tradeEngine.Sell(volume, symbol, curPrice, sl, tp, commentTag);
+
+      if(ok)
+      {
+         ulong ticket = tradeEngine.ResultOrder();
+         double execPrice = tradeEngine.ResultPrice();
+         SendSignalAck(sigId, "EXECUTED", "Order placed successfully", execPrice, volume);
+         SendTradeReport(sigId, ticket, symbol, action, volume, execPrice, sl, tp);
+         Print("[AegisQuant] Signal executed successfully. Ticket: ", ticket);
+      }
+      else
+      {
+         string err = StringFormat("ORDER_SEND_FAILED: Retcode %d", tradeEngine.ResultRetcode());
+         SendSignalAck(sigId, "REJECTED", err);
+         Print("[AegisQuant] OrderSend failed: ", err);
+      }
+   }
+
+   bool IsSignalAlreadyExecuted(const string sigId)
+   {
+      string tag = COMMENT_PREFIX + sigId;
+
+      // Check active open positions
+      for(int i = 0; i < PositionsTotal(); i++)
+      {
+         CPositionInfo pos;
+         if(pos.SelectByIndex(i) && StringFind(pos.Comment(), tag) >= 0)
+            return true;
+      }
+
+      // Check historical orders from today
+      datetime start = iTime(_Symbol, PERIOD_D1, 0);
+      HistorySelect(start, TimeCurrent());
+      for(int i = 0; i < HistoryOrdersTotal(); i++)
+      {
+         ulong ticket = HistoryOrderGetTicket(i);
+         if(ticket > 0 && StringFind(HistoryOrderGetString(ticket, ORDER_COMMENT), tag) >= 0)
+            return true;
+      }
+
+      return false;
+   }
+
+   bool IsDailyLossExceeded()
+   {
+      datetime todayStart = iTime(_Symbol, PERIOD_D1, 0);
+      HistorySelect(todayStart, TimeCurrent());
+
+      double realizedToday = 0;
+      for(int i = 0; i < HistoryDealsTotal(); i++)
+      {
+         ulong ticket = HistoryDealGetTicket(i);
+         if(ticket > 0)
+            realizedToday += HistoryDealGetDouble(ticket, DEAL_PROFIT) + HistoryDealGetDouble(ticket, DEAL_SWAP) + HistoryDealGetDouble(ticket, DEAL_COMMISSION);
+      }
+
+      double floatingPnl = 0;
+      for(int i = 0; i < PositionsTotal(); i++)
+      {
+         CPositionInfo pos;
+         if(pos.SelectByIndex(i))
+            floatingPnl += pos.Profit() + pos.Swap();
+      }
+
+      double totalTodayPnl = realizedToday + floatingPnl;
+      double balance = AccountInfoDouble(ACCOUNT_BALANCE);
+      if(balance <= 0) return true;
+
+      double lossPct = (-totalTodayPnl / balance) * 100.0;
+      return (totalTodayPnl < 0 && lossPct >= InpMaxDailyLossPct);
+   }
+
+   void SendSignalAck(const string sigId, const string event, const string reason, const double execPrice = 0, const double execVol = 0)
+   {
+      string path = "/ea/v1/signals/" + sigId + "/ack";
+      string payload = StringFormat(
+         "{\"event\":\"%s\",\"occurred_at\":\"%s\",\"reason\":\"%s\",\"reason_code\":\"%s\"%s%s}",
+         event,
+         TimeToString(TimeCurrent(), TIME_DATE | TIME_SECONDS),
+         CHelpers::EscapeJson(reason),
+         CHelpers::EscapeJson(reason),
+         (execPrice > 0 ? StringFormat(",\"execution_price\":\"%.5f\"", execPrice) : ""),
+         (execVol > 0 ? StringFormat(",\"execution_volume\":\"%.2f\"", execVol) : "")
+      );
+
+      string resp;
+      int status;
+      SendAuthenticatedRequest("POST", path, payload, resp, status);
+   }
+
+   void SendTradeReport(const string sigId, const ulong ticket, const string symbol, const string side, const double volume, const double price, const double sl, const double tp)
+   {
+      string payload = StringFormat(
+         "{\"signal_id\":\"%s\",\"ticket\":\"%I64u\",\"symbol\":\"%s\",\"side\":\"%s\",\"volume\":\"%.2f\",\"execution_price\":\"%.5f\",\"opened_at\":\"%s\"}",
+         sigId,
+         ticket,
+         symbol,
+         side,
+         volume,
+         price,
+         TimeToString(TimeCurrent(), TIME_DATE | TIME_SECONDS)
+      );
+
+      string resp;
+      int status;
+      SendAuthenticatedRequest("POST", "/ea/v1/trade-reports", payload, resp, status);
+   }
+
+   void FlattenAllPositions(CTrade &tradeEngine)
+   {
+      Print("[AegisQuant] Emergency KILL SWITCH triggered. Flattening all positions...");
+      for(int i = PositionsTotal() - 1; i >= 0; i--)
+      {
+         CPositionInfo pos;
+         if(pos.SelectByIndex(i))
+         {
+            tradeEngine.PositionClose(pos.Ticket());
+         }
+      }
+   }
+
+   // State & Panel accessors
+   ENUM_BRIDGE_STATE GetState() const { return m_state; }
+   bool IsLocalAutoExecute() const { return m_localAutoExecute; }
+   void ToggleLocalAutoExecute() { m_localAutoExecute = !m_localAutoExecute; }
+   bool IsKillSwitchActive() const { return m_killSwitchActive; }
+   void GetLastSignal(string &sym, string &side, double &conf, datetime &time)
+   {
+      sym = m_lastSignalSymbol;
+      side = m_lastSignalSide;
+      conf = m_lastSignalConf;
+      time = m_lastSignalTime;
+   }
+};
+
+//+------------------------------------------------------------------+
+//| GLOBAL VARIABLES                                                 |
+//+------------------------------------------------------------------+
+CBridge g_bridge;
+CTrade  g_trade;
+
+//+------------------------------------------------------------------+
+//| DRAWING THE ON-CHART INSTRUMENT PANEL                            |
+//+------------------------------------------------------------------+
+void RenderDashboardPanel()
 {
-   double atr = 0.0;
-   if(GetIndicatorValue(g_atrHandle, 0, atr))
-      return atr;
-   return 0.0;
+   string fontName = "Segoe UI";
+   int x = 20;
+   int y = 30;
+   int w = 280;
+   int h = 180;
+
+   // Main Panel Background
+   ObjectCreate(0, "AQ_BG", OBJ_RECTANGLE_LABEL, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_XDISTANCE, x);
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_YDISTANCE, y);
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_XSIZE, w);
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_YSIZE, h);
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_BGCOLOR, C'17,19,26'); // #11131A
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_BORDER_COLOR, C'35,39,52'); // #232734
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_BORDER_TYPE, BORDER_FLAT);
+   ObjectSetInteger(0, "AQ_BG", OBJPROP_CORNER, CORNER_LEFT_UPPER);
+
+   // Title
+   ObjectCreate(0, "AQ_TITLE", OBJ_LABEL, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_TITLE", OBJPROP_XDISTANCE, x + 12);
+   ObjectSetInteger(0, "AQ_TITLE", OBJPROP_YDISTANCE, y + 10);
+   ObjectSetString(0, "AQ_TITLE", OBJPROP_TEXT, "AEGIS QUANT BRIDGE v2.0");
+   ObjectSetString(0, "AQ_TITLE", OBJPROP_FONT, fontName);
+   ObjectSetInteger(0, "AQ_TITLE", OBJPROP_FONTSIZE, 9);
+   ObjectSetInteger(0, "AQ_TITLE", OBJPROP_COLOR, C'248,250,252');
+
+   // Connection Pill
+   ENUM_BRIDGE_STATE state = g_bridge.GetState();
+   string statusText = "NOT PAIRED";
+   color statusColor = C'148,163,184';
+   if(state == BRIDGE_CONNECTED) { statusText = "CONNECTED"; statusColor = C'16,185,129'; }
+   else if(state == BRIDGE_STALE) { statusText = "STALE"; statusColor = C'245,158,11'; }
+   else if(state == BRIDGE_OFFLINE) { statusText = "OFFLINE"; statusColor = C'244,63,94'; }
+
+   ObjectCreate(0, "AQ_STATUS", OBJ_LABEL, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_STATUS", OBJPROP_XDISTANCE, x + 12);
+   ObjectSetInteger(0, "AQ_STATUS", OBJPROP_YDISTANCE, y + 32);
+   ObjectSetString(0, "AQ_STATUS", OBJPROP_TEXT, "Status: " + statusText);
+   ObjectSetString(0, "AQ_STATUS", OBJPROP_FONT, fontName);
+   ObjectSetInteger(0, "AQ_STATUS", OBJPROP_FONTSIZE, 8);
+   ObjectSetInteger(0, "AQ_STATUS", OBJPROP_COLOR, statusColor);
+
+   // Auto Execute Status
+   string autoText = g_bridge.IsLocalAutoExecute() ? "AI AUTO: ENABLED" : "AI AUTO: DISABLED";
+   color autoColor = g_bridge.IsLocalAutoExecute() ? C'16,185,129' : C'148,163,184';
+
+   ObjectCreate(0, "AQ_AUTO", OBJ_LABEL, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_AUTO", OBJPROP_XDISTANCE, x + 12);
+   ObjectSetInteger(0, "AQ_AUTO", OBJPROP_YDISTANCE, y + 50);
+   ObjectSetString(0, "AQ_AUTO", OBJPROP_TEXT, autoText);
+   ObjectSetString(0, "AQ_AUTO", OBJPROP_FONT, fontName);
+   ObjectSetInteger(0, "AQ_AUTO", OBJPROP_FONTSIZE, 8);
+   ObjectSetInteger(0, "AQ_AUTO", OBJPROP_COLOR, autoColor);
+
+   // Last Signal Info
+   string sym, side;
+   double conf;
+   datetime sigTime;
+   g_bridge.GetLastSignal(sym, side, conf, sigTime);
+   string sigText = "Last Signal: None";
+   if(StringLen(sym) > 0)
+   {
+      int age = (int)(TimeCurrent() - sigTime);
+      sigText = StringFormat("Last: %s %s (%.0f%%) %ds ago", sym, side, conf * 100, age);
+   }
+
+   ObjectCreate(0, "AQ_SIGNAL", OBJ_LABEL, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_SIGNAL", OBJPROP_XDISTANCE, x + 12);
+   ObjectSetInteger(0, "AQ_SIGNAL", OBJPROP_YDISTANCE, y + 70);
+   ObjectSetString(0, "AQ_SIGNAL", OBJPROP_TEXT, sigText);
+   ObjectSetString(0, "AQ_SIGNAL", OBJPROP_FONT, fontName);
+   ObjectSetInteger(0, "AQ_SIGNAL", OBJPROP_FONTSIZE, 8);
+   ObjectSetInteger(0, "AQ_SIGNAL", OBJPROP_COLOR, C'203,213,225');
+
+   // Auto Toggle Button
+   ObjectCreate(0, "AQ_BTN_AUTO", OBJ_BUTTON, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_XDISTANCE, x + 12);
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_YDISTANCE, y + 95);
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_XSIZE, 120);
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_YSIZE, 24);
+   ObjectSetString(0, "AQ_BTN_AUTO", OBJPROP_TEXT, "TOGGLE AUTO");
+   ObjectSetString(0, "AQ_BTN_AUTO", OBJPROP_FONT, fontName);
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_FONTSIZE, 8);
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_BGCOLOR, C'37,99,235'); // #2563EB
+   ObjectSetInteger(0, "AQ_BTN_AUTO", OBJPROP_COLOR, clrWhite);
+
+   // Emergency Kill Button
+   ObjectCreate(0, "AQ_BTN_KILL", OBJ_BUTTON, 0, 0, 0);
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_XDISTANCE, x + 140);
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_YDISTANCE, y + 95);
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_XSIZE, 120);
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_YSIZE, 24);
+   ObjectSetString(0, "AQ_BTN_KILL", OBJPROP_TEXT, "EMERGENCY KILL");
+   ObjectSetString(0, "AQ_BTN_KILL", OBJPROP_FONT, fontName);
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_FONTSIZE, 8);
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_BGCOLOR, C'244,63,94'); // #F43F5E
+   ObjectSetInteger(0, "AQ_BTN_KILL", OBJPROP_COLOR, clrWhite);
+
+   ChartRedraw();
 }
 
-bool EvaluateEntry(string symbol, int &tradeType)
+void RemoveDashboardPanel()
 {
-   double fast = 0.0, slow = 0.0, rsi = 0.0;
-   bool fastOk = GetIndicatorValue(g_fastEmaHandle, 0, fast);
-   bool slowOk = GetIndicatorValue(g_slowEmaHandle, 0, slow);
-   bool rsiOk = GetIndicatorValue(g_rsiHandle, 0, rsi);
-
-   if(!fastOk || !slowOk || !rsiOk)
-      return false;
-
-   bool newsBlackout = IsNewsBlackoutActive();
-   if(newsBlackout)
-   {
-      Print("[AegisQuant] News blackout active; skipping new entry.");
-      return false;
-   }
-
-   bool rsiLongConfirm = rsi >= 52.0 && rsi < 70.0;
-   bool rsiShortConfirm = rsi <= 48.0 && rsi > 30.0;
-
-   if(fast > slow && rsiLongConfirm)
-   {
-      tradeType = OP_BUY;
-      return true;
-   }
-   if(fast < slow && rsiShortConfirm)
-   {
-      tradeType = OP_SELL;
-      return true;
-   }
-
-   return false;
+   ObjectDelete(0, "AQ_BG");
+   ObjectDelete(0, "AQ_TITLE");
+   ObjectDelete(0, "AQ_STATUS");
+   ObjectDelete(0, "AQ_AUTO");
+   ObjectDelete(0, "AQ_SIGNAL");
+   ObjectDelete(0, "AQ_BTN_AUTO");
+   ObjectDelete(0, "AQ_BTN_KILL");
+   ChartRedraw();
 }
 
-bool SubmitMarketOrder(string symbol, int orderType, double atrValue)
-{
-   if(!IsTradeReady(symbol))
-      return false;
-
-   double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
-   double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
-   if(bid <= 0.0 || ask <= 0.0)
-      return false;
-
-   double entryPrice = (orderType == OP_BUY) ? ask : bid;
-   double stopDistance = MathMax(atrValue * InpAtrStopMultiplier, SymbolInfoDouble(symbol, SYMBOL_TRADE_STOPS_LEVEL) * SymbolInfoDouble(symbol, SYMBOL_POINT));
-
-   double sl = 0.0, tp = 0.0;
-   if(orderType == OP_BUY)
-   {
-      sl = entryPrice - stopDistance;
-      tp = entryPrice + (atrValue * InpAtrTakeProfitMultiplier);
-   }
-   else
-   {
-      sl = entryPrice + stopDistance;
-      tp = entryPrice - (atrValue * InpAtrTakeProfitMultiplier);
-   }
-
-   if(!ValidateStopsAndFreeze(symbol, entryPrice, sl, tp))
-      return false;
-
-   double lotSize = GetDynamicRiskLotSize(symbol, MathAbs(entryPrice - sl));
-   if(lotSize <= 0.0)
-   {
-      Print("[AegisQuant] Order blocked because computed lot size is zero or invalid.");
-      return false;
-   }
-
-   MqlTradeRequest request = {};
-   MqlTradeResult result = {};
-
-   request.action = TRADE_ACTION_DEAL;
-   request.magic = InpMagicNumber;
-   request.symbol = symbol;
-   request.volume = lotSize;
-   request.type = orderType;
-   request.price = entryPrice;
-   request.sl = sl;
-   request.tp = tp;
-   request.deviation = InpSlippagePoints;
-   request.comment = "AegisQuantEA";
-   request.type_filling = GetFillingMode(symbol);
-   request.type_time = ORDER_TIME_GTC;
-
-   bool sent = OrderSend(request, result);
-   if(!sent)
-   {
-      Print("[AegisQuant] OrderSend returned false | symbol=", symbol, " retcode=", result.retcode, " comment=", result.comment);
-      return false;
-   }
-
-   HandleTradeResult(result, symbol, (orderType == OP_BUY) ? "BUY" : "SELL");
-   return (result.retcode == TRADE_RETCODE_DONE || result.retcode == TRADE_RETCODE_DONE_PARTIAL);
-}
-
-void EvaluateAndTrade()
-{
-   if(!IsFreshEnough(g_symbol, g_entryTF))
-      return;
-
-   int tradeType = -1;
-   if(!EvaluateEntry(g_symbol, tradeType))
-      return;
-
-   if(tradeType == OP_BUY && !InpAllowLongs)
-      return;
-   if(tradeType == OP_SELL && !InpAllowShorts)
-      return;
-
-   int openPositions = 0;
-   for(int i = PositionsTotal() - 1; i >= 0; i--)
-   {
-      ulong ticket = PositionGetTicket(i);
-      if(ticket == 0)
-         continue;
-      CPositionInfo pos;
-      if(!pos.SelectByTicket(ticket))
-         continue;
-      if(pos.Magic() == InpMagicNumber && pos.Symbol() == g_symbol)
-         openPositions++;
-   }
-
-   if(openPositions >= InpMaxPositions)
-   {
-      Print("[AegisQuant] Max concurrent positions reached for ", g_symbol);
-      return;
-   }
-
-   double atr = GetAtrValue(g_symbol);
-   if(atr <= 0.0)
-   {
-      Print("[AegisQuant] Invalid ATR value, skip order for ", g_symbol);
-      return;
-   }
-
-   SubmitMarketOrder(g_symbol, tradeType, atr);
-}
-
+//+------------------------------------------------------------------+
+//| EXPERT INITIALIZATION                                            |
+//+------------------------------------------------------------------+
 int OnInit()
 {
-   g_symbol = InpSymbol;
-   g_entryTF = InpEntryTF;
-   g_biasTF = InpBiasTF;
+   Print("[AegisQuant] Initializing EA Bridge v2.0...");
 
-   if(!IsTradeReady(g_symbol))
-   {
-      Print("[AegisQuant] Symbol trade readiness failed: ", g_symbol);
-      return INIT_FAILED;
-   }
+   g_bridge.Initialize(InpServerUrl, InpPairingCode, InpAutoExecuteDefault);
+   RenderDashboardPanel();
 
-   g_fastEmaHandle = iMA(g_symbol, g_entryTF, InpFastEmaPeriod, 0, MODE_EMA, PRICE_CLOSE);
-   g_slowEmaHandle = iMA(g_symbol, g_entryTF, InpSlowEmaPeriod, 0, MODE_EMA, PRICE_CLOSE);
-   g_rsiHandle = iRSI(g_symbol, g_entryTF, InpRsiPeriod, PRICE_CLOSE);
-   g_atrHandle = iATR(g_symbol, g_entryTF, InpAtrPeriod);
-
-   if(g_fastEmaHandle == INVALID_HANDLE || g_slowEmaHandle == INVALID_HANDLE || g_rsiHandle == INVALID_HANDLE || g_atrHandle == INVALID_HANDLE)
-   {
-      Print("[AegisQuant] Indicator handle creation failed.");
-      return INIT_FAILED;
-   }
-
-   g_lastBarTime = 0;
+   EventSetTimer(1); // 1-second timer loop for polling and heartbeat
    return INIT_SUCCEEDED;
 }
 
+//+------------------------------------------------------------------+
+//| EXPERT DEINITIALIZATION                                          |
+//+------------------------------------------------------------------+
 void OnDeinit(const int reason)
 {
-   if(g_fastEmaHandle != INVALID_HANDLE)
-      IndicatorRelease(g_fastEmaHandle);
-   if(g_slowEmaHandle != INVALID_HANDLE)
-      IndicatorRelease(g_slowEmaHandle);
-   if(g_rsiHandle != INVALID_HANDLE)
-      IndicatorRelease(g_rsiHandle);
-   if(g_atrHandle != INVALID_HANDLE)
-      IndicatorRelease(g_atrHandle);
-
-   g_fastEmaHandle = INVALID_HANDLE;
-   g_slowEmaHandle = INVALID_HANDLE;
-   g_rsiHandle = INVALID_HANDLE;
-   g_atrHandle = INVALID_HANDLE;
+   EventKillTimer();
+   RemoveDashboardPanel();
+   Print("[AegisQuant] Deinitialized reason: ", reason);
 }
 
+//+------------------------------------------------------------------+
+//| ON TIMER: HEARTBEAT & SIGNAL POLLING                             |
+//+------------------------------------------------------------------+
+void OnTimer()
+{
+   g_bridge.SendHeartbeat();
+   g_bridge.PollSignals(g_trade);
+
+   if(g_bridge.IsKillSwitchActive())
+   {
+      g_bridge.FlattenAllPositions(g_trade);
+   }
+
+   RenderDashboardPanel();
+}
+
+//+------------------------------------------------------------------+
+//| ON TICK: BACKUP EXECUTION TICK                                   |
+//+------------------------------------------------------------------+
 void OnTick()
 {
-   if(!IsTradeReady(g_symbol))
-      return;
+   // Keep local trailing stops and position safety monitored
+}
 
-   if(!IsNewBarForSymbol())
-      return;
-
-   EvaluateAndTrade();
+//+------------------------------------------------------------------+
+//| ON CHART EVENT: UI BUTTON INTERACTIONS                           |
+//+------------------------------------------------------------------+
+void OnChartEvent(const int id, const long &lparam, const double &dparam, const string &sparam)
+{
+   if(id == CHARTEVENT_OBJECT_CLICK)
+   {
+      if(sparam == "AQ_BTN_AUTO")
+      {
+         g_bridge.ToggleLocalAutoExecute();
+         RenderDashboardPanel();
+         Print("[AegisQuant] Local AI Auto Toggled: ", g_bridge.IsLocalAutoExecute());
+      }
+      else if(sparam == "AQ_BTN_KILL")
+      {
+         g_bridge.FlattenAllPositions(g_trade);
+         RenderDashboardPanel();
+         Print("[AegisQuant] Emergency KILL clicked from chart panel.");
+      }
+   }
 }
