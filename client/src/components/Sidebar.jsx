@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { key: "dashboard", label: "Dashboard", icon: DashboardIcon },
-  { key: "performance", label: "Performance Matrix", icon: MatrixIcon },
-  { key: "strategy", label: "Strategy Builder", icon: StrategyIcon },
-  { key: "logs", label: "Logs", icon: LogsIcon },
+  { key: "signals", label: "AI Signals", icon: SignalsIcon },
+  { key: "risk", label: "Risk & Limits", icon: RiskIcon },
+  { key: "devices", label: "MT5 Terminals", icon: DevicesIcon },
+  { key: "performance", label: "Performance", icon: MatrixIcon },
+  { key: "onboarding", label: "Pair Terminal", icon: PairIcon },
   { key: "settings", label: "Settings", icon: SettingsIcon },
 ];
 
@@ -33,7 +35,6 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
   const utc = useClock("UTC");
   const nyMkt = useClock("America/New_York");
 
-  // Helper function to handle navigation changes and automatically close sidebar on mobile
   const handleNav = (key) => {
     onNavigate(key);
     setIsOpen(false);
@@ -41,19 +42,18 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
 
   return (
     <>
-      {/* 1. MOBILE TOP HEADER (Only visible on smaller screens) */}
+      {/* Mobile Header */}
       <div className="flex h-14 w-full items-center justify-between border-b border-border bg-surface px-4 md:hidden">
         <div className="flex items-center gap-2">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-bull-dim text-bull">
-            <CheckIcon />
+          <span className="flex h-5 w-5 items-center justify-center rounded bg-accent text-white font-bold text-[10px]">
+            AQ
           </span>
-          <span className="text-xs font-semibold tracking-wide text-ink">Onyx FX</span>
+          <span className="text-xs font-semibold tracking-wide text-ink">AegisQuant</span>
         </div>
 
-        {/* Animated Hamburger Trigger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-1.5 rounded-md border border-border bg-surface-alt transition-colors hover:bg-white/[0.02]"
+          className="flex h-8 w-8 flex-col items-center justify-center gap-1.5 rounded-md border border-border bg-surface-alt"
           aria-label="Toggle Menu"
         >
           <span className={`h-0.5 w-4 rounded-full bg-ink transition-transform duration-300 ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
@@ -62,7 +62,7 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
         </button>
       </div>
 
-      {/* 2. MOBILE DARK BACKGROUND BACKDROP SLIDEOVER (Fades in out smoothly) */}
+      {/* Mobile Backdrop */}
       <div
         onClick={() => setIsOpen(false)}
         className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 backdrop-blur-xs md:hidden ${
@@ -70,7 +70,7 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
         }`}
       />
 
-      {/* 3. SIDEBAR COMPONENT (Fixed slide-in drawer on mobile, static on desktop) */}
+      {/* Sidebar Component */}
       <aside
         className={`fixed inset-y-0 left-0 z-40 flex h-full w-60 shrink-0 flex-col border-r border-border bg-surface transition-transform duration-300 ease-in-out md:static md:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
@@ -78,58 +78,51 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
       >
         {/* Brand Header */}
         <div className="flex items-center gap-2 px-5 pt-6 pb-5">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-bull-dim text-bull">
-            <CheckIcon />
-          </span>
+          <div className="flex h-6 w-6 items-center justify-center rounded bg-accent font-mono text-xs font-bold text-white">
+            AQ
+          </div>
           <div>
-            <div className="text-sm font-semibold tracking-wide text-ink">Onyx FX</div>
-            <div className="text-[10px] uppercase tracking-wider text-ink-faint">Algo Engine v3.4.1</div>
+            <div className="text-xs font-bold tracking-tight text-ink">AegisQuant</div>
+            <div className="text-[10px] font-mono text-ink-dim">EA Bridge v2.0</div>
           </div>
         </div>
 
-        {/* Real-time clocks */}
-        <div className="space-y-1 border-b border-border px-5 pb-5 font-mono text-[11px] text-ink-dim">
-          <ClockRow label="Local" value={local} />
-          <ClockRow label="UTC" value={utc} />
-          <ClockRow label="NY MKT" value={nyMkt} />
-        </div>
-
-        {/* Engine connection status — driven by real feed state, not hardcoded */}
-        <div className="space-y-3 border-b border-border px-5 py-4">
-          <StatusRow
-            label="Bot Feed"
-            detail={connected ? "Connected · live" : "Offline"}
-            ok={connected}
-          />
-        </div>
-
-        {/* Navigation Items (Smooth button animations) */}
-        <nav className="flex-1 space-y-0.5 px-3 py-4">
+        {/* Navigation */}
+        <nav className="flex-1 space-y-1 px-3">
           {NAV_ITEMS.map(({ key, label, icon: Icon }) => {
-            const active = key === activePage;
+            const active = activePage === key;
             return (
               <button
                 key={key}
                 onClick={() => handleNav(key)}
-                className={`group flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-[13px] transition-all duration-200 ease-out border ${
+                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium transition-colors ${
                   active
-                    ? "bg-accent/10 text-ink border-accent/30 shadow-xs"
-                    : "text-ink-dim hover:bg-white/[0.03] hover:text-ink border-transparent hover:translate-x-0.5"
+                    ? "bg-accent text-white font-semibold shadow"
+                    : "text-ink-dim hover:bg-surface-alt hover:text-ink"
                 }`}
               >
                 <Icon active={active} />
-                <span className="transition-colors duration-200">{label}</span>
+                <span>{label}</span>
               </button>
             );
           })}
         </nav>
 
-        {/* System Health footer */}
-        <div className="border-t border-border px-5 py-4">
-          <div className="mb-2 text-[10px] uppercase tracking-wider text-ink-faint">System Health</div>
-          <div className="flex gap-4 font-mono text-[11px] text-ink-dim">
-            <span className={connected ? "text-bull animate-pulse" : "text-bear"}>
-              {connected ? "NET OK" : "NET DOWN"}
+        {/* Clocks & Status Footer */}
+        <div className="border-t border-border p-4 space-y-3 font-mono text-[11px]">
+          <div className="flex items-center justify-between text-ink-dim">
+            <span>Server (UTC)</span>
+            <span className="text-ink">{utc}</span>
+          </div>
+          <div className="flex items-center justify-between text-ink-dim">
+            <span>NY Session</span>
+            <span className="text-ink">{nyMkt}</span>
+          </div>
+          <div className="pt-2 border-t border-border flex items-center justify-between">
+            <span className="text-ink-dim">Bridge State</span>
+            <span className={`inline-flex items-center gap-1.5 font-bold ${connected ? "text-bull" : "text-warn"}`}>
+              <span className={`h-1.5 w-1.5 rounded-full ${connected ? "bg-bull" : "bg-warn animate-pulse"}`} />
+              {connected ? "LIVE" : "STANDBY"}
             </span>
           </div>
         </div>
@@ -138,76 +131,61 @@ export default function Sidebar({ activePage, onNavigate, connected = false }) {
   );
 }
 
-function ClockRow({ label, value }) {
+// Minimal Icons (Pure JSX)
+function DashboardIcon() {
   return (
-    <div className="flex items-center justify-between">
-      <span className="text-ink-faint">{label}</span>
-      <span className="text-ink-dim tabular-nums">{value}</span>
-    </div>
-  );
-}
-
-function StatusRow({ label, detail, ok }) {
-  return (
-    <div className="flex items-start gap-2">
-      <span className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full transition-all duration-500 ${ok ? "bg-bull shadow-[0_0_6px_#22d67e]" : "bg-bear shadow-[0_0_6px_#ff4d5e]"}`} />
-      <div className="leading-tight">
-        <div className="text-[12px] text-ink">{label}</div>
-        <div className="text-[10px] text-ink-faint">{detail}</div>
-      </div>
-    </div>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
     </svg>
   );
 }
 
-function iconBase(active) {
-  return `transition-colors duration-200 ${active ? "text-accent" : "text-ink-faint group-hover:text-ink-dim"}`;
+function SignalsIcon() {
+  return (
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </svg>
+  );
 }
 
-function DashboardIcon({ active }) {
+function RiskIcon() {
   return (
-    <svg className={iconBase(active)} width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="2" />
-      <rect x="13" y="3" width="8" height="5" rx="1.5" stroke="currentColor" strokeWidth="2" />
-      <rect x="13" y="10" width="8" height="11" rx="1.5" stroke="currentColor" strokeWidth="2" />
-      <rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="2" />
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
     </svg>
   );
 }
-function MatrixIcon({ active }) {
+
+function DevicesIcon() {
   return (
-    <svg className={iconBase(active)} width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M4 19V9M12 19V5M20 19v-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" />
     </svg>
   );
 }
-function StrategyIcon({ active }) {
+
+function MatrixIcon() {
   return (
-    <svg className={iconBase(active)} width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v18h18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-5 5-4-4-3 3" />
     </svg>
   );
 }
-function LogsIcon({ active }) {
+
+function PairIcon() {
   return (
-    <svg className={iconBase(active)} width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M4 5h16M4 12h16M4 19h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
     </svg>
   );
 }
-function SettingsIcon({ active }) {
+
+function SettingsIcon() {
   return (
-    <svg className={iconBase(active)} width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-      <path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1 1.55V21a2 2 0 11-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.7 1.7 0 00.34-1.87 1.7 1.7 0 00-1.55-1H3a2 2 0 110-4h.09a1.7 1.7 0 001.55-1 1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06a1.7 1.7 0 001.87.34H9a1.7 1.7 0 001-1.55V3a2 2 0 114 0v.09a1.7 1.7 0 001 1.55 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06a1.7 1.7 0 00-.34 1.87V9a1.7 1.7 0 001.55 1H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.55 1z" stroke="currentColor" strokeWidth="1.4" />
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.6 6.6 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 010-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>
   );
 }
