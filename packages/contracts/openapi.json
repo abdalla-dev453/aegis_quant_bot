@@ -617,6 +617,160 @@
         }
       }
     },
+    "/app/v1/accounts/{device_id}/overview": {
+      "get": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Get Account Overview",
+        "operationId": "get_account_overview_app_v1_accounts__device_id__overview_get",
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Device Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardAccount"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/v1/accounts/{device_id}/positions": {
+      "get": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Get Account Positions",
+        "operationId": "get_account_positions_app_v1_accounts__device_id__positions_get",
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Device Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardPosition"
+                  },
+                  "title": "Response Get Account Positions App V1 Accounts  Device Id  Positions Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/v1/accounts/{device_id}/equity-curve": {
+      "get": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Get Equity Curve",
+        "operationId": "get_equity_curve_app_v1_accounts__device_id__equity_curve_get",
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Device Id"
+            }
+          },
+          {
+            "name": "range",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": "7d",
+              "title": "Range"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EquityPoint"
+                  },
+                  "title": "Response Get Equity Curve App V1 Accounts  Device Id  Equity Curve Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/app/v1/risk-profile/{device_id}": {
       "patch": {
         "tags": [
@@ -765,6 +919,175 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/v1/signals/{signal_id}": {
+      "get": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Get Signal Detail",
+        "operationId": "get_signal_detail_app_v1_signals__signal_id__get",
+        "parameters": [
+          {
+            "name": "signal_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Signal Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalDetailView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/v1/devices/{device_id}/dispatch-signal": {
+      "post": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Dispatch Signal",
+        "operationId": "dispatch_signal_app_v1_devices__device_id__dispatch_signal_post",
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Device Id"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "EURUSD",
+              "title": "Symbol"
+            }
+          },
+          {
+            "name": "action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/SignalAction",
+              "default": "BUY"
+            }
+          },
+          {
+            "name": "price",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+                }
+              ],
+              "default": "1.08500",
+              "title": "Price"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/v1/journal/metrics": {
+      "get": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Get Journal Metrics",
+        "operationId": "get_journal_metrics_app_v1_journal_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournalMetrics"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/v1/journal/heatmap": {
+      "get": {
+        "tags": [
+          "app"
+        ],
+        "summary": "Get Journal Heatmap",
+        "operationId": "get_journal_heatmap_app_v1_journal_heatmap_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DailyHeatmapEntry"
+                  },
+                  "type": "array",
+                  "title": "Response Get Journal Heatmap App V1 Journal Heatmap Get"
                 }
               }
             }
@@ -949,6 +1272,31 @@
           "captured_at"
         ],
         "title": "AccountSnapshotInput"
+      },
+      "DailyHeatmapEntry": {
+        "properties": {
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "pnl": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,25}0*$)\\d{0,16}\\.\\d{0,8}0*$)",
+            "title": "Pnl"
+          },
+          "trade_count": {
+            "type": "integer",
+            "title": "Trade Count"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "date",
+          "pnl",
+          "trade_count"
+        ],
+        "title": "DailyHeatmapEntry"
       },
       "DashboardAccount": {
         "properties": {
@@ -1340,6 +1688,39 @@
         ],
         "title": "EAPairResponse"
       },
+      "EquityPoint": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "balance": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,25}0*$)\\d{0,16}\\.\\d{0,8}0*$)",
+            "title": "Balance"
+          },
+          "equity": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,25}0*$)\\d{0,16}\\.\\d{0,8}0*$)",
+            "title": "Equity"
+          },
+          "drawdown_pct": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Drawdown Pct",
+            "default": "0"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "timestamp",
+          "balance",
+          "equity"
+        ],
+        "title": "EquityPoint"
+      },
       "ErrorResponse": {
         "properties": {
           "code": {
@@ -1453,6 +1834,66 @@
           "auto_execute"
         ],
         "title": "HeartbeatResponse"
+      },
+      "JournalMetrics": {
+        "properties": {
+          "total_trades": {
+            "type": "integer",
+            "title": "Total Trades"
+          },
+          "winning_trades": {
+            "type": "integer",
+            "title": "Winning Trades"
+          },
+          "losing_trades": {
+            "type": "integer",
+            "title": "Losing Trades"
+          },
+          "win_rate_pct": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Win Rate Pct"
+          },
+          "profit_factor": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Profit Factor"
+          },
+          "expectancy": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,25}0*$)\\d{0,16}\\.\\d{0,8}0*$)",
+            "title": "Expectancy"
+          },
+          "average_r_multiple": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Average R Multiple"
+          },
+          "max_drawdown_pct": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Max Drawdown Pct"
+          },
+          "net_pnl": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,25}0*$)\\d{0,16}\\.\\d{0,8}0*$)",
+            "title": "Net Pnl"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "total_trades",
+          "winning_trades",
+          "losing_trades",
+          "win_rate_pct",
+          "profit_factor",
+          "expectancy",
+          "average_r_multiple",
+          "max_drawdown_pct",
+          "net_pnl"
+        ],
+        "title": "JournalMetrics"
       },
       "PairingCodeView": {
         "properties": {
@@ -2041,6 +2482,39 @@
         ],
         "title": "SignalDelivery"
       },
+      "SignalDetailView": {
+        "properties": {
+          "signal": {
+            "$ref": "#/components/schemas/SignalView"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/SignalEventView"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "execution_pnl": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,25}0*$)\\d{0,16}\\.\\d{0,8}0*$)"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Execution Pnl"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "signal",
+          "events"
+        ],
+        "title": "SignalDetailView"
+      },
       "SignalEventType": {
         "type": "string",
         "enum": [
@@ -2049,6 +2523,111 @@
           "REJECTED"
         ],
         "title": "SignalEventType"
+      },
+      "SignalEventView": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "signal_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Signal Id"
+          },
+          "device_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Device Id"
+          },
+          "from_state": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "From State"
+          },
+          "to_state": {
+            "type": "string",
+            "title": "To State"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "reason_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Code"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "execution_price": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,16}|(?=[\\d.]{1,29}0*$)\\d{0,16}\\.\\d{0,12}0*$)"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Execution Price"
+          },
+          "execution_volume": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,12}|(?=[\\d.]{1,21}0*$)\\d{0,12}\\.\\d{0,8}0*$)"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Execution Volume"
+          },
+          "occurred_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Occurred At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "signal_id",
+          "device_id",
+          "from_state",
+          "to_state",
+          "source",
+          "reason_code",
+          "reason",
+          "execution_price",
+          "execution_volume",
+          "occurred_at"
+        ],
+        "title": "SignalEventView"
       },
       "SignalRationale": {
         "properties": {

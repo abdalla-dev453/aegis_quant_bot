@@ -257,6 +257,12 @@ class SignalEventView(APIModel):
     occurred_at: datetime
 
 
+class SignalDetailView(APIModel):
+    signal: SignalView
+    events: list[SignalEventView]
+    execution_pnl: SignedMoney | None = None
+
+
 # --- Risk Profile Contracts ---
 
 class RiskProfileView(APIModel):
@@ -338,6 +344,31 @@ class TradeReportView(APIModel):
     opened_at: datetime
     closed_at: datetime | None
     created_at: datetime
+
+
+class EquityPoint(APIModel):
+    timestamp: datetime
+    balance: PositiveMoney
+    equity: PositiveMoney
+    drawdown_pct: Decimal = Decimal(0)
+
+
+class JournalMetrics(APIModel):
+    total_trades: int
+    winning_trades: int
+    losing_trades: int
+    win_rate_pct: Decimal
+    profit_factor: Decimal
+    expectancy: SignedMoney
+    average_r_multiple: Decimal
+    max_drawdown_pct: Decimal
+    net_pnl: SignedMoney
+
+
+class DailyHeatmapEntry(APIModel):
+    date: str
+    pnl: SignedMoney
+    trade_count: int
 
 
 # --- Audit Log Contracts ---
