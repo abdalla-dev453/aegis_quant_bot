@@ -1,1 +1,8 @@
-ewogICIkc2NoZW1hIjogIi4vbm9kZV9tb2R1bGVzL294bGludC9jb25maWd1cmF0aW9uX3NjaGVtYS5qc29uIiwKICAicGx1Z2lucyI6IFsicmVhY3QiLCAib3hjIl0sCiAgInJ1bGVzIjogewogICAgInJlYWN0L3J1bGVzLW9mLWhvb2tzIjogImVycm9yIiwKICAgICJyZWFjdC9vbmx5LWV4cG9ydC1jb21wb25lbnRzIjogWyJ3YXJuIiwgeyAiYWxsb3dDb25zdGFudEV4cG9ydCI6IHRydWUgfV0KICB9Cn0K
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "oxc"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}

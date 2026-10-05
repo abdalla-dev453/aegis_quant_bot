@@ -1,1 +1,15 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEZvb3Rlcih7IHRvdGFsRmxvYXQsIHJpc2tQZXJUcmFkZVBjdCB9KSB7CiAgY29uc3QgcG9zaXRpdmUgPSB0b3RhbEZsb2F0ID49IDA7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gYm9yZGVyLXQgYm9yZGVyLWJvcmRlciBweC04IHB5LTMgdGV4dC1bMTFweF0iPgogICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtaW5rLWZhaW50Ij4KICAgICAgICBEeW5hbWljIFJpc2s6IHtyaXNrUGVyVHJhZGVQY3QgIT0gbnVsbCA/IGAke3Jpc2tQZXJUcmFkZVBjdH0lYCA6ICLigJQifSBwZXIgdHJhZGUgwrcgSGFyZCBTTCBlbmZvcmNlZCBvbiBhbGwgcG9zaXRpb25zCiAgICAgIDwvc3Bhbj4KICAgICAgPHNwYW4gY2xhc3NOYW1lPXtgZm9udC1tb25vICR7cG9zaXRpdmUgPyAidGV4dC1idWxsIiA6ICJ0ZXh0LWJlYXIifWB9PgogICAgICAgIFRvdGFsIEZsb2F0OiB7cG9zaXRpdmUgPyAiKyIgOiAiIn0ke3RvdGFsRmxvYXQudG9GaXhlZCgyKX0KICAgICAgPC9zcGFuPgogICAgPC9kaXY+CiAgKTsKfQ==
+import React from "react";
+
+export default function Footer({ totalFloat, riskPerTradePct }) {
+  const positive = totalFloat >= 0;
+  return (
+    <div className="flex items-center justify-between border-t border-border px-8 py-3 text-[11px]">
+      <span className="text-ink-faint">
+        Dynamic Risk: {riskPerTradePct != null ? `${riskPerTradePct}%` : "—"} per trade · Hard SL enforced on all positions
+      </span>
+      <span className={`font-mono ${positive ? "text-bull" : "text-bear"}`}>
+        Total Float: {positive ? "+" : ""}${totalFloat.toFixed(2)}
+      </span>
+    </div>
+  );
+}

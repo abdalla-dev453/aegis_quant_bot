@@ -1,1 +1,36 @@
-ewogICJuYW1lIjogIkBhZWdpcy1xdWFudC93ZWIiLAogICJwcml2YXRlIjogdHJ1ZSwKICAic2NyaXB0cyI6IHsKICAgICJkZXYiOiAibmV4dCBkZXYiLAogICAgImJ1aWxkIjogIm5leHQgYnVpbGQiLAogICAgInN0YXJ0IjogIm5leHQgc3RhcnQiLAogICAgImxpbnQiOiAib3hsaW50IC4iLAogICAgInR5cGVjaGVjayI6ICJ0c2MgLS1ub0VtaXQiLAogICAgInRlc3QiOiAidml0ZXN0IHJ1biIKICB9LAogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAiQGFlZ2lzLXF1YW50L2NvbnRyYWN0cyI6ICJ3b3Jrc3BhY2U6KiIsCiAgICAiQGFlZ2lzLXF1YW50L3VpIjogIndvcmtzcGFjZToqIiwKICAgICJAdGFuc3RhY2svcmVhY3QtcXVlcnkiOiAiNS4xMDQuMSIsCiAgICAiY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5IjogIjAuNy4xIiwKICAgICJjbHN4IjogIjIuMS4xIiwKICAgICJsaWdodHdlaWdodC1jaGFydHMiOiAiNS4yLjEiLAogICAgImx1Y2lkZS1yZWFjdCI6ICIwLjU3Ny4wIiwKICAgICJuZXh0IjogIjE2LjMuOCIsCiAgICAib3BlbmFwaS1mZXRjaCI6ICIwLjE1LjAiLAogICAgInJlYWN0IjogIjE5LjMuMCIsCiAgICAicmVhY3QtZG9tIjogIjE5LjMuMCIsCiAgICAidGFpbHdpbmQtbWVyZ2UiOiAiMy4zLjEiCiAgfSwKICAiZGV2RGVwZW5kZW5jaWVzIjogewogICAgIkB0YWlsd2luZGNzcy9wb3N0Y3NzIjogIjQuMy4zIiwKICAgICJAdHlwZXMvbm9kZSI6ICIyMi4xNS4zMCIsCiAgICAiQHR5cGVzL3JlYWN0IjogIjE5LjMuMCIsCiAgICAiQHR5cGVzL3JlYWN0LWRvbSI6ICIxOS4zLjAiLAogICAgIm94bGludCI6ICIxLjg2LjAiLAogICAgInRhaWx3aW5kY3NzIjogIjQuMy4zIiwKICAgICJ0eXBlc2NyaXB0IjogIjcuMC4yIiwKICAgICJ2aXRlc3QiOiAiMy4yLjQiCiAgfQp9
+{
+  "name": "@aegis-quant/web",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@aegis-quant/contracts": "workspace:*",
+    "@aegis-quant/ui": "workspace:*",
+    "@tanstack/react-query": "5.104.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lightweight-charts": "5.2.1",
+    "lucide-react": "0.577.0",
+    "next": "16.3.8",
+    "openapi-fetch": "0.15.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.15.30",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "oxlint": "1.86.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vitest": "3.2.4"
+  }
+}

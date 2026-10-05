@@ -1,1 +1,44 @@
-J3VzZSBjbGllbnQnOwoKaW1wb3J0ICogYXMgUmVzaXphYmxlUHJpbWl0aXZlIGZyb20gJ3JlYWN0LXJlc2l6YWJsZS1wYW5lbHMnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKaW1wb3J0IHsgR3JpcFZlcnRpY2FsIH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKCmNvbnN0IFJlc2l6YWJsZVBhbmVsR3JvdXAgPSAoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgUmVzaXphYmxlUHJpbWl0aXZlLlBhbmVsR3JvdXA+KSA9PiAoCiAgPFJlc2l6YWJsZVByaW1pdGl2ZS5QYW5lbEdyb3VwCiAgICBjbGFzc05hbWU9e2NuKAogICAgICAnZmxleCBoLWZ1bGwgdy1mdWxsIGRhdGEtW3BhbmVsLWdyb3VwLWRpcmVjdGlvbj12ZXJ0aWNhbF06ZmxleC1jb2wnLAogICAgICBjbGFzc05hbWUsCiAgICApfQogICAgey4uLnByb3BzfQogIC8+Cik7Cgpjb25zdCBSZXNpemFibGVQYW5lbCA9IFJlc2l6YWJsZVByaW1pdGl2ZS5QYW5lbDsKCmNvbnN0IFJlc2l6YWJsZUhhbmRsZSA9ICh7CiAgd2l0aEhhbmRsZSwKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFJlc2l6YWJsZVByaW1pdGl2ZS5QYW5lbFJlc2l6ZUhhbmRsZT4gJiB7CiAgd2l0aEhhbmRsZT86IGJvb2xlYW47Cn0pID0+ICgKICA8UmVzaXphYmxlUHJpbWl0aXZlLlBhbmVsUmVzaXplSGFuZGxlCiAgICBjbGFzc05hbWU9e2NuKAogICAgICAncmVsYXRpdmUgZmxleCB3LXB4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBiZy1ib3JkZXIgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6aW5zZXQteS0wIGFmdGVyOmxlZnQtMS8yIGFmdGVyOnctMSBhZnRlcjotdHJhbnNsYXRlLXgtMS8yIGZvY3VzLXZpc2libGU6b3V0bGluZS1ub25lIGZvY3VzLXZpc2libGU6cmluZy0xIGZvY3VzLXZpc2libGU6cmluZy1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1vZmZzZXQtMSBkYXRhLVtwYW5lbC1ncm91cC1kaXJlY3Rpb249dmVydGljYWxdOmgtcHggZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTp3LWZ1bGwgZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTphZnRlcjpsZWZ0LTAgZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTphZnRlcjpoLTEgZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTphZnRlcjp3LWZ1bGwgZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTphZnRlcjotdHJhbnNsYXRlLXktMS8yIGRhdGEtW3BhbmVsLWdyb3VwLWRpcmVjdGlvbj12ZXJ0aWNhbF06YWZ0ZXI6dHJhbnNsYXRlLXgtMCBbJltkYXRhLXBhbmVsLWdyb3VwLWRpcmVjdGlvbj12ZXJ0aWNhbF0+ZGl2XTpyb3RhdGUtOTAnLAogICAgICBjbGFzc05hbWUsCiAgICApfQogICAgey4uLnByb3BzfQogID4KICAgIHt3aXRoSGFuZGxlICYmICgKICAgICAgPGRpdiBjbGFzc05hbWU9InotMTAgZmxleCBoLTQgdy0zIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLXNtIGJvcmRlciBiZy1ib3JkZXIiPgogICAgICAgIDxHcmlwVmVydGljYWwgY2xhc3NOYW1lPSJoLTIuNSB3LTIuNSIgLz4KICAgICAgPC9kaXY+CiAgICApfQogIDwvUmVzaXphYmxlUHJpbWl0aXZlLlBhbmVsUmVzaXplSGFuZGxlPgopOwoKZXhwb3J0IHsgUmVzaXphYmxlUGFuZWxHcm91cCwgUmVzaXphYmxlUGFuZWwsIFJlc2l6YWJsZUhhbmRsZSB9Owo=
+'use client';
+
+import * as ResizablePrimitive from 'react-resizable-panels';
+import { cn } from '@/lib/utils';
+import { GripVertical } from 'lucide-react';
+
+const ResizablePanelGroup = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
+  <ResizablePrimitive.PanelGroup
+    className={cn(
+      'flex h-full w-full data-[panel-group-direction=vertical]:flex-col',
+      className,
+    )}
+    {...props}
+  />
+);
+
+const ResizablePanel = ResizablePrimitive.Panel;
+
+const ResizableHandle = ({
+  withHandle,
+  className,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
+  withHandle?: boolean;
+}) => (
+  <ResizablePrimitive.PanelResizeHandle
+    className={cn(
+      'relative flex w-px items-center justify-center bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 data-[panel-group-direction=vertical]:after:translate-x-0 [&[data-panel-group-direction=vertical]>div]:rotate-90',
+      className,
+    )}
+    {...props}
+  >
+    {withHandle && (
+      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
+        <GripVertical className="h-2.5 w-2.5" />
+      </div>
+    )}
+  </ResizablePrimitive.PanelResizeHandle>
+);
+
+export { ResizablePanelGroup, ResizablePanel, ResizableHandle };

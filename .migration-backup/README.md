@@ -1,1 +1,135 @@
-IyBBZWdpcyBRdWFudAoKT255eC1meCBpcyBhbiBBSS1hc3Npc3RlZCBNZXRhVHJhZGVyIDUgdHJhZGluZyBzeXN0ZW0gd2l0aCBhIFB5dGhvbiBleGVjdXRpb24gc2VydmljZSwgYSBGYXN0QVBJIG1vbml0b3JpbmcvY29udHJvbCBBUEksIGEgUmVhY3QgZGFzaGJvYXJkLCBhbmQgdHdvIHNlcGFyYXRlIE1RTDUgRUEgc291cmNlcy4KCj4gKipSZWxlYXNlIHN0YXR1czogTk8tR08gZm9yIGZ1bmRlZC9saXZlIHRyYWRpbmcuKiogVGhlIHJlcG9zaXRvcnkgaGFzIG5vIHZlcmlmaWVkIE1ldGFFZGl0b3IgYnVpbGQsIGJyb2tlci1jb25uZWN0ZWQgcXVhbGlmaWNhdGlvbiwgc2lnbmVkIHJpc2sgYXBwcm92YWwsIG9yIHN1cGVydmlzZWQgZGVtbyBldmlkZW5jZS4gRm9sbG93IHRoZSBbcHJvZHVjdGlvbiByZWxlYXNlIGNoZWNrbGlzdF0oUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZCkgYmVmb3JlIGNvbnNpZGVyaW5nIGxpdmUgdXNlLgoKIyMgV2hhdCBpcyBpbXBsZW1lbnRlZAoKLSBUaGUgUHl0aG9uIHJ1bm5lciBldmFsdWF0ZXMgY29uZmlndXJlZCBzeW1ib2xzIHVzaW5nIGNsb3NlZC1jYW5kbGUgSDEvSDQgbWFya2V0IGRhdGEsIHJlcXVlc3RzIHNjaGVtYS12YWxpZGF0ZWQgQlVZL1NFTEwvSE9MRCBwcm9wb3NhbHMgZnJvbSBPcGVuQUksIHRoZW4gYXBwbGllcyBkZXRlcm1pbmlzdGljIHNpZ25hbCBhbmQgcmlzayBjaGVja3MgYmVmb3JlIGVudHJ5LgotIFRoZSBkZWZhdWx0IGV4ZWN1dGlvbiBtb2RlIGlzIGBwYXBlcmAuIEl0IHBlcmZvcm1zIGFuYWx5c2lzIGFuZCBvcmRlciBwcmVmbGlnaHQgY2hlY2tzIGFuZCBzdXBwcmVzc2VzIG5ldyBlbnRyaWVzIGFuZCBhdXRvbWF0aWMgdHJhaWxpbmctc3RvcCBjaGFuZ2VzLiBBIHVzZXItY29uZmlybWVkIGNsb3NlLXBvc2l0aW9ucyByZXF1ZXN0IHJlbWFpbnMgYW4gZXhwbGljaXQgYnJva2VyIGFjdGlvbiBpbiBlaXRoZXIgbW9kZS4KLSBSaXNrIGFuZCBleGVjdXRpb24gY29kZSBpbmNsdWRlcyBicm9rZXItYXdhcmUgc2l6aW5nLCBkYWlseS1sb3NzIGFuZCBwZWFrLWRyYXdkb3duIGd1YXJkcywgZGFpbHkgdHJhZGUgYW5kIGNvbmN1cnJlbnQtcG9zaXRpb24gbGltaXRzLCBjb3JyZWxhdGlvbiBjaGVja3MsIGFuZCB0cmFpbGluZy1zdG9wIG1hbmFnZW1lbnQuCi0gVGhlIEZhc3RBUEkgc2VydmljZSBleHBvc2VzIGFjY291bnQsIHJpc2ssIHBvc2l0aW9uLCBzaWduYWwsIG9yZGVyLCBsb2csIGFuZCBwZXJmb3JtYW5jZSBkYXRhIHRvIHRoZSBkYXNoYm9hcmQuIEl0IGFsc28gc3VwcG9ydHMgb3BlcmF0b3IgY29udHJvbHMsIGNyZWRlbnRpYWwgc2V0dXAsIHBlYWstZ3VhcmQgcmVzZXQsIGFuZCBjb25maXJtZWQgY2xvc2luZyBvZiBwb3NpdGlvbnMgb3duZWQgYnkgdGhpcyBib3QncyBtYWdpYyBudW1iZXIuCi0gVGhlIFJlYWN0IGRhc2hib2FyZCBwb2xscyB0aGUgQVBJIGFuZCBzaG93cyBhY2NvdW50L3Jpc2sgc3RhdHVzLCBwb3NpdGlvbnMsIHNpZ25hbHMsIG9yZGVycywgbG9ncywgcGVyZm9ybWFuY2UsIGFuZCBjb250cm9sIHN0YXRlLgotIGBtdDUvQWVnaXNDb25mbHVlbmNlRUEubXE1YCBpcyB0aGUgcHJlZmVycmVkIEVBIHNjYWZmb2xkIG5hbWVkIGJ5IHRoZSByZWxlYXNlIGNoZWNrbGlzdC4gYEFlZ2lzUXVhbnRFQS5tcTVgIGlzIGEgc2VwYXJhdGUsIHNtYWxsZXIgRUEgc2NhZmZvbGQuIFRoZXkgYXJlIGluZGVwZW5kZW50IGV4ZWN1dGlvbiBwYXRocywgbm90IHRoZSBQeXRob24gcnVubmVyLgoKVGhlIG1hbnVhbC10cmFkaW5nIGBEYXNoYm9hcmRUcmFkZXJFQS5tcTVgIGRlc2NyaWJlZCBpbiBhbiBlYXJsaWVyIGRyYWZ0IGlzICoqbm90IHByZXNlbnQqKiBpbiB0aGlzIHJlcG9zaXRvcnkuIERvIG5vdCB1c2UgdGhhdCBkcmFmdCdzIGluc3RhbGxhdGlvbiBzdGVwcyBvciBmZWF0dXJlIGxpc3QgZm9yIHRoZXNlIHNvdXJjZXMuCgojIyBJbW1lZGlhdGUgYXR0ZW50aW9uCgpUaGUgYXV0b21hdGljIG11dGF0aW9uIGd1YXJkcyBub3cgc2tpcCB0cmFpbGluZy1zdG9wIHVwZGF0ZXMgaW4gcGFwZXIgbW9kZSBhbmQgd2hlbiB0aGUgb3BlcmF0b3IgY29udHJvbCBkaXNhbGxvd3MgbWFuYWdlbWVudC4gYEFQSV9UT0tFTmAgaXMgcmVxdWlyZWQgYXQgc3RhcnR1cCBpbiBldmVyeSBtb2RlLCBhbmQgdGhlIGRhc2hib2FyZCBkaXNwbGF5cyBleGVjdXRpb24gbW9kZSBzZXBhcmF0ZWx5IGZyb20gb3BlcmF0b3IgY29udHJvbCBzdGF0ZS4gRGFzaGJvYXJkIHJlLWFybWluZyBhZnRlciBIQUxURUQgcmVxdWlyZXMgY29uZmlybWF0aW9uOyBkaXJlY3QgYXV0aGVudGljYXRlZCBBUEkgY29udHJvbCBjaGFuZ2VzIHJlbWFpbiBhbiBvcGVyYXRvciBhY3Rpb24uCgoqKkxpdmUgcmVsZWFzZSBnYXRlcyByZW1haW4gb3Blbi4qKiBUaGUgcmVsZWFzZSBjaGVja2xpc3QgaWRlbnRpZmllcyBtaXNzaW5nIGFnZ3JlZ2F0ZSBvcGVuLXJpc2sgY29udHJvbHMsIGR1cmFibGUgbG9zcy1ndWFyZCBiZWhhdmlvciwgcGFydGlhbC1maWxsL3Jlc3RhcnQgcmVjb25jaWxpYXRpb24sIG93bmVyLWFwcHJvdmVkIGxpbWl0cywgTWV0YUVkaXRvciBidWlsZCBldmlkZW5jZSwgU3RyYXRlZ3kgVGVzdGVyIHJlc3VsdHMsIGFuZCBzdXBlcnZpc2VkIGRlbW8gZXZpZGVuY2UuIFVuaXQgdGVzdHMgYW5kIHBhcGVyIG1vZGUgZG8gbm90IHJlcGxhY2UgdGhvc2UgZ2F0ZXMuCgpEbyBub3QgYXR0YWNoIGVpdGhlciBFQSBvciBlbmFibGUgbGl2ZSBvcmRlcnMgb24gYSBmdW5kZWQgYWNjb3VudCBiYXNlZCBvbiB0aGlzIFJFQURNRS4gVGhlIEVBcyBhbmQgUHl0aG9uIHJ1bm5lciBoYXZlIGRpZmZlcmVudCBjb250cm9scyBhbmQgbXVzdCBub3QgYmUgcnVuIHRvZ2V0aGVyIG9uIHRoZSBzYW1lIGFjY291bnQvc3ltYm9sIHdpdGhvdXQgYW4gZXhwbGljaXRseSB0ZXN0ZWQgb3duZXJzaGlwIHBsYW4uCgojIyBBcmNoaXRlY3R1cmUKCnwgUGF0aCB8IFB1cnBvc2UgfAp8IC0tLSB8IC0tLSB8CnwgYHNlcnZlci9tYWluLnB5YCB8IEFzeW5jIFB5dGhvbiB0cmFkaW5nIGxvb3A7IHN0YXJ0cyB0aGUgQVBJIGFuZCBydW5zIGFuYWx5c2lzL2V4ZWN1dGlvbi4gfAp8IGBzZXJ2ZXIvYWlfZW5naW5lLnB5YCB8IE9wZW5BSSBwcm9wb3NhbCByZXF1ZXN0LCBzdHJpY3Qgc2NoZW1hIHZhbGlkYXRpb24sIGZhaWwtY2xvc2VkIEhPTEQgYmVoYXZpb3IuIHwKfCBgc2VydmVyL3N0cmF0ZWd5LnB5YCB8IFRlY2huaWNhbCBpbmRpY2F0b3JzIGFuZCBkZXRlcm1pbmlzdGljIHNpZ25hbCBjaGVja3MuIHwKfCBgc2VydmVyL2V4ZWN1dGlvbi5weWAgfCBCcm9rZXItYXdhcmUgb3JkZXIgY2hlY2tzLCBvcmRlciBwbGFjZW1lbnQsIHJpc2sgZ3VhcmRzLCBhbmQgdHJhaWxpbmcgc3RvcHMuIHwKfCBgc2VydmVyL25ld3NfcHJvdmlkZXIucHlgIHwgTVQ1IGNhbGVuZGFyL25ld3MgYWRhcHRlciB3aXRoIG9wdGlvbmFsIE5ld3NBUEkgYW5kIFlhaG9vIFJTUyBmYWxsYmFja3MuIHwKfCBgc2VydmVyL2FwaS5weWAgfCBBdXRoZW50aWNhdGVkIEZhc3RBUEkgZGF0YSBhbmQgb3BlcmF0b3ItY29udHJvbCBlbmRwb2ludHMuIHwKfCBgY2xpZW50L2AgfCBSZWFjdC9WaXRlIGRhc2hib2FyZDsgQVBJIGFjY2VzcyBpcyBjZW50cmFsaXplZCBpbiBgc3JjL2xpYi9ib3RGZWVkLmpzYC4gfAp8IGBtdDUvQWVnaXNDb25mbHVlbmNlRUEubXE1YCB8IFByZWZlcnJlZCBNUUw1IGNvbmZsdWVuY2UgRUEgY2FuZGlkYXRlOyBub3QgY29tcGlsZWQgb3IgYnJva2VyLXF1YWxpZmllZCBoZXJlLiB8CnwgYEFlZ2lzUXVhbnRFQS5tcTVgIHwgU2VwYXJhdGUgcm9vdC1sZXZlbCBFQSBzY2FmZm9sZC4gfAp8IGB0ZXN0cy9gIHwgUHl0aG9uIHJlZ3Jlc3Npb24vdW5pdCB0ZXN0czsgbm90IGEgcHJvZml0YWJpbGl0eSBvciBicm9rZXItZXhlY3V0aW9uIHRlc3Qgc3VpdGUuIHwKCiMjIFJlcXVpcmVtZW50cwoKLSBQeXRob24gMy4xMSBvciBuZXdlciBhbmQgdGhlIGRlcGVuZGVuY2llcyBpbiBgc2VydmVyL3JlcXVpcmVtZW50cy50eHRgLgotIEEgTWV0YVRyYWRlciA1IHRlcm1pbmFsIGFuZCBicm9rZXIgc2Vzc2lvbiBmb3IgYWNjb3VudC9tYXJrZXQgZGF0YS4gTmF0aXZlIGBNZXRhVHJhZGVyNWAgUHl0aG9uIHN1cHBvcnQgaXMgV2luZG93cy1vbmx5LiBMaW51eCB1c2UgcmVxdWlyZXMgYSBzZXBhcmF0ZWx5IGNvbmZpZ3VyZWQgYG10NWxpbnV4YCBicmlkZ2UgYW5kIGBNVDVMSU5VWF9FTkFCTEVEPTFgOyB0aGF0IHBhdGggbXVzdCBiZSBxdWFsaWZpZWQgaW4gaXRzIHRhcmdldCBlbnZpcm9ubWVudC4KLSBBbiBPcGVuQUkgQVBJIGtleS4gVGhlIFB5dGhvbiBydW5uZXIgdmFsaWRhdGVzIEFJIGNvbmZpZ3VyYXRpb24gYXQgc3RhcnR1cCwgaW5jbHVkaW5nIGluIHBhcGVyIG1vZGUuCi0gTm9kZS5qcyAyMCBvciBuZXdlciBhbmQgbnBtIGZvciB0aGUgUmVhY3QgZGFzaGJvYXJkLgotIE1ldGFFZGl0b3Igb24gV2luZG93cyB0byBjb21waWxlIGVpdGhlciBgLm1xNWAgc291cmNlLiBObyBzdWNjZXNzZnVsIGJ1aWxkIGlzIGluY2x1ZGVkIGluIHRoaXMgcmVwb3NpdG9yeS4KCiMjIExvY2FsIHNldHVwCgpVc2UgYSBkZW1vIGFjY291bnQuIFRoZSBiYWNrZW5kIHN0YXJ0cyBpdHMgQVBJIGFuZCB0cmFkaW5nIGxvb3AgdG9nZXRoZXIuCgoxLiBDcmVhdGUgYW5kIGluc3RhbGwgdGhlIFB5dGhvbiBlbnZpcm9ubWVudDoKCiAgIGBgYHBvd2Vyc2hlbGwKICAgY2Qgc2VydmVyCiAgIHB5IC0zLjExIC1tIHZlbnYgLnZlbnYKICAgLlwudmVudlxTY3JpcHRzXEFjdGl2YXRlLnBzMQogICBweXRob24gLW0gcGlwIGluc3RhbGwgLXIgcmVxdWlyZW1lbnRzLnR4dAogICBDb3B5LUl0ZW0gLmVudi5leGFtcGxlIC5lbnYKICAgYGBgCgoyLiBFZGl0IGBzZXJ2ZXIvLmVudmAuIEF0IG1pbmltdW0sIHNldCBhIG5vbi1lbXB0eSBBUEkgdG9rZW4sIE9wZW5BSSBrZXksIHBhcGVyIG1vZGUsIGFuZCBsb2NhbCBDT1JTIG9yaWdpbnM6CgogICBgYGBkb3RlbnYKICAgQVBJX0hPU1Q9MTI3LjAuMC4xCiAgIEFQSV9QT1JUPTgwMDAKICAgQ09SU19PUklHSU5TPWh0dHA6Ly9sb2NhbGhvc3Q6NTE3MyxodHRwOi8vMTI3LjAuMC4xOjUxNzMKICAgQVBJX1RPS0VOPTxsb25nLXJhbmRvbS10b2tlbj4KICAgVFJBRElOR19NT0RFPXBhcGVyCiAgIE9QRU5BSV9BUElfS0VZPTx5b3VyLW9wZW5haS1rZXk+CiAgIE9QRU5BSV9NT0RFTD1ncHQtNG8KICAgTVQ1X0xPR0lOPTxkZW1vLWxvZ2luPgogICBNVDVfUEFTU1dPUkQ9PGRlbW8tcGFzc3dvcmQ+CiAgIE1UNV9TRVJWRVI9PGRlbW8tc2VydmVyPgogICBgYGAKCiAgIE1UNSBjcmVkZW50aWFscyBtYXkgaW5zdGVhZCBiZSBlbnRlcmVkIHRocm91Z2ggdGhlIGRhc2hib2FyZCBTZXR0aW5ncyBwYWdlIGFmdGVyIHN0YXJ0dXAsIGJ1dCB0aGUgQVBJIHRva2VuIGlzIHN0aWxsIHJlcXVpcmVkLiBLZWVwIHJlYWwgdmFsdWVzIG91dCBvZiB2ZXJzaW9uIGNvbnRyb2wuCgozLiBTdGFydCB0aGUgUHl0aG9uIHNlcnZpY2UgZnJvbSB0aGUgYHNlcnZlci9gIGRpcmVjdG9yeToKCiAgIGBgYHBvd2Vyc2hlbGwKICAgcHl0aG9uIG1haW4ucHkKICAgYGBgCgogICBUaGUgQVBJIGxpc3RlbnMgYXQgYGh0dHA6Ly8xMjcuMC4wLjE6ODAwMGAgYnkgZGVmYXVsdC4gVGhlIGhlYWx0aCByb3V0ZSBpcyBgL2hlYWx0aHpgOyBwcm90ZWN0ZWQgQVBJIHJvdXRlcyByZXF1aXJlIHRoZSBjb25maWd1cmVkIHRva2VuLgoKNC4gSW4gYSBzZWNvbmQgdGVybWluYWwsIGNvbmZpZ3VyZSBhbmQgc3RhcnQgdGhlIGRhc2hib2FyZDoKCiAgIGBgYHBvd2Vyc2hlbGwKICAgY2QgY2xpZW50CiAgIENvcHktSXRlbSAuZW52LmV4YW1wbGUgLmVudgogICBucG0gaW5zdGFsbAogICBucG0gcnVuIGRldiAtLSAtLWhvc3QgMTI3LjAuMC4xCiAgIGBgYAoKICAgU2V0IGBWSVRFX0FQSV9CQVNFPWh0dHA6Ly8xMjcuMC4wLjE6ODAwMGAgYW5kIGBWSVRFX0FQSV9UT0tFTmAgdG8gdGhlIHNhbWUgdmFsdWUgYXMgYEFQSV9UT0tFTmAuIFRoZSBWaXRlIHRva2VuIGlzIGluY2x1ZGVkIGluIHRoZSBicm93c2VyIGJ1bmRsZTsgdGhpcyBzZXR1cCBpcyBmb3IgbG9jYWwgZGV2ZWxvcG1lbnQsIG5vdCBhIHB1YmxpYyBkZXBsb3ltZW50LgoKRm9yIExpbnV4IHNlcnZpY2Ugc2V0dXAsIHNlY3JldHMsIE5naW54LCBoZWFsdGggY2hlY2tzLCBhbmQgZGVtbyBhY2NlcHRhbmNlIGdhdGVzLCBzZWUgW2RlcGxveS9ERVBMT1lNRU5ULm1kXShkZXBsb3kvREVQTE9ZTUVOVC5tZCkuIEZvciBNVDUgYW5kIEVBIG9wZXJhdGluZyBpbnN0cnVjdGlvbnMsIHNlZSBbUlVOTklOR19NVDVfQk9ULm1kXShSVU5OSU5HX01UNV9CT1QubWQpLgoKIyMgQ29uZmlndXJhdGlvbiBhbmQgYmVoYXZpb3IKCi0gRGVmYXVsdCBzeW1ib2xzIGFyZSBgRVVSVVNEYCwgYEdCUFVTRGAsIGFuZCBgWEFVVVNEYDsgcmlzaywgaW5kaWNhdG9yLCBleGVjdXRpb24sIGFuZCBkZXBsb3ltZW50IHNldHRpbmdzIGFyZSBkZWZpbmVkIGluIGBzZXJ2ZXIvY29uZmlnLnB5YCBhbmQgY2FuIGJlIG92ZXJyaWRkZW4gYnkgc3VwcG9ydGVkIGVudmlyb25tZW50IHZhcmlhYmxlcy4KLSBUaGUgQUkgcmVzcG9uc2UgaXMgY29uc3RyYWluZWQgdG8gQlVZLCBTRUxMLCBvciBIT0xEIGFuZCB2YWxpZGF0ZWQgYmVmb3JlIHVzZS4gQSBtYWxmb3JtZWQgb3IgdW5hdmFpbGFibGUgQUkgcmVzcG9uc2UgZmFpbHMgY2xvc2VkIHRvIEhPTEQuIEFJIHByb3Bvc2FscyBkbyBub3QgYnlwYXNzIGRldGVybWluaXN0aWMgc3RyYXRlZ3ksIHBvcnRmb2xpbywgYnJva2VyLCBvciBleGVjdXRpb24gY2hlY2tzLgotIE5ld3MgY29udGV4dCBjYW4gY29tZSBmcm9tIGFuIE1UNSBicmlkZ2UsIG9wdGlvbmFsIE5ld3NBUEksIG9yIFlhaG9vIFJTUy4gUHJvdmlkZXIgYXZhaWxhYmlsaXR5LCBldmVudCBjbGFzc2lmaWNhdGlvbiwgZnJlc2huZXNzLCBhbmQgYnJva2VyLXRpbWUgYWxpZ25tZW50IG11c3QgYmUgdmVyaWZpZWQgZm9yIHRoZSBkZXBsb3ltZW50OyB0aGlzIGlzIG5vdCBhIGd1YXJhbnRlZWQgbGljZW5zZWQgZWNvbm9taWMtY2FsZW5kYXIgZmVlZC4KLSBEYXNoYm9hcmQgcG9zaXRpb25zIGFuZCBjbG9zZSBhY3Rpb25zIGFyZSBsaW1pdGVkIHRvIHBvc2l0aW9ucyB0YWdnZWQgd2l0aCB0aGUgY29uZmlndXJlZCBQeXRob24gYm90IG1hZ2ljIG51bWJlci4gVGhlIGNsb3NlIGFjdGlvbiBzZW5kcyBicm9rZXIgbWFya2V0IG9yZGVycyBhbmQgY2FuIG9wZXJhdGUgZXZlbiB3aGVuIG5ldyBlbnRyaWVzIGFyZSBpbiBwYXBlciBtb2RlOyB1c2UgaXRzIGNvbmZpcm1hdGlvbiBkZWxpYmVyYXRlbHkuCi0gUGF1c2UvSEFMVCBzdGF0ZSwgQVBJIGNvbm5lY3Rpdml0eSwgYW5kIGBUUkFESU5HX01PREVgIGFyZSBzZXBhcmF0ZSBjb25jZXB0cy4gRG8gbm90IGluZmVyIGxpdmUgdmVyc3VzIHBhcGVyIGV4ZWN1dGlvbiBmcm9tIHRoZSBkYXNoYm9hcmQncyBSVU5OSU5HIGxhYmVsLgoKIyMgVmVyaWZpY2F0aW9uCgpSdW4gdGhlIFB5dGhvbiB0ZXN0cyBmcm9tIHRoZSByZXBvc2l0b3J5IHJvb3Qgd2l0aCB0aGUgcHJvamVjdCBlbnZpcm9ubWVudCBhY3RpdmU6CgpgYGBiYXNoCnB5dGhvbiAtbSBweXRlc3QgdGVzdHMgLXEKYGBgCgpCdWlsZCBhbmQgbGludCB0aGUgY2xpZW50OgoKYGBgYmFzaApjZCBjbGllbnQKbnBtIHJ1biBidWlsZApucG0gcnVuIGxpbnQKYGBgCgpUaGVzZSBjaGVja3MgdmFsaWRhdGUgc29mdHdhcmUgYmVoYXZpb3IgYW5kIHBhY2thZ2luZyBvbmx5LiBUaGV5IGRvIG5vdCBlc3RhYmxpc2ggc3RyYXRlZ3kgcHJvZml0YWJpbGl0eSwgYnJva2VyIGNvbXBhdGliaWxpdHksIHNhZmUgbGl2ZSBleGVjdXRpb24sIG9yIHJlbGVhc2UgYXBwcm92YWwuCgojIyBSZWxhdGVkIGRvY3VtZW50YXRpb24KCi0gW01UNSBydW5ib29rXShSVU5OSU5HX01UNV9CT1QubWQpCi0gW0RlcGxveW1lbnQgZ3VpZGVdKGRlcGxveS9ERVBMT1lNRU5ULm1kKQotIFtQcm9kdWN0aW9uIHJlbGVhc2UgY2hlY2tsaXN0XShQUk9EVUNUSU9OX1JFTEVBU0VfQ0hFQ0tMSVNULm1kKQotIFtQcm9kdWN0aW9uIHJlYWRpbmVzcyBhdWRpdF0oUFJPRFVDVElPTl9SRUFESU5FU1NfQVVESVQubWQpCi0gW1NlY3VyaXR5IG5vdGVzXShTRUNVUklUWS5tZCkKClRyYWRpbmcgbGV2ZXJhZ2VkIHByb2R1Y3RzIGNhbiByZXN1bHQgaW4gcmFwaWQgbG9zc2VzLiBUaGlzIHNvZnR3YXJlIGlzIG5vdCBmaW5hbmNpYWwgYWR2aWNlIGFuZCBtYWtlcyBubyBndWFyYW50ZWUgb2YgcGVyZm9ybWFuY2UuIFVzZSBvbmx5IHN1cGVydmlzZWQgZGVtbyBlbnZpcm9ubWVudHMgdW50aWwgZXZlcnkgcmVsZWFzZSBnYXRlIGhhcyBiZWVuIGluZGVwZW5kZW50bHkgdmVyaWZpZWQgYW5kIGFwcHJvdmVkLg==
+# Aegis Quant
+
+Onyx-fx is an AI-assisted MetaTrader 5 trading system with a Python execution service, a FastAPI monitoring/control API, a React dashboard, and two separate MQL5 EA sources.
+
+> **Release status: NO-GO for funded/live trading.** The repository has no verified MetaEditor build, broker-connected qualification, signed risk approval, or supervised demo evidence. Follow the [production release checklist](PRODUCTION_RELEASE_CHECKLIST.md) before considering live use.
+
+## What is implemented
+
+- The Python runner evaluates configured symbols using closed-candle H1/H4 market data, requests schema-validated BUY/SELL/HOLD proposals from OpenAI, then applies deterministic signal and risk checks before entry.
+- The default execution mode is `paper`. It performs analysis and order preflight checks and suppresses new entries and automatic trailing-stop changes. A user-confirmed close-positions request remains an explicit broker action in either mode.
+- Risk and execution code includes broker-aware sizing, daily-loss and peak-drawdown guards, daily trade and concurrent-position limits, correlation checks, and trailing-stop management.
+- The FastAPI service exposes account, risk, position, signal, order, log, and performance data to the dashboard. It also supports operator controls, credential setup, peak-guard reset, and confirmed closing of positions owned by this bot's magic number.
+- The React dashboard polls the API and shows account/risk status, positions, signals, orders, logs, performance, and control state.
+- `mt5/AegisConfluenceEA.mq5` is the preferred EA scaffold named by the release checklist. `AegisQuantEA.mq5` is a separate, smaller EA scaffold. They are independent execution paths, not the Python runner.
+
+The manual-trading `DashboardTraderEA.mq5` described in an earlier draft is **not present** in this repository. Do not use that draft's installation steps or feature list for these sources.
+
+## Immediate attention
+
+The automatic mutation guards now skip trailing-stop updates in paper mode and when the operator control disallows management. `API_TOKEN` is required at startup in every mode, and the dashboard displays execution mode separately from operator control state. Dashboard re-arming after HALTED requires confirmation; direct authenticated API control changes remain an operator action.
+
+**Live release gates remain open.** The release checklist identifies missing aggregate open-risk controls, durable loss-guard behavior, partial-fill/restart reconciliation, owner-approved limits, MetaEditor build evidence, Strategy Tester results, and supervised demo evidence. Unit tests and paper mode do not replace those gates.
+
+Do not attach either EA or enable live orders on a funded account based on this README. The EAs and Python runner have different controls and must not be run together on the same account/symbol without an explicitly tested ownership plan.
+
+## Architecture
+
+| Path | Purpose |
+| --- | --- |
+| `server/main.py` | Async Python trading loop; starts the API and runs analysis/execution. |
+| `server/ai_engine.py` | OpenAI proposal request, strict schema validation, fail-closed HOLD behavior. |
+| `server/strategy.py` | Technical indicators and deterministic signal checks. |
+| `server/execution.py` | Broker-aware order checks, order placement, risk guards, and trailing stops. |
+| `server/news_provider.py` | MT5 calendar/news adapter with optional NewsAPI and Yahoo RSS fallbacks. |
+| `server/api.py` | Authenticated FastAPI data and operator-control endpoints. |
+| `client/` | React/Vite dashboard; API access is centralized in `src/lib/botFeed.js`. |
+| `mt5/AegisConfluenceEA.mq5` | Preferred MQL5 confluence EA candidate; not compiled or broker-qualified here. |
+| `AegisQuantEA.mq5` | Separate root-level EA scaffold. |
+| `tests/` | Python regression/unit tests; not a profitability or broker-execution test suite. |
+
+## Requirements
+
+- Python 3.11 or newer and the dependencies in `server/requirements.txt`.
+- A MetaTrader 5 terminal and broker session for account/market data. Native `MetaTrader5` Python support is Windows-only. Linux use requires a separately configured `mt5linux` bridge and `MT5LINUX_ENABLED=1`; that path must be qualified in its target environment.
+- An OpenAI API key. The Python runner validates AI configuration at startup, including in paper mode.
+- Node.js 20 or newer and npm for the React dashboard.
+- MetaEditor on Windows to compile either `.mq5` source. No successful build is included in this repository.
+
+## Local setup
+
+Use a demo account. The backend starts its API and trading loop together.
+
+1. Create and install the Python environment:
+
+   ```powershell
+   cd server
+   py -3.11 -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   python -m pip install -r requirements.txt
+   Copy-Item .env.example .env
+   ```
+
+2. Edit `server/.env`. At minimum, set a non-empty API token, OpenAI key, paper mode, and local CORS origins:
+
+   ```dotenv
+   API_HOST=127.0.0.1
+   API_PORT=8000
+   CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+   API_TOKEN=<long-random-token>
+   TRADING_MODE=paper
+   OPENAI_API_KEY=<your-openai-key>
+   OPENAI_MODEL=gpt-4o
+   MT5_LOGIN=<demo-login>
+   MT5_PASSWORD=<demo-password>
+   MT5_SERVER=<demo-server>
+   ```
+
+   MT5 credentials may instead be entered through the dashboard Settings page after startup, but the API token is still required. Keep real values out of version control.
+
+3. Start the Python service from the `server/` directory:
+
+   ```powershell
+   python main.py
+   ```
+
+   The API listens at `http://127.0.0.1:8000` by default. The health route is `/healthz`; protected API routes require the configured token.
+
+4. In a second terminal, configure and start the dashboard:
+
+   ```powershell
+   cd client
+   Copy-Item .env.example .env
+   npm install
+   npm run dev -- --host 127.0.0.1
+   ```
+
+   Set `VITE_API_BASE=http://127.0.0.1:8000` and `VITE_API_TOKEN` to the same value as `API_TOKEN`. The Vite token is included in the browser bundle; this setup is for local development, not a public deployment.
+
+For Linux service setup, secrets, Nginx, health checks, and demo acceptance gates, see [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md). For MT5 and EA operating instructions, see [RUNNING_MT5_BOT.md](RUNNING_MT5_BOT.md).
+
+## Configuration and behavior
+
+- Default symbols are `EURUSD`, `GBPUSD`, and `XAUUSD`; risk, indicator, execution, and deployment settings are defined in `server/config.py` and can be overridden by supported environment variables.
+- The AI response is constrained to BUY, SELL, or HOLD and validated before use. A malformed or unavailable AI response fails closed to HOLD. AI proposals do not bypass deterministic strategy, portfolio, broker, or execution checks.
+- News context can come from an MT5 bridge, optional NewsAPI, or Yahoo RSS. Provider availability, event classification, freshness, and broker-time alignment must be verified for the deployment; this is not a guaranteed licensed economic-calendar feed.
+- Dashboard positions and close actions are limited to positions tagged with the configured Python bot magic number. The close action sends broker market orders and can operate even when new entries are in paper mode; use its confirmation deliberately.
+- Pause/HALT state, API connectivity, and `TRADING_MODE` are separate concepts. Do not infer live versus paper execution from the dashboard's RUNNING label.
+
+## Verification
+
+Run the Python tests from the repository root with the project environment active:
+
+```bash
+python -m pytest tests -q
+```
+
+Build and lint the client:
+
+```bash
+cd client
+npm run build
+npm run lint
+```
+
+These checks validate software behavior and packaging only. They do not establish strategy profitability, broker compatibility, safe live execution, or release approval.
+
+## Related documentation
+
+- [MT5 runbook](RUNNING_MT5_BOT.md)
+- [Deployment guide](deploy/DEPLOYMENT.md)
+- [Production release checklist](PRODUCTION_RELEASE_CHECKLIST.md)
+- [Production readiness audit](PRODUCTION_READINESS_AUDIT.md)
+- [Security notes](SECURITY.md)
+
+Trading leveraged products can result in rapid losses. This software is not financial advice and makes no guarantee of performance. Use only supervised demo environments until every release gate has been independently verified and approved.

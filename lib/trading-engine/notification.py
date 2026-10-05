@@ -1,1 +1,101 @@
-IiIiVHJhZGUgbm90aWZpY2F0aW9uIHN5c3RlbSBmb3IgY3JpdGljYWwgZXZlbnRzLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGxvZ2dpbmcKaW1wb3J0IHRocmVhZGluZwpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MsIGZpZWxkCmZyb20gZGF0ZXRpbWUgaW1wb3J0IGRhdGV0aW1lLCB0aW1lem9uZQpmcm9tIGVudW0gaW1wb3J0IEVudW0KZnJvbSB0eXBpbmcgaW1wb3J0IEFueQoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoInRyYWRpbmdfYm90Lm5vdGlmaWNhdGlvbnMiKQoKCmNsYXNzIE5vdGlmaWNhdGlvbkxldmVsKHN0ciwgRW51bSk6CiAgICBJTkZPID0gImluZm8iCiAgICBXQVJOSU5HID0gIndhcm5pbmciCiAgICBDUklUSUNBTCA9ICJjcml0aWNhbCIKCgpAZGF0YWNsYXNzCmNsYXNzIE5vdGlmaWNhdGlvbjoKICAgIGxldmVsOiBOb3RpZmljYXRpb25MZXZlbAogICAgdGl0bGU6IHN0cgogICAgbWVzc2FnZTogc3RyCiAgICB0aW1lc3RhbXA6IHN0ciA9ICIiCiAgICBtZXRhZGF0YTogZGljdFtzdHIsIEFueV0gPSBmaWVsZChkZWZhdWx0X2ZhY3Rvcnk9ZGljdCkKCiAgICBkZWYgX19wb3N0X2luaXRfXyhzZWxmKSAtPiBOb25lOgogICAgICAgIGlmIG5vdCBzZWxmLnRpbWVzdGFtcDoKICAgICAgICAgICAgc2VsZi50aW1lc3RhbXAgPSBkYXRldGltZS5ub3codGltZXpvbmUudXRjKS5pc29mb3JtYXQoKQoKCmNsYXNzIE5vdGlmaWNhdGlvbkNoYW5uZWwoc3RyLCBFbnVtKToKICAgIExPRyA9ICJsb2ciCgoKY2xhc3MgTm90aWZpY2F0aW9uTWFuYWdlcjoKICAgIGRlZiBfX2luaXRfXyhzZWxmKSAtPiBOb25lOgogICAgICAgIHNlbGYuX2NoYW5uZWxzOiBsaXN0W05vdGlmaWNhdGlvbkNoYW5uZWxdID0gW05vdGlmaWNhdGlvbkNoYW5uZWwuTE9HXQogICAgICAgIHNlbGYuX2xvY2sgPSB0aHJlYWRpbmcuTG9jaygpCiAgICAgICAgc2VsZi5faGlzdG9yeTogbGlzdFtOb3RpZmljYXRpb25dID0gW10KICAgICAgICBzZWxmLl9tYXhfaGlzdG9yeSA9IDIwMAoKICAgIGRlZiBhZGRfY2hhbm5lbChzZWxmLCBjaGFubmVsOiBOb3RpZmljYXRpb25DaGFubmVsKSAtPiBOb25lOgogICAgICAgIHdpdGggc2VsZi5fbG9jazoKICAgICAgICAgICAgaWYgY2hhbm5lbCBub3QgaW4gc2VsZi5fY2hhbm5lbHM6CiAgICAgICAgICAgICAgICBzZWxmLl9jaGFubmVscy5hcHBlbmQoY2hhbm5lbCkKCiAgICBkZWYgbm90aWZ5KAogICAgICAgIHNlbGYsCiAgICAgICAgbGV2ZWw6IE5vdGlmaWNhdGlvbkxldmVsLAogICAgICAgIHRpdGxlOiBzdHIsCiAgICAgICAgbWVzc2FnZTogc3RyLAogICAgICAgICoqbWV0YWRhdGE6IEFueSwKICAgICkgLT4gTm90aWZpY2F0aW9uOgogICAgICAgIG5vdGlmaWNhdGlvbiA9IE5vdGlmaWNhdGlvbigKICAgICAgICAgICAgbGV2ZWw9bGV2ZWwsIHRpdGxlPXRpdGxlLCBtZXNzYWdlPW1lc3NhZ2UsIG1ldGFkYXRhPW1ldGFkYXRhCiAgICAgICAgKQogICAgICAgIHdpdGggc2VsZi5fbG9jazoKICAgICAgICAgICAgc2VsZi5faGlzdG9yeS5hcHBlbmQobm90aWZpY2F0aW9uKQogICAgICAgICAgICBpZiBsZW4oc2VsZi5faGlzdG9yeSkgPiBzZWxmLl9tYXhfaGlzdG9yeToKICAgICAgICAgICAgICAgIHNlbGYuX2hpc3RvcnkgPSBzZWxmLl9oaXN0b3J5Wy1zZWxmLl9tYXhfaGlzdG9yeTpdCgogICAgICAgIGZvciBjaGFubmVsIGluIHNlbGYuX2NoYW5uZWxzOgogICAgICAgICAgICBpZiBjaGFubmVsID09IE5vdGlmaWNhdGlvbkNoYW5uZWwuTE9HOgogICAgICAgICAgICAgICAgc2VsZi5fbG9nX25vdGlmaWNhdGlvbihub3RpZmljYXRpb24pCgogICAgICAgIHJldHVybiBub3RpZmljYXRpb24KCiAgICBkZWYgX2xvZ19ub3RpZmljYXRpb24oc2VsZiwgbm90aWZpY2F0aW9uOiBOb3RpZmljYXRpb24pIC0+IE5vbmU6CiAgICAgICAgcHJlZml4ID0gZiJbe25vdGlmaWNhdGlvbi5sZXZlbC52YWx1ZS51cHBlcigpfV0iCiAgICAgICAgbG9nZ2VyLmluZm8oZiJ7cHJlZml4fSB7bm90aWZpY2F0aW9uLnRpdGxlfToge25vdGlmaWNhdGlvbi5tZXNzYWdlfSIpCgogICAgZGVmIGNyaXRpY2FsKAogICAgICAgIHNlbGYsIHRpdGxlOiBzdHIsIG1lc3NhZ2U6IHN0ciwgKiptZXRhZGF0YTogQW55CiAgICApIC0+IE5vdGlmaWNhdGlvbjoKICAgICAgICByZXR1cm4gc2VsZi5ub3RpZnkoTm90aWZpY2F0aW9uTGV2ZWwuQ1JJVElDQUwsIHRpdGxlLCBtZXNzYWdlLCAqKm1ldGFkYXRhKQoKICAgIGRlZiB3YXJuaW5nKAogICAgICAgIHNlbGYsIHRpdGxlOiBzdHIsIG1lc3NhZ2U6IHN0ciwgKiptZXRhZGF0YTogQW55CiAgICApIC0+IE5vdGlmaWNhdGlvbjoKICAgICAgICByZXR1cm4gc2VsZi5ub3RpZnkoTm90aWZpY2F0aW9uTGV2ZWwuV0FSTklORywgdGl0bGUsIG1lc3NhZ2UsICoqbWV0YWRhdGEpCgogICAgZGVmIGluZm8oCiAgICAgICAgc2VsZiwgdGl0bGU6IHN0ciwgbWVzc2FnZTogc3RyLCAqKm1ldGFkYXRhOiBBbnkKICAgICkgLT4gTm90aWZpY2F0aW9uOgogICAgICAgIHJldHVybiBzZWxmLm5vdGlmeShOb3RpZmljYXRpb25MZXZlbC5JTkZPLCB0aXRsZSwgbWVzc2FnZSwgKiptZXRhZGF0YSkKCiAgICBkZWYgZ2V0X2hpc3RvcnkoCiAgICAgICAgc2VsZiwgbGV2ZWw6IE5vdGlmaWNhdGlvbkxldmVsIHwgTm9uZSA9IE5vbmUsIGxpbWl0OiBpbnQgPSA1MAogICAgKSAtPiBsaXN0W05vdGlmaWNhdGlvbl06CiAgICAgICAgd2l0aCBzZWxmLl9sb2NrOgogICAgICAgICAgICBpZiBsZXZlbCBpcyBub3QgTm9uZToKICAgICAgICAgICAgICAgIGZpbHRlcmVkID0gW24gZm9yIG4gaW4gc2VsZi5faGlzdG9yeSBpZiBuLmxldmVsID09IGxldmVsXQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgZmlsdGVyZWQgPSBsaXN0KHNlbGYuX2hpc3RvcnkpCiAgICAgICAgICAgIHJldHVybiBmaWx0ZXJlZFstbGltaXQ6XQoKCm5vdGlmaWNhdGlvbl9tYW5hZ2VyID0gTm90aWZpY2F0aW9uTWFuYWdlcigpCg==
+"""Trade notification system for critical events."""
+
+from __future__ import annotations
+
+import logging
+import threading
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from enum import Enum
+from typing import Any
+
+logger = logging.getLogger("trading_bot.notifications")
+
+
+class NotificationLevel(str, Enum):
+    INFO = "info"
+    WARNING = "warning"
+    CRITICAL = "critical"
+
+
+@dataclass
+class Notification:
+    level: NotificationLevel
+    title: str
+    message: str
+    timestamp: str = ""
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        if not self.timestamp:
+            self.timestamp = datetime.now(timezone.utc).isoformat()
+
+
+class NotificationChannel(str, Enum):
+    LOG = "log"
+
+
+class NotificationManager:
+    def __init__(self) -> None:
+        self._channels: list[NotificationChannel] = [NotificationChannel.LOG]
+        self._lock = threading.Lock()
+        self._history: list[Notification] = []
+        self._max_history = 200
+
+    def add_channel(self, channel: NotificationChannel) -> None:
+        with self._lock:
+            if channel not in self._channels:
+                self._channels.append(channel)
+
+    def notify(
+        self,
+        level: NotificationLevel,
+        title: str,
+        message: str,
+        **metadata: Any,
+    ) -> Notification:
+        notification = Notification(
+            level=level, title=title, message=message, metadata=metadata
+        )
+        with self._lock:
+            self._history.append(notification)
+            if len(self._history) > self._max_history:
+                self._history = self._history[-self._max_history:]
+
+        for channel in self._channels:
+            if channel == NotificationChannel.LOG:
+                self._log_notification(notification)
+
+        return notification
+
+    def _log_notification(self, notification: Notification) -> None:
+        prefix = f"[{notification.level.value.upper()}]"
+        logger.info(f"{prefix} {notification.title}: {notification.message}")
+
+    def critical(
+        self, title: str, message: str, **metadata: Any
+    ) -> Notification:
+        return self.notify(NotificationLevel.CRITICAL, title, message, **metadata)
+
+    def warning(
+        self, title: str, message: str, **metadata: Any
+    ) -> Notification:
+        return self.notify(NotificationLevel.WARNING, title, message, **metadata)
+
+    def info(
+        self, title: str, message: str, **metadata: Any
+    ) -> Notification:
+        return self.notify(NotificationLevel.INFO, title, message, **metadata)
+
+    def get_history(
+        self, level: NotificationLevel | None = None, limit: int = 50
+    ) -> list[Notification]:
+        with self._lock:
+            if level is not None:
+                filtered = [n for n in self._history if n.level == level]
+            else:
+                filtered = list(self._history)
+            return filtered[-limit:]
+
+
+notification_manager = NotificationManager()

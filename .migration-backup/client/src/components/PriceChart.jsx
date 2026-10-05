@@ -1,1 +1,57 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgUmVzcG9uc2l2ZUNvbnRhaW5lciwgTGluZUNoYXJ0LCBMaW5lLCBYQXhpcywgWUF4aXMsIFRvb2x0aXAsIENhcnRlc2lhbkdyaWQgfSBmcm9tICJyZWNoYXJ0cyI7CmltcG9ydCBQYW5lbCBmcm9tICIuL1BhbmVsLmpzeCI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQcmljZUNoYXJ0KHsgc3ltYm9sLCBzZXJpZXMgfSkgewogIGNvbnN0IGxhc3QgPSBzZXJpZXNbc2VyaWVzLmxlbmd0aCAtIDFdOwoKICByZXR1cm4gKAogICAgPFBhbmVsCiAgICAgIHRpdGxlPXtgJHtzeW1ib2wgfHwgIuKAlCJ9IMK3IEgxIMK3IExpbmVgfQogICAgICBiYWRnZT17PHNwYW4gY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC1bMTJweF0gdGV4dC1pbmsiPntsYXN0ID8gbGFzdC5wcmljZS50b0ZpeGVkKDUpIDogIi0tIn08L3NwYW4+fQogICAgICBjbGFzc05hbWU9ImZsZXgtMSIKICAgID4KICAgICAgPGRpdiBjbGFzc05hbWU9Im1iLTIgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTQgdGV4dC1bMTFweF0iPgogICAgICAgIDxMZWdlbmQgc3dhdGNoPSJiZy1hY2NlbnQiIGxhYmVsPSJFTUEgNTAiIC8+CiAgICAgICAgPExlZ2VuZCBzd2F0Y2g9ImJnLXdhcm4iIGRhc2hlZCBsYWJlbD0iRU1BIDIwMCIgLz4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLTY0Ij4KICAgICAgICA8UmVzcG9uc2l2ZUNvbnRhaW5lciB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICAgICAgICAgIDxMaW5lQ2hhcnQgZGF0YT17c2VyaWVzfSBtYXJnaW49e3sgdG9wOiA0LCByaWdodDogOCwgYm90dG9tOiAwLCBsZWZ0OiAwIH19PgogICAgICAgICAgICA8Q2FydGVzaWFuR3JpZCBzdHJva2U9IiMxZTI1MzAiIHN0cm9rZURhc2hhcnJheT0iMyAzIiB2ZXJ0aWNhbD17ZmFsc2V9IC8+CiAgICAgICAgICAgIDxYQXhpcwogICAgICAgICAgICAgIGRhdGFLZXk9InRpbWUiCiAgICAgICAgICAgICAgdGlja0Zvcm1hdHRlcj17KHQpID0+IG5ldyBEYXRlKHQpLnRvTG9jYWxlVGltZVN0cmluZyhbXSwgeyBob3VyOiAiMi1kaWdpdCIsIG1pbnV0ZTogIjItZGlnaXQiIH0pfQogICAgICAgICAgICAgIHN0cm9rZT0iIzViNjI3MiIKICAgICAgICAgICAgICB0aWNrPXt7IGZvbnRTaXplOiAxMCB9fQogICAgICAgICAgICAgIG1pblRpY2tHYXA9ezQwfQogICAgICAgICAgICAvPgogICAgICAgICAgICA8WUF4aXMKICAgICAgICAgICAgICBkb21haW49e1siYXV0byIsICJhdXRvIl19CiAgICAgICAgICAgICAgc3Ryb2tlPSIjNWI2MjcyIgogICAgICAgICAgICAgIHRpY2s9e3sgZm9udFNpemU6IDEwIH19CiAgICAgICAgICAgICAgd2lkdGg9ezU4fQogICAgICAgICAgICAgIHRpY2tGb3JtYXR0ZXI9eyh2KSA9PiB2LnRvRml4ZWQoNCl9CiAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDxUb29sdGlwCiAgICAgICAgICAgICAgY29udGVudFN0eWxlPXt7IGJhY2tncm91bmQ6ICIjMTUxYTI1IiwgYm9yZGVyOiAiMXB4IHNvbGlkICMxZTI1MzAiLCBmb250U2l6ZTogMTEgfX0KICAgICAgICAgICAgICBsYWJlbEZvcm1hdHRlcj17KHQpID0+IG5ldyBEYXRlKHQpLnRvTG9jYWxlU3RyaW5nKCl9CiAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDxMaW5lIHR5cGU9Im1vbm90b25lIiBkYXRhS2V5PSJwcmljZSIgc3Ryb2tlPSIjZTZlOWVmIiBzdHJva2VXaWR0aD17MS41fSBkb3Q9e2ZhbHNlfSAvPgogICAgICAgICAgICA8TGluZSB0eXBlPSJtb25vdG9uZSIgZGF0YUtleT0iZW1hNTAiIHN0cm9rZT0iIzRmOGZmNyIgc3Ryb2tlV2lkdGg9ezEuNX0gZG90PXtmYWxzZX0gLz4KICAgICAgICAgICAgPExpbmUgdHlwZT0ibW9ub3RvbmUiIGRhdGFLZXk9ImVtYTIwMCIgc3Ryb2tlPSIjZjVhNjIzIiBzdHJva2VXaWR0aD17MS41fSBzdHJva2VEYXNoYXJyYXk9IjQgMyIgZG90PXtmYWxzZX0gLz4KICAgICAgICAgIDwvTGluZUNoYXJ0PgogICAgICAgIDwvUmVzcG9uc2l2ZUNvbnRhaW5lcj4KICAgICAgPC9kaXY+CiAgICA8L1BhbmVsPgogICk7Cn0KCmZ1bmN0aW9uIExlZ2VuZCh7IHN3YXRjaCwgZGFzaGVkLCBsYWJlbCB9KSB7CiAgcmV0dXJuICgKICAgIDxzcGFuIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEuNSB0ZXh0LWluay1kaW0iPgogICAgICA8c3BhbiBjbGFzc05hbWU9e2BoLTAuNSB3LTMgJHtzd2F0Y2h9ICR7ZGFzaGVkID8gIm9wYWNpdHktNzAiIDogIiJ9YH0gLz4KICAgICAge2xhYmVsfQogICAgPC9zcGFuPgogICk7Cn0=
+import React from "react";
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import Panel from "./Panel.jsx";
+
+export default function PriceChart({ symbol, series }) {
+  const last = series[series.length - 1];
+
+  return (
+    <Panel
+      title={`${symbol || "—"} · H1 · Line`}
+      badge={<span className="font-mono text-[12px] text-ink">{last ? last.price.toFixed(5) : "--"}</span>}
+      className="flex-1"
+    >
+      <div className="mb-2 flex items-center gap-4 text-[11px]">
+        <Legend swatch="bg-accent" label="EMA 50" />
+        <Legend swatch="bg-warn" dashed label="EMA 200" />
+      </div>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={series} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
+            <CartesianGrid stroke="#1e2530" strokeDasharray="3 3" vertical={false} />
+            <XAxis
+              dataKey="time"
+              tickFormatter={(t) => new Date(t).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+              stroke="#5b6272"
+              tick={{ fontSize: 10 }}
+              minTickGap={40}
+            />
+            <YAxis
+              domain={["auto", "auto"]}
+              stroke="#5b6272"
+              tick={{ fontSize: 10 }}
+              width={58}
+              tickFormatter={(v) => v.toFixed(4)}
+            />
+            <Tooltip
+              contentStyle={{ background: "#151a25", border: "1px solid #1e2530", fontSize: 11 }}
+              labelFormatter={(t) => new Date(t).toLocaleString()}
+            />
+            <Line type="monotone" dataKey="price" stroke="#e6e9ef" strokeWidth={1.5} dot={false} />
+            <Line type="monotone" dataKey="ema50" stroke="#4f8ff7" strokeWidth={1.5} dot={false} />
+            <Line type="monotone" dataKey="ema200" stroke="#f5a623" strokeWidth={1.5} strokeDasharray="4 3" dot={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </Panel>
+  );
+}
+
+function Legend({ swatch, dashed, label }) {
+  return (
+    <span className="flex items-center gap-1.5 text-ink-dim">
+      <span className={`h-0.5 w-3 ${swatch} ${dashed ? "opacity-70" : ""}`} />
+      {label}
+    </span>
+  );
+}

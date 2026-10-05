@@ -1,1 +1,43 @@
-IyBBRFIgMDA0OiBEdWFsLUxheWVyIFJpc2sgRW5mb3JjZW1lbnQgQXJjaGl0ZWN0dXJlCgojIyBTdGF0dXMKQWNjZXB0ZWQKCiMjIENvbnRleHQKQXV0b21hdGVkIGFsZ29yaXRobWljIHRyYWRpbmcgc3lzdGVtcyBmYWNlIGNhdGFzdHJvcGhpYyBsb3NzIHJpc2tzIGlmIHJpc2sgY29udHJvbHMgZmFpbCBvciBpZiBuZXR3b3JrIGRpc2Nvbm5lY3RzIHByZXZlbnQgYmFja2VuZCBvcmRlcnMgZnJvbSBiZWluZyBjYW5jZWxsZWQuCgpSZWx5aW5nIHNvbGVseSBvbiBzZXJ2ZXItc2lkZSByaXNrIGNoZWNrcyBpcyBkYW5nZXJvdXMgaWYgdGhlIGNsaWVudCB0ZXJtaW5hbCdzIGVxdWl0eSBjaGFuZ2VzIHJhcGlkbHkgKGUuZy4gbWFudWFsIHRyYWRlcywgZmxvYXRpbmcgZHJhd2Rvd24pLiBDb252ZXJzZWx5LCByZWx5aW5nIHNvbGVseSBvbiBjbGllbnQtc2lkZSBjaGVja3MgbGVhdmVzIG5vIGNlbnRyYWxpemVkIGNpcmN1aXQgYnJlYWtlciBvciBraWxsIHN3aXRjaC4KCiMjIERlY2lzaW9uCldlIG1hbmRhdGUgYSAqKkR1YWwtTGF5ZXIgUmlzayBBcmNoaXRlY3R1cmUqKjogUmlzayBjb250cm9scyBhcmUgZXZhbHVhdGVkIG9uIHRoZSBiYWNrZW5kIEFORCBpbmRlcGVuZGVudGx5IGV2YWx1YXRlZCBvbiB0aGUgbG9jYWwgTVQ1IEVBIHRlcm1pbmFsLiBUaGUgbG9jYWwgRUEgaG9sZHMgdWx0aW1hdGUgdmV0byBwb3dlci4KCiMjIyBMYXllciAxOiBCYWNrZW5kIFByZS1UcmFkZSBWYWxpZGF0aW9uCkJlZm9yZSBhIHNpZ25hbCBpcyBxdWV1ZWQgZm9yIGRlbGl2ZXJ5IHRvIGEgZGV2aWNlOgoxLiAqKkFjY291bnQgTGltaXRzKio6IFZlcmlmaWVzIGN1cnJlbnQgcmVwb3J0ZWQgZGFpbHkgbG9zcyAkPCBcdGV4dHttYXhEYWlseUxvc3NQY3R9JC4KMi4gKipPcGVuIEV4cG9zdXJlKio6IFZlcmlmaWVzIGN1cnJlbnQgb3BlbiByaXNrICQ8IFx0ZXh0e21heE9wZW5SaXNrUGN0fSQgYW5kIG9wZW4gcG9zaXRpb25zICQ8IFx0ZXh0e21heE9wZW5Qb3NpdGlvbnN9JC4KMy4gKipUcmFkaW5nIEhvdXJzICYgU3ltYm9scyoqOiBWZXJpZmllcyBhY3RpdmUgdHJhZGluZyB3aW5kb3cgYW5kIHBlcm1pdHRlZCBpbnN0cnVtZW50IHVuaXZlcnNlLgo0LiAqKkF1dG8tRXhlY3V0ZSBBdXRob3JpdHkqKjogVmVyaWZpZXMgdXNlciBoYXMgZXhwbGljaXRseSBlbmFibGVkIGBhdXRvX2V4ZWN1dGUgPSB0cnVlYCBvbiB0aGUgYWNjb3VudC4KCiMjIyBMYXllciAyOiBMb2NhbCBFQSBUZXJtaW5hbCBGaW5hbCBHYXRla2VlcGVyCkJlZm9yZSB0aGUgRUEgc3VibWl0cyBgT3JkZXJTZW5kKClgIHRvIHRoZSBicm9rZXIgdHJhZGUgc2VydmVyOgoxLiAqKkxpdmUgTWFyZ2luIENoZWNrKio6IENhbGxzIGBPcmRlckNhbGNNYXJnaW4oKWAgd2l0aCBsaXZlIGFzay9iaWQgdGljayBkYXRhIHRvIGVuc3VyZSBzdWZmaWNpZW50IGZyZWUgbWFyZ2luLgoyLiAqKkRhaWx5IExvc3MgQ2VpbGluZyoqOiBBZ2dyZWdhdGVzIHJlYWxpemVkICsgdW5yZWFsaXplZCBQbkwgZnJvbSBtaWRuaWdodCB0ZXJtaW5hbCB0aW1lLiBJZiBsb3NzICRcZ2UgXHRleHR7SW5wTWF4RGFpbHlMb3NzUGN0fSQsIGV4ZWN1dGlvbiBpcyBoYWx0ZWQuCjMuICoqQnJva2VyIFN0b3AgTGV2ZWwgQ2hlY2sqKjogVmVyaWZpZXMgU0wgYW5kIFRQIGRpc3RhbmNlICRcZ2UgXHRleHR7U1lNQk9MX1RSQURFX1NUT1BTX0xFVkVMfSQgdG8gYXZvaWQgYnJva2VyIGV4ZWN1dGlvbiByZWplY3Rpb24uCjQuICoqTG90IFNpemluZyAmIFRpY2sgUm91bmRpbmcqKjogUm91bmRzIGxvdCBzaXplIHN0cmljdGx5IHRvIGBTWU1CT0xfVk9MVU1FX1NURVBgIGJldHdlZW4gYFNZTUJPTF9WT0xVTUVfTUlOYCBhbmQgYFNZTUJPTF9WT0xVTUVfTUFYYC4gUm91bmRzIHByaWNlcyB0byBgU1lNQk9MX1RJQ0tfU0laRWAuCjUuICoqTG9jYWwgQUkgQXV0byBUb2dnbGUqKjogVGhlIFVJIHBhbmVsIGluY2x1ZGVzIGEgcGh5c2ljYWwgIkFJIEF1dG8iIHN3aXRjaC4gSWYgdHVybmVkIG9mZiBsb2NhbGx5LCBzaWduYWwgYXV0by1leGVjdXRpb24gaXMgdmV0b2VkIHJlZ2FyZGxlc3Mgb2YgYmFja2VuZCBzZXR0aW5ncyAoc3RyaWN0ZXIgc2V0dGluZyB3aW5zKS4KCiMjIyBFbWVyZ2VuY3kgS2lsbC1Td2l0Y2ggUHJvdG9jb2wKLSBXaGVuIHRoZSB1c2VyIHRyaWdnZXJzIHRoZSBLaWxsIFN3aXRjaCB2aWEgd2ViIFVJIG9yIEVBIHBhbmVsOgogIDEuIEJhY2tlbmQgcHVibGlzaGVzIGltbWVkaWF0ZSBlbWVyZ2VuY3kgZXZlbnQgb3ZlciBSZWRpcyAmIHNldHMgYGtpbGxfc3dpdGNoX2FjdGl2ZSA9IHRydWVgLgogIDIuIE9uIHRoZSBuZXh0IGhlYXJ0YmVhdCByZXNwb25zZSAob3IgaW1tZWRpYXRlIHBhbmVsIHRyaWdnZXIpLCB0aGUgRUEgaW1tZWRpYXRlbHkgZmxhdHRlbnMgYWxsIG9wZW4gcG9zaXRpb25zIGFuZCBjYW5jZWxzIHBlbmRpbmcgb3JkZXJzLgogIDMuIEF1dG8tZXhlY3V0aW9uIGlzIGxhdGNoZWQgdG8gYGZhbHNlYCBhbmQgcmVxdWlyZXMgZXhwbGljaXQgbWFudWFsIHJlZW5hYmxpbmcuCgojIyBSZWplY3RlZCBBbHRlcm5hdGl2ZXMKMS4gKipTZXJ2ZXItT25seSBSaXNrIEVuZ2luZSoqOgogICAtICpSZWplY3RlZCogYmVjYXVzZSBzdGFsZSB0ZWxlbWV0cnkgYmV0d2VlbiBoZWFydGJlYXRzIGNvdWxkIGxlYWQgdG8gbWFyZ2luIGNhbGxzIG9uIHZvbGF0aWxlIG1hcmtldHMuCjIuICoqQ2xpZW50LU9ubHkgUmlzayBFbmdpbmUqKjoKICAgLSAqUmVqZWN0ZWQqIGJlY2F1c2UgaXQgZWxpbWluYXRlcyBjZW50cmFsaXplZCByaXNrIG1hbmFnZW1lbnQgYWNyb3NzIG11bHRpcGxlIHRlcm1pbmFscyBhbmQgZGlzYWJsZXMgYmFja2VuZCBraWxsLXN3aXRjaCBwcm9wYWdhdGlvbi4KCiMjIENvbnNlcXVlbmNlcwotICoqUG9zaXRpdmUqKjogRGVmZW5zZS1pbi1kZXB0aCBlbnN1cmVzIHRoYXQgbmVpdGhlciBzZXJ2ZXIgYnVncyBub3IgdGVybWluYWwgc3luYyBkZWxheXMgY2FuIGJyZWFjaCByaXNrIGNvbnN0cmFpbnRzLgotICoqTmVnYXRpdmUqKjogUmVkdW5kYW50IHJpc2sgY2FsY3VsYXRpb24gcmVxdWlyZXMgbWFpbnRhaW5pbmcgY29uc2lzdGVudCBtYXRoZW1hdGljYWwgZGVmaW5pdGlvbnMgaW4gYm90aCBQeXRob24gYW5kIE1RTDUuCg==
+# ADR 004: Dual-Layer Risk Enforcement Architecture
+
+## Status
+Accepted
+
+## Context
+Automated algorithmic trading systems face catastrophic loss risks if risk controls fail or if network disconnects prevent backend orders from being cancelled.
+
+Relying solely on server-side risk checks is dangerous if the client terminal's equity changes rapidly (e.g. manual trades, floating drawdown). Conversely, relying solely on client-side checks leaves no centralized circuit breaker or kill switch.
+
+## Decision
+We mandate a **Dual-Layer Risk Architecture**: Risk controls are evaluated on the backend AND independently evaluated on the local MT5 EA terminal. The local EA holds ultimate veto power.
+
+### Layer 1: Backend Pre-Trade Validation
+Before a signal is queued for delivery to a device:
+1. **Account Limits**: Verifies current reported daily loss $< \text{maxDailyLossPct}$.
+2. **Open Exposure**: Verifies current open risk $< \text{maxOpenRiskPct}$ and open positions $< \text{maxOpenPositions}$.
+3. **Trading Hours & Symbols**: Verifies active trading window and permitted instrument universe.
+4. **Auto-Execute Authority**: Verifies user has explicitly enabled `auto_execute = true` on the account.
+
+### Layer 2: Local EA Terminal Final Gatekeeper
+Before the EA submits `OrderSend()` to the broker trade server:
+1. **Live Margin Check**: Calls `OrderCalcMargin()` with live ask/bid tick data to ensure sufficient free margin.
+2. **Daily Loss Ceiling**: Aggregates realized + unrealized PnL from midnight terminal time. If loss $\ge \text{InpMaxDailyLossPct}$, execution is halted.
+3. **Broker Stop Level Check**: Verifies SL and TP distance $\ge \text{SYMBOL_TRADE_STOPS_LEVEL}$ to avoid broker execution rejection.
+4. **Lot Sizing & Tick Rounding**: Rounds lot size strictly to `SYMBOL_VOLUME_STEP` between `SYMBOL_VOLUME_MIN` and `SYMBOL_VOLUME_MAX`. Rounds prices to `SYMBOL_TICK_SIZE`.
+5. **Local AI Auto Toggle**: The UI panel includes a physical "AI Auto" switch. If turned off locally, signal auto-execution is vetoed regardless of backend settings (stricter setting wins).
+
+### Emergency Kill-Switch Protocol
+- When the user triggers the Kill Switch via web UI or EA panel:
+  1. Backend publishes immediate emergency event over Redis & sets `kill_switch_active = true`.
+  2. On the next heartbeat response (or immediate panel trigger), the EA immediately flattens all open positions and cancels pending orders.
+  3. Auto-execution is latched to `false` and requires explicit manual reenabling.
+
+## Rejected Alternatives
+1. **Server-Only Risk Engine**:
+   - *Rejected* because stale telemetry between heartbeats could lead to margin calls on volatile markets.
+2. **Client-Only Risk Engine**:
+   - *Rejected* because it eliminates centralized risk management across multiple terminals and disables backend kill-switch propagation.
+
+## Consequences
+- **Positive**: Defense-in-depth ensures that neither server bugs nor terminal sync delays can breach risk constraints.
+- **Negative**: Redundant risk calculation requires maintaining consistent mathematical definitions in both Python and MQL5.

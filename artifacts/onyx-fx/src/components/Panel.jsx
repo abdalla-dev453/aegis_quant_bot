@@ -1,1 +1,17 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFBhbmVsKHsgdGl0bGUsIGJhZGdlLCBjaGlsZHJlbiwgY2xhc3NOYW1lID0gIiIgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT17YHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBzaGFkb3ctcGFuZWwgJHtjbGFzc05hbWV9YH0+CiAgICAgIHt0aXRsZSAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBib3JkZXItYiBib3JkZXItYm9yZGVyIHB4LTQgcHktMyI+CiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtWzEwcHhdIGZvbnQtbWVkaXVtIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LWluay1mYWludCI+CiAgICAgICAgICAgIHt0aXRsZX0KICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIHtiYWRnZX0KICAgICAgICA8L2Rpdj4KICAgICAgKX0KICAgICAgPGRpdiBjbGFzc05hbWU9InAtNCI+e2NoaWxkcmVufTwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQ==
+import React from "react";
+
+export default function Panel({ title, badge, children, className = "" }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface shadow-panel ${className}`}>
+      {title && (
+        <div className="flex items-center justify-between border-b border-border px-4 py-3">
+          <span className="text-[10px] font-medium uppercase tracking-wider text-ink-faint">
+            {title}
+          </span>
+          {badge}
+        </div>
+      )}
+      <div className="p-4">{children}</div>
+    </div>
+  );
+}

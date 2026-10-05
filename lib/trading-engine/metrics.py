@@ -1,1 +1,14 @@
-IiIiU2hhcmVkIFByb21ldGhldXMgbWV0cmljcyBmb3IgdGhlIHRyYWRpbmcgYm90LiIiIgoKZnJvbSBwcm9tZXRoZXVzX2NsaWVudCBpbXBvcnQgQ291bnRlciwgR2F1Z2UsIEhpc3RvZ3JhbQoKQVBJX1JFUVVFU1RTID0gQ291bnRlcigiYWVnaXNfYXBpX3JlcXVlc3RzX3RvdGFsIiwgIlRvdGFsIEFQSSByZXF1ZXN0cyIsIFsibWV0aG9kIiwgImVuZHBvaW50IiwgInN0YXR1cyJdKQpBUElfTEFURU5DWSA9IEhpc3RvZ3JhbSgiYWVnaXNfYXBpX2xhdGVuY3lfc2Vjb25kcyIsICJBUEkgcmVxdWVzdCBsYXRlbmN5IiwgWyJtZXRob2QiLCAiZW5kcG9pbnQiXSkKTVQ1X0NPTk5FQ1RFRCA9IEdhdWdlKCJhZWdpc19tdDVfY29ubmVjdGVkIiwgIk1UNSBjb25uZWN0aW9uIHN0YXR1cyAoMT1jb25uZWN0ZWQpIikKTVQ1X0xBU1RfQ0FORExFX0FHRSA9IEdhdWdlKCJhZWdpc19tdDVfbGFzdF9jYW5kbGVfYWdlX3NlY29uZHMiLCAiQWdlIG9mIGxhc3QgSDEgY2FuZGxlIGluIHNlY29uZHMiKQpBSV9SRVFVRVNUUyA9IENvdW50ZXIoImFlZ2lzX2FpX3JlcXVlc3RzX3RvdGFsIiwgIlRvdGFsIEFJIHJlcXVlc3RzIiwgWyJyZXN1bHQiXSkKQUlfTEFURU5DWSA9IEhpc3RvZ3JhbSgiYWVnaXNfYWlfbGF0ZW5jeV9zZWNvbmRzIiwgIkFJIHJlcXVlc3QgbGF0ZW5jeSIpCk9SREVSU19QTEFDRUQgPSBDb3VudGVyKCJhZWdpc19vcmRlcnNfcGxhY2VkX3RvdGFsIiwgIlRvdGFsIG9yZGVycyBwbGFjZWQiLCBbInN5bWJvbCIsICJkaXJlY3Rpb24iLCAicmVzdWx0Il0pClBPU0lUSU9OU19PUEVOID0gR2F1Z2UoImFlZ2lzX3Bvc2l0aW9uc19vcGVuIiwgIkN1cnJlbnQgb3BlbiBwb3NpdGlvbnMiKQpFUVVJVFkgPSBHYXVnZSgiYWVnaXNfYWNjb3VudF9lcXVpdHkiLCAiQWNjb3VudCBlcXVpdHkiKQpEUkFXRE9XTiA9IEdhdWdlKCJhZWdpc19kcmF3ZG93bl9wZXJjZW50IiwgIkN1cnJlbnQgZHJhd2Rvd24gcGVyY2VudCIpCg==
+"""Shared Prometheus metrics for the trading bot."""
+
+from prometheus_client import Counter, Gauge, Histogram
+
+API_REQUESTS = Counter("aegis_api_requests_total", "Total API requests", ["method", "endpoint", "status"])
+API_LATENCY = Histogram("aegis_api_latency_seconds", "API request latency", ["method", "endpoint"])
+MT5_CONNECTED = Gauge("aegis_mt5_connected", "MT5 connection status (1=connected)")
+MT5_LAST_CANDLE_AGE = Gauge("aegis_mt5_last_candle_age_seconds", "Age of last H1 candle in seconds")
+AI_REQUESTS = Counter("aegis_ai_requests_total", "Total AI requests", ["result"])
+AI_LATENCY = Histogram("aegis_ai_latency_seconds", "AI request latency")
+ORDERS_PLACED = Counter("aegis_orders_placed_total", "Total orders placed", ["symbol", "direction", "result"])
+POSITIONS_OPEN = Gauge("aegis_positions_open", "Current open positions")
+EQUITY = Gauge("aegis_account_equity", "Account equity")
+DRAWDOWN = Gauge("aegis_drawdown_percent", "Current drawdown percent")

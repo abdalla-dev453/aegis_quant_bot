@@ -1,1 +1,265 @@
-IiIiaW5pdGlhbF9zY2hlbWEKClJldmlzaW9uIElEOiAwMDFfaW5pdGlhbF9zY2hlbWEKUmV2aXNlczogCkNyZWF0ZSBEYXRlOiAyMDI2LTEwLTA0IDAwOjAwOjAwLjAwMDAwMAoKIiIiCmZyb20gdHlwaW5nIGltcG9ydCBTZXF1ZW5jZSwgVW5pb24KCmZyb20gYWxlbWJpYyBpbXBvcnQgb3AKaW1wb3J0IHNxbGFsY2hlbXkgYXMgc2EKZnJvbSBzcWxhbGNoZW15LmRpYWxlY3RzIGltcG9ydCBwb3N0Z3Jlc3FsCgpyZXZpc2lvbjogc3RyID0gIjAwMV9pbml0aWFsX3NjaGVtYSIKZG93bl9yZXZpc2lvbjogVW5pb25bc3RyLCBOb25lXSA9IE5vbmUKYnJhbmNoX2xhYmVsczogVW5pb25bc3RyLCBTZXF1ZW5jZVtzdHJdLCBOb25lXSA9IE5vbmUKZGVwZW5kc19vbjogVW5pb25bc3RyLCBTZXF1ZW5jZVtzdHJdLCBOb25lXSA9IE5vbmUKCgpkZWYgdXBncmFkZSgpIC0+IE5vbmU6CiAgICAjIFVzZXJzCiAgICBvcC5jcmVhdGVfdGFibGUoCiAgICAgICAgInVzZXJzIiwKICAgICAgICBzYS5Db2x1bW4oImlkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImVtYWlsIiwgc2EuU3RyaW5nKDI1NCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInBhc3N3b3JkX2hhc2giLCBzYS5TdHJpbmcoMjU1KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiaXNfdmVyaWZpZWQiLCBzYS5Cb29sZWFuKCksIHNlcnZlcl9kZWZhdWx0PXNhLnRleHQoImZhbHNlIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInJpc2tfZGlzY2xhaW1lcl9hY2NlcHRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ0d29fZmFjdG9yX3NlY3JldCIsIHNhLlN0cmluZyg2NCksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiZGVsZXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImNyZWF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigidXBkYXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBzZXJ2ZXJfZGVmYXVsdD1zYS5mdW5jLm5vdygpLCBudWxsYWJsZT1GYWxzZSksCiAgICApCiAgICBvcC5jcmVhdGVfaW5kZXgoIml4X3VzZXJzX2VtYWlsIiwgInVzZXJzIiwgWyJlbWFpbCJdLCB1bmlxdWU9VHJ1ZSkKCiAgICAjIFVzZXIgU2Vzc2lvbnMKICAgIG9wLmNyZWF0ZV90YWJsZSgKICAgICAgICAidXNlcl9zZXNzaW9ucyIsCiAgICAgICAgc2EuQ29sdW1uKCJpZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1c2VyX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInRva2VuX2hhc2giLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJleHBpcmVzX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInJldm9rZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJjcmVhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInVwZGF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgKQogICAgb3AuY3JlYXRlX2luZGV4KCJpeF91c2VyX3Nlc3Npb25zX3Rva2VuX2hhc2giLCAidXNlcl9zZXNzaW9ucyIsIFsidG9rZW5faGFzaCJdLCB1bmlxdWU9VHJ1ZSkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfdXNlcl9zZXNzaW9uc191c2VyX2V4cGlyZXMiLCAidXNlcl9zZXNzaW9ucyIsIFsidXNlcl9pZCIsICJleHBpcmVzX2F0Il0pCgogICAgIyBQYWlyaW5nIENvZGVzCiAgICBvcC5jcmVhdGVfdGFibGUoCiAgICAgICAgInBhaXJpbmdfY29kZXMiLAogICAgICAgIHNhLkNvbHVtbigiaWQiLCBzYS5VdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUpLAogICAgICAgIHNhLkNvbHVtbigidXNlcl9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgidXNlcnMuaWQiLCBvbmRlbGV0ZT0iQ0FTQ0FERSIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJjb2RlX2hhc2giLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJleHBpcmVzX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImNvbnN1bWVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiY3JlYXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBzZXJ2ZXJfZGVmYXVsdD1zYS5mdW5jLm5vdygpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1cGRhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfcGFpcmluZ19jb2Rlc19jb2RlX2hhc2giLCAicGFpcmluZ19jb2RlcyIsIFsiY29kZV9oYXNoIl0sIHVuaXF1ZT1UcnVlKQogICAgb3AuY3JlYXRlX2luZGV4KCJpeF9wYWlyaW5nX2NvZGVzX3VzZXJfZXhwaXJlcyIsICJwYWlyaW5nX2NvZGVzIiwgWyJ1c2VyX2lkIiwgImV4cGlyZXNfYXQiXSkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfcGFpcmluZ19jb2Rlc19leHBpcmVzIiwgInBhaXJpbmdfY29kZXMiLCBbImV4cGlyZXNfYXQiXSkKCiAgICAjIERldmljZXMgKEVBIFRlcm1pbmFscykKICAgIG9wLmNyZWF0ZV90YWJsZSgKICAgICAgICAiZGV2aWNlcyIsCiAgICAgICAgc2EuQ29sdW1uKCJpZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1c2VyX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJSRVNUUklDVCIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJuYW1lIiwgc2EuU3RyaW5nKDEwMCksIHNlcnZlcl9kZWZhdWx0PSJNVDUgVGVybWluYWwiLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ0b2tlbl9oYXNoIiwgc2EuU3RyaW5nKDY0KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibGFzdF9zZWVuX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigidGVybWluYWxfYnVpbGQiLCBzYS5TdHJpbmcoMzIpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImJyb2tlciIsIHNhLlN0cmluZygxMjApLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzZXJ2ZXIiLCBzYS5TdHJpbmcoMTIwKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiYWNjb3VudF9udW1iZXJfbWFza2VkIiwgc2EuU3RyaW5nKDY0KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiYWNjb3VudF9jdXJyZW5jeSIsIHNhLlN0cmluZyg4KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibGV2ZXJhZ2UiLCBzYS5JbnRlZ2VyKCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInN0YXR1cyIsIHNhLlN0cmluZygxNiksIHNlcnZlcl9kZWZhdWx0PSJBQ1RJVkUiLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJyZXZva2VkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiZGVsZXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImNyZWF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigidXBkYXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBzZXJ2ZXJfZGVmYXVsdD1zYS5mdW5jLm5vdygpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ2hlY2tDb25zdHJhaW50KCJzdGF0dXMgSU4gKCdBQ1RJVkUnLCAnUkVWT0tFRCcpIiwgbmFtZT0iY2tfZGV2aWNlc19zdGF0dXMiKSwKICAgICAgICBzYS5DaGVja0NvbnN0cmFpbnQoImxldmVyYWdlID49IDEiLCBuYW1lPSJja19kZXZpY2VzX2xldmVyYWdlX3Bvc2l0aXZlIiksCiAgICApCiAgICBvcC5jcmVhdGVfaW5kZXgoIml4X2RldmljZXNfdG9rZW5faGFzaCIsICJkZXZpY2VzIiwgWyJ0b2tlbl9oYXNoIl0sIHVuaXF1ZT1UcnVlKQogICAgb3AuY3JlYXRlX2luZGV4KCJpeF9kZXZpY2VzX3VzZXJfc3RhdHVzX2xhc3Rfc2VlbiIsICJkZXZpY2VzIiwgWyJ1c2VyX2lkIiwgInN0YXR1cyIsICJsYXN0X3NlZW5fYXQiXSkKCiAgICAjIEFjY291bnQgU25hcHNob3RzCiAgICBvcC5jcmVhdGVfdGFibGUoCiAgICAgICAgImFjY291bnRfc25hcHNob3RzIiwKICAgICAgICBzYS5Db2x1bW4oImlkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImRldmljZV9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImJhbGFuY2UiLCBzYS5OdW1lcmljKDI0LCA4KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZXF1aXR5Iiwgc2EuTnVtZXJpYygyNCwgOCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oIm1hcmdpbiIsIHNhLk51bWVyaWMoMjQsIDgpLCBzZXJ2ZXJfZGVmYXVsdD0iMCIsIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImZyZWVfbWFyZ2luIiwgc2EuTnVtZXJpYygyNCwgOCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oIm1hcmdpbl9sZXZlbCIsIHNhLk51bWVyaWMoMTIsIDQpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oIm9wZW5fcG9zaXRpb25zX2NvdW50Iiwgc2EuSW50ZWdlcigpLCBzZXJ2ZXJfZGVmYXVsdD0iMCIsIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImFjY291bnRfY3VycmVuY3kiLCBzYS5TdHJpbmcoOCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImxldmVyYWdlIiwgc2EuSW50ZWdlcigpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJjYXB0dXJlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJjcmVhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInVwZGF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgiYmFsYW5jZSA+PSAwIiwgbmFtZT0iY2tfYWNjb3VudF9zbmFwc2hvdHNfYmFsYW5jZV9ub25uZWdhdGl2ZSIpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgiZXF1aXR5ID49IDAiLCBuYW1lPSJja19hY2NvdW50X3NuYXBzaG90c19lcXVpdHlfbm9ubmVnYXRpdmUiKSwKICAgICAgICBzYS5DaGVja0NvbnN0cmFpbnQoImZyZWVfbWFyZ2luID49IDAiLCBuYW1lPSJja19hY2NvdW50X3NuYXBzaG90c19tYXJnaW5fbm9ubmVnYXRpdmUiKSwKICAgICkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfYWNjb3VudF9zbmFwc2hvdHNfZGV2aWNlX2NhcHR1cmVkIiwgImFjY291bnRfc25hcHNob3RzIiwgWyJkZXZpY2VfaWQiLCAiY2FwdHVyZWRfYXQiXSkKCiAgICAjIFBvc2l0aW9ucwogICAgb3AuY3JlYXRlX3RhYmxlKAogICAgICAgICJwb3NpdGlvbnMiLAogICAgICAgIHNhLkNvbHVtbigiaWQiLCBzYS5VdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiZGV2aWNlX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJkZXZpY2VzLmlkIiwgb25kZWxldGU9IkNBU0NBREUiKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZXh0ZXJuYWxfcG9zaXRpb25faWQiLCBzYS5TdHJpbmcoODApLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzeW1ib2wiLCBzYS5TdHJpbmcoMzIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzaWRlIiwgc2EuU3RyaW5nKDgpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ2b2x1bWUiLCBzYS5OdW1lcmljKDIwLCA4KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZW50cnlfcHJpY2UiLCBzYS5OdW1lcmljKDI4LCAxMiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImN1cnJlbnRfcHJpY2UiLCBzYS5OdW1lcmljKDI4LCAxMiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInN0b3BfbG9zcyIsIHNhLk51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ0YWtlX3Byb2ZpdCIsIHNhLk51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1bnJlYWxpemVkX3BubCIsIHNhLk51bWVyaWMoMjQsIDgpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzd2FwIiwgc2EuTnVtZXJpYygyNCwgOCksIHNlcnZlcl9kZWZhdWx0PSIwIiwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibWFnaWNfbnVtYmVyIiwgc2EuSW50ZWdlcigpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImNvbW1lbnQiLCBzYS5TdHJpbmcoMTIwKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJvYnNlcnZlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJpc19vcGVuIiwgc2EuQm9vbGVhbigpLCBzZXJ2ZXJfZGVmYXVsdD1zYS50ZXh0KCJ0cnVlIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImNyZWF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigidXBkYXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBzZXJ2ZXJfZGVmYXVsdD1zYS5mdW5jLm5vdygpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuVW5pcXVlQ29uc3RyYWludCgiZGV2aWNlX2lkIiwgImV4dGVybmFsX3Bvc2l0aW9uX2lkIiwgbmFtZT0idXFfcG9zaXRpb25zX2RldmljZV9leHRlcm5hbCIpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgic2lkZSBJTiAoJ0JVWScsICdTRUxMJykiLCBuYW1lPSJja19wb3NpdGlvbnNfc2lkZSIpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgidm9sdW1lID4gMCIsIG5hbWU9ImNrX3Bvc2l0aW9uc192b2x1bWVfcG9zaXRpdmUiKSwKICAgICkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfcG9zaXRpb25zX2RldmljZV9vcGVuX29ic2VydmVkIiwgInBvc2l0aW9ucyIsIFsiZGV2aWNlX2lkIiwgImlzX29wZW4iLCAib2JzZXJ2ZWRfYXQiXSkKCiAgICAjIFJpc2sgUHJvZmlsZXMKICAgIG9wLmNyZWF0ZV90YWJsZSgKICAgICAgICAicmlza19wcm9maWxlcyIsCiAgICAgICAgc2EuQ29sdW1uKCJpZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1c2VyX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImRldmljZV9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInJpc2tfcGVyX3RyYWRlX3BjdCIsIHNhLk51bWVyaWMoOCwgNCksIHNlcnZlcl9kZWZhdWx0PSIwLjUwMDAiLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJtYXhfZGFpbHlfbG9zc19wY3QiLCBzYS5OdW1lcmljKDgsIDQpLCBzZXJ2ZXJfZGVmYXVsdD0iMi4wMDAwIiwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibWF4X29wZW5fcmlza19wY3QiLCBzYS5OdW1lcmljKDgsIDQpLCBzZXJ2ZXJfZGVmYXVsdD0iMy4wMDAwIiwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibWF4X29wZW5fcG9zaXRpb25zIiwgc2EuSW50ZWdlcigpLCBzZXJ2ZXJfZGVmYXVsdD0iNSIsIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImFsbG93ZWRfc3ltYm9scyIsIHNhLkpTT04oKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ0cmFkaW5nX2hvdXJzIiwgc2EuSlNPTigpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImF1dG9fZXhlY3V0ZSIsIHNhLkJvb2xlYW4oKSwgc2VydmVyX2RlZmF1bHQ9c2EudGV4dCgiZmFsc2UiKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiY3JlYXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBzZXJ2ZXJfZGVmYXVsdD1zYS5mdW5jLm5vdygpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1cGRhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5VbmlxdWVDb25zdHJhaW50KCJkZXZpY2VfaWQiLCBuYW1lPSJ1cV9yaXNrX3Byb2ZpbGVzX2RldmljZSIpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgicmlza19wZXJfdHJhZGVfcGN0ID4gMCBBTkQgcmlza19wZXJfdHJhZGVfcGN0IDw9IDUiLCBuYW1lPSJja19yaXNrX3Byb2ZpbGVzX3RyYWRlX3Jpc2siKSwKICAgICAgICBzYS5DaGVja0NvbnN0cmFpbnQoIm1heF9kYWlseV9sb3NzX3BjdCA+IDAgQU5EIG1heF9kYWlseV9sb3NzX3BjdCA8PSAxMDAiLCBuYW1lPSJja19yaXNrX3Byb2ZpbGVzX2RhaWx5X2xvc3MiKSwKICAgICAgICBzYS5DaGVja0NvbnN0cmFpbnQoIm1heF9vcGVuX3Jpc2tfcGN0ID4gMCBBTkQgbWF4X29wZW5fcmlza19wY3QgPD0gMTAwIiwgbmFtZT0iY2tfcmlza19wcm9maWxlc19vcGVuX3Jpc2siKSwKICAgICAgICBzYS5DaGVja0NvbnN0cmFpbnQoIm1heF9vcGVuX3Bvc2l0aW9ucyA+PSAxIEFORCBtYXhfb3Blbl9wb3NpdGlvbnMgPD0gNTAiLCBuYW1lPSJja19yaXNrX3Byb2ZpbGVzX21heF9wb3NpdGlvbnMiKSwKICAgICkKCiAgICAjIFNpZ25hbHMKICAgIG9wLmNyZWF0ZV90YWJsZSgKICAgICAgICAic2lnbmFscyIsCiAgICAgICAgc2EuQ29sdW1uKCJpZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1c2VyX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJSRVNUUklDVCIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJkZXZpY2VfaWQiLCBzYS5VdWlkKGFzX3V1aWQ9VHJ1ZSksIHNhLkZvcmVpZ25LZXkoImRldmljZXMuaWQiLCBvbmRlbGV0ZT0iQ0FTQ0FERSIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzeW1ib2wiLCBzYS5TdHJpbmcoMzIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJhY3Rpb24iLCBzYS5TdHJpbmcoOCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInJlZmVyZW5jZV9wcmljZSIsIHNhLk51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigicG9pbnRfc2l6ZSIsIHNhLk51bWVyaWMoMjAsIDEyKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibWF4X2RldmlhdGlvbl9wb2ludHMiLCBzYS5JbnRlZ2VyKCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInZvbHVtZSIsIHNhLk51bWVyaWMoMjAsIDgpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzdG9wX2xvc3MiLCBzYS5OdW1lcmljKDI4LCAxMiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInRha2VfcHJvZml0Iiwgc2EuTnVtZXJpYygyOCwgMTIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJjb25maWRlbmNlIiwgc2EuTnVtZXJpYyg1LCA0KSwgc2VydmVyX2RlZmF1bHQ9IjAuODUwMCIsIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInJhdGlvbmFsZSIsIHNhLkpTT04oKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigibW9kZWxfdmVyc2lvbiIsIHNhLlN0cmluZyg2NCksIHNlcnZlcl9kZWZhdWx0PSJ2MS4wLXJ1bGUtYmFzZWQiLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzdGF0ZSIsIHNhLlN0cmluZygxNiksIHNlcnZlcl9kZWZhdWx0PSJDUkVBVEVEIiwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZXhwaXJlc19hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJjcmVhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInVwZGF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgiYWN0aW9uIElOICgnQlVZJywgJ1NFTEwnKSIsIG5hbWU9ImNrX3NpZ25hbHNfYWN0aW9uIiksCiAgICAgICAgc2EuQ2hlY2tDb25zdHJhaW50KCJzdGF0ZSBJTiAoJ0NSRUFURUQnLCAnREVMSVZFUkVEJywgJ0FDS0VEJywgJ0VYRUNVVEVEJywgJ1JFSkVDVEVEJywgJ0VYUElSRUQnKSIsIG5hbWU9ImNrX3NpZ25hbHNfc3RhdGUiKSwKICAgICAgICBzYS5DaGVja0NvbnN0cmFpbnQoInZvbHVtZSA+IDAiLCBuYW1lPSJja19zaWduYWxzX3ZvbHVtZV9wb3NpdGl2ZSIpLAogICAgICAgIHNhLkNoZWNrQ29uc3RyYWludCgibWF4X2RldmlhdGlvbl9wb2ludHMgPj0gMCIsIG5hbWU9ImNrX3NpZ25hbHNfZGV2aWF0aW9uX25vbm5lZ2F0aXZlIiksCiAgICAgICAgc2EuQ2hlY2tDb25zdHJhaW50KCJjb25maWRlbmNlID49IDAuMCBBTkQgY29uZmlkZW5jZSA8PSAxLjAiLCBuYW1lPSJja19zaWduYWxzX2NvbmZpZGVuY2VfcmFuZ2UiKSwKICAgICkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfc2lnbmFsc19kZXZpY2Vfc3RhdGVfZXhwaXJlcyIsICJzaWduYWxzIiwgWyJkZXZpY2VfaWQiLCAic3RhdGUiLCAiZXhwaXJlc19hdCJdKQoKICAgICMgU2lnbmFsIEV2ZW50cwogICAgb3AuY3JlYXRlX3RhYmxlKAogICAgICAgICJzaWduYWxfZXZlbnRzIiwKICAgICAgICBzYS5Db2x1bW4oImlkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oInNpZ25hbF9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgic2lnbmFscy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImRldmljZV9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImZyb21fc3RhdGUiLCBzYS5TdHJpbmcoMTYpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oInRvX3N0YXRlIiwgc2EuU3RyaW5nKDE2KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigic291cmNlIiwgc2EuU3RyaW5nKDE2KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigicmVhc29uX2NvZGUiLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oInJlYXNvbiIsIHNhLlN0cmluZyg1MDApLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImV4ZWN1dGlvbl9wcmljZSIsIHNhLk51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJleGVjdXRpb25fdm9sdW1lIiwgc2EuTnVtZXJpYygyMCwgOCksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigib2NjdXJyZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZGV0YWlscyIsIHNhLkpTT04oKSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJjcmVhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInVwZGF0ZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgc2VydmVyX2RlZmF1bHQ9c2EuZnVuYy5ub3coKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLlVuaXF1ZUNvbnN0cmFpbnQoInNpZ25hbF9pZCIsICJ0b19zdGF0ZSIsIG5hbWU9InVxX3NpZ25hbF9ldmVudHNfdHJhbnNpdGlvbiIpLAogICAgKQogICAgb3AuY3JlYXRlX2luZGV4KCJpeF9zaWduYWxfZXZlbnRzX3NpZ25hbF9jcmVhdGVkIiwgInNpZ25hbF9ldmVudHMiLCBbInNpZ25hbF9pZCIsICJjcmVhdGVkX2F0Il0pCgogICAgIyBUcmFkZSBSZXBvcnRzCiAgICBvcC5jcmVhdGVfdGFibGUoCiAgICAgICAgInRyYWRlX3JlcG9ydHMiLAogICAgICAgIHNhLkNvbHVtbigiaWQiLCBzYS5VdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUpLAogICAgICAgIHNhLkNvbHVtbigidXNlcl9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgidXNlcnMuaWQiLCBvbmRlbGV0ZT0iUkVTVFJJQ1QiKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZGV2aWNlX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJkZXZpY2VzLmlkIiwgb25kZWxldGU9IkNBU0NBREUiKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigic2lnbmFsX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJzaWduYWxzLmlkIiwgb25kZWxldGU9IlNFVCBOVUxMIiksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiZXh0ZXJuYWxfb3JkZXJfaWQiLCBzYS5TdHJpbmcoODApLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzeW1ib2wiLCBzYS5TdHJpbmcoMzIpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJzaWRlIiwgc2EuU3RyaW5nKDgpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ2b2x1bWUiLCBzYS5OdW1lcmljKDIwLCA4KSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiZW50cnlfcHJpY2UiLCBzYS5OdW1lcmljKDI4LCAxMiksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oImV4aXRfcHJpY2UiLCBzYS5OdW1lcmljKDI4LCAxMiksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigic2xpcHBhZ2VfcG9pbnRzIiwgc2EuTnVtZXJpYygxMiwgNCksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiY29tbWlzc2lvbiIsIHNhLk51bWVyaWMoMjQsIDgpLCBzZXJ2ZXJfZGVmYXVsdD0iMCIsIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5Db2x1bW4oInN3YXAiLCBzYS5OdW1lcmljKDI0LCA4KSwgc2VydmVyX2RlZmF1bHQ9IjAiLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJyZWFsaXplZF9wbmwiLCBzYS5OdW1lcmljKDI0LCA4KSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJvcGVuZWRfYXQiLCBzYS5EYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9RmFsc2UpLAogICAgICAgIHNhLkNvbHVtbigiY2xvc2VkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPVRydWUpLAogICAgICAgIHNhLkNvbHVtbigiY3JlYXRlZF9hdCIsIHNhLkRhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBzZXJ2ZXJfZGVmYXVsdD1zYS5mdW5jLm5vdygpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1cGRhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICAgICBzYS5VbmlxdWVDb25zdHJhaW50KCJkZXZpY2VfaWQiLCAiZXh0ZXJuYWxfb3JkZXJfaWQiLCBuYW1lPSJ1cV90cmFkZV9yZXBvcnRzX2RldmljZV9vcmRlciIpLAogICAgKQogICAgb3AuY3JlYXRlX2luZGV4KCJpeF90cmFkZV9yZXBvcnRzX3VzZXJfY2xvc2VkIiwgInRyYWRlX3JlcG9ydHMiLCBbInVzZXJfaWQiLCAiY2xvc2VkX2F0Il0pCgogICAgIyBBdWRpdCBMb2dzIChBcHBlbmQtT25seSkKICAgIG9wLmNyZWF0ZV90YWJsZSgKICAgICAgICAiYXVkaXRfbG9ncyIsCiAgICAgICAgc2EuQ29sdW1uKCJpZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJ1c2VyX2lkIiwgc2EuVXVpZChhc191dWlkPVRydWUpLCBzYS5Gb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJTRVQgTlVMTCIpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImRldmljZV9pZCIsIHNhLlV1aWQoYXNfdXVpZD1UcnVlKSwgc2EuRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJTRVQgTlVMTCIpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImV2ZW50X3R5cGUiLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJhY3Rpb24iLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oInJlcXVlc3RfaWQiLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oImlwX2FkZHJlc3MiLCBzYS5TdHJpbmcoNjQpLCBudWxsYWJsZT1UcnVlKSwKICAgICAgICBzYS5Db2x1bW4oInVzZXJfYWdlbnQiLCBzYS5TdHJpbmcoMjU1KSwgbnVsbGFibGU9VHJ1ZSksCiAgICAgICAgc2EuQ29sdW1uKCJkZXRhaWxzIiwgc2EuSlNPTigpLCBudWxsYWJsZT1GYWxzZSksCiAgICAgICAgc2EuQ29sdW1uKCJjcmVhdGVkX2F0Iiwgc2EuRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIHNlcnZlcl9kZWZhdWx0PXNhLmZ1bmMubm93KCksIG51bGxhYmxlPUZhbHNlKSwKICAgICkKICAgIG9wLmNyZWF0ZV9pbmRleCgiaXhfYXVkaXRfbG9nc191c2VyX2NyZWF0ZWQiLCAiYXVkaXRfbG9ncyIsIFsidXNlcl9pZCIsICJjcmVhdGVkX2F0Il0pCiAgICBvcC5jcmVhdGVfaW5kZXgoIml4X2F1ZGl0X2xvZ3NfZGV2aWNlX2NyZWF0ZWQiLCAiYXVkaXRfbG9ncyIsIFsiZGV2aWNlX2lkIiwgImNyZWF0ZWRfYXQiXSkKCgpkZWYgZG93bmdyYWRlKCkgLT4gTm9uZToKICAgIG9wLmRyb3BfdGFibGUoImF1ZGl0X2xvZ3MiKQogICAgb3AuZHJvcF90YWJsZSgidHJhZGVfcmVwb3J0cyIpCiAgICBvcC5kcm9wX3RhYmxlKCJzaWduYWxfZXZlbnRzIikKICAgIG9wLmRyb3BfdGFibGUoInNpZ25hbHMiKQogICAgb3AuZHJvcF90YWJsZSgicmlza19wcm9maWxlcyIpCiAgICBvcC5kcm9wX3RhYmxlKCJwb3NpdGlvbnMiKQogICAgb3AuZHJvcF90YWJsZSgiYWNjb3VudF9zbmFwc2hvdHMiKQogICAgb3AuZHJvcF90YWJsZSgiZGV2aWNlcyIpCiAgICBvcC5kcm9wX3RhYmxlKCJwYWlyaW5nX2NvZGVzIikKICAgIG9wLmRyb3BfdGFibGUoInVzZXJfc2Vzc2lvbnMiKQogICAgb3AuZHJvcF90YWJsZSgidXNlcnMiKQo=
+"""initial_schema
+
+Revision ID: 001_initial_schema
+Revises: 
+Create Date: 2026-10-04 00:00:00.000000
+
+"""
+from typing import Sequence, Union
+
+from alembic import op
+import sqlalchemy as sa
+from sqlalchemy.dialects import postgresql
+
+revision: str = "001_initial_schema"
+down_revision: Union[str, None] = None
+branch_labels: Union[str, Sequence[str], None] = None
+depends_on: Union[str, Sequence[str], None] = None
+
+
+def upgrade() -> None:
+    # Users
+    op.create_table(
+        "users",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("email", sa.String(254), nullable=False),
+        sa.Column("password_hash", sa.String(255), nullable=False),
+        sa.Column("is_verified", sa.Boolean(), server_default=sa.text("false"), nullable=False),
+        sa.Column("risk_disclaimer_accepted_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("two_factor_secret", sa.String(64), nullable=True),
+        sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+    )
+    op.create_index("ix_users_email", "users", ["email"], unique=True)
+
+    # User Sessions
+    op.create_table(
+        "user_sessions",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("token_hash", sa.String(64), nullable=False),
+        sa.Column("expires_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("revoked_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+    )
+    op.create_index("ix_user_sessions_token_hash", "user_sessions", ["token_hash"], unique=True)
+    op.create_index("ix_user_sessions_user_expires", "user_sessions", ["user_id", "expires_at"])
+
+    # Pairing Codes
+    op.create_table(
+        "pairing_codes",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("code_hash", sa.String(64), nullable=False),
+        sa.Column("expires_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("consumed_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+    )
+    op.create_index("ix_pairing_codes_code_hash", "pairing_codes", ["code_hash"], unique=True)
+    op.create_index("ix_pairing_codes_user_expires", "pairing_codes", ["user_id", "expires_at"])
+    op.create_index("ix_pairing_codes_expires", "pairing_codes", ["expires_at"])
+
+    # Devices (EA Terminals)
+    op.create_table(
+        "devices",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="RESTRICT"), nullable=False),
+        sa.Column("name", sa.String(100), server_default="MT5 Terminal", nullable=False),
+        sa.Column("token_hash", sa.String(64), nullable=False),
+        sa.Column("last_seen_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("terminal_build", sa.String(32), nullable=True),
+        sa.Column("broker", sa.String(120), nullable=False),
+        sa.Column("server", sa.String(120), nullable=False),
+        sa.Column("account_number_masked", sa.String(64), nullable=False),
+        sa.Column("account_currency", sa.String(8), nullable=False),
+        sa.Column("leverage", sa.Integer(), nullable=False),
+        sa.Column("status", sa.String(16), server_default="ACTIVE", nullable=False),
+        sa.Column("revoked_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.CheckConstraint("status IN ('ACTIVE', 'REVOKED')", name="ck_devices_status"),
+        sa.CheckConstraint("leverage >= 1", name="ck_devices_leverage_positive"),
+    )
+    op.create_index("ix_devices_token_hash", "devices", ["token_hash"], unique=True)
+    op.create_index("ix_devices_user_status_last_seen", "devices", ["user_id", "status", "last_seen_at"])
+
+    # Account Snapshots
+    op.create_table(
+        "account_snapshots",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("balance", sa.Numeric(24, 8), nullable=False),
+        sa.Column("equity", sa.Numeric(24, 8), nullable=False),
+        sa.Column("margin", sa.Numeric(24, 8), server_default="0", nullable=False),
+        sa.Column("free_margin", sa.Numeric(24, 8), nullable=False),
+        sa.Column("margin_level", sa.Numeric(12, 4), nullable=True),
+        sa.Column("open_positions_count", sa.Integer(), server_default="0", nullable=False),
+        sa.Column("account_currency", sa.String(8), nullable=False),
+        sa.Column("leverage", sa.Integer(), nullable=False),
+        sa.Column("captured_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.CheckConstraint("balance >= 0", name="ck_account_snapshots_balance_nonnegative"),
+        sa.CheckConstraint("equity >= 0", name="ck_account_snapshots_equity_nonnegative"),
+        sa.CheckConstraint("free_margin >= 0", name="ck_account_snapshots_margin_nonnegative"),
+    )
+    op.create_index("ix_account_snapshots_device_captured", "account_snapshots", ["device_id", "captured_at"])
+
+    # Positions
+    op.create_table(
+        "positions",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("external_position_id", sa.String(80), nullable=False),
+        sa.Column("symbol", sa.String(32), nullable=False),
+        sa.Column("side", sa.String(8), nullable=False),
+        sa.Column("volume", sa.Numeric(20, 8), nullable=False),
+        sa.Column("entry_price", sa.Numeric(28, 12), nullable=False),
+        sa.Column("current_price", sa.Numeric(28, 12), nullable=False),
+        sa.Column("stop_loss", sa.Numeric(28, 12), nullable=True),
+        sa.Column("take_profit", sa.Numeric(28, 12), nullable=True),
+        sa.Column("unrealized_pnl", sa.Numeric(24, 8), nullable=False),
+        sa.Column("swap", sa.Numeric(24, 8), server_default="0", nullable=False),
+        sa.Column("magic_number", sa.Integer(), nullable=True),
+        sa.Column("comment", sa.String(120), nullable=True),
+        sa.Column("observed_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("is_open", sa.Boolean(), server_default=sa.text("true"), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.UniqueConstraint("device_id", "external_position_id", name="uq_positions_device_external"),
+        sa.CheckConstraint("side IN ('BUY', 'SELL')", name="ck_positions_side"),
+        sa.CheckConstraint("volume > 0", name="ck_positions_volume_positive"),
+    )
+    op.create_index("ix_positions_device_open_observed", "positions", ["device_id", "is_open", "observed_at"])
+
+    # Risk Profiles
+    op.create_table(
+        "risk_profiles",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("risk_per_trade_pct", sa.Numeric(8, 4), server_default="0.5000", nullable=False),
+        sa.Column("max_daily_loss_pct", sa.Numeric(8, 4), server_default="2.0000", nullable=False),
+        sa.Column("max_open_risk_pct", sa.Numeric(8, 4), server_default="3.0000", nullable=False),
+        sa.Column("max_open_positions", sa.Integer(), server_default="5", nullable=False),
+        sa.Column("allowed_symbols", sa.JSON(), nullable=True),
+        sa.Column("trading_hours", sa.JSON(), nullable=True),
+        sa.Column("auto_execute", sa.Boolean(), server_default=sa.text("false"), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.UniqueConstraint("device_id", name="uq_risk_profiles_device"),
+        sa.CheckConstraint("risk_per_trade_pct > 0 AND risk_per_trade_pct <= 5", name="ck_risk_profiles_trade_risk"),
+        sa.CheckConstraint("max_daily_loss_pct > 0 AND max_daily_loss_pct <= 100", name="ck_risk_profiles_daily_loss"),
+        sa.CheckConstraint("max_open_risk_pct > 0 AND max_open_risk_pct <= 100", name="ck_risk_profiles_open_risk"),
+        sa.CheckConstraint("max_open_positions >= 1 AND max_open_positions <= 50", name="ck_risk_profiles_max_positions"),
+    )
+
+    # Signals
+    op.create_table(
+        "signals",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="RESTRICT"), nullable=False),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("symbol", sa.String(32), nullable=False),
+        sa.Column("action", sa.String(8), nullable=False),
+        sa.Column("reference_price", sa.Numeric(28, 12), nullable=False),
+        sa.Column("point_size", sa.Numeric(20, 12), nullable=False),
+        sa.Column("max_deviation_points", sa.Integer(), nullable=False),
+        sa.Column("volume", sa.Numeric(20, 8), nullable=False),
+        sa.Column("stop_loss", sa.Numeric(28, 12), nullable=False),
+        sa.Column("take_profit", sa.Numeric(28, 12), nullable=False),
+        sa.Column("confidence", sa.Numeric(5, 4), server_default="0.8500", nullable=False),
+        sa.Column("rationale", sa.JSON(), nullable=False),
+        sa.Column("model_version", sa.String(64), server_default="v1.0-rule-based", nullable=False),
+        sa.Column("state", sa.String(16), server_default="CREATED", nullable=False),
+        sa.Column("expires_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.CheckConstraint("action IN ('BUY', 'SELL')", name="ck_signals_action"),
+        sa.CheckConstraint("state IN ('CREATED', 'DELIVERED', 'ACKED', 'EXECUTED', 'REJECTED', 'EXPIRED')", name="ck_signals_state"),
+        sa.CheckConstraint("volume > 0", name="ck_signals_volume_positive"),
+        sa.CheckConstraint("max_deviation_points >= 0", name="ck_signals_deviation_nonnegative"),
+        sa.CheckConstraint("confidence >= 0.0 AND confidence <= 1.0", name="ck_signals_confidence_range"),
+    )
+    op.create_index("ix_signals_device_state_expires", "signals", ["device_id", "state", "expires_at"])
+
+    # Signal Events
+    op.create_table(
+        "signal_events",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("signal_id", sa.Uuid(as_uuid=True), sa.ForeignKey("signals.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("from_state", sa.String(16), nullable=True),
+        sa.Column("to_state", sa.String(16), nullable=False),
+        sa.Column("source", sa.String(16), nullable=False),
+        sa.Column("reason_code", sa.String(64), nullable=True),
+        sa.Column("reason", sa.String(500), nullable=True),
+        sa.Column("execution_price", sa.Numeric(28, 12), nullable=True),
+        sa.Column("execution_volume", sa.Numeric(20, 8), nullable=True),
+        sa.Column("occurred_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("details", sa.JSON(), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.UniqueConstraint("signal_id", "to_state", name="uq_signal_events_transition"),
+    )
+    op.create_index("ix_signal_events_signal_created", "signal_events", ["signal_id", "created_at"])
+
+    # Trade Reports
+    op.create_table(
+        "trade_reports",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="RESTRICT"), nullable=False),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="CASCADE"), nullable=False),
+        sa.Column("signal_id", sa.Uuid(as_uuid=True), sa.ForeignKey("signals.id", ondelete="SET NULL"), nullable=True),
+        sa.Column("external_order_id", sa.String(80), nullable=False),
+        sa.Column("symbol", sa.String(32), nullable=False),
+        sa.Column("side", sa.String(8), nullable=False),
+        sa.Column("volume", sa.Numeric(20, 8), nullable=False),
+        sa.Column("entry_price", sa.Numeric(28, 12), nullable=False),
+        sa.Column("exit_price", sa.Numeric(28, 12), nullable=True),
+        sa.Column("slippage_points", sa.Numeric(12, 4), nullable=True),
+        sa.Column("commission", sa.Numeric(24, 8), server_default="0", nullable=False),
+        sa.Column("swap", sa.Numeric(24, 8), server_default="0", nullable=False),
+        sa.Column("realized_pnl", sa.Numeric(24, 8), nullable=True),
+        sa.Column("opened_at", sa.DateTime(timezone=True), nullable=False),
+        sa.Column("closed_at", sa.DateTime(timezone=True), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+        sa.UniqueConstraint("device_id", "external_order_id", name="uq_trade_reports_device_order"),
+    )
+    op.create_index("ix_trade_reports_user_closed", "trade_reports", ["user_id", "closed_at"])
+
+    # Audit Logs (Append-Only)
+    op.create_table(
+        "audit_logs",
+        sa.Column("id", sa.Uuid(as_uuid=True), primary_key=True),
+        sa.Column("user_id", sa.Uuid(as_uuid=True), sa.ForeignKey("users.id", ondelete="SET NULL"), nullable=True),
+        sa.Column("device_id", sa.Uuid(as_uuid=True), sa.ForeignKey("devices.id", ondelete="SET NULL"), nullable=True),
+        sa.Column("event_type", sa.String(64), nullable=False),
+        sa.Column("action", sa.String(64), nullable=True),
+        sa.Column("request_id", sa.String(64), nullable=True),
+        sa.Column("ip_address", sa.String(64), nullable=True),
+        sa.Column("user_agent", sa.String(255), nullable=True),
+        sa.Column("details", sa.JSON(), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False),
+    )
+    op.create_index("ix_audit_logs_user_created", "audit_logs", ["user_id", "created_at"])
+    op.create_index("ix_audit_logs_device_created", "audit_logs", ["device_id", "created_at"])
+
+
+def downgrade() -> None:
+    op.drop_table("audit_logs")
+    op.drop_table("trade_reports")
+    op.drop_table("signal_events")
+    op.drop_table("signals")
+    op.drop_table("risk_profiles")
+    op.drop_table("positions")
+    op.drop_table("account_snapshots")
+    op.drop_table("devices")
+    op.drop_table("pairing_codes")
+    op.drop_table("user_sessions")
+    op.drop_table("users")

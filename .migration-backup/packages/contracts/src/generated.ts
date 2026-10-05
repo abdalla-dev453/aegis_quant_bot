@@ -1,1 +1,303 @@
-LyoqCiAqIENhbm9uaWNhbCBHZW5lcmF0ZWQgQVBJICYgRW50aXR5IFNjaGVtYSBEZWZpbml0aW9ucwogKiBBZWdpc1F1YW50IEVuZ2luZSBDb250cmFjdCBUeXBlcyAoT3BlbkFQSSAzLjEpCiAqCiAqIFNpbmdsZSBTb3VyY2Ugb2YgVHJ1dGggZm9yIEJhY2tlbmQgKEZhc3RBUEkpIGFuZCBGcm9udGVuZCAoTmV4dC5qcykKICovCgpleHBvcnQgdHlwZSBTaWduYWxBY3Rpb24gPSAiQlVZIiB8ICJTRUxMIjsKCmV4cG9ydCB0eXBlIFNpZ25hbFN0YXRlID0KICB8ICJDUkVBVEVEIgogIHwgIkRFTElWRVJFRCIKICB8ICJBQ0tFRCIKICB8ICJFWEVDVVRFRCIKICB8ICJSRUpFQ1RFRCIKICB8ICJFWFBJUkVEIjsKCmV4cG9ydCB0eXBlIERldmljZVN0YXR1cyA9ICJBQ1RJVkUiIHwgIlJFVk9LRUQiOwoKZXhwb3J0IHR5cGUgRGV2aWNlUHJlc2VuY2UgPSAiT05MSU5FIiB8ICJTVEFMRSIgfCAiT0ZGTElORSI7CgpleHBvcnQgaW50ZXJmYWNlIEVycm9yUmVzcG9uc2UgewogIGNvZGU6IHN0cmluZzsKICBtZXNzYWdlOiBzdHJpbmc7CiAgZGV0YWlscz86IFJlY29yZDxzdHJpbmcsIHN0cmluZyB8IG51bWJlciB8IGJvb2xlYW4gfCBudWxsPiB8IG51bGw7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgVXNlclZpZXcgewogIGlkOiBzdHJpbmc7CiAgZW1haWw6IHN0cmluZzsKICBpc192ZXJpZmllZDogYm9vbGVhbjsKICByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWRfYXQ6IHN0cmluZzsKICBjcmVhdGVkX2F0OiBzdHJpbmc7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgVXNlclNpZ251cCB7CiAgZW1haWw6IHN0cmluZzsKICBwYXNzd29yZDogc3RyaW5nOwogIHJpc2tfZGlzY2xhaW1lcl9hY2NlcHRlZDogYm9vbGVhbjsKfQoKZXhwb3J0IGludGVyZmFjZSBVc2VyTG9naW4gewogIGVtYWlsOiBzdHJpbmc7CiAgcGFzc3dvcmQ6IHN0cmluZzsKfQoKZXhwb3J0IGludGVyZmFjZSBQYWlyaW5nQ29kZVZpZXcgewogIGNvZGU6IHN0cmluZzsKICBleHBpcmVzX2F0OiBzdHJpbmc7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgRUFQYWlyUmVxdWVzdCB7CiAgY29kZTogc3RyaW5nOwogIHRlcm1pbmFsX2J1aWxkOiBzdHJpbmc7CiAgYnJva2VyOiBzdHJpbmc7CiAgc2VydmVyOiBzdHJpbmc7CiAgYWNjb3VudF9udW1iZXJfbWFza2VkOiBzdHJpbmc7CiAgYWNjb3VudF9jdXJyZW5jeTogc3RyaW5nOwogIGxldmVyYWdlOiBudW1iZXI7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgRUFQYWlyUmVzcG9uc2UgewogIGRldmljZV9pZDogc3RyaW5nOwogIGRldmljZV90b2tlbjogc3RyaW5nOwogIHRva2VuX3R5cGU6IHN0cmluZzsKICB0b2tlbl9zaG93bl9vbmNlOiBib29sZWFuOwp9CgpleHBvcnQgaW50ZXJmYWNlIEFjY291bnRTbmFwc2hvdElucHV0IHsKICBiYWxhbmNlOiBzdHJpbmc7CiAgZXF1aXR5OiBzdHJpbmc7CiAgbWFyZ2luPzogc3RyaW5nOwogIGZyZWVfbWFyZ2luOiBzdHJpbmc7CiAgbWFyZ2luX2xldmVsPzogc3RyaW5nIHwgbnVsbDsKICBvcGVuX3Bvc2l0aW9uc19jb3VudD86IG51bWJlcjsKICBhY2NvdW50X2N1cnJlbmN5OiBzdHJpbmc7CiAgbGV2ZXJhZ2U6IG51bWJlcjsKICBjYXB0dXJlZF9hdDogc3RyaW5nOwp9CgpleHBvcnQgaW50ZXJmYWNlIFBvc2l0aW9uSW5wdXQgewogIGV4dGVybmFsX3Bvc2l0aW9uX2lkOiBzdHJpbmc7CiAgc3ltYm9sOiBzdHJpbmc7CiAgc2lkZTogU2lnbmFsQWN0aW9uOwogIHZvbHVtZTogc3RyaW5nOwogIGVudHJ5X3ByaWNlOiBzdHJpbmc7CiAgY3VycmVudF9wcmljZTogc3RyaW5nOwogIHN0b3BfbG9zcz86IHN0cmluZyB8IG51bGw7CiAgdGFrZV9wcm9maXQ/OiBzdHJpbmcgfCBudWxsOwogIHVucmVhbGl6ZWRfcG5sOiBzdHJpbmc7CiAgc3dhcD86IHN0cmluZzsKICBtYWdpY19udW1iZXI/OiBudW1iZXIgfCBudWxsOwogIGNvbW1lbnQ/OiBzdHJpbmcgfCBudWxsOwogIG9ic2VydmVkX2F0OiBzdHJpbmc7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgSGVhcnRiZWF0UmVxdWVzdCB7CiAgc25hcHNob3Q6IEFjY291bnRTbmFwc2hvdElucHV0OwogIHBvc2l0aW9uczogUG9zaXRpb25JbnB1dFtdOwp9CgpleHBvcnQgaW50ZXJmYWNlIEhlYXJ0YmVhdFJlc3BvbnNlIHsKICBhY2NlcHRlZDogYm9vbGVhbjsKICBzZXJ2ZXJfdGltZTogc3RyaW5nOwogIGF1dG9fZXhlY3V0ZTogYm9vbGVhbjsKICBraWxsX3N3aXRjaDogYm9vbGVhbjsKfQoKZXhwb3J0IGludGVyZmFjZSBTaWduYWxSYXRpb25hbGVGYWN0b3IgewogIG5hbWU6IHN0cmluZzsKICB3ZWlnaHQ6IHN0cmluZzsKICBkZXNjcmlwdGlvbjogc3RyaW5nOwp9CgpleHBvcnQgaW50ZXJmYWNlIFNpZ25hbFJhdGlvbmFsZSB7CiAgc3VtbWFyeTogc3RyaW5nOwogIGZhY3RvcnM6IFNpZ25hbFJhdGlvbmFsZUZhY3RvcltdOwp9CgpleHBvcnQgaW50ZXJmYWNlIFNpZ25hbERlbGl2ZXJ5IHsKICBzaWduYWxfaWQ6IHN0cmluZzsKICBzeW1ib2w6IHN0cmluZzsKICBhY3Rpb246IFNpZ25hbEFjdGlvbjsKICByZWZlcmVuY2VfcHJpY2U6IHN0cmluZzsKICBwb2ludF9zaXplOiBzdHJpbmc7CiAgbWF4X2RldmlhdGlvbl9wb2ludHM6IG51bWJlcjsKICB2b2x1bWU6IHN0cmluZzsKICBzdG9wX2xvc3M6IHN0cmluZzsKICB0YWtlX3Byb2ZpdDogc3RyaW5nOwogIGNvbmZpZGVuY2U6IHN0cmluZzsKICByYXRpb25hbGU6IFNpZ25hbFJhdGlvbmFsZTsKICBtb2RlbF92ZXJzaW9uOiBzdHJpbmc7CiAgZXhwaXJlc19hdDogc3RyaW5nOwogIGF1dG9fZXhlY3V0ZTogYm9vbGVhbjsKfQoKZXhwb3J0IGludGVyZmFjZSBTaWduYWxBY2tSZXF1ZXN0IHsKICBldmVudDogIkFDS0VEIiB8ICJFWEVDVVRFRCIgfCAiUkVKRUNURUQiOwogIG9jY3VycmVkX2F0OiBzdHJpbmc7CiAgZXhlY3V0aW9uX3ByaWNlPzogc3RyaW5nIHwgbnVsbDsKICBleGVjdXRpb25fdm9sdW1lPzogc3RyaW5nIHwgbnVsbDsKICByZWFzb25fY29kZT86IHN0cmluZyB8IG51bGw7CiAgcmVhc29uPzogc3RyaW5nIHwgbnVsbDsKfQoKZXhwb3J0IGludGVyZmFjZSBTaWduYWxBY2tSZXNwb25zZSB7CiAgc2lnbmFsX2lkOiBzdHJpbmc7CiAgc3RhdGU6IFNpZ25hbFN0YXRlOwogIGFjY2VwdGVkOiBib29sZWFuOwp9CgpleHBvcnQgaW50ZXJmYWNlIFNpZ25hbFZpZXcgewogIGlkOiBzdHJpbmc7CiAgZGV2aWNlX2lkOiBzdHJpbmc7CiAgc3ltYm9sOiBzdHJpbmc7CiAgYWN0aW9uOiBTaWduYWxBY3Rpb247CiAgcmVmZXJlbmNlX3ByaWNlOiBzdHJpbmc7CiAgdm9sdW1lOiBzdHJpbmc7CiAgc3RvcF9sb3NzOiBzdHJpbmc7CiAgdGFrZV9wcm9maXQ6IHN0cmluZzsKICBjb25maWRlbmNlOiBzdHJpbmc7CiAgcmF0aW9uYWxlOiBTaWduYWxSYXRpb25hbGU7CiAgbW9kZWxfdmVyc2lvbjogc3RyaW5nOwogIHN0YXRlOiBTaWduYWxTdGF0ZTsKICBleHBpcmVzX2F0OiBzdHJpbmc7CiAgY3JlYXRlZF9hdDogc3RyaW5nOwp9CgpleHBvcnQgaW50ZXJmYWNlIFNpZ25hbEV2ZW50VmlldyB7CiAgaWQ6IHN0cmluZzsKICBzaWduYWxfaWQ6IHN0cmluZzsKICBkZXZpY2VfaWQ6IHN0cmluZzsKICBmcm9tX3N0YXRlPzogc3RyaW5nIHwgbnVsbDsKICB0b19zdGF0ZTogc3RyaW5nOwogIHNvdXJjZTogc3RyaW5nOwogIHJlYXNvbl9jb2RlPzogc3RyaW5nIHwgbnVsbDsKICByZWFzb24/OiBzdHJpbmcgfCBudWxsOwogIGV4ZWN1dGlvbl9wcmljZT86IHN0cmluZyB8IG51bGw7CiAgZXhlY3V0aW9uX3ZvbHVtZT86IHN0cmluZyB8IG51bGw7CiAgb2NjdXJyZWRfYXQ6IHN0cmluZzsKfQoKZXhwb3J0IGludGVyZmFjZSBSaXNrUHJvZmlsZVZpZXcgewogIGlkOiBzdHJpbmc7CiAgZGV2aWNlX2lkOiBzdHJpbmc7CiAgcmlza19wZXJfdHJhZGVfcGN0OiBzdHJpbmc7CiAgbWF4X2RhaWx5X2xvc3NfcGN0OiBzdHJpbmc7CiAgbWF4X29wZW5fcmlza19wY3Q6IHN0cmluZzsKICBtYXhfb3Blbl9wb3NpdGlvbnM6IG51bWJlcjsKICBhbGxvd2VkX3N5bWJvbHM/OiBzdHJpbmdbXSB8IG51bGw7CiAgdHJhZGluZ19ob3Vycz86IFJlY29yZDxzdHJpbmcsIHN0cmluZyB8IG51bWJlciB8IGJvb2xlYW4gfCBudWxsPiB8IG51bGw7CiAgYXV0b19leGVjdXRlOiBib29sZWFuOwp9CgpleHBvcnQgaW50ZXJmYWNlIFJpc2tQcm9maWxlVXBkYXRlIHsKICByaXNrX3Blcl90cmFkZV9wY3Q/OiBzdHJpbmc7CiAgbWF4X2RhaWx5X2xvc3NfcGN0Pzogc3RyaW5nOwogIG1heF9vcGVuX3Jpc2tfcGN0Pzogc3RyaW5nOwogIG1heF9vcGVuX3Bvc2l0aW9ucz86IG51bWJlcjsKICBhbGxvd2VkX3N5bWJvbHM/OiBzdHJpbmdbXTsKICB0cmFkaW5nX2hvdXJzPzogUmVjb3JkPHN0cmluZywgc3RyaW5nIHwgbnVtYmVyIHwgYm9vbGVhbiB8IG51bGw+OwogIGF1dG9fZXhlY3V0ZT86IGJvb2xlYW47Cn0KCmV4cG9ydCBpbnRlcmZhY2UgRGV2aWNlVmlldyB7CiAgaWQ6IHN0cmluZzsKICBuYW1lOiBzdHJpbmc7CiAgYnJva2VyOiBzdHJpbmc7CiAgc2VydmVyOiBzdHJpbmc7CiAgdGVybWluYWxfYnVpbGQ/OiBzdHJpbmcgfCBudWxsOwogIGFjY291bnRfbnVtYmVyX21hc2tlZDogc3RyaW5nOwogIGFjY291bnRfY3VycmVuY3k6IHN0cmluZzsKICBsZXZlcmFnZTogbnVtYmVyOwogIHN0YXR1czogc3RyaW5nOwogIHByZXNlbmNlOiBEZXZpY2VQcmVzZW5jZTsKICBsYXN0X3NlZW5fYXQ/OiBzdHJpbmcgfCBudWxsOwogIGF1dG9fZXhlY3V0ZTogYm9vbGVhbjsKICBjcmVhdGVkX2F0OiBzdHJpbmc7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgRGV2aWNlUmVuYW1lIHsKICBuYW1lOiBzdHJpbmc7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgVHJhZGVSZXBvcnRJbnB1dCB7CiAgc2lnbmFsX2lkPzogc3RyaW5nIHwgbnVsbDsKICB0aWNrZXQ6IHN0cmluZzsKICBzeW1ib2w6IHN0cmluZzsKICBzaWRlOiBTaWduYWxBY3Rpb247CiAgdm9sdW1lOiBzdHJpbmc7CiAgZXhlY3V0aW9uX3ByaWNlOiBzdHJpbmc7CiAgZXhpdF9wcmljZT86IHN0cmluZyB8IG51bGw7CiAgc2xpcHBhZ2VfcG9pbnRzPzogc3RyaW5nIHwgbnVsbDsKICBjb21taXNzaW9uPzogc3RyaW5nOwogIHN3YXA/OiBzdHJpbmc7CiAgcHJvZml0Pzogc3RyaW5nIHwgbnVsbDsKICBvcGVuZWRfYXQ6IHN0cmluZzsKICBjbG9zZWRfYXQ/OiBzdHJpbmcgfCBudWxsOwp9CgpleHBvcnQgaW50ZXJmYWNlIFRyYWRlUmVwb3J0VmlldyB7CiAgaWQ6IHN0cmluZzsKICBzaWduYWxfaWQ/OiBzdHJpbmcgfCBudWxsOwogIGRldmljZV9pZDogc3RyaW5nOwogIHRpY2tldDogc3RyaW5nOwogIHN5bWJvbDogc3RyaW5nOwogIHNpZGU6IFNpZ25hbEFjdGlvbjsKICB2b2x1bWU6IHN0cmluZzsKICBleGVjdXRpb25fcHJpY2U6IHN0cmluZzsKICBleGl0X3ByaWNlPzogc3RyaW5nIHwgbnVsbDsKICBzbGlwcGFnZV9wb2ludHM/OiBzdHJpbmcgfCBudWxsOwogIGNvbW1pc3Npb246IHN0cmluZzsKICBzd2FwOiBzdHJpbmc7CiAgcmVhbGl6ZWRfcG5sPzogc3RyaW5nIHwgbnVsbDsKICBvcGVuZWRfYXQ6IHN0cmluZzsKICBjbG9zZWRfYXQ/OiBzdHJpbmcgfCBudWxsOwogIGNyZWF0ZWRfYXQ6IHN0cmluZzsKfQoKZXhwb3J0IGludGVyZmFjZSBBdWRpdExvZ1ZpZXcgewogIGlkOiBzdHJpbmc7CiAgdXNlcl9pZD86IHN0cmluZyB8IG51bGw7CiAgZGV2aWNlX2lkPzogc3RyaW5nIHwgbnVsbDsKICBldmVudF90eXBlOiBzdHJpbmc7CiAgYWN0aW9uPzogc3RyaW5nIHwgbnVsbDsKICByZXF1ZXN0X2lkPzogc3RyaW5nIHwgbnVsbDsKICBpcF9hZGRyZXNzPzogc3RyaW5nIHwgbnVsbDsKICB1c2VyX2FnZW50Pzogc3RyaW5nIHwgbnVsbDsKICBkZXRhaWxzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmcgfCBudW1iZXIgfCBib29sZWFuIHwgbnVsbD47CiAgY3JlYXRlZF9hdDogc3RyaW5nOwp9CgpleHBvcnQgaW50ZXJmYWNlIERhc2hib2FyZEFjY291bnQgewogIGRldmljZV9pZDogc3RyaW5nOwogIGNhcHR1cmVkX2F0OiBzdHJpbmc7CiAgYmFsYW5jZTogc3RyaW5nOwogIGVxdWl0eTogc3RyaW5nOwogIG1hcmdpbjogc3RyaW5nOwogIGZyZWVfbWFyZ2luOiBzdHJpbmc7CiAgbWFyZ2luX2xldmVsPzogc3RyaW5nIHwgbnVsbDsKICBvcGVuX3Bvc2l0aW9uc19jb3VudDogbnVtYmVyOwogIGFjY291bnRfY3VycmVuY3k6IHN0cmluZzsKfQoKZXhwb3J0IGludGVyZmFjZSBEYXNoYm9hcmRQb3NpdGlvbiB7CiAgZGV2aWNlX2lkOiBzdHJpbmc7CiAgZXh0ZXJuYWxfcG9zaXRpb25faWQ6IHN0cmluZzsKICBzeW1ib2w6IHN0cmluZzsKICBzaWRlOiBTaWduYWxBY3Rpb247CiAgdm9sdW1lOiBzdHJpbmc7CiAgZW50cnlfcHJpY2U6IHN0cmluZzsKICBjdXJyZW50X3ByaWNlOiBzdHJpbmc7CiAgc3RvcF9sb3NzPzogc3RyaW5nIHwgbnVsbDsKICB0YWtlX3Byb2ZpdD86IHN0cmluZyB8IG51bGw7CiAgdW5yZWFsaXplZF9wbmw6IHN0cmluZzsKICBvYnNlcnZlZF9hdDogc3RyaW5nOwp9CgpleHBvcnQgaW50ZXJmYWNlIERhc2hib2FyZFJlc3BvbnNlIHsKICBkZXZpY2VzOiBEZXZpY2VWaWV3W107CiAgYWNjb3VudHM6IERhc2hib2FyZEFjY291bnRbXTsKICBwb3NpdGlvbnM6IERhc2hib2FyZFBvc2l0aW9uW107Cn0K
+/**
+ * Canonical Generated API & Entity Schema Definitions
+ * AegisQuant Engine Contract Types (OpenAPI 3.1)
+ *
+ * Single Source of Truth for Backend (FastAPI) and Frontend (Next.js)
+ */
+
+export type SignalAction = "BUY" | "SELL";
+
+export type SignalState =
+  | "CREATED"
+  | "DELIVERED"
+  | "ACKED"
+  | "EXECUTED"
+  | "REJECTED"
+  | "EXPIRED";
+
+export type DeviceStatus = "ACTIVE" | "REVOKED";
+
+export type DevicePresence = "ONLINE" | "STALE" | "OFFLINE";
+
+export interface ErrorResponse {
+  code: string;
+  message: string;
+  details?: Record<string, string | number | boolean | null> | null;
+}
+
+export interface UserView {
+  id: string;
+  email: string;
+  is_verified: boolean;
+  risk_disclaimer_accepted_at: string;
+  created_at: string;
+}
+
+export interface UserSignup {
+  email: string;
+  password: string;
+  risk_disclaimer_accepted: boolean;
+}
+
+export interface UserLogin {
+  email: string;
+  password: string;
+}
+
+export interface PairingCodeView {
+  code: string;
+  expires_at: string;
+}
+
+export interface EAPairRequest {
+  code: string;
+  terminal_build: string;
+  broker: string;
+  server: string;
+  account_number_masked: string;
+  account_currency: string;
+  leverage: number;
+}
+
+export interface EAPairResponse {
+  device_id: string;
+  device_token: string;
+  token_type: string;
+  token_shown_once: boolean;
+}
+
+export interface AccountSnapshotInput {
+  balance: string;
+  equity: string;
+  margin?: string;
+  free_margin: string;
+  margin_level?: string | null;
+  open_positions_count?: number;
+  account_currency: string;
+  leverage: number;
+  captured_at: string;
+}
+
+export interface PositionInput {
+  external_position_id: string;
+  symbol: string;
+  side: SignalAction;
+  volume: string;
+  entry_price: string;
+  current_price: string;
+  stop_loss?: string | null;
+  take_profit?: string | null;
+  unrealized_pnl: string;
+  swap?: string;
+  magic_number?: number | null;
+  comment?: string | null;
+  observed_at: string;
+}
+
+export interface HeartbeatRequest {
+  snapshot: AccountSnapshotInput;
+  positions: PositionInput[];
+}
+
+export interface HeartbeatResponse {
+  accepted: boolean;
+  server_time: string;
+  auto_execute: boolean;
+  kill_switch: boolean;
+}
+
+export interface SignalRationaleFactor {
+  name: string;
+  weight: string;
+  description: string;
+}
+
+export interface SignalRationale {
+  summary: string;
+  factors: SignalRationaleFactor[];
+}
+
+export interface SignalDelivery {
+  signal_id: string;
+  symbol: string;
+  action: SignalAction;
+  reference_price: string;
+  point_size: string;
+  max_deviation_points: number;
+  volume: string;
+  stop_loss: string;
+  take_profit: string;
+  confidence: string;
+  rationale: SignalRationale;
+  model_version: string;
+  expires_at: string;
+  auto_execute: boolean;
+}
+
+export interface SignalAckRequest {
+  event: "ACKED" | "EXECUTED" | "REJECTED";
+  occurred_at: string;
+  execution_price?: string | null;
+  execution_volume?: string | null;
+  reason_code?: string | null;
+  reason?: string | null;
+}
+
+export interface SignalAckResponse {
+  signal_id: string;
+  state: SignalState;
+  accepted: boolean;
+}
+
+export interface SignalView {
+  id: string;
+  device_id: string;
+  symbol: string;
+  action: SignalAction;
+  reference_price: string;
+  volume: string;
+  stop_loss: string;
+  take_profit: string;
+  confidence: string;
+  rationale: SignalRationale;
+  model_version: string;
+  state: SignalState;
+  expires_at: string;
+  created_at: string;
+}
+
+export interface SignalEventView {
+  id: string;
+  signal_id: string;
+  device_id: string;
+  from_state?: string | null;
+  to_state: string;
+  source: string;
+  reason_code?: string | null;
+  reason?: string | null;
+  execution_price?: string | null;
+  execution_volume?: string | null;
+  occurred_at: string;
+}
+
+export interface RiskProfileView {
+  id: string;
+  device_id: string;
+  risk_per_trade_pct: string;
+  max_daily_loss_pct: string;
+  max_open_risk_pct: string;
+  max_open_positions: number;
+  allowed_symbols?: string[] | null;
+  trading_hours?: Record<string, string | number | boolean | null> | null;
+  auto_execute: boolean;
+}
+
+export interface RiskProfileUpdate {
+  risk_per_trade_pct?: string;
+  max_daily_loss_pct?: string;
+  max_open_risk_pct?: string;
+  max_open_positions?: number;
+  allowed_symbols?: string[];
+  trading_hours?: Record<string, string | number | boolean | null>;
+  auto_execute?: boolean;
+}
+
+export interface DeviceView {
+  id: string;
+  name: string;
+  broker: string;
+  server: string;
+  terminal_build?: string | null;
+  account_number_masked: string;
+  account_currency: string;
+  leverage: number;
+  status: string;
+  presence: DevicePresence;
+  last_seen_at?: string | null;
+  auto_execute: boolean;
+  created_at: string;
+}
+
+export interface DeviceRename {
+  name: string;
+}
+
+export interface TradeReportInput {
+  signal_id?: string | null;
+  ticket: string;
+  symbol: string;
+  side: SignalAction;
+  volume: string;
+  execution_price: string;
+  exit_price?: string | null;
+  slippage_points?: string | null;
+  commission?: string;
+  swap?: string;
+  profit?: string | null;
+  opened_at: string;
+  closed_at?: string | null;
+}
+
+export interface TradeReportView {
+  id: string;
+  signal_id?: string | null;
+  device_id: string;
+  ticket: string;
+  symbol: string;
+  side: SignalAction;
+  volume: string;
+  execution_price: string;
+  exit_price?: string | null;
+  slippage_points?: string | null;
+  commission: string;
+  swap: string;
+  realized_pnl?: string | null;
+  opened_at: string;
+  closed_at?: string | null;
+  created_at: string;
+}
+
+export interface AuditLogView {
+  id: string;
+  user_id?: string | null;
+  device_id?: string | null;
+  event_type: string;
+  action?: string | null;
+  request_id?: string | null;
+  ip_address?: string | null;
+  user_agent?: string | null;
+  details: Record<string, string | number | boolean | null>;
+  created_at: string;
+}
+
+export interface DashboardAccount {
+  device_id: string;
+  captured_at: string;
+  balance: string;
+  equity: string;
+  margin: string;
+  free_margin: string;
+  margin_level?: string | null;
+  open_positions_count: number;
+  account_currency: string;
+}
+
+export interface DashboardPosition {
+  device_id: string;
+  external_position_id: string;
+  symbol: string;
+  side: SignalAction;
+  volume: string;
+  entry_price: string;
+  current_price: string;
+  stop_loss?: string | null;
+  take_profit?: string | null;
+  unrealized_pnl: string;
+  observed_at: string;
+}
+
+export interface DashboardResponse {
+  devices: DeviceView[];
+  accounts: DashboardAccount[];
+  positions: DashboardPosition[];
+}

@@ -1,1 +1,128 @@
-ZnJvbSBkYXRldGltZSBpbXBvcnQgVVRDLCBkYXRldGltZSwgdGltZWRlbHRhCmZyb20gZGVjaW1hbCBpbXBvcnQgRGVjaW1hbApmcm9tIHV1aWQgaW1wb3J0IHV1aWQ0CgppbXBvcnQgcHl0ZXN0CmZyb20gcHlkYW50aWMgaW1wb3J0IFZhbGlkYXRpb25FcnJvcgoKZnJvbSBhcHAuY29udHJhY3RzIGltcG9ydCAoCiAgICBFQVBhaXJSZXF1ZXN0LAogICAgRXJyb3JSZXNwb25zZSwKICAgIEhlYXJ0YmVhdFJlcXVlc3QsCiAgICBQb3NpdGlvbklucHV0LAogICAgUmlza1Byb2ZpbGVVcGRhdGUsCiAgICBTaWduYWxBY2tSZXF1ZXN0LAogICAgU2lnbmFsQWN0aW9uLAogICAgU2lnbmFsQ3JlYXRlLAogICAgU2lnbmFsUmF0aW9uYWxlLAogICAgU2lnbmFsUmF0aW9uYWxlRmFjdG9yLAogICAgU2lnbmFsU3RhdGUsCiAgICBVc2VyU2lnbnVwLAopCgoKZGVmIHRlc3RfZXJyb3JfcmVzcG9uc2VfY29udHJhY3QoKSAtPiBOb25lOgogICAgZXJyID0gRXJyb3JSZXNwb25zZShjb2RlPSJyYXRlX2xpbWl0ZWQiLCBtZXNzYWdlPSJUb28gbWFueSByZXF1ZXN0cyIsIGRldGFpbHM9eyJsaW1pdCI6IDEwMH0pCiAgICBhc3NlcnQgZXJyLmNvZGUgPT0gInJhdGVfbGltaXRlZCIKICAgIGFzc2VydCBlcnIubWVzc2FnZSA9PSAiVG9vIG1hbnkgcmVxdWVzdHMiCiAgICBhc3NlcnQgZXJyLmRldGFpbHMgPT0geyJsaW1pdCI6IDEwMH0KCiAgICBkdW1wZWQgPSBlcnIubW9kZWxfZHVtcChleGNsdWRlX25vbmU9VHJ1ZSkKICAgIGFzc2VydCBkdW1wZWQgPT0gewogICAgICAgICJjb2RlIjogInJhdGVfbGltaXRlZCIsCiAgICAgICAgIm1lc3NhZ2UiOiAiVG9vIG1hbnkgcmVxdWVzdHMiLAogICAgICAgICJkZXRhaWxzIjogeyJsaW1pdCI6IDEwMH0sCiAgICB9CgoKZGVmIHRlc3RfdXNlcl9zaWdudXBfdmFsaWRhdGlvbigpIC0+IE5vbmU6CiAgICB2YWxpZCA9IFVzZXJTaWdudXAoCiAgICAgICAgZW1haWw9IlRyYWRlckBBZWdpc1F1YW50LmNvbSIsCiAgICAgICAgcGFzc3dvcmQ9IlNlY3VyZVBhc3N3b3JkMTIzISIsCiAgICAgICAgcmlza19kaXNjbGFpbWVyX2FjY2VwdGVkPVRydWUsCiAgICApCiAgICBhc3NlcnQgdmFsaWQuZW1haWwgPT0gInRyYWRlckBhZWdpc3F1YW50LmNvbSIKCiAgICB3aXRoIHB5dGVzdC5yYWlzZXMoVmFsaWRhdGlvbkVycm9yKToKICAgICAgICBVc2VyU2lnbnVwKAogICAgICAgICAgICBlbWFpbD0iaW52YWxpZC1lbWFpbCIsCiAgICAgICAgICAgIHBhc3N3b3JkPSJTZWN1cmVQYXNzd29yZDEyMyEiLAogICAgICAgICAgICByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWQ9VHJ1ZSwKICAgICAgICApCgogICAgd2l0aCBweXRlc3QucmFpc2VzKFZhbGlkYXRpb25FcnJvcik6CiAgICAgICAgVXNlclNpZ251cCgKICAgICAgICAgICAgZW1haWw9InVzZXJAdGVzdC5jb20iLAogICAgICAgICAgICBwYXNzd29yZD0ic2hvcnQiLAogICAgICAgICAgICByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWQ9VHJ1ZSwKICAgICAgICApCgoKZGVmIHRlc3Rfc2lnbmFsX2NyZWF0aW9uX2FuZF9yYXRpb25hbGUoKSAtPiBOb25lOgogICAgbm93ID0gZGF0ZXRpbWUubm93KFVUQykKICAgIHNpZ25hbCA9IFNpZ25hbENyZWF0ZSgKICAgICAgICBkZXZpY2VfaWQ9dXVpZDQoKSwKICAgICAgICBzaWduYWxfaWQ9dXVpZDQoKSwKICAgICAgICBzeW1ib2w9ImV1cnVzZCIsCiAgICAgICAgYWN0aW9uPVNpZ25hbEFjdGlvbi5CVVksCiAgICAgICAgcmVmZXJlbmNlX3ByaWNlPURlY2ltYWwoIjEuMDg1MDAiKSwKICAgICAgICBwb2ludF9zaXplPURlY2ltYWwoIjAuMDAwMDEiKSwKICAgICAgICBtYXhfZGV2aWF0aW9uX3BvaW50cz0yMCwKICAgICAgICB2b2x1bWU9RGVjaW1hbCgiMC4xMCIpLAogICAgICAgIHN0b3BfbG9zcz1EZWNpbWFsKCIxLjA4MjAwIiksCiAgICAgICAgdGFrZV9wcm9maXQ9RGVjaW1hbCgiMS4wOTEwMCIpLAogICAgICAgIGNvbmZpZGVuY2U9RGVjaW1hbCgiMC45MjAwIiksCiAgICAgICAgcmF0aW9uYWxlPVNpZ25hbFJhdGlvbmFsZSgKICAgICAgICAgICAgc3VtbWFyeT0iU3Ryb25nIGJ1bGxpc2ggZW5ndWxmaW5nIGNhbmRsZSBvbiBIMSB3aXRoIHBvc2l0aXZlIG1vbWVudHVtIGNvbmZsdWVuY2UuIiwKICAgICAgICAgICAgZmFjdG9ycz1bCiAgICAgICAgICAgICAgICBTaWduYWxSYXRpb25hbGVGYWN0b3IobmFtZT0iUlNJIE92ZXJzb2xkIiwgd2VpZ2h0PURlY2ltYWwoIjAuNDAiKSwgZGVzY3JpcHRpb249IlJTSSgxNCkgPCAzMCBvbiBNMTUiKSwKICAgICAgICAgICAgICAgIFNpZ25hbFJhdGlvbmFsZUZhY3RvcihuYW1lPSJFTUEgVHJlbmQiLCB3ZWlnaHQ9RGVjaW1hbCgiMC42MCIpLCBkZXNjcmlwdGlvbj0iUHJpY2UgYWJvdmUgMjAwIEVNQSBvbiBIMSIpLAogICAgICAgICAgICBdLAogICAgICAgICksCiAgICAgICAgZXhwaXJlc19hdD1ub3cgKyB0aW1lZGVsdGEoc2Vjb25kcz0zMCksCiAgICApCiAgICBhc3NlcnQgc2lnbmFsLnN5bWJvbCA9PSAiRVVSVVNEIgogICAgYXNzZXJ0IHNpZ25hbC5hY3Rpb24gPT0gU2lnbmFsQWN0aW9uLkJVWQogICAgYXNzZXJ0IHNpZ25hbC5jb25maWRlbmNlID09IERlY2ltYWwoIjAuOTIwMCIpCiAgICBhc3NlcnQgbGVuKHNpZ25hbC5yYXRpb25hbGUuZmFjdG9ycykgPT0gMgoKCmRlZiB0ZXN0X3Bvc2l0aW9uX2FuZF9tb25leV9wcmVjaXNpb24oKSAtPiBOb25lOgogICAgcG9zID0gUG9zaXRpb25JbnB1dCgKICAgICAgICBleHRlcm5hbF9wb3NpdGlvbl9pZD0iTVQ1XzEwMDI5MyIsCiAgICAgICAgc3ltYm9sPSJnYnB1c2QiLAogICAgICAgIHNpZGU9U2lnbmFsQWN0aW9uLlNFTEwsCiAgICAgICAgdm9sdW1lPURlY2ltYWwoIjAuNTAiKSwKICAgICAgICBlbnRyeV9wcmljZT1EZWNpbWFsKCIxLjI3NTAwIiksCiAgICAgICAgY3VycmVudF9wcmljZT1EZWNpbWFsKCIxLjI3NDIwIiksCiAgICAgICAgdW5yZWFsaXplZF9wbmw9RGVjaW1hbCgiNDAuMDAiKSwKICAgICAgICBvYnNlcnZlZF9hdD1kYXRldGltZS5ub3coVVRDKSwKICAgICkKICAgIGFzc2VydCBwb3Muc3ltYm9sID09ICJHQlBVU0QiCiAgICBhc3NlcnQgcG9zLnZvbHVtZSA9PSBEZWNpbWFsKCIwLjUwIikKICAgIGFzc2VydCBwb3MudW5yZWFsaXplZF9wbmwgPT0gRGVjaW1hbCgiNDAuMDAiKQoKCmRlZiB0ZXN0X2VhX3BhaXJpbmdfcmVxdWVzdF92YWxpZGF0aW9uKCkgLT4gTm9uZToKICAgIHJlcSA9IEVBUGFpclJlcXVlc3QoCiAgICAgICAgY29kZT0iQVEtOTgyNzM2IiwKICAgICAgICB0ZXJtaW5hbF9idWlsZD0iNDE1MCIsCiAgICAgICAgYnJva2VyPSJNZXRhUXVvdGVzLURlbW8iLAogICAgICAgIHNlcnZlcj0iTWV0YVF1b3Rlcy1TZXJ2ZXIiLAogICAgICAgIGFjY291bnRfbnVtYmVyX21hc2tlZD0iMTA5MioqKio4MyIsCiAgICAgICAgYWNjb3VudF9jdXJyZW5jeT0iVVNEIiwKICAgICAgICBsZXZlcmFnZT0xMDAsCiAgICApCiAgICBhc3NlcnQgcmVxLmxldmVyYWdlID09IDEwMAogICAgYXNzZXJ0IHJlcS5icm9rZXIgPT0gIk1ldGFRdW90ZXMtRGVtbyIKCiAgICB3aXRoIHB5dGVzdC5yYWlzZXMoVmFsaWRhdGlvbkVycm9yKToKICAgICAgICBFQVBhaXJSZXF1ZXN0KAogICAgICAgICAgICBjb2RlPSIxMjMiLCAgIyBUb28gc2hvcnQKICAgICAgICAgICAgdGVybWluYWxfYnVpbGQ9IjQxNTAiLAogICAgICAgICAgICBicm9rZXI9IkJyb2tlciIsCiAgICAgICAgICAgIHNlcnZlcj0iU2VydmVyIiwKICAgICAgICAgICAgYWNjb3VudF9udW1iZXJfbWFza2VkPSIxMDkyIiwKICAgICAgICAgICAgYWNjb3VudF9jdXJyZW5jeT0iVVNEIiwKICAgICAgICAgICAgbGV2ZXJhZ2U9MCwgICMgSW52YWxpZCBsZXZlcmFnZQogICAgICAgICkK
+from datetime import UTC, datetime, timedelta
+from decimal import Decimal
+from uuid import uuid4
+
+import pytest
+from pydantic import ValidationError
+
+from app.contracts import (
+    EAPairRequest,
+    ErrorResponse,
+    HeartbeatRequest,
+    PositionInput,
+    RiskProfileUpdate,
+    SignalAckRequest,
+    SignalAction,
+    SignalCreate,
+    SignalRationale,
+    SignalRationaleFactor,
+    SignalState,
+    UserSignup,
+)
+
+
+def test_error_response_contract() -> None:
+    err = ErrorResponse(code="rate_limited", message="Too many requests", details={"limit": 100})
+    assert err.code == "rate_limited"
+    assert err.message == "Too many requests"
+    assert err.details == {"limit": 100}
+
+    dumped = err.model_dump(exclude_none=True)
+    assert dumped == {
+        "code": "rate_limited",
+        "message": "Too many requests",
+        "details": {"limit": 100},
+    }
+
+
+def test_user_signup_validation() -> None:
+    valid = UserSignup(
+        email="Trader@AegisQuant.com",
+        password="SecurePassword123!",
+        risk_disclaimer_accepted=True,
+    )
+    assert valid.email == "trader@aegisquant.com"
+
+    with pytest.raises(ValidationError):
+        UserSignup(
+            email="invalid-email",
+            password="SecurePassword123!",
+            risk_disclaimer_accepted=True,
+        )
+
+    with pytest.raises(ValidationError):
+        UserSignup(
+            email="user@test.com",
+            password="short",
+            risk_disclaimer_accepted=True,
+        )
+
+
+def test_signal_creation_and_rationale() -> None:
+    now = datetime.now(UTC)
+    signal = SignalCreate(
+        device_id=uuid4(),
+        signal_id=uuid4(),
+        symbol="eurusd",
+        action=SignalAction.BUY,
+        reference_price=Decimal("1.08500"),
+        point_size=Decimal("0.00001"),
+        max_deviation_points=20,
+        volume=Decimal("0.10"),
+        stop_loss=Decimal("1.08200"),
+        take_profit=Decimal("1.09100"),
+        confidence=Decimal("0.9200"),
+        rationale=SignalRationale(
+            summary="Strong bullish engulfing candle on H1 with positive momentum confluence.",
+            factors=[
+                SignalRationaleFactor(name="RSI Oversold", weight=Decimal("0.40"), description="RSI(14) < 30 on M15"),
+                SignalRationaleFactor(name="EMA Trend", weight=Decimal("0.60"), description="Price above 200 EMA on H1"),
+            ],
+        ),
+        expires_at=now + timedelta(seconds=30),
+    )
+    assert signal.symbol == "EURUSD"
+    assert signal.action == SignalAction.BUY
+    assert signal.confidence == Decimal("0.9200")
+    assert len(signal.rationale.factors) == 2
+
+
+def test_position_and_money_precision() -> None:
+    pos = PositionInput(
+        external_position_id="MT5_100293",
+        symbol="gbpusd",
+        side=SignalAction.SELL,
+        volume=Decimal("0.50"),
+        entry_price=Decimal("1.27500"),
+        current_price=Decimal("1.27420"),
+        unrealized_pnl=Decimal("40.00"),
+        observed_at=datetime.now(UTC),
+    )
+    assert pos.symbol == "GBPUSD"
+    assert pos.volume == Decimal("0.50")
+    assert pos.unrealized_pnl == Decimal("40.00")
+
+
+def test_ea_pairing_request_validation() -> None:
+    req = EAPairRequest(
+        code="AQ-982736",
+        terminal_build="4150",
+        broker="MetaQuotes-Demo",
+        server="MetaQuotes-Server",
+        account_number_masked="1092****83",
+        account_currency="USD",
+        leverage=100,
+    )
+    assert req.leverage == 100
+    assert req.broker == "MetaQuotes-Demo"
+
+    with pytest.raises(ValidationError):
+        EAPairRequest(
+            code="123",  # Too short
+            terminal_build="4150",
+            broker="Broker",
+            server="Server",
+            account_number_masked="1092",
+            account_currency="USD",
+            leverage=0,  # Invalid leverage
+        )

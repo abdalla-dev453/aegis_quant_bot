@@ -1,1 +1,15 @@
-ewogICJuYW1lIjogImFlZ2lzLXF1YW50IiwKICAicHJpdmF0ZSI6IHRydWUsCiAgInBhY2thZ2VNYW5hZ2VyIjogInBucG1AMTAuNS4yIiwKICAiZW5naW5lcyI6IHsKICAgICJub2RlIjogIj49MjIuMC4wIgogIH0sCiAgInNjcmlwdHMiOiB7CiAgICAib3BlbmFwaTpnZW5lcmF0ZSI6ICJQWVRIT05QQVRIPWFwcHMvYXBpIC52ZW52L2Jpbi9weXRob24gYXBwcy9hcGkvYXBwL29wZW5hcGkucHkiLAogICAgImxpbnQiOiAiLnZlbnYvYmluL3J1ZmYgY2hlY2sgYXBwcy9hcGkvYXBwIiwKICAgICJ0eXBlY2hlY2siOiAiLnZlbnYvYmluL215cHkgYXBwcy9hcGkvYXBwIiwKICAgICJ0ZXN0IjogIlBZVEhPTlBBVEg9YXBwcy9hcGkgLnZlbnYvYmluL3B5dGVzdCBhcHBzL2FwaS90ZXN0cyAmJiBub2RlIC0tZXhwZXJpbWVudGFsLXN0cmlwLXR5cGVzIHBhY2thZ2VzL2NvbnRyYWN0cy9zcmMvaW5kZXgudGVzdC50cyIsCiAgICAiYnVpbGQiOiAicG5wbSBydW4gb3BlbmFwaTpnZW5lcmF0ZSIKICB9Cn0=
+{
+  "name": "aegis-quant",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "openapi:generate": "PYTHONPATH=apps/api .venv/bin/python apps/api/app/openapi.py",
+    "lint": ".venv/bin/ruff check apps/api/app",
+    "typecheck": ".venv/bin/mypy apps/api/app",
+    "test": "PYTHONPATH=apps/api .venv/bin/pytest apps/api/tests && node --experimental-strip-types packages/contracts/src/index.test.ts",
+    "build": "pnpm run openapi:generate"
+  }
+}

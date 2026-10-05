@@ -1,1 +1,19 @@
-ewogICJuYW1lIjogIndvcmtzcGFjZSIsCiAgInZlcnNpb24iOiAiMC4wLjAiLAogICJsaWNlbnNlIjogIk1JVCIsCiAgInNjcmlwdHMiOiB7CiAgICAicHJlaW5zdGFsbCI6ICJzaCAtYyAncm0gLWYgcGFja2FnZS1sb2NrLmpzb24geWFybi5sb2NrOyBjYXNlIFwiJG5wbV9jb25maWdfdXNlcl9hZ2VudFwiIGluIHBucG0vKikgOzsgKikgZWNobyBcIlVzZSBwbnBtIGluc3RlYWRcIiA+JjI7IGV4aXQgMSA7OyBlc2FjJyIsCiAgICAiYnVpbGQiOiAicG5wbSBydW4gdHlwZWNoZWNrICYmIHBucG0gLXIgLS1pZi1wcmVzZW50IHJ1biBidWlsZCIsCiAgICAidHlwZWNoZWNrOmxpYnMiOiAidHNjIC0tYnVpbGQiLAogICAgInR5cGVjaGVjayI6ICJwbnBtIHJ1biB0eXBlY2hlY2s6bGlicyAmJiBwbnBtIC1yIC0tZmlsdGVyIFwiLi9hcnRpZmFjdHMvKipcIiAtLWZpbHRlciBcIi4vc2NyaXB0c1wiIC0taWYtcHJlc2VudCBydW4gdHlwZWNoZWNrIgogIH0sCiAgInByaXZhdGUiOiB0cnVlLAogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAiQHJlcGxpdC9jb25uZWN0b3JzLXNkayI6ICJeMC40LjMiCiAgfSwKICAiZGV2RGVwZW5kZW5jaWVzIjogewogICAgInByZXR0aWVyIjogIl4zLjkuNiIsCiAgICAidHlwZXNjcmlwdCI6ICJ+NS45LjMiCiAgfQp9Cg==
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+  },
+  "private": true,
+  "dependencies": {
+    "@replit/connectors-sdk": "^0.4.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "typescript": "~5.9.3"
+  }
+}

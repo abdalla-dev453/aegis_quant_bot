@@ -1,1 +1,131 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIENvb2tpZUJhbm5lcigpIHsKICBjb25zdCBbc2hvdywgc2V0U2hvd10gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW3ByZWZlcmVuY2VzLCBzZXRQcmVmZXJlbmNlc10gPSB1c2VTdGF0ZSh7CiAgICBuZWNlc3Nhcnk6IHRydWUsCiAgICBhbmFseXRpY3M6IGZhbHNlLAogICAgbWFya2V0aW5nOiBmYWxzZSwKICB9KTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGNvbnN0IGNvbnNlbnQgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgiY29va2llQ29uc2VudCIpOwogICAgaWYgKCFjb25zZW50KSB7CiAgICAgIHNldFNob3codHJ1ZSk7CiAgICB9IGVsc2UgewogICAgICB0cnkgewogICAgICAgIHNldFByZWZlcmVuY2VzKEpTT04ucGFyc2UoY29uc2VudCkpOwogICAgICB9IGNhdGNoIHsKICAgICAgICBzZXRTaG93KHRydWUpOwogICAgICB9CiAgICB9CiAgfSwgW10pOwoKICBjb25zdCBhY2NlcHRBbGwgPSAoKSA9PiB7CiAgICBjb25zdCBjb25zZW50ID0geyBuZWNlc3Nhcnk6IHRydWUsIGFuYWx5dGljczogdHJ1ZSwgbWFya2V0aW5nOiB0cnVlIH07CiAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgiY29va2llQ29uc2VudCIsIEpTT04uc3RyaW5naWZ5KGNvbnNlbnQpKTsKICAgIHNldFByZWZlcmVuY2VzKGNvbnNlbnQpOwogICAgc2V0U2hvdyhmYWxzZSk7CiAgfTsKCiAgY29uc3QgYWNjZXB0TmVjZXNzYXJ5ID0gKCkgPT4gewogICAgY29uc3QgY29uc2VudCA9IHsgbmVjZXNzYXJ5OiB0cnVlLCBhbmFseXRpY3M6IGZhbHNlLCBtYXJrZXRpbmc6IGZhbHNlIH07CiAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgiY29va2llQ29uc2VudCIsIEpTT04uc3RyaW5naWZ5KGNvbnNlbnQpKTsKICAgIHNldFByZWZlcmVuY2VzKGNvbnNlbnQpOwogICAgc2V0U2hvdyhmYWxzZSk7CiAgfTsKCiAgY29uc3Qgc2F2ZVByZWZlcmVuY2VzID0gKCkgPT4gewogICAgY29uc3QgY29uc2VudCA9IHsgbmVjZXNzYXJ5OiB0cnVlLCAuLi5wcmVmZXJlbmNlcyB9OwogICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oImNvb2tpZUNvbnNlbnQiLCBKU09OLnN0cmluZ2lmeShjb25zZW50KSk7CiAgICBzZXRTaG93KGZhbHNlKTsKICB9OwoKICBpZiAoIXNob3cpIHJldHVybiBudWxsOwoKICByZXR1cm4gKAogICAgPGRpdgogICAgICBjbGFzc05hbWU9ImZpeGVkIGJvdHRvbS0wIGxlZnQtMCByaWdodC0wIHotNTAgYm9yZGVyLXQgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlLzk1IGJhY2tkcm9wLWJsdXItc20gbWQ6Ym90dG9tLTQgbWQ6bGVmdC00IG1kOnJpZ2h0LWF1dG8gbWQ6dy05NiBtZDpyb3VuZGVkLWxnIG1kOmJvcmRlciBtZDpzaGFkb3ctcGFuZWwiCiAgICAgIHJvbGU9ImRpYWxvZyIKICAgICAgYXJpYS1sYWJlbD0iQ29va2llIGNvbnNlbnQiCiAgICA+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJwLTQgbWQ6cC01Ij4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1zdGFydCBnYXAtMyI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleC1zaHJpbmstMCBtdC0wLjUgdGV4dC1hY2NlbnQiPgogICAgICAgICAgICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlV2lkdGg9IjIiIGFyaWEtaGlkZGVuPSJ0cnVlIj4KICAgICAgICAgICAgICA8cGF0aCBkPSJNMTIgMjJzOC00IDgtMTBWNWwtOC0zLTggM3Y3YzAgNiA4IDEwIDggMTB6IiAvPgogICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXgtMSBtaW4tdy0wIj4KICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT0idGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtaW5rIj5Db29raWUgUHJlZmVyZW5jZXM8L2gzPgogICAgICAgICAgICA8cCBjbGFzc05hbWU9Im10LTEgdGV4dC1bMTFweF0gbGVhZGluZy1yZWxheGVkIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgV2UgdXNlIGNvb2tpZXMgdG8gZW5zdXJlIHRoZSBkYXNoYm9hcmQgZnVuY3Rpb25zIGNvcnJlY3RseSwgYW5hbHl6ZSBwZXJmb3JtYW5jZSwgYW5kIGltcHJvdmUgeW91ciBleHBlcmllbmNlLiBOZWNlc3NhcnkgY29va2llcyBjYW5ub3QgYmUgZGlzYWJsZWQuCiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgoKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtNCBzcGFjZS15LTMiPgogICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGN1cnNvci1wb2ludGVyIj4KICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtWzEycHhdIGZvbnQtbWVkaXVtIHRleHQtaW5rIj5OZWNlc3Nhcnk8L3NwYW4+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMHB4XSB0ZXh0LWluay1mYWludCI+UmVxdWlyZWQgZm9yIGNvcmUgZnVuY3Rpb25hbGl0eSAoYXV0aCwgc2Vzc2lvbiwgcHJlZmVyZW5jZXMpPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGlucHV0IHR5cGU9ImNoZWNrYm94IiBjaGVja2VkPXtwcmVmZXJlbmNlcy5uZWNlc3Nhcnl9IGRpc2FibGVkIGNsYXNzTmFtZT0iaC00IHctNCBhY2NlbnQtYWNjZW50IiAvPgogICAgICAgICAgPC9sYWJlbD4KCiAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gY3Vyc29yLXBvaW50ZXIiPgogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1bMTJweF0gZm9udC1tZWRpdW0gdGV4dC1pbmsiPkFuYWx5dGljczwvc3Bhbj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtWzEwcHhdIHRleHQtaW5rLWZhaW50Ij5IZWxwIHVzIHVuZGVyc3RhbmQgdXNhZ2UgdG8gaW1wcm92ZSB0aGUgZGFzaGJvYXJkPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgdHlwZT0iY2hlY2tib3giCiAgICAgICAgICAgICAgY2hlY2tlZD17cHJlZmVyZW5jZXMuYW5hbHl0aWNzfQogICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0UHJlZmVyZW5jZXMoeyAuLi5wcmVmZXJlbmNlcywgYW5hbHl0aWNzOiBlLnRhcmdldC5jaGVja2VkIH0pfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0iaC00IHctNCBhY2NlbnQtYWNjZW50IgogICAgICAgICAgICAvPgogICAgICAgICAgPC9sYWJlbD4KCiAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gY3Vyc29yLXBvaW50ZXIiPgogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1bMTJweF0gZm9udC1tZWRpdW0gdGV4dC1pbmsiPk1hcmtldGluZzwvc3Bhbj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtWzEwcHhdIHRleHQtaW5rLWZhaW50Ij5QZXJzb25hbGl6ZWQgY29udGVudCBhbmQgZmVhdHVyZSBhbm5vdW5jZW1lbnRzPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgdHlwZT0iY2hlY2tib3giCiAgICAgICAgICAgICAgY2hlY2tlZD17cHJlZmVyZW5jZXMubWFya2V0aW5nfQogICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0UHJlZmVyZW5jZXMoeyAuLi5wcmVmZXJlbmNlcywgbWFya2V0aW5nOiBlLnRhcmdldC5jaGVja2VkIH0pfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0iaC00IHctNCBhY2NlbnQtYWNjZW50IgogICAgICAgICAgICAvPgogICAgICAgICAgPC9sYWJlbD4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQgZmxleCBmbGV4LWNvbCBnYXAtMiBzbTpmbGV4LXJvdyI+CiAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9e2FjY2VwdEFsbH0KICAgICAgICAgICAgY2xhc3NOYW1lPSJmbGV4LTEgcm91bmRlZC1tZCBiZy1hY2NlbnQgcHgtMyBweS0yIHRleHQtWzEycHhdIGZvbnQtbWVkaXVtIHRleHQtd2hpdGUgaG92ZXI6YmctYWNjZW50LzkwIgogICAgICAgICAgPgogICAgICAgICAgICBBY2NlcHQgQWxsCiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgb25DbGljaz17c2F2ZVByZWZlcmVuY2VzfQogICAgICAgICAgICBjbGFzc05hbWU9ImZsZXgtMSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMiB0ZXh0LVsxMnB4XSBmb250LW1lZGl1bSB0ZXh0LWluayBob3ZlcjpiZy13aGl0ZS9bMC4wM10iCiAgICAgICAgICA+CiAgICAgICAgICAgIFNhdmUgUHJlZmVyZW5jZXMKICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICBvbkNsaWNrPXthY2NlcHROZWNlc3Nhcnl9CiAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleC0xIHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZS1hbHQgcHgtMyBweS0yIHRleHQtWzEycHhdIGZvbnQtbWVkaXVtIHRleHQtaW5rLWRpbSBob3ZlcjpiZy13aGl0ZS9bMC4wM10iCiAgICAgICAgICA+CiAgICAgICAgICAgIE5lY2Vzc2FyeSBPbmx5CiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0zIHRleHQtWzEwcHhdIHRleHQtY2VudGVyIHRleHQtaW5rLWZhaW50Ij4KICAgICAgICAgIDxhIGhyZWY9Ii9wcml2YWN5IiBjbGFzc05hbWU9InVuZGVybGluZSBob3Zlcjp0ZXh0LWFjY2VudCI+UHJpdmFjeSBQb2xpY3k8L2E+IMK3eyIgIn0KICAgICAgICAgIDxhIGhyZWY9Ii90ZXJtcyIgY2xhc3NOYW1lPSJ1bmRlcmxpbmUgaG92ZXI6dGV4dC1hY2NlbnQiPlRlcm1zIG9mIFNlcnZpY2U8L2E+CiAgICAgICAgPC9wPgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0=
+import { useEffect, useState } from "react";
+
+export default function CookieBanner() {
+  const [show, setShow] = useState(false);
+  const [preferences, setPreferences] = useState({
+    necessary: true,
+    analytics: false,
+    marketing: false,
+  });
+
+  useEffect(() => {
+    const consent = localStorage.getItem("cookieConsent");
+    if (!consent) {
+      setShow(true);
+    } else {
+      try {
+        setPreferences(JSON.parse(consent));
+      } catch {
+        setShow(true);
+      }
+    }
+  }, []);
+
+  const acceptAll = () => {
+    const consent = { necessary: true, analytics: true, marketing: true };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    setPreferences(consent);
+    setShow(false);
+  };
+
+  const acceptNecessary = () => {
+    const consent = { necessary: true, analytics: false, marketing: false };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    setPreferences(consent);
+    setShow(false);
+  };
+
+  const savePreferences = () => {
+    const consent = { necessary: true, ...preferences };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    setShow(false);
+  };
+
+  if (!show) return null;
+
+  return (
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-surface/95 backdrop-blur-sm md:bottom-4 md:left-4 md:right-auto md:w-96 md:rounded-lg md:border md:shadow-panel"
+      role="dialog"
+      aria-label="Cookie consent"
+    >
+      <div className="p-4 md:p-5">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 mt-0.5 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-sm font-semibold text-ink">Cookie Preferences</h3>
+            <p className="mt-1 text-[11px] leading-relaxed text-ink-dim">
+              We use cookies to ensure the dashboard functions correctly, analyze performance, and improve your experience. Necessary cookies cannot be disabled.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 space-y-3">
+          <label className="flex items-center justify-between cursor-pointer">
+            <div>
+              <span className="text-[12px] font-medium text-ink">Necessary</span>
+              <p className="text-[10px] text-ink-faint">Required for core functionality (auth, session, preferences)</p>
+            </div>
+            <input type="checkbox" checked={preferences.necessary} disabled className="h-4 w-4 accent-accent" />
+          </label>
+
+          <label className="flex items-center justify-between cursor-pointer">
+            <div>
+              <span className="text-[12px] font-medium text-ink">Analytics</span>
+              <p className="text-[10px] text-ink-faint">Help us understand usage to improve the dashboard</p>
+            </div>
+            <input
+              type="checkbox"
+              checked={preferences.analytics}
+              onChange={(e) => setPreferences({ ...preferences, analytics: e.target.checked })}
+              className="h-4 w-4 accent-accent"
+            />
+          </label>
+
+          <label className="flex items-center justify-between cursor-pointer">
+            <div>
+              <span className="text-[12px] font-medium text-ink">Marketing</span>
+              <p className="text-[10px] text-ink-faint">Personalized content and feature announcements</p>
+            </div>
+            <input
+              type="checkbox"
+              checked={preferences.marketing}
+              onChange={(e) => setPreferences({ ...preferences, marketing: e.target.checked })}
+              className="h-4 w-4 accent-accent"
+            />
+          </label>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+          <button
+            onClick={acceptAll}
+            className="flex-1 rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white hover:bg-accent/90"
+          >
+            Accept All
+          </button>
+          <button
+            onClick={savePreferences}
+            className="flex-1 rounded-md border border-border bg-surface-alt px-3 py-2 text-[12px] font-medium text-ink hover:bg-white/[0.03]"
+          >
+            Save Preferences
+          </button>
+          <button
+            onClick={acceptNecessary}
+            className="flex-1 rounded-md border border-border bg-surface-alt px-3 py-2 text-[12px] font-medium text-ink-dim hover:bg-white/[0.03]"
+          >
+            Necessary Only
+          </button>
+        </div>
+
+        <p className="mt-3 text-[10px] text-center text-ink-faint">
+          <a href="/privacy" className="underline hover:text-accent">Privacy Policy</a> ·{" "}
+          <a href="/terms" className="underline hover:text-accent">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  );
+}

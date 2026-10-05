@@ -1,1 +1,8 @@
-aW1wb3J0IHsgUm91dGVyLCB0eXBlIElSb3V0ZXIgfSBmcm9tICJleHByZXNzIjsKaW1wb3J0IGhlYWx0aFJvdXRlciBmcm9tICIuL2hlYWx0aCI7Cgpjb25zdCByb3V0ZXI6IElSb3V0ZXIgPSBSb3V0ZXIoKTsKCnJvdXRlci51c2UoaGVhbHRoUm91dGVyKTsKCmV4cG9ydCBkZWZhdWx0IHJvdXRlcjsK
+import { Router, type IRouter } from "express";
+import healthRouter from "./health";
+
+const router: IRouter = Router();
+
+router.use(healthRouter);
+
+export default router;

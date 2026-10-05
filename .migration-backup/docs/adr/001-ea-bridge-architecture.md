@@ -1,1 +1,39 @@
-IyBBRFIgMDAxOiBFQSBCcmlkZ2UgQ29tbXVuaWNhdGlvbiBQcm90b2NvbCAoSFRUUFMgUG9sbGluZyB2cyBXZWJTb2NrZXRzIGluIE1RTDUpCgojIyBTdGF0dXMKQWNjZXB0ZWQKCiMjIENvbnRleHQKVGhlIEFlZ2lzUXVhbnQgcGxhdGZvcm0gY29ubmVjdHMgTWV0YVRyYWRlciA1IChNVDUpIHRlcm1pbmFscyBydW5uaW5nIEV4cGVydCBBZHZpc29ycyAoRUFzKSB3aXRoIGEgY2xvdWQgYmFja2VuZCB0aGF0IGRpc3RyaWJ1dGVzIEFJLWdlbmVyYXRlZCB0cmFkaW5nIHNpZ25hbHMgYW5kIGFnZ3JlZ2F0ZXMgcmVhbC10aW1lIGFjY291bnQgdGVsZW1ldHJ5LgoKTWV0YVRyYWRlciA1IHByb3ZpZGVzIG5hdGl2ZSBuZXR3b3JrIGNvbW11bmljYXRpb24gdmlhIHRoZSBgV2ViUmVxdWVzdCgpYCBNUUw1IGZ1bmN0aW9uLiBIb3dldmVyOgoxLiBgV2ViUmVxdWVzdCgpYCBpcyBzdHJpY3RseSBibG9ja2luZyBhbmQgc3luY2hyb25vdXMuCjIuIE1RTDUgZG9lcyBub3QgcHJvdmlkZSBuYXRpdmUsIHN0YWJsZSBXZWJTb2NrZXQgc3VwcG9ydCB3aXRob3V0IGxvYWRpbmcgdGhpcmQtcGFydHkgRExMcy4KMy4gTG9hZGluZyB0aGlyZC1wYXJ0eSBETExzIGluIE1UNSBleHBvc2VzIHVzZXJzIHRvIHNlY3VyaXR5IHJpc2tzLCBkaXNhYmxlcyBNVDUgbWFya2V0cGxhY2UgY29tcGxpYW5jZSwgcmVxdWlyZXMgYWRtaW5pc3RyYXRpdmUgcGVybWlzc2lvbnMsIGFuZCBjb21wbGljYXRlcyB1c2VyIGluc3RhbGxhdGlvbi4KNC4gSWYgYSBuZXR3b3JrIGNhbGwgaGFuZ3MsIHRoZSBFQSB0aHJlYWQgaW4gTVQ1IGZyZWV6ZXMgdW5sZXNzIGJvdW5kZWQgYnkgYSBzdHJpY3QgdGltZW91dC4KCiMjIERlY2lzaW9uCldlIGFkb3B0IGFuICoqSFRUUFMgUkVTVCArIFNob3J0IExvbmctUG9sbCBCcmlkZ2UqKiB1dGlsaXppbmcgTVQ1J3MgbmF0aXZlIGBXZWJSZXF1ZXN0KClgOgoxLiAqKkhlYXJ0YmVhdCAmIFRlbGVtZXRyeSAoYFBPU1QgL2VhL3YxL2hlYXJ0YmVhdGApKio6CiAgIC0gU2VudCBvbiBhIHBlcmlvZGljIHRpbWVyIChkZWZhdWx0IDUgc2Vjb25kcykuCiAgIC0gUmVwb3J0cyBjdXJyZW50IGJhbGFuY2UsIGVxdWl0eSwgZnJlZSBtYXJnaW4sIGFuZCBhY3RpdmUgb3BlbiBwb3NpdGlvbnMuCiAgIC0gU2VydmVyIHJldHVybnMgY3VycmVudCBzZXJ2ZXIgdGltZSwgY29uZmlnIHVwZGF0ZXMsIGFuZCBlbWVyZ2VuY3kga2lsbC1zd2l0Y2ggc3RhdHVzLgoyLiAqKlNpZ25hbCBQb2xsaW5nIChgR0VUIC9lYS92MS9zaWduYWxzP3NpbmNlPWN1cnNvcmApKio6CiAgIC0gUG9sbGVkIG9uIGEgZGVkaWNhdGVkIHRpbWVyIGxvb3AgKDHigJMyIHNlY29uZHMpIHdpdGggYSBzZXJ2ZXItc2lkZSBzaG9ydCB0aW1lb3V0IChvciBpbW1lZGlhdGUgcXVldWUgZHJhaW4pLgogICAtIFN0cmljdCAzMDAwIG1zIHRpbWVvdXQgb24gZXZlcnkgYFdlYlJlcXVlc3QoKWAgY2FsbC4KMy4gKipFeHBvbmVudGlhbCBCYWNrb2ZmKio6CiAgIC0gSWYgdGhlIGJhY2tlbmQgaXMgdW5yZWFjaGFibGUgb3IgcmV0dXJucyA1eHggZXJyb3JzLCB0aGUgRUEgYmFja3Mgb2ZmICgkMVx0ZXh0e3N9LCAyXHRleHR7c30sIDRcdGV4dHtzfSBcZG90cyA2MFx0ZXh0e3N9JCkgd2hpbGUga2VlcGluZyB0aGUgbG9jYWwgVUkgYW5kIHN0b3AtbG9zcyBtYW5hZ2VtZW50IGZ1bGx5IG9wZXJhdGlvbmFsLgo0LiAqKkR1YWwgQVBJIFN1cmZhY2VzKio6CiAgIC0gYC9lYS92MS8qYDogVGVybWluYWwgZGV2aWNlIGVuZHBvaW50cyAoYXV0aGVudGljYXRlZCB2aWEgSE1BQy1TSEEyNTYpLgogICAtIGAvYXBwL3YxLypgOiBXZWIgdXNlciBlbmRwb2ludHMgKGF1dGhlbnRpY2F0ZWQgdmlhIEhUVFAtb25seSBzZWN1cmUgY29va2llIHNlc3Npb25zKS4KICAgLSBTZXJ2ZXItc2VudCBldmVudHMgKFNTRSkgLyBXZWJTb2NrZXRzIGZlZCBieSBSZWRpcyBQdWIvU3ViIGFyZSB1c2VkIGV4Y2x1c2l2ZWx5IGJldHdlZW4gdGhlIGJhY2tlbmQgYW5kIHRoZSBOZXh0LmpzIHdlYiBhcHBsaWNhdGlvbiBmcm9udGVuZC4KCiMjIFJlamVjdGVkIEFsdGVybmF0aXZlcwoxLiAqKk1RTDUgRExMIHdpdGggV2ViU29ja2V0cyoqOgogICAtICpSZWplY3RlZCogYmVjYXVzZSByZXF1aXJpbmcgdXNlcnMgdG8gZW5hYmxlIERMTCBpbXBvcnRzIGJyZWFrcyB0cnVzdCwgZmFpbHMgTVQ1IHNlY3VyaXR5IGF1ZGl0cywgYW5kIGludHJvZHVjZXMgY3Jhc2ggdnVsbmVyYWJpbGl0aWVzIGluIHRoZSB0ZXJtaW5hbCBwcm9jZXNzLgoyLiAqKkxvY2FsIFB5dGhvbiBTaWRlY2FyIG9uIFVzZXIgTWFjaGluZSoqOgogICAtICpSZWplY3RlZCogZm9yIHRoZSBwcmltYXJ5IHVzZXIgZXhwZXJpZW5jZSBkdWUgdG8gaW5zdGFsbGF0aW9uIGZyaWN0aW9uIChQeXRob24gcnVudGltZSwgcGlwIGRlcGVuZGVuY2llcywgT1MgcGVybWlzc2lvbnMpLiBUaGUgc3RhbmRhbG9uZSBNUUw1IHNpbmdsZS1maWxlIEVBIGlzIHplcm8tZnJpY3Rpb24uCgojIyBDb25zZXF1ZW5jZXMKLSAqKlBvc2l0aXZlKio6IE5hdGl2ZSBNVDUgY29tcGF0aWJpbGl0eSB3aXRoIHplcm8gZXh0ZXJuYWwgRExMIGRlcGVuZGVuY2llczsgY2xlYW4gc2VwYXJhdGlvbiBiZXR3ZWVuIGhpZ2gtZnJlcXVlbmN5IEVBIGNvbW11bmljYXRpb24gYW5kIHVzZXIgd2ViIHNlc3Npb25zOyBkZXRlcm1pbmlzdGljIGZhaWx1cmUgcmVjb3ZlcnkuCi0gKipOZWdhdGl2ZSoqOiBBZGRzIG1pbm9yIGxhdGVuY3kgb3ZlcmhlYWQgKHRlbnMgb2YgbWlsbGlzZWNvbmRzKSBjb21wYXJlZCB0byByYXcgVENQIHNvY2tldHMsIHdoaWNoIGlzIG5lZ2xpZ2libGUgZm9yIHN3aW5nIGFuZCBtdWx0aS1taW51dGUgaW50cmFkYXkgQUkgdHJhZGUgc2lnbmFscy4K
+# ADR 001: EA Bridge Communication Protocol (HTTPS Polling vs WebSockets in MQL5)
+
+## Status
+Accepted
+
+## Context
+The AegisQuant platform connects MetaTrader 5 (MT5) terminals running Expert Advisors (EAs) with a cloud backend that distributes AI-generated trading signals and aggregates real-time account telemetry.
+
+MetaTrader 5 provides native network communication via the `WebRequest()` MQL5 function. However:
+1. `WebRequest()` is strictly blocking and synchronous.
+2. MQL5 does not provide native, stable WebSocket support without loading third-party DLLs.
+3. Loading third-party DLLs in MT5 exposes users to security risks, disables MT5 marketplace compliance, requires administrative permissions, and complicates user installation.
+4. If a network call hangs, the EA thread in MT5 freezes unless bounded by a strict timeout.
+
+## Decision
+We adopt an **HTTPS REST + Short Long-Poll Bridge** utilizing MT5's native `WebRequest()`:
+1. **Heartbeat & Telemetry (`POST /ea/v1/heartbeat`)**:
+   - Sent on a periodic timer (default 5 seconds).
+   - Reports current balance, equity, free margin, and active open positions.
+   - Server returns current server time, config updates, and emergency kill-switch status.
+2. **Signal Polling (`GET /ea/v1/signals?since=cursor`)**:
+   - Polled on a dedicated timer loop (1–2 seconds) with a server-side short timeout (or immediate queue drain).
+   - Strict 3000 ms timeout on every `WebRequest()` call.
+3. **Exponential Backoff**:
+   - If the backend is unreachable or returns 5xx errors, the EA backs off ($1\text{s}, 2\text{s}, 4\text{s} \dots 60\text{s}$) while keeping the local UI and stop-loss management fully operational.
+4. **Dual API Surfaces**:
+   - `/ea/v1/*`: Terminal device endpoints (authenticated via HMAC-SHA256).
+   - `/app/v1/*`: Web user endpoints (authenticated via HTTP-only secure cookie sessions).
+   - Server-sent events (SSE) / WebSockets fed by Redis Pub/Sub are used exclusively between the backend and the Next.js web application frontend.
+
+## Rejected Alternatives
+1. **MQL5 DLL with WebSockets**:
+   - *Rejected* because requiring users to enable DLL imports breaks trust, fails MT5 security audits, and introduces crash vulnerabilities in the terminal process.
+2. **Local Python Sidecar on User Machine**:
+   - *Rejected* for the primary user experience due to installation friction (Python runtime, pip dependencies, OS permissions). The standalone MQL5 single-file EA is zero-friction.
+
+## Consequences
+- **Positive**: Native MT5 compatibility with zero external DLL dependencies; clean separation between high-frequency EA communication and user web sessions; deterministic failure recovery.
+- **Negative**: Adds minor latency overhead (tens of milliseconds) compared to raw TCP sockets, which is negligible for swing and multi-minute intraday AI trade signals.

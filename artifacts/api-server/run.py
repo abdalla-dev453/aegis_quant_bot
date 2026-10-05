@@ -1,1 +1,66 @@
-IiIiU2VydmUgdGhlIGltcG9ydGVkIFB5dGhvbiBBUElzIHRocm91Z2ggdGhlIGFydGlmYWN0J3MgYXNzaWduZWQgcG9ydC4KCk9ubHkgdGhlIG1vbml0b3JpbmcgQVBJIHN0YXJ0cyBoZXJlLiBUaGUgdHJhZGluZyBydW5uZXIgaXMgZGVsaWJlcmF0ZWx5IG5vdApzdGFydGVkOiB0aGlzIExpbnV4IHdvcmtzcGFjZSBpcyBub3QgYSBxdWFsaWZpZWQgYnJva2VyL01UNSBleGVjdXRpb24gaG9zdC4KIiIiCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBvcwpmcm9tIHBhdGhsaWIgaW1wb3J0IFBhdGgKaW1wb3J0IHN5cwoKZnJvbSBmYXN0YXBpIGltcG9ydCBGYXN0QVBJLCBSZXF1ZXN0CmZyb20gZmFzdGFwaS5yZXNwb25zZXMgaW1wb3J0IEpTT05SZXNwb25zZQppbXBvcnQgdXZpY29ybgoKUk9PVCA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnRzWzJdCnN5cy5wYXRoLmluc2VydCgwLCBzdHIoUk9PVCAvICJsaWIiIC8gInRyYWRpbmctZW5naW5lIikpCnN5cy5wYXRoLmluc2VydCgwLCBzdHIoUk9PVCAvICJsaWIiIC8gImVhLWJyaWRnZSIpKQoKIyBSdW50aW1lLW9ubHkgYXV0aGVudGljYXRpb246IG5ldmVyIGV4cG9zZSB0aGlzIHZhbHVlIHRvIFZpdGUgb3IgdGhlIGJyb3dzZXIuCmlmIG5vdCBvcy5lbnZpcm9uLmdldCgiQVBJX1RPS0VOIik6CiAgICBpZiBub3Qgb3MuZW52aXJvbi5nZXQoIlNFU1NJT05fU0VDUkVUIik6CiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKCJDb25maWd1cmUgQVBJX1RPS0VOIGluIFJlcGxpdCBTZWNyZXRzIGJlZm9yZSBzdGFydGluZyB0aGUgQVBJLiIpCiAgICBvcy5lbnZpcm9uWyJBUElfVE9LRU4iXSA9IG9zLmVudmlyb25bIlNFU1NJT05fU0VDUkVUIl0KCmZyb20gYXBpIGltcG9ydCBhcHAgYXMgYm90X2FwcApmcm9tIGRhdGFfcHJvdmlkZXIgaW1wb3J0IE1UNUNvbm5lY3Rpb25FcnJvcgoKCkBib3RfYXBwLmV4Y2VwdGlvbl9oYW5kbGVyKE1UNUNvbm5lY3Rpb25FcnJvcikKYXN5bmMgZGVmIG10NV91bmF2YWlsYWJsZShyZXF1ZXN0OiBSZXF1ZXN0LCBlcnJvcjogTVQ1Q29ubmVjdGlvbkVycm9yKToKICAgIHJldHVybiBKU09OUmVzcG9uc2Uoc3RhdHVzX2NvZGU9NTAzLCBjb250ZW50PXsiZGV0YWlsIjogc3RyKGVycm9yKX0pCgoKIyBQcmVzZXJ2ZSB0aGUgZXh0ZXJuYWwgUG9zdGdyZVNRTC9SZWRpcyBhcmNoaXRlY3R1cmU7IGRvIG5vdCBjcmVhdGUgc3Vic3RpdHV0ZQojIHN0b3JlcyBvciBzaWxlbnRseSBtaWdyYXRlIHRoZSB1c2VyJ3MgZGF0YSB0byBhIGRpZmZlcmVudCBkYXRhYmFzZS4KYnJpZGdlX2FwcCA9IE5vbmUKaWYgb3MuZW52aXJvbi5nZXQoIkRBVEFCQVNFX1VSTCIpIGFuZCBvcy5lbnZpcm9uLmdldCgiUkVESVNfVVJMIik6CiAgICBmcm9tIGFwcC5tYWluIGltcG9ydCBhcHAgYXMgYnJpZGdlX2FwcAoKCiMgUHJlc2VydmUgdGhlIG9yaWdpbmFsIEVBIHBhdGhzLCBpbmNsdWRpbmcgdGhlIEhNQUMtc2lnbmVkIHJlcXVlc3QgcGF0aC4KIyBXaGVuIGNvbmZpZ3VyZWQsIHRoZSBicmlkZ2UgcmV0YWlucyBpdHMgb3duIGxpZmVzcGFuIGFuZCBzdGF0ZSB1bmNoYW5nZWQuCmFwcCA9IGJyaWRnZV9hcHAgaWYgYnJpZGdlX2FwcCBpcyBub3QgTm9uZSBlbHNlIEZhc3RBUEkodGl0bGU9Ik9ueXggRlggUmVwbGl0IEFQSSIpCgoKQGFwcC5nZXQoIi9hcGkvaGVhbHRoeiIpCmFzeW5jIGRlZiBoZWFsdGgoKToKICAgIHJldHVybiB7InN0YXR1cyI6ICJvayIsICJ0cmFkaW5nUnVubmVyU3RhcnRlZCI6IEZhbHNlLAogICAgICAgICAgICAiZWFCcmlkZ2VDb25maWd1cmVkIjogYnJpZGdlX2FwcCBpcyBub3QgTm9uZX0KCgppZiBicmlkZ2VfYXBwIGlzIE5vbmU6CiAgICBAYXBwLmFwaV9yb3V0ZSgiL2FwcC92MS97cGF0aDpwYXRofSIsIG1ldGhvZHM9WyJHRVQiLCAiUE9TVCIsICJQQVRDSCIsICJERUxFVEUiLCAiUFVUIl0pCiAgICBAYXBwLmFwaV9yb3V0ZSgiL2VhL3YxL3twYXRoOnBhdGh9IiwgbWV0aG9kcz1bIkdFVCIsICJQT1NUIiwgIlBBVENIIiwgIkRFTEVURSIsICJQVVQiXSkKICAgIGFzeW5jIGRlZiBicmlkZ2Vfbm90X2NvbmZpZ3VyZWQocGF0aDogc3RyKToKICAgICAgICByZXR1cm4gSlNPTlJlc3BvbnNlKHN0YXR1c19jb2RlPTUwMywgY29udGVudD17CiAgICAgICAgICAgICJjb2RlIjogIkJSSURHRV9OT1RfQ09ORklHVVJFRCIsCiAgICAgICAgICAgICJtZXNzYWdlIjogIlRoZSBFQSBicmlkZ2UgcmVxdWlyZXMgaXRzIG9yaWdpbmFsIFBvc3RncmVTUUwgREFUQUJBU0VfVVJMIGFuZCBSZWRpcyBSRURJU19VUkwuIgogICAgICAgIH0pCgphcHAubW91bnQoIi8iLCBib3RfYXBwKQoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHV2aWNvcm4ucnVuKGFwcCwgaG9zdD0iMC4wLjAuMCIsIHBvcnQ9aW50KG9zLmVudmlyb25bIlBPUlQiXSksCiAgICAgICAgICAgICAgICBwcm94eV9oZWFkZXJzPVRydWUsIGZvcndhcmRlZF9hbGxvd19pcHM9IjEyNy4wLjAuMSIp
+"""Serve the imported Python APIs through the artifact's assigned port.
+
+Only the monitoring API starts here. The trading runner is deliberately not
+started: this Linux workspace is not a qualified broker/MT5 execution host.
+"""
+from __future__ import annotations
+
+import os
+from pathlib import Path
+import sys
+
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+import uvicorn
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "lib" / "trading-engine"))
+sys.path.insert(0, str(ROOT / "lib" / "ea-bridge"))
+
+# Runtime-only authentication: never expose this value to Vite or the browser.
+if not os.environ.get("API_TOKEN"):
+    if not os.environ.get("SESSION_SECRET"):
+        raise RuntimeError("Configure API_TOKEN in Replit Secrets before starting the API.")
+    os.environ["API_TOKEN"] = os.environ["SESSION_SECRET"]
+
+from api import app as bot_app
+from data_provider import MT5ConnectionError
+
+
+@bot_app.exception_handler(MT5ConnectionError)
+async def mt5_unavailable(request: Request, error: MT5ConnectionError):
+    return JSONResponse(status_code=503, content={"detail": str(error)})
+
+
+# Preserve the external PostgreSQL/Redis architecture; do not create substitute
+# stores or silently migrate the user's data to a different database.
+bridge_app = None
+if os.environ.get("DATABASE_URL") and os.environ.get("REDIS_URL"):
+    from app.main import app as bridge_app
+
+
+# Preserve the original EA paths, including the HMAC-signed request path.
+# When configured, the bridge retains its own lifespan and state unchanged.
+app = bridge_app if bridge_app is not None else FastAPI(title="Onyx FX Replit API")
+
+
+@app.get("/api/healthz")
+async def health():
+    return {"status": "ok", "tradingRunnerStarted": False,
+            "eaBridgeConfigured": bridge_app is not None}
+
+
+if bridge_app is None:
+    @app.api_route("/app/v1/{path:path}", methods=["GET", "POST", "PATCH", "DELETE", "PUT"])
+    @app.api_route("/ea/v1/{path:path}", methods=["GET", "POST", "PATCH", "DELETE", "PUT"])
+    async def bridge_not_configured(path: str):
+        return JSONResponse(status_code=503, content={
+            "code": "BRIDGE_NOT_CONFIGURED",
+            "message": "The EA bridge requires its original PostgreSQL DATABASE_URL and Redis REDIS_URL."
+        })
+
+app.mount("/", bot_app)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ["PORT"]),
+                proxy_headers=True, forwarded_allow_ips="127.0.0.1")

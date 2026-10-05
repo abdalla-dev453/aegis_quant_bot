@@ -1,1 +1,28 @@
-a2luZCA9ICJ3ZWIiCnByZXZpZXdQYXRoID0gIi8iCnRpdGxlID0gIk9ueXggRlgiCmRlc2NyaXB0aW9uID0gIlRoZSBpbXBvcnRlZCBPbnl4IEZYIHRyYWRpbmcgZGFzaGJvYXJkLCB3aXRoIHBlcmZvcm1hbmNlIG1vbml0b3JpbmcsIHRyYWRpbmcgY29udHJvbHMsIHN0cmF0ZWd5IHNldHRpbmdzLCBsb2dzIGFuZCB0aGUgb3JpZ2luYWwgQWVnaXNRdWFudCB0ZXJtaW5hbC4iCnZlcnNpb24gPSAiMS4wLjAiCmlkID0gImFydGlmYWN0cy9vbnl4LWZ4Igpyb3V0ZXIgPSAicGF0aCIKCltbc2VydmljZXNdXQpuYW1lID0gIndlYiIKcGF0aHMgPSBbICIvIiBdCmxvY2FsUG9ydCA9IDE5MDkzCgpbc2VydmljZXMuZGV2ZWxvcG1lbnRdCnJ1biA9ICJwbnBtIC0tZmlsdGVyIEB3b3Jrc3BhY2Uvb255eC1meCBydW4gZGV2IgoKW3NlcnZpY2VzLnByb2R1Y3Rpb25dCmJ1aWxkID0gWyAicG5wbSIsICItLWZpbHRlciIsICJAd29ya3NwYWNlL29ueXgtZngiLCAicnVuIiwgImJ1aWxkIiBdCnNlcnZlID0gInN0YXRpYyIKcHVibGljRGlyID0gImFydGlmYWN0cy9vbnl4LWZ4L2Rpc3QvcHVibGljIgoKW1tzZXJ2aWNlcy5wcm9kdWN0aW9uLnJld3JpdGVzXV0KZnJvbSA9ICIvKiIKdG8gPSAiL2luZGV4Lmh0bWwiCgpbc2VydmljZXMuZW52XQpQT1JUID0gIjE5MDkzIgpCQVNFX1BBVEggPSAiLyIK
+kind = "web"
+previewPath = "/"
+title = "Onyx FX"
+description = "The imported Onyx FX trading dashboard, with performance monitoring, trading controls, strategy settings, logs and the original AegisQuant terminal."
+version = "1.0.0"
+id = "artifacts/onyx-fx"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19093
+
+[services.development]
+run = "pnpm --filter @workspace/onyx-fx run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/onyx-fx", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/onyx-fx/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19093"
+BASE_PATH = "/"

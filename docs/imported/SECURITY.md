@@ -1,1 +1,21 @@
-IyBTZWN1cml0eSBQb2xpY3kKCiMjIFN1cHBvcnRlZCBWZXJzaW9ucwoKVXNlIHRoaXMgc2VjdGlvbiB0byB0ZWxsIHBlb3BsZSBhYm91dCB3aGljaCB2ZXJzaW9ucyBvZiB5b3VyIHByb2plY3QgYXJlCmN1cnJlbnRseSBiZWluZyBzdXBwb3J0ZWQgd2l0aCBzZWN1cml0eSB1cGRhdGVzLgoKfCBWZXJzaW9uIHwgU3VwcG9ydGVkICAgICAgICAgIHwKfCAtLS0tLS0tIHwgLS0tLS0tLS0tLS0tLS0tLS0tIHwKfCA1LjEueCAgIHwgOndoaXRlX2NoZWNrX21hcms6IHwKfCA1LjAueCAgIHwgOng6ICAgICAgICAgICAgICAgIHwKfCA0LjAueCAgIHwgOndoaXRlX2NoZWNrX21hcms6IHwKfCA8IDQuMCAgIHwgOng6ICAgICAgICAgICAgICAgIHwKCiMjIFJlcG9ydGluZyBhIFZ1bG5lcmFiaWxpdHkKClVzZSB0aGlzIHNlY3Rpb24gdG8gdGVsbCBwZW9wbGUgaG93IHRvIHJlcG9ydCBhIHZ1bG5lcmFiaWxpdHkuCgpUZWxsIHRoZW0gd2hlcmUgdG8gZ28sIGhvdyBvZnRlbiB0aGV5IGNhbiBleHBlY3QgdG8gZ2V0IGFuIHVwZGF0ZSBvbiBhCnJlcG9ydGVkIHZ1bG5lcmFiaWxpdHksIHdoYXQgdG8gZXhwZWN0IGlmIHRoZSB2dWxuZXJhYmlsaXR5IGlzIGFjY2VwdGVkIG9yCmRlY2xpbmVkLCBldGMuCg==
+# Security Policy
+
+## Supported Versions
+
+Use this section to tell people about which versions of your project are
+currently being supported with security updates.
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 5.1.x   | :white_check_mark: |
+| 5.0.x   | :x:                |
+| 4.0.x   | :white_check_mark: |
+| < 4.0   | :x:                |
+
+## Reporting a Vulnerability
+
+Use this section to tell people how to report a vulnerability.
+
+Tell them where to go, how often they can expect to get an update on a
+reported vulnerability, what to expect if the vulnerability is accepted or
+declined, etc.

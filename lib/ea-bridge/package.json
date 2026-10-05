@@ -1,1 +1,10 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2UvZWEtYnJpZGdlIiwKICAicHJpdmF0ZSI6IHRydWUsCiAgInNjcmlwdHMiOiB7CiAgICAiYnVpbGQiOiAicHl0aG9uIC1tIGNvbXBpbGVhbGwgLXEgYXBwIiwKICAgICJsaW50IjogInJ1ZmYgY2hlY2sgYXBwIHRlc3RzIiwKICAgICJ0eXBlY2hlY2siOiAibXlweSAtLXN0cmljdCBhcHAiLAogICAgInRlc3QiOiAiUFlUSE9OUEFUSD0uIHB5dGhvbiAtbSBweXRlc3QgLXEgdGVzdHMvdGVzdF9jb250cmFjdHMucHkgdGVzdHMvdGVzdF9zZWN1cml0eS5weSIKICB9Cn0=
+{
+  "name": "@workspace/ea-bridge",
+  "private": true,
+  "scripts": {
+    "build": "python -m compileall -q app",
+    "lint": "ruff check app tests",
+    "typecheck": "mypy --strict app",
+    "test": "PYTHONPATH=. python -m pytest -q tests/test_contracts.py tests/test_security.py"
+  }
+}

@@ -1,1 +1,131 @@
-aW1wb3J0IHsgdXNlRWZmZWN0IH0gZnJvbSAicmVhY3QiOwppbXBvcnQgeyBIZWxtZXQgfSBmcm9tICJyZWFjdC1oZWxtZXQtYXN5bmMiOwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUHJpdmFjeVBvbGljeSgpIHsKICB1c2VFZmZlY3QoKCkgPT4gewogICAgZG9jdW1lbnQudGl0bGUgPSAiUHJpdmFjeSBQb2xpY3kgfCBPbnl4IEZYIjsKICB9LCBbXSk7CgogIHJldHVybiAoCiAgICA8PgogICAgICA8SGVsbWV0PgogICAgICAgIDx0aXRsZT5Qcml2YWN5IFBvbGljeSB8IE9ueXggRlg8L3RpdGxlPgogICAgICAgIDxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSJPbnl4IEZYIFByaXZhY3kgUG9saWN5IOKAlCBIb3cgd2UgY29sbGVjdCwgdXNlLCBhbmQgcHJvdGVjdCB5b3VyIGRhdGEuIiAvPgogICAgICAgIDxtZXRhIHByb3BlcnR5PSJvZzp0aXRsZSIgY29udGVudD0iUHJpdmFjeSBQb2xpY3kgfCBPbnl4IEZYIiAvPgogICAgICAgIDxtZXRhIHByb3BlcnR5PSJvZzpkZXNjcmlwdGlvbiIgY29udGVudD0iSG93IHdlIGNvbGxlY3QsIHVzZSwgYW5kIHByb3RlY3QgeW91ciBkYXRhLiIgLz4KICAgICAgPC9IZWxtZXQ+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBtaW4taC1zY3JlZW4gZmxleC1jb2wiPgogICAgICAgIDxoZWFkZXIgY2xhc3NOYW1lPSJib3JkZXItYiBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcHgtNCBweS00IG1kOnB4LTgiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctNHhsIj4KICAgICAgICAgICAgPGEgaHJlZj0iLyIgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiB0ZXh0LWluayIgb25DbGljaz17KGUpID0+IHsgZS5wcmV2ZW50RGVmYXVsdCgpOyB3aW5kb3cuaGlzdG9yeS5iYWNrKCk7IH19PgogICAgICAgICAgICAgIDxzdmcgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2VXaWR0aD0iMiI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTkgMTJINU0xMiAxOWwtNy03IDctNyIgLz4KICAgICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtc20gZm9udC1zZW1pYm9sZCB0cmFja2luZy13aWRlIj5Pbnl4IEZYPC9zcGFuPgogICAgICAgICAgICA8L2E+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2hlYWRlcj4KCiAgICAgICAgPG1haW4gY2xhc3NOYW1lPSJmbGV4LTEgcHgtNCBweS04IG1kOnB4LTgiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctM3hsIHNwYWNlLXktOCI+CiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT0idGV4dC0yeGwgbWQ6dGV4dC0zeGwgZm9udC1zZW1pYm9sZCB0ZXh0LWluayI+UHJpdmFjeSBQb2xpY3k8L2gxPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMiB0ZXh0LXNtIHRleHQtaW5rLWZhaW50Ij5MYXN0IHVwZGF0ZWQ6IFNlcHRlbWJlciAyMDI2PC9wPgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtaW5rIj4xLiBEYXRhIFdlIENvbGxlY3Q8L2gyPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LWluay1kaW0gbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICAgIE9ueXggRlggaXMgYSBsb2NhbGx5LWhvc3RlZCBhbGdvcml0aG1pYyB0cmFkaW5nIGRhc2hib2FyZC4gV2UgZG8gbm90IG9wZXJhdGUgYSBjbG91ZCBzZXJ2aWNlLAogICAgICAgICAgICAgICAgYW5kIHdlIGRvIG5vdCBjb2xsZWN0IHBlcnNvbmFsIGRhdGEgZnJvbSB2aXNpdG9ycy4gVGhlIG9ubHkgZGF0YSBwcm9jZXNzZWQgYnkgdGhpcyBhcHBsaWNhdGlvbiBpbmNsdWRlczoKICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibXQtMiBtbC00IGxpc3QtZGlzYyBzcGFjZS15LTEgdGV4dC1zbSB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgPGxpPjxzdHJvbmc+TVQ1IENyZWRlbnRpYWxzOjwvc3Ryb25nPiBTdWJtaXR0ZWQgdmlhIHRoZSBTZXR0aW5ncyBwYWdlIHRvIGVzdGFibGlzaCBhIGxvY2FsIE1UNSB0ZXJtaW5hbCBjb25uZWN0aW9uLiBDcmVkZW50aWFscyBhcmUgaGVsZCBpbiBtZW1vcnkgZm9yIHRoZSBzZXNzaW9uIG9ubHkgYW5kIGFyZSBuZXZlciBwZXJzaXN0ZWQgdG8gZGlzayBvciB0cmFuc21pdHRlZCB0byBhbnkgdGhpcmQgcGFydHkuPC9saT4KICAgICAgICAgICAgICAgIDxsaT48c3Ryb25nPlRyYWRpbmcgRGF0YTo8L3N0cm9uZz4gQWNjb3VudCBlcXVpdHksIHBvc2l0aW9ucywgUCZMLCBhbmQgZXhlY3V0aW9uIGxvZ3MgZmV0Y2hlZCBmcm9tIHlvdXIgbG9jYWwgTVQ1IHRlcm1pbmFsIHZpYSB0aGUgRmFzdEFQSSBicmlkZ2UuIFRoaXMgZGF0YSBuZXZlciBsZWF2ZXMgeW91ciBtYWNoaW5lL25ldHdvcmsuPC9saT4KICAgICAgICAgICAgICAgIDxsaT48c3Ryb25nPlByZWZlcmVuY2VzOjwvc3Ryb25nPiBUaGVtZSBzZWxlY3Rpb24gKGxpZ2h0L2Rhcmsvc3lzdGVtKSBhbmQgY29va2llIGNvbnNlbnQgc3RvcmVkIGluIDxjb2RlPmxvY2FsU3RvcmFnZTwvY29kZT4gb24geW91ciBkZXZpY2UuPC9saT4KICAgICAgICAgICAgICAgIDxsaT48c3Ryb25nPkFJIFJlcXVlc3RzOjwvc3Ryb25nPiBNYXJrZXQgY29udGV4dCAocHJpY2UgZGF0YSwgaW5kaWNhdG9ycywgbmV3cyBoZWFkbGluZXMpIHNlbnQgdG8gT3BlbkFJJ3MgQVBJIHdoZW4gdGhlIEFJIGVuZ2luZSBpcyBlbmFibGVkLiBObyBhY2NvdW50IGNyZWRlbnRpYWxzIG9yIFBJSSBhcmUgaW5jbHVkZWQuPC9saT4KICAgICAgICAgICAgICA8L3VsPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+Mi4gSG93IERhdGEgSXMgVXNlZDwvaDI+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibWwtNCBsaXN0LWRpc2Mgc3BhY2UteS0xIHRleHQtc20gdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICAgIDxsaT5NVDUgY3JlZGVudGlhbHM6IFVzZWQgZXhjbHVzaXZlbHkgdG8gaW5pdGlhbGl6ZSB0aGUgTWV0YVRyYWRlciA1IHRlcm1pbmFsIGNvbm5lY3Rpb24gZm9yIHRoZSBjdXJyZW50IHNlc3Npb24uPC9saT4KICAgICAgICAgICAgICAgIDxsaT5UcmFkaW5nIGRhdGE6IERpc3BsYXllZCBpbiB0aGUgZGFzaGJvYXJkIGZvciBtb25pdG9yaW5nIGFuZCBhbmFseXNpcy48L2xpPgogICAgICAgICAgICAgICAgPGxpPlByZWZlcmVuY2VzOiBQZXJzaXN0IHlvdXIgVUkgdGhlbWUgYW5kIGNvbnNlbnQgY2hvaWNlcyBhY3Jvc3Mgc2Vzc2lvbnMuPC9saT4KICAgICAgICAgICAgICAgIDxsaT5BSSByZXF1ZXN0czogR2VuZXJhdGUgdHJhZGUgcHJvcG9zYWxzIGJhc2VkIG9uIHRlY2huaWNhbCBhbmQgZnVuZGFtZW50YWwgYW5hbHlzaXMuPC9saT4KICAgICAgICAgICAgICA8L3VsPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+My4gRGF0YSBTaGFyaW5nPC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1pbmstZGltIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgICAgICAgICBXZSBkbyBub3Qgc2VsbCwgcmVudCwgb3Igc2hhcmUgeW91ciBkYXRhIHdpdGggdGhpcmQgcGFydGllcy4gVGhlIG9ubHkgZXh0ZXJuYWwgY29tbXVuaWNhdGlvbiBpczoKICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibXQtMiBtbC00IGxpc3QtZGlzYyBzcGFjZS15LTEgdGV4dC1zbSB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgPGxpPk9wZW5BSSBBUEkgKHdoZW4gQUkgZW5naW5lIGlzIGVuYWJsZWQpIOKAlCByZWNlaXZlcyBhbm9ueW1pemVkIG1hcmtldCBjb250ZXh0IG9ubHkuPC9saT4KICAgICAgICAgICAgICAgIDxsaT5OZXdzIEFQSSAoTmV3c0FQSS5vcmcgb3IgWWFob28gUlNTKSDigJQgcHVibGljIGVjb25vbWljIGNhbGVuZGFyIGRhdGEuPC9saT4KICAgICAgICAgICAgICA8L3VsPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+NC4gTG9jYWwgU3RvcmFnZSAmIENvb2tpZXM8L2gyPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LWluay1kaW0gbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICAgIFRoaXMgYXBwbGljYXRpb24gdXNlcyA8Y29kZT5sb2NhbFN0b3JhZ2U8L2NvZGU+IGZvcjoKICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibXQtMiBtbC00IGxpc3QtZGlzYyBzcGFjZS15LTEgdGV4dC1zbSB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgPGxpPlRoZW1lIHByZWZlcmVuY2UgKGxpZ2h0L2Rhcmsvc3lzdGVtKTwvbGk+CiAgICAgICAgICAgICAgICA8bGk+Q29va2llIGNvbnNlbnQgcHJlZmVyZW5jZXM8L2xpPgogICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0yIHRleHQtc20gdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICAgIE5vIGNvb2tpZXMgYXJlIHNldCBieSB0aGUgYXBwbGljYXRpb24gaXRzZWxmLiBZb3UgY2FuIGNsZWFyIGFsbCBsb2NhbCBkYXRhIGF0IGFueSB0aW1lIHZpYSB5b3VyIGJyb3dzZXIgc2V0dGluZ3MuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+NS4gU2VjdXJpdHk8L2gyPgogICAgICAgICAgICAgIDx1bCBjbGFzc05hbWU9Im1sLTQgbGlzdC1kaXNjIHNwYWNlLXktMSB0ZXh0LXNtIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgICA8bGk+TVQ1IGNyZWRlbnRpYWxzIGFyZSBuZXZlciB3cml0dGVuIHRvIGRpc2sgb3IgbG9ncy48L2xpPgogICAgICAgICAgICAgICAgPGxpPkFQSSBjb21tdW5pY2F0aW9uIHVzZXMgSFRUUFMgaW4gcHJvZHVjdGlvbiAoY29uZmlndXJlIDxjb2RlPkNPUlNfT1JJR0lOUzwvY29kZT4gYW5kIDxjb2RlPkFQSV9UT0tFTjwvY29kZT4pLjwvbGk+CiAgICAgICAgICAgICAgICA8bGk+VGhlIEZhc3RBUEkgYnJpZGdlIGluY2x1ZGVzIHJhdGUgbGltaXRpbmcgYW5kIEhNQUMtYmFzZWQgQVBJIGtleSBhdXRoZW50aWNhdGlvbi48L2xpPgogICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgIDwvc2VjdGlvbj4KCiAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtaW5rIj42LiBZb3VyIFJpZ2h0czwvaDI+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgICAgU2luY2UgYWxsIGRhdGEgcmVzaWRlcyBvbiB5b3VyIGxvY2FsIG1hY2hpbmUsIHlvdSBoYXZlIGZ1bGwgY29udHJvbC4gWW91IGNhbjoKICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibXQtMiBtbC00IGxpc3QtZGlzYyBzcGFjZS15LTEgdGV4dC1zbSB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgPGxpPkNsZWFyIDxjb2RlPmxvY2FsU3RvcmFnZTwvY29kZT4gdG8gcmVtb3ZlIHByZWZlcmVuY2VzIGFuZCBjb25zZW50LjwvbGk+CiAgICAgICAgICAgICAgICA8bGk+U3RvcCB0aGUgYmFja2VuZCBwcm9jZXNzIHRvIHRlcm1pbmF0ZSBhbGwgZGF0YSBwcm9jZXNzaW5nLjwvbGk+CiAgICAgICAgICAgICAgICA8bGk+UmV2b2tlIE1UNSBjcmVkZW50aWFscyBieSByZXN0YXJ0aW5nIHRoZSBib3Qgd2l0aG91dCBwcm92aWRpbmcgdGhlbS48L2xpPgogICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgIDwvc2VjdGlvbj4KCiAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtaW5rIj43LiBDaGFuZ2VzIHRvIFRoaXMgUG9saWN5PC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1pbmstZGltIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgICAgICAgICBVcGRhdGVzIHdpbGwgYmUgcG9zdGVkIGhlcmUgd2l0aCBhIHJldmlzZWQgIkxhc3QgdXBkYXRlZCIgZGF0ZS4gQ29udGludWVkIHVzZSBvZiB0aGUgZGFzaGJvYXJkIGNvbnN0aXR1dGVzIGFjY2VwdGFuY2UuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+OC4gQ29udGFjdDwvaDI+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgICAgUXVlc3Rpb25zIGFib3V0IHRoaXMgcG9saWN5PyBPcGVuIGFuIGlzc3VlIG9uIHRoZSBwcm9qZWN0IHJlcG9zaXRvcnkgb3IgY29udGFjdCB0aGUgbWFpbnRhaW5lci4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvc2VjdGlvbj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvbWFpbj4KCiAgICAgICAgPGZvb3RlciBjbGFzc05hbWU9ImJvcmRlci10IGJvcmRlci1ib3JkZXIgcHgtNCBweS02IG1kOnB4LTgiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctM3hsIHRleHQtY2VudGVyIHRleHQteHMgdGV4dC1pbmstZmFpbnQiPgogICAgICAgICAgICDCqSAyMDI2IE9ueXggRlggwrcgQWxnb3JpdGhtaWMgVHJhZGluZyBFbmdpbmUKICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZm9vdGVyPgogICAgICA8L2Rpdj4KICAgIDwvPgogICk7Cn0=
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+
+export default function PrivacyPolicy() {
+  useEffect(() => {
+    document.title = "Privacy Policy | Onyx FX";
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>Privacy Policy | Onyx FX</title>
+        <meta name="description" content="Onyx FX Privacy Policy — How we collect, use, and protect your data." />
+        <meta property="og:title" content="Privacy Policy | Onyx FX" />
+        <meta property="og:description" content="How we collect, use, and protect your data." />
+      </Helmet>
+
+      <div className="flex min-h-screen flex-col">
+        <header className="border-b border-border bg-surface px-4 py-4 md:px-8">
+          <div className="mx-auto max-w-4xl">
+            <a href="/" className="flex items-center gap-2 text-ink" onClick={(e) => { e.preventDefault(); window.history.back(); }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              <span className="text-sm font-semibold tracking-wide">Onyx FX</span>
+            </a>
+          </div>
+        </header>
+
+        <main className="flex-1 px-4 py-8 md:px-8">
+          <div className="mx-auto max-w-3xl space-y-8">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-semibold text-ink">Privacy Policy</h1>
+              <p className="mt-2 text-sm text-ink-faint">Last updated: September 2026</p>
+            </div>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">1. Data We Collect</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                Onyx FX is a locally-hosted algorithmic trading dashboard. We do not operate a cloud service,
+                and we do not collect personal data from visitors. The only data processed by this application includes:
+              </p>
+              <ul className="mt-2 ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li><strong>MT5 Credentials:</strong> Submitted via the Settings page to establish a local MT5 terminal connection. Credentials are held in memory for the session only and are never persisted to disk or transmitted to any third party.</li>
+                <li><strong>Trading Data:</strong> Account equity, positions, P&L, and execution logs fetched from your local MT5 terminal via the FastAPI bridge. This data never leaves your machine/network.</li>
+                <li><strong>Preferences:</strong> Theme selection (light/dark/system) and cookie consent stored in <code>localStorage</code> on your device.</li>
+                <li><strong>AI Requests:</strong> Market context (price data, indicators, news headlines) sent to OpenAI's API when the AI engine is enabled. No account credentials or PII are included.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">2. How Data Is Used</h2>
+              <ul className="ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>MT5 credentials: Used exclusively to initialize the MetaTrader 5 terminal connection for the current session.</li>
+                <li>Trading data: Displayed in the dashboard for monitoring and analysis.</li>
+                <li>Preferences: Persist your UI theme and consent choices across sessions.</li>
+                <li>AI requests: Generate trade proposals based on technical and fundamental analysis.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">3. Data Sharing</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                We do not sell, rent, or share your data with third parties. The only external communication is:
+              </p>
+              <ul className="mt-2 ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>OpenAI API (when AI engine is enabled) — receives anonymized market context only.</li>
+                <li>News API (NewsAPI.org or Yahoo RSS) — public economic calendar data.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">4. Local Storage & Cookies</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                This application uses <code>localStorage</code> for:
+              </p>
+              <ul className="mt-2 ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>Theme preference (light/dark/system)</li>
+                <li>Cookie consent preferences</li>
+              </ul>
+              <p className="mt-2 text-sm text-ink-dim">
+                No cookies are set by the application itself. You can clear all local data at any time via your browser settings.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">5. Security</h2>
+              <ul className="ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>MT5 credentials are never written to disk or logs.</li>
+                <li>API communication uses HTTPS in production (configure <code>CORS_ORIGINS</code> and <code>API_TOKEN</code>).</li>
+                <li>The FastAPI bridge includes rate limiting and HMAC-based API key authentication.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">6. Your Rights</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                Since all data resides on your local machine, you have full control. You can:
+              </p>
+              <ul className="mt-2 ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>Clear <code>localStorage</code> to remove preferences and consent.</li>
+                <li>Stop the backend process to terminate all data processing.</li>
+                <li>Revoke MT5 credentials by restarting the bot without providing them.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">7. Changes to This Policy</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                Updates will be posted here with a revised "Last updated" date. Continued use of the dashboard constitutes acceptance.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">8. Contact</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                Questions about this policy? Open an issue on the project repository or contact the maintainer.
+              </p>
+            </section>
+          </div>
+        </main>
+
+        <footer className="border-t border-border px-4 py-6 md:px-8">
+          <div className="mx-auto max-w-3xl text-center text-xs text-ink-faint">
+            © 2026 Onyx FX · Algorithmic Trading Engine
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}

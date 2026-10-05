@@ -1,1 +1,126 @@
-aW1wb3J0IHsgY3JlYXRlUmVxdWlyZSB9IGZyb20gIm5vZGU6bW9kdWxlIjsKaW1wb3J0IHBhdGggZnJvbSAibm9kZTpwYXRoIjsKaW1wb3J0IHsgZmlsZVVSTFRvUGF0aCB9IGZyb20gIm5vZGU6dXJsIjsKaW1wb3J0IHsgYnVpbGQgYXMgZXNidWlsZCB9IGZyb20gImVzYnVpbGQiOwppbXBvcnQgZXNidWlsZFBsdWdpblBpbm8gZnJvbSAiZXNidWlsZC1wbHVnaW4tcGlubyI7CmltcG9ydCB7IHJtIH0gZnJvbSAibm9kZTpmcy9wcm9taXNlcyI7CgovLyBQbHVnaW5zIChlLmcuICdlc2J1aWxkLXBsdWdpbi1waW5vJykgbWF5IHVzZSBgcmVxdWlyZWAgdG8gcmVzb2x2ZSBkZXBlbmRlbmNpZXMKZ2xvYmFsVGhpcy5yZXF1aXJlID0gY3JlYXRlUmVxdWlyZShpbXBvcnQubWV0YS51cmwpOwoKY29uc3QgYXJ0aWZhY3REaXIgPSBwYXRoLmRpcm5hbWUoZmlsZVVSTFRvUGF0aChpbXBvcnQubWV0YS51cmwpKTsKCmFzeW5jIGZ1bmN0aW9uIGJ1aWxkQWxsKCkgewogIGNvbnN0IGRpc3REaXIgPSBwYXRoLnJlc29sdmUoYXJ0aWZhY3REaXIsICJkaXN0Iik7CiAgYXdhaXQgcm0oZGlzdERpciwgeyByZWN1cnNpdmU6IHRydWUsIGZvcmNlOiB0cnVlIH0pOwoKICBhd2FpdCBlc2J1aWxkKHsKICAgIGVudHJ5UG9pbnRzOiBbcGF0aC5yZXNvbHZlKGFydGlmYWN0RGlyLCAic3JjL2luZGV4LnRzIildLAogICAgcGxhdGZvcm06ICJub2RlIiwKICAgIGJ1bmRsZTogdHJ1ZSwKICAgIGZvcm1hdDogImVzbSIsCiAgICBvdXRkaXI6IGRpc3REaXIsCiAgICBvdXRFeHRlbnNpb246IHsgIi5qcyI6ICIubWpzIiB9LAogICAgbG9nTGV2ZWw6ICJpbmZvIiwKICAgIC8vIFNvbWUgcGFja2FnZXMgbWF5IG5vdCBiZSBidW5kbGVhYmxlLCBzbyB3ZSBleHRlcm5hbGl6ZSB0aGVtLCB3ZSBjYW4gYWRkIG1vcmUgaGVyZSBhcyBuZWVkZWQuCiAgICAvLyBTb21lIG9mIHRoZSBwYWNrYWdlcyBiZWxvdyBtYXkgbm90IGJlIGltcG9ydGVkIG9yIGluc3RhbGxlZCwgYnV0IHdlJ3JlIGFkZGluZyB0aGVtIGluIGNhc2UgdGhleSBhcmUgaW4gdGhlIGZ1dHVyZS4KICAgIC8vIEV4YW1wbGVzIG9mIHVuYnVuZGxlYWJsZSBwYWNrYWdlczoKICAgIC8vIC0gdXNlcyBuYXRpdmUgbW9kdWxlcyBhbmQgbG9hZHMgdGhlbSBkeW5hbWljYWxseSAoZS5nLiBzaGFycCkKICAgIC8vIC0gdXNlIHBhdGggdHJhdmVyc2FsIHRvIHJlYWQgZmlsZXMgKGUuZy4gQGdvb2dsZS1jbG91ZC9zZWNyZXQtbWFuYWdlciBsb2FkcyBzaWJsaW5nIC5wcm90byBmaWxlcykKICAgIGV4dGVybmFsOiBbCiAgICAgICIqLm5vZGUiLAogICAgICAic2hhcnAiLAogICAgICAiYmV0dGVyLXNxbGl0ZTMiLAogICAgICAic3FsaXRlMyIsCiAgICAgICJjYW52YXMiLAogICAgICAiYmNyeXB0IiwKICAgICAgImFyZ29uMiIsCiAgICAgICJmc2V2ZW50cyIsCiAgICAgICJyZTIiLAogICAgICAiZmFybWhhc2giLAogICAgICAieHhoYXNoLWFkZG9uIiwKICAgICAgImJ1ZmZlcnV0aWwiLAogICAgICAidXRmLTgtdmFsaWRhdGUiLAogICAgICAic3NoMiIsCiAgICAgICJjcHUtZmVhdHVyZXMiLAogICAgICAiZHRyYWNlLXByb3ZpZGVyIiwKICAgICAgImlzb2xhdGVkLXZtIiwKICAgICAgImxpZ2h0bmluZ2NzcyIsCiAgICAgICJwZy1uYXRpdmUiLAogICAgICAib3JhY2xlZGIiLAogICAgICAibW9uZ29kYi1jbGllbnQtZW5jcnlwdGlvbiIsCiAgICAgICJub2RlbWFpbGVyIiwKICAgICAgImhhbmRsZWJhcnMiLAogICAgICAia25leCIsCiAgICAgICJ0eXBlb3JtIiwKICAgICAgInByb3RvYnVmanMiLAogICAgICAib25ueHJ1bnRpbWUtbm9kZSIsCiAgICAgICJAdGVuc29yZmxvdy8qIiwKICAgICAgIkBwcmlzbWEvY2xpZW50IiwKICAgICAgIkBtaWtyby1vcm0vKiIsCiAgICAgICJAZ3JwYy8qIiwKICAgICAgIkBzd2MvKiIsCiAgICAgICJAYXdzLXNkay8qIiwKICAgICAgIkBhenVyZS8qIiwKICAgICAgIkBvcGVudGVsZW1ldHJ5LyoiLAogICAgICAiQGdvb2dsZS1jbG91ZC8qIiwKICAgICAgIkBnb29nbGUvKiIsCiAgICAgICJnb29nbGVhcGlzIiwKICAgICAgImZpcmViYXNlLWFkbWluIiwKICAgICAgIkBwYXJjZWwvd2F0Y2hlciIsCiAgICAgICJAc2VudHJ5L3Byb2ZpbGluZy1ub2RlIiwKICAgICAgIkB0cmVlLXNpdHRlci8qIiwKICAgICAgImF3cy1zZGsiLAogICAgICAiY2xhc3NpYy1sZXZlbCIsCiAgICAgICJkZC10cmFjZSIsCiAgICAgICJmZmktbmFwaSIsCiAgICAgICJncnBjIiwKICAgICAgImhpcmVkaXMiLAogICAgICAia2VyYmVyb3MiLAogICAgICAibGV2ZWxkb3duIiwKICAgICAgIm1pbmlmbGFyZSIsCiAgICAgICJteXNxbDIiLAogICAgICAibmV3cmVsaWMiLAogICAgICAib2RiYyIsCiAgICAgICJwaXNjaW5hIiwKICAgICAgInJlYWxtIiwKICAgICAgInJlZi1uYXBpIiwKICAgICAgInJvY2tzZGIiLAogICAgICAic2Fzcy1lbWJlZGRlZCIsCiAgICAgICJzZXF1ZWxpemUiLAogICAgICAic2VyaWFscG9ydCIsCiAgICAgICJzbmFwcHkiLAogICAgICAidGlueXBvb2wiLAogICAgICAidXNiIiwKICAgICAgIndvcmtlcmQiLAogICAgICAid3JhbmdsZXIiLAogICAgICAiemVyb21xIiwKICAgICAgInplcm9tcS1wcmVidWlsdCIsCiAgICAgICJwbGF5d3JpZ2h0IiwKICAgICAgInB1cHBldGVlciIsCiAgICAgICJwdXBwZXRlZXItY29yZSIsCiAgICAgICJlbGVjdHJvbiIsCiAgICBdLAogICAgc291cmNlbWFwOiAibGlua2VkIiwKICAgIHBsdWdpbnM6IFsKICAgICAgLy8gcGlubyByZWxpZXMgb24gd29ya2VycyB0byBoYW5kbGUgbG9nZ2luZywgaW5zdGVhZCBvZiBleHRlcm5hbGl6aW5nIGl0IHdlIHVzZSBhIHBsdWdpbiB0byBoYW5kbGUgaXQKICAgICAgZXNidWlsZFBsdWdpblBpbm8oeyB0cmFuc3BvcnRzOiBbInBpbm8tcHJldHR5Il0gfSkKICAgIF0sCiAgICAvLyBNYWtlIHN1cmUgcGFja2FnZXMgdGhhdCBhcmUgY2pzIG9ubHkgKGUuZy4gZXhwcmVzcykgYnV0IGFyZSBidW5kbGVkIGNvbnRpbnVlIHRvIHdvcmsgaW4gb3VyIGVzbSBvdXRwdXQgZmlsZQogICAgYmFubmVyOiB7CiAgICAgIGpzOiBgaW1wb3J0IHsgY3JlYXRlUmVxdWlyZSBhcyBfX2Jhbm5lckNyUmVxIH0gZnJvbSAnbm9kZTptb2R1bGUnOwppbXBvcnQgX19iYW5uZXJQYXRoIGZyb20gJ25vZGU6cGF0aCc7CmltcG9ydCBfX2Jhbm5lclVybCBmcm9tICdub2RlOnVybCc7CgpnbG9iYWxUaGlzLnJlcXVpcmUgPSBfX2Jhbm5lckNyUmVxKGltcG9ydC5tZXRhLnVybCk7Cmdsb2JhbFRoaXMuX19maWxlbmFtZSA9IF9fYmFubmVyVXJsLmZpbGVVUkxUb1BhdGgoaW1wb3J0Lm1ldGEudXJsKTsKZ2xvYmFsVGhpcy5fX2Rpcm5hbWUgPSBfX2Jhbm5lclBhdGguZGlybmFtZShnbG9iYWxUaGlzLl9fZmlsZW5hbWUpOwogICAgYCwKICAgIH0sCiAgfSk7Cn0KCmJ1aWxkQWxsKCkuY2F0Y2goKGVycikgPT4gewogIGNvbnNvbGUuZXJyb3IoZXJyKTsKICBwcm9jZXNzLmV4aXQoMSk7Cn0pOwo=
+import { createRequire } from "node:module";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { build as esbuild } from "esbuild";
+import esbuildPluginPino from "esbuild-plugin-pino";
+import { rm } from "node:fs/promises";
+
+// Plugins (e.g. 'esbuild-plugin-pino') may use `require` to resolve dependencies
+globalThis.require = createRequire(import.meta.url);
+
+const artifactDir = path.dirname(fileURLToPath(import.meta.url));
+
+async function buildAll() {
+  const distDir = path.resolve(artifactDir, "dist");
+  await rm(distDir, { recursive: true, force: true });
+
+  await esbuild({
+    entryPoints: [path.resolve(artifactDir, "src/index.ts")],
+    platform: "node",
+    bundle: true,
+    format: "esm",
+    outdir: distDir,
+    outExtension: { ".js": ".mjs" },
+    logLevel: "info",
+    // Some packages may not be bundleable, so we externalize them, we can add more here as needed.
+    // Some of the packages below may not be imported or installed, but we're adding them in case they are in the future.
+    // Examples of unbundleable packages:
+    // - uses native modules and loads them dynamically (e.g. sharp)
+    // - use path traversal to read files (e.g. @google-cloud/secret-manager loads sibling .proto files)
+    external: [
+      "*.node",
+      "sharp",
+      "better-sqlite3",
+      "sqlite3",
+      "canvas",
+      "bcrypt",
+      "argon2",
+      "fsevents",
+      "re2",
+      "farmhash",
+      "xxhash-addon",
+      "bufferutil",
+      "utf-8-validate",
+      "ssh2",
+      "cpu-features",
+      "dtrace-provider",
+      "isolated-vm",
+      "lightningcss",
+      "pg-native",
+      "oracledb",
+      "mongodb-client-encryption",
+      "nodemailer",
+      "handlebars",
+      "knex",
+      "typeorm",
+      "protobufjs",
+      "onnxruntime-node",
+      "@tensorflow/*",
+      "@prisma/client",
+      "@mikro-orm/*",
+      "@grpc/*",
+      "@swc/*",
+      "@aws-sdk/*",
+      "@azure/*",
+      "@opentelemetry/*",
+      "@google-cloud/*",
+      "@google/*",
+      "googleapis",
+      "firebase-admin",
+      "@parcel/watcher",
+      "@sentry/profiling-node",
+      "@tree-sitter/*",
+      "aws-sdk",
+      "classic-level",
+      "dd-trace",
+      "ffi-napi",
+      "grpc",
+      "hiredis",
+      "kerberos",
+      "leveldown",
+      "miniflare",
+      "mysql2",
+      "newrelic",
+      "odbc",
+      "piscina",
+      "realm",
+      "ref-napi",
+      "rocksdb",
+      "sass-embedded",
+      "sequelize",
+      "serialport",
+      "snappy",
+      "tinypool",
+      "usb",
+      "workerd",
+      "wrangler",
+      "zeromq",
+      "zeromq-prebuilt",
+      "playwright",
+      "puppeteer",
+      "puppeteer-core",
+      "electron",
+    ],
+    sourcemap: "linked",
+    plugins: [
+      // pino relies on workers to handle logging, instead of externalizing it we use a plugin to handle it
+      esbuildPluginPino({ transports: ["pino-pretty"] })
+    ],
+    // Make sure packages that are cjs only (e.g. express) but are bundled continue to work in our esm output file
+    banner: {
+      js: `import { createRequire as __bannerCrReq } from 'node:module';
+import __bannerPath from 'node:path';
+import __bannerUrl from 'node:url';
+
+globalThis.require = __bannerCrReq(import.meta.url);
+globalThis.__filename = __bannerUrl.fileURLToPath(import.meta.url);
+globalThis.__dirname = __bannerPath.dirname(globalThis.__filename);
+    `,
+    },
+  });
+}
+
+buildAll().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

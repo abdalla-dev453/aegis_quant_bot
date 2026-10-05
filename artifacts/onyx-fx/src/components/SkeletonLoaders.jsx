@@ -1,1 +1,104 @@
-ZXhwb3J0IGZ1bmN0aW9uIFNrZWxldG9uKHsgY2xhc3NOYW1lID0gIiIsIHN0eWxlIH0pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBjbGFzc05hbWU9e2BhbmltYXRlLXB1bHNlIGJnLXN1cmZhY2UtYWx0IGJvcmRlciBib3JkZXItYm9yZGVyIHJvdW5kZWQtbWQgJHtjbGFzc05hbWV9YH0KICAgICAgc3R5bGU9e3N0eWxlfQogICAgICBhcmlhLWhpZGRlbj0idHJ1ZSIKICAgIC8+CiAgKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIFNrZWxldG9uQ2FyZCh7IGNsYXNzTmFtZSA9ICIiIH0pIHsKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9e2Byb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC00ICR7Y2xhc3NOYW1lfWB9PgogICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy0xLzQgbWItNCIgLz4KICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC04IHctMS8yIiAvPgogICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy0zLzQgbXQtMiIgLz4KICAgIDwvZGl2PgogICk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBTa2VsZXRvblN0YXRDYXJkKHsgY2xhc3NOYW1lID0gIiIgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT17YHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTQgJHtjbGFzc05hbWV9YH0+CiAgICAgIDxTa2VsZXRvbiBjbGFzc05hbWU9ImgtMyB3LTEvMyBtYi0zIiAvPgogICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTEwIHctMy80IGZvbnQtbW9ubyIgLz4KICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTMgZmxleCBnYXAtNCI+CiAgICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC0zIHctMjAiIC8+CiAgICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC0zIHctMjQiIC8+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIFNrZWxldG9uQ2hhcnQoeyBjbGFzc05hbWUgPSAiIiwgaGVpZ2h0ID0gMzAwIH0pIHsKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9e2Byb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC00ICR7Y2xhc3NOYW1lfWB9PgogICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy0xLzQgbWItNCIgLz4KICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0idy1mdWxsIiBzdHlsZT17eyBoZWlnaHQgfX0gLz4KICAgIDwvZGl2PgogICk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBTa2VsZXRvblRhYmxlKHsgY2xhc3NOYW1lID0gIiIsIHJvd3MgPSA1IH0pIHsKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9e2Byb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgJHtjbGFzc05hbWV9YH0+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJwLTQgYm9yZGVyLWIgYm9yZGVyLWJvcmRlciI+CiAgICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC00IHctMS8zIiAvPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImRpdmlkZS15IGRpdmlkZS1ib3JkZXIiPgogICAgICAgIHtBcnJheS5mcm9tKHsgbGVuZ3RoOiByb3dzIH0pLm1hcCgoXywgaSkgPT4gKAogICAgICAgICAgPGRpdiBrZXk9e2l9IGNsYXNzTmFtZT0icC00IGdyaWQgZ3JpZC1jb2xzLTYgZ2FwLTQiPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy1mdWxsIiAvPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy1mdWxsIiAvPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy1mdWxsIiAvPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy1mdWxsIiAvPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy1mdWxsIiAvPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy1mdWxsIiAvPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKSl9CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIFNrZWxldG9uR2F1Z2UoeyBjbGFzc05hbWUgPSAiIiB9KSB7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPXtgcm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHAtNCAke2NsYXNzTmFtZX1gfT4KICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC00IHctMS8zIG1iLTQiIC8+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciI+CiAgICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC0zMiB3LTMyIHJvdW5kZWQtZnVsbCIgLz4KICAgICAgPC9kaXY+CiAgICAgIDxTa2VsZXRvbiBjbGFzc05hbWU9ImgtMyB3LTEvMiBtdC00IG14LWF1dG8iIC8+CiAgICA8L2Rpdj4KICApOwp9CgpleHBvcnQgZnVuY3Rpb24gU2tlbGV0b25MaXN0KHsgY2xhc3NOYW1lID0gIiIsIGl0ZW1zID0gNSB9KSB7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPXtgcm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlICR7Y2xhc3NOYW1lfWB9PgogICAgICA8ZGl2IGNsYXNzTmFtZT0icC00IGJvcmRlci1iIGJvcmRlci1ib3JkZXIiPgogICAgICAgIDxTa2VsZXRvbiBjbGFzc05hbWU9ImgtNCB3LTEvMyIgLz4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJkaXZpZGUteSBkaXZpZGUtYm9yZGVyIj4KICAgICAgICB7QXJyYXkuZnJvbSh7IGxlbmd0aDogaXRlbXMgfSkubWFwKChfLCBpKSA9PiAoCiAgICAgICAgICA8ZGl2IGtleT17aX0gY2xhc3NOYW1lPSJwLTQgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTMiPgogICAgICAgICAgICA8U2tlbGV0b24gY2xhc3NOYW1lPSJoLTQgdy0xNiIgLz4KICAgICAgICAgICAgPFNrZWxldG9uIGNsYXNzTmFtZT0iaC0zIHctMjQiIC8+CiAgICAgICAgICAgIDxTa2VsZXRvbiBjbGFzc05hbWU9ImgtMyB3LTMvNCIgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICkpfQogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBTa2VsZXRvblJvdyh7IGNsYXNzTmFtZSA9ICIiLCBjb2x1bW5zID0gNCB9KSB7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPXtgZmxleCBnYXAtNCAke2NsYXNzTmFtZX1gfT4KICAgICAge0FycmF5LmZyb20oeyBsZW5ndGg6IGNvbHVtbnMgfSkubWFwKChfLCBpKSA9PiAoCiAgICAgICAgPFNrZWxldG9uIGtleT17aX0gY2xhc3NOYW1lPSJoLTQgZmxleC0xIiAvPgogICAgICApKX0KICAgIDwvZGl2PgogICk7Cn0=
+export function Skeleton({ className = "", style }) {
+  return (
+    <div
+      className={`animate-pulse bg-surface-alt border border-border rounded-md ${className}`}
+      style={style}
+      aria-hidden="true"
+    />
+  );
+}
+
+export function SkeletonCard({ className = "" }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface p-4 ${className}`}>
+      <Skeleton className="h-4 w-1/4 mb-4" />
+      <Skeleton className="h-8 w-1/2" />
+      <Skeleton className="h-4 w-3/4 mt-2" />
+    </div>
+  );
+}
+
+export function SkeletonStatCard({ className = "" }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface p-4 ${className}`}>
+      <Skeleton className="h-3 w-1/3 mb-3" />
+      <Skeleton className="h-10 w-3/4 font-mono" />
+      <div className="mt-3 flex gap-4">
+        <Skeleton className="h-3 w-20" />
+        <Skeleton className="h-3 w-24" />
+      </div>
+    </div>
+  );
+}
+
+export function SkeletonChart({ className = "", height = 300 }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface p-4 ${className}`}>
+      <Skeleton className="h-4 w-1/4 mb-4" />
+      <Skeleton className="w-full" style={{ height }} />
+    </div>
+  );
+}
+
+export function SkeletonTable({ className = "", rows = 5 }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface ${className}`}>
+      <div className="p-4 border-b border-border">
+        <Skeleton className="h-4 w-1/3" />
+      </div>
+      <div className="divide-y divide-border">
+        {Array.from({ length: rows }).map((_, i) => (
+          <div key={i} className="p-4 grid grid-cols-6 gap-4">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function SkeletonGauge({ className = "" }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface p-4 ${className}`}>
+      <Skeleton className="h-4 w-1/3 mb-4" />
+      <div className="flex items-center justify-center">
+        <Skeleton className="h-32 w-32 rounded-full" />
+      </div>
+      <Skeleton className="h-3 w-1/2 mt-4 mx-auto" />
+    </div>
+  );
+}
+
+export function SkeletonList({ className = "", items = 5 }) {
+  return (
+    <div className={`rounded-lg border border-border bg-surface ${className}`}>
+      <div className="p-4 border-b border-border">
+        <Skeleton className="h-4 w-1/3" />
+      </div>
+      <div className="divide-y divide-border">
+        {Array.from({ length: items }).map((_, i) => (
+          <div key={i} className="p-4 flex items-center gap-3">
+            <Skeleton className="h-4 w-16" />
+            <Skeleton className="h-3 w-24" />
+            <Skeleton className="h-3 w-3/4" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function SkeletonRow({ className = "", columns = 4 }) {
+  return (
+    <div className={`flex gap-4 ${className}`}>
+      {Array.from({ length: columns }).map((_, i) => (
+        <Skeleton key={i} className="h-4 flex-1" />
+      ))}
+    </div>
+  );
+}

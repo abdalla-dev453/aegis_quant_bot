@@ -1,1 +1,346 @@
-LyoqCiAqIGxpYi9ib3RGZWVkLmpzCiAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAqIEFQSSBjbGllbnQgKyBzaW5nbGUgc291cmNlIG9mIHRydXRoIGZvciAid2hhdCBzaGFwZSBkb2VzIGJvdCBkYXRhIGNvbWUKICogaW4gYXMiLiBNaXJyb3JzIHNlcnZlci9tb2RlbHMucHkgZXhhY3RseSDigJQgaWYgYSBmaWVsZCBjaGFuZ2VzIHRoZXJlLAogKiBjaGFuZ2UgaXQgaGVyZSAoYW5kIG9ubHkgaGVyZSkuCiAqCiAqIEFsbCBlbmRwb2ludHMgYXJlIHNlcnZlZCBieSB0aGUgUHl0aG9uIGJvdCdzIEZhc3RBUEkgYnJpZGdlOgogKiAgIEdFVCAvYXBpL2FjY291bnQgICAgICAtPiBBY2NvdW50U3RhdGUKICogICBHRVQgL2FwaS9yaXNrICAgICAgICAgLT4gUmlza1N0YXRlCiAqICAgR0VUIC9hcGkvcGVyZm9ybWFuY2UgIC0+IFBlcmZvcm1hbmNlU3RhdGUKICogICBHRVQgL2FwaS9jb25mbHVlbmNlICAgLT4gQ29uZmx1ZW5jZVN0YXRlCiAqICAgR0VUIC9hcGkvY2FsZW5kYXIgICAgIC0+IENhbGVuZGFyU3RhdGUKICogICBHRVQgL2FwaS9wb3NpdGlvbnMgICAgLT4gUG9zaXRpb25bXQogKiAgIEdFVCAvYXBpL2VxdWl0eS1jdXJ2ZSAtPiBFcXVpdHlQb2ludFtdCiAqICAgR0VUIC9hcGkvcHJpY2Utc2VyaWVzIC0+IFByaWNlUG9pbnRbXQogKiAgIEdFVCAvYXBpL2xvZ3MgICAgICAgICAtPiBMb2dFbnRyeVtdCiAqLwoKY29uc3QgQVBJX0JBU0UgPSBpbXBvcnQubWV0YS5lbnY/LlZJVEVfQVBJX0JBU0UgPz8gIiI7CmNvbnN0IGdldEFwaVRva2VuID0gKCkgPT4gd2luZG93LnNlc3Npb25TdG9yYWdlLmdldEl0ZW0oIm9ueXgtYXBpLXRva2VuIikgfHwgIiI7CgovLyBTeW1ib2xzIGNvbWUgZnJvbSB0aGUgc2VydmVyIChUUkFESU5HX1NZTUJPTFMgaW4gY29uZmlnLnB5KSBpbnNpZGUgdGhlCi8vIC9hcGkvcHJpY2Utc2VyaWVzIGFuZCAvYXBpL3Bvc2l0aW9ucyBwYXlsb2FkcyDigJQgbm8gY2xpZW50LXNpZGUgbGlzdC4KCi8qKiBTaGFyZWQgcmVxdWVzdCB3cmFwcGVyOiBKU09OLCB0aW1lb3V0LCBhbmQgbm9ybWFsaXplZCBlcnJvciBoYW5kbGluZy4gKi8KYXN5bmMgZnVuY3Rpb24gYXBpUmVxdWVzdCgKICBwYXRoLAogIHsgbWV0aG9kID0gIkdFVCIsIGJvZHksIHRpbWVvdXRNcyA9IDUwMDAgfSA9IHt9LAopIHsKICBjb25zdCBjb250cm9sbGVyID0gbmV3IEFib3J0Q29udHJvbGxlcigpOwogIGNvbnN0IHRpbWVyID0gc2V0VGltZW91dCgoKSA9PiBjb250cm9sbGVyLmFib3J0KCksIHRpbWVvdXRNcyk7CiAgY29uc3QgQVBJX1RPS0VOID0gZ2V0QXBpVG9rZW4oKTsKICB0cnkgewogICAgY29uc3QgcmVzID0gYXdhaXQgZmV0Y2goYCR7QVBJX0JBU0V9JHtwYXRofWAsIHsKICAgICAgbWV0aG9kLAogICAgICBoZWFkZXJzOiB7CiAgICAgICAgQWNjZXB0OiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgLi4uKEFQSV9UT0tFTiA/IHsgIlgtQVBJLUtleSI6IEFQSV9UT0tFTiB9IDoge30pLAogICAgICB9LAogICAgICAuLi4oYm9keSA9PT0gdW5kZWZpbmVkCiAgICAgICAgPyB7fQogICAgICAgIDogewogICAgICAgICAgICBib2R5OiBKU09OLnN0cmluZ2lmeShib2R5KSwKICAgICAgICAgICAgaGVhZGVyczogewogICAgICAgICAgICAgIEFjY2VwdDogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAgICAgICAgICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgICAgICAgLi4uKEFQSV9UT0tFTiA/IHsgIlgtQVBJLUtleSI6IEFQSV9UT0tFTiB9IDoge30pLAogICAgICAgICAgICB9LAogICAgICAgICAgfSksCiAgICAgIHNpZ25hbDogY29udHJvbGxlci5zaWduYWwsCiAgICB9KTsKICAgIGNvbnN0IHBheWxvYWQgPSBhd2FpdCByZXMuanNvbigpLmNhdGNoKCgpID0+ICh7fSkpOwogICAgaWYgKCFyZXMub2spCiAgICAgIHRocm93IG5ldyBFcnJvcigKICAgICAgICBwYXlsb2FkLmRldGFpbCA/PyBgQVBJICR7cGF0aH0gZmFpbGVkOiBIVFRQICR7cmVzLnN0YXR1c31gLAogICAgICApOwogICAgcmV0dXJuIHBheWxvYWQ7CiAgfSBmaW5hbGx5IHsKICAgIGNsZWFyVGltZW91dCh0aW1lcik7CiAgfQp9Cgphc3luYyBmdW5jdGlvbiBhcGlHZXQocGF0aCwgb3B0aW9ucykgewogIHJldHVybiBhcGlSZXF1ZXN0KHBhdGgsIG9wdGlvbnMpOwp9CgovLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KLy8gQ29lcmNpb24gaGVscGVycyDigJQgYSBwYXJ0aWFsL05hTiBwYXlsb2FkIG11c3QgbmV2ZXIgY3Jhc2ggdGhlIFVJLgovLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCmNvbnN0IG51bSA9ICh2LCBmYWxsYmFjayA9IDApID0+IHsKICBjb25zdCBuID0gTnVtYmVyKHYpOwogIHJldHVybiBOdW1iZXIuaXNGaW5pdGUobikgPyBuIDogZmFsbGJhY2s7Cn07Cgpjb25zdCBjbGFtcDEgPSAodikgPT4gTWF0aC5tYXgoLTEsIE1hdGgubWluKDEsIG51bSh2KSkpOwoKLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi8vIFR5cGVkIGFjY2Vzc29ycyDigJQgZWFjaCByZXR1cm5zIHRoZSBleGFjdCBzaGFwZSBpbiBzZXJ2ZXIvbW9kZWxzLnB5LgovLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaEFjY291bnQoKSB7CiAgY29uc3QgZCA9IGF3YWl0IGFwaUdldCgiL2FwaS9hY2NvdW50Iik7CiAgcmV0dXJuIHsKICAgIG5ldEVxdWl0eTogbnVtKGQubmV0RXF1aXR5KSwKICAgIGJhbGFuY2U6IG51bShkLmJhbGFuY2UpLAogICAgdG9kYXlzUG5sOiBudW0oZC50b2RheXNQbmwpLAogICAgZnJlZU1hcmdpbjogbnVtKGQuZnJlZU1hcmdpbiksCiAgICBtYXJnaW5MZXZlbDogbnVtKGQubWFyZ2luTGV2ZWwpLAogIH07Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaFJpc2soKSB7CiAgY29uc3QgZCA9IGF3YWl0IGFwaUdldCgiL2FwaS9yaXNrIik7CiAgcmV0dXJuIHsKICAgIGRyYXdkb3duUGN0OiBudW0oZC5kcmF3ZG93blBjdCksCiAgICBtYXhEcmF3ZG93bkNlaWxpbmdQY3Q6IG51bShkLm1heERyYXdkb3duQ2VpbGluZ1BjdCwgNS4wKSwKICAgIGRhaWx5TG9zc0NlaWxpbmdQY3Q6IG51bShkLmRhaWx5TG9zc0NlaWxpbmdQY3QsIDQuMCksCiAgICBtYXJnaW5VdGlsaXplZFBjdDogbnVtKGQubWFyZ2luVXRpbGl6ZWRQY3QpLAogICAgb3BlblBvc2l0aW9uczogTWF0aC5tYXgoMCwgTWF0aC50cnVuYyhudW0oZC5vcGVuUG9zaXRpb25zKSkpLAogICAgdHJhZGVzVG9kYXk6IE1hdGgubWF4KDAsIE1hdGgudHJ1bmMobnVtKGQudHJhZGVzVG9kYXkpKSksCiAgICBtYXhUcmFkZXNQZXJEYXk6IE1hdGgubWF4KDAsIE1hdGgudHJ1bmMobnVtKGQubWF4VHJhZGVzUGVyRGF5KSkpLAogICAgcGVha0RyYXdkb3duSGFsdGVkOiBCb29sZWFuKGQucGVha0RyYXdkb3duSGFsdGVkKSwKICAgIHJpc2tQZXJUcmFkZVBjdDogZC5yaXNrUGVyVHJhZGVQY3QgIT0gbnVsbCA/IG51bShkLnJpc2tQZXJUcmFkZVBjdCkgOiBudWxsLAogIH07Cn0KCmV4cG9ydCBmdW5jdGlvbiByZXNldFBlYWtEcmF3ZG93bkd1YXJkKCkgewogIHJldHVybiBhcGlSZXF1ZXN0KCIvYXBpL3Jpc2svcmVzZXQtcGVhay1kcmF3ZG93biIsIHsgbWV0aG9kOiAiUE9TVCIgfSk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBjbG9zZUJvdFBvc2l0aW9ucygpIHsKICByZXR1cm4gYXBpUmVxdWVzdCgiL2FwaS9wb3NpdGlvbnMvY2xvc2UtYWxsIiwgeyBtZXRob2Q6ICJQT1NUIiwgdGltZW91dE1zOiAxNTAwMCB9KTsKfQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGZldGNoUGVyZm9ybWFuY2UoKSB7CiAgY29uc3QgZCA9IGF3YWl0IGFwaUdldCgiL2FwaS9wZXJmb3JtYW5jZSIpOwogIHJldHVybiB7CiAgICB3aW5SYXRlUGN0OiBudW0oZC53aW5SYXRlUGN0KSwKICAgIHByb2ZpdEZhY3RvcjogbnVtKGQucHJvZml0RmFjdG9yKSwKICAgIHRvdGFsVHJhZGVzOiBNYXRoLm1heCgwLCBNYXRoLnRydW5jKG51bShkLnRvdGFsVHJhZGVzKSkpLAogICAgYXZnV2luOiBudW0oZC5hdmdXaW4pLAogICAgYXZnTG9zczogbnVtKGQuYXZnTG9zcyksCiAgfTsKfQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGZldGNoQ29uZmx1ZW5jZSgpIHsKICBjb25zdCBkID0gYXdhaXQgYXBpR2V0KCIvYXBpL2NvbmZsdWVuY2UiKTsKICByZXR1cm4gewogICAgY29tcG9zaXRlOiBjbGFtcDEoZC5jb21wb3NpdGUpLAogICAgbGFiZWw6IHR5cGVvZiBkLmxhYmVsID09PSAic3RyaW5nIiA/IGQubGFiZWwgOiAiTkVVVFJBTCIsCiAgICB0ZWNobmljYWw6IGNsYW1wMShkLnRlY2huaWNhbCksCiAgICBzZW50aW1lbnQ6IGNsYW1wMShkLnNlbnRpbWVudCksCiAgICBtb21lbnR1bTogY2xhbXAxKGQubW9tZW50dW0pLAogIH07Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaENhbGVuZGFyKCkgewogIGNvbnN0IGQgPSBhd2FpdCBhcGlHZXQoIi9hcGkvY2FsZW5kYXIiKTsKICByZXR1cm4gewogICAgYXV0b0hhbHRBY3RpdmU6IEJvb2xlYW4oZC5hdXRvSGFsdEFjdGl2ZSksCiAgICBhdXRvSGFsdEV0YVNlY29uZHM6IE1hdGgubWF4KDAsIE1hdGgudHJ1bmMobnVtKGQuYXV0b0hhbHRFdGFTZWNvbmRzKSkpLAogICAgbmV4dEV2ZW50OiBkLm5leHRFdmVudAogICAgICA/IHsKICAgICAgICAgIG5hbWU6IFN0cmluZyhkLm5leHRFdmVudC5uYW1lID8/ICJVbmtub3duIiksCiAgICAgICAgICBjdXJyZW5jeTogU3RyaW5nKGQubmV4dEV2ZW50LmN1cnJlbmN5ID8/ICIiKSwKICAgICAgICAgIGltcGFjdDogU3RyaW5nKGQubmV4dEV2ZW50LmltcGFjdCA/PyAiTE9XIiksCiAgICAgICAgICB0aW1lVXRjOiBTdHJpbmcoZC5uZXh0RXZlbnQudGltZVV0YyA/PyAiLS06LS0iKSwKICAgICAgICAgIG1pbnV0ZXNBd2F5OiBudW0oZC5uZXh0RXZlbnQubWludXRlc0F3YXkpLAogICAgICAgIH0KICAgICAgOiBudWxsLAogIH07Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaFBvc2l0aW9ucygpIHsKICBjb25zdCByb3dzID0gYXdhaXQgYXBpR2V0KCIvYXBpL3Bvc2l0aW9ucyIpOwogIGlmICghQXJyYXkuaXNBcnJheShyb3dzKSkgcmV0dXJuIFtdOwogIHJldHVybiByb3dzLm1hcCgoZCkgPT4gKHsKICAgIHRpY2tldDogU3RyaW5nKGQudGlja2V0ID8/ICIiKSwKICAgIHN5bWJvbDogU3RyaW5nKGQuc3ltYm9sID8/ICIiKSwKICAgIHR5cGU6IGQudHlwZSA9PT0gIlNFTEwiID8gIlNFTEwiIDogIkJVWSIsCiAgICBsb3Q6IG51bShkLmxvdCksCiAgICBlbnRyeTogbnVtKGQuZW50cnkpLAogICAgc2w6IG51bShkLnNsKSwKICAgIHRwOiBudW0oZC50cCksCiAgICB0cmFpbGluZzogQm9vbGVhbihkLnRyYWlsaW5nKSwKICAgIGN1cnJlbnQ6IG51bShkLmN1cnJlbnQpLAogICAgcG5sOiBudW0oZC5wbmwpLAogICAgZGlnaXRzOiBOdW1iZXIuaXNGaW5pdGUoTnVtYmVyKGQuZGlnaXRzKSkgPyBOdW1iZXIoZC5kaWdpdHMpIDogdW5kZWZpbmVkLAogIH0pKTsKfQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGZldGNoRXF1aXR5Q3VydmUoKSB7CiAgY29uc3Qgcm93cyA9IGF3YWl0IGFwaUdldCgiL2FwaS9lcXVpdHktY3VydmUiKTsKICBpZiAoIUFycmF5LmlzQXJyYXkocm93cykpIHJldHVybiBbXTsKICByZXR1cm4gcm93cy5tYXAoKGQpID0+ICh7IGRhdGU6IFN0cmluZyhkLmRhdGUpLCBlcXVpdHk6IG51bShkLmVxdWl0eSkgfSkpOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hQcmljZVNlcmllcygpIHsKICBjb25zdCBwYXlsb2FkID0gYXdhaXQgYXBpR2V0KCIvYXBpL3ByaWNlLXNlcmllcyIpOwogIC8vIENvbnRyYWN0OiB7IHN5bWJvbDogc3RyaW5nLCBwb2ludHM6IFByaWNlUG9pbnRbXSB9CiAgY29uc3Qgcm93cyA9IEFycmF5LmlzQXJyYXkocGF5bG9hZCkgPyBwYXlsb2FkIDogcGF5bG9hZD8ucG9pbnRzOwogIGNvbnN0IHBvaW50cyA9IEFycmF5LmlzQXJyYXkocm93cykKICAgID8gcm93cy5tYXAoKGQpID0+ICh7CiAgICAgICAgdGltZTogU3RyaW5nKGQudGltZSksCiAgICAgICAgcHJpY2U6IG51bShkLnByaWNlKSwKICAgICAgICBlbWE1MDogbnVtKGQuZW1hNTApLAogICAgICAgIGVtYTIwMDogbnVtKGQuZW1hMjAwKSwKICAgICAgfSkpCiAgICA6IFtdOwogIHJldHVybiB7CiAgICBzeW1ib2w6IEFycmF5LmlzQXJyYXkocGF5bG9hZCkgPyAiIiA6IFN0cmluZyhwYXlsb2FkPy5zeW1ib2wgPz8gIiIpLAogICAgcG9pbnRzLAogIH07Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaExvZ3MoKSB7CiAgY29uc3Qgcm93cyA9IGF3YWl0IGFwaUdldCgiL2FwaS9sb2dzIik7CiAgaWYgKCFBcnJheS5pc0FycmF5KHJvd3MpKSByZXR1cm4gW107CiAgcmV0dXJuIHJvd3MubWFwKChkKSA9PiAoewogICAgaWQ6IFN0cmluZyhkLmlkID8/IGAke0RhdGUubm93KCl9LSR7TWF0aC5yYW5kb20oKX1gKSwKICAgIHRpbWU6IFN0cmluZyhkLnRpbWUgPz8gIiIpLAogICAgbGV2ZWw6IFsiSU5GTyIsICJXQVJOIiwgIkVSUk9SIl0uaW5jbHVkZXMoZC5sZXZlbCkgPyBkLmxldmVsIDogIklORk8iLAogICAgbWVzc2FnZTogU3RyaW5nKGQubWVzc2FnZSA/PyAiIiksCiAgfSkpOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hTZXR0aW5ncygpIHsKICBjb25zdCBkID0gYXdhaXQgYXBpR2V0KCIvYXBpL3NldHRpbmdzIik7CiAgcmV0dXJuIHsKICAgIGNyZWRlbnRpYWxzQ29uZmlndXJlZDogQm9vbGVhbihkLmNyZWRlbnRpYWxzQ29uZmlndXJlZCksCiAgICBhaUNvbmZpZ3VyZWQ6IEJvb2xlYW4oZC5haUNvbmZpZ3VyZWQpLAogICAgdHJhZGluZ01vZGU6IFN0cmluZyhkLnRyYWRpbmdNb2RlID8/ICJVTktOT1dOIikudG9VcHBlckNhc2UoKSwKICAgIHN5bWJvbHM6IEFycmF5LmlzQXJyYXkoZC5zeW1ib2xzKSA/IGQuc3ltYm9scy5tYXAoU3RyaW5nKSA6IFtdLAogICAgdGltZWZyYW1lVHJpZ2dlcjogU3RyaW5nKGQudGltZWZyYW1lVHJpZ2dlciA/PyAiSDEiKSwKICAgIHRpbWVmcmFtZUJpYXM6IFN0cmluZyhkLnRpbWVmcmFtZUJpYXMgPz8gIkg0IiksCiAgICByaXNrUGVyVHJhZGVQY3Q6IG51bShkLnJpc2tQZXJUcmFkZVBjdCksCiAgICBhdHJTdG9wTXVsdGlwbGllcjogbnVtKGQuYXRyU3RvcE11bHRpcGxpZXIpLAogICAgYXRyVGFrZVByb2ZpdE11bHRpcGxpZXI6IG51bShkLmF0clRha2VQcm9maXRNdWx0aXBsaWVyKSwKICAgIG1heENvbmN1cnJlbnRQb3NpdGlvbnM6IE1hdGgubWF4KAogICAgICAwLAogICAgICBNYXRoLnRydW5jKG51bShkLm1heENvbmN1cnJlbnRQb3NpdGlvbnMpKSwKICAgICksCiAgICBtYWdpY051bWJlcjogU3RyaW5nKGQubWFnaWNOdW1iZXIgPz8gIiIpLAogIH07Cn0KCmV4cG9ydCBmdW5jdGlvbiBzYXZlQ3JlZGVudGlhbHMoY3JlZGVudGlhbHMpIHsKICByZXR1cm4gYXBpUmVxdWVzdCgiL2FwaS9zZXR0aW5ncy9jcmVkZW50aWFscyIsIHsKICAgIG1ldGhvZDogIlBPU1QiLAogICAgYm9keTogY3JlZGVudGlhbHMsCiAgICB0aW1lb3V0TXM6IDEwMDAwLAogIH0pOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hDb250cm9sKCkgewogIGNvbnN0IGQgPSBhd2FpdCBhcGlHZXQoIi9hcGkvY29udHJvbCIpOwogIHJldHVybiB7CiAgICBzdGF0dXM6IFN0cmluZyhkLnN0YXR1cyA/PyAiUlVOTklORyIpLAogICAgZW50cmllc0FsbG93ZWQ6IEJvb2xlYW4oZC5lbnRyaWVzQWxsb3dlZCksCiAgICBtYW5hZ2VtZW50QWxsb3dlZDogQm9vbGVhbihkLm1hbmFnZW1lbnRBbGxvd2VkKSwKICAgIHJlYXNvbjogZC5yZWFzb24gPz8gbnVsbCwKICAgIHNvdXJjZTogU3RyaW5nKGQuc291cmNlID8/ICJTVEFSVFVQIiksCiAgICBjaGFuZ2VkQXQ6IFN0cmluZyhkLmNoYW5nZWRBdCA/PyAiIiksCiAgICByZXZpc2lvbjogTnVtYmVyLmlzRmluaXRlKE51bWJlcihkLnJldmlzaW9uKSkgPyBOdW1iZXIoZC5yZXZpc2lvbikgOiAwLAogIH07Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBzZXRDb250cm9sKHN0YXR1cywgcmVhc29uKSB7CiAgcmV0dXJuIGFwaVJlcXVlc3QoIi9hcGkvY29udHJvbCIsIHsKICAgIG1ldGhvZDogIlBPU1QiLAogICAgYm9keTogeyBzdGF0dXMsIHJlYXNvbjogcmVhc29uID8/IG51bGwsIHNvdXJjZTogIlVJIiB9LAogICAgdGltZW91dE1zOiAxMDAwMCwKICB9KTsKfQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGZldGNoUHJvcG9zYWxzKCkgewogIGNvbnN0IHJvd3MgPSBhd2FpdCBhcGlHZXQoIi9hcGkvcHJvcG9zYWxzIik7CiAgaWYgKCFBcnJheS5pc0FycmF5KHJvd3MpKSByZXR1cm4gW107CiAgcmV0dXJuIHJvd3MubWFwKChkKSA9PiAoewogICAgc3ltYm9sOiBTdHJpbmcoZC5zeW1ib2wgPz8gIiIpLAogICAgYWN0aW9uOiBTdHJpbmcoZC5hY3Rpb24gPz8gIkhPTEQiKSwKICAgIHZvbHVtZTogbnVtKGQudm9sdW1lKSwKICAgIHN0b3BfbG9zczogbnVtKGQuc3RvcF9sb3NzKSwKICAgIHRha2VfcHJvZml0OiBudW0oZC50YWtlX3Byb2ZpdCksCiAgICBjb25maWRlbmNlX3Njb3JlOiBudW0oZC5jb25maWRlbmNlX3Njb3JlKSwKICAgIHJlYXNvbmluZzogU3RyaW5nKGQucmVhc29uaW5nID8/ICIiKSwKICAgIHN0YXR1czogU3RyaW5nKGQuc3RhdHVzID8/ICJyZWNlaXZlZCIpLAogICAgYmxvY2tlZF9ieTogZC5ibG9ja2VkX2J5ID8gU3RyaW5nKGQuYmxvY2tlZF9ieSkgOiBudWxsLAogICAgc2lnbmFsX3JlYXNvbjogZC5zaWduYWxfcmVhc29uID8gU3RyaW5nKGQuc2lnbmFsX3JlYXNvbikgOiBudWxsLAogICAgY2FuZGxlX3RpbWU6IFN0cmluZyhkLmNhbmRsZV90aW1lID8/ICIiKSwKICB9KSk7Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaE9yZGVycygpIHsKICBjb25zdCByb3dzID0gYXdhaXQgYXBpR2V0KCIvYXBpL29yZGVycyIpOwogIGlmICghQXJyYXkuaXNBcnJheShyb3dzKSkgcmV0dXJuIFtdOwogIHJldHVybiByb3dzLm1hcCgoZCkgPT4gKHsKICAgIHRpY2tldDogU3RyaW5nKGQudGlja2V0ID8/ICIiKSwKICAgIHN5bWJvbDogU3RyaW5nKGQuc3ltYm9sID8/ICIiKSwKICAgIGRpcmVjdGlvbjogU3RyaW5nKGQuZGlyZWN0aW9uID8/ICIiKSwKICAgIGZpbGxfcHJpY2U6IG51bShkLmZpbGxfcHJpY2UpLAogICAgdm9sdW1lOiBudW0oZC52b2x1bWUpLAogICAgc2w6IG51bShkLnNsKSwKICAgIHRwOiBudW0oZC50cCksCiAgICBhdHI6IG51bShkLmF0ciksCiAgICByZWFzb246IFN0cmluZyhkLnJlYXNvbiA/PyAiIiksCiAgICBwbmw6IG51bShkLnBubCksCiAgICBzdGF0dXM6IFN0cmluZyhkLnN0YXR1cyA/PyAiZmlsbGVkIiksCiAgfSkpOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hUcmFkZUFuYWx5c2lzKCkgewogIGNvbnN0IGQgPSBhd2FpdCBhcGlHZXQoIi9hcGkvdHJhZGUtYW5hbHlzaXMiKTsKICBjb25zdCBzdW1tYXJ5ID0gZC5zdW1tYXJ5ID8/IHsgdG90YWxUcmFkZXM6IDAsIG5ldFBubDogMC4wIH07CiAgcmV0dXJuIHsKICAgIHN1bW1hcnk6IHsKICAgICAgdG90YWxUcmFkZXM6IE1hdGgubWF4KDAsIE1hdGgudHJ1bmMobnVtKHN1bW1hcnkudG90YWxUcmFkZXMpKSksCiAgICAgIG5ldFBubDogbnVtKHN1bW1hcnkubmV0UG5sKSwKICAgIH0sCiAgICByZWNlbnRUcmFkZXM6IEFycmF5LmlzQXJyYXkoZC5yZWNlbnRUcmFkZXMpID8gZC5yZWNlbnRUcmFkZXMgOiBbXSwKICB9Owp9CgovKioKICogRm9ybWF0IGEgcHJpY2Ugd2l0aCB0aGUgY29ycmVjdCBkZWNpbWFsIHByZWNpc2lvbiBmb3IgYSBzeW1ib2wuCiAqIFByZWZlcnMgc2VydmVyLXByb3ZpZGVkIGRpZ2l0czsgZmFsbHMgYmFjayB0byBhIGJyb2tlci1uZXV0cmFsIGhldXJpc3RpYy4KICovCmV4cG9ydCBmdW5jdGlvbiBmb3JtYXRQcmljZShzeW1ib2wsIHZhbHVlLCBkaWdpdHMpIHsKICBjb25zdCBkID0KICAgIGRpZ2l0cyA/PyAoc3ltYm9sID09PSAiWEFVVVNEIiA/IDIgOiBzeW1ib2wuZW5kc1dpdGgoIkpQWSIpID8gMyA6IDUpOwogIHJldHVybiBudW0odmFsdWUpLnRvRml4ZWQoZCk7Cn0KCi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQovLyBBZHZhbmNlZCBGZWF0dXJlcyBBUEkgQWNjZXNzb3JzCi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGZldGNoQWR2YW5jZWRBbmFseXNpc1N0YXR1cygpIHsKICBjb25zdCBkID0gYXdhaXQgYXBpR2V0KCIvYXBpL2FkdmFuY2VkLWFuYWx5c2lzIik7CiAgcmV0dXJuIHsKICAgIGVuYWJsZWQ6IGQuZW5hYmxlZCB8fCB7fSwKICAgIGNvbmZpZzogZC5jb25maWcgfHwge30KICB9Owp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hTZWxmSGVhbGluZ1N0YXR1cygpIHsKICByZXR1cm4gYXdhaXQgYXBpR2V0KCIvYXBpL3NlbGYtaGVhbGluZyIpOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hBZGFwdGl2ZU9wdGltaXphdGlvblN0YXR1cygpIHsKICByZXR1cm4gYXdhaXQgYXBpR2V0KCIvYXBpL2FkYXB0aXZlLW9wdGltaXphdGlvbiIpOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gcnVuQWRhcHRpdmVPcHRpbWl6YXRpb24oKSB7CiAgcmV0dXJuIGF3YWl0IGFwaVJlcXVlc3QoIi9hcGkvYWRhcHRpdmUtb3B0aW1pemF0aW9uL3J1biIsIHsgbWV0aG9kOiAiUE9TVCIgfSk7Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaFBvcnRmb2xpb1Jpc2tTdGF0dXMoKSB7CiAgcmV0dXJuIGF3YWl0IGFwaUdldCgiL2FwaS9wb3J0Zm9saW8tcmlzayIpOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hTeXN0ZW1IZWFsdGgoKSB7CiAgcmV0dXJuIGF3YWl0IGFwaUdldCgiL2FwaS9zeXN0ZW0taGVhbHRoIik7Cn0K
+/**
+ * lib/botFeed.js
+ * -----------------------------------------------------------------------
+ * API client + single source of truth for "what shape does bot data come
+ * in as". Mirrors server/models.py exactly — if a field changes there,
+ * change it here (and only here).
+ *
+ * All endpoints are served by the Python bot's FastAPI bridge:
+ *   GET /api/account      -> AccountState
+ *   GET /api/risk         -> RiskState
+ *   GET /api/performance  -> PerformanceState
+ *   GET /api/confluence   -> ConfluenceState
+ *   GET /api/calendar     -> CalendarState
+ *   GET /api/positions    -> Position[]
+ *   GET /api/equity-curve -> EquityPoint[]
+ *   GET /api/price-series -> PricePoint[]
+ *   GET /api/logs         -> LogEntry[]
+ */
+
+const API_BASE = import.meta.env?.VITE_API_BASE ?? "";
+const getApiToken = () => window.sessionStorage.getItem("onyx-api-token") || "";
+
+// Symbols come from the server (TRADING_SYMBOLS in config.py) inside the
+// /api/price-series and /api/positions payloads — no client-side list.
+
+/** Shared request wrapper: JSON, timeout, and normalized error handling. */
+async function apiRequest(
+  path,
+  { method = "GET", body, timeoutMs = 5000 } = {},
+) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const API_TOKEN = getApiToken();
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      method,
+      headers: {
+        Accept: "application/json",
+        ...(API_TOKEN ? { "X-API-Key": API_TOKEN } : {}),
+      },
+      ...(body === undefined
+        ? {}
+        : {
+            body: JSON.stringify(body),
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              ...(API_TOKEN ? { "X-API-Key": API_TOKEN } : {}),
+            },
+          }),
+      signal: controller.signal,
+    });
+    const payload = await res.json().catch(() => ({}));
+    if (!res.ok)
+      throw new Error(
+        payload.detail ?? `API ${path} failed: HTTP ${res.status}`,
+      );
+    return payload;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function apiGet(path, options) {
+  return apiRequest(path, options);
+}
+
+// ---------------------------------------------------------------------------
+// Coercion helpers — a partial/NaN payload must never crash the UI.
+// ---------------------------------------------------------------------------
+
+const num = (v, fallback = 0) => {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : fallback;
+};
+
+const clamp1 = (v) => Math.max(-1, Math.min(1, num(v)));
+
+// ---------------------------------------------------------------------------
+// Typed accessors — each returns the exact shape in server/models.py.
+// ---------------------------------------------------------------------------
+
+export async function fetchAccount() {
+  const d = await apiGet("/api/account");
+  return {
+    netEquity: num(d.netEquity),
+    balance: num(d.balance),
+    todaysPnl: num(d.todaysPnl),
+    freeMargin: num(d.freeMargin),
+    marginLevel: num(d.marginLevel),
+  };
+}
+
+export async function fetchRisk() {
+  const d = await apiGet("/api/risk");
+  return {
+    drawdownPct: num(d.drawdownPct),
+    maxDrawdownCeilingPct: num(d.maxDrawdownCeilingPct, 5.0),
+    dailyLossCeilingPct: num(d.dailyLossCeilingPct, 4.0),
+    marginUtilizedPct: num(d.marginUtilizedPct),
+    openPositions: Math.max(0, Math.trunc(num(d.openPositions))),
+    tradesToday: Math.max(0, Math.trunc(num(d.tradesToday))),
+    maxTradesPerDay: Math.max(0, Math.trunc(num(d.maxTradesPerDay))),
+    peakDrawdownHalted: Boolean(d.peakDrawdownHalted),
+    riskPerTradePct: d.riskPerTradePct != null ? num(d.riskPerTradePct) : null,
+  };
+}
+
+export function resetPeakDrawdownGuard() {
+  return apiRequest("/api/risk/reset-peak-drawdown", { method: "POST" });
+}
+
+export function closeBotPositions() {
+  return apiRequest("/api/positions/close-all", { method: "POST", timeoutMs: 15000 });
+}
+
+export async function fetchPerformance() {
+  const d = await apiGet("/api/performance");
+  return {
+    winRatePct: num(d.winRatePct),
+    profitFactor: num(d.profitFactor),
+    totalTrades: Math.max(0, Math.trunc(num(d.totalTrades))),
+    avgWin: num(d.avgWin),
+    avgLoss: num(d.avgLoss),
+  };
+}
+
+export async function fetchConfluence() {
+  const d = await apiGet("/api/confluence");
+  return {
+    composite: clamp1(d.composite),
+    label: typeof d.label === "string" ? d.label : "NEUTRAL",
+    technical: clamp1(d.technical),
+    sentiment: clamp1(d.sentiment),
+    momentum: clamp1(d.momentum),
+  };
+}
+
+export async function fetchCalendar() {
+  const d = await apiGet("/api/calendar");
+  return {
+    autoHaltActive: Boolean(d.autoHaltActive),
+    autoHaltEtaSeconds: Math.max(0, Math.trunc(num(d.autoHaltEtaSeconds))),
+    nextEvent: d.nextEvent
+      ? {
+          name: String(d.nextEvent.name ?? "Unknown"),
+          currency: String(d.nextEvent.currency ?? ""),
+          impact: String(d.nextEvent.impact ?? "LOW"),
+          timeUtc: String(d.nextEvent.timeUtc ?? "--:--"),
+          minutesAway: num(d.nextEvent.minutesAway),
+        }
+      : null,
+  };
+}
+
+export async function fetchPositions() {
+  const rows = await apiGet("/api/positions");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({
+    ticket: String(d.ticket ?? ""),
+    symbol: String(d.symbol ?? ""),
+    type: d.type === "SELL" ? "SELL" : "BUY",
+    lot: num(d.lot),
+    entry: num(d.entry),
+    sl: num(d.sl),
+    tp: num(d.tp),
+    trailing: Boolean(d.trailing),
+    current: num(d.current),
+    pnl: num(d.pnl),
+    digits: Number.isFinite(Number(d.digits)) ? Number(d.digits) : undefined,
+  }));
+}
+
+export async function fetchEquityCurve() {
+  const rows = await apiGet("/api/equity-curve");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({ date: String(d.date), equity: num(d.equity) }));
+}
+
+export async function fetchPriceSeries() {
+  const payload = await apiGet("/api/price-series");
+  // Contract: { symbol: string, points: PricePoint[] }
+  const rows = Array.isArray(payload) ? payload : payload?.points;
+  const points = Array.isArray(rows)
+    ? rows.map((d) => ({
+        time: String(d.time),
+        price: num(d.price),
+        ema50: num(d.ema50),
+        ema200: num(d.ema200),
+      }))
+    : [];
+  return {
+    symbol: Array.isArray(payload) ? "" : String(payload?.symbol ?? ""),
+    points,
+  };
+}
+
+export async function fetchLogs() {
+  const rows = await apiGet("/api/logs");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({
+    id: String(d.id ?? `${Date.now()}-${Math.random()}`),
+    time: String(d.time ?? ""),
+    level: ["INFO", "WARN", "ERROR"].includes(d.level) ? d.level : "INFO",
+    message: String(d.message ?? ""),
+  }));
+}
+
+export async function fetchSettings() {
+  const d = await apiGet("/api/settings");
+  return {
+    credentialsConfigured: Boolean(d.credentialsConfigured),
+    aiConfigured: Boolean(d.aiConfigured),
+    tradingMode: String(d.tradingMode ?? "UNKNOWN").toUpperCase(),
+    symbols: Array.isArray(d.symbols) ? d.symbols.map(String) : [],
+    timeframeTrigger: String(d.timeframeTrigger ?? "H1"),
+    timeframeBias: String(d.timeframeBias ?? "H4"),
+    riskPerTradePct: num(d.riskPerTradePct),
+    atrStopMultiplier: num(d.atrStopMultiplier),
+    atrTakeProfitMultiplier: num(d.atrTakeProfitMultiplier),
+    maxConcurrentPositions: Math.max(
+      0,
+      Math.trunc(num(d.maxConcurrentPositions)),
+    ),
+    magicNumber: String(d.magicNumber ?? ""),
+  };
+}
+
+export function saveCredentials(credentials) {
+  return apiRequest("/api/settings/credentials", {
+    method: "POST",
+    body: credentials,
+    timeoutMs: 10000,
+  });
+}
+
+export async function fetchControl() {
+  const d = await apiGet("/api/control");
+  return {
+    status: String(d.status ?? "RUNNING"),
+    entriesAllowed: Boolean(d.entriesAllowed),
+    managementAllowed: Boolean(d.managementAllowed),
+    reason: d.reason ?? null,
+    source: String(d.source ?? "STARTUP"),
+    changedAt: String(d.changedAt ?? ""),
+    revision: Number.isFinite(Number(d.revision)) ? Number(d.revision) : 0,
+  };
+}
+
+export async function setControl(status, reason) {
+  return apiRequest("/api/control", {
+    method: "POST",
+    body: { status, reason: reason ?? null, source: "UI" },
+    timeoutMs: 10000,
+  });
+}
+
+export async function fetchProposals() {
+  const rows = await apiGet("/api/proposals");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({
+    symbol: String(d.symbol ?? ""),
+    action: String(d.action ?? "HOLD"),
+    volume: num(d.volume),
+    stop_loss: num(d.stop_loss),
+    take_profit: num(d.take_profit),
+    confidence_score: num(d.confidence_score),
+    reasoning: String(d.reasoning ?? ""),
+    status: String(d.status ?? "received"),
+    blocked_by: d.blocked_by ? String(d.blocked_by) : null,
+    signal_reason: d.signal_reason ? String(d.signal_reason) : null,
+    candle_time: String(d.candle_time ?? ""),
+  }));
+}
+
+export async function fetchOrders() {
+  const rows = await apiGet("/api/orders");
+  if (!Array.isArray(rows)) return [];
+  return rows.map((d) => ({
+    ticket: String(d.ticket ?? ""),
+    symbol: String(d.symbol ?? ""),
+    direction: String(d.direction ?? ""),
+    fill_price: num(d.fill_price),
+    volume: num(d.volume),
+    sl: num(d.sl),
+    tp: num(d.tp),
+    atr: num(d.atr),
+    reason: String(d.reason ?? ""),
+    pnl: num(d.pnl),
+    status: String(d.status ?? "filled"),
+  }));
+}
+
+export async function fetchTradeAnalysis() {
+  const d = await apiGet("/api/trade-analysis");
+  const summary = d.summary ?? { totalTrades: 0, netPnl: 0.0 };
+  return {
+    summary: {
+      totalTrades: Math.max(0, Math.trunc(num(summary.totalTrades))),
+      netPnl: num(summary.netPnl),
+    },
+    recentTrades: Array.isArray(d.recentTrades) ? d.recentTrades : [],
+  };
+}
+
+/**
+ * Format a price with the correct decimal precision for a symbol.
+ * Prefers server-provided digits; falls back to a broker-neutral heuristic.
+ */
+export function formatPrice(symbol, value, digits) {
+  const d =
+    digits ?? (symbol === "XAUUSD" ? 2 : symbol.endsWith("JPY") ? 3 : 5);
+  return num(value).toFixed(d);
+}
+
+// ---------------------------------------------------------------------------
+// Advanced Features API Accessors
+// ---------------------------------------------------------------------------
+
+export async function fetchAdvancedAnalysisStatus() {
+  const d = await apiGet("/api/advanced-analysis");
+  return {
+    enabled: d.enabled || {},
+    config: d.config || {}
+  };
+}
+
+export async function fetchSelfHealingStatus() {
+  return await apiGet("/api/self-healing");
+}
+
+export async function fetchAdaptiveOptimizationStatus() {
+  return await apiGet("/api/adaptive-optimization");
+}
+
+export async function runAdaptiveOptimization() {
+  return await apiRequest("/api/adaptive-optimization/run", { method: "POST" });
+}
+
+export async function fetchPortfolioRiskStatus() {
+  return await apiGet("/api/portfolio-risk");
+}
+
+export async function fetchSystemHealth() {
+  return await apiGet("/api/system-health");
+}

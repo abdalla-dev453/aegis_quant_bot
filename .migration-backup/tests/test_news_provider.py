@@ -1,1 +1,41 @@
-IiIiTGl2ZS1uZXdzIGNsZWFuaW5nIGFuZCBmYWlsdXJlIGhhbmRsaW5nIHdpdGhvdXQgdGVybWluYWwvbmV0d29yayBhY2Nlc3MuIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSwgdGltZXpvbmUKCmltcG9ydCBuZXdzX3Byb3ZpZGVyCmltcG9ydCByZXF1ZXN0cwoKCmRlZiB0ZXN0X25vcm1hbGl6ZV9yZWNvcmRfcmV0dXJuc19leGFjdF9saXZlX25ld3Nfc2NoZW1hKCkgLT4gTm9uZToKICAgIGl0ZW0gPSBuZXdzX3Byb3ZpZGVyLl9ub3JtYWxpemVfcmVjb3JkKAogICAgICAgIHsKICAgICAgICAgICAgInRpdGxlIjogIlVTIENQSSA8Yj5pbmZsYXRpb248L2I+IHJlcG9ydCIsCiAgICAgICAgICAgICJ0aW1lc3RhbXAiOiBkYXRldGltZSgyMDI2LCAxLCAxLCB0emluZm89dGltZXpvbmUudXRjKSwKICAgICAgICAgICAgImN1cnJlbmN5IjogIlVTRCIsCiAgICAgICAgICAgICJkZXNjcmlwdGlvbiI6ICJMYXRlc3QgPGk+bWFya2V0LW1vdmluZzwvaT4gcmVsZWFzZSIsCiAgICAgICAgfSwKICAgICAgICAiTVQ1X1Rlcm1pbmFsIiwKICAgICkKCiAgICBhc3NlcnQgaXRlbSA9PSB7CiAgICAgICAgInRpbWVzdGFtcCI6ICIyMDI2LTAxLTAxVDAwOjAwOjAwKzAwOjAwIiwKICAgICAgICAic291cmNlIjogIk1UNV9UZXJtaW5hbCIsCiAgICAgICAgInRpdGxlIjogIlVTIENQSSBpbmZsYXRpb24gcmVwb3J0IiwKICAgICAgICAiaW1wYWN0X2xldmVsIjogIkhJR0giLAogICAgICAgICJjdXJyZW5jeV9hZmZlY3RlZCI6ICJVU0QiLAogICAgICAgICJzdW1tYXJ5IjogIkxhdGVzdCBtYXJrZXQtbW92aW5nIHJlbGVhc2UiLAogICAgfQoKCmRlZiB0ZXN0X2FsbF9mZWVkX2ZhaWx1cmVzX3JldHVybl9leHBsaWNpdF93YXJuaW5nKG1vbmtleXBhdGNoKSAtPiBOb25lOgogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihuZXdzX3Byb3ZpZGVyLCAiX2NhY2hlIiwgTm9uZSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIobmV3c19wcm92aWRlciwgIl90ZXJtaW5hbF9uZXdzIiwgbGFtYmRhICpfYXJnczogKF8gZm9yIF8gaW4gKCkpLnRocm93KFJ1bnRpbWVFcnJvcigiZG93biIpKSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIobmV3c19wcm92aWRlciwgIl9uZXdzYXBpIiwgbGlzdCkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIobmV3c19wcm92aWRlciwgIl95YWhvb19yc3MiLCBsYW1iZGE6IChfIGZvciBfIGluICgpKS50aHJvdyhyZXF1ZXN0cy5UaW1lb3V0KCJkb3duIikpKQoKICAgIHJlc3VsdCA9IG5ld3NfcHJvdmlkZXIuZ2V0X2xhdGVzdF9oaWdoX2ltcGFjdF9uZXdzKCkKCiAgICBhc3NlcnQgcmVzdWx0Lml0ZW1zID09IFtdCiAgICBhc3NlcnQgcmVzdWx0Lndhcm5pbmcgPT0gIldhcm5pbmc6IExpdmUgc2VudGltZW50IGZlZWQgY3VycmVudGx5IHVuYXZhaWxhYmxlIgo=
+"""Live-news cleaning and failure handling without terminal/network access."""
+
+from __future__ import annotations
+
+from datetime import datetime, timezone
+
+import news_provider
+import requests
+
+
+def test_normalize_record_returns_exact_live_news_schema() -> None:
+    item = news_provider._normalize_record(
+        {
+            "title": "US CPI <b>inflation</b> report",
+            "timestamp": datetime(2026, 1, 1, tzinfo=timezone.utc),
+            "currency": "USD",
+            "description": "Latest <i>market-moving</i> release",
+        },
+        "MT5_Terminal",
+    )
+
+    assert item == {
+        "timestamp": "2026-01-01T00:00:00+00:00",
+        "source": "MT5_Terminal",
+        "title": "US CPI inflation report",
+        "impact_level": "HIGH",
+        "currency_affected": "USD",
+        "summary": "Latest market-moving release",
+    }
+
+
+def test_all_feed_failures_return_explicit_warning(monkeypatch) -> None:
+    monkeypatch.setattr(news_provider, "_cache", None)
+    monkeypatch.setattr(news_provider, "_terminal_news", lambda *_args: (_ for _ in ()).throw(RuntimeError("down")))
+    monkeypatch.setattr(news_provider, "_newsapi", list)
+    monkeypatch.setattr(news_provider, "_yahoo_rss", lambda: (_ for _ in ()).throw(requests.Timeout("down")))
+
+    result = news_provider.get_latest_high_impact_news()
+
+    assert result.items == []
+    assert result.warning == "Warning: Live sentiment feed currently unavailable"

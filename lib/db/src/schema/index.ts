@@ -1,1 +1,20 @@
-Ly8gRXhwb3J0IHlvdXIgbW9kZWxzIGhlcmUuIEFkZCBvbmUgZXhwb3J0IHBlciBmaWxlCi8vIGV4cG9ydCAqIGZyb20gIi4vcG9zdHMiOwovLwovLyBFYWNoIG1vZGVsL3RhYmxlIHNob3VsZCBpZGVhbGx5IGJlIHNwbGl0IGludG8gZGlmZmVyZW50IGZpbGVzLgovLyBFYWNoIG1vZGVsL3RhYmxlIHNob3VsZCBkZWZpbmUgYSBEcml6emxlIHRhYmxlLCBpbnNlcnQgc2NoZW1hLCBhbmQgdHlwZXM6Ci8vCi8vICAgaW1wb3J0IHsgcGdUYWJsZSwgdGV4dCwgc2VyaWFsIH0gZnJvbSAiZHJpenpsZS1vcm0vcGctY29yZSI7Ci8vICAgaW1wb3J0IHsgY3JlYXRlSW5zZXJ0U2NoZW1hIH0gZnJvbSAiZHJpenpsZS16b2QiOwovLyAgIGltcG9ydCB7IHogfSBmcm9tICJ6b2QvdjQiOwovLwovLyAgIGV4cG9ydCBjb25zdCBwb3N0c1RhYmxlID0gcGdUYWJsZSgicG9zdHMiLCB7Ci8vICAgICBpZDogc2VyaWFsKCJpZCIpLnByaW1hcnlLZXkoKSwKLy8gICAgIHRpdGxlOiB0ZXh0KCJ0aXRsZSIpLm5vdE51bGwoKSwKLy8gICB9KTsKLy8KLy8gICBleHBvcnQgY29uc3QgaW5zZXJ0UG9zdFNjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYShwb3N0c1RhYmxlKS5vbWl0KHsgaWQ6IHRydWUgfSk7Ci8vICAgZXhwb3J0IHR5cGUgSW5zZXJ0UG9zdCA9IHouaW5mZXI8dHlwZW9mIGluc2VydFBvc3RTY2hlbWE+OwovLyAgIGV4cG9ydCB0eXBlIFBvc3QgPSB0eXBlb2YgcG9zdHNUYWJsZS4kaW5mZXJTZWxlY3Q7CgpleHBvcnQge30=
+// Export your models here. Add one export per file
+// export * from "./posts";
+//
+// Each model/table should ideally be split into different files.
+// Each model/table should define a Drizzle table, insert schema, and types:
+//
+//   import { pgTable, text, serial } from "drizzle-orm/pg-core";
+//   import { createInsertSchema } from "drizzle-zod";
+//   import { z } from "zod/v4";
+//
+//   export const postsTable = pgTable("posts", {
+//     id: serial("id").primaryKey(),
+//     title: text("title").notNull(),
+//   });
+//
+//   export const insertPostSchema = createInsertSchema(postsTable).omit({ id: true });
+//   export type InsertPost = z.infer<typeof insertPostSchema>;
+//   export type Post = typeof postsTable.$inferSelect;
+
+export {}

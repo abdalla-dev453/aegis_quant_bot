@@ -1,1 +1,58 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKaW1wb3J0IHsgY3ZhLCB0eXBlIFZhcmlhbnRQcm9wcyB9IGZyb20gJ2NsYXNzLXZhcmlhbmNlLWF1dGhvcml0eSc7Cgpjb25zdCBhbGVydFZhcmlhbnRzID0gY3ZhKAogICdyZWxhdGl2ZSB3LWZ1bGwgcm91bmRlZC1sZyBib3JkZXIgcHgtNCBweS0zIHRleHQtc20gWyY+c3ZnK2Rpdl06dHJhbnNsYXRlLXktWy0zcHhdIFsmPnN2Z106YWJzb2x1dGUgWyY+c3ZnXTpsZWZ0LTQgWyY+c3ZnXTp0b3AtNCBbJj5zdmddOnRleHQtZm9yZWdyb3VuZCBbJj5zdmd+Kl06cGwtNycsCiAgewogICAgdmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogewogICAgICAgIGRlZmF1bHQ6ICdiZy1iYWNrZ3JvdW5kIHRleHQtZm9yZWdyb3VuZCcsCiAgICAgICAgZGVzdHJ1Y3RpdmU6CiAgICAgICAgICAnYm9yZGVyLWRlc3RydWN0aXZlLzUwIHRleHQtZGVzdHJ1Y3RpdmUgZGFyazpib3JkZXItZGVzdHJ1Y3RpdmUgWyY+c3ZnXTp0ZXh0LWRlc3RydWN0aXZlJywKICAgICAgfSwKICAgIH0sCiAgICBkZWZhdWx0VmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogJ2RlZmF1bHQnLAogICAgfSwKICB9LAopOwoKY29uc3QgQWxlcnQgPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxEaXZFbGVtZW50LAogIFJlYWN0LkhUTUxBdHRyaWJ1dGVzPEhUTUxEaXZFbGVtZW50PiAmIFZhcmlhbnRQcm9wczx0eXBlb2YgYWxlcnRWYXJpYW50cz4KPigoeyBjbGFzc05hbWUsIHZhcmlhbnQsIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDxkaXYKICAgIHJlZj17cmVmfQogICAgcm9sZT0iYWxlcnQiCiAgICBjbGFzc05hbWU9e2NuKGFsZXJ0VmFyaWFudHMoeyB2YXJpYW50IH0pLCBjbGFzc05hbWUpfQogICAgey4uLnByb3BzfQogIC8+CikpOwpBbGVydC5kaXNwbGF5TmFtZSA9ICdBbGVydCc7Cgpjb25zdCBBbGVydFRpdGxlID0gUmVhY3QuZm9yd2FyZFJlZjwKICBIVE1MUGFyYWdyYXBoRWxlbWVudCwKICBSZWFjdC5IVE1MQXR0cmlidXRlczxIVE1MSGVhZGluZ0VsZW1lbnQ+Cj4oKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8aDUKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbignbWItMSBmb250LW1lZGl1bSBsZWFkaW5nLW5vbmUgdHJhY2tpbmctdGlnaHQnLCBjbGFzc05hbWUpfQogICAgey4uLnByb3BzfQogIC8+CikpOwpBbGVydFRpdGxlLmRpc3BsYXlOYW1lID0gJ0FsZXJ0VGl0bGUnOwoKY29uc3QgQWxlcnREZXNjcmlwdGlvbiA9IFJlYWN0LmZvcndhcmRSZWY8CiAgSFRNTFBhcmFncmFwaEVsZW1lbnQsCiAgUmVhY3QuSFRNTEF0dHJpYnV0ZXM8SFRNTFBhcmFncmFwaEVsZW1lbnQ+Cj4oKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8ZGl2CiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17Y24oJ3RleHQtc20gWyZfcF06bGVhZGluZy1yZWxheGVkJywgY2xhc3NOYW1lKX0KICAgIHsuLi5wcm9wc30KICAvPgopKTsKQWxlcnREZXNjcmlwdGlvbi5kaXNwbGF5TmFtZSA9ICdBbGVydERlc2NyaXB0aW9uJzsKCmV4cG9ydCB7IEFsZXJ0LCBBbGVydFRpdGxlLCBBbGVydERlc2NyaXB0aW9uIH07Cg==
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+const alertVariants = cva(
+  'relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7',
+  {
+    variants: {
+      variant: {
+        default: 'bg-background text-foreground',
+        destructive:
+          'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+);
+
+const Alert = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
+>(({ className, variant, ...props }, ref) => (
+  <div
+    ref={ref}
+    role="alert"
+    className={cn(alertVariants({ variant }), className)}
+    {...props}
+  />
+));
+Alert.displayName = 'Alert';
+
+const AlertTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h5
+    ref={ref}
+    className={cn('mb-1 font-medium leading-none tracking-tight', className)}
+    {...props}
+  />
+));
+AlertTitle.displayName = 'AlertTitle';
+
+const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn('text-sm [&_p]:leading-relaxed', className)}
+    {...props}
+  />
+));
+AlertDescription.displayName = 'AlertDescription';
+
+export { Alert, AlertTitle, AlertDescription };

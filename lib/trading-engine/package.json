@@ -1,1 +1,7 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2UvdHJhZGluZy1lbmdpbmUiLAogICJwcml2YXRlIjogdHJ1ZSwKICAic2NyaXB0cyI6IHsKICAgICJ0ZXN0IjogInB5dGhvbiAtbSBweXRlc3QgLXEgdGVzdHMiCiAgfQp9
+{
+  "name": "@workspace/trading-engine",
+  "private": true,
+  "scripts": {
+    "test": "python -m pytest -q tests"
+  }
+}

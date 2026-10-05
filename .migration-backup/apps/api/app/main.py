@@ -1,1 +1,74 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBjb2xsZWN0aW9ucy5hYmMgaW1wb3J0IEFzeW5jSXRlcmF0b3IKZnJvbSBjb250ZXh0bGliIGltcG9ydCBhc3luY2NvbnRleHRtYW5hZ2VyCgpmcm9tIGZhc3RhcGkgaW1wb3J0IEZhc3RBUEksIFJlcXVlc3QKZnJvbSBmYXN0YXBpLmV4Y2VwdGlvbnMgaW1wb3J0IFJlcXVlc3RWYWxpZGF0aW9uRXJyb3IKZnJvbSBmYXN0YXBpLm1pZGRsZXdhcmUuY29ycyBpbXBvcnQgQ09SU01pZGRsZXdhcmUKZnJvbSByZWRpcy5hc3luY2lvIGltcG9ydCBSZWRpcywgZnJvbV91cmwKZnJvbSBzcWxhbGNoZW15LmV4dC5hc3luY2lvIGltcG9ydCBBc3luY1Nlc3Npb24sIGFzeW5jX3Nlc3Npb25tYWtlciwgY3JlYXRlX2FzeW5jX2VuZ2luZQoKZnJvbSBhcHAuY29uZmlnIGltcG9ydCBnZXRfc2V0dGluZ3MKZnJvbSBhcHAuZXJyb3JzIGltcG9ydCBBUElFcnJvciwgYXBpX2Vycm9yX2hhbmRsZXIsIHZhbGlkYXRpb25fZXJyb3JfaGFuZGxlcgpmcm9tIGFwcC5yb3V0ZXMuYXBwIGltcG9ydCByb3V0ZXIgYXMgYXBwX3JvdXRlcgpmcm9tIGFwcC5yb3V0ZXMuZWEgaW1wb3J0IHJvdXRlciBhcyBlYV9yb3V0ZXIKCgpAYXN5bmNjb250ZXh0bWFuYWdlcgphc3luYyBkZWYgbGlmZXNwYW4oYXBwOiBGYXN0QVBJKSAtPiBBc3luY0l0ZXJhdG9yW05vbmVdOgogICAgc2V0dGluZ3MgPSBnZXRfc2V0dGluZ3MoKQogICAgZW5naW5lID0gY3JlYXRlX2FzeW5jX2VuZ2luZShzdHIoc2V0dGluZ3MuZGF0YWJhc2VfdXJsKSwgcG9vbF9wcmVfcGluZz1UcnVlKQogICAgc2Vzc2lvbl9mYWN0b3J5ID0gYXN5bmNfc2Vzc2lvbm1ha2VyKGVuZ2luZSwgZXhwaXJlX29uX2NvbW1pdD1GYWxzZSwgY2xhc3NfPUFzeW5jU2Vzc2lvbikKICAgIHJlZGlzOiBSZWRpcyA9IGZyb21fdXJsKHN0cihzZXR0aW5ncy5yZWRpc191cmwpLCBkZWNvZGVfcmVzcG9uc2VzPVRydWUpCgogICAgYXBwLnN0YXRlLmVuZ2luZSA9IGVuZ2luZQogICAgYXBwLnN0YXRlLnNlc3Npb25fZmFjdG9yeSA9IHNlc3Npb25fZmFjdG9yeQogICAgYXBwLnN0YXRlLnJlZGlzID0gcmVkaXMKICAgIGFwcC5zdGF0ZS5zZXR0aW5ncyA9IHNldHRpbmdzCgogICAgdHJ5OgogICAgICAgIHlpZWxkCiAgICBmaW5hbGx5OgogICAgICAgIGF3YWl0IHJlZGlzLmFjbG9zZSgpCiAgICAgICAgYXdhaXQgZW5naW5lLmRpc3Bvc2UoKQoKCmRlZiBjcmVhdGVfYXBwKCkgLT4gRmFzdEFQSToKICAgIHNldHRpbmdzID0gZ2V0X3NldHRpbmdzKCkKICAgIGFwcCA9IEZhc3RBUEkoCiAgICAgICAgdGl0bGU9IkFlZ2lzUXVhbnQgQVBJIiwKICAgICAgICB2ZXJzaW9uPSIxLjAuMCIsCiAgICAgICAgZGVzY3JpcHRpb249Ikluc3RydW1lbnQtR3JhZGUgTVQ1IEVBIEJyaWRnZSBhbmQgQUkgUXVhbnRpdGF0aXZlIFRyYWRpbmcgQmFja2VuZCIsCiAgICAgICAgbGlmZXNwYW49bGlmZXNwYW4sCiAgICApCgogICAgYXBwLmFkZF9taWRkbGV3YXJlKAogICAgICAgIENPUlNNaWRkbGV3YXJlLAogICAgICAgIGFsbG93X29yaWdpbnM9W3NldHRpbmdzLndlYl9vcmlnaW5dLAogICAgICAgIGFsbG93X2NyZWRlbnRpYWxzPVRydWUsCiAgICAgICAgYWxsb3dfbWV0aG9kcz1bIioiXSwKICAgICAgICBhbGxvd19oZWFkZXJzPVsiKiJdLAogICAgKQoKICAgIGFwcC5hZGRfZXhjZXB0aW9uX2hhbmRsZXIoQVBJRXJyb3IsIGFwaV9lcnJvcl9oYW5kbGVyKSAgIyB0eXBlOiBpZ25vcmVbYXJnLXR5cGVdCiAgICBhcHAuYWRkX2V4Y2VwdGlvbl9oYW5kbGVyKFJlcXVlc3RWYWxpZGF0aW9uRXJyb3IsIHZhbGlkYXRpb25fZXJyb3JfaGFuZGxlcikgICMgdHlwZTogaWdub3JlW2FyZy10eXBlXQoKICAgIGFwcC5pbmNsdWRlX3JvdXRlcihlYV9yb3V0ZXIpCiAgICBhcHAuaW5jbHVkZV9yb3V0ZXIoYXBwX3JvdXRlcikKCiAgICBAYXBwLmdldCgiL2hlYWx0aHoiLCB0YWdzPVsib2JzZXJ2YWJpbGl0eSJdKQogICAgYXN5bmMgZGVmIGhlYWx0aHooKSAtPiBkaWN0W3N0ciwgc3RyXToKICAgICAgICByZXR1cm4geyJzdGF0dXMiOiAib2sifQoKICAgIEBhcHAuZ2V0KCIvcmVhZHl6IiwgdGFncz1bIm9ic2VydmFiaWxpdHkiXSkKICAgIGFzeW5jIGRlZiByZWFkeXoocmVxdWVzdDogUmVxdWVzdCkgLT4gZGljdFtzdHIsIHN0cl06CiAgICAgICAgIyBUZXN0IFJlZGlzIHBpbmcKICAgICAgICByZWRpczogUmVkaXMgPSByZXF1ZXN0LmFwcC5zdGF0ZS5yZWRpcwogICAgICAgIGF3YWl0IHJlZGlzLnBpbmcoKQogICAgICAgIHJldHVybiB7InN0YXR1cyI6ICJyZWFkeSJ9CgogICAgcmV0dXJuIGFwcAoKCmFwcCA9IGNyZWF0ZV9hcHAoKQo=
+from __future__ import annotations
+
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
+from redis.asyncio import Redis, from_url
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+
+from app.config import get_settings
+from app.errors import APIError, api_error_handler, validation_error_handler
+from app.routes.app import router as app_router
+from app.routes.ea import router as ea_router
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+    settings = get_settings()
+    engine = create_async_engine(str(settings.database_url), pool_pre_ping=True)
+    session_factory = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+    redis: Redis = from_url(str(settings.redis_url), decode_responses=True)
+
+    app.state.engine = engine
+    app.state.session_factory = session_factory
+    app.state.redis = redis
+    app.state.settings = settings
+
+    try:
+        yield
+    finally:
+        await redis.aclose()
+        await engine.dispose()
+
+
+def create_app() -> FastAPI:
+    settings = get_settings()
+    app = FastAPI(
+        title="AegisQuant API",
+        version="1.0.0",
+        description="Instrument-Grade MT5 EA Bridge and AI Quantitative Trading Backend",
+        lifespan=lifespan,
+    )
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[settings.web_origin],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    app.add_exception_handler(APIError, api_error_handler)  # type: ignore[arg-type]
+    app.add_exception_handler(RequestValidationError, validation_error_handler)  # type: ignore[arg-type]
+
+    app.include_router(ea_router)
+    app.include_router(app_router)
+
+    @app.get("/healthz", tags=["observability"])
+    async def healthz() -> dict[str, str]:
+        return {"status": "ok"}
+
+    @app.get("/readyz", tags=["observability"])
+    async def readyz(request: Request) -> dict[str, str]:
+        # Test Redis ping
+        redis: Redis = request.app.state.redis
+        await redis.ping()
+        return {"status": "ready"}
+
+    return app
+
+
+app = create_app()

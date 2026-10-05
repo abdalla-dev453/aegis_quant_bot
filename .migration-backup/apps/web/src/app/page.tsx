@@ -1,1 +1,24 @@
-ZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gSG9tZVBhZ2UoKSB7CiAgcmV0dXJuICgKICAgIDxtYWluIGNsYXNzTmFtZT0iZmxleCBtaW4taC1zY3JlZW4gZmxleC1jb2wgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHAtOCI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJ3LWZ1bGwgbWF4LXctNHhsIHNwYWNlLXktNiI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBib3JkZXItYiBib3JkZXItWyMyMzI3MzRdIHBiLTQiPgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT0idGV4dC14bCBmb250LWJvbGQgdHJhY2tpbmctdGlnaHQgdGV4dC1bI0Y4RkFGQ10iPgogICAgICAgICAgICAgIEFlZ2lzUXVhbnQgVGVybWluYWwKICAgICAgICAgICAgPC9oMT4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtWyM5NEEzQjhdIj4KICAgICAgICAgICAgICBFQSBCcmlkZ2UgJiBRdWFudGl0YXRpdmUgVHJhZGUgTWFuYWdlbWVudAogICAgICAgICAgICA8L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUgcm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItWyMyMzI3MzRdIGJnLVsjMTExMzFBXSBweC0yLjUgcHktMSB0ZXh0LXhzIGZvbnQtbW9ubyB0ZXh0LVsjOTRBM0I4XSI+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJoLTEuNSB3LTEuNSByb3VuZGVkLWZ1bGwgYmctWyMxMEI5ODFdIiAvPgogICAgICAgICAgICAgIFNZU1RFTSBSRUFEWQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L21haW4+CiAgKTsKfQo=
+export default function HomePage() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center p-8">
+      <div className="w-full max-w-4xl space-y-6">
+        <div className="flex items-center justify-between border-b border-[#232734] pb-4">
+          <div>
+            <h1 className="text-xl font-bold tracking-tight text-[#F8FAFC]">
+              AegisQuant Terminal
+            </h1>
+            <p className="text-xs text-[#94A3B8]">
+              EA Bridge & Quantitative Trade Management
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#232734] bg-[#11131A] px-2.5 py-1 text-xs font-mono text-[#94A3B8]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />
+              SYSTEM READY
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

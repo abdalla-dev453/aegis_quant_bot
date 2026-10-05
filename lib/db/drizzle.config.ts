@@ -1,1 +1,14 @@
-aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAiZHJpenpsZS1raXQiOwppbXBvcnQgcGF0aCBmcm9tICJwYXRoIjsKCmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7CiAgdGhyb3cgbmV3IEVycm9yKCJEQVRBQkFTRV9VUkwsIGVuc3VyZSB0aGUgZGF0YWJhc2UgaXMgcHJvdmlzaW9uZWQiKTsKfQoKZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHsKICBzY2hlbWE6IHBhdGguam9pbihfX2Rpcm5hbWUsICIuL3NyYy9zY2hlbWEvaW5kZXgudHMiKSwKICBkaWFsZWN0OiAicG9zdGdyZXNxbCIsCiAgZGJDcmVkZW50aWFsczogewogICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsCiAgfSwKfSk7Cg==
+import { defineConfig } from "drizzle-kit";
+import path from "path";
+
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+
+export default defineConfig({
+  schema: path.join(__dirname, "./src/schema/index.ts"),
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL,
+  },
+});

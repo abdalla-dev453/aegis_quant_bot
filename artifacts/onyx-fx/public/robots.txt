@@ -1,1 +1,2 @@
-VXNlci1hZ2VudDogKgpBbGxvdzogLwo=
+User-agent: *
+Allow: /

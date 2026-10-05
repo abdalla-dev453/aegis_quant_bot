@@ -1,1 +1,32 @@
-InVzZSBjbGllbnQiCgppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIKaW1wb3J0ICogYXMgVG9vbHRpcFByaW1pdGl2ZSBmcm9tICJAcmFkaXgtdWkvcmVhY3QtdG9vbHRpcCIKCmltcG9ydCB7IGNuIH0gZnJvbSAiQC9saWIvdXRpbHMiCgpjb25zdCBUb29sdGlwUHJvdmlkZXIgPSBUb29sdGlwUHJpbWl0aXZlLlByb3ZpZGVyCgpjb25zdCBUb29sdGlwID0gVG9vbHRpcFByaW1pdGl2ZS5Sb290Cgpjb25zdCBUb29sdGlwVHJpZ2dlciA9IFRvb2x0aXBQcmltaXRpdmUuVHJpZ2dlcgoKY29uc3QgVG9vbHRpcENvbnRlbnQgPSBSZWFjdC5mb3J3YXJkUmVmPAogIFJlYWN0LkVsZW1lbnRSZWY8dHlwZW9mIFRvb2x0aXBQcmltaXRpdmUuQ29udGVudD4sCiAgUmVhY3QuQ29tcG9uZW50UHJvcHNXaXRob3V0UmVmPHR5cGVvZiBUb29sdGlwUHJpbWl0aXZlLkNvbnRlbnQ+Cj4oKHsgY2xhc3NOYW1lLCBzaWRlT2Zmc2V0ID0gNCwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPFRvb2x0aXBQcmltaXRpdmUuUG9ydGFsPgogICAgPFRvb2x0aXBQcmltaXRpdmUuQ29udGVudAogICAgICByZWY9e3JlZn0KICAgICAgc2lkZU9mZnNldD17c2lkZU9mZnNldH0KICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAiei01MCBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1tZCBiZy1wcmltYXJ5IHB4LTMgcHktMS41IHRleHQteHMgdGV4dC1wcmltYXJ5LWZvcmVncm91bmQgYW5pbWF0ZS1pbiBmYWRlLWluLTAgem9vbS1pbi05NSBkYXRhLVtzdGF0ZT1jbG9zZWRdOmFuaW1hdGUtb3V0IGRhdGEtW3N0YXRlPWNsb3NlZF06ZmFkZS1vdXQtMCBkYXRhLVtzdGF0ZT1jbG9zZWRdOnpvb20tb3V0LTk1IGRhdGEtW3NpZGU9Ym90dG9tXTpzbGlkZS1pbi1mcm9tLXRvcC0yIGRhdGEtW3NpZGU9bGVmdF06c2xpZGUtaW4tZnJvbS1yaWdodC0yIGRhdGEtW3NpZGU9cmlnaHRdOnNsaWRlLWluLWZyb20tbGVmdC0yIGRhdGEtW3NpZGU9dG9wXTpzbGlkZS1pbi1mcm9tLWJvdHRvbS0yIG9yaWdpbi1bLS1yYWRpeC10b29sdGlwLWNvbnRlbnQtdHJhbnNmb3JtLW9yaWdpbl0iLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogIDwvVG9vbHRpcFByaW1pdGl2ZS5Qb3J0YWw+CikpClRvb2x0aXBDb250ZW50LmRpc3BsYXlOYW1lID0gVG9vbHRpcFByaW1pdGl2ZS5Db250ZW50LmRpc3BsYXlOYW1lCgpleHBvcnQgeyBUb29sdGlwLCBUb29sdGlwVHJpZ2dlciwgVG9vbHRpcENvbnRlbnQsIFRvb2x0aXBQcm92aWRlciB9Cg==
+"use client"
+
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+
+import { cn } from "@/lib/utils"
+
+const TooltipProvider = TooltipPrimitive.Provider
+
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Portal>
+    <TooltipPrimitive.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cn(
+        "z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-tooltip-content-transform-origin]",
+        className
+      )}
+      {...props}
+    />
+  </TooltipPrimitive.Portal>
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }

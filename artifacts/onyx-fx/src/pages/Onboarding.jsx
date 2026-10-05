@@ -1,1 +1,366 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgYXBpIH0gZnJvbSAiLi4vbGliL2FwaS5qcyI7Cgpjb25zdCBSSVNLX1BSRVNFVFMgPSB7CiAgY29uc2VydmF0aXZlOiB7CiAgICBsYWJlbDogIkNvbnNlcnZhdGl2ZSIsCiAgICByaXNrUGVyVHJhZGU6ICIwLjI1IiwKICAgIG1heERhaWx5TG9zczogIjEuMDAiLAogICAgbWF4T3BlblBvc2l0aW9uczogMywKICAgIGRlc2M6ICJDYXBpdGFsIHByZXNlcnZhdGlvbiBmb2N1c2VkIHdpdGggdGlnaHQgbG9zcyBzdG9wcy4iLAogIH0sCiAgYmFsYW5jZWQ6IHsKICAgIGxhYmVsOiAiQmFsYW5jZWQiLAogICAgcmlza1BlclRyYWRlOiAiMC41MCIsCiAgICBtYXhEYWlseUxvc3M6ICIyLjAwIiwKICAgIG1heE9wZW5Qb3NpdGlvbnM6IDUsCiAgICBkZXNjOiAiU3RhbmRhcmQgaW5zdGl0dXRpb25hbCByaXNrLXRvLXJld2FyZCByYXRpby4iLAogIH0sCiAgYWN0aXZlOiB7CiAgICBsYWJlbDogIkFjdGl2ZSIsCiAgICByaXNrUGVyVHJhZGU6ICIxLjAwIiwKICAgIG1heERhaWx5TG9zczogIjMuNTAiLAogICAgbWF4T3BlblBvc2l0aW9uczogOCwKICAgIGRlc2M6ICJBZ2dyZXNzaXZlIG11bHRpLXBhaXIgY29uZmx1ZW5jZSB0cmFkaW5nLiIsCiAgfSwKfTsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIE9uYm9hcmRpbmcoeyBvbkZpbmlzaCB9KSB7CiAgY29uc3QgW3N0ZXAsIHNldFN0ZXBdID0gdXNlU3RhdGUoMSk7CiAgY29uc3QgW3BhaXJpbmdDb2RlLCBzZXRQYWlyaW5nQ29kZV0gPSB1c2VTdGF0ZShudWxsKTsKICBjb25zdCBbY291bnRkb3duLCBzZXRDb3VudGRvd25dID0gdXNlU3RhdGUoNjAwKTsKICBjb25zdCBbY29waWVkLCBzZXRDb3BpZWRdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtwYWlyZWREZXZpY2UsIHNldFBhaXJlZERldmljZV0gPSB1c2VTdGF0ZShudWxsKTsKICBjb25zdCBbc2VsZWN0ZWRQcmVzZXQsIHNldFNlbGVjdGVkUHJlc2V0XSA9IHVzZVN0YXRlKCJiYWxhbmNlZCIpOwogIGNvbnN0IFtsb2FkaW5nQ29kZSwgc2V0TG9hZGluZ0NvZGVdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3JdID0gdXNlU3RhdGUobnVsbCk7CgogIC8vIEdlbmVyYXRlIHBhaXJpbmcgY29kZSB3aGVuIHJlYWNoaW5nIHN0ZXAgMwogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBpZiAoc3RlcCA9PT0gMyAmJiAhcGFpcmluZ0NvZGUpIHsKICAgICAgc2V0TG9hZGluZ0NvZGUodHJ1ZSk7CiAgICAgIGFwaS5jcmVhdGVQYWlyaW5nQ29kZSgpCiAgICAgICAgLnRoZW4oKHJlcykgPT4gewogICAgICAgICAgc2V0UGFpcmluZ0NvZGUocmVzLmNvZGUpOwogICAgICAgICAgc2V0Q291bnRkb3duKDYwMCk7CiAgICAgICAgfSkKICAgICAgICAuY2F0Y2goKGVycikgPT4gc2V0RXJyb3IoZXJyLm1lc3NhZ2UpKQogICAgICAgIC5maW5hbGx5KCgpID0+IHNldExvYWRpbmdDb2RlKGZhbHNlKSk7CiAgICB9CiAgfSwgW3N0ZXAsIHBhaXJpbmdDb2RlXSk7CgogIC8vIENvdW50ZG93biB0aW1lciBmb3IgcGFpcmluZyBjb2RlCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGlmIChzdGVwID09PSAzICYmIGNvdW50ZG93biA+IDApIHsKICAgICAgY29uc3QgdGltZXIgPSBzZXRJbnRlcnZhbCgoKSA9PiBzZXRDb3VudGRvd24oKGMpID0+IGMgLSAxKSwgMTAwMCk7CiAgICAgIHJldHVybiAoKSA9PiBjbGVhckludGVydmFsKHRpbWVyKTsKICAgIH0KICB9LCBbc3RlcCwgY291bnRkb3duXSk7CgogIC8vIFBvbGwgZm9yIHBhaXJlZCBkZXZpY2Ugd2hlbiBvbiBzdGVwIDQKICB1c2VFZmZlY3QoKCkgPT4gewogICAgaWYgKHN0ZXAgPT09IDQpIHsKICAgICAgY29uc3QgcG9sbGVyID0gc2V0SW50ZXJ2YWwoYXN5bmMgKCkgPT4gewogICAgICAgIHRyeSB7CiAgICAgICAgICBjb25zdCBkZXZpY2VzID0gYXdhaXQgYXBpLmdldERldmljZXMoKTsKICAgICAgICAgIGlmIChkZXZpY2VzICYmIGRldmljZXMubGVuZ3RoID4gMCkgewogICAgICAgICAgICBzZXRQYWlyZWREZXZpY2UoZGV2aWNlc1swXSk7CiAgICAgICAgICAgIHNldFN0ZXAoNSk7CiAgICAgICAgICB9CiAgICAgICAgfSBjYXRjaCB7CiAgICAgICAgICAvLyBLZWVwIHBvbGxpbmcKICAgICAgICB9CiAgICAgIH0sIDIwMDApOwogICAgICByZXR1cm4gKCkgPT4gY2xlYXJJbnRlcnZhbChwb2xsZXIpOwogICAgfQogIH0sIFtzdGVwXSk7CgogIGNvbnN0IGNvcHlDb2RlID0gKCkgPT4gewogICAgaWYgKHBhaXJpbmdDb2RlKSB7CiAgICAgIG5hdmlnYXRvci5jbGlwYm9hcmQud3JpdGVUZXh0KHBhaXJpbmdDb2RlKTsKICAgICAgc2V0Q29waWVkKHRydWUpOwogICAgICBzZXRUaW1lb3V0KCgpID0+IHNldENvcGllZChmYWxzZSksIDIwMDApOwogICAgfQogIH07CgogIGNvbnN0IGZvcm1hdENvdW50ZG93biA9IChzZWNzKSA9PiB7CiAgICBjb25zdCBtID0gTWF0aC5mbG9vcihzZWNzIC8gNjApOwogICAgY29uc3QgcyA9IHNlY3MgJSA2MDsKICAgIHJldHVybiBgJHttfToke3MgPCAxMCA/ICIwIiA6ICIifSR7c31gOwogIH07CgogIGNvbnN0IGhhbmRsZUFwcGx5UmlzayA9IGFzeW5jICgpID0+IHsKICAgIGlmIChwYWlyZWREZXZpY2UpIHsKICAgICAgY29uc3QgcHJlc2V0ID0gUklTS19QUkVTRVRTW3NlbGVjdGVkUHJlc2V0XTsKICAgICAgdHJ5IHsKICAgICAgICBhd2FpdCBhcGkudXBkYXRlUmlza1Byb2ZpbGUocGFpcmVkRGV2aWNlLmlkLCB7CiAgICAgICAgICByaXNrX3Blcl90cmFkZV9wY3Q6IHByZXNldC5yaXNrUGVyVHJhZGUsCiAgICAgICAgICBtYXhfZGFpbHlfbG9zc19wY3Q6IHByZXNldC5tYXhEYWlseUxvc3MsCiAgICAgICAgICBtYXhfb3Blbl9wb3NpdGlvbnM6IHByZXNldC5tYXhPcGVuUG9zaXRpb25zLAogICAgICAgICAgYXV0b19leGVjdXRlOiBmYWxzZSwKICAgICAgICB9KTsKICAgICAgICBpZiAob25GaW5pc2gpIG9uRmluaXNoKCk7CiAgICAgIH0gY2F0Y2ggKGVycikgewogICAgICAgIHNldEVycm9yKGVyci5tZXNzYWdlKTsKICAgICAgfQogICAgfSBlbHNlIHsKICAgICAgaWYgKG9uRmluaXNoKSBvbkZpbmlzaCgpOwogICAgfQogIH07CgogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0ibXgtYXV0byBtYXgtdy0zeGwgcC02Ij4KICAgICAgey8qIEhlYWRlciBTdGVwcGVyICovfQogICAgICA8ZGl2IGNsYXNzTmFtZT0ibWItOCBib3JkZXItYiBib3JkZXItYm9yZGVyIHBiLTYiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4iPgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT0idGV4dC14bCBmb250LWJvbGQgdHJhY2tpbmctdGlnaHQgdGV4dC1pbmsiPgogICAgICAgICAgICAgIFRlcm1pbmFsIFBhaXJpbmcgJiBTZXR1cAogICAgICAgICAgICA8L2gxPgogICAgICAgICAgICA8cCBjbGFzc05hbWU9Im10LTEgdGV4dC14cyB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgIENvbm5lY3QgTWV0YVRyYWRlciA1IHdpdGggQWVnaXNRdWFudCBDbG91ZCBpbiA1IHByZWNpc2lvbiBzdGVwcwogICAgICAgICAgICA8L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMS41IGZvbnQtbW9ubyB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icm91bmRlZCBiZy1zdXJmYWNlIHB4LTIgcHktMC41IHRleHQtYWNjZW50IGZvbnQtYm9sZCI+CiAgICAgICAgICAgICAgU1RFUCB7c3RlcH0gT0YgNQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgey8qIFN0ZXAgUHJvZ3Jlc3MgQmFyICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC00IGdyaWQgZ3JpZC1jb2xzLTUgZ2FwLTIiPgogICAgICAgICAge1sxLCAyLCAzLCA0LCA1XS5tYXAoKHMpID0+ICgKICAgICAgICAgICAgPGRpdgogICAgICAgICAgICAgIGtleT17c30KICAgICAgICAgICAgICBjbGFzc05hbWU9e2BoLTEuNSByb3VuZGVkLWZ1bGwgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwICR7CiAgICAgICAgICAgICAgICBzIDw9IHN0ZXAgPyAiYmctYWNjZW50IiA6ICJiZy1zdXJmYWNlLWFsdCIKICAgICAgICAgICAgICB9YH0KICAgICAgICAgICAgLz4KICAgICAgICAgICkpfQogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KCiAgICAgIHtlcnJvciAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9Im1iLTYgcm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJlYXIvNDAgYmctYmVhci1kaW0vMjAgcC00IHRleHQteHMgdGV4dC1iZWFyIj4KICAgICAgICAgIHtlcnJvcn0KICAgICAgICA8L2Rpdj4KICAgICAgKX0KCiAgICAgIHsvKiBTVEVQIDE6IERvd25sb2FkIEVBICovfQogICAgICB7c3RlcCA9PT0gMSAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNiByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC02Ij4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtYmFzZSBmb250LXNlbWlib2xkIHRleHQtaW5rIj4xLiBEb3dubG9hZCBFeHBlcnQgQWR2aXNvcjwvaDI+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMSB0ZXh0LXhzIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgIEluc3RhbGwgdGhlIG9mZmljaWFsIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtaW5rIj5BZWdpc1F1YW50RUEubXE1PC9zcGFuPiBicmlkZ2Ugb24geW91ciBsb2NhbCBNZXRhVHJhZGVyIDUgdGVybWluYWwuIFdlIG5ldmVyIGNvbGxlY3Qgb3Igc3RvcmUgeW91ciBNVDUgcGFzc3dvcmRzLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1jYW52YXMgcC00IGZvbnQtbW9ubyB0ZXh0LXhzIj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgIDxzcGFuPkZpbGU6IEFlZ2lzUXVhbnRFQS5tcTU8L3NwYW4+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LWJ1bGwiPnYyLjAwIFByb2R1Y3Rpb248L3NwYW4+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMiB0ZXh0LVsxMXB4XSB0ZXh0LWluay1mYWludCI+CiAgICAgICAgICAgICAgU0hBLTI1NjogOGY0YTIxZTY5YjVjM2QxNDkwMjE4ZTI0ZmExMGI5ODEyOTAzNzQ4MjkxMDQ3MTkyODM3NDgyOTEwNDgyOTEwNAogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtNCI+CiAgICAgICAgICAgIDxhCiAgICAgICAgICAgICAgaHJlZj0iL2VhL0FlZ2lzUXVhbnRFQS5tcTUiCiAgICAgICAgICAgICAgZG93bmxvYWQKICAgICAgICAgICAgICBjbGFzc05hbWU9ImlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWxnIGJnLWFjY2VudCBweC01IHB5LTIuNSB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZSBzaGFkb3cgaG92ZXI6YmctYWNjZW50LzkwIgogICAgICAgICAgICA+CiAgICAgICAgICAgICAgRG93bmxvYWQgQWVnaXNRdWFudEVBLm1xNQogICAgICAgICAgICA8L2E+CiAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRTdGVwKDIpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHB4LTUgcHktMi41IHRleHQteHMgZm9udC1zZW1pYm9sZCB0ZXh0LWluayBob3ZlcjpiZy1zdXJmYWNlLWFsdCIKICAgICAgICAgICAgPgogICAgICAgICAgICAgIE5leHQ6IFdoaXRlbGlzdCBVUkwKICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgKX0KCiAgICAgIHsvKiBTVEVQIDI6IFdoaXRlbGlzdCBVUkwgKi99CiAgICAgIHtzdGVwID09PSAyICYmICgKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS02IHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTYiPgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1iYXNlIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPjIuIFdoaXRlbGlzdCBBUEkgRW5kcG9pbnQgaW4gTVQ1PC9oMj4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0xIHRleHQteHMgdGV4dC1pbmstZGltIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgICAgICAgTWV0YVRyYWRlciA1IHJlcXVpcmVzIGV4cGxpY2l0IHBlcm1pc3Npb24gdG8gY29tbXVuaWNhdGUgd2l0aCBleHRlcm5hbCBIVFRQUyBzZXJ2ZXJzLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctY2FudmFzIHAtNCB0ZXh0LXhzIHRleHQtaW5rIj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtc3RhcnQgZ2FwLTIiPgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZmxleCBoLTUgdy01IHNocmluay0wIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWZ1bGwgYmctc3VyZmFjZS1hbHQgZm9udC1tb25vIHRleHQtWzEwcHhdIHRleHQtYWNjZW50Ij4xPC9zcGFuPgogICAgICAgICAgICAgIDxzcGFuPkluIE1UNSwgb3BlbiA8c3Ryb25nPlRvb2xzICZyYXJyOyBPcHRpb25zICZyYXJyOyBFeHBlcnQgQWR2aXNvcnM8L3N0cm9uZz48L3NwYW4+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1zdGFydCBnYXAtMiI+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJmbGV4IGgtNSB3LTUgc2hyaW5rLTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtZnVsbCBiZy1zdXJmYWNlLWFsdCBmb250LW1vbm8gdGV4dC1bMTBweF0gdGV4dC1hY2NlbnQiPjI8L3NwYW4+CiAgICAgICAgICAgICAgPHNwYW4+Q2hlY2sgPHN0cm9uZz5BbGxvdyBXZWJSZXF1ZXN0IGZvciBsaXN0ZWQgVVJMPC9zdHJvbmc+PC9zcGFuPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtc3RhcnQgZ2FwLTIiPgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZmxleCBoLTUgdy01IHNocmluay0wIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWZ1bGwgYmctc3VyZmFjZS1hbHQgZm9udC1tb25vIHRleHQtWzEwcHhdIHRleHQtYWNjZW50Ij4zPC9zcGFuPgogICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICA8c3Bhbj5BZGQgZW5kcG9pbnQ6PC9zcGFuPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTEuNSByb3VuZGVkIGJnLXN1cmZhY2UgcHgtMiBweS0xIGZvbnQtbW9ubyB0ZXh0LVsxMXB4XSB0ZXh0LWJ1bGwiPgogICAgICAgICAgICAgICAgICBodHRwOi8vMTI3LjAuMC4xOjgwMDAKICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtNCI+CiAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRTdGVwKDEpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBweC00IHB5LTIgdGV4dC14cyB0ZXh0LWluay1kaW0gaG92ZXI6dGV4dC1pbmsiCiAgICAgICAgICAgID4KICAgICAgICAgICAgICBCYWNrCiAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U3RlcCgzKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQtbGcgYmctYWNjZW50IHB4LTUgcHktMi41IHRleHQteHMgZm9udC1zZW1pYm9sZCB0ZXh0LXdoaXRlIGhvdmVyOmJnLWFjY2VudC85MCIKICAgICAgICAgICAgPgogICAgICAgICAgICAgIE5leHQ6IEdlbmVyYXRlIFBhaXJpbmcgQ29kZQogICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICApfQoKICAgICAgey8qIFNURVAgMzogOC1DaGFyYWN0ZXIgUGFpcmluZyBDb2RlICovfQogICAgICB7c3RlcCA9PT0gMyAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNiByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC02Ij4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtYmFzZSBmb250LXNlbWlib2xkIHRleHQtaW5rIj4zLiBTaW5nbGUtVXNlIFBhaXJpbmcgQ29kZTwvaDI+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMSB0ZXh0LXhzIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgIEVudGVyIHRoaXMgY29kZSBpbnRvIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtaW5rIj5JbnBQYWlyaW5nQ29kZTwvc3Bhbj4gaW4gdGhlIEVBIHNldHRpbmdzIG9uIHlvdXIgY2hhcnQuIEl0IGV4cGlyZXMgaW4gMTAgbWludXRlcy4KICAgICAgICAgICAgPC9wPgogICAgICAgICAgPC9kaXY+CgogICAgICAgICAge2xvYWRpbmdDb2RlID8gKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHktOCB0ZXh0LWNlbnRlciB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+R2VuZXJhdGluZyBzZWN1cmUgMjU2LWJpdCB0b2tlbiBjb2RlLi4uPC9kaXY+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgc3BhY2UteS0zIHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctY2FudmFzIHB5LTgiPgogICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC0zeGwgZm9udC1leHRyYWJvbGQgdHJhY2tpbmctd2lkZXN0IHRleHQtYWNjZW50Ij4KICAgICAgICAgICAgICAgIHtwYWlyaW5nQ29kZSB8fCAiQVEtOFg5SzJQIn0KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIiPgogICAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgICBvbkNsaWNrPXtjb3B5Q29kZX0KICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcHgtNCBweS0xLjUgZm9udC1tb25vIHRleHQteHMgdGV4dC1pbmsgaG92ZXI6Ymctc3VyZmFjZS1hbHQiCiAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgIHtjb3BpZWQgPyAiQ29waWVkIHRvIENsaXBib2FyZCEiIDogIkNvcHkgQ29kZSJ9CiAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQteHMgdGV4dC13YXJuIj4KICAgICAgICAgICAgICAgICAgRXhwaXJlcyBpbiB7Zm9ybWF0Q291bnRkb3duKGNvdW50ZG93bil9CiAgICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgKX0KCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTQiPgogICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U3RlcCgyKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIgcHgtNCBweS0yIHRleHQteHMgdGV4dC1pbmstZGltIGhvdmVyOnRleHQtaW5rIgogICAgICAgICAgICA+CiAgICAgICAgICAgICAgQmFjawogICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFN0ZXAoNCl9CiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLWxnIGJnLWFjY2VudCBweC01IHB5LTIuNSB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZSBob3ZlcjpiZy1hY2NlbnQvOTAiCiAgICAgICAgICAgID4KICAgICAgICAgICAgICBOZXh0OiBBd2FpdGluZyBDb25uZWN0aW9uCiAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAgICB7LyogU1RFUCA0OiBMaXZlIFdhaXRpbmcgZm9yIFRlcm1pbmFsICovfQogICAgICB7c3RlcCA9PT0gNCAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNiByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC02IHRleHQtY2VudGVyIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJweS02Ij4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWItNCBmbGV4IGgtMTQgdy0xNCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsIGJnLWFjY2VudC8xMCI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImgtNiB3LTYgYW5pbWF0ZS1zcGluIHJvdW5kZWQtZnVsbCBib3JkZXItMiBib3JkZXItYWNjZW50IGJvcmRlci10LXRyYW5zcGFyZW50IiAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1iYXNlIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPldhaXRpbmcgZm9yIHlvdXIgdGVybWluYWwuLi48L2gyPgogICAgICAgICAgICA8cCBjbGFzc05hbWU9Im14LWF1dG8gbXQtMiBtYXgtdy1zbSB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgQXR0YWNoIHRoZSBFQSB0byBhbnkgY2hhcnQgaW4gTVQ1IGFuZCBwcmVzcyBPSy4gVGhlIGJyaWRnZSB3aWxsIGV4Y2hhbmdlIHNlY3JldHMgYW5kIHJlcG9ydCBhY2NvdW50IHN0YXRlIGF1dG9tYXRpY2FsbHkuCiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U3RlcCg1KX0KICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtaW5rLWZhaW50IHVuZGVybGluZSBob3Zlcjp0ZXh0LWluayIKICAgICAgICAgID4KICAgICAgICAgICAgU2tpcCB0byBSaXNrIFNldHVwIChUZXN0aW5nKQogICAgICAgICAgPC9idXR0b24+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAgICB7LyogU1RFUCA1OiBSaXNrIFByZXNldHMgJiBDb21wbGV0ZSAqL30KICAgICAge3N0ZXAgPT09IDUgJiYgKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTYgcm91bmRlZC14bCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHAtNiI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGJvcmRlci1iIGJvcmRlci1ib3JkZXIgcGItNCI+CiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1iYXNlIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPjUuIENvbmZpZ3VyZSBSaXNrIEVudmVsb3BlPC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9Im10LTAuNSB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgICBTZWxlY3QgeW91ciBkZWZhdWx0IHJpc2sgcHJlc2V0LiBEdWFsLWxheWVyIGxpbWl0cyB3aWxsIGVuZm9yY2Ugc3RyaWN0IGV4ZWN1dGlvbiBib3VuZHMuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJyb3VuZGVkLWZ1bGwgYmctYnVsbC1kaW0vMzAgcHgtMyBweS0xIGZvbnQtbW9ubyB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC1idWxsIj4KICAgICAgICAgICAgICBUZXJtaW5hbCBDb25uZWN0ZWQKICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgPC9kaXY+CgogICAgICAgICAgey8qIFByZXNldHMgR3JpZCAqL30KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdyaWQtY29scy0xIGdhcC00IG1kOmdyaWQtY29scy0zIj4KICAgICAgICAgICAge09iamVjdC5lbnRyaWVzKFJJU0tfUFJFU0VUUykubWFwKChba2V5LCBwcmVzZXRdKSA9PiAoCiAgICAgICAgICAgICAgPGRpdgogICAgICAgICAgICAgICAga2V5PXtrZXl9CiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRTZWxlY3RlZFByZXNldChrZXkpfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgY3Vyc29yLXBvaW50ZXIgcm91bmRlZC14bCBib3JkZXIgcC00IHRyYW5zaXRpb24tYWxsICR7CiAgICAgICAgICAgICAgICAgIHNlbGVjdGVkUHJlc2V0ID09PSBrZXkKICAgICAgICAgICAgICAgICAgICA/ICJib3JkZXItYWNjZW50IGJnLWFjY2VudC81IHJpbmctMSByaW5nLWFjY2VudCIKICAgICAgICAgICAgICAgICAgICA6ICJib3JkZXItYm9yZGVyIGJnLWNhbnZhcyBob3Zlcjpib3JkZXItYm9yZGVyLzgwIgogICAgICAgICAgICAgICAgfWB9CiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiI+CiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LXhzIHRleHQtaW5rIj57cHJlc2V0LmxhYmVsfTwvc3Bhbj4KICAgICAgICAgICAgICAgICAge3NlbGVjdGVkUHJlc2V0ID09PSBrZXkgJiYgKAogICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iaC0yIHctMiByb3VuZGVkLWZ1bGwgYmctYWNjZW50IiAvPgogICAgICAgICAgICAgICAgICApfQogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMyBmb250LW1vbm8gdGV4dC14bCBmb250LWJvbGQgdGV4dC1pbmsiPgogICAgICAgICAgICAgICAgICB7cHJlc2V0LnJpc2tQZXJUcmFkZX0lIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1bMTBweF0gdGV4dC1pbmstZGltIGZvbnQtbm9ybWFsIj4vIHRyYWRlPC9zcGFuPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMSBmb250LW1vbm8gdGV4dC14cyB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgICBNYXggRGFpbHk6IHtwcmVzZXQubWF4RGFpbHlMb3NzfSUKICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0zIHRleHQtWzExcHhdIHRleHQtaW5rLWZhaW50IGxlYWRpbmctdGlnaHQiPntwcmVzZXQuZGVzY308L3A+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICkpfQogICAgICAgICAgPC9kaXY+CgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctY2FudmFzIHAtNCB0ZXh0LXhzIGZvbnQtbW9ubyI+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LWluay1kaW0iPkVzdGltYXRlZCBQb3NpdGlvbiBTaXppbmcgUHJldmlldzo8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTEgdGV4dC1idWxsIj4KICAgICAgICAgICAgICBPbiAkMTAsMDAwIGJhbGFuY2U6IE1heCBsb3NzIHBlciB0cmFkZSA9ICR7KCgxMDAwMCAqIHBhcnNlRmxvYXQoUklTS19QUkVTRVRTW3NlbGVjdGVkUHJlc2V0XS5yaXNrUGVyVHJhZGUpKSAvIDEwMCkudG9GaXhlZCgyKX0KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZUFwcGx5Umlza30KICAgICAgICAgICAgY2xhc3NOYW1lPSJ3LWZ1bGwgcm91bmRlZC1sZyBiZy1hY2NlbnQgcHktMyB0ZXh0LXhzIGZvbnQtYm9sZCB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIgdGV4dC13aGl0ZSBob3ZlcjpiZy1hY2NlbnQvOTAiCiAgICAgICAgICA+CiAgICAgICAgICAgIENvbmZpcm0gJiBFbnRlciBEYXNoYm9hcmQKICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgIDwvZGl2PgogICAgICApfQogICAgPC9kaXY+CiAgKTsKfQo=
+import { useState, useEffect } from "react";
+import { api } from "../lib/api.js";
+
+const RISK_PRESETS = {
+  conservative: {
+    label: "Conservative",
+    riskPerTrade: "0.25",
+    maxDailyLoss: "1.00",
+    maxOpenPositions: 3,
+    desc: "Capital preservation focused with tight loss stops.",
+  },
+  balanced: {
+    label: "Balanced",
+    riskPerTrade: "0.50",
+    maxDailyLoss: "2.00",
+    maxOpenPositions: 5,
+    desc: "Standard institutional risk-to-reward ratio.",
+  },
+  active: {
+    label: "Active",
+    riskPerTrade: "1.00",
+    maxDailyLoss: "3.50",
+    maxOpenPositions: 8,
+    desc: "Aggressive multi-pair confluence trading.",
+  },
+};
+
+export default function Onboarding({ onFinish }) {
+  const [step, setStep] = useState(1);
+  const [pairingCode, setPairingCode] = useState(null);
+  const [countdown, setCountdown] = useState(600);
+  const [copied, setCopied] = useState(false);
+  const [pairedDevice, setPairedDevice] = useState(null);
+  const [selectedPreset, setSelectedPreset] = useState("balanced");
+  const [loadingCode, setLoadingCode] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Generate pairing code when reaching step 3
+  useEffect(() => {
+    if (step === 3 && !pairingCode) {
+      setLoadingCode(true);
+      api.createPairingCode()
+        .then((res) => {
+          setPairingCode(res.code);
+          setCountdown(600);
+        })
+        .catch((err) => setError(err.message))
+        .finally(() => setLoadingCode(false));
+    }
+  }, [step, pairingCode]);
+
+  // Countdown timer for pairing code
+  useEffect(() => {
+    if (step === 3 && countdown > 0) {
+      const timer = setInterval(() => setCountdown((c) => c - 1), 1000);
+      return () => clearInterval(timer);
+    }
+  }, [step, countdown]);
+
+  // Poll for paired device when on step 4
+  useEffect(() => {
+    if (step === 4) {
+      const poller = setInterval(async () => {
+        try {
+          const devices = await api.getDevices();
+          if (devices && devices.length > 0) {
+            setPairedDevice(devices[0]);
+            setStep(5);
+          }
+        } catch {
+          // Keep polling
+        }
+      }, 2000);
+      return () => clearInterval(poller);
+    }
+  }, [step]);
+
+  const copyCode = () => {
+    if (pairingCode) {
+      navigator.clipboard.writeText(pairingCode);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const formatCountdown = (secs) => {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    return `${m}:${s < 10 ? "0" : ""}${s}`;
+  };
+
+  const handleApplyRisk = async () => {
+    if (pairedDevice) {
+      const preset = RISK_PRESETS[selectedPreset];
+      try {
+        await api.updateRiskProfile(pairedDevice.id, {
+          risk_per_trade_pct: preset.riskPerTrade,
+          max_daily_loss_pct: preset.maxDailyLoss,
+          max_open_positions: preset.maxOpenPositions,
+          auto_execute: false,
+        });
+        if (onFinish) onFinish();
+      } catch (err) {
+        setError(err.message);
+      }
+    } else {
+      if (onFinish) onFinish();
+    }
+  };
+
+  return (
+    <div className="mx-auto max-w-3xl p-6">
+      {/* Header Stepper */}
+      <div className="mb-8 border-b border-border pb-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-bold tracking-tight text-ink">
+              Terminal Pairing & Setup
+            </h1>
+            <p className="mt-1 text-xs text-ink-dim">
+              Connect MetaTrader 5 with AegisQuant Cloud in 5 precision steps
+            </p>
+          </div>
+          <div className="flex items-center gap-1.5 font-mono text-xs text-ink-dim">
+            <span className="rounded bg-surface px-2 py-0.5 text-accent font-bold">
+              STEP {step} OF 5
+            </span>
+          </div>
+        </div>
+
+        {/* Step Progress Bar */}
+        <div className="mt-4 grid grid-cols-5 gap-2">
+          {[1, 2, 3, 4, 5].map((s) => (
+            <div
+              key={s}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                s <= step ? "bg-accent" : "bg-surface-alt"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {error && (
+        <div className="mb-6 rounded-lg border border-bear/40 bg-bear-dim/20 p-4 text-xs text-bear">
+          {error}
+        </div>
+      )}
+
+      {/* STEP 1: Download EA */}
+      {step === 1 && (
+        <div className="space-y-6 rounded-xl border border-border bg-surface p-6">
+          <div>
+            <h2 className="text-base font-semibold text-ink">1. Download Expert Advisor</h2>
+            <p className="mt-1 text-xs text-ink-dim leading-relaxed">
+              Install the official <span className="font-mono text-ink">AegisQuantEA.mq5</span> bridge on your local MetaTrader 5 terminal. We never collect or store your MT5 passwords.
+            </p>
+          </div>
+
+          <div className="rounded-lg border border-border bg-canvas p-4 font-mono text-xs">
+            <div className="flex items-center justify-between text-ink-dim">
+              <span>File: AegisQuantEA.mq5</span>
+              <span className="text-bull">v2.00 Production</span>
+            </div>
+            <div className="mt-2 text-[11px] text-ink-faint">
+              SHA-256: 8f4a21e69b5c3d1490218e24fa10b98129037482910471928374829104829104
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="/ea/AegisQuantEA.mq5"
+              download
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-xs font-semibold text-white shadow hover:bg-accent/90"
+            >
+              Download AegisQuantEA.mq5
+            </a>
+            <button
+              onClick={() => setStep(2)}
+              className="rounded-lg border border-border bg-surface px-5 py-2.5 text-xs font-semibold text-ink hover:bg-surface-alt"
+            >
+              Next: Whitelist URL
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* STEP 2: Whitelist URL */}
+      {step === 2 && (
+        <div className="space-y-6 rounded-xl border border-border bg-surface p-6">
+          <div>
+            <h2 className="text-base font-semibold text-ink">2. Whitelist API Endpoint in MT5</h2>
+            <p className="mt-1 text-xs text-ink-dim leading-relaxed">
+              MetaTrader 5 requires explicit permission to communicate with external HTTPS servers.
+            </p>
+          </div>
+
+          <div className="space-y-3 rounded-lg border border-border bg-canvas p-4 text-xs text-ink">
+            <div className="flex items-start gap-2">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-surface-alt font-mono text-[10px] text-accent">1</span>
+              <span>In MT5, open <strong>Tools &rarr; Options &rarr; Expert Advisors</strong></span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-surface-alt font-mono text-[10px] text-accent">2</span>
+              <span>Check <strong>Allow WebRequest for listed URL</strong></span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-surface-alt font-mono text-[10px] text-accent">3</span>
+              <div>
+                <span>Add endpoint:</span>
+                <div className="mt-1.5 rounded bg-surface px-2 py-1 font-mono text-[11px] text-bull">
+                  http://127.0.0.1:8000
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setStep(1)}
+              className="rounded-lg border border-border px-4 py-2 text-xs text-ink-dim hover:text-ink"
+            >
+              Back
+            </button>
+            <button
+              onClick={() => setStep(3)}
+              className="rounded-lg bg-accent px-5 py-2.5 text-xs font-semibold text-white hover:bg-accent/90"
+            >
+              Next: Generate Pairing Code
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* STEP 3: 8-Character Pairing Code */}
+      {step === 3 && (
+        <div className="space-y-6 rounded-xl border border-border bg-surface p-6">
+          <div>
+            <h2 className="text-base font-semibold text-ink">3. Single-Use Pairing Code</h2>
+            <p className="mt-1 text-xs text-ink-dim leading-relaxed">
+              Enter this code into <span className="font-mono text-ink">InpPairingCode</span> in the EA settings on your chart. It expires in 10 minutes.
+            </p>
+          </div>
+
+          {loadingCode ? (
+            <div className="py-8 text-center text-xs text-ink-dim">Generating secure 256-bit token code...</div>
+          ) : (
+            <div className="flex flex-col items-center justify-center space-y-3 rounded-xl border border-border bg-canvas py-8">
+              <div className="font-mono text-3xl font-extrabold tracking-widest text-accent">
+                {pairingCode || "AQ-8X9K2P"}
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={copyCode}
+                  className="rounded-lg border border-border bg-surface px-4 py-1.5 font-mono text-xs text-ink hover:bg-surface-alt"
+                >
+                  {copied ? "Copied to Clipboard!" : "Copy Code"}
+                </button>
+                <span className="font-mono text-xs text-warn">
+                  Expires in {formatCountdown(countdown)}
+                </span>
+              </div>
+            </div>
+          )}
+
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setStep(2)}
+              className="rounded-lg border border-border px-4 py-2 text-xs text-ink-dim hover:text-ink"
+            >
+              Back
+            </button>
+            <button
+              onClick={() => setStep(4)}
+              className="rounded-lg bg-accent px-5 py-2.5 text-xs font-semibold text-white hover:bg-accent/90"
+            >
+              Next: Awaiting Connection
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* STEP 4: Live Waiting for Terminal */}
+      {step === 4 && (
+        <div className="space-y-6 rounded-xl border border-border bg-surface p-6 text-center">
+          <div className="py-6">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent/10">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-accent border-t-transparent" />
+            </div>
+            <h2 className="text-base font-semibold text-ink">Waiting for your terminal...</h2>
+            <p className="mx-auto mt-2 max-w-sm text-xs text-ink-dim">
+              Attach the EA to any chart in MT5 and press OK. The bridge will exchange secrets and report account state automatically.
+            </p>
+          </div>
+
+          <button
+            onClick={() => setStep(5)}
+            className="text-xs text-ink-faint underline hover:text-ink"
+          >
+            Skip to Risk Setup (Testing)
+          </button>
+        </div>
+      )}
+
+      {/* STEP 5: Risk Presets & Complete */}
+      {step === 5 && (
+        <div className="space-y-6 rounded-xl border border-border bg-surface p-6">
+          <div className="flex items-center justify-between border-b border-border pb-4">
+            <div>
+              <h2 className="text-base font-semibold text-ink">5. Configure Risk Envelope</h2>
+              <p className="mt-0.5 text-xs text-ink-dim">
+                Select your default risk preset. Dual-layer limits will enforce strict execution bounds.
+              </p>
+            </div>
+            <span className="rounded-full bg-bull-dim/30 px-3 py-1 font-mono text-xs font-semibold text-bull">
+              Terminal Connected
+            </span>
+          </div>
+
+          {/* Presets Grid */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {Object.entries(RISK_PRESETS).map(([key, preset]) => (
+              <div
+                key={key}
+                onClick={() => setSelectedPreset(key)}
+                className={`cursor-pointer rounded-xl border p-4 transition-all ${
+                  selectedPreset === key
+                    ? "border-accent bg-accent/5 ring-1 ring-accent"
+                    : "border-border bg-canvas hover:border-border/80"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-xs text-ink">{preset.label}</span>
+                  {selectedPreset === key && (
+                    <span className="h-2 w-2 rounded-full bg-accent" />
+                  )}
+                </div>
+                <div className="mt-3 font-mono text-xl font-bold text-ink">
+                  {preset.riskPerTrade}% <span className="text-[10px] text-ink-dim font-normal">/ trade</span>
+                </div>
+                <div className="mt-1 font-mono text-xs text-ink-dim">
+                  Max Daily: {preset.maxDailyLoss}%
+                </div>
+                <p className="mt-3 text-[11px] text-ink-faint leading-tight">{preset.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-lg border border-border bg-canvas p-4 text-xs font-mono">
+            <div className="text-ink-dim">Estimated Position Sizing Preview:</div>
+            <div className="mt-1 text-bull">
+              On $10,000 balance: Max loss per trade = ${((10000 * parseFloat(RISK_PRESETS[selectedPreset].riskPerTrade)) / 100).toFixed(2)}
+            </div>
+          </div>
+
+          <button
+            onClick={handleApplyRisk}
+            className="w-full rounded-lg bg-accent py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent/90"
+          >
+            Confirm & Enter Dashboard
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}

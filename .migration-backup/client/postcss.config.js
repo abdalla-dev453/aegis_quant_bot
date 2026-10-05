@@ -1,1 +1,6 @@
-ZXhwb3J0IGRlZmF1bHQgewogICAgcHVnaW5zOiB7CiAgICAgICAgdGFpbHdpbmRjc3M6IHt9LAogICAgICAgIGF1dG9wcmVmaXhlcjoge30sCiAgICB9Cn0=
+export default {
+    pugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+    }
+}

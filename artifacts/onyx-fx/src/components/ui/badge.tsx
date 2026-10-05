@@ -1,1 +1,42 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKaW1wb3J0IHsgY3ZhLCB0eXBlIFZhcmlhbnRQcm9wcyB9IGZyb20gJ2NsYXNzLXZhcmlhbmNlLWF1dGhvcml0eSc7Cgpjb25zdCBiYWRnZVZhcmlhbnRzID0gY3ZhKAogIC8vIEByZXBsaXQKICAvLyBXaGl0ZXNwYWNlLW5vd3JhcDogQmFkZ2VzIHNob3VsZCBuZXZlciB3cmFwLgogICd3aGl0ZXNwYWNlLW5vd3JhcCBpbmxpbmUtZmxleCBpdGVtcy1jZW50ZXIgcm91bmRlZC1tZCBib3JkZXIgcHgtMi41IHB5LTAuNSB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdHJhbnNpdGlvbi1jb2xvcnMgZm9jdXM6b3V0bGluZS1ub25lIGZvY3VzOnJpbmctMiBmb2N1czpyaW5nLXJpbmcgZm9jdXM6cmluZy1vZmZzZXQtMicgKwogICAgJyBob3Zlci1lbGV2YXRlICcsCiAgewogICAgdmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogewogICAgICAgIGRlZmF1bHQ6CiAgICAgICAgICAvLyBAcmVwbGl0IHNoYWRvdy14cyBpbnN0ZWFkIG9mIHNoYWRvdywgbm8gaG92ZXIgYmVjYXVzZSB3ZSB1c2UgaG92ZXItZWxldmF0ZQogICAgICAgICAgJ2JvcmRlci10cmFuc3BhcmVudCBiZy1wcmltYXJ5IHRleHQtcHJpbWFyeS1mb3JlZ3JvdW5kIHNoYWRvdy14cycsCiAgICAgICAgc2Vjb25kYXJ5OgogICAgICAgICAgLy8gQHJlcGxpdCBubyBob3ZlciBiZWNhdXNlIHdlIHVzZSBob3Zlci1lbGV2YXRlCiAgICAgICAgICAnYm9yZGVyLXRyYW5zcGFyZW50IGJnLXNlY29uZGFyeSB0ZXh0LXNlY29uZGFyeS1mb3JlZ3JvdW5kJywKICAgICAgICBkZXN0cnVjdGl2ZToKICAgICAgICAgIC8vIEByZXBsaXQgc2hhZG93LXhzIGluc3RlYWQgb2Ygc2hhZG93LCBubyBob3ZlciBiZWNhdXNlIHdlIHVzZSBob3Zlci1lbGV2YXRlCiAgICAgICAgICAnYm9yZGVyLXRyYW5zcGFyZW50IGJnLWRlc3RydWN0aXZlIHRleHQtZGVzdHJ1Y3RpdmUtZm9yZWdyb3VuZCBzaGFkb3cteHMnLAogICAgICAgIC8vIEByZXBsaXQgc2hhZG93LXhzIiAtIHVzZSBiYWRnZSBvdXRsaW5lIHZhcmlhYmxlCiAgICAgICAgb3V0bGluZTogJ3RleHQtZm9yZWdyb3VuZCBib3JkZXIgW2JvcmRlci1jb2xvcjp2YXIoLS1iYWRnZS1vdXRsaW5lKV0nLAogICAgICB9LAogICAgfSwKICAgIGRlZmF1bHRWYXJpYW50czogewogICAgICB2YXJpYW50OiAnZGVmYXVsdCcsCiAgICB9LAogIH0sCik7CgpleHBvcnQgaW50ZXJmYWNlIEJhZGdlUHJvcHMKICBleHRlbmRzIFJlYWN0LkhUTUxBdHRyaWJ1dGVzPEhUTUxEaXZFbGVtZW50PiwKICAgIFZhcmlhbnRQcm9wczx0eXBlb2YgYmFkZ2VWYXJpYW50cz4ge30KCmZ1bmN0aW9uIEJhZGdlKHsgY2xhc3NOYW1lLCB2YXJpYW50LCAuLi5wcm9wcyB9OiBCYWRnZVByb3BzKSB7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPXtjbihiYWRnZVZhcmlhbnRzKHsgdmFyaWFudCB9KSwgY2xhc3NOYW1lKX0gey4uLnByb3BzfSAvPgogICk7Cn0KCmV4cG9ydCB7IEJhZGdlLCBiYWRnZVZhcmlhbnRzIH07Cg==
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+const badgeVariants = cva(
+  // @replit
+  // Whitespace-nowrap: Badges should never wrap.
+  'whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2' +
+    ' hover-elevate ',
+  {
+    variants: {
+      variant: {
+        default:
+          // @replit shadow-xs instead of shadow, no hover because we use hover-elevate
+          'border-transparent bg-primary text-primary-foreground shadow-xs',
+        secondary:
+          // @replit no hover because we use hover-elevate
+          'border-transparent bg-secondary text-secondary-foreground',
+        destructive:
+          // @replit shadow-xs instead of shadow, no hover because we use hover-elevate
+          'border-transparent bg-destructive text-destructive-foreground shadow-xs',
+        // @replit shadow-xs" - use badge outline variable
+        outline: 'text-foreground border [border-color:var(--badge-outline)]',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+);
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
+}
+
+export { Badge, badgeVariants };

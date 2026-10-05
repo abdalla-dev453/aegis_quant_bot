@@ -1,1 +1,26 @@
-ewogICJjb21waWxlck9wdGlvbnMiOiB7CiAgICAiaW5jcmVtZW50YWwiOiB0cnVlLAogICAgImlzb2xhdGVkTW9kdWxlcyI6IHRydWUsCiAgICAibGliIjogWyJlczIwMjIiXSwKICAgICJtb2R1bGUiOiAiZXNuZXh0IiwKICAgICJtb2R1bGVSZXNvbHV0aW9uIjogImJ1bmRsZXIiLAogICAgIm5vRW1pdE9uRXJyb3IiOiB0cnVlLAogICAgIm5vRmFsbHRocm91Z2hDYXNlc0luU3dpdGNoIjogdHJ1ZSwKICAgICJub0ltcGxpY2l0T3ZlcnJpZGUiOiBmYWxzZSwKICAgICJub0ltcGxpY2l0UmV0dXJucyI6IHRydWUsCiAgICAibm9VbnVzZWRMb2NhbHMiOiBmYWxzZSwKICAgICJub0ltcGxpY2l0QW55IjogdHJ1ZSwKICAgICJub0ltcGxpY2l0VGhpcyI6IHRydWUsCiAgICAic3RyaWN0TnVsbENoZWNrcyI6IHRydWUsCiAgICAic3RyaWN0RnVuY3Rpb25UeXBlcyI6IGZhbHNlLAogICAgInN0cmljdEJpbmRDYWxsQXBwbHkiOiB0cnVlLAogICAgInN0cmljdFByb3BlcnR5SW5pdGlhbGl6YXRpb24iOiB0cnVlLAogICAgInVzZVVua25vd25JbkNhdGNoVmFyaWFibGVzIjogdHJ1ZSwKICAgICJhbHdheXNTdHJpY3QiOiB0cnVlLAogICAgInNraXBMaWJDaGVjayI6IHRydWUsCiAgICAidGFyZ2V0IjogImVzMjAyMiIsCiAgICAidHlwZXMiOiBbXSwKICAgICJjdXN0b21Db25kaXRpb25zIjogWyJ3b3Jrc3BhY2UiXQogIH0KfQo=
+{
+  "compilerOptions": {
+    "incremental": true,
+    "isolatedModules": true,
+    "lib": ["es2022"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": false,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": false,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "types": [],
+    "customConditions": ["workspace"]
+  }
+}

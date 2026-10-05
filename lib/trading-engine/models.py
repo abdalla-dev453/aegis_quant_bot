@@ -1,1 +1,166 @@
-IiIiCm1vZGVscy5weQotLS0tLS0tLS0KU2luZ2xlIHNvdXJjZSBvZiB0cnV0aCBmb3IgdGhlIEFQSSBkYXRhIGNvbnRyYWN0IGJldHdlZW4gdGhlIFB5dGhvbiBib3QgYW5kCnRoZSBSZWFjdCBkYXNoYm9hcmQgKGNsaWVudC9zcmMvbGliL2JvdEZlZWQuanMgbWlycm9ycyB0aGVzZSBzaGFwZXMgZXhhY3RseSkuCklmIHlvdSBjaGFuZ2UgYSBmaWVsZCBoZXJlLCBjaGFuZ2UgaXQgdGhlcmUgdG9vIOKAlCBub3RoaW5nIGVsc2UgbmVlZHMgZWRpdGluZy4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBhc2RpY3QsIGRhdGFjbGFzcwpmcm9tIHR5cGluZyBpbXBvcnQgQW55CgoKQGRhdGFjbGFzcwpjbGFzcyBBY2NvdW50U3RhdGU6CiAgICBuZXRFcXVpdHk6IGZsb2F0CiAgICBiYWxhbmNlOiBmbG9hdAogICAgdG9kYXlzUG5sOiBmbG9hdAogICAgZnJlZU1hcmdpbjogZmxvYXQKICAgIG1hcmdpbkxldmVsOiBmbG9hdAoKCkBkYXRhY2xhc3MKY2xhc3MgUmlza1N0YXRlOgogICAgZHJhd2Rvd25QY3Q6IGZsb2F0CiAgICBtYXhEcmF3ZG93bkNlaWxpbmdQY3Q6IGZsb2F0CiAgICBkYWlseUxvc3NDZWlsaW5nUGN0OiBmbG9hdAogICAgbWFyZ2luVXRpbGl6ZWRQY3Q6IGZsb2F0CiAgICBvcGVuUG9zaXRpb25zOiBpbnQKICAgIHRyYWRlc1RvZGF5OiBpbnQKICAgIG1heFRyYWRlc1BlckRheTogaW50CiAgICBwZWFrRHJhd2Rvd25IYWx0ZWQ6IGJvb2wKICAgIHJpc2tQZXJUcmFkZVBjdDogZmxvYXQgfCBOb25lID0gTm9uZSAgIyBmcm9tIGNvbmZpZy5SSVNLLnJpc2tfcGVyX3RyYWRlX3BjdAoKCkBkYXRhY2xhc3MKY2xhc3MgUHJpY2VQb2ludDoKICAgIHRpbWU6IHN0ciAgIyBJU08gZGF0ZXRpbWUgKFVUQykKICAgIHByaWNlOiBmbG9hdAogICAgZW1hNTA6IGZsb2F0CiAgICBlbWEyMDA6IGZsb2F0CgoKQGRhdGFjbGFzcwpjbGFzcyBQcmljZVNlcmllczoKICAgICIiIldyYXBwZXIgc28gdGhlIC9hcGkvcHJpY2Utc2VyaWVzIGVuZHBvaW50IGNhbiBjYXJyeSBpdHMgc3ltYm9sLiIiIgoKICAgIHN5bWJvbDogc3RyCiAgICBwb2ludHM6IGxpc3RbUHJpY2VQb2ludF0KCgpAZGF0YWNsYXNzCmNsYXNzIFBlcmZvcm1hbmNlU3RhdGU6CiAgICB3aW5SYXRlUGN0OiBmbG9hdAogICAgcHJvZml0RmFjdG9yOiBmbG9hdAogICAgdG90YWxUcmFkZXM6IGludAogICAgYXZnV2luOiBmbG9hdAogICAgYXZnTG9zczogZmxvYXQKCgpAZGF0YWNsYXNzCmNsYXNzIENvbmZsdWVuY2VTdGF0ZToKICAgIGNvbXBvc2l0ZTogZmxvYXQgICMgLTEuMCAuLiArMS4wCiAgICBsYWJlbDogc3RyICAjIGUuZy4gIlNUUk9ORyBCVUxMIgogICAgdGVjaG5pY2FsOiBmbG9hdAogICAgc2VudGltZW50OiBmbG9hdAogICAgbW9tZW50dW06IGZsb2F0CgoKQGRhdGFjbGFzcwpjbGFzcyBDYWxlbmRhckV2ZW50OgogICAgbmFtZTogc3RyCiAgICBjdXJyZW5jeTogc3RyCiAgICBpbXBhY3Q6IHN0ciAgIyAiSElHSCIgfCAiTUVESVVNIiB8ICJMT1ciCiAgICB0aW1lVXRjOiBzdHIKICAgIG1pbnV0ZXNBd2F5OiBmbG9hdAoKCkBkYXRhY2xhc3MKY2xhc3MgQ2FsZW5kYXJTdGF0ZToKICAgIGF1dG9IYWx0QWN0aXZlOiBib29sCiAgICBhdXRvSGFsdEV0YVNlY29uZHM6IGludAogICAgbmV4dEV2ZW50OiBDYWxlbmRhckV2ZW50IHwgTm9uZQoKCkBkYXRhY2xhc3MKY2xhc3MgUG9zaXRpb246CiAgICB0aWNrZXQ6IHN0cgogICAgc3ltYm9sOiBzdHIKICAgIHR5cGU6IHN0ciAgIyAiQlVZIiB8ICJTRUxMIgogICAgbG90OiBmbG9hdAogICAgZW50cnk6IGZsb2F0CiAgICBzbDogZmxvYXQKICAgIHRwOiBmbG9hdAogICAgdHJhaWxpbmc6IGJvb2wKICAgIGN1cnJlbnQ6IGZsb2F0CiAgICBwbmw6IGZsb2F0CgoKQGRhdGFjbGFzcwpjbGFzcyBFcXVpdHlQb2ludDoKICAgIGRhdGU6IHN0ciAgIyBJU08gZGF0ZSwgZS5nLiAiMjAyNS0wMS0xNSIKICAgIGVxdWl0eTogZmxvYXQKCgpAZGF0YWNsYXNzCmNsYXNzIENvbnRyb2xTdGF0ZToKICAgIHN0YXR1czogc3RyICAjICJSVU5OSU5HIiB8ICJQQVVTRUQiIHwgIkhBTFRFRCIKICAgIGVudHJpZXNBbGxvd2VkOiBib29sCiAgICBtYW5hZ2VtZW50QWxsb3dlZDogYm9vbAogICAgcmVhc29uOiBzdHIgfCBOb25lCiAgICBzb3VyY2U6IHN0cgogICAgY2hhbmdlZEF0OiBzdHIKICAgIHJldmlzaW9uOiBpbnQKCgpAZGF0YWNsYXNzCmNsYXNzIFRyYWRlUHJvcG9zYWw6CiAgICBhY3Rpb246IHN0cgogICAgc3ltYm9sOiBzdHIKICAgIHZvbHVtZTogZmxvYXQKICAgIHN0b3BfbG9zczogZmxvYXQgfCBOb25lCiAgICB0YWtlX3Byb2ZpdDogZmxvYXQgfCBOb25lCiAgICBjb25maWRlbmNlX3Njb3JlOiBmbG9hdAogICAgcmVhc29uaW5nOiBzdHIKICAgIHN0YXR1czogc3RyID0gInJlY2VpdmVkIgogICAgYmxvY2tlZF9ieTogc3RyIHwgTm9uZSA9IE5vbmUKCgpAZGF0YWNsYXNzCmNsYXNzIE9yZGVyUmVjb3JkOgogICAgdGlja2V0OiBpbnQKICAgIHN5bWJvbDogc3RyCiAgICBkaXJlY3Rpb246IHN0cgogICAgZmlsbF9wcmljZTogZmxvYXQKICAgIHZvbHVtZTogZmxvYXQKICAgIHNsOiBmbG9hdAogICAgdHA6IGZsb2F0CiAgICBhdHI6IGZsb2F0CiAgICByZWFzb246IHN0cgogICAgcG5sOiBmbG9hdCA9IDAuMAogICAgc3RhdHVzOiBzdHIgPSAiZmlsbGVkIgoKCkBkYXRhY2xhc3MKY2xhc3MgVHJhZGVBbmFseXNpczoKICAgIHN1bW1hcnk6IGRpY3Rbc3RyLCBBbnldCiAgICByZWNlbnRUcmFkZXM6IGxpc3RbZGljdFtzdHIsIEFueV1dCgoKQGRhdGFjbGFzcwpjbGFzcyBMb2dFbnRyeToKICAgIGlkOiBzdHIKICAgIHRpbWU6IHN0ciAgIyAiSEg6TU06U1MiCiAgICBsZXZlbDogc3RyICAjICJJTkZPIiB8ICJXQVJOIiB8ICJFUlJPUiIKICAgIG1lc3NhZ2U6IHN0cgoKCmRlZiB0b19kaWN0KG9iajogQW55KSAtPiBBbnk6CiAgICAiIiJTZXJpYWxpemUgYSBkYXRhY2xhc3MgKG9yIGxpc3Qgb2YgZGF0YWNsYXNzZXMpIHRvIHBsYWluIEpTT04tc2FmZSBkaWN0cy4iIiIKICAgIGlmIGlzaW5zdGFuY2Uob2JqLCBsaXN0KToKICAgICAgICByZXR1cm4gW3RvX2RpY3QoeCkgZm9yIHggaW4gb2JqXQogICAgaWYgaGFzYXR0cihvYmosICJfX2RhdGFjbGFzc19maWVsZHNfXyIpOgogICAgICAgIHJldHVybiBhc2RpY3Qob2JqKQogICAgcmV0dXJuIG9iago=
+"""
+models.py
+---------
+Single source of truth for the API data contract between the Python bot and
+the React dashboard (client/src/lib/botFeed.js mirrors these shapes exactly).
+If you change a field here, change it there too — nothing else needs editing.
+"""
+
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from typing import Any
+
+
+@dataclass
+class AccountState:
+    netEquity: float
+    balance: float
+    todaysPnl: float
+    freeMargin: float
+    marginLevel: float
+
+
+@dataclass
+class RiskState:
+    drawdownPct: float
+    maxDrawdownCeilingPct: float
+    dailyLossCeilingPct: float
+    marginUtilizedPct: float
+    openPositions: int
+    tradesToday: int
+    maxTradesPerDay: int
+    peakDrawdownHalted: bool
+    riskPerTradePct: float | None = None  # from config.RISK.risk_per_trade_pct
+
+
+@dataclass
+class PricePoint:
+    time: str  # ISO datetime (UTC)
+    price: float
+    ema50: float
+    ema200: float
+
+
+@dataclass
+class PriceSeries:
+    """Wrapper so the /api/price-series endpoint can carry its symbol."""
+
+    symbol: str
+    points: list[PricePoint]
+
+
+@dataclass
+class PerformanceState:
+    winRatePct: float
+    profitFactor: float
+    totalTrades: int
+    avgWin: float
+    avgLoss: float
+
+
+@dataclass
+class ConfluenceState:
+    composite: float  # -1.0 .. +1.0
+    label: str  # e.g. "STRONG BULL"
+    technical: float
+    sentiment: float
+    momentum: float
+
+
+@dataclass
+class CalendarEvent:
+    name: str
+    currency: str
+    impact: str  # "HIGH" | "MEDIUM" | "LOW"
+    timeUtc: str
+    minutesAway: float
+
+
+@dataclass
+class CalendarState:
+    autoHaltActive: bool
+    autoHaltEtaSeconds: int
+    nextEvent: CalendarEvent | None
+
+
+@dataclass
+class Position:
+    ticket: str
+    symbol: str
+    type: str  # "BUY" | "SELL"
+    lot: float
+    entry: float
+    sl: float
+    tp: float
+    trailing: bool
+    current: float
+    pnl: float
+
+
+@dataclass
+class EquityPoint:
+    date: str  # ISO date, e.g. "2025-01-15"
+    equity: float
+
+
+@dataclass
+class ControlState:
+    status: str  # "RUNNING" | "PAUSED" | "HALTED"
+    entriesAllowed: bool
+    managementAllowed: bool
+    reason: str | None
+    source: str
+    changedAt: str
+    revision: int
+
+
+@dataclass
+class TradeProposal:
+    action: str
+    symbol: str
+    volume: float
+    stop_loss: float | None
+    take_profit: float | None
+    confidence_score: float
+    reasoning: str
+    status: str = "received"
+    blocked_by: str | None = None
+
+
+@dataclass
+class OrderRecord:
+    ticket: int
+    symbol: str
+    direction: str
+    fill_price: float
+    volume: float
+    sl: float
+    tp: float
+    atr: float
+    reason: str
+    pnl: float = 0.0
+    status: str = "filled"
+
+
+@dataclass
+class TradeAnalysis:
+    summary: dict[str, Any]
+    recentTrades: list[dict[str, Any]]
+
+
+@dataclass
+class LogEntry:
+    id: str
+    time: str  # "HH:MM:SS"
+    level: str  # "INFO" | "WARN" | "ERROR"
+    message: str
+
+
+def to_dict(obj: Any) -> Any:
+    """Serialize a dataclass (or list of dataclasses) to plain JSON-safe dicts."""
+    if isinstance(obj, list):
+        return [to_dict(x) for x in obj]
+    if hasattr(obj, "__dataclass_fields__"):
+        return asdict(obj)
+    return obj

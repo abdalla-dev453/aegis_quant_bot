@@ -1,1 +1,39 @@
-aW1wb3J0IHsKICBERVZJQ0VfUFJFU0VOQ0UsCiAgZm9ybWF0UG5sLAogIGlzU2lnbmFsQWN0aW9uLAogIGlzU2lnbmFsU3RhdGUsCiAgUkVBU09OX0NPREVTLAogIFNJR05BTF9BQ1RJT05TLAogIFNJR05BTF9TVEFURVMsCn0gZnJvbSAiLi9pbmRleC50cyI7CgovLyBUZXN0IFR5cGUgYW5kIEhlbHBlciBHdWFyZHMKaWYgKCFpc1NpZ25hbEFjdGlvbigiQlVZIikpIHsKICB0aHJvdyBuZXcgRXJyb3IoImlzU2lnbmFsQWN0aW9uIGZhaWxlZCBmb3IgQlVZIik7Cn0KaWYgKCFpc1NpZ25hbEFjdGlvbigiU0VMTCIpKSB7CiAgdGhyb3cgbmV3IEVycm9yKCJpc1NpZ25hbEFjdGlvbiBmYWlsZWQgZm9yIFNFTEwiKTsKfQppZiAoaXNTaWduYWxBY3Rpb24oIklOVkFMSUQiKSkgewogIHRocm93IG5ldyBFcnJvcigiaXNTaWduYWxBY3Rpb24gYWxsb3dlZCBpbnZhbGlkIHZhbHVlIik7Cn0KCmlmICghaXNTaWduYWxTdGF0ZSgiQ1JFQVRFRCIpKSB7CiAgdGhyb3cgbmV3IEVycm9yKCJpc1NpZ25hbFN0YXRlIGZhaWxlZCBmb3IgQ1JFQVRFRCIpOwp9CmlmICghaXNTaWduYWxTdGF0ZSgiRVhFQ1VURUQiKSkgewogIHRocm93IG5ldyBFcnJvcigiaXNTaWduYWxTdGF0ZSBmYWlsZWQgZm9yIEVYRUNVVEVEIik7Cn0KaWYgKGlzU2lnbmFsU3RhdGUoIlVOS05PV04iKSkgewogIHRocm93IG5ldyBFcnJvcigiaXNTaWduYWxTdGF0ZSBhbGxvd2VkIHVua25vd24gc3RhdGUiKTsKfQoKaWYgKGZvcm1hdFBubCgiMTUwLjI1IikgIT09ICIrJDE1MC4yNSIpIHsKICB0aHJvdyBuZXcgRXJyb3IoYGZvcm1hdFBubCBwb3NpdGl2ZSBtaXNtYXRjaDogJHtmb3JtYXRQbmwoIjE1MC4yNSIpfWApOwp9CmlmIChmb3JtYXRQbmwoIi00Mi41MCIpICE9PSAiLSQ0Mi41MCIpIHsKICB0aHJvdyBuZXcgRXJyb3IoYGZvcm1hdFBubCBuZWdhdGl2ZSBtaXNtYXRjaDogJHtmb3JtYXRQbmwoIi00Mi41MCIpfWApOwp9Cgpjb25zb2xlLmxvZygiQWxsIGNvbnRyYWN0IGFzc2VydGlvbnMgcGFzc2VkIHN1Y2Nlc3NmdWxseS4iKTsK
+import {
+  DEVICE_PRESENCE,
+  formatPnl,
+  isSignalAction,
+  isSignalState,
+  REASON_CODES,
+  SIGNAL_ACTIONS,
+  SIGNAL_STATES,
+} from "./index.ts";
+
+// Test Type and Helper Guards
+if (!isSignalAction("BUY")) {
+  throw new Error("isSignalAction failed for BUY");
+}
+if (!isSignalAction("SELL")) {
+  throw new Error("isSignalAction failed for SELL");
+}
+if (isSignalAction("INVALID")) {
+  throw new Error("isSignalAction allowed invalid value");
+}
+
+if (!isSignalState("CREATED")) {
+  throw new Error("isSignalState failed for CREATED");
+}
+if (!isSignalState("EXECUTED")) {
+  throw new Error("isSignalState failed for EXECUTED");
+}
+if (isSignalState("UNKNOWN")) {
+  throw new Error("isSignalState allowed unknown state");
+}
+
+if (formatPnl("150.25") !== "+$150.25") {
+  throw new Error(`formatPnl positive mismatch: ${formatPnl("150.25")}`);
+}
+if (formatPnl("-42.50") !== "-$42.50") {
+  throw new Error(`formatPnl negative mismatch: ${formatPnl("-42.50")}`);
+}
+
+console.log("All contract assertions passed successfully.");

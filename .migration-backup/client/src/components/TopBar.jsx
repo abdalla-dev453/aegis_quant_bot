@@ -1,1 +1,244 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VSZWYsIHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwppbXBvcnQgeyB1c2VUaGVtZSB9IGZyb20gIi4uL2xpYi90aGVtZS5qcyI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBUb3BCYXIoeyB0aXRsZSwgc3VidGl0bGUsIGNvbnRyb2wsIHNldENvbnRyb2wsIG9uQ2xvc2VBbGwsIGNsb3NlQWxsRGlzYWJsZWQgPSBmYWxzZSB9KSB7CiAgY29uc3QgW2NvbmZpcm1IYWx0LCBzZXRDb25maXJtSGFsdF0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW2NvbmZpcm1SZXN1bWUsIHNldENvbmZpcm1SZXN1bWVdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtoYWx0RXJyb3IsIHNldEhhbHRFcnJvcl0gPSB1c2VTdGF0ZSgiIik7CiAgY29uc3QgW3Jlc3VtZUVycm9yLCBzZXRSZXN1bWVFcnJvcl0gPSB1c2VTdGF0ZSgiIik7CiAgY29uc3QgW2NvbmZpcm1DbG9zZUFsbCwgc2V0Q29uZmlybUNsb3NlQWxsXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbY2xvc2VBbGxFcnJvciwgc2V0Q2xvc2VBbGxFcnJvcl0gPSB1c2VTdGF0ZSgiIik7CiAgY29uc3QgW2Nsb3NpbmdBbGwsIHNldENsb3NpbmdBbGxdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFt0aGVtZU1lbnVPcGVuLCBzZXRUaGVtZU1lbnVPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCB0aGVtZU1lbnVSZWYgPSB1c2VSZWYobnVsbCk7CiAgY29uc3QgeyB0aGVtZU1vZGUsIHNldFRoZW1lTW9kZSB9ID0gdXNlVGhlbWUoKTsKCiAgY29uc3Qgc3RhdHVzID0gY29udHJvbD8uc3RhdHVzID8/ICJSVU5OSU5HIjsKICBjb25zdCBpc1J1bm5pbmcgPSBzdGF0dXMgPT09ICJSVU5OSU5HIjsKICBjb25zdCBpc0hhbHRlZCA9IHN0YXR1cyA9PT0gIkhBTFRFRCI7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBjb25zdCBjbG9zZU1lbnUgPSAoZXZlbnQpID0+IHsKICAgICAgaWYgKCF0aGVtZU1lbnVSZWYuY3VycmVudD8uY29udGFpbnMoZXZlbnQudGFyZ2V0KSkKICAgICAgICBzZXRUaGVtZU1lbnVPcGVuKGZhbHNlKTsKICAgIH07CiAgICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCJwb2ludGVyZG93biIsIGNsb3NlTWVudSk7CiAgICByZXR1cm4gKCkgPT4gZG9jdW1lbnQucmVtb3ZlRXZlbnRMaXN0ZW5lcigicG9pbnRlcmRvd24iLCBjbG9zZU1lbnUpOwogIH0sIFtdKTsKCiAgY29uc3QgdG9nZ2xlTGl2ZSA9IGFzeW5jICgpID0+IHsKICAgIGlmIChpc0hhbHRlZCkgewogICAgICBzZXRSZXN1bWVFcnJvcigiIik7CiAgICAgIHNldENvbmZpcm1SZXN1bWUodHJ1ZSk7CiAgICAgIHJldHVybjsKICAgIH0KICAgIHRyeSB7CiAgICAgIGF3YWl0IHNldENvbnRyb2woaXNSdW5uaW5nID8gIlBBVVNFRCIgOiAiUlVOTklORyIsIGlzUnVubmluZyA/ICJPcGVyYXRvciBwYXVzZWQiIDogIk9wZXJhdG9yIHJlc3VtZWQiKTsKICAgIH0gY2F0Y2ggKGVycm9yKSB7CiAgICAgIGNvbnNvbGUuZXJyb3IoIlVuYWJsZSB0byB1cGRhdGUgdHJhZGluZyBjb250cm9sIiwgZXJyb3IpOwogICAgfQogIH07CgogIGNvbnN0IHJlc3VtZSA9IGFzeW5jICgpID0+IHsKICAgIHNldFJlc3VtZUVycm9yKCIiKTsKICAgIHRyeSB7CiAgICAgIGF3YWl0IHNldENvbnRyb2woIlJVTk5JTkciLCAiT3BlcmF0b3IgcmVzdW1lZCBhZnRlciBlbWVyZ2VuY3kgaGFsdCIpOwogICAgICBzZXRDb25maXJtUmVzdW1lKGZhbHNlKTsKICAgIH0gY2F0Y2ggKGVycm9yKSB7CiAgICAgIHNldFJlc3VtZUVycm9yKGVycm9yLm1lc3NhZ2UgPz8gIlVuYWJsZSB0byByZS1hcm0gdHJhZGluZy4iKTsKICAgIH0KICB9OwoKICBjb25zdCBoYWx0ID0gYXN5bmMgKCkgPT4gewogICAgc2V0SGFsdEVycm9yKCIiKTsKICAgIHRyeSB7CiAgICAgIGF3YWl0IHNldENvbnRyb2woIkhBTFRFRCIsICJFbWVyZ2VuY3kgaGFsdCByZXF1ZXN0ZWQgZnJvbSBkYXNoYm9hcmQiKTsKICAgICAgc2V0Q29uZmlybUhhbHQoZmFsc2UpOwogICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgc2V0SGFsdEVycm9yKGVycm9yLm1lc3NhZ2UgPz8gIlVuYWJsZSB0byBoYWx0IHRyYWRpbmcuIik7CiAgICB9CiAgfTsKCiAgY29uc3QgY2xvc2VBbGwgPSBhc3luYyAoKSA9PiB7CiAgICBzZXRDbG9zaW5nQWxsKHRydWUpOwogICAgc2V0Q2xvc2VBbGxFcnJvcigiIik7CiAgICB0cnkgewogICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBvbkNsb3NlQWxsKCk7CiAgICAgIGlmIChyZXN1bHQuZmFpbGVkPy5sZW5ndGgpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYCR7cmVzdWx0LmNsb3NlZC5sZW5ndGh9IGNsb3NlZDsgJHtyZXN1bHQuZmFpbGVkLmxlbmd0aH0gZmFpbGVkLiBDaGVjayB0aGUgZXhlY3V0aW9uIGxvZy5gKTsKICAgICAgfQogICAgICBzZXRDb25maXJtQ2xvc2VBbGwoZmFsc2UpOwogICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgc2V0Q2xvc2VBbGxFcnJvcihlcnJvci5tZXNzYWdlID8/ICJVbmFibGUgdG8gY2xvc2UgYm90LW1hbmFnZWQgcG9zaXRpb25zLiIpOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0Q2xvc2luZ0FsbChmYWxzZSk7CiAgICB9CiAgfTsKCiAgcmV0dXJuICgKICAgIDxoZWFkZXIgY2xhc3NOYW1lPSJyZWxhdGl2ZSB6LTUwIGZsZXggZmxleC1jb2wgZ2FwLTQgYm9yZGVyLWIgYm9yZGVyLWJvcmRlciBweC00IHB5LTQgc206cHgtNiBzbTpweS01IGxnOmZsZXgtcm93IGxnOml0ZW1zLWNlbnRlciBsZzpqdXN0aWZ5LWJldHdlZW4gbGc6cHgtOCI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJtaW4tdy0wIj4KICAgICAgICA8aDEgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPnt0aXRsZX08L2gxPgogICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMC41IHRydW5jYXRlIHRleHQtWzEycHhdIHRleHQtaW5rLWZhaW50Ij57c3VidGl0bGV9PC9wPgogICAgICA8L2Rpdj4KCiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IHctZnVsbCBmbGV4LXdyYXAgaXRlbXMtY2VudGVyIGp1c3RpZnktZW5kIGdhcC0yIHNtOmdhcC0zIGxnOnctYXV0byI+CiAgICAgICAgPGRpdiByZWY9e3RoZW1lTWVudVJlZn0gY2xhc3NOYW1lPSJyZWxhdGl2ZSBzaHJpbmstMCI+CiAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFRoZW1lTWVudU9wZW4oKG9wZW4pID0+ICFvcGVuKX0KICAgICAgICAgICAgYXJpYS1leHBhbmRlZD17dGhlbWVNZW51T3Blbn0KICAgICAgICAgICAgYXJpYS1oYXNwb3B1cD0ibWVudSIKICAgICAgICAgICAgYXJpYS1sYWJlbD0iQ2hvb3NlIHRoZW1lIgogICAgICAgICAgICB0aXRsZT0iQ2hvb3NlIHRoZW1lIgogICAgICAgICAgICBjbGFzc05hbWU9InRoZW1lLWNvbnRyb2wgZmxleCBtaW4taC0xMCBpdGVtcy1jZW50ZXIgZ2FwLTIgcm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlLWFsdCBweC0zIHB5LTIgdGV4dC1bMTFweF0gZm9udC1tZWRpdW0gdXBwZXJjYXNlIHRyYWNraW5nLXdpZGUgdGV4dC1pbmstZGltIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBob3ZlcjotdHJhbnNsYXRlLXktMC41IGhvdmVyOmJvcmRlci1hY2NlbnQvNDAgaG92ZXI6dGV4dC1pbmsiCiAgICAgICAgICA+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1zbSBsZWFkaW5nLW5vbmUiIGFyaWEtaGlkZGVuPSJ0cnVlIj4KICAgICAgICAgICAgICB7dGhlbWVNb2RlID09PSAibGlnaHQiID8gIuKYvCIgOiB0aGVtZU1vZGUgPT09ICJkYXJrIiA/ICLil5AiIDogIuKXjCJ9CiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJoaWRkZW4gc206aW5saW5lIj57dGhlbWVNb2RlfTwvc3Bhbj4KICAgICAgICAgIDwvYnV0dG9uPgoKICAgICAgICAgIHt0aGVtZU1lbnVPcGVuICYmICgKICAgICAgICAgICAgPGRpdgogICAgICAgICAgICAgIGNsYXNzTmFtZT0idGhlbWUtbWVudSBhYnNvbHV0ZSByaWdodC0wIHRvcC1mdWxsIHotNjAgbXQtMiB3LTM2IG1heC13LVtjYWxjKDEwMHZ3LTJyZW0pXSByb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC0xLjUgc2hhZG93LXBhbmVsIgogICAgICAgICAgICAgIHJvbGU9Im1lbnUiCiAgICAgICAgICAgID4KICAgICAgICAgICAgICB7WyJsaWdodCIsICJkYXJrIiwgInN5c3RlbSJdLm1hcCgobW9kZSkgPT4gKAogICAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgICBrZXk9e21vZGV9CiAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHsKICAgICAgICAgICAgICAgICAgICBzZXRUaGVtZU1vZGUobW9kZSk7CiAgICAgICAgICAgICAgICAgICAgc2V0VGhlbWVNZW51T3BlbihmYWxzZSk7CiAgICAgICAgICAgICAgICAgIH19CiAgICAgICAgICAgICAgICAgIHJvbGU9Im1lbnVpdGVtcmFkaW8iCiAgICAgICAgICAgICAgICAgIGFyaWEtY2hlY2tlZD17dGhlbWVNb2RlID09PSBtb2RlfQogICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2BmbGV4IHctZnVsbCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHJvdW5kZWQtbWQgcHgtMi41IHB5LTIgdGV4dC1sZWZ0IHRleHQtWzExcHhdIGNhcGl0YWxpemUgdHJhbnNpdGlvbi1jb2xvcnMgJHt0aGVtZU1vZGUgPT09IG1vZGUgPyAiYmctYWNjZW50LzEwIHRleHQtYWNjZW50IiA6ICJ0ZXh0LWluay1kaW0gaG92ZXI6Ymctc3VyZmFjZS1hbHQgaG92ZXI6dGV4dC1pbmsifWB9CiAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgIHttb2RlfQogICAgICAgICAgICAgICAgICB7dGhlbWVNb2RlID09PSBtb2RlICYmIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj7inJM8L3NwYW4+fQogICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgKX0KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGJ1dHRvbgogICAgICAgICAgb25DbGljaz17dG9nZ2xlTGl2ZX0KICAgICAgICAgIGNsYXNzTmFtZT17YGZsZXggbWluLWgtMTAgc2hyaW5rLTAgaXRlbXMtY2VudGVyIGdhcC0xLjUgcm91bmRlZC1tZCBib3JkZXIgcHgtMyBweS0yIHRleHQtWzExcHhdIGZvbnQtbWVkaXVtIHVwcGVyY2FzZSB0cmFja2luZy13aWRlIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBob3ZlcjotdHJhbnNsYXRlLXktMC41IGRpc2FibGVkOmN1cnNvci1ub3QtYWxsb3dlZCBkaXNhYmxlZDpvcGFjaXR5LTUwICR7CiAgICAgICAgICAgIGlzUnVubmluZwogICAgICAgICAgICAgID8gImJvcmRlci1idWxsLzMwIGJnLWJ1bGwtZGltIHRleHQtYnVsbCIKICAgICAgICAgICAgICA6ICJib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHRleHQtaW5rLWZhaW50IgogICAgICAgICAgfWB9CiAgICAgICAgPgogICAgICAgICAgPHNwYW4KICAgICAgICAgICAgY2xhc3NOYW1lPXtgaC0xLjUgdy0xLjUgcm91bmRlZC1mdWxsICR7aXNSdW5uaW5nID8gImJnLWJ1bGwiIDogImJnLWluay1mYWludCJ9YH0KICAgICAgICAgIC8+CiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImhpZGRlbiBzbTppbmxpbmUiPgogICAgICAgICAgICB7aXNSdW5uaW5nID8gIkVudHJpZXMgRW5hYmxlZCIgOiBzdGF0dXMgPT09ICJQQVVTRUQiID8gIlBhdXNlZCIgOiAiUmUtYXJtIFRyYWRpbmcifQogICAgICAgICAgPC9zcGFuPgogICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJzbTpoaWRkZW4iPntpc1J1bm5pbmcgPyAiUlVOTklORyIgOiBzdGF0dXN9PC9zcGFuPgogICAgICAgIDwvYnV0dG9uPgoKICAgICAgICA8YnV0dG9uCiAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7IHNldEhhbHRFcnJvcigiIik7IHNldENvbmZpcm1IYWx0KHRydWUpOyB9fQogICAgICAgICAgZGlzYWJsZWQ9e2lzSGFsdGVkfQogICAgICAgICAgY2xhc3NOYW1lPSJtaW4taC0xMCBzaHJpbmstMCByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYmVhci8zMCBiZy1iZWFyLWRpbSBweC0zIHB5LTIgdGV4dC1bMTFweF0gZm9udC1tZWRpdW0gdXBwZXJjYXNlIHRyYWNraW5nLXdpZGUgdGV4dC1iZWFyIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBob3ZlcjotdHJhbnNsYXRlLXktMC41IGhvdmVyOmJnLWJlYXIvMjAgZGlzYWJsZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAiCiAgICAgICAgPgogICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJoaWRkZW4gc206aW5saW5lIj5FbWVyZ2VuY3kgSGFsdDwvc3Bhbj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ic206aGlkZGVuIj5IYWx0PC9zcGFuPgogICAgICAgIDwvYnV0dG9uPgogICAgICAgIHtvbkNsb3NlQWxsICYmICgKICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgb25DbGljaz17KCkgPT4geyBzZXRDbG9zZUFsbEVycm9yKCIiKTsgc2V0Q29uZmlybUNsb3NlQWxsKHRydWUpOyB9fQogICAgICAgICAgICBkaXNhYmxlZD17Y2xvc2VBbGxEaXNhYmxlZCB8fCBjbG9zaW5nQWxsfQogICAgICAgICAgICBjbGFzc05hbWU9Im1pbi1oLTEwIHNocmluay0wIHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci1iZWFyLzMwIGJnLWJlYXItZGltIHB4LTMgcHktMiB0ZXh0LVsxMXB4XSBmb250LW1lZGl1bSB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSB0ZXh0LWJlYXIgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6YmctYmVhci8yMCBkaXNhYmxlZDpjdXJzb3Itbm90LWFsbG93ZWQgZGlzYWJsZWQ6b3BhY2l0eS01MCIKICAgICAgICAgID4KICAgICAgICAgICAgQ2xvc2UgYm90IHBvc2l0aW9ucwogICAgICAgICAgPC9idXR0b24+CiAgICAgICAgKX0KICAgICAgPC9kaXY+CgogICAgICB7Y29uZmlybUhhbHQgJiYgKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmaXhlZCBpbnNldC0wIHotNTAgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgYmctYmxhY2svNjAiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InctODAgcm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHAtNSI+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPgogICAgICAgICAgICAgIENvbmZpcm0gZW1lcmdlbmN5IGhhbHQKICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMiB0ZXh0LVsxMnB4XSBsZWFkaW5nLXJlbGF4ZWQgdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICBUaGlzIHN0b3BzIG5ldyBlbnRyaWVzIGFuZCBhdXRvbWF0ZWQgcG9zaXRpb24gbWFuYWdlbWVudC4gT3BlbiBwb3NpdGlvbnMgc3RheSBvcGVuOyB1c2UgQ2xvc2UgYm90IHBvc2l0aW9ucyB0byByZXF1ZXN0IG1hcmtldCBjbG9zZXMuCiAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAge2hhbHRFcnJvciAmJiA8cCByb2xlPSJhbGVydCIgY2xhc3NOYW1lPSJtdC0zIHRleHQtWzEycHhdIHRleHQtYmVhciI+e2hhbHRFcnJvcn08L3A+fQogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtNCBmbGV4IGp1c3RpZnktZW5kIGdhcC0yIj4KICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRDb25maXJtSGFsdChmYWxzZSl9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQtbWQgcHgtMyBweS0xLjUgdGV4dC1bMTJweF0gdGV4dC1pbmstZGltIGhvdmVyOnRleHQtaW5rIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIENhbmNlbAogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIG9uQ2xpY2s9e2hhbHR9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQtbWQgYmctYmVhciBweC0zIHB5LTEuNSB0ZXh0LVsxMnB4XSBmb250LW1lZGl1bSB0ZXh0LXdoaXRlIGhvdmVyOmJnLWJlYXIvOTAiCiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgSGFsdCB0cmFkaW5nCiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAgICB7Y29uZmlybVJlc3VtZSAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZpeGVkIGluc2V0LTAgei01MCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBiZy1ibGFjay82MCBwLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InctZnVsbCBtYXgtdy1zbSByb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcC01Ij4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtc20gZm9udC1zZW1pYm9sZCB0ZXh0LWluayI+UmUtYXJtIHRyYWRpbmc/PC9kaXY+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMiB0ZXh0LVsxMnB4XSBsZWFkaW5nLXJlbGF4ZWQgdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICBUaGlzIHJlc3RvcmVzIGF1dG9tYXRlZCBwb3NpdGlvbiBtYW5hZ2VtZW50LiBOZXcgZW50cmllcyBjYW4gYmUgc2VudCBvbmx5IHdoZW4gdGhlIHNlcnZlciBleGVjdXRpb24gbW9kZSBpcyBMSVZFLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIHtyZXN1bWVFcnJvciAmJiA8cCByb2xlPSJhbGVydCIgY2xhc3NOYW1lPSJtdC0zIHRleHQtWzEycHhdIHRleHQtYmVhciI+e3Jlc3VtZUVycm9yfTwvcD59CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC00IGZsZXgganVzdGlmeS1lbmQgZ2FwLTIiPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldENvbmZpcm1SZXN1bWUoZmFsc2UpfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIHB4LTMgcHktMS41IHRleHQtWzEycHhdIHRleHQtaW5rLWRpbSBob3Zlcjp0ZXh0LWluayIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICBDYW5jZWwKICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICBvbkNsaWNrPXtyZXN1bWV9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQtbWQgYmctYnVsbCBweC0zIHB5LTEuNSB0ZXh0LVsxMnB4XSBmb250LW1lZGl1bSB0ZXh0LXdoaXRlIGhvdmVyOmJnLWJ1bGwvOTAiCiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgUmUtYXJtCiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAgICB7Y29uZmlybUNsb3NlQWxsICYmICgKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZml4ZWQgaW5zZXQtMCB6LTUwIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIGJnLWJsYWNrLzYwIHAtNCI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idy1mdWxsIG1heC13LXNtIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTUiPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtaW5rIj5DbG9zZSBib3QtbWFuYWdlZCBwb3NpdGlvbnM/PC9kaXY+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMiB0ZXh0LVsxMnB4XSBsZWFkaW5nLXJlbGF4ZWQgdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICBUaGlzIHNlbmRzIG1hcmtldCBjbG9zZSBvcmRlcnMgZm9yIGFsbCBwb3NpdGlvbnMgbWFuYWdlZCBieSBBZWdpcyBRdWFudC4gT3RoZXIgYWNjb3VudCBwb3NpdGlvbnMgYXJlIHVudG91Y2hlZC4KICAgICAgICAgICAgPC9wPgogICAgICAgICAgICB7Y2xvc2VBbGxFcnJvciAmJiA8cCByb2xlPSJhbGVydCIgY2xhc3NOYW1lPSJtdC0zIHRleHQtWzEycHhdIHRleHQtYmVhciI+e2Nsb3NlQWxsRXJyb3J9PC9wPn0KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQgZmxleCBqdXN0aWZ5LWVuZCBnYXAtMiI+CiAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0Q29uZmlybUNsb3NlQWxsKGZhbHNlKX0KICAgICAgICAgICAgICAgIGRpc2FibGVkPXtjbG9zaW5nQWxsfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIHB4LTMgcHktMS41IHRleHQtWzEycHhdIHRleHQtaW5rLWRpbSBob3Zlcjp0ZXh0LWluayBkaXNhYmxlZDpvcGFjaXR5LTUwIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIENhbmNlbAogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIG9uQ2xpY2s9e2Nsb3NlQWxsfQogICAgICAgICAgICAgICAgZGlzYWJsZWQ9e2Nsb3NpbmdBbGx9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQtbWQgYmctYmVhciBweC0zIHB5LTEuNSB0ZXh0LVsxMnB4XSBmb250LW1lZGl1bSB0ZXh0LXdoaXRlIGhvdmVyOmJnLWJlYXIvOTAgZGlzYWJsZWQ6b3BhY2l0eS01MCIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICB7Y2xvc2luZ0FsbCA/ICJDbG9zaW5nLi4uIiA6ICJDbG9zZSBwb3NpdGlvbnMifQogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICApfQogICAgPC9oZWFkZXI+CiAgKTsKfQo=
+import { useEffect, useRef, useState } from "react";
+import { useTheme } from "../lib/theme.js";
+
+export default function TopBar({ title, subtitle, control, setControl, onCloseAll, closeAllDisabled = false }) {
+  const [confirmHalt, setConfirmHalt] = useState(false);
+  const [confirmResume, setConfirmResume] = useState(false);
+  const [haltError, setHaltError] = useState("");
+  const [resumeError, setResumeError] = useState("");
+  const [confirmCloseAll, setConfirmCloseAll] = useState(false);
+  const [closeAllError, setCloseAllError] = useState("");
+  const [closingAll, setClosingAll] = useState(false);
+  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
+  const themeMenuRef = useRef(null);
+  const { themeMode, setThemeMode } = useTheme();
+
+  const status = control?.status ?? "RUNNING";
+  const isRunning = status === "RUNNING";
+  const isHalted = status === "HALTED";
+
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (!themeMenuRef.current?.contains(event.target))
+        setThemeMenuOpen(false);
+    };
+    document.addEventListener("pointerdown", closeMenu);
+    return () => document.removeEventListener("pointerdown", closeMenu);
+  }, []);
+
+  const toggleLive = async () => {
+    if (isHalted) {
+      setResumeError("");
+      setConfirmResume(true);
+      return;
+    }
+    try {
+      await setControl(isRunning ? "PAUSED" : "RUNNING", isRunning ? "Operator paused" : "Operator resumed");
+    } catch (error) {
+      console.error("Unable to update trading control", error);
+    }
+  };
+
+  const resume = async () => {
+    setResumeError("");
+    try {
+      await setControl("RUNNING", "Operator resumed after emergency halt");
+      setConfirmResume(false);
+    } catch (error) {
+      setResumeError(error.message ?? "Unable to re-arm trading.");
+    }
+  };
+
+  const halt = async () => {
+    setHaltError("");
+    try {
+      await setControl("HALTED", "Emergency halt requested from dashboard");
+      setConfirmHalt(false);
+    } catch (error) {
+      setHaltError(error.message ?? "Unable to halt trading.");
+    }
+  };
+
+  const closeAll = async () => {
+    setClosingAll(true);
+    setCloseAllError("");
+    try {
+      const result = await onCloseAll();
+      if (result.failed?.length) {
+        throw new Error(`${result.closed.length} closed; ${result.failed.length} failed. Check the execution log.`);
+      }
+      setConfirmCloseAll(false);
+    } catch (error) {
+      setCloseAllError(error.message ?? "Unable to close bot-managed positions.");
+    } finally {
+      setClosingAll(false);
+    }
+  };
+
+  return (
+    <header className="relative z-50 flex flex-col gap-4 border-b border-border px-4 py-4 sm:px-6 sm:py-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="min-w-0">
+        <h1 className="text-lg font-semibold text-ink">{title}</h1>
+        <p className="mt-0.5 truncate text-[12px] text-ink-faint">{subtitle}</p>
+      </div>
+
+      <div className="flex w-full flex-wrap items-center justify-end gap-2 sm:gap-3 lg:w-auto">
+        <div ref={themeMenuRef} className="relative shrink-0">
+          <button
+            onClick={() => setThemeMenuOpen((open) => !open)}
+            aria-expanded={themeMenuOpen}
+            aria-haspopup="menu"
+            aria-label="Choose theme"
+            title="Choose theme"
+            className="theme-control flex min-h-10 items-center gap-2 rounded-md border border-border bg-surface-alt px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-ink-dim transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-ink"
+          >
+            <span className="text-sm leading-none" aria-hidden="true">
+              {themeMode === "light" ? "☼" : themeMode === "dark" ? "◐" : "◌"}
+            </span>
+            <span className="hidden sm:inline">{themeMode}</span>
+          </button>
+
+          {themeMenuOpen && (
+            <div
+              className="theme-menu absolute right-0 top-full z-60 mt-2 w-36 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-surface p-1.5 shadow-panel"
+              role="menu"
+            >
+              {["light", "dark", "system"].map((mode) => (
+                <button
+                  key={mode}
+                  onClick={() => {
+                    setThemeMode(mode);
+                    setThemeMenuOpen(false);
+                  }}
+                  role="menuitemradio"
+                  aria-checked={themeMode === mode}
+                  className={`flex w-full items-center justify-between rounded-md px-2.5 py-2 text-left text-[11px] capitalize transition-colors ${themeMode === mode ? "bg-accent/10 text-accent" : "text-ink-dim hover:bg-surface-alt hover:text-ink"}`}
+                >
+                  {mode}
+                  {themeMode === mode && <span aria-hidden="true">✓</span>}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <button
+          onClick={toggleLive}
+          className={`flex min-h-10 shrink-0 items-center gap-1.5 rounded-md border px-3 py-2 text-[11px] font-medium uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 ${
+            isRunning
+              ? "border-bull/30 bg-bull-dim text-bull"
+              : "border-border bg-surface-alt text-ink-faint"
+          }`}
+        >
+          <span
+            className={`h-1.5 w-1.5 rounded-full ${isRunning ? "bg-bull" : "bg-ink-faint"}`}
+          />
+          <span className="hidden sm:inline">
+            {isRunning ? "Entries Enabled" : status === "PAUSED" ? "Paused" : "Re-arm Trading"}
+          </span>
+          <span className="sm:hidden">{isRunning ? "RUNNING" : status}</span>
+        </button>
+
+        <button
+          onClick={() => { setHaltError(""); setConfirmHalt(true); }}
+          disabled={isHalted}
+          className="min-h-10 shrink-0 rounded-md border border-bear/30 bg-bear-dim px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-bear transition-all duration-200 hover:-translate-y-0.5 hover:bg-bear/20 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <span className="hidden sm:inline">Emergency Halt</span>
+          <span className="sm:hidden">Halt</span>
+        </button>
+        {onCloseAll && (
+          <button
+            onClick={() => { setCloseAllError(""); setConfirmCloseAll(true); }}
+            disabled={closeAllDisabled || closingAll}
+            className="min-h-10 shrink-0 rounded-md border border-bear/30 bg-bear-dim px-3 py-2 text-[11px] font-medium uppercase tracking-wide text-bear transition-colors hover:bg-bear/20 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            Close bot positions
+          </button>
+        )}
+      </div>
+
+      {confirmHalt && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="w-80 rounded-lg border border-border bg-surface p-5">
+            <div className="text-sm font-semibold text-ink">
+              Confirm emergency halt
+            </div>
+            <p className="mt-2 text-[12px] leading-relaxed text-ink-dim">
+              This stops new entries and automated position management. Open positions stay open; use Close bot positions to request market closes.
+            </p>
+            {haltError && <p role="alert" className="mt-3 text-[12px] text-bear">{haltError}</p>}
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                onClick={() => setConfirmHalt(false)}
+                className="rounded-md px-3 py-1.5 text-[12px] text-ink-dim hover:text-ink"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={halt}
+                className="rounded-md bg-bear px-3 py-1.5 text-[12px] font-medium text-white hover:bg-bear/90"
+              >
+                Halt trading
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {confirmResume && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="w-full max-w-sm rounded-lg border border-border bg-surface p-5">
+            <div className="text-sm font-semibold text-ink">Re-arm trading?</div>
+            <p className="mt-2 text-[12px] leading-relaxed text-ink-dim">
+              This restores automated position management. New entries can be sent only when the server execution mode is LIVE.
+            </p>
+            {resumeError && <p role="alert" className="mt-3 text-[12px] text-bear">{resumeError}</p>}
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                onClick={() => setConfirmResume(false)}
+                className="rounded-md px-3 py-1.5 text-[12px] text-ink-dim hover:text-ink"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={resume}
+                className="rounded-md bg-bull px-3 py-1.5 text-[12px] font-medium text-white hover:bg-bull/90"
+              >
+                Re-arm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {confirmCloseAll && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="w-full max-w-sm rounded-lg border border-border bg-surface p-5">
+            <div className="text-sm font-semibold text-ink">Close bot-managed positions?</div>
+            <p className="mt-2 text-[12px] leading-relaxed text-ink-dim">
+              This sends market close orders for all positions managed by Aegis Quant. Other account positions are untouched.
+            </p>
+            {closeAllError && <p role="alert" className="mt-3 text-[12px] text-bear">{closeAllError}</p>}
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                onClick={() => setConfirmCloseAll(false)}
+                disabled={closingAll}
+                className="rounded-md px-3 py-1.5 text-[12px] text-ink-dim hover:text-ink disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={closeAll}
+                disabled={closingAll}
+                className="rounded-md bg-bear px-3 py-1.5 text-[12px] font-medium text-white hover:bg-bear/90 disabled:opacity-50"
+              >
+                {closingAll ? "Closing..." : "Close positions"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}

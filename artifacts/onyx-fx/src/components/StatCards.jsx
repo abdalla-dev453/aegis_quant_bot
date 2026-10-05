@@ -1,1 +1,98 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKCmZ1bmN0aW9uIG1vbmV5KG4sIG9wdHMgPSB7fSkgewogIHJldHVybiBuLnRvTG9jYWxlU3RyaW5nKCJlbi1VUyIsIHsgc3R5bGU6ICJjdXJyZW5jeSIsIGN1cnJlbmN5OiAiVVNEIiwgLi4ub3B0cyB9KTsKfQoKZXhwb3J0IGZ1bmN0aW9uIEFjY291bnRDYXJkKHsgYWNjb3VudCB9KSB7CiAgY29uc3QgcG5sUG9zaXRpdmUgPSBhY2NvdW50LnRvZGF5c1BubCA+PSAwOwogIHJldHVybiAoCiAgICA8UGFuZWwgdGl0bGU9IkFjY291bnQgwrcgRXF1aXR5ICYgQmFsYW5jZSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC0yeGwgZm9udC1zZW1pYm9sZCB0ZXh0LWluayI+e21vbmV5KGFjY291bnQubmV0RXF1aXR5KX08L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQgZ3JpZCBncmlkLWNvbHMtMiBnYXAteS0zIHRleHQtWzEycHhdIj4KICAgICAgICA8TWV0cmljIGxhYmVsPSJCYWxhbmNlIiB2YWx1ZT17bW9uZXkoYWNjb3VudC5iYWxhbmNlKX0gLz4KICAgICAgICA8TWV0cmljCiAgICAgICAgICBsYWJlbD0iVG9kYXkncyBQL0wiCiAgICAgICAgICB2YWx1ZT17YCR7cG5sUG9zaXRpdmUgPyAiKyIgOiAiIn0ke21vbmV5KGFjY291bnQudG9kYXlzUG5sKX1gfQogICAgICAgICAgdG9uZT17cG5sUG9zaXRpdmUgPyAiYnVsbCIgOiAiYmVhciJ9CiAgICAgICAgLz4KICAgICAgICA8TWV0cmljIGxhYmVsPSJGcmVlIE1hcmdpbiIgdmFsdWU9e21vbmV5KGFjY291bnQuZnJlZU1hcmdpbil9IC8+CiAgICAgICAgPE1ldHJpYyBsYWJlbD0iTWFyZ2luIExldmVsIiB2YWx1ZT17YCR7YWNjb3VudC5tYXJnaW5MZXZlbC50b0ZpeGVkKDEpfSVgfSAvPgogICAgICA8L2Rpdj4KICAgIDwvUGFuZWw+CiAgKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIFJpc2tDYXJkKHsgcmlzaywgb25SZXNldFBlYWtHdWFyZCB9KSB7CiAgY29uc3QgcGN0ID0gTWF0aC5taW4oMTAwLCAocmlzay5kcmF3ZG93blBjdCAvIHJpc2subWF4RHJhd2Rvd25DZWlsaW5nUGN0KSAqIDEwMCk7CiAgcmV0dXJuICgKICAgIDxQYW5lbCB0aXRsZT0iUmlzayBFeHBvc3VyZSDCtyBMaXZlIj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtYmFzZWxpbmUganVzdGlmeS1iZXR3ZWVuIj4KICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtWzEycHhdIHRleHQtaW5rLWRpbSI+RHJhd2Rvd248L3NwYW4+CiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC1bMTJweF0gdGV4dC1pbmsiPgogICAgICAgICAge3Jpc2suZHJhd2Rvd25QY3QudG9GaXhlZCgyKX0lIC8ge3Jpc2subWF4RHJhd2Rvd25DZWlsaW5nUGN0LnRvRml4ZWQoMCl9JQogICAgICAgIDwvc3Bhbj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC0yIGgtMS41IHctZnVsbCBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1mdWxsIGJnLXN1cmZhY2UtYWx0Ij4KICAgICAgICA8ZGl2CiAgICAgICAgICBjbGFzc05hbWU9e2BoLWZ1bGwgcm91bmRlZC1mdWxsICR7cGN0ID4gODAgPyAiYmctYmVhciIgOiBwY3QgPiA1MCA/ICJiZy13YXJuIiA6ICJiZy1idWxsIn1gfQogICAgICAgICAgc3R5bGU9e3sgd2lkdGg6IGAke3BjdH0lYCB9fQogICAgICAgIC8+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtNCBncmlkIGdyaWQtY29scy0yIGdhcC15LTMgdGV4dC1bMTJweF0iPgogICAgICAgIDxNZXRyaWMgbGFiZWw9Ik1hcmdpbiBVdGlsaXplZCIgdmFsdWU9e2Ake3Jpc2subWFyZ2luVXRpbGl6ZWRQY3QudG9GaXhlZCgxKX0lYH0gLz4KICAgICAgICA8TWV0cmljIGxhYmVsPSJPcGVuIFBvc2l0aW9ucyIgdmFsdWU9e3Jpc2sub3BlblBvc2l0aW9uc30gLz4KICAgICAgICA8TWV0cmljIGxhYmVsPSJNYXggREQgQ2VpbGluZyIgdmFsdWU9e2Ake3Jpc2subWF4RHJhd2Rvd25DZWlsaW5nUGN0LnRvRml4ZWQoMil9JWB9IC8+CiAgICAgICAgPE1ldHJpYyBsYWJlbD0iRGFpbHkgTG9zcyBMaW1pdCIgdmFsdWU9e2Ake3Jpc2suZGFpbHlMb3NzQ2VpbGluZ1BjdC50b0ZpeGVkKDIpfSVgfSAvPgogICAgICAgIDxNZXRyaWMgbGFiZWw9IlRyYWRlcyBUb2RheSIgdmFsdWU9e2Ake3Jpc2sudHJhZGVzVG9kYXl9IC8gJHtyaXNrLm1heFRyYWRlc1BlckRheX1gfSAvPgogICAgICAgIDxNZXRyaWMgbGFiZWw9IlBlYWsgR3VhcmQiIHZhbHVlPXtyaXNrLnBlYWtEcmF3ZG93bkhhbHRlZCA/ICJIQUxURUQiIDogIkFDVElWRSJ9IHRvbmU9e3Jpc2sucGVha0RyYXdkb3duSGFsdGVkID8gImJlYXIiIDogImJ1bGwifSAvPgogICAgICA8L2Rpdj4KICAgICAge3Jpc2sucGVha0RyYXdkb3duSGFsdGVkICYmICgKICAgICAgICA8YnV0dG9uCiAgICAgICAgICB0eXBlPSJidXR0b24iCiAgICAgICAgICBjbGFzc05hbWU9Im10LTQgcm91bmRlZCBib3JkZXIgYm9yZGVyLWJlYXIvNTAgcHgtMiBweS0xIHRleHQtWzEwcHhdIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LWJlYXIgaG92ZXI6YmctYmVhci8xMCIKICAgICAgICAgIG9uQ2xpY2s9e29uUmVzZXRQZWFrR3VhcmR9CiAgICAgICAgPgogICAgICAgICAgTWFudWFsbHkgcmVzZXQgcGVhayBndWFyZAogICAgICAgIDwvYnV0dG9uPgogICAgICApfQogICAgPC9QYW5lbD4KICApOwp9CgpleHBvcnQgZnVuY3Rpb24gUGVyZm9ybWFuY2VDYXJkKHsgcGVyZm9ybWFuY2UgfSkgewogIHJldHVybiAoCiAgICA8UGFuZWwgdGl0bGU9IlRydXRoIE1ldHJpYyDCtyBQZXJmb3JtYW5jZSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdyaWQtY29scy0zIGdhcC0yIj4KICAgICAgICA8VHJpcGxlU3RhdCBsYWJlbD0iV2luIFJhdGUiIHZhbHVlPXtgJHtwZXJmb3JtYW5jZS53aW5SYXRlUGN0LnRvRml4ZWQoMSl9JWB9IHRvbmU9ImJ1bGwiIC8+CiAgICAgICAgPFRyaXBsZVN0YXQgbGFiZWw9IlByb2ZpdCBGYWN0b3IiIHZhbHVlPXtwZXJmb3JtYW5jZS5wcm9maXRGYWN0b3IudG9GaXhlZCgyKX0gdG9uZT0iYWNjZW50IiAvPgogICAgICAgIDxUcmlwbGVTdGF0IGxhYmVsPSJUb3RhbCBUcmFkZXMiIHZhbHVlPXtwZXJmb3JtYW5jZS50b3RhbFRyYWRlc30gdG9uZT0iaW5rIiAvPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQgZ3JpZCBncmlkLWNvbHMtMiBnYXAteS0zIHRleHQtWzEycHhdIj4KICAgICAgICA8TWV0cmljIGxhYmVsPSJBdmcgV2luIiB2YWx1ZT17YCske21vbmV5KHBlcmZvcm1hbmNlLmF2Z1dpbil9YH0gdG9uZT0iYnVsbCIgLz4KICAgICAgICA8TWV0cmljIGxhYmVsPSJBdmcgTG9zcyIgdmFsdWU9e21vbmV5KHBlcmZvcm1hbmNlLmF2Z0xvc3MpfSB0b25lPSJiZWFyIiAvPgogICAgICA8L2Rpdj4KICAgIDwvUGFuZWw+CiAgKTsKfQoKZnVuY3Rpb24gTWV0cmljKHsgbGFiZWwsIHZhbHVlLCB0b25lIH0pIHsKICBjb25zdCB0b25lQ2xhc3MgPSB0b25lID09PSAiYnVsbCIgPyAidGV4dC1idWxsIiA6IHRvbmUgPT09ICJiZWFyIiA/ICJ0ZXh0LWJlYXIiIDogInRleHQtaW5rIjsKICByZXR1cm4gKAogICAgPGRpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzEwcHhdIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LWluay1mYWludCI+e2xhYmVsfTwvZGl2PgogICAgICA8ZGl2IGNsYXNzTmFtZT17YG10LTAuNSBmb250LW1vbm8gdGV4dC1bMTNweF0gJHt0b25lQ2xhc3N9YH0+e3ZhbHVlfTwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKZnVuY3Rpb24gVHJpcGxlU3RhdCh7IGxhYmVsLCB2YWx1ZSwgdG9uZSB9KSB7CiAgY29uc3QgdG9uZUNsYXNzID0geyBidWxsOiAidGV4dC1idWxsIiwgYWNjZW50OiAidGV4dC1hY2NlbnQiLCBpbms6ICJ0ZXh0LWluayIgfVt0b25lXTsKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZS1hbHQgcHgtMiBweS0yIHRleHQtY2VudGVyIj4KICAgICAgPGRpdiBjbGFzc05hbWU9e2Bmb250LW1vbm8gdGV4dC1sZyBmb250LXNlbWlib2xkICR7dG9uZUNsYXNzfWB9Pnt2YWx1ZX08L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTAuNSB0ZXh0LVs5cHhdIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LWluay1mYWludCI+e2xhYmVsfTwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQo=
+import React from "react";
+import Panel from "./Panel.jsx";
+
+function money(n, opts = {}) {
+  return n.toLocaleString("en-US", { style: "currency", currency: "USD", ...opts });
+}
+
+export function AccountCard({ account }) {
+  const pnlPositive = account.todaysPnl >= 0;
+  return (
+    <Panel title="Account · Equity & Balance">
+      <div className="font-mono text-2xl font-semibold text-ink">{money(account.netEquity)}</div>
+      <div className="mt-4 grid grid-cols-2 gap-y-3 text-[12px]">
+        <Metric label="Balance" value={money(account.balance)} />
+        <Metric
+          label="Today's P/L"
+          value={`${pnlPositive ? "+" : ""}${money(account.todaysPnl)}`}
+          tone={pnlPositive ? "bull" : "bear"}
+        />
+        <Metric label="Free Margin" value={money(account.freeMargin)} />
+        <Metric label="Margin Level" value={`${account.marginLevel.toFixed(1)}%`} />
+      </div>
+    </Panel>
+  );
+}
+
+export function RiskCard({ risk, onResetPeakGuard }) {
+  const pct = Math.min(100, (risk.drawdownPct / risk.maxDrawdownCeilingPct) * 100);
+  return (
+    <Panel title="Risk Exposure · Live">
+      <div className="flex items-baseline justify-between">
+        <span className="text-[12px] text-ink-dim">Drawdown</span>
+        <span className="font-mono text-[12px] text-ink">
+          {risk.drawdownPct.toFixed(2)}% / {risk.maxDrawdownCeilingPct.toFixed(0)}%
+        </span>
+      </div>
+      <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-alt">
+        <div
+          className={`h-full rounded-full ${pct > 80 ? "bg-bear" : pct > 50 ? "bg-warn" : "bg-bull"}`}
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-y-3 text-[12px]">
+        <Metric label="Margin Utilized" value={`${risk.marginUtilizedPct.toFixed(1)}%`} />
+        <Metric label="Open Positions" value={risk.openPositions} />
+        <Metric label="Max DD Ceiling" value={`${risk.maxDrawdownCeilingPct.toFixed(2)}%`} />
+        <Metric label="Daily Loss Limit" value={`${risk.dailyLossCeilingPct.toFixed(2)}%`} />
+        <Metric label="Trades Today" value={`${risk.tradesToday} / ${risk.maxTradesPerDay}`} />
+        <Metric label="Peak Guard" value={risk.peakDrawdownHalted ? "HALTED" : "ACTIVE"} tone={risk.peakDrawdownHalted ? "bear" : "bull"} />
+      </div>
+      {risk.peakDrawdownHalted && (
+        <button
+          type="button"
+          className="mt-4 rounded border border-bear/50 px-2 py-1 text-[10px] uppercase tracking-wider text-bear hover:bg-bear/10"
+          onClick={onResetPeakGuard}
+        >
+          Manually reset peak guard
+        </button>
+      )}
+    </Panel>
+  );
+}
+
+export function PerformanceCard({ performance }) {
+  return (
+    <Panel title="Truth Metric · Performance">
+      <div className="grid grid-cols-3 gap-2">
+        <TripleStat label="Win Rate" value={`${performance.winRatePct.toFixed(1)}%`} tone="bull" />
+        <TripleStat label="Profit Factor" value={performance.profitFactor.toFixed(2)} tone="accent" />
+        <TripleStat label="Total Trades" value={performance.totalTrades} tone="ink" />
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-y-3 text-[12px]">
+        <Metric label="Avg Win" value={`+${money(performance.avgWin)}`} tone="bull" />
+        <Metric label="Avg Loss" value={money(performance.avgLoss)} tone="bear" />
+      </div>
+    </Panel>
+  );
+}
+
+function Metric({ label, value, tone }) {
+  const toneClass = tone === "bull" ? "text-bull" : tone === "bear" ? "text-bear" : "text-ink";
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wider text-ink-faint">{label}</div>
+      <div className={`mt-0.5 font-mono text-[13px] ${toneClass}`}>{value}</div>
+    </div>
+  );
+}
+
+function TripleStat({ label, value, tone }) {
+  const toneClass = { bull: "text-bull", accent: "text-accent", ink: "text-ink" }[tone];
+  return (
+    <div className="rounded-md border border-border bg-surface-alt px-2 py-2 text-center">
+      <div className={`font-mono text-lg font-semibold ${toneClass}`}>{value}</div>
+      <div className="mt-0.5 text-[9px] uppercase tracking-wider text-ink-faint">{label}</div>
+    </div>
+  );
+}

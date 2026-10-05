@@ -1,1 +1,192 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBTbG90IH0gZnJvbSAnQHJhZGl4LXVpL3JlYWN0LXNsb3QnOwppbXBvcnQgeyBTZXBhcmF0b3IgfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvc2VwYXJhdG9yJzsKaW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CmltcG9ydCB7IGN2YSwgdHlwZSBWYXJpYW50UHJvcHMgfSBmcm9tICdjbGFzcy12YXJpYW5jZS1hdXRob3JpdHknOwoKZnVuY3Rpb24gSXRlbUdyb3VwKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICByb2xlPSJsaXN0IgogICAgICBkYXRhLXNsb3Q9Iml0ZW0tZ3JvdXAiCiAgICAgIGNsYXNzTmFtZT17Y24oJ2dyb3VwL2l0ZW0tZ3JvdXAgZmxleCBmbGV4LWNvbCcsIGNsYXNzTmFtZSl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gSXRlbVNlcGFyYXRvcih7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBTZXBhcmF0b3I+KSB7CiAgcmV0dXJuICgKICAgIDxTZXBhcmF0b3IKICAgICAgZGF0YS1zbG90PSJpdGVtLXNlcGFyYXRvciIKICAgICAgb3JpZW50YXRpb249Imhvcml6b250YWwiCiAgICAgIGNsYXNzTmFtZT17Y24oJ215LTAnLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmNvbnN0IGl0ZW1WYXJpYW50cyA9IGN2YSgKICAnZ3JvdXAvaXRlbSBbYV06aG92ZXI6YmctYWNjZW50LzUwIGZvY3VzLXZpc2libGU6Ym9yZGVyLXJpbmcgZm9jdXMtdmlzaWJsZTpyaW5nLXJpbmcvNTAgW2FdOnRyYW5zaXRpb24tY29sb3JzIGZsZXggZmxleC13cmFwIGl0ZW1zLWNlbnRlciByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgdGV4dC1zbSBvdXRsaW5lLW5vbmUgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMTAwIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XScsCiAgewogICAgdmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogewogICAgICAgIGRlZmF1bHQ6ICdiZy10cmFuc3BhcmVudCcsCiAgICAgICAgb3V0bGluZTogJ2JvcmRlci1ib3JkZXInLAogICAgICAgIG11dGVkOiAnYmctbXV0ZWQvNTAnLAogICAgICB9LAogICAgICBzaXplOiB7CiAgICAgICAgZGVmYXVsdDogJ2dhcC00IHAtNCAnLAogICAgICAgIHNtOiAnZ2FwLTIuNSBweC00IHB5LTMnLAogICAgICB9LAogICAgfSwKICAgIGRlZmF1bHRWYXJpYW50czogewogICAgICB2YXJpYW50OiAnZGVmYXVsdCcsCiAgICAgIHNpemU6ICdkZWZhdWx0JywKICAgIH0sCiAgfSwKKTsKCmZ1bmN0aW9uIEl0ZW0oewogIGNsYXNzTmFtZSwKICB2YXJpYW50ID0gJ2RlZmF1bHQnLAogIHNpemUgPSAnZGVmYXVsdCcsCiAgYXNDaGlsZCA9IGZhbHNlLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPiAmCiAgVmFyaWFudFByb3BzPHR5cGVvZiBpdGVtVmFyaWFudHM+ICYgeyBhc0NoaWxkPzogYm9vbGVhbiB9KSB7CiAgY29uc3QgQ29tcCA9IGFzQ2hpbGQgPyBTbG90IDogJ2Rpdic7CiAgcmV0dXJuICgKICAgIDxDb21wCiAgICAgIGRhdGEtc2xvdD0iaXRlbSIKICAgICAgZGF0YS12YXJpYW50PXt2YXJpYW50fQogICAgICBkYXRhLXNpemU9e3NpemV9CiAgICAgIGNsYXNzTmFtZT17Y24oaXRlbVZhcmlhbnRzKHsgdmFyaWFudCwgc2l6ZSwgY2xhc3NOYW1lIH0pKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9Cgpjb25zdCBpdGVtTWVkaWFWYXJpYW50cyA9IGN2YSgKICAnZmxleCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTIgZ3JvdXAtaGFzLVtbZGF0YS1zbG90PWl0ZW0tZGVzY3JpcHRpb25dXS9pdGVtOnRyYW5zbGF0ZS15LTAuNSBncm91cC1oYXMtW1tkYXRhLXNsb3Q9aXRlbS1kZXNjcmlwdGlvbl1dL2l0ZW06c2VsZi1zdGFydCBbJl9zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUnLAogIHsKICAgIHZhcmlhbnRzOiB7CiAgICAgIHZhcmlhbnQ6IHsKICAgICAgICBkZWZhdWx0OiAnYmctdHJhbnNwYXJlbnQnLAogICAgICAgIGljb246ICJiZy1tdXRlZCBzaXplLTggcm91bmRlZC1zbSBib3JkZXIgWyZfc3ZnOm5vdChbY2xhc3MqPSdzaXplLSddKV06c2l6ZS00IiwKICAgICAgICBpbWFnZToKICAgICAgICAgICdzaXplLTEwIG92ZXJmbG93LWhpZGRlbiByb3VuZGVkLXNtIFsmX2ltZ106c2l6ZS1mdWxsIFsmX2ltZ106b2JqZWN0LWNvdmVyJywKICAgICAgfSwKICAgIH0sCiAgICBkZWZhdWx0VmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogJ2RlZmF1bHQnLAogICAgfSwKICB9LAopOwoKZnVuY3Rpb24gSXRlbU1lZGlhKHsKICBjbGFzc05hbWUsCiAgdmFyaWFudCA9ICdkZWZhdWx0JywKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4gJiBWYXJpYW50UHJvcHM8dHlwZW9mIGl0ZW1NZWRpYVZhcmlhbnRzPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0iaXRlbS1tZWRpYSIKICAgICAgZGF0YS12YXJpYW50PXt2YXJpYW50fQogICAgICBjbGFzc05hbWU9e2NuKGl0ZW1NZWRpYVZhcmlhbnRzKHsgdmFyaWFudCwgY2xhc3NOYW1lIH0pKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBJdGVtQ29udGVudCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2Rpdic+KSB7CiAgcmV0dXJuICgKICAgIDxkaXYKICAgICAgZGF0YS1zbG90PSJpdGVtLWNvbnRlbnQiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2ZsZXggZmxleC0xIGZsZXgtY29sIGdhcC0xIFsmK1tkYXRhLXNsb3Q9aXRlbS1jb250ZW50XV06ZmxleC1ub25lJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gSXRlbVRpdGxlKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9Iml0ZW0tdGl0bGUiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2ZsZXggdy1maXQgaXRlbXMtY2VudGVyIGdhcC0yIHRleHQtc20gZm9udC1tZWRpdW0gbGVhZGluZy1zbnVnJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gSXRlbURlc2NyaXB0aW9uKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwncCc+KSB7CiAgcmV0dXJuICgKICAgIDxwCiAgICAgIGRhdGEtc2xvdD0iaXRlbS1kZXNjcmlwdGlvbiIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAndGV4dC1tdXRlZC1mb3JlZ3JvdW5kIGxpbmUtY2xhbXAtMiB0ZXh0LWJhbGFuY2UgdGV4dC1zbSBmb250LW5vcm1hbCBsZWFkaW5nLW5vcm1hbCcsCiAgICAgICAgJ1smPmE6aG92ZXJdOnRleHQtcHJpbWFyeSBbJj5hXTp1bmRlcmxpbmUgWyY+YV06dW5kZXJsaW5lLW9mZnNldC00JywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gSXRlbUFjdGlvbnMoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0iaXRlbS1hY3Rpb25zIgogICAgICBjbGFzc05hbWU9e2NuKCdmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMicsIGNsYXNzTmFtZSl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gSXRlbUhlYWRlcih7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2Rpdic+KSB7CiAgcmV0dXJuICgKICAgIDxkaXYKICAgICAgZGF0YS1zbG90PSJpdGVtLWhlYWRlciIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAnZmxleCBiYXNpcy1mdWxsIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gZ2FwLTInLAogICAgICAgIGNsYXNzTmFtZSwKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBJdGVtRm9vdGVyKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9Iml0ZW0tZm9vdGVyIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICdmbGV4IGJhc2lzLWZ1bGwgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBnYXAtMicsCiAgICAgICAgY2xhc3NOYW1lLAogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmV4cG9ydCB7CiAgSXRlbSwKICBJdGVtTWVkaWEsCiAgSXRlbUNvbnRlbnQsCiAgSXRlbUFjdGlvbnMsCiAgSXRlbUdyb3VwLAogIEl0ZW1TZXBhcmF0b3IsCiAgSXRlbVRpdGxlLAogIEl0ZW1EZXNjcmlwdGlvbiwKICBJdGVtSGVhZGVyLAogIEl0ZW1Gb290ZXIsCn07Cg==
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+function ItemGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      role="list"
+      data-slot="item-group"
+      className={cn('group/item-group flex flex-col', className)}
+      {...props}
+    />
+  );
+}
+
+function ItemSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof Separator>) {
+  return (
+    <Separator
+      data-slot="item-separator"
+      orientation="horizontal"
+      className={cn('my-0', className)}
+      {...props}
+    />
+  );
+}
+
+const itemVariants = cva(
+  'group/item [a]:hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-ring/50 [a]:transition-colors flex flex-wrap items-center rounded-md border border-transparent text-sm outline-none transition-colors duration-100 focus-visible:ring-[3px]',
+  {
+    variants: {
+      variant: {
+        default: 'bg-transparent',
+        outline: 'border-border',
+        muted: 'bg-muted/50',
+      },
+      size: {
+        default: 'gap-4 p-4 ',
+        sm: 'gap-2.5 px-4 py-3',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  },
+);
+
+function Item({
+  className,
+  variant = 'default',
+  size = 'default',
+  asChild = false,
+  ...props
+}: React.ComponentProps<'div'> &
+  VariantProps<typeof itemVariants> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : 'div';
+  return (
+    <Comp
+      data-slot="item"
+      data-variant={variant}
+      data-size={size}
+      className={cn(itemVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
+
+const itemMediaVariants = cva(
+  'flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:translate-y-0.5 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none',
+  {
+    variants: {
+      variant: {
+        default: 'bg-transparent',
+        icon: "bg-muted size-8 rounded-sm border [&_svg:not([class*='size-'])]:size-4",
+        image:
+          'size-10 overflow-hidden rounded-sm [&_img]:size-full [&_img]:object-cover',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+);
+
+function ItemMedia({
+  className,
+  variant = 'default',
+  ...props
+}: React.ComponentProps<'div'> & VariantProps<typeof itemMediaVariants>) {
+  return (
+    <div
+      data-slot="item-media"
+      data-variant={variant}
+      className={cn(itemMediaVariants({ variant, className }))}
+      {...props}
+    />
+  );
+}
+
+function ItemContent({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="item-content"
+      className={cn(
+        'flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function ItemTitle({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="item-title"
+      className={cn(
+        'flex w-fit items-center gap-2 text-sm font-medium leading-snug',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function ItemDescription({ className, ...props }: React.ComponentProps<'p'>) {
+  return (
+    <p
+      data-slot="item-description"
+      className={cn(
+        'text-muted-foreground line-clamp-2 text-balance text-sm font-normal leading-normal',
+        '[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function ItemActions({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="item-actions"
+      className={cn('flex items-center gap-2', className)}
+      {...props}
+    />
+  );
+}
+
+function ItemHeader({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="item-header"
+      className={cn(
+        'flex basis-full items-center justify-between gap-2',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function ItemFooter({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="item-footer"
+      className={cn(
+        'flex basis-full items-center justify-between gap-2',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export {
+  Item,
+  ItemMedia,
+  ItemContent,
+  ItemActions,
+  ItemGroup,
+  ItemSeparator,
+  ItemTitle,
+  ItemDescription,
+  ItemHeader,
+  ItemFooter,
+};

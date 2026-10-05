@@ -1,1 +1,17 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBjb2xsZWN0aW9ucy5hYmMgaW1wb3J0IEFzeW5jSXRlcmF0b3IKCmZyb20gZmFzdGFwaSBpbXBvcnQgUmVxdWVzdApmcm9tIHJlZGlzLmFzeW5jaW8gaW1wb3J0IFJlZGlzCmZyb20gc3FsYWxjaGVteS5leHQuYXN5bmNpbyBpbXBvcnQgQXN5bmNTZXNzaW9uLCBhc3luY19zZXNzaW9ubWFrZXIKCgphc3luYyBkZWYgZ2V0X3Nlc3Npb24ocmVxdWVzdDogUmVxdWVzdCkgLT4gQXN5bmNJdGVyYXRvcltBc3luY1Nlc3Npb25dOgogICAgZmFjdG9yeTogYXN5bmNfc2Vzc2lvbm1ha2VyW0FzeW5jU2Vzc2lvbl0gPSByZXF1ZXN0LmFwcC5zdGF0ZS5zZXNzaW9uX2ZhY3RvcnkKICAgIGFzeW5jIHdpdGggZmFjdG9yeSgpIGFzIHNlc3Npb246CiAgICAgICAgeWllbGQgc2Vzc2lvbgoKCmFzeW5jIGRlZiBnZXRfcmVkaXMocmVxdWVzdDogUmVxdWVzdCkgLT4gUmVkaXM6CiAgICByZXR1cm4gcmVxdWVzdC5hcHAuc3RhdGUucmVkaXM=
+from __future__ import annotations
+
+from collections.abc import AsyncIterator
+
+from fastapi import Request
+from redis.asyncio import Redis
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+
+async def get_session(request: Request) -> AsyncIterator[AsyncSession]:
+    factory: async_sessionmaker[AsyncSession] = request.app.state.session_factory
+    async with factory() as session:
+        yield session
+
+
+async def get_redis(request: Request) -> Redis:
+    return request.app.state.redis

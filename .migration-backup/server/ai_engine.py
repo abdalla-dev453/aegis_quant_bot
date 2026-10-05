@@ -1,1 +1,193 @@
-IiIiQXN5bmNocm9ub3VzLCBmYWlsLWNsb3NlZCBHUFQtNG8gcHJvcG9zYWwgc2VydmljZSBmb3IgTVQ1IGV4ZWN1dGlvbi4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBqc29uCmltcG9ydCBsb2dnaW5nCmltcG9ydCBsb2dnaW5nLmhhbmRsZXJzCmltcG9ydCB0aW1lCmZyb20gZW51bSBpbXBvcnQgRW51bQpmcm9tIHBhdGhsaWIgaW1wb3J0IFBhdGgKZnJvbSB0eXBpbmcgaW1wb3J0IEFueQoKZnJvbSBjb25maWcgaW1wb3J0IEFJCmZyb20gb3BlbmFpIGltcG9ydCBBc3luY09wZW5BSQpmcm9tIHB5ZGFudGljIGltcG9ydCBCYXNlTW9kZWwsIENvbmZpZ0RpY3QsIEZpZWxkLCBWYWxpZGF0aW9uRXJyb3IsIGZpZWxkX3ZhbGlkYXRvcgoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoInRyYWRpbmdfYm90LmFpIikKX2Vycm9yX2xvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKCJ0cmFkaW5nX2JvdC5haS5pbnZhbGlkX3Jlc3BvbnNlIikKX2Vycm9yX2xvZ2dlci5zZXRMZXZlbChsb2dnaW5nLkVSUk9SKQpfZXJyb3JfbG9nZ2VyLnByb3BhZ2F0ZSA9IEZhbHNlCmlmIG5vdCBfZXJyb3JfbG9nZ2VyLmhhbmRsZXJzOgogICAgaGFuZGxlciA9IGxvZ2dpbmcuaGFuZGxlcnMuUm90YXRpbmdGaWxlSGFuZGxlcigKICAgICAgICBQYXRoKF9fZmlsZV9fKS53aXRoX25hbWUoImVycm9yLmxvZyIpLCBtYXhCeXRlcz01XzAwMF8wMDAsIGJhY2t1cENvdW50PTMsIGVuY29kaW5nPSJ1dGYtOCIKICAgICkKICAgIGhhbmRsZXIuc2V0Rm9ybWF0dGVyKGxvZ2dpbmcuRm9ybWF0dGVyKCIlKGFzY3RpbWUpcyAlKGxldmVsbmFtZSlzICUobWVzc2FnZSlzIikpCiAgICBfZXJyb3JfbG9nZ2VyLmFkZEhhbmRsZXIoaGFuZGxlcikKCgpjbGFzcyBQcm9wb3NhbEFjdGlvbihzdHIsIEVudW0pOgogICAgQlVZID0gIkJVWSIKICAgIFNFTEwgPSAiU0VMTCIKICAgIEhPTEQgPSAiSE9MRCIKCgpjbGFzcyBUcmFkZVByb3Bvc2FsKEJhc2VNb2RlbCk6CiAgICAiIiJUaGUgb25seSBMTE0gb3V0cHV0IGFjY2VwdGVkIGJ5IHRoZSBvcmRlciBicmlkZ2UuIiIiCgogICAgbW9kZWxfY29uZmlnID0gQ29uZmlnRGljdCgKICAgICAgICBleHRyYT0iZm9yYmlkIiwgc3RyX3N0cmlwX3doaXRlc3BhY2U9VHJ1ZSwgYWxsb3dfaW5mX25hbj1GYWxzZSwgc3RyaWN0PVRydWUKICAgICkKCiAgICBhY3Rpb246IFByb3Bvc2FsQWN0aW9uCiAgICBzeW1ib2w6IHN0ciA9IEZpZWxkKG1pbl9sZW5ndGg9MSkKICAgIHZvbHVtZTogZmxvYXQgPSBGaWVsZChnZT0wLjApCiAgICBzdG9wX2xvc3M6IGZsb2F0IHwgTm9uZSA9IE5vbmUKICAgIHRha2VfcHJvZml0OiBmbG9hdCB8IE5vbmUgPSBOb25lCiAgICBjb25maWRlbmNlX3Njb3JlOiBmbG9hdCA9IEZpZWxkKGdlPTAuMCwgbGU9MS4wKQogICAgcmVhc29uaW5nOiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTEsIG1heF9sZW5ndGg9MjAwMCkKCiAgICBAZmllbGRfdmFsaWRhdG9yKCJzeW1ib2wiKQogICAgQGNsYXNzbWV0aG9kCiAgICBkZWYgbm9ybWFsaXplX3N5bWJvbChjbHMsIHZhbHVlOiBzdHIpIC0+IHN0cjoKICAgICAgICByZXR1cm4gdmFsdWUudXBwZXIoKQoKICAgIEBjbGFzc21ldGhvZAogICAgZGVmIGhvbGQoY2xzLCBzeW1ib2w6IHN0ciwgcmVhc29uOiBzdHIpIC0+IFRyYWRlUHJvcG9zYWw6CiAgICAgICAgcmV0dXJuIGNscygKICAgICAgICAgICAgYWN0aW9uPVByb3Bvc2FsQWN0aW9uLkhPTEQsCiAgICAgICAgICAgIHN5bWJvbD1zeW1ib2wsCiAgICAgICAgICAgIHZvbHVtZT0wLjAsCiAgICAgICAgICAgIGNvbmZpZGVuY2Vfc2NvcmU9MC4wLAogICAgICAgICAgICByZWFzb25pbmc9cmVhc29uLAogICAgICAgICkKCgpTWVNURU1fUFJPTVBUID0gIiIiWW91IGFyZSBhIGNhdXRpb3VzIEZYIGFuZCBtZXRhbHMgdHJhZGluZyBhbmFseXN0LiBSZXR1cm4gb25seSBvbmUgSlNPTiBvYmplY3QuCkl0IG11c3QgaGF2ZSBleGFjdGx5IHRoZXNlIGZpZWxkczogYWN0aW9uIChCVVksIFNFTEwsIG9yIEhPTEQpLCBzeW1ib2wsIHZvbHVtZSwKc3RvcF9sb3NzLCB0YWtlX3Byb2ZpdCwgY29uZmlkZW5jZV9zY29yZSwgYW5kIHJlYXNvbmluZy4gVXNlIEhPTEQgd2hlbmV2ZXIgdGhlCnByb3ZpZGVkIG1hcmtldCBkYXRhIGlzIGluc3VmZmljaWVudCBvciBhIHByb3RlY3RlZCBzdG9wIGNhbm5vdCBiZSBqdXN0aWZpZWQuCk5ldmVyIGludmVudCBwcmljZXMsIHN5bWJvbHMsIG9yIGRhdGEgbm90IHN1cHBsaWVkIGluIHRoZSBtYXJrZXQgY29udGV4dC4iIiIKCgojIC0tLSBDb25uZWN0aW9uIHBvb2xpbmcgJiBjaXJjdWl0IGJyZWFrZXIgLS0tCl9jbGllbnQ6IEFzeW5jT3BlbkFJIHwgTm9uZSA9IE5vbmUKX2NpcmN1aXRfb3BlbiA9IEZhbHNlCl9jaXJjdWl0X2ZhaWx1cmVzID0gMApfY2lyY3VpdF9sYXN0X2ZhaWx1cmUgPSAwLjAKX0NJUkNVSVRfVEhSRVNIT0xEID0gNQpfQ0lSQ1VJVF9SRVNFVF9TRUNPTkRTID0gNjAKCgpkZWYgX2dldF9jbGllbnQoKSAtPiBBc3luY09wZW5BSToKICAgICIiIlJldHVybiBzaW5nbGV0b24gQXN5bmNPcGVuQUkgY2xpZW50IHdpdGggY29ubmVjdGlvbiBwb29saW5nLiIiIgogICAgZ2xvYmFsIF9jbGllbnQKICAgIGlmIF9jbGllbnQgaXMgTm9uZToKICAgICAgICBfY2xpZW50ID0gQXN5bmNPcGVuQUkoCiAgICAgICAgICAgIGFwaV9rZXk9QUkuYXBpX2tleSwKICAgICAgICAgICAgdGltZW91dD1BSS50aW1lb3V0X3NlY29uZHMsCiAgICAgICAgICAgIG1heF9yZXRyaWVzPTIsCiAgICAgICAgKQogICAgcmV0dXJuIF9jbGllbnQKCgpkZWYgX2NoZWNrX2NpcmN1aXQoKSAtPiBib29sOgogICAgIiIiQ2hlY2sgaWYgY2lyY3VpdCBicmVha2VyIGFsbG93cyByZXF1ZXN0cy4iIiIKICAgIGdsb2JhbCBfY2lyY3VpdF9vcGVuLCBfY2lyY3VpdF9mYWlsdXJlcwogICAgaWYgbm90IF9jaXJjdWl0X29wZW46CiAgICAgICAgcmV0dXJuIFRydWUKICAgICMgQXV0by1yZXNldCBhZnRlciB0aW1lb3V0CiAgICBpZiB0aW1lLnRpbWUoKSAtIF9jaXJjdWl0X2xhc3RfZmFpbHVyZSA+IF9DSVJDVUlUX1JFU0VUX1NFQ09ORFM6CiAgICAgICAgX2NpcmN1aXRfb3BlbiA9IEZhbHNlCiAgICAgICAgX2NpcmN1aXRfZmFpbHVyZXMgPSAwCiAgICAgICAgbG9nZ2VyLndhcm5pbmcoIk9wZW5BSSBjaXJjdWl0IGJyZWFrZXIgcmVzZXQgYWZ0ZXIgdGltZW91dCIpCiAgICAgICAgcmV0dXJuIFRydWUKICAgIHJldHVybiBGYWxzZQoKCmRlZiBfcmVjb3JkX3N1Y2Nlc3MoKSAtPiBOb25lOgogICAgZ2xvYmFsIF9jaXJjdWl0X2ZhaWx1cmVzCiAgICBfY2lyY3VpdF9mYWlsdXJlcyA9IDAKCgpkZWYgX3JlY29yZF9mYWlsdXJlKCkgLT4gTm9uZToKICAgIGdsb2JhbCBfY2lyY3VpdF9mYWlsdXJlcywgX2NpcmN1aXRfb3BlbiwgX2NpcmN1aXRfbGFzdF9mYWlsdXJlCiAgICBfY2lyY3VpdF9mYWlsdXJlcyArPSAxCiAgICBfY2lyY3VpdF9sYXN0X2ZhaWx1cmUgPSB0aW1lLnRpbWUoKQogICAgaWYgX2NpcmN1aXRfZmFpbHVyZXMgPj0gX0NJUkNVSVRfVEhSRVNIT0xEOgogICAgICAgIF9jaXJjdWl0X29wZW4gPSBUcnVlCiAgICAgICAgbG9nZ2VyLmVycm9yKCJPcGVuQUkgY2lyY3VpdCBicmVha2VyIE9QRU5FRCBhZnRlciAlZCBmYWlsdXJlcyIsIF9jaXJjdWl0X2ZhaWx1cmVzKQoKCmRlZiB2YWxpZGF0ZV9haV9jb25maWd1cmF0aW9uKCkgLT4gTm9uZToKICAgICIiIkZhaWwgc3RhcnR1cCBiZWZvcmUgY29ubmVjdGluZyB0byBNVDUgd2hlbiBzZWN1cmUgQUkgY29uZmlndXJhdGlvbiBpcyBhYnNlbnQuIiIiCiAgICBBSS52YWxpZGF0ZSgpCgoKZGVmIF9wcm9wb3NhbF9zY2hlbWEoKSAtPiBkaWN0W3N0ciwgQW55XToKICAgIHJldHVybiBUcmFkZVByb3Bvc2FsLm1vZGVsX2pzb25fc2NoZW1hKCkKCgphc3luYyBkZWYgcHJvcG9zZV90cmFkZSgKICAgIHN5bWJvbDogc3RyLCBtYXJrZXRfY29udGV4dDogZGljdFtzdHIsIEFueV0sIGxpdmVfbmV3czogbGlzdFtkaWN0W3N0ciwgc3RyXV0sIG5ld3Nfd2FybmluZzogc3RyIHwgTm9uZSA9IE5vbmUKKSAtPiBUcmFkZVByb3Bvc2FsOgogICAgIiIiUmVxdWVzdCBhbmQgdmFsaWRhdGUgYW4gQUkgdHJhZGUgcHJvcG9zYWw7IGV2ZXJ5IGZhaWx1cmUgYmVjb21lcyBIT0xELiIiIgogICAgIyBDaXJjdWl0IGJyZWFrZXIgY2hlY2sKICAgIGlmIG5vdCBfY2hlY2tfY2lyY3VpdCgpOgogICAgICAgIGxvZ2dlci53YXJuaW5nKCJPcGVuQUkgY2lyY3VpdCBicmVha2VyIG9wZW4sIGZhaWxpbmcgY2xvc2VkIHRvIEhPTEQgZm9yICVzIiwgc3ltYm9sKQogICAgICAgIHJldHVybiBUcmFkZVByb3Bvc2FsLmhvbGQoc3ltYm9sLCAiQUkgc2VydmljZSBjaXJjdWl0IGJyZWFrZXIgb3BlbjsgZmFpbC1jbG9zZWQgSE9MRC4iKQoKICAgIHRyeToKICAgICAgICBBSS52YWxpZGF0ZSgpCiAgICAgICAgY2xpZW50ID0gX2dldF9jbGllbnQoKQogICAgICAgIHJlc3BvbnNlID0gYXdhaXQgY2xpZW50LmNoYXQuY29tcGxldGlvbnMuY3JlYXRlKAogICAgICAgICAgICBtb2RlbD1BSS5tb2RlbCwKICAgICAgICAgICAgdGVtcGVyYXR1cmU9MC4wLAogICAgICAgICAgICByZXNwb25zZV9mb3JtYXQ9eyJ0eXBlIjogImpzb25fb2JqZWN0In0sCiAgICAgICAgICAgIG1lc3NhZ2VzPVsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAicm9sZSI6ICJzeXN0ZW0iLAogICAgICAgICAgICAgICAgICAgICJjb250ZW50IjogKAogICAgICAgICAgICAgICAgICAgICAgICBmIntTWVNURU1fUFJPTVBUfVxuXG4tLS0gTElWRSBNQUNST0VDT05PTUlDICYgTUFSS0VUIE5FV1MgQ09OVEVYVCAtLS1cbiIKICAgICAgICAgICAgICAgICAgICAgICAgZiJ7anNvbi5kdW1wcyhsaXZlX25ld3MsIHNvcnRfa2V5cz1UcnVlKX1cbiIKICAgICAgICAgICAgICAgICAgICAgICAgZiJ7bmV3c193YXJuaW5nIG9yICcnfVxuIgogICAgICAgICAgICAgICAgICAgICAgICAiQ3Jvc3MtcmVmZXJlbmNlIHRoZXNlIGxpdmUgbWFjcm8vbWFya2V0IGRyaXZlcnMgd2l0aCB0ZWNobmljYWwgdHJlbmRzLiAiCiAgICAgICAgICAgICAgICAgICAgICAgICJVc2UgSE9MRCB3aGVuIGEgaGlnaC12b2xhdGlsaXR5IGNhdGFseXN0IG1ha2VzIHRoZSBzZXR1cCB1bnNhZmUuIgogICAgICAgICAgICAgICAgICAgICksCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJyb2xlIjogInVzZXIiLAogICAgICAgICAgICAgICAgICAgICJjb250ZW50IjoganNvbi5kdW1wcygKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgInJlcXVlc3RlZF9zeW1ib2wiOiBzeW1ib2wsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAidHJhZGVfcHJvcG9zYWxfc2NoZW1hIjogX3Byb3Bvc2FsX3NjaGVtYSgpLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIm1hcmtldF9jb250ZXh0IjogbWFya2V0X2NvbnRleHQsCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgIHNvcnRfa2V5cz1UcnVlLAogICAgICAgICAgICAgICAgICAgICksCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICkKICAgICAgICByYXdfcmVzcG9uc2UgPSByZXNwb25zZS5jaG9pY2VzWzBdLm1lc3NhZ2UuY29udGVudCBvciAiIgogICAgICAgIHByb3Bvc2FsID0gVHJhZGVQcm9wb3NhbC5tb2RlbF92YWxpZGF0ZV9qc29uKHJhd19yZXNwb25zZSkKICAgICAgICBpZiBwcm9wb3NhbC5zeW1ib2wgIT0gc3ltYm9sLnVwcGVyKCk6CiAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoCiAgICAgICAgICAgICAgICBmIlByb3Bvc2FsIHN5bWJvbCB7cHJvcG9zYWwuc3ltYm9sfSBkb2VzIG5vdCBtYXRjaCByZXF1ZXN0ZWQge3N5bWJvbC51cHBlcigpfSIKICAgICAgICAgICAgKQogICAgICAgIGlmIHByb3Bvc2FsLmFjdGlvbiAhPSBQcm9wb3NhbEFjdGlvbi5IT0xEIGFuZCAoCiAgICAgICAgICAgIHByb3Bvc2FsLnN0b3BfbG9zcyBpcyBOb25lIG9yIHByb3Bvc2FsLnRha2VfcHJvZml0IGlzIE5vbmUKICAgICAgICApOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJCVVkvU0VMTCBwcm9wb3NhbHMgcmVxdWlyZSBzdG9wX2xvc3MgYW5kIHRha2VfcHJvZml0IikKICAgICAgICBfcmVjb3JkX3N1Y2Nlc3MoKQogICAgICAgIHJldHVybiBwcm9wb3NhbAogICAgZXhjZXB0IChqc29uLkpTT05EZWNvZGVFcnJvciwgVmFsaWRhdGlvbkVycm9yLCBWYWx1ZUVycm9yLCBJbmRleEVycm9yLCBBdHRyaWJ1dGVFcnJvcikgYXMgZXhjOgogICAgICAgICMgUmF3IG1vZGVsIG91dHB1dCBpcyBkZWxpYmVyYXRlbHkgaXNvbGF0ZWQgZnJvbSBub3JtYWwgdHJhZGluZyBsb2dzLgogICAgICAgIF9lcnJvcl9sb2dnZXIuZXJyb3IoCiAgICAgICAgICAgICJJbnZhbGlkIEFJIHJlc3BvbnNlIGZvciAlczogJXMgfCByYXdfbGVuPSVkIiwgc3ltYm9sLCBleGMsIGxlbihsb2NhbHMoKS5nZXQoInJhd19yZXNwb25zZSIsICIiKSkKICAgICAgICApCiAgICAgICAgX3JlY29yZF9mYWlsdXJlKCkKICAgICAgICByZXR1cm4gVHJhZGVQcm9wb3NhbC5ob2xkKHN5bWJvbCwgIkFJIHJlc3BvbnNlIGZhaWxlZCBzY2hlbWEgdmFsaWRhdGlvbjsgZmFpbC1jbG9zZWQgSE9MRC4iKQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBsb2dnZXIuZXhjZXB0aW9uKCJBSSByZXF1ZXN0IGZhaWxlZCBmb3IgJXM7IGZhbGxpbmcgYmFjayB0byBIT0xELiIsIHN5bWJvbCkKICAgICAgICBfcmVjb3JkX2ZhaWx1cmUoKQogICAgICAgIHJldHVybiBUcmFkZVByb3Bvc2FsLmhvbGQoc3ltYm9sLCAiQUkgc2VydmljZSB1bmF2YWlsYWJsZTsgZmFpbC1jbG9zZWQgSE9MRC4iKQo=
+"""Asynchronous, fail-closed GPT-4o proposal service for MT5 execution."""
+
+from __future__ import annotations
+
+import json
+import logging
+import logging.handlers
+import time
+from enum import Enum
+from pathlib import Path
+from typing import Any
+
+from config import AI
+from openai import AsyncOpenAI
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+
+logger = logging.getLogger("trading_bot.ai")
+_error_logger = logging.getLogger("trading_bot.ai.invalid_response")
+_error_logger.setLevel(logging.ERROR)
+_error_logger.propagate = False
+if not _error_logger.handlers:
+    handler = logging.handlers.RotatingFileHandler(
+        Path(__file__).with_name("error.log"), maxBytes=5_000_000, backupCount=3, encoding="utf-8"
+    )
+    handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+    _error_logger.addHandler(handler)
+
+
+class ProposalAction(str, Enum):
+    BUY = "BUY"
+    SELL = "SELL"
+    HOLD = "HOLD"
+
+
+class TradeProposal(BaseModel):
+    """The only LLM output accepted by the order bridge."""
+
+    model_config = ConfigDict(
+        extra="forbid", str_strip_whitespace=True, allow_inf_nan=False, strict=True
+    )
+
+    action: ProposalAction
+    symbol: str = Field(min_length=1)
+    volume: float = Field(ge=0.0)
+    stop_loss: float | None = None
+    take_profit: float | None = None
+    confidence_score: float = Field(ge=0.0, le=1.0)
+    reasoning: str = Field(min_length=1, max_length=2000)
+
+    @field_validator("symbol")
+    @classmethod
+    def normalize_symbol(cls, value: str) -> str:
+        return value.upper()
+
+    @classmethod
+    def hold(cls, symbol: str, reason: str) -> TradeProposal:
+        return cls(
+            action=ProposalAction.HOLD,
+            symbol=symbol,
+            volume=0.0,
+            confidence_score=0.0,
+            reasoning=reason,
+        )
+
+
+SYSTEM_PROMPT = """You are a cautious FX and metals trading analyst. Return only one JSON object.
+It must have exactly these fields: action (BUY, SELL, or HOLD), symbol, volume,
+stop_loss, take_profit, confidence_score, and reasoning. Use HOLD whenever the
+provided market data is insufficient or a protected stop cannot be justified.
+Never invent prices, symbols, or data not supplied in the market context."""
+
+
+# --- Connection pooling & circuit breaker ---
+_client: AsyncOpenAI | None = None
+_circuit_open = False
+_circuit_failures = 0
+_circuit_last_failure = 0.0
+_CIRCUIT_THRESHOLD = 5
+_CIRCUIT_RESET_SECONDS = 60
+
+
+def _get_client() -> AsyncOpenAI:
+    """Return singleton AsyncOpenAI client with connection pooling."""
+    global _client
+    if _client is None:
+        _client = AsyncOpenAI(
+            api_key=AI.api_key,
+            timeout=AI.timeout_seconds,
+            max_retries=2,
+        )
+    return _client
+
+
+def _check_circuit() -> bool:
+    """Check if circuit breaker allows requests."""
+    global _circuit_open, _circuit_failures
+    if not _circuit_open:
+        return True
+    # Auto-reset after timeout
+    if time.time() - _circuit_last_failure > _CIRCUIT_RESET_SECONDS:
+        _circuit_open = False
+        _circuit_failures = 0
+        logger.warning("OpenAI circuit breaker reset after timeout")
+        return True
+    return False
+
+
+def _record_success() -> None:
+    global _circuit_failures
+    _circuit_failures = 0
+
+
+def _record_failure() -> None:
+    global _circuit_failures, _circuit_open, _circuit_last_failure
+    _circuit_failures += 1
+    _circuit_last_failure = time.time()
+    if _circuit_failures >= _CIRCUIT_THRESHOLD:
+        _circuit_open = True
+        logger.error("OpenAI circuit breaker OPENED after %d failures", _circuit_failures)
+
+
+def validate_ai_configuration() -> None:
+    """Fail startup before connecting to MT5 when secure AI configuration is absent."""
+    AI.validate()
+
+
+def _proposal_schema() -> dict[str, Any]:
+    return TradeProposal.model_json_schema()
+
+
+async def propose_trade(
+    symbol: str, market_context: dict[str, Any], live_news: list[dict[str, str]], news_warning: str | None = None
+) -> TradeProposal:
+    """Request and validate an AI trade proposal; every failure becomes HOLD."""
+    # Circuit breaker check
+    if not _check_circuit():
+        logger.warning("OpenAI circuit breaker open, failing closed to HOLD for %s", symbol)
+        return TradeProposal.hold(symbol, "AI service circuit breaker open; fail-closed HOLD.")
+
+    try:
+        AI.validate()
+        client = _get_client()
+        response = await client.chat.completions.create(
+            model=AI.model,
+            temperature=0.0,
+            response_format={"type": "json_object"},
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        f"{SYSTEM_PROMPT}\n\n--- LIVE MACROECONOMIC & MARKET NEWS CONTEXT ---\n"
+                        f"{json.dumps(live_news, sort_keys=True)}\n"
+                        f"{news_warning or ''}\n"
+                        "Cross-reference these live macro/market drivers with technical trends. "
+                        "Use HOLD when a high-volatility catalyst makes the setup unsafe."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": json.dumps(
+                        {
+                            "requested_symbol": symbol,
+                            "trade_proposal_schema": _proposal_schema(),
+                            "market_context": market_context,
+                        },
+                        sort_keys=True,
+                    ),
+                },
+            ],
+        )
+        raw_response = response.choices[0].message.content or ""
+        proposal = TradeProposal.model_validate_json(raw_response)
+        if proposal.symbol != symbol.upper():
+            raise ValueError(
+                f"Proposal symbol {proposal.symbol} does not match requested {symbol.upper()}"
+            )
+        if proposal.action != ProposalAction.HOLD and (
+            proposal.stop_loss is None or proposal.take_profit is None
+        ):
+            raise ValueError("BUY/SELL proposals require stop_loss and take_profit")
+        _record_success()
+        return proposal
+    except (json.JSONDecodeError, ValidationError, ValueError, IndexError, AttributeError) as exc:
+        # Raw model output is deliberately isolated from normal trading logs.
+        _error_logger.error(
+            "Invalid AI response for %s: %s | raw_len=%d", symbol, exc, len(locals().get("raw_response", ""))
+        )
+        _record_failure()
+        return TradeProposal.hold(symbol, "AI response failed schema validation; fail-closed HOLD.")
+    except Exception:
+        logger.exception("AI request failed for %s; falling back to HOLD.", symbol)
+        _record_failure()
+        return TradeProposal.hold(symbol, "AI service unavailable; fail-closed HOLD.")

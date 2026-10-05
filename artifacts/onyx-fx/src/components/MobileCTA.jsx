@@ -1,1 +1,124 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgdXNlQm90RmVlZCB9IGZyb20gIi4uL2xpYi91c2VCb3RGZWVkLmpzIjsKaW1wb3J0IHsgc2F2ZUNyZWRlbnRpYWxzIH0gZnJvbSAiLi4vbGliL2JvdEZlZWQuanMiOwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gTW9iaWxlQ1RBKCkgewogIGNvbnN0IHsgY29ubmVjdGVkLCBsb2FkaW5nIH0gPSB1c2VCb3RGZWVkKCk7CiAgY29uc3QgW3Nob3dDb25uZWN0LCBzZXRTaG93Q29ubmVjdF0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW2Zvcm0sIHNldEZvcm1dID0gdXNlU3RhdGUoeyBsb2dpbjogIiIsIHBhc3N3b3JkOiAiIiwgc2VydmVyOiAiIiB9KTsKICBjb25zdCBbc2F2aW5nLCBzZXRTYXZpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtzdGF0dXMsIHNldFN0YXR1c10gPSB1c2VTdGF0ZSgiIik7CgogIC8vIE9ubHkgc2hvdyBvbiBtb2JpbGUKICB1c2VFZmZlY3QoKCkgPT4gewogICAgY29uc3QgY2hlY2tNb2JpbGUgPSAoKSA9PiB7CiAgICAgIHNldFNob3dDb25uZWN0KHdpbmRvdy5pbm5lcldpZHRoIDwgNzY4ICYmICFjb25uZWN0ZWQpOwogICAgfTsKICAgIGNoZWNrTW9iaWxlKCk7CiAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigicmVzaXplIiwgY2hlY2tNb2JpbGUpOwogICAgcmV0dXJuICgpID0+IHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCJyZXNpemUiLCBjaGVja01vYmlsZSk7CiAgfSwgW2Nvbm5lY3RlZF0pOwoKICBjb25zdCBoYW5kbGVDb25uZWN0ID0gYXN5bmMgKGUpID0+IHsKICAgIGUucHJldmVudERlZmF1bHQoKTsKICAgIGlmICghZm9ybS5sb2dpbiB8fCAhZm9ybS5wYXNzd29yZCB8fCAhZm9ybS5zZXJ2ZXIpIHsKICAgICAgc2V0U3RhdHVzKCJQbGVhc2UgZmlsbCBpbiBhbGwgZmllbGRzIik7CiAgICAgIHJldHVybjsKICAgIH0KICAgIHNldFNhdmluZyh0cnVlKTsKICAgIHNldFN0YXR1cygiQ29ubmVjdGluZy4uLiIpOwogICAgdHJ5IHsKICAgICAgYXdhaXQgc2F2ZUNyZWRlbnRpYWxzKHsKICAgICAgICAuLi5mb3JtLAogICAgICAgIGxvZ2luOiBOdW1iZXIoZm9ybS5sb2dpbiksCiAgICAgIH0pOwogICAgICBzZXRTdGF0dXMoIkNvbm5lY3RlZCEiKTsKICAgICAgc2V0Rm9ybSh7IGxvZ2luOiAiIiwgcGFzc3dvcmQ6ICIiLCBzZXJ2ZXI6ICIiIH0pOwogICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgc2V0U3RhdHVzKGVycm9yLm1lc3NhZ2UpOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0U2F2aW5nKGZhbHNlKTsKICAgIH0KICB9OwoKICBpZiAoIXNob3dDb25uZWN0KSByZXR1cm4gbnVsbDsKCiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJmaXhlZCBib3R0b20tMCBsZWZ0LTAgcmlnaHQtMCB6LTUwIGFuaW1hdGUtc2xpZGUtdXAgcGItc2FmZS1ib3R0b20gbWQ6aGlkZGVuIj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImJnLXN1cmZhY2UgYm9yZGVyLXQgYm9yZGVyLWJvcmRlciBzaGFkb3ctbW9iaWxlLWN0YSI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InB4LTQgcHktMyBzcGFjZS15LTMiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiI+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiI+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPXtgaC0yIHctMiByb3VuZGVkLWZ1bGwgJHtjb25uZWN0ZWQgPyAiYmctYnVsbCIgOiAiYmctYmVhciJ9YH0gLz4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1pbmsiPgogICAgICAgICAgICAgICAge2Nvbm5lY3RlZCA/ICJNVDUgQ29ubmVjdGVkIiA6ICJNVDUgRGlzY29ubmVjdGVkIn0KICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U2hvd0Nvbm5lY3QoZmFsc2UpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC1pbmstZmFpbnQgaG92ZXI6dGV4dC1pbmsiCiAgICAgICAgICAgICAgYXJpYS1sYWJlbD0iRGlzbWlzcyIKICAgICAgICAgICAgPgogICAgICAgICAgICAgIDxzdmcgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2VXaWR0aD0iMiI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTggNkw2IDE4TTYgNmwxMiAxMiIgLz4KICAgICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICB7IWNvbm5lY3RlZCA/ICgKICAgICAgICAgICAgPGZvcm0gb25TdWJtaXQ9e2hhbmRsZUNvbm5lY3R9IGNsYXNzTmFtZT0ic3BhY2UteS0yIj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMyBnYXAtMiI+CiAgICAgICAgICAgICAgICA8aW5wdXQKICAgICAgICAgICAgICAgICAgdHlwZT0ibnVtYmVyIgogICAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iTG9naW4iCiAgICAgICAgICAgICAgICAgIHZhbHVlPXtmb3JtLmxvZ2lufQogICAgICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldEZvcm0oeyAuLi5mb3JtLCBsb2dpbjogZS50YXJnZXQudmFsdWUgfSl9CiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iY29sLXNwYW4tMiByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMiB0ZXh0LXNtIHRleHQtaW5rIG91dGxpbmUtbm9uZSBmb2N1czpib3JkZXItYWNjZW50IgogICAgICAgICAgICAgICAgICByZXF1aXJlZAogICAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgICAgICB0eXBlPSJ0ZXh0IgogICAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iU2VydmVyIgogICAgICAgICAgICAgICAgICB2YWx1ZT17Zm9ybS5zZXJ2ZXJ9CiAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0Rm9ybSh7IC4uLmZvcm0sIHNlcnZlcjogZS50YXJnZXQudmFsdWUgfSl9CiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlLWFsdCBweC0zIHB5LTIgdGV4dC1zbSB0ZXh0LWluayBvdXRsaW5lLW5vbmUgZm9jdXM6Ym9yZGVyLWFjY2VudCIKICAgICAgICAgICAgICAgICAgcmVxdWlyZWQKICAgICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgICB0eXBlPSJwYXNzd29yZCIKICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJQYXNzd29yZCIKICAgICAgICAgICAgICAgIHZhbHVlPXtmb3JtLnBhc3N3b3JkfQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRGb3JtKHsgLi4uZm9ybSwgcGFzc3dvcmQ6IGUudGFyZ2V0LnZhbHVlIH0pfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMiB0ZXh0LXNtIHRleHQtaW5rIG91dGxpbmUtbm9uZSBmb2N1czpib3JkZXItYWNjZW50IgogICAgICAgICAgICAgICAgcmVxdWlyZWQKICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIHR5cGU9InN1Ym1pdCIKICAgICAgICAgICAgICAgIGRpc2FibGVkPXtzYXZpbmd9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InctZnVsbCByb3VuZGVkLW1kIGJnLWFjY2VudCBweC0zIHB5LTIgdGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LXdoaXRlIGRpc2FibGVkOmN1cnNvci13YWl0IGRpc2FibGVkOm9wYWNpdHktNjAiCiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAge3NhdmluZyA/ICJDb25uZWN0aW5nLi4uIiA6ICJDb25uZWN0IE1UNSJ9CiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAge3N0YXR1cyAmJiA8cCBjbGFzc05hbWU9InRleHQtWzExcHhdIHRleHQtY2VudGVyIHRleHQtaW5rLWRpbSI+e3N0YXR1c308L3A+fQogICAgICAgICAgICA8L2Zvcm0+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBnYXAtMiI+CiAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJmbGV4LTEgcm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLWJlYXIvMzAgYmctYmVhci1kaW0gcHgtMyBweS0yIHRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1iZWFyIgogICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U2hvd0Nvbm5lY3QodHJ1ZSl9CiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgUmVjb25uZWN0CiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJmbGV4LTEgcm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlLWFsdCBweC0zIHB5LTIgdGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LWluayIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICBTZXR0aW5ncwogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICl9CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQ==
+import { useEffect, useState } from "react";
+import { useBotFeed } from "../lib/useBotFeed.js";
+import { saveCredentials } from "../lib/botFeed.js";
+
+export default function MobileCTA() {
+  const { connected, loading } = useBotFeed();
+  const [showConnect, setShowConnect] = useState(false);
+  const [form, setForm] = useState({ login: "", password: "", server: "" });
+  const [saving, setSaving] = useState(false);
+  const [status, setStatus] = useState("");
+
+  // Only show on mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setShowConnect(window.innerWidth < 768 && !connected);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [connected]);
+
+  const handleConnect = async (e) => {
+    e.preventDefault();
+    if (!form.login || !form.password || !form.server) {
+      setStatus("Please fill in all fields");
+      return;
+    }
+    setSaving(true);
+    setStatus("Connecting...");
+    try {
+      await saveCredentials({
+        ...form,
+        login: Number(form.login),
+      });
+      setStatus("Connected!");
+      setForm({ login: "", password: "", server: "" });
+    } catch (error) {
+      setStatus(error.message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (!showConnect) return null;
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up pb-safe-bottom md:hidden">
+      <div className="bg-surface border-t border-border shadow-mobile-cta">
+        <div className="px-4 py-3 space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className={`h-2 w-2 rounded-full ${connected ? "bg-bull" : "bg-bear"}`} />
+              <span className="text-sm font-medium text-ink">
+                {connected ? "MT5 Connected" : "MT5 Disconnected"}
+              </span>
+            </div>
+            <button
+              onClick={() => setShowConnect(false)}
+              className="text-ink-faint hover:text-ink"
+              aria-label="Dismiss"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {!connected ? (
+            <form onSubmit={handleConnect} className="space-y-2">
+              <div className="grid grid-cols-3 gap-2">
+                <input
+                  type="number"
+                  placeholder="Login"
+                  value={form.login}
+                  onChange={(e) => setForm({ ...form, login: e.target.value })}
+                  className="col-span-2 rounded-md border border-border bg-surface-alt px-3 py-2 text-sm text-ink outline-none focus:border-accent"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Server"
+                  value={form.server}
+                  onChange={(e) => setForm({ ...form, server: e.target.value })}
+                  className="rounded-md border border-border bg-surface-alt px-3 py-2 text-sm text-ink outline-none focus:border-accent"
+                  required
+                />
+              </div>
+              <input
+                type="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={(e) => setForm({ ...form, password: e.target.value })}
+                className="rounded-md border border-border bg-surface-alt px-3 py-2 text-sm text-ink outline-none focus:border-accent"
+                required
+              />
+              <button
+                type="submit"
+                disabled={saving}
+                className="w-full rounded-md bg-accent px-3 py-2 text-sm font-medium text-white disabled:cursor-wait disabled:opacity-60"
+              >
+                {saving ? "Connecting..." : "Connect MT5"}
+              </button>
+              {status && <p className="text-[11px] text-center text-ink-dim">{status}</p>}
+            </form>
+          ) : (
+            <div className="flex gap-2">
+              <button
+                className="flex-1 rounded-md border border-bear/30 bg-bear-dim px-3 py-2 text-sm font-medium text-bear"
+                onClick={() => setShowConnect(true)}
+              >
+                Reconnect
+              </button>
+              <button
+                className="flex-1 rounded-md border border-border bg-surface-alt px-3 py-2 text-sm font-medium text-ink"
+              >
+                Settings
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}

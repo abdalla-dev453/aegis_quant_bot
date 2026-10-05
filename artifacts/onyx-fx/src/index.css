@@ -1,1 +1,135 @@
-QGltcG9ydCAidGFpbHdpbmRjc3MiOwpAY29uZmlnICIuLi90YWlsd2luZC5jb25maWcuanMiOwoKQHRoZW1lIHsKICAvKiBCYXNlIHN1cmZhY2VzICovCiAgLS1jb2xvci1jYW52YXM6ICMwYTBkMTQ7IC8qIHBhZ2UgYmFja2dyb3VuZCAqLwogIC0tY29sb3Itc3VyZmFjZTogIzEwMTQxZDsgLyogY2FyZCBiYWNrZ3JvdW5kICovCiAgLS1jb2xvci1zdXJmYWNlLWFsdDogIzE1MWEyNTsgLyogdGFibGUgaGVhZGVyIC8gbmVzdGVkIHJvd3MgKi8KICAtLWNvbG9yLWJvcmRlcjogIzFlMjUzMDsgLyogaGFpcmxpbmUgYm9yZGVycyAqLwoKICAvKiBUZXh0ICovCiAgLS1jb2xvci1pbms6ICNlNmU5ZWY7IC8qIHByaW1hcnkgdGV4dCAqLwogIC0tY29sb3ItaW5rLWRpbTogIzg5OTFhMzsgLyogc2Vjb25kYXJ5L2xhYmVscyAqLwogIC0tY29sb3ItaW5rLWZhaW50OiAjNWI2MjcyOyAvKiB0ZXJ0aWFyeS90aW1lc3RhbXBzICovCgogIC8qIFNpZ25hbCBjb2xvcnMgKi8KICAtLWNvbG9yLWJ1bGw6ICMyMmQ2N2U7IC8qIGJ1eSAvIGNvbm5lY3RlZCAvIHBvc2l0aXZlICovCiAgLS1jb2xvci1idWxsLWRpbTogIzE2NTMyZjsKICAtLWNvbG9yLWJlYXI6ICNmZjRkNWU7IC8qIHNlbGwgLyBuZWdhdGl2ZSAvIGhhbHQgKi8KICAtLWNvbG9yLWJlYXItZGltOiAjNGExNzIwOwogIC0tY29sb3ItYWNjZW50OiAjNGY4ZmY3OyAvKiBFTUEyMDAgLyBwcm9maXQgZmFjdG9yIC8gaW5mbyAqLwogIC0tY29sb3Itd2FybjogI2Y1YTYyMzsgLyogYW1iZXIgd2FybmluZ3MgLyBjb3VudGRvd25zICovCiAgLS1jb2xvci13YXJuLWRpbTogIzRhMzUxMjsKCiAgLyogVHlwb2dyYXBoeSAmIFNoYWRvd3MgKi8KICAtLWZvbnQtc2FuczogIkludGVyIiwgInN5c3RlbS11aSIsICJzYW5zLXNlcmlmIjsKICAtLWZvbnQtbW9ubzogIkpldEJyYWlucyBNb25vIiwgInVpLW1vbm9zcGFjZSIsICJtb25vc3BhY2UiOwogIC0tc2hhZG93LXBhbmVsOiBpbnNldCAwIDFweCAwIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wMik7Cn0KCmh0bWxbZGF0YS10aGVtZT0ibGlnaHQiXSB7CiAgLS1jb2xvci1jYW52YXM6ICNmM2Y1Zjg7CiAgLS1jb2xvci1zdXJmYWNlOiAjZmZmZmZmOwogIC0tY29sb3Itc3VyZmFjZS1hbHQ6ICNlOWVkZjM7CiAgLS1jb2xvci1ib3JkZXI6ICNkN2RkZTc7CiAgLS1jb2xvci1pbms6ICMxNjIwMzM7CiAgLS1jb2xvci1pbmstZGltOiAjNTM2MDc4OwogIC0tY29sb3ItaW5rLWZhaW50OiAjN2I4NzliOwogIC0tY29sb3ItYnVsbDogIzA3OGI1MjsKICAtLWNvbG9yLWJ1bGwtZGltOiAjZDhmNGU3OwogIC0tY29sb3ItYmVhcjogI2M1MmY0MzsKICAtLWNvbG9yLWJlYXItZGltOiAjZmRlMmU1OwogIC0tY29sb3ItYWNjZW50OiAjMjg2OWM3OwogIC0tY29sb3Itd2FybjogI2E4NjQwMDsKICAtLWNvbG9yLXdhcm4tZGltOiAjZmZmMGNmOwogIC0tc2hhZG93LXBhbmVsOiAwIDE0cHggNDBweCByZ2JhKDQwLCA1NCwgNzgsIDAuMDgpOwp9CgovKiBDdXN0b20gZ2xvYmFsIHJ1bGVzICovCiogewogIHNjcm9sbGJhci13aWR0aDogdGhpbjsKICBzY3JvbGxiYXItY29sb3I6ICMyYTMxNDAgdHJhbnNwYXJlbnQ7Cn0KCio6Oi13ZWJraXQtc2Nyb2xsYmFyIHsKICB3aWR0aDogNnB4OwogIGhlaWdodDogNnB4Owp9Cio6Oi13ZWJraXQtc2Nyb2xsYmFyLXRodW1iIHsKICBiYWNrZ3JvdW5kOiAjMmEzMTQwOwogIGJvcmRlci1yYWRpdXM6IDNweDsKfQoKaHRtbCwKYm9keSwKI3Jvb3QgewogIGhlaWdodDogMTAwJTsKfQoKYm9keSB7CiAgQGFwcGx5IGJnLWNhbnZhcyB0ZXh0LWluayBhbnRpYWxpYXNlZDsKICBmb250LWZlYXR1cmUtc2V0dGluZ3M6ICJ0bnVtIiAxOwogIG92ZXJmbG93LXg6IGhpZGRlbjsKfQoKLnBhZ2UtdHJhbnNpdGlvbiB7CiAgYW5pbWF0aW9uOiBwYWdlLWVudGVyIDQyMG1zIGN1YmljLWJlemllcigwLjIyLCAxLCAwLjM2LCAxKSBib3RoOwp9CgoucGFnZS10cmFuc2l0aW9uIC5ib3JkZXItYm9yZGVyIHsKICBhbmltYXRpb246IHJpc2UtaW4gNTIwbXMgY3ViaWMtYmV6aWVyKDAuMjIsIDEsIDAuMzYsIDEpIGJvdGg7Cn0KCi50aGVtZS1tZW51IHsKICBhbmltYXRpb246IG1lbnUtZW50ZXIgMTYwbXMgY3ViaWMtYmV6aWVyKDAuMjIsIDEsIDAuMzYsIDEpIGJvdGg7CiAgdHJhbnNmb3JtLW9yaWdpbjogdG9wIHJpZ2h0Owp9CgpAa2V5ZnJhbWVzIHBhZ2UtZW50ZXIgewogIGZyb20gewogICAgb3BhY2l0eTogMDsKICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSg4cHgpOwogIH0KICB0byB7CiAgICBvcGFjaXR5OiAxOwogICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDApOwogIH0KfQoKQGtleWZyYW1lcyByaXNlLWluIHsKICBmcm9tIHsKICAgIG9wYWNpdHk6IDA7CiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTBweCk7CiAgfQogIHRvIHsKICAgIG9wYWNpdHk6IDE7CiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7CiAgfQp9CgpAa2V5ZnJhbWVzIG1lbnUtZW50ZXIgewogIGZyb20gewogICAgb3BhY2l0eTogMDsKICAgIHRyYW5zZm9ybTogc2NhbGUoMC45NikgdHJhbnNsYXRlWSgtNHB4KTsKICB9CiAgdG8gewogICAgb3BhY2l0eTogMTsKICAgIHRyYW5zZm9ybTogc2NhbGUoMSkgdHJhbnNsYXRlWSgwKTsKICB9Cn0KCi8qIFZpc2libGUga2V5Ym9hcmQgZm9jdXMsIGtlcHQgc3VidGxlIHRvIG1hdGNoIHRoZSBkYXJrIFVJICovCjpmb2N1cy12aXNpYmxlIHsKICBvdXRsaW5lOiAycHggc29saWQgIzRmOGZmNzsKICBvdXRsaW5lLW9mZnNldDogMnB4Owp9CgpAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IHJlZHVjZSkgewogICosCiAgKjo6YmVmb3JlLAogICo6OmFmdGVyIHsKICAgIGFuaW1hdGlvbi1kdXJhdGlvbjogMC4wMDFtcyAhaW1wb3J0YW50OwogICAgdHJhbnNpdGlvbi1kdXJhdGlvbjogMC4wMDFtcyAhaW1wb3J0YW50OwogIH0KfQo=
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@theme {
+  /* Base surfaces */
+  --color-canvas: #0a0d14; /* page background */
+  --color-surface: #10141d; /* card background */
+  --color-surface-alt: #151a25; /* table header / nested rows */
+  --color-border: #1e2530; /* hairline borders */
+
+  /* Text */
+  --color-ink: #e6e9ef; /* primary text */
+  --color-ink-dim: #8991a3; /* secondary/labels */
+  --color-ink-faint: #5b6272; /* tertiary/timestamps */
+
+  /* Signal colors */
+  --color-bull: #22d67e; /* buy / connected / positive */
+  --color-bull-dim: #16532f;
+  --color-bear: #ff4d5e; /* sell / negative / halt */
+  --color-bear-dim: #4a1720;
+  --color-accent: #4f8ff7; /* EMA200 / profit factor / info */
+  --color-warn: #f5a623; /* amber warnings / countdowns */
+  --color-warn-dim: #4a3512;
+
+  /* Typography & Shadows */
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-mono: "JetBrains Mono", "ui-monospace", "monospace";
+  --shadow-panel: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+html[data-theme="light"] {
+  --color-canvas: #f3f5f8;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e9edf3;
+  --color-border: #d7dde7;
+  --color-ink: #162033;
+  --color-ink-dim: #536078;
+  --color-ink-faint: #7b879b;
+  --color-bull: #078b52;
+  --color-bull-dim: #d8f4e7;
+  --color-bear: #c52f43;
+  --color-bear-dim: #fde2e5;
+  --color-accent: #2869c7;
+  --color-warn: #a86400;
+  --color-warn-dim: #fff0cf;
+  --shadow-panel: 0 14px 40px rgba(40, 54, 78, 0.08);
+}
+
+/* Custom global rules */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3140 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2a3140;
+  border-radius: 3px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+  font-feature-settings: "tnum" 1;
+  overflow-x: hidden;
+}
+
+.page-transition {
+  animation: page-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-transition .border-border {
+  animation: rise-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.theme-menu {
+  animation: menu-enter 160ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top right;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Visible keyboard focus, kept subtle to match the dark UI */
+:focus-visible {
+  outline: 2px solid #4f8ff7;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

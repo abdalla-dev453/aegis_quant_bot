@@ -1,1 +1,214 @@
-IiIiVGVzdHMgZm9yIHBvcnRmb2xpb19yaXNrX21hbmFnZXIucHksIGRhdGFfcXVhbGl0eSwgYW5kIG1haW4gbG9vcCB1dGlsaXRpZXMuIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSwgdGltZXpvbmUKZnJvbSB0eXBlcyBpbXBvcnQgU2ltcGxlTmFtZXNwYWNlCgppbXBvcnQgbWFpbgpmcm9tIHBvcnRmb2xpb19yaXNrX21hbmFnZXIgaW1wb3J0ICgKICAgIEN1cnJlbmN5RXhwb3N1cmUsCiAgICBQb3J0Zm9saW9BbmFseXNpcywKICAgIFBvcnRmb2xpb0hlYWx0aCwKICAgIFBvcnRmb2xpb1Jpc2tNYW5hZ2VyLAogICAgUmlza0FsZXJ0LAogICAgUmlza1R5cGUsCikKZnJvbSBzZWxmX2hlYWxpbmcgaW1wb3J0IERhdGFRdWFsaXR5Q2hlY2tlcgoKCmNsYXNzIFRlc3RQb3J0Zm9saW9SaXNrOgogICAgZGVmIHNldHVwX21ldGhvZChzZWxmKSAtPiBOb25lOgogICAgICAgIHNlbGYubWdyID0gUG9ydGZvbGlvUmlza01hbmFnZXIoKQoKICAgIGRlZiB0ZXN0X2VtcHR5X3BvcnRmb2xpb193aGVuX25vX3Bvc2l0aW9ucyhzZWxmLCBtb25rZXlwYXRjaCk6CiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihzZWxmLm1nciwgIl9jYWxjdWxhdGVfdG90YWxfZXhwb3N1cmUiLCBsYW1iZGEgXzogMC4wKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoc2VsZi5tZ3IsICJfYW5hbHl6ZV9jdXJyZW5jeV9leHBvc3VyZXMiLCBsYW1iZGEgKl86IFtdKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoc2VsZi5tZ3IsICJfY2FsY3VsYXRlX2NvcnJlbGF0aW9uX3Jpc2siLCBsYW1iZGEgXzogMC4wKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoc2VsZi5tZ3IsICJfY2FsY3VsYXRlX2NvbmNlbnRyYXRpb25fcmlzayIsIGxhbWJkYSAqXywgKipfXzogMC4wKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoc2VsZi5tZ3IsICJfY2FsY3VsYXRlX3ZvbGF0aWxpdHlfcmlzayIsIGxhbWJkYSBfOiAwLjApCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihzZWxmLm1nciwgIl9nZW5lcmF0ZV9yaXNrX2FsZXJ0cyIsIGxhbWJkYSAqYTogW10pCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihzZWxmLm1nciwgIl9kZXRlcm1pbmVfcG9ydGZvbGlvX2hlYWx0aCIsIGxhbWJkYSAqYTogUG9ydGZvbGlvSGVhbHRoLkhFQUxUSFkpCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihzZWxmLm1nciwgIl9nZW5lcmF0ZV9yZWNvbW1lbmRhdGlvbnMiLCBsYW1iZGEgKmEsICoqazogW10pCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihzZWxmLm1nciwgIl9nZW5lcmF0ZV9yaXNrX3N1bW1hcnkiLCBsYW1iZGEgKmEsICoqazogIm9rIikKICAgICAgICByZXN1bHQgPSBzZWxmLm1nci5hbmFseXplX3BvcnRmb2xpbygpCiAgICAgICAgYXNzZXJ0IHJlc3VsdC50b3RhbF9leHBvc3VyZV91c2QgPT0gMC4wCiAgICAgICAgYXNzZXJ0IHJlc3VsdC5lcXVpdHkgPT0gMC4wCgogICAgZGVmIHRlc3RfZXhwb3N1cmVfcGVyY2VudGFnZV9jYWxjdWxhdGlvbihzZWxmKToKICAgICAgICBhbmFseXNpcyA9IFBvcnRmb2xpb0FuYWx5c2lzKAogICAgICAgICAgICBvdmVyYWxsX2hlYWx0aD1Qb3J0Zm9saW9IZWFsdGguSEVBTFRIWSwKICAgICAgICAgICAgdG90YWxfZXhwb3N1cmVfdXNkPTUwMDAuMCwKICAgICAgICAgICAgZXhwb3N1cmVfcGVyY2VudGFnZT01MC4wLAogICAgICAgICAgICBlcXVpdHk9MTAwMDAuMCwKICAgICAgICAgICAgY3VycmVuY3lfZXhwb3N1cmVzPVtdLAogICAgICAgICAgICBjb3JyZWxhdGlvbl9yaXNrX3Njb3JlPTAuMCwKICAgICAgICAgICAgY29uY2VudHJhdGlvbl9yaXNrX3Njb3JlPTAuMCwKICAgICAgICAgICAgdm9sYXRpbGl0eV9yaXNrX3Njb3JlPTAuMCwKICAgICAgICAgICAgYWxlcnRzPVtdLAogICAgICAgICAgICByaXNrX3N1bW1hcnk9Im9rIiwKICAgICAgICAgICAgcmVjb21tZW5kZWRfYWN0aW9ucz1bXSwKICAgICAgICAgICAgdGltZXN0YW1wPWRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLAogICAgICAgICkKICAgICAgICBhc3NlcnQgYW5hbHlzaXMuZXhwb3N1cmVfcGVyY2VudGFnZSA9PSA1MC4wCiAgICAgICAgYXNzZXJ0IGFuYWx5c2lzLmVxdWl0eSA9PSAxMDAwMC4wCgogICAgZGVmIHRlc3Rfcmlza19hbGVydF9maWVsZHMoc2VsZik6CiAgICAgICAgYWxlcnQgPSBSaXNrQWxlcnQoCiAgICAgICAgICAgIHJpc2tfdHlwZT1SaXNrVHlwZS5FWFBPU1VSRSwKICAgICAgICAgICAgc2V2ZXJpdHk9ImhpZ2giLAogICAgICAgICAgICBtZXNzYWdlPSJ0ZXN0IiwKICAgICAgICAgICAgY3VycmVudF92YWx1ZT0xNS4wLAogICAgICAgICAgICB0aHJlc2hvbGRfdmFsdWU9MTAuMCwKICAgICAgICAgICAgdGltZXN0YW1wPWRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLAogICAgICAgICAgICByZWNvbW1lbmRlZF9hY3Rpb249InJlZHVjZSIsCiAgICAgICAgKQogICAgICAgIGFzc2VydCBhbGVydC5yaXNrX3R5cGUgPT0gUmlza1R5cGUuRVhQT1NVUkUKICAgICAgICBhc3NlcnQgYWxlcnQuc2V2ZXJpdHkgPT0gImhpZ2giCiAgICAgICAgYXNzZXJ0IGFsZXJ0LmN1cnJlbnRfdmFsdWUgPT0gMTUuMAoKICAgIGRlZiB0ZXN0X2N1cnJlbmN5X2V4cG9zdXJlX25ldF9kaXJlY3Rpb25fbG9uZyhzZWxmKToKICAgICAgICBleHAgPSBDdXJyZW5jeUV4cG9zdXJlKCJFVVIiLCA1MDAwLjAsIDUwLjAsIDMsICJsb25nIikKICAgICAgICBhc3NlcnQgZXhwLm5ldF9kaXJlY3Rpb24gPT0gImxvbmciCgogICAgZGVmIHRlc3RfY3VycmVuY3lfZXhwb3N1cmVfbmV0X2RpcmVjdGlvbl9uZXV0cmFsKHNlbGYpOgogICAgICAgIGV4cCA9IEN1cnJlbmN5RXhwb3N1cmUoIkVVUiIsIDUwMDAuMCwgNTAuMCwgMiwgIm5ldXRyYWwiKQogICAgICAgIGFzc2VydCBleHAubmV0X2RpcmVjdGlvbiA9PSAibmV1dHJhbCIKCgpjbGFzcyBUZXN0RGF0YVF1YWxpdHlDaGVja2VyOgogICAgZGVmIHNldHVwX21ldGhvZChzZWxmKSAtPiBOb25lOgogICAgICAgIHNlbGYuY2hlY2tlciA9IERhdGFRdWFsaXR5Q2hlY2tlcigpCgogICAgZGVmIHRlc3RfcmVqZWN0c19lbXB0eV9kYXRhZnJhbWUoc2VsZik6CiAgICAgICAgaW1wb3J0IHBhbmRhcyBhcyBwZAogICAgICAgIHZhbGlkLCBtc2cgPSBzZWxmLmNoZWNrZXIudmFsaWRhdGVfZGF0YWZyYW1lKHBkLkRhdGFGcmFtZSgpLCAiVEVTVCIpCiAgICAgICAgYXNzZXJ0IG5vdCB2YWxpZAogICAgICAgIGFzc2VydCAiZW1wdHkiIGluIG1zZy5sb3dlcigpCgogICAgZGVmIHRlc3RfcmVqZWN0c19pbnN1ZmZpY2llbnRfcm93cyhzZWxmKToKICAgICAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJjbG9zZSI6IFsxLjAsIDIuMCwgMy4wXX0pCiAgICAgICAgdmFsaWQsIG1zZyA9IHNlbGYuY2hlY2tlci52YWxpZGF0ZV9kYXRhZnJhbWUoZGYsICJURVNUIikKICAgICAgICBhc3NlcnQgbm90IHZhbGlkCiAgICAgICAgYXNzZXJ0ICJpbnN1ZmZpY2llbnQiIGluIG1zZy5sb3dlcigpCgogICAgZGVmIHRlc3RfcmVqZWN0c19oaWdoX25hbl9yYXRpbyhzZWxmKToKICAgICAgICBpbXBvcnQgbnVtcHkgYXMgbnAKICAgICAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCiAgICAgICAgZGF0YSA9IFt7ImNsb3NlIjogZmxvYXQoaSkgaWYgaSAlIDMgIT0gMCBlbHNlIG5wLm5hbn0gZm9yIGkgaW4gcmFuZ2UoMTAwKV0KICAgICAgICBkZiA9IHBkLkRhdGFGcmFtZShkYXRhKQogICAgICAgIHZhbGlkLCBtc2cgPSBzZWxmLmNoZWNrZXIudmFsaWRhdGVfZGF0YWZyYW1lKGRmLCAiVEVTVCIpCiAgICAgICAgYXNzZXJ0IG5vdCB2YWxpZAogICAgICAgIGFzc2VydCAibmFuIiBpbiBtc2cubG93ZXIoKQoKICAgIGRlZiB0ZXN0X3JlamVjdHNfaW5mX3ZhbHVlcyhzZWxmKToKICAgICAgICBpbXBvcnQgbnVtcHkgYXMgbnAKICAgICAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJjbG9zZSI6IFtmbG9hdChpKSBpZiBpIDwgOTkgZWxzZSBucC5pbmYgZm9yIGkgaW4gcmFuZ2UoMTAwKV19KQogICAgICAgIHZhbGlkLCBtc2cgPSBzZWxmLmNoZWNrZXIudmFsaWRhdGVfZGF0YWZyYW1lKGRmLCAiVEVTVCIpCiAgICAgICAgYXNzZXJ0IG5vdCB2YWxpZAogICAgICAgIGFzc2VydCAiaW5maW5pdGUiIGluIG1zZy5sb3dlcigpCgogICAgZGVmIHRlc3RfcmVqZWN0c19kdXBsaWNhdGVfdGltZXN0YW1wcyhzZWxmKToKICAgICAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCiAgICAgICAgaWR4ID0gcGQuRGF0ZXRpbWVJbmRleChbcGQuVGltZXN0YW1wKCIyMDI0LTAxLTAxIildICogNjApCiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJjbG9zZSI6IFtmbG9hdChpKSBmb3IgaSBpbiByYW5nZSg2MCldfSwgaW5kZXg9aWR4KQogICAgICAgIHZhbGlkLCBtc2cgPSBzZWxmLmNoZWNrZXIudmFsaWRhdGVfZGF0YWZyYW1lKGRmLCAiVEVTVCIpCiAgICAgICAgYXNzZXJ0IG5vdCB2YWxpZAogICAgICAgIGFzc2VydCAiZHVwbGljYXRlIiBpbiBtc2cubG93ZXIoKQoKICAgIGRlZiB0ZXN0X3ZhbGlkX2RhdGFmcmFtZV9wYXNzZXMoc2VsZik6CiAgICAgICAgaW1wb3J0IHBhbmRhcyBhcyBwZAogICAgICAgIGlkeCA9IHBkLkRhdGV0aW1lSW5kZXgocGQuZGF0ZV9yYW5nZSgiMjAyNC0wMS0wMSIsIHBlcmlvZHM9MTAwLCBmcmVxPSJoIikpCiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJjbG9zZSI6IFtmbG9hdChpKSAqIDAuMDEgZm9yIGkgaW4gcmFuZ2UoMTAwKV19LCBpbmRleD1pZHgpCiAgICAgICAgdmFsaWQsIF9tc2cgPSBzZWxmLmNoZWNrZXIudmFsaWRhdGVfZGF0YWZyYW1lKGRmLCAiVEVTVCIpCiAgICAgICAgYXNzZXJ0IHZhbGlkCgogICAgZGVmIHRlc3RfcHJpY2VfZGF0YV9yZWplY3RzX2hpZ2hfYmVsb3dfbG93KHNlbGYpOgogICAgICAgIGltcG9ydCBwYW5kYXMgYXMgcGQKICAgICAgICBkZiA9IHBkLkRhdGFGcmFtZSh7CiAgICAgICAgICAgICJvcGVuIjogWzEuMCwgMS4xXSwKICAgICAgICAgICAgImhpZ2giOiBbMS4wNSwgMS4wXSwgICMgaGlnaCA8IGxvdyBvbiByb3cgMiAtPiBpbnZhbGlkCiAgICAgICAgICAgICJsb3ciOiBbMC45NSwgMS4yXSwKICAgICAgICAgICAgImNsb3NlIjogWzEuMCwgMS4xXSwKICAgICAgICB9KQogICAgICAgIHZhbGlkLCBfbXNnID0gc2VsZi5jaGVja2VyLnZhbGlkYXRlX3ByaWNlX2RhdGEoZGYpCiAgICAgICAgYXNzZXJ0IG5vdCB2YWxpZAoKCmNsYXNzIFRlc3RMYXN0Q2FuZGxlVHJhY2tlcjoKICAgIGRlZiB0ZXN0X2ZpcnN0X2NhbmRsZV9pc19uZXcoc2VsZik6CiAgICAgICAgaW1wb3J0IHBhbmRhcyBhcyBwZAogICAgICAgIHRyYWNrZXIgPSBtYWluLkxhc3RDYW5kbGVUcmFja2VyKCkKICAgICAgICB0cyA9IHBkLlRpbWVzdGFtcCgiMjAyNC0wMS0wMSAxMDowMCIpCiAgICAgICAgYXNzZXJ0IHRyYWNrZXIuaXNfbmV3X2NhbmRsZSgiRVVSVVNEIiwgdHMpCiAgICAgICAgdHJhY2tlci5tYXJrX3NlZW4oIkVVUlVTRCIsIHRzKQogICAgICAgIGFzc2VydCBub3QgdHJhY2tlci5pc19uZXdfY2FuZGxlKCJFVVJVU0QiLCB0cykKCiAgICBkZWYgdGVzdF9wcm9ncmVzc2luZ19jYW5kbGVfaXNfbmV3KHNlbGYpOgogICAgICAgIGltcG9ydCBwYW5kYXMgYXMgcGQKICAgICAgICB0cmFja2VyID0gbWFpbi5MYXN0Q2FuZGxlVHJhY2tlcigpCiAgICAgICAgdHMxID0gcGQuVGltZXN0YW1wKCIyMDI0LTAxLTAxIDEwOjAwIikKICAgICAgICB0czIgPSBwZC5UaW1lc3RhbXAoIjIwMjQtMDEtMDEgMTE6MDAiKQogICAgICAgIHRyYWNrZXIubWFya19zZWVuKCJFVVJVU0QiLCB0czEpCiAgICAgICAgYXNzZXJ0IHRyYWNrZXIuaXNfbmV3X2NhbmRsZSgiRVVSVVNEIiwgdHMyKQogICAgICAgIGFzc2VydCBub3QgdHJhY2tlci5pc19uZXdfY2FuZGxlKCJFVVJVU0QiLCB0czEpCgogICAgZGVmIHRlc3Rfc3ltYm9sc19pbmRlcGVuZGVudChzZWxmKToKICAgICAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCiAgICAgICAgdHJhY2tlciA9IG1haW4uTGFzdENhbmRsZVRyYWNrZXIoKQogICAgICAgIHRzID0gcGQuVGltZXN0YW1wKCIyMDI0LTAxLTAxIDEwOjAwIikKICAgICAgICB0cmFja2VyLm1hcmtfc2VlbigiRVVSVVNEIiwgdHMpCiAgICAgICAgYXNzZXJ0IHRyYWNrZXIuaXNfbmV3X2NhbmRsZSgiR0JQVVNEIiwgdHMpCgoKY2xhc3MgVGVzdEVycm9yQmFja29mZjoKICAgIGRlZiB0ZXN0X3N1Y2Nlc3NfcmVzZXRzX2NvbnNlY3V0aXZlKHNlbGYpOgogICAgICAgIGJhY2tvZmYgPSBtYWluLkVycm9yQmFja29mZigpCiAgICAgICAgYmFja29mZi5yZWNvcmRfZmFpbHVyZSgpCiAgICAgICAgYmFja29mZi5yZWNvcmRfZmFpbHVyZSgpCiAgICAgICAgYmFja29mZi5yZWNvcmRfc3VjY2VzcygpCiAgICAgICAgYXNzZXJ0IGJhY2tvZmYuX2NvbnNlY3V0aXZlID09IDAKCiAgICBkZWYgdGVzdF9leHBvbmVudGlhbF9iYWNrb2ZmX2dyb3d0aChzZWxmKToKICAgICAgICBiYWNrb2ZmID0gbWFpbi5FcnJvckJhY2tvZmYoKQogICAgICAgIGQxID0gYmFja29mZi5yZWNvcmRfZmFpbHVyZSgpCiAgICAgICAgZDIgPSBiYWNrb2ZmLnJlY29yZF9mYWlsdXJlKCkKICAgICAgICBkMyA9IGJhY2tvZmYucmVjb3JkX2ZhaWx1cmUoKQogICAgICAgIGFzc2VydCBkMiA+IGQxCiAgICAgICAgYXNzZXJ0IGQzID4gZDIKCiAgICBkZWYgdGVzdF9iYWNrb2ZmX2NhcHBlZChzZWxmKToKICAgICAgICBiYWNrb2ZmID0gbWFpbi5FcnJvckJhY2tvZmYoKQogICAgICAgIGZyb20gY29uZmlnIGltcG9ydCBNQVhfQkFDS09GRl9TRUNPTkRTCiAgICAgICAgZm9yIF8gaW4gcmFuZ2UoMjApOgogICAgICAgICAgICBkZWxheSA9IGJhY2tvZmYucmVjb3JkX2ZhaWx1cmUoKQogICAgICAgIGFzc2VydCBkZWxheSA8PSBNQVhfQkFDS09GRl9TRUNPTkRTCgoKY2xhc3MgVGVzdFBvcnRmb2xpb1Jpc2tDaGVja1ByZVRyYWRlOgogICAgZGVmIHRlc3RfZGlzYWJsZXNfd2hlbl9wb3J0Zm9saW9fcmlza19vZmYoc2VsZiwgbW9ua2V5cGF0Y2gpOgogICAgICAgIGZyb20gcG9ydGZvbGlvX3Jpc2tfbWFuYWdlciBpbXBvcnQgcG9ydGZvbGlvX3Jpc2tfbWFuYWdlcgogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoCiAgICAgICAgICAgICJwb3J0Zm9saW9fcmlza19tYW5hZ2VyLkFEVkFOQ0VEX1JJU0siLAogICAgICAgICAgICBTaW1wbGVOYW1lc3BhY2UoZW5hYmxlX3BvcnRmb2xpb19yaXNrPUZhbHNlKSwKICAgICAgICApCiAgICAgICAgYWxsb3dlZCwgcmVhc29uID0gcG9ydGZvbGlvX3Jpc2tfbWFuYWdlci5jaGVja19wcmVfdHJhZGVfcmlzaygiRVVSVVNEIiwgIkJVWSIsIDAuMSkKICAgICAgICBhc3NlcnQgYWxsb3dlZAogICAgICAgIGFzc2VydCAiZGlzYWJsZWQiIGluIHJlYXNvbi5sb3dlcigpCgogICAgZGVmIHRlc3RfYW5hbHlzaXNfZmFpbHVyZV9ibG9ja3NfcHJlX3RyYWRlKHNlbGYsIG1vbmtleXBhdGNoKToKICAgICAgICBpbXBvcnQgcG9ydGZvbGlvX3Jpc2tfbWFuYWdlciBhcyBwb3J0Zm9saW9fbW9kdWxlCgogICAgICAgIG1hbmFnZXIgPSBQb3J0Zm9saW9SaXNrTWFuYWdlcigpCgogICAgICAgIGRlZiBmYWlsX2Nvbm5lY3Rpb24oKToKICAgICAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKCJzaW11bGF0ZWQgTVQ1IG91dGFnZSIpCgogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIocG9ydGZvbGlvX21vZHVsZSwgImVuc3VyZV9jb25uZWN0ZWQiLCBmYWlsX2Nvbm5lY3Rpb24pCgogICAgICAgIGFsbG93ZWQsIHJlYXNvbiA9IG1hbmFnZXIuY2hlY2tfcHJlX3RyYWRlX3Jpc2soIkVVUlVTRCIsICJCVVkiLCAwLjEpCgogICAgICAgIGFzc2VydCBub3QgYWxsb3dlZAogICAgICAgIGFzc2VydCAicmlzayBhbmFseXNpcyB1bmF2YWlsYWJsZSIgaW4gcmVhc29uLmxvd2VyKCkK
+"""Tests for portfolio_risk_manager.py, data_quality, and main loop utilities."""
+
+from __future__ import annotations
+
+from datetime import datetime, timezone
+from types import SimpleNamespace
+
+import main
+from portfolio_risk_manager import (
+    CurrencyExposure,
+    PortfolioAnalysis,
+    PortfolioHealth,
+    PortfolioRiskManager,
+    RiskAlert,
+    RiskType,
+)
+from self_healing import DataQualityChecker
+
+
+class TestPortfolioRisk:
+    def setup_method(self) -> None:
+        self.mgr = PortfolioRiskManager()
+
+    def test_empty_portfolio_when_no_positions(self, monkeypatch):
+        monkeypatch.setattr(self.mgr, "_calculate_total_exposure", lambda _: 0.0)
+        monkeypatch.setattr(self.mgr, "_analyze_currency_exposures", lambda *_: [])
+        monkeypatch.setattr(self.mgr, "_calculate_correlation_risk", lambda _: 0.0)
+        monkeypatch.setattr(self.mgr, "_calculate_concentration_risk", lambda *_, **__: 0.0)
+        monkeypatch.setattr(self.mgr, "_calculate_volatility_risk", lambda _: 0.0)
+        monkeypatch.setattr(self.mgr, "_generate_risk_alerts", lambda *a: [])
+        monkeypatch.setattr(self.mgr, "_determine_portfolio_health", lambda *a: PortfolioHealth.HEALTHY)
+        monkeypatch.setattr(self.mgr, "_generate_recommendations", lambda *a, **k: [])
+        monkeypatch.setattr(self.mgr, "_generate_risk_summary", lambda *a, **k: "ok")
+        result = self.mgr.analyze_portfolio()
+        assert result.total_exposure_usd == 0.0
+        assert result.equity == 0.0
+
+    def test_exposure_percentage_calculation(self):
+        analysis = PortfolioAnalysis(
+            overall_health=PortfolioHealth.HEALTHY,
+            total_exposure_usd=5000.0,
+            exposure_percentage=50.0,
+            equity=10000.0,
+            currency_exposures=[],
+            correlation_risk_score=0.0,
+            concentration_risk_score=0.0,
+            volatility_risk_score=0.0,
+            alerts=[],
+            risk_summary="ok",
+            recommended_actions=[],
+            timestamp=datetime.now(timezone.utc),
+        )
+        assert analysis.exposure_percentage == 50.0
+        assert analysis.equity == 10000.0
+
+    def test_risk_alert_fields(self):
+        alert = RiskAlert(
+            risk_type=RiskType.EXPOSURE,
+            severity="high",
+            message="test",
+            current_value=15.0,
+            threshold_value=10.0,
+            timestamp=datetime.now(timezone.utc),
+            recommended_action="reduce",
+        )
+        assert alert.risk_type == RiskType.EXPOSURE
+        assert alert.severity == "high"
+        assert alert.current_value == 15.0
+
+    def test_currency_exposure_net_direction_long(self):
+        exp = CurrencyExposure("EUR", 5000.0, 50.0, 3, "long")
+        assert exp.net_direction == "long"
+
+    def test_currency_exposure_net_direction_neutral(self):
+        exp = CurrencyExposure("EUR", 5000.0, 50.0, 2, "neutral")
+        assert exp.net_direction == "neutral"
+
+
+class TestDataQualityChecker:
+    def setup_method(self) -> None:
+        self.checker = DataQualityChecker()
+
+    def test_rejects_empty_dataframe(self):
+        import pandas as pd
+        valid, msg = self.checker.validate_dataframe(pd.DataFrame(), "TEST")
+        assert not valid
+        assert "empty" in msg.lower()
+
+    def test_rejects_insufficient_rows(self):
+        import pandas as pd
+        df = pd.DataFrame({"close": [1.0, 2.0, 3.0]})
+        valid, msg = self.checker.validate_dataframe(df, "TEST")
+        assert not valid
+        assert "insufficient" in msg.lower()
+
+    def test_rejects_high_nan_ratio(self):
+        import numpy as np
+        import pandas as pd
+        data = [{"close": float(i) if i % 3 != 0 else np.nan} for i in range(100)]
+        df = pd.DataFrame(data)
+        valid, msg = self.checker.validate_dataframe(df, "TEST")
+        assert not valid
+        assert "nan" in msg.lower()
+
+    def test_rejects_inf_values(self):
+        import numpy as np
+        import pandas as pd
+        df = pd.DataFrame({"close": [float(i) if i < 99 else np.inf for i in range(100)]})
+        valid, msg = self.checker.validate_dataframe(df, "TEST")
+        assert not valid
+        assert "infinite" in msg.lower()
+
+    def test_rejects_duplicate_timestamps(self):
+        import pandas as pd
+        idx = pd.DatetimeIndex([pd.Timestamp("2024-01-01")] * 60)
+        df = pd.DataFrame({"close": [float(i) for i in range(60)]}, index=idx)
+        valid, msg = self.checker.validate_dataframe(df, "TEST")
+        assert not valid
+        assert "duplicate" in msg.lower()
+
+    def test_valid_dataframe_passes(self):
+        import pandas as pd
+        idx = pd.DatetimeIndex(pd.date_range("2024-01-01", periods=100, freq="h"))
+        df = pd.DataFrame({"close": [float(i) * 0.01 for i in range(100)]}, index=idx)
+        valid, _msg = self.checker.validate_dataframe(df, "TEST")
+        assert valid
+
+    def test_price_data_rejects_high_below_low(self):
+        import pandas as pd
+        df = pd.DataFrame({
+            "open": [1.0, 1.1],
+            "high": [1.05, 1.0],  # high < low on row 2 -> invalid
+            "low": [0.95, 1.2],
+            "close": [1.0, 1.1],
+        })
+        valid, _msg = self.checker.validate_price_data(df)
+        assert not valid
+
+
+class TestLastCandleTracker:
+    def test_first_candle_is_new(self):
+        import pandas as pd
+        tracker = main.LastCandleTracker()
+        ts = pd.Timestamp("2024-01-01 10:00")
+        assert tracker.is_new_candle("EURUSD", ts)
+        tracker.mark_seen("EURUSD", ts)
+        assert not tracker.is_new_candle("EURUSD", ts)
+
+    def test_progressing_candle_is_new(self):
+        import pandas as pd
+        tracker = main.LastCandleTracker()
+        ts1 = pd.Timestamp("2024-01-01 10:00")
+        ts2 = pd.Timestamp("2024-01-01 11:00")
+        tracker.mark_seen("EURUSD", ts1)
+        assert tracker.is_new_candle("EURUSD", ts2)
+        assert not tracker.is_new_candle("EURUSD", ts1)
+
+    def test_symbols_independent(self):
+        import pandas as pd
+        tracker = main.LastCandleTracker()
+        ts = pd.Timestamp("2024-01-01 10:00")
+        tracker.mark_seen("EURUSD", ts)
+        assert tracker.is_new_candle("GBPUSD", ts)
+
+
+class TestErrorBackoff:
+    def test_success_resets_consecutive(self):
+        backoff = main.ErrorBackoff()
+        backoff.record_failure()
+        backoff.record_failure()
+        backoff.record_success()
+        assert backoff._consecutive == 0
+
+    def test_exponential_backoff_growth(self):
+        backoff = main.ErrorBackoff()
+        d1 = backoff.record_failure()
+        d2 = backoff.record_failure()
+        d3 = backoff.record_failure()
+        assert d2 > d1
+        assert d3 > d2
+
+    def test_backoff_capped(self):
+        backoff = main.ErrorBackoff()
+        from config import MAX_BACKOFF_SECONDS
+        for _ in range(20):
+            delay = backoff.record_failure()
+        assert delay <= MAX_BACKOFF_SECONDS
+
+
+class TestPortfolioRiskCheckPreTrade:
+    def test_disables_when_portfolio_risk_off(self, monkeypatch):
+        from portfolio_risk_manager import portfolio_risk_manager
+        monkeypatch.setattr(
+            "portfolio_risk_manager.ADVANCED_RISK",
+            SimpleNamespace(enable_portfolio_risk=False),
+        )
+        allowed, reason = portfolio_risk_manager.check_pre_trade_risk("EURUSD", "BUY", 0.1)
+        assert allowed
+        assert "disabled" in reason.lower()
+
+    def test_analysis_failure_blocks_pre_trade(self, monkeypatch):
+        import portfolio_risk_manager as portfolio_module
+
+        manager = PortfolioRiskManager()
+
+        def fail_connection():
+            raise RuntimeError("simulated MT5 outage")
+
+        monkeypatch.setattr(portfolio_module, "ensure_connected", fail_connection)
+
+        allowed, reason = manager.check_pre_trade_risk("EURUSD", "BUY", 0.1)
+
+        assert not allowed
+        assert "risk analysis unavailable" in reason.lower()

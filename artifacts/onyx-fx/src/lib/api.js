@@ -1,1 +1,93 @@
-LyoqCiAqIEFlZ2lzUXVhbnQgQVBJIENsaWVudCAoUHVyZSBKYXZhU2NyaXB0IC8gSlNYIGNvbXBhdGlibGUpCiAqIEludGVyYWN0cyB3aXRoIEZhc3RBUEkgL2FwcC92MS8qIGFuZCAvZWEvdjEvKiBzdXJmYWNlcwogKi8KCmNvbnN0IEFQSV9CQVNFID0gaW1wb3J0Lm1ldGEuZW52LlZJVEVfQVBJX1VSTCB8fCAiL2FwcC92MSI7Cgphc3luYyBmdW5jdGlvbiByZXF1ZXN0KHBhdGgsIG9wdGlvbnMgPSB7fSkgewogIGNvbnN0IHVybCA9IGAke0FQSV9CQVNFfSR7cGF0aH1gOwogIGNvbnN0IGRlZmF1bHRIZWFkZXJzID0gewogICAgIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICB9OwoKICBjb25zdCBjb25maWcgPSB7CiAgICAuLi5vcHRpb25zLAogICAgaGVhZGVyczogewogICAgICAuLi5kZWZhdWx0SGVhZGVycywKICAgICAgLi4ub3B0aW9ucy5oZWFkZXJzLAogICAgfSwKICAgIGNyZWRlbnRpYWxzOiAiaW5jbHVkZSIsIC8vIGZvciBzZXNzaW9uIGNvb2tpZXMKICB9OwoKICBpZiAob3B0aW9ucy5ib2R5ICYmIHR5cGVvZiBvcHRpb25zLmJvZHkgPT09ICJvYmplY3QiKSB7CiAgICBjb25maWcuYm9keSA9IEpTT04uc3RyaW5naWZ5KG9wdGlvbnMuYm9keSk7CiAgfQoKICB0cnkgewogICAgY29uc3QgcmVzID0gYXdhaXQgZmV0Y2godXJsLCBjb25maWcpOwogICAgaWYgKCFyZXMub2spIHsKICAgICAgbGV0IGVyckRhdGE7CiAgICAgIHRyeSB7CiAgICAgICAgZXJyRGF0YSA9IGF3YWl0IHJlcy5qc29uKCk7CiAgICAgIH0gY2F0Y2ggewogICAgICAgIGVyckRhdGEgPSB7IGNvZGU6ICJIVFRQX0VSUk9SIiwgbWVzc2FnZTogYFJlcXVlc3QgZmFpbGVkIHdpdGggc3RhdHVzICR7cmVzLnN0YXR1c31gIH07CiAgICAgIH0KICAgICAgY29uc3QgZXJyb3IgPSBuZXcgRXJyb3IoZXJyRGF0YS5tZXNzYWdlIHx8ICJBbiB1bmV4cGVjdGVkIGVycm9yIG9jY3VycmVkIik7CiAgICAgIGVycm9yLmNvZGUgPSBlcnJEYXRhLmNvZGU7CiAgICAgIGVycm9yLmRldGFpbHMgPSBlcnJEYXRhLmRldGFpbHM7CiAgICAgIGVycm9yLnN0YXR1cyA9IHJlcy5zdGF0dXM7CiAgICAgIHRocm93IGVycm9yOwogICAgfQogICAgaWYgKHJlcy5zdGF0dXMgPT09IDIwNCkgcmV0dXJuIG51bGw7CiAgICByZXR1cm4gYXdhaXQgcmVzLmpzb24oKTsKICB9IGNhdGNoIChlcnIpIHsKICAgIGNvbnNvbGUud2FybihgW0FQSV0gJHtvcHRpb25zLm1ldGhvZCB8fCAiR0VUIn0gJHtwYXRofSBmYWlsZWQ6YCwgZXJyLm1lc3NhZ2UpOwogICAgdGhyb3cgZXJyOwogIH0KfQoKZXhwb3J0IGNvbnN0IGFwaSA9IHsKICAvLyBBdXRoCiAgc2lnbnVwOiAoZW1haWwsIHBhc3N3b3JkLCByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWQpID0+CiAgICByZXF1ZXN0KCIvYXV0aC9zaWdudXAiLCB7IG1ldGhvZDogIlBPU1QiLCBib2R5OiB7IGVtYWlsLCBwYXNzd29yZCwgcmlza19kaXNjbGFpbWVyX2FjY2VwdGVkIH0gfSksCiAgbG9naW46IChlbWFpbCwgcGFzc3dvcmQpID0+CiAgICByZXF1ZXN0KCIvYXV0aC9sb2dpbiIsIHsgbWV0aG9kOiAiUE9TVCIsIGJvZHk6IHsgZW1haWwsIHBhc3N3b3JkIH0gfSksCiAgZ2V0TWU6ICgpID0+IHJlcXVlc3QoIi9hdXRoL21lIiksCiAgbG9nb3V0OiAoKSA9PiByZXF1ZXN0KCIvYXV0aC9sb2dvdXQiLCB7IG1ldGhvZDogIlBPU1QiIH0pLAoKICAvLyBEZXZpY2VzICYgUGFpcmluZwogIGNyZWF0ZVBhaXJpbmdDb2RlOiAoKSA9PiByZXF1ZXN0KCIvZGV2aWNlcy9wYWlyaW5nLWNvZGVzIiwgeyBtZXRob2Q6ICJQT1NUIiB9KSwKICBnZXREZXZpY2VzOiAoKSA9PiByZXF1ZXN0KCIvZGV2aWNlcyIpLAogIHJlbmFtZURldmljZTogKGRldmljZUlkLCBuYW1lKSA9PiByZXF1ZXN0KGAvZGV2aWNlcy8ke2RldmljZUlkfWAsIHsgbWV0aG9kOiAiUEFUQ0giLCBib2R5OiB7IG5hbWUgfSB9KSwKICByZXZva2VEZXZpY2U6IChkZXZpY2VJZCkgPT4gcmVxdWVzdChgL2RldmljZXMvJHtkZXZpY2VJZH1gLCB7IG1ldGhvZDogIkRFTEVURSIgfSksCgogIC8vIERhc2hib2FyZCAmIFRlbGVtZXRyeQogIGdldERhc2hib2FyZDogKCkgPT4gcmVxdWVzdCgiL2Rhc2hib2FyZCIpLAogIGdldEFjY291bnRPdmVydmlldzogKGRldmljZUlkKSA9PiByZXF1ZXN0KGAvYWNjb3VudHMvJHtkZXZpY2VJZH0vb3ZlcnZpZXdgKSwKICBnZXRQb3NpdGlvbnM6IChkZXZpY2VJZCkgPT4gcmVxdWVzdChgL2FjY291bnRzLyR7ZGV2aWNlSWR9L3Bvc2l0aW9uc2ApLAogIGdldEVxdWl0eUN1cnZlOiAoZGV2aWNlSWQsIHJhbmdlID0gIjdkIikgPT4gcmVxdWVzdChgL2FjY291bnRzLyR7ZGV2aWNlSWR9L2VxdWl0eS1jdXJ2ZT9yYW5nZT0ke3JhbmdlfWApLAoKICAvLyBTaWduYWxzCiAgZ2V0U2lnbmFsczogKGRldmljZUlkLCBzdGF0dXMpID0+IHsKICAgIGNvbnN0IHBhcmFtcyA9IG5ldyBVUkxTZWFyY2hQYXJhbXMoKTsKICAgIGlmIChkZXZpY2VJZCkgcGFyYW1zLmFwcGVuZCgiZGV2aWNlX2lkIiwgZGV2aWNlSWQpOwogICAgaWYgKHN0YXR1cykgcGFyYW1zLmFwcGVuZCgic3RhdHVzIiwgc3RhdHVzKTsKICAgIGNvbnN0IHF1ZXJ5ID0gcGFyYW1zLnRvU3RyaW5nKCkgPyBgPyR7cGFyYW1zLnRvU3RyaW5nKCl9YCA6ICIiOwogICAgcmV0dXJuIHJlcXVlc3QoYC9zaWduYWxzJHtxdWVyeX1gKTsKICB9LAogIGdldFNpZ25hbERldGFpbDogKHNpZ25hbElkKSA9PiByZXF1ZXN0KGAvc2lnbmFscy8ke3NpZ25hbElkfWApLAogIGRpc3BhdGNoU2lnbmFsOiAoZGV2aWNlSWQsIHN5bWJvbCA9ICJFVVJVU0QiLCBhY3Rpb24gPSAiQlVZIiwgcHJpY2UgPSAiMS4wODUwMCIpID0+CiAgICByZXF1ZXN0KGAvZGV2aWNlcy8ke2RldmljZUlkfS9kaXNwYXRjaC1zaWduYWw/c3ltYm9sPSR7c3ltYm9sfSZhY3Rpb249JHthY3Rpb259JnByaWNlPSR7cHJpY2V9YCwgewogICAgICBtZXRob2Q6ICJQT1NUIiwKICAgIH0pLAoKICAvLyBSaXNrICYgS2lsbCBTd2l0Y2gKICB1cGRhdGVSaXNrUHJvZmlsZTogKGRldmljZUlkLCBwcm9maWxlKSA9PgogICAgcmVxdWVzdChgL3Jpc2stcHJvZmlsZS8ke2RldmljZUlkfWAsIHsgbWV0aG9kOiAiUEFUQ0giLCBib2R5OiBwcm9maWxlIH0pLAogIHRyaWdnZXJLaWxsU3dpdGNoOiAoKSA9PiByZXF1ZXN0KCIva2lsbC1zd2l0Y2giLCB7IG1ldGhvZDogIlBPU1QiIH0pLAoKICAvLyBKb3VybmFsICYgQW5hbHl0aWNzCiAgZ2V0Sm91cm5hbE1ldHJpY3M6ICgpID0+IHJlcXVlc3QoIi9qb3VybmFsL21ldHJpY3MiKSwKICBnZXRKb3VybmFsSGVhdG1hcDogKCkgPT4gcmVxdWVzdCgiL2pvdXJuYWwvaGVhdG1hcCIpLAp9Owo=
+/**
+ * AegisQuant API Client (Pure JavaScript / JSX compatible)
+ * Interacts with FastAPI /app/v1/* and /ea/v1/* surfaces
+ */
+
+const API_BASE = import.meta.env.VITE_API_URL || "/app/v1";
+
+async function request(path, options = {}) {
+  const url = `${API_BASE}${path}`;
+  const defaultHeaders = {
+    "Content-Type": "application/json",
+  };
+
+  const config = {
+    ...options,
+    headers: {
+      ...defaultHeaders,
+      ...options.headers,
+    },
+    credentials: "include", // for session cookies
+  };
+
+  if (options.body && typeof options.body === "object") {
+    config.body = JSON.stringify(options.body);
+  }
+
+  try {
+    const res = await fetch(url, config);
+    if (!res.ok) {
+      let errData;
+      try {
+        errData = await res.json();
+      } catch {
+        errData = { code: "HTTP_ERROR", message: `Request failed with status ${res.status}` };
+      }
+      const error = new Error(errData.message || "An unexpected error occurred");
+      error.code = errData.code;
+      error.details = errData.details;
+      error.status = res.status;
+      throw error;
+    }
+    if (res.status === 204) return null;
+    return await res.json();
+  } catch (err) {
+    console.warn(`[API] ${options.method || "GET"} ${path} failed:`, err.message);
+    throw err;
+  }
+}
+
+export const api = {
+  // Auth
+  signup: (email, password, risk_disclaimer_accepted) =>
+    request("/auth/signup", { method: "POST", body: { email, password, risk_disclaimer_accepted } }),
+  login: (email, password) =>
+    request("/auth/login", { method: "POST", body: { email, password } }),
+  getMe: () => request("/auth/me"),
+  logout: () => request("/auth/logout", { method: "POST" }),
+
+  // Devices & Pairing
+  createPairingCode: () => request("/devices/pairing-codes", { method: "POST" }),
+  getDevices: () => request("/devices"),
+  renameDevice: (deviceId, name) => request(`/devices/${deviceId}`, { method: "PATCH", body: { name } }),
+  revokeDevice: (deviceId) => request(`/devices/${deviceId}`, { method: "DELETE" }),
+
+  // Dashboard & Telemetry
+  getDashboard: () => request("/dashboard"),
+  getAccountOverview: (deviceId) => request(`/accounts/${deviceId}/overview`),
+  getPositions: (deviceId) => request(`/accounts/${deviceId}/positions`),
+  getEquityCurve: (deviceId, range = "7d") => request(`/accounts/${deviceId}/equity-curve?range=${range}`),
+
+  // Signals
+  getSignals: (deviceId, status) => {
+    const params = new URLSearchParams();
+    if (deviceId) params.append("device_id", deviceId);
+    if (status) params.append("status", status);
+    const query = params.toString() ? `?${params.toString()}` : "";
+    return request(`/signals${query}`);
+  },
+  getSignalDetail: (signalId) => request(`/signals/${signalId}`),
+  dispatchSignal: (deviceId, symbol = "EURUSD", action = "BUY", price = "1.08500") =>
+    request(`/devices/${deviceId}/dispatch-signal?symbol=${symbol}&action=${action}&price=${price}`, {
+      method: "POST",
+    }),
+
+  // Risk & Kill Switch
+  updateRiskProfile: (deviceId, profile) =>
+    request(`/risk-profile/${deviceId}`, { method: "PATCH", body: profile }),
+  triggerKillSwitch: () => request("/kill-switch", { method: "POST" }),
+
+  // Journal & Analytics
+  getJournalMetrics: () => request("/journal/metrics"),
+  getJournalHeatmap: () => request("/journal/heatmap"),
+};

@@ -1,1 +1,6 @@
-ZGVmIG1haW4oKToKICAgIHByaW50KCJIZWxsbyBmcm9tIHJlcGwtbml4LXdvcmtzcGFjZSEiKQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBtYWluKCkK
+def main():
+    print("Hello from repl-nix-workspace!")
+
+
+if __name__ == "__main__":
+    main()

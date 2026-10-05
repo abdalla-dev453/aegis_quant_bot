@@ -1,1 +1,18 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGpzb24KZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsCmZyb20gdXVpZCBpbXBvcnQgVVVJRAoKZnJvbSByZWRpcy5hc3luY2lvIGltcG9ydCBSZWRpcwoKCmFzeW5jIGRlZiBwdWJsaXNoX3VzZXJfZXZlbnQoCiAgICByZWRpczogUmVkaXMsIHVzZXJfaWQ6IFVVSUQsIGV2ZW50X3R5cGU6IHN0ciwgcGF5bG9hZDogZGljdFtzdHIsIHN0ciB8IGludCB8IGJvb2wgfCBOb25lXQopIC0+IE5vbmU6CiAgICBtZXNzYWdlID0ganNvbi5kdW1wcygKICAgICAgICB7InR5cGUiOiBldmVudF90eXBlLCAicGF5bG9hZCI6IHBheWxvYWR9LAogICAgICAgIGRlZmF1bHQ9bGFtYmRhIHZhbHVlOiBzdHIodmFsdWUpIGlmIGlzaW5zdGFuY2UodmFsdWUsIChVVUlELCBEZWNpbWFsKSkgZWxzZSB2YWx1ZSwKICAgICAgICBzZXBhcmF0b3JzPSgiLCIsICI6IiksCiAgICApCiAgICBhd2FpdCByZWRpcy5wdWJsaXNoKGYiYXBwOnVzZXI6e3VzZXJfaWR9OmV2ZW50cyIsIG1lc3NhZ2Up
+from __future__ import annotations
+
+import json
+from decimal import Decimal
+from uuid import UUID
+
+from redis.asyncio import Redis
+
+
+async def publish_user_event(
+    redis: Redis, user_id: UUID, event_type: str, payload: dict[str, str | int | bool | None]
+) -> None:
+    message = json.dumps(
+        {"type": event_type, "payload": payload},
+        default=lambda value: str(value) if isinstance(value, (UUID, Decimal)) else value,
+        separators=(",", ":"),
+    )
+    await redis.publish(f"app:user:{user_id}:events", message)

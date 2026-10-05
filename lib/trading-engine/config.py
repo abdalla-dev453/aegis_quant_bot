@@ -1,1 +1,430 @@
-IiIiCmNvbmZpZy5weQotLS0tLS0tLS0KQ2VudHJhbCBjb25maWd1cmF0aW9uIGZvciB0aGUgdHJhZGluZyBib3QuIE5vdGhpbmcgaW4gaGVyZSB0YWxrcyB0byBNVDUgb3IKdGhlIG5ldHdvcmsg4oCUIGl0J3MgcHVyZSBzZXR0aW5ncywgc28gZXZlcnkgb3RoZXIgbW9kdWxlIGNhbiBpbXBvcnQgaXQgc2FmZWx5CndpdGhvdXQgc2lkZSBlZmZlY3RzLgoKU0VDVVJJVFkgTk9URTogRG8gbm90IGNvbW1pdCByZWFsIGNyZWRlbnRpYWxzIHRvIHZlcnNpb24gY29udHJvbC4gSW4KcHJvZHVjdGlvbiwgbG9hZCBNVDVfTE9HSU4gLyBNVDVfUEFTU1dPUkQgLyBNVDVfU0VSVkVSIGFuZCBhbnkgbmV3cy1BUEkKa2V5cyBmcm9tIGVudmlyb25tZW50IHZhcmlhYmxlcyAob3MuZW52aXJvbikgb3IgYSBzZWNyZXRzIG1hbmFnZXIgaW5zdGVhZApvZiBoYXJkY29kaW5nIHRoZW0gaGVyZS4gVGhlIHBsYWNlaG9sZGVycyBiZWxvdyBhcmUgZm9yIGxvY2FsIGRldiBvbmx5LgoiIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBtYXRoCmltcG9ydCBvcwpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmZyb20gdHlwaW5nIGltcG9ydCBGaW5hbAoKZnJvbSBkb3RlbnYgaW1wb3J0IGxvYWRfZG90ZW52CgojIExvYWQgb25seSB0aGlzIHNlcnZpY2UncyBsb2NhbCBmaWxlLCBuZXZlciBvdmVyd3JpdGUgZXhwbGljaXRseSBzdXBwbGllZAojIGRlcGxveW1lbnQgc2VjcmV0cywgYW5kIGtlZXAgLmVudiBvdXQgb2YgdmVyc2lvbiBjb250cm9sLgpsb2FkX2RvdGVudihQYXRoKF9fZmlsZV9fKS53aXRoX25hbWUoIi5lbnYiKSwgb3ZlcnJpZGU9RmFsc2UpCgoKZGVmIF9lbnZfaW50KG5hbWU6IHN0ciwgZGVmYXVsdDogaW50KSAtPiBpbnQ6CiAgICB2YWx1ZSA9IG9zLmdldGVudihuYW1lKQogICAgaWYgdmFsdWUgaXMgTm9uZToKICAgICAgICByZXR1cm4gZGVmYXVsdAogICAgdHJ5OgogICAgICAgIHJldHVybiBpbnQodmFsdWUpCiAgICBleGNlcHQgVmFsdWVFcnJvciBhcyBleGM6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihmIntuYW1lfSBtdXN0IGJlIGFuIGludGVnZXIiKSBmcm9tIGV4YwoKCmRlZiBfZW52X2Zsb2F0KG5hbWU6IHN0ciwgZGVmYXVsdDogZmxvYXQpIC0+IGZsb2F0OgogICAgdmFsdWUgPSBvcy5nZXRlbnYobmFtZSkKICAgIGlmIHZhbHVlIGlzIE5vbmU6CiAgICAgICAgcmV0dXJuIGRlZmF1bHQKICAgIHRyeToKICAgICAgICByZXR1cm4gZmxvYXQodmFsdWUpCiAgICBleGNlcHQgVmFsdWVFcnJvciBhcyBleGM6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihmIntuYW1lfSBtdXN0IGJlIGEgbnVtYmVyIikgZnJvbSBleGMKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyBNVDUgdGVybWluYWwgLyBhY2NvdW50IGNyZWRlbnRpYWxzCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpAZGF0YWNsYXNzKGZyb3plbj1UcnVlKQpjbGFzcyBNVDVDcmVkZW50aWFsczoKICAgIGxvZ2luOiBpbnQgfCBOb25lID0gTm9uZQogICAgcGFzc3dvcmQ6IHN0ciB8IE5vbmUgPSBOb25lCiAgICBzZXJ2ZXI6IHN0ciB8IE5vbmUgPSBOb25lCgogICAgIyBGdWxsIHBhdGggdG8gdGVybWluYWw2NC5leGUuIExlYXZlIE5vbmUgdG8gbGV0IE1UNSBhdXRvLWRldGVjdCBhbgogICAgIyBhbHJlYWR5LXJ1bm5pbmcgdGVybWluYWwgaW5zdGFuY2UgaW5zdGVhZCBvZiBsYXVuY2hpbmcgYSBuZXcgb25lLgogICAgdGVybWluYWxfcGF0aDogc3RyIHwgTm9uZSA9IG9zLmdldGVudigiTVQ1X1RFUk1JTkFMX1BBVEgiKSBvciBOb25lCiAgICAjIE1pbGxpc2Vjb25kcyB0byB3YWl0IGZvciB0aGUgdGVybWluYWwgdG8gcmVzcG9uZCBiZWZvcmUgZ2l2aW5nIHVwLgogICAgdGltZW91dF9tczogaW50ID0gNjBfMDAwCgogICAgZGVmIGlzX2NvbmZpZ3VyZWQoc2VsZikgLT4gYm9vbDoKICAgICAgICByZXR1cm4gYm9vbChzZWxmLmxvZ2luIGFuZCBzZWxmLnBhc3N3b3JkIGFuZCBzZWxmLnNlcnZlcikKCiAgICBkZWYgdmFsaWRhdGVfbGl2ZV90cmFkZV9jb25maWcoc2VsZikgLT4gTm9uZToKICAgICAgICBtaXNzaW5nID0gW10KICAgICAgICBpZiBub3Qgc2VsZi5sb2dpbjoKICAgICAgICAgICAgbWlzc2luZy5hcHBlbmQoIk1UNV9MT0dJTiIpCiAgICAgICAgaWYgbm90IHNlbGYucGFzc3dvcmQ6CiAgICAgICAgICAgIG1pc3NpbmcuYXBwZW5kKCJNVDVfUEFTU1dPUkQiKQogICAgICAgIGlmIG5vdCBzZWxmLnNlcnZlcjoKICAgICAgICAgICAgbWlzc2luZy5hcHBlbmQoIk1UNV9TRVJWRVIiKQogICAgICAgIGlmIG1pc3Npbmc6CiAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoIk1pc3NpbmcgTVQ1IGxpdmUtdHJhZGluZyBjb25maWd1cmF0aW9uOiAiICsgIiwgIi5qb2luKG1pc3NpbmcpKQoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIE5ld3MgLyBzZW50aW1lbnQgcHJvdmlkZXIgKHBsYWNlaG9sZGVyIOKAlCBzd2FwIGluIGEgcmVhbCBBUEkga2V5ICsgY2xpZW50KQojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSkKY2xhc3MgTmV3c0FQSUNvbmZpZzoKICAgIGFwaV9rZXk6IHN0ciA9IG9zLmdldGVudigiTkVXU19BUElfS0VZIiwgIiIpCiAgICBuZXdzX2FwaV91cmw6IHN0ciA9IG9zLmdldGVudigiTkVXU19BUElfVVJMIiwgImh0dHBzOi8vbmV3c2FwaS5vcmcvdjIvZXZlcnl0aGluZyIpCiAgICBhcGlfdGltZW91dF9zZWNvbmRzOiBpbnQgPSAxMAogICAgY2FjaGVfc2Vjb25kczogaW50ID0gNjAKICAgIHlhaG9vX3Jzc191cmw6IHN0ciA9IG9zLmdldGVudigKICAgICAgICAiWUFIT09fRklOQU5DRV9SU1NfVVJMIiwKICAgICAgICAiaHR0cHM6Ly9mZWVkcy5maW5hbmNlLnlhaG9vLmNvbS9yc3MvMi4wL2hlYWRsaW5lP3M9RVVSVVNEJTNEWCUyQ0dCUFVTRCUzRFglMkNHQyUzREYmcmVnaW9uPVVTJmxhbmc9ZW4tVVMiLAogICAgKQoKICAgICMgSG93IGxvbmcgYmVmb3JlL2FmdGVyIGEgaGlnaC1pbXBhY3QgcmVsZWFzZSB0aGUgYm90IHJlZnVzZXMgbmV3IHRyYWRlcwogICAgYmxhY2tvdXRfbWludXRlc19iZWZvcmU6IGludCA9IDMwCiAgICBibGFja291dF9taW51dGVzX2FmdGVyOiBpbnQgPSAzMAoKICAgICMgRXZlbnRzIGNvbnNpZGVyZWQgImhpZ2ggaW1wYWN0IiBmb3IgYmxhY2tvdXQgcHVycG9zZXMKICAgIGhpZ2hfaW1wYWN0X2V2ZW50czogdHVwbGVbc3RyLCAuLi5dID0gKAogICAgICAgICJDUEkiLAogICAgICAgICJJbnRlcmVzdCBSYXRlIERlY2lzaW9uIiwKICAgICAgICAiTm9uLUZhcm0gUGF5cm9sbHMiLAogICAgICAgICJGT01DIFN0YXRlbWVudCIsCiAgICAgICAgIkdEUCIsCiAgICApCgoKQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSkKY2xhc3MgQUlDb25maWc6CiAgICBwcm92aWRlcjogc3RyID0gb3MuZ2V0ZW52KCJBSV9QUk9WSURFUiIsICJvcGVuYWkiKS5sb3dlcigpCiAgICBtb2RlbDogc3RyID0gb3MuZ2V0ZW52KCJPUEVOQUlfTU9ERUwiLCAiZ3B0LTRvIikKICAgIGFwaV9rZXk6IHN0ciA9IG9zLmdldGVudigiT1BFTkFJX0FQSV9LRVkiLCAiIikKICAgIHRpbWVvdXRfc2Vjb25kczogZmxvYXQgPSBmbG9hdChvcy5nZXRlbnYoIk9QRU5BSV9USU1FT1VUX1NFQ09ORFMiLCAiMzAiKSkKCiAgICBkZWYgdmFsaWRhdGUoc2VsZikgLT4gTm9uZToKICAgICAgICBpZiBzZWxmLnByb3ZpZGVyICE9ICJvcGVuYWkiOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJPbmx5IEFJX1BST1ZJREVSPW9wZW5haSBpcyBzdXBwb3J0ZWQgYnkgdGhpcyBkZXBsb3ltZW50LiIpCiAgICAgICAgaWYgbm90IHNlbGYuYXBpX2tleToKICAgICAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiTWlzc2luZyBPUEVOQUlfQVBJX0tFWS4gU2V0IGl0IGluIHNlcnZlci8uZW52IG9yIHRoZSBlbnZpcm9ubWVudC4iKQogICAgICAgIGlmIHNlbGYudGltZW91dF9zZWNvbmRzIDw9IDA6CiAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoIk9QRU5BSV9USU1FT1VUX1NFQ09ORFMgbXVzdCBiZSBncmVhdGVyIHRoYW4gemVyby4iKQoKCkBkYXRhY2xhc3MoZnJvemVuPVRydWUpCmNsYXNzIERlcGxveW1lbnRDb25maWc6CiAgICBhcGlfaG9zdDogc3RyID0gb3MuZ2V0ZW52KCJBUElfSE9TVCIsICIxMjcuMC4wLjEiKQogICAgYXBpX3BvcnQ6IGludCA9IF9lbnZfaW50KCJBUElfUE9SVCIsIDgwMDApCiAgICBjb3JzX29yaWdpbnM6IHR1cGxlW3N0ciwgLi4uXSA9IHR1cGxlKAogICAgICAgIG9yaWdpbi5zdHJpcCgpCiAgICAgICAgZm9yIG9yaWdpbiBpbiBvcy5nZXRlbnYoCiAgICAgICAgICAgICJDT1JTX09SSUdJTlMiLAogICAgICAgICAgICAiaHR0cDovL2xvY2FsaG9zdDo1MTczLGh0dHA6Ly8xMjcuMC4wLjE6NTE3MyIsCiAgICAgICAgKS5zcGxpdCgiLCIpCiAgICAgICAgaWYgb3JpZ2luLnN0cmlwKCkKICAgICkKICAgIG1heF9jYW5kbGVfYWdlX3NlY29uZHM6IGludCA9IF9lbnZfaW50KCJNQVhfQ0FORExFX0FHRV9TRUNPTkRTIiwgNzIwMCkKCiAgICBkZWYgdmFsaWRhdGUoc2VsZikgLT4gTm9uZToKICAgICAgICBmcm9tIHVybGxpYi5wYXJzZSBpbXBvcnQgdXJscGFyc2UKICAgICAgICBpZiBub3Qgc2VsZi5hcGlfaG9zdDoKICAgICAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiQVBJX0hPU1QgbXVzdCBub3QgYmUgZW1wdHkiKQogICAgICAgIGlmIG5vdCAxIDw9IHNlbGYuYXBpX3BvcnQgPD0gNjU1MzU6CiAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoIkFQSV9QT1JUIG11c3QgYmUgYmV0d2VlbiAxIGFuZCA2NTUzNSIpCiAgICAgICAgaWYgc2VsZi5tYXhfY2FuZGxlX2FnZV9zZWNvbmRzIDw9IDA6CiAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoIk1BWF9DQU5ETEVfQUdFX1NFQ09ORFMgbXVzdCBiZSBncmVhdGVyIHRoYW4gemVybyIpCiAgICAgICAgaWYgb3MuZ2V0ZW52KCJUUkFESU5HX01PREUiLCAicGFwZXIiKS5sb3dlcigpID09ICJsaXZlIiBhbmQgbm90IG9zLmdldGVudigiQVBJX1RPS0VOIik6CiAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoIkFQSV9UT0tFTiBpcyByZXF1aXJlZCBmb3IgbGl2ZSB0cmFkaW5nIikKICAgICAgICBpZiBub3Qgc2VsZi5jb3JzX29yaWdpbnMgb3IgYW55KG9yaWdpbiA9PSAiKiIgb3IgdXJscGFyc2Uob3JpZ2luKS5zY2hlbWUgbm90IGluIHsiaHR0cCIsICJodHRwcyJ9IG9yIG5vdCB1cmxwYXJzZShvcmlnaW4pLm5ldGxvYyBmb3Igb3JpZ2luIGluIHNlbGYuY29yc19vcmlnaW5zKToKICAgICAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiQ09SU19PUklHSU5TIG11c3QgY29udGFpbiBhYnNvbHV0ZSBub24td2lsZGNhcmQgVVJMcyIpCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIFN5bWJvbHMgJiB0aW1lZnJhbWVzCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSkKY2xhc3MgU3ltYm9sQ29uZmlnOgogICAgbmFtZTogc3RyCiAgICAjIE1pbiBkaXN0YW5jZSAoIGluIHBvaW50cyApIHRoZSBicm9rZXIgZW5mb3JjZXMgYnR3biBwcmljZSBhbmQgU0wvVFAuIEZldGNoZWQgYXQgcnVudGltZSBmcm9tIHN5bWJvbF9pbmZvIHdoZW4gcG9zc2libGU7IHRoaXMgaXMgYSBjb25zZXJ2YXRpdmUgZmFsbGJhY2sKICAgIGZhbGxiYWNrX3N0b3BzX2xldmVsX3BvaW50czogaW50ID0gMTAwCiAgICBwaXBfdmFsdWVfcGVyX2xvdDogZmxvYXQgPSAxMC4wCgoKVFJBRElOR19TWU1CT0xTOiBGaW5hbFtsaXN0W1N5bWJvbENvbmZpZ11dID0gWwogICAgU3ltYm9sQ29uZmlnKG5hbWU9IkVVUlVTRCIpLAogICAgU3ltYm9sQ29uZmlnKG5hbWU9IkdCUFVTRCIpLAogICAgU3ltYm9sQ29uZmlnKG5hbWU9IlhBVVVTRCIsIGZhbGxiYWNrX3N0b3BzX2xldmVsX3BvaW50cz0yMDAsIHBpcF92YWx1ZV9wZXJfbG90PTEuMCksCl0KCgojIE1UNSB0aW1lZnJhbWUgY29uc3RhbnRzIGFyZSBpbnRzIGZyb20gdGhlIE1ldGFUcmFkZXI1IG1vZHVsZTsgd2UgcmVmZXJlbmNlCiMgdGhlbSBieSBuYW1lIGhlcmUgYW5kIHJlc29sdmUgdGhlIGFjdHVhbCBtdDUuVElNRUZSQU1FXyogdmFsdWUgaW5zaWRlCiMgZGF0YV9wcm92aWRlci5weSBzbyBjb25maWcucHkgaGFzIHplcm8gZGVwZW5kZW5jeSBvbiB0aGUgTVQ1IFNESy4KVElNRUZSQU1FX1RSSUdHRVI6IEZpbmFsW3N0cl0gPSAiSDEiICAjIGVudHJ5IHRyaWdnZXIgdGltZWZyYW1lClRJTUVGUkFNRV9CSUFTOiBGaW5hbFtzdHJdID0gIkg0IiAgIyBoaWdoZXItdGltZWZyYW1lIGRpcmVjdGlvbmFsIGJpYXMKQ0FORExFU19UT19GRVRDSDogRmluYWxbaW50XSA9IDQwMCAgIyBlbm91Z2ggaGlzdG9yeSBmb3IgRU1BMjAwIHRvIHdhcm0gdXAKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMgSW5kaWNhdG9yIHBhcmFtZXRlcnMKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkBkYXRhY2xhc3MoZnJvemVuPVRydWUpCmNsYXNzIEluZGljYXRvckNvbmZpZzoKICAgIGVtYV9mYXN0OiBpbnQgPSA1MAogICAgZW1hX3Nsb3c6IGludCA9IDIwMAogICAgcnNpX3BlcmlvZDogaW50ID0gMTQKICAgIHJzaV9vdmVyYm91Z2h0OiBmbG9hdCA9IDcwLjAKICAgIHJzaV9vdmVyc29sZDogZmxvYXQgPSAzMC4wCiAgICBhdHJfcGVyaW9kOiBpbnQgPSAxNAoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyBSaXNrIG1hbmFnZW1lbnQKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkBkYXRhY2xhc3MoZnJvemVuPVRydWUpCmNsYXNzIFJpc2tDb25maWc6CiAgICByaXNrX3Blcl90cmFkZV9wY3Q6IGZsb2F0ID0gX2Vudl9mbG9hdCgiUklTS19QRVJfVFJBREVfUENUIiwgMS41KSAgIyAlIG9mIGVxdWl0eSByaXNrZWQgcGVyIHRyYWRlCiAgICBtYXhfZGFpbHlfbG9zc19wY3Q6IGZsb2F0ID0gX2Vudl9mbG9hdCgiTUFYX0RBSUxZX0xPU1NfUENUIiwgNC4wKSAgIyBoYWx0IG5ldyBlbnRyaWVzIGZvciB0aGUgcmVzdCBvZiB0aGUgZGF5IHBhc3QgdGhpcyBkcmF3ZG93bgogICAgIyBUaGlzIGlzIGludGVudGlvbmFsbHkgaW5kZXBlbmRlbnQgb2YgdGhlIGRhaWx5LWxvc3MgZ3VhcmQuICBJdCBpcyBhCiAgICAjIGhpZ2gtd2F0ZXItbWFyayBjaXJjdWl0IGJyZWFrZXIgYW5kIHJlbWFpbnMgbGF0Y2hlZCB1bnRpbCBtYW51YWxseSByZXNldC4KICAgIG1heF9kcmF3ZG93bl9mcm9tX3BlYWtfcGN0OiBmbG9hdCA9IF9lbnZfZmxvYXQoIk1BWF9EUkFXRE9XTl9GUk9NX1BFQUtfUENUIiwgOC4wKQogICAgbWF4X3RyYWRlc19wZXJfZGF5OiBpbnQgPSBfZW52X2ludCgiTUFYX1RSQURFU19QRVJfREFZIiwgNikKICAgIGNvcnJlbGF0aW9uX3RocmVzaG9sZDogZmxvYXQgPSBfZW52X2Zsb2F0KCJDT1JSRUxBVElPTl9USFJFU0hPTEQiLCAwLjcwKQogICAgYXRyX3NsX211bHRpcGxpZXI6IGZsb2F0ID0gX2Vudl9mbG9hdCgiQVRSX1NMX01VTFRJUExJRVIiLCAxLjUpICAjIFNMID0gZW50cnkgLS8rIChBVFIgKiBtdWx0aXBsaWVyKQogICAgYXRyX3RwX211bHRpcGxpZXI6IGZsb2F0ID0gX2Vudl9mbG9hdCgiQVRSX1RQX01VTFRJUExJRVIiLCAzLjApICAjIFRQID0gZW50cnkgLS8rIChBVFIgKiBtdWx0aXBsaWVyKSAtPiAyOjEgZGVmYXVsdAogICAgdHJhaWxpbmdfdHJpZ2dlcl9ycjogZmxvYXQgPSBfZW52X2Zsb2F0KCJUUkFJTElOR19UUklHR0VSX1JSIiwgMS4wKSAgIyBzdGFydCB0cmFpbGluZyBvbmNlIHRyYWRlIGhpdHMgMToxIFJSCiAgICB0cmFpbGluZ19hdHJfbXVsdGlwbGllcjogZmxvYXQgPSBfZW52X2Zsb2F0KCJUUkFJTElOR19BVFJfTVVMVElQTElFUiIsIDEuMCkgICMgdHJhaWxpbmcgZGlzdGFuY2Ugb25jZSB0cmlnZ2VyZWQKICAgIG1heF9jb25jdXJyZW50X3Bvc2l0aW9uczogaW50ID0gX2Vudl9pbnQoIk1BWF9DT05DVVJSRU5UX1BPU0lUSU9OUyIsIDMpCiAgICBtYWdpY19udW1iZXI6IGludCA9IDk5MDAxMQogICAgZGV2aWF0aW9uX3BvaW50czogaW50ID0gX2Vudl9pbnQoIkRFVklBVElPTl9QT0lOVFMiLCAyMCkgICMgbWF4IHNsaXBwYWdlIHRvbGVyYW5jZQoKICAgIGRlZiB2YWxpZGF0ZShzZWxmKSAtPiBOb25lOgogICAgICAgIGZsb2F0X3NldHRpbmdzID0gewogICAgICAgICAgICAiUklTS19QRVJfVFJBREVfUENUIjogc2VsZi5yaXNrX3Blcl90cmFkZV9wY3QsCiAgICAgICAgICAgICJNQVhfREFJTFlfTE9TU19QQ1QiOiBzZWxmLm1heF9kYWlseV9sb3NzX3BjdCwKICAgICAgICAgICAgIk1BWF9EUkFXRE9XTl9GUk9NX1BFQUtfUENUIjogc2VsZi5tYXhfZHJhd2Rvd25fZnJvbV9wZWFrX3BjdCwKICAgICAgICAgICAgIkNPUlJFTEFUSU9OX1RIUkVTSE9MRCI6IHNlbGYuY29ycmVsYXRpb25fdGhyZXNob2xkLAogICAgICAgICAgICAiQVRSX1NMX01VTFRJUExJRVIiOiBzZWxmLmF0cl9zbF9tdWx0aXBsaWVyLAogICAgICAgICAgICAiQVRSX1RQX01VTFRJUExJRVIiOiBzZWxmLmF0cl90cF9tdWx0aXBsaWVyLAogICAgICAgICAgICAiVFJBSUxJTkdfVFJJR0dFUl9SUiI6IHNlbGYudHJhaWxpbmdfdHJpZ2dlcl9yciwKICAgICAgICAgICAgIlRSQUlMSU5HX0FUUl9NVUxUSVBMSUVSIjogc2VsZi50cmFpbGluZ19hdHJfbXVsdGlwbGllciwKICAgICAgICB9CiAgICAgICAgZm9yIG5hbWUsIHZhbHVlIGluIGZsb2F0X3NldHRpbmdzLml0ZW1zKCk6CiAgICAgICAgICAgIGlmIG5vdCBtYXRoLmlzZmluaXRlKHZhbHVlKToKICAgICAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoZiJ7bmFtZX0gbXVzdCBiZSBmaW5pdGUiKQogICAgICAgIHBlcmNlbnRhZ2VzID0gewogICAgICAgICAgICAiUklTS19QRVJfVFJBREVfUENUIjogc2VsZi5yaXNrX3Blcl90cmFkZV9wY3QsCiAgICAgICAgICAgICJNQVhfREFJTFlfTE9TU19QQ1QiOiBzZWxmLm1heF9kYWlseV9sb3NzX3BjdCwKICAgICAgICAgICAgIk1BWF9EUkFXRE9XTl9GUk9NX1BFQUtfUENUIjogc2VsZi5tYXhfZHJhd2Rvd25fZnJvbV9wZWFrX3BjdCwKICAgICAgICB9CiAgICAgICAgZm9yIG5hbWUsIHZhbHVlIGluIHBlcmNlbnRhZ2VzLml0ZW1zKCk6CiAgICAgICAgICAgIGlmIG5vdCAwLjAgPCB2YWx1ZSA8PSAxMDAuMDoKICAgICAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoZiJ7bmFtZX0gbXVzdCBiZSBncmVhdGVyIHRoYW4gMCBhbmQgYXQgbW9zdCAxMDAiKQogICAgICAgIGlmIHNlbGYubWF4X3RyYWRlc19wZXJfZGF5IDwgMToKICAgICAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiTUFYX1RSQURFU19QRVJfREFZIG11c3QgYmUgYXQgbGVhc3QgMSIpCiAgICAgICAgaWYgc2VsZi5tYXhfY29uY3VycmVudF9wb3NpdGlvbnMgPCAxOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJNQVhfQ09OQ1VSUkVOVF9QT1NJVElPTlMgbXVzdCBiZSBhdCBsZWFzdCAxIikKICAgICAgICBpZiBub3QgMC4wIDw9IHNlbGYuY29ycmVsYXRpb25fdGhyZXNob2xkIDw9IDEuMDoKICAgICAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiQ09SUkVMQVRJT05fVEhSRVNIT0xEIG11c3QgYmUgYmV0d2VlbiAwIGFuZCAxIikKICAgICAgICBmb3IgbmFtZSwgdmFsdWUgaW4gKAogICAgICAgICAgICAoIkFUUl9TTF9NVUxUSVBMSUVSIiwgc2VsZi5hdHJfc2xfbXVsdGlwbGllciksCiAgICAgICAgICAgICgiQVRSX1RQX01VTFRJUExJRVIiLCBzZWxmLmF0cl90cF9tdWx0aXBsaWVyKSwKICAgICAgICApOgogICAgICAgICAgICBpZiB2YWx1ZSA8PSAwLjA6CiAgICAgICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKGYie25hbWV9IG11c3QgYmUgZ3JlYXRlciB0aGFuIDAiKQogICAgICAgIGlmIHNlbGYudHJhaWxpbmdfdHJpZ2dlcl9yciA8IDAuMCBvciBzZWxmLnRyYWlsaW5nX2F0cl9tdWx0aXBsaWVyIDwgMC4wOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJUcmFpbGluZy1zdG9wIG11bHRpcGxpZXJzIG11c3Qgbm90IGJlIG5lZ2F0aXZlIikKICAgICAgICBpZiBzZWxmLmRldmlhdGlvbl9wb2ludHMgPCAwOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJERVZJQVRJT05fUE9JTlRTIG11c3Qgbm90IGJlIG5lZ2F0aXZlIikKCgpAZGF0YWNsYXNzKGZyb3plbj1UcnVlKQpjbGFzcyBFeGVjdXRpb25Db25maWc6CiAgICAiIiJMaXZlIG9yZGVyIHN1Ym1pc3Npb24gaXMgb3B0LWluOyBwYXBlciBpcyB0aGUgc2FmZSBkZXBsb3ltZW50IGRlZmF1bHQuIiIiCgogICAgbW9kZTogc3RyID0gb3MuZ2V0ZW52KCJUUkFESU5HX01PREUiLCAicGFwZXIiKS5sb3dlcigpCgogICAgZGVmIHZhbGlkYXRlKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgaWYgc2VsZi5tb2RlIG5vdCBpbiB7InBhcGVyIiwgImxpdmUifToKICAgICAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiVFJBRElOR19NT0RFIG11c3QgYmUgZWl0aGVyICdwYXBlcicgb3IgJ2xpdmUnLiIpCgogICAgQHByb3BlcnR5CiAgICBkZWYgbGl2ZV9vcmRlcnNfZW5hYmxlZChzZWxmKSAtPiBib29sOgogICAgICAgIHJldHVybiBzZWxmLm1vZGUgPT0gImxpdmUiCgoKIyBDb3JyZWxhdGlvbnMgdXNlZCBhcyBhIGNvbnNlcnZhdGl2ZSBwcmUtdHJhZGUgZXhwb3N1cmUgZ3VhcmQuICBLZWVwIHRoaXMKIyBleHBsaWNpdCAocmF0aGVyIHRoYW4gcHJldGVuZGluZyBhIHNob3J0IHByaWNlIGhpc3RvcnkgaXMgYSByZWxpYWJsZQojIGVzdGltYXRlKSBhbmQgZXh0ZW5kIGl0IHdoZW4gYWRkaW5nIHRyYWRhYmxlIHN5bWJvbHMuClNZTUJPTF9DT1JSRUxBVElPTlM6IEZpbmFsW2RpY3RbdHVwbGVbc3RyLCBzdHJdLCBmbG9hdF1dID0gewogICAgKCJFVVJVU0QiLCAiR0JQVVNEIik6IDAuODUsCiAgICAoIkVVUlVTRCIsICJYQVVVU0QiKTogLTAuMywKICAgICgiR0JQVVNEIiwgIlhBVVVTRCIpOiAtMC4yLAp9CgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMgU3RyYXRlZ3kgLyBjb25mbHVlbmNlIHRocmVzaG9sZHMKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSkKY2xhc3MgU3RyYXRlZ3lDb25maWc6CiAgICByZXF1aXJlX3NlbnRpbWVudF9mZWVkOiBib29sID0gb3MuZ2V0ZW52KCJSRVFVSVJFX1NFTlRJTUVOVF9GRUVEIiwgInRydWUiKS5sb3dlcigpID09ICJ0cnVlIgogICAgc2VudGltZW50X2J1bGxpc2hfdGhyZXNob2xkOiBmbG9hdCA9IDAuNQogICAgc2VudGltZW50X2JlYXJpc2hfdGhyZXNob2xkOiBmbG9hdCA9IC0wLjUKICAgIGxvb3BfcG9sbF9zZWNvbmRzOiBpbnQgPSAxNSAgIyBob3cgb2Z0ZW4gdGhlIG1haW4gbG9vcCBjaGVja3MgZm9yIGEgbmV3IGNsb3NlZCBjYW5kbGUKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIExvZ2dpbmcKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSkKY2xhc3MgTG9nZ2luZ0NvbmZpZzoKICAgIGxvZ19maWxlOiBzdHIgPSBvcy5nZXRlbnYoIkxPR19GSUxFIiwgInRyYWRpbmdfYm90LmxvZyIpCiAgICBsZXZlbDogc3RyID0gb3MuZ2V0ZW52KCJMT0dfTEVWRUwiLCAiSU5GTyIpCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyBBZHZhbmNlZCBBbmFseXNpcyBDb25maWd1cmF0aW9uCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkBkYXRhY2xhc3MoZnJvemVuPVRydWUpCmNsYXNzIEFkdmFuY2VkQW5hbHlzaXNDb25maWc6CiAgICAjIFRyZW5kIGFuYWx5c2lzIGVuaGFuY2VtZW50cwogICAgdXNlX2FkeDogYm9vbCA9IFRydWUKICAgIGFkeF9wZXJpb2Q6IGludCA9IDE0CiAgICBhZHhfdHJlbmRfdGhyZXNob2xkOiBmbG9hdCA9IDI1LjAKICAgIHVzZV9tYWNkOiBib29sID0gVHJ1ZQogICAgbWFjZF9mYXN0OiBpbnQgPSAxMgogICAgbWFjZF9zbG93OiBpbnQgPSAyNgogICAgbWFjZF9zaWduYWw6IGludCA9IDkKICAgIAogICAgIyBWb2x1bWUgYW5hbHlzaXMKICAgIHVzZV92b2x1bWVfY29uZmlybWF0aW9uOiBib29sID0gVHJ1ZQogICAgdm9sdW1lX3N1cmdlX3RocmVzaG9sZDogZmxvYXQgPSAxLjUKICAgIHZvbHVtZV9sb29rYmFja19wZXJpb2Q6IGludCA9IDIwCiAgICAKICAgICMgTWFya2V0IHJlZ2ltZSBkZXRlY3Rpb24KICAgIGVuYWJsZV9yZWdpbWVfZGV0ZWN0aW9uOiBib29sID0gVHJ1ZQogICAgcmVnaW1lX3ZvbGF0aWxpdHlfdGhyZXNob2xkOiBmbG9hdCA9IDAuMDIKICAgIHJlZ2ltZV9hZHhfdGhyZXNob2xkOiBmbG9hdCA9IDI1LjAKICAgIAogICAgIyBTdXBwb3J0L1Jlc2lzdGFuY2UgbGV2ZWxzCiAgICBlbmFibGVfbGV2ZWxfZGV0ZWN0aW9uOiBib29sID0gVHJ1ZQogICAgcGl2b3RfbG9va2JhY2tfcGVyaW9kOiBpbnQgPSA1MAogICAgcHN5Y2hvbG9naWNhbF9sZXZlbF9yb3VuZGluZzogaW50ID0gMTAwICAjIEZvciByb3VuZCBudW1iZXIgZGV0ZWN0aW9uCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyBQcmVkaWN0aW9uICYgQUkgQ29uZmlndXJhdGlvbgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpAZGF0YWNsYXNzKGZyb3plbj1UcnVlKQpjbGFzcyBQcmVkaWN0aW9uQ29uZmlnOgogICAgIyBQcmljZSBwcmVkaWN0aW9uCiAgICBlbmFibGVfcHJpY2VfcHJlZGljdGlvbjogYm9vbCA9IEZhbHNlICAjIE9wdC1pbiBmZWF0dXJlCiAgICBwcmVkaWN0aW9uX2xvb2thaGVhZF9iYXJzOiBpbnQgPSA1CiAgICBwcmVkaWN0aW9uX2NvbmZpZGVuY2VfdGhyZXNob2xkOiBmbG9hdCA9IDAuNgogICAgCiAgICAjIFBhdHRlcm4gcmVjb2duaXRpb24KICAgIGVuYWJsZV9wYXR0ZXJuX2RldGVjdGlvbjogYm9vbCA9IFRydWUKICAgIHBhdHRlcm5fY29uZmlkZW5jZV90aHJlc2hvbGQ6IGZsb2F0ID0gMC43CiAgICBwYXR0ZXJuX2xvb2tiYWNrX3BlcmlvZDogaW50ID0gMTAwCiAgICAKICAgICMgVm9sYXRpbGl0eSBmb3JlY2FzdGluZwogICAgZW5hYmxlX3ZvbGF0aWxpdHlfZm9yZWNhc3Rpbmc6IGJvb2wgPSBUcnVlCiAgICB2b2xhdGlsaXR5X2ZvcmVjYXN0X2hvcml6b246IGludCA9IDEwCiAgICBnYXJjaF9tb2RlbF9lbmFibGVkOiBib29sID0gRmFsc2UgICMgUmVxdWlyZXMgYWRkaXRpb25hbCBkZXBlbmRlbmNpZXMKICAgIAogICAgIyBFbnNlbWJsZSBBSQogICAgZW5hYmxlX2Vuc2VtYmxlX2FpOiBib29sID0gRmFsc2UgICMgT3B0LWluIGZlYXR1cmUKICAgIGFpX3dlaWdodF9wcmltYXJ5OiBmbG9hdCA9IDAuNwogICAgYWlfd2VpZ2h0X3NlY29uZGFyeTogZmxvYXQgPSAwLjMKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIFNlbGYtSGVhbGluZyAmIEF1dG9tYXRpb24gQ29uZmlndXJhdGlvbgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpAZGF0YWNsYXNzKGZyb3plbj1UcnVlKQpjbGFzcyBTZWxmSGVhbGluZ0NvbmZpZzoKICAgIGVuYWJsZV9zZWxmX2hlYWxpbmc6IGJvb2wgPSBUcnVlCiAgICBtYXhfcmVjb3ZlcnlfYXR0ZW1wdHM6IGludCA9IDMKICAgIHJlY292ZXJ5X2JhY2tvZmZfYmFzZTogZmxvYXQgPSA1LjAKICAgIHJlY292ZXJ5X2JhY2tvZmZfbWF4OiBmbG9hdCA9IDYwLjAKICAgIAogICAgIyBEYXRhIHF1YWxpdHkgbW9uaXRvcmluZwogICAgZW5hYmxlX2RhdGFfcXVhbGl0eV9jaGVja3M6IGJvb2wgPSBUcnVlCiAgICBtYXhfbmFuX3JhdGlvOiBmbG9hdCA9IDAuMQogICAgbWluX2RhdGFfcG9pbnRzOiBpbnQgPSA1MAogICAgCiAgICAjIENvbm5lY3Rpb24gaGVhbHRoIG1vbml0b3JpbmcKICAgIGNvbm5lY3Rpb25fdGltZW91dF9zZWNvbmRzOiBpbnQgPSAzMAogICAgbWF4X2Nvbm5lY3Rpb25fZmFpbHVyZXM6IGludCA9IDUKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIEFkYXB0aXZlIE9wdGltaXphdGlvbiBDb25maWd1cmF0aW9uCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkBkYXRhY2xhc3MoZnJvemVuPVRydWUpCmNsYXNzIEFkYXB0aXZlQ29uZmlnOgogICAgZW5hYmxlX2FkYXB0aXZlX3BhcmFtZXRlcnM6IGJvb2wgPSBUcnVlCiAgICBvcHRpbWl6YXRpb25fd2luZG93X2RheXM6IGludCA9IDcKICAgIG1pbl90cmFkZXNfZm9yX29wdGltaXphdGlvbjogaW50ID0gMTAKICAgIAogICAgIyBQZXJmb3JtYW5jZSB0aHJlc2hvbGRzIGZvciBwYXJhbWV0ZXIgYWRqdXN0bWVudAogICAgd2luX3JhdGVfbG93ZXJfdGhyZXNob2xkOiBmbG9hdCA9IDAuNAogICAgd2luX3JhdGVfdXBwZXJfdGhyZXNob2xkOiBmbG9hdCA9IDAuNgogICAgcHJvZml0X2ZhY3Rvcl90aHJlc2hvbGQ6IGZsb2F0ID0gMS41CiAgICAKICAgICMgUGFyYW1ldGVyIGFkanVzdG1lbnQgcmFuZ2VzCiAgICByc2lfYWRqdXN0bWVudF9yYW5nZTogZmxvYXQgPSA1LjAKICAgIHNlbnRpbWVudF9hZGp1c3RtZW50X3JhbmdlOiBmbG9hdCA9IDAuMgogICAgcmlza19hZGp1c3RtZW50X3JhbmdlOiBmbG9hdCA9IDAuNQoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMgQWR2YW5jZWQgUmlzayBNYW5hZ2VtZW50IENvbmZpZ3VyYXRpb24KIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSkKY2xhc3MgQWR2YW5jZWRSaXNrQ29uZmlnOgogICAgIyBQb3J0Zm9saW8tbGV2ZWwgY29udHJvbHMKICAgIGVuYWJsZV9wb3J0Zm9saW9fcmlzazogYm9vbCA9IFRydWUKICAgIG1heF9wb3J0Zm9saW9fZXhwb3N1cmVfcGN0OiBmbG9hdCA9IDEwLjAKICAgIG1heF9jb3JyZWxhdGlvbl9leHBvc3VyZV9wY3Q6IGZsb2F0ID0gNS4wCiAgICBtYXhfY3VycmVuY3lfY29uY2VudHJhdGlvbl9wY3Q6IGZsb2F0ID0gNy4wCiAgICAKICAgICMgRHluYW1pYyB2b2xhdGlsaXR5LWJhc2VkIHNpemluZwogICAgZW5hYmxlX3ZvbGF0aWxpdHlfYWRqdXN0ZWRfc2l6aW5nOiBib29sID0gVHJ1ZQogICAgdm9sYXRpbGl0eV9sb29rYmFja19wZXJpb2Q6IGludCA9IDUwCiAgICBoaWdoX3ZvbGF0aWxpdHlfbXVsdGlwbGllcjogZmxvYXQgPSAwLjUKICAgIGxvd192b2xhdGlsaXR5X211bHRpcGxpZXI6IGZsb2F0ID0gMS4yCiAgICB2b2xhdGlsaXR5X3JhdGlvX2hpZ2g6IGZsb2F0ID0gMS41CiAgICB2b2xhdGlsaXR5X3JhdGlvX2xvdzogZmxvYXQgPSAwLjUKCgojIFNpbmdsZSBwb2ludCBvZiB0cnV0aCBldmVyeSBvdGhlciBtb2R1bGUgaW1wb3J0cy4KQ1JFREVOVElBTFMgPSBNVDVDcmVkZW50aWFscygpCk5FV1NfQ09ORklHID0gTmV3c0FQSUNvbmZpZygpCkFJID0gQUlDb25maWcoKQpERVBMT1lNRU5UID0gRGVwbG95bWVudENvbmZpZygpCklORElDQVRPUlMgPSBJbmRpY2F0b3JDb25maWcoKQpSSVNLID0gUmlza0NvbmZpZygpCkVYRUNVVElPTiA9IEV4ZWN1dGlvbkNvbmZpZygpClNUUkFURUdZID0gU3RyYXRlZ3lDb25maWcoKQpMT0dHSU5HID0gTG9nZ2luZ0NvbmZpZygpCkFEVkFOQ0VEX0FOQUxZU0lTID0gQWR2YW5jZWRBbmFseXNpc0NvbmZpZygpClBSRURJQ1RJT04gPSBQcmVkaWN0aW9uQ29uZmlnKCkKU0VMRl9IRUFMSU5HID0gU2VsZkhlYWxpbmdDb25maWcoKQpBREFQVElWRSA9IEFkYXB0aXZlQ29uZmlnKCkKQURWQU5DRURfUklTSyA9IEFkdmFuY2VkUmlza0NvbmZpZygpCgojIE1heCByZXRyaWVzIC8gYmFja29mZiBjZWlsaW5nIGZvciBjb25uZWN0aW9uLWxldmVsIG9wZXJhdGlvbnMuCk1BWF9SRUNPTk5FQ1RfQVRURU1QVFMgPSA1CklOSVRJQUxfQkFDS09GRl9TRUNPTkRTID0gMi4wCk1BWF9CQUNLT0ZGX1NFQ09ORFMgPSAzMC4wCg==
+"""
+config.py
+---------
+Central configuration for the trading bot. Nothing in here talks to MT5 or
+the network — it's pure settings, so every other module can import it safely
+without side effects.
+
+SECURITY NOTE: Do not commit real credentials to version control. In
+production, load MT5_LOGIN / MT5_PASSWORD / MT5_SERVER and any news-API
+keys from environment variables (os.environ) or a secrets manager instead
+of hardcoding them here. The placeholders below are for local dev only.
+"""
+
+from __future__ import annotations
+
+import math
+import os
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Final
+
+from dotenv import load_dotenv
+
+# Load only this service's local file, never overwrite explicitly supplied
+# deployment secrets, and keep .env out of version control.
+load_dotenv(Path(__file__).with_name(".env"), override=False)
+
+
+def _env_int(name: str, default: int) -> int:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    try:
+        return int(value)
+    except ValueError as exc:
+        raise ValueError(f"{name} must be an integer") from exc
+
+
+def _env_float(name: str, default: float) -> float:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    try:
+        return float(value)
+    except ValueError as exc:
+        raise ValueError(f"{name} must be a number") from exc
+
+
+# -------------------------------------------------------------
+# MT5 terminal / account credentials
+# -------------------------------------------------------------
+@dataclass(frozen=True)
+class MT5Credentials:
+    login: int | None = None
+    password: str | None = None
+    server: str | None = None
+
+    # Full path to terminal64.exe. Leave None to let MT5 auto-detect an
+    # already-running terminal instance instead of launching a new one.
+    terminal_path: str | None = os.getenv("MT5_TERMINAL_PATH") or None
+    # Milliseconds to wait for the terminal to respond before giving up.
+    timeout_ms: int = 60_000
+
+    def is_configured(self) -> bool:
+        return bool(self.login and self.password and self.server)
+
+    def validate_live_trade_config(self) -> None:
+        missing = []
+        if not self.login:
+            missing.append("MT5_LOGIN")
+        if not self.password:
+            missing.append("MT5_PASSWORD")
+        if not self.server:
+            missing.append("MT5_SERVER")
+        if missing:
+            raise ValueError("Missing MT5 live-trading configuration: " + ", ".join(missing))
+
+
+# -------------------------------------------------------
+# News / sentiment provider (placeholder — swap in a real API key + client)
+# -------------------------------------------------------------
+@dataclass(frozen=True)
+class NewsAPIConfig:
+    api_key: str = os.getenv("NEWS_API_KEY", "")
+    news_api_url: str = os.getenv("NEWS_API_URL", "https://newsapi.org/v2/everything")
+    api_timeout_seconds: int = 10
+    cache_seconds: int = 60
+    yahoo_rss_url: str = os.getenv(
+        "YAHOO_FINANCE_RSS_URL",
+        "https://feeds.finance.yahoo.com/rss/2.0/headline?s=EURUSD%3DX%2CGBPUSD%3DX%2CGC%3DF&region=US&lang=en-US",
+    )
+
+    # How long before/after a high-impact release the bot refuses new trades
+    blackout_minutes_before: int = 30
+    blackout_minutes_after: int = 30
+
+    # Events considered "high impact" for blackout purposes
+    high_impact_events: tuple[str, ...] = (
+        "CPI",
+        "Interest Rate Decision",
+        "Non-Farm Payrolls",
+        "FOMC Statement",
+        "GDP",
+    )
+
+
+@dataclass(frozen=True)
+class AIConfig:
+    provider: str = os.getenv("AI_PROVIDER", "openai").lower()
+    model: str = os.getenv("OPENAI_MODEL", "gpt-4o")
+    api_key: str = os.getenv("OPENAI_API_KEY", "")
+    timeout_seconds: float = float(os.getenv("OPENAI_TIMEOUT_SECONDS", "30"))
+
+    def validate(self) -> None:
+        if self.provider != "openai":
+            raise ValueError("Only AI_PROVIDER=openai is supported by this deployment.")
+        if not self.api_key:
+            raise ValueError("Missing OPENAI_API_KEY. Set it in server/.env or the environment.")
+        if self.timeout_seconds <= 0:
+            raise ValueError("OPENAI_TIMEOUT_SECONDS must be greater than zero.")
+
+
+@dataclass(frozen=True)
+class DeploymentConfig:
+    api_host: str = os.getenv("API_HOST", "127.0.0.1")
+    api_port: int = _env_int("API_PORT", 8000)
+    cors_origins: tuple[str, ...] = tuple(
+        origin.strip()
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173",
+        ).split(",")
+        if origin.strip()
+    )
+    max_candle_age_seconds: int = _env_int("MAX_CANDLE_AGE_SECONDS", 7200)
+
+    def validate(self) -> None:
+        from urllib.parse import urlparse
+        if not self.api_host:
+            raise ValueError("API_HOST must not be empty")
+        if not 1 <= self.api_port <= 65535:
+            raise ValueError("API_PORT must be between 1 and 65535")
+        if self.max_candle_age_seconds <= 0:
+            raise ValueError("MAX_CANDLE_AGE_SECONDS must be greater than zero")
+        if os.getenv("TRADING_MODE", "paper").lower() == "live" and not os.getenv("API_TOKEN"):
+            raise ValueError("API_TOKEN is required for live trading")
+        if not self.cors_origins or any(origin == "*" or urlparse(origin).scheme not in {"http", "https"} or not urlparse(origin).netloc for origin in self.cors_origins):
+            raise ValueError("CORS_ORIGINS must contain absolute non-wildcard URLs")
+
+
+# -----------------------------------------------
+# Symbols & timeframes
+# -----------------------------------------------
+@dataclass(frozen=True)
+class SymbolConfig:
+    name: str
+    # Min distance ( in points ) the broker enforces btwn price and SL/TP. Fetched at runtime from symbol_info when possible; this is a conservative fallback
+    fallback_stops_level_points: int = 100
+    pip_value_per_lot: float = 10.0
+
+
+TRADING_SYMBOLS: Final[list[SymbolConfig]] = [
+    SymbolConfig(name="EURUSD"),
+    SymbolConfig(name="GBPUSD"),
+    SymbolConfig(name="XAUUSD", fallback_stops_level_points=200, pip_value_per_lot=1.0),
+]
+
+
+# MT5 timeframe constants are ints from the MetaTrader5 module; we reference
+# them by name here and resolve the actual mt5.TIMEFRAME_* value inside
+# data_provider.py so config.py has zero dependency on the MT5 SDK.
+TIMEFRAME_TRIGGER: Final[str] = "H1"  # entry trigger timeframe
+TIMEFRAME_BIAS: Final[str] = "H4"  # higher-timeframe directional bias
+CANDLES_TO_FETCH: Final[int] = 400  # enough history for EMA200 to warm up
+
+
+# -----------------------------------------------------------
+# Indicator parameters
+# -------------------------------------------------------
+@dataclass(frozen=True)
+class IndicatorConfig:
+    ema_fast: int = 50
+    ema_slow: int = 200
+    rsi_period: int = 14
+    rsi_overbought: float = 70.0
+    rsi_oversold: float = 30.0
+    atr_period: int = 14
+
+
+# --------------------------------------------------------
+# Risk management
+# ----------------------------------------------------------
+@dataclass(frozen=True)
+class RiskConfig:
+    risk_per_trade_pct: float = _env_float("RISK_PER_TRADE_PCT", 1.5)  # % of equity risked per trade
+    max_daily_loss_pct: float = _env_float("MAX_DAILY_LOSS_PCT", 4.0)  # halt new entries for the rest of the day past this drawdown
+    # This is intentionally independent of the daily-loss guard.  It is a
+    # high-water-mark circuit breaker and remains latched until manually reset.
+    max_drawdown_from_peak_pct: float = _env_float("MAX_DRAWDOWN_FROM_PEAK_PCT", 8.0)
+    max_trades_per_day: int = _env_int("MAX_TRADES_PER_DAY", 6)
+    correlation_threshold: float = _env_float("CORRELATION_THRESHOLD", 0.70)
+    atr_sl_multiplier: float = _env_float("ATR_SL_MULTIPLIER", 1.5)  # SL = entry -/+ (ATR * multiplier)
+    atr_tp_multiplier: float = _env_float("ATR_TP_MULTIPLIER", 3.0)  # TP = entry -/+ (ATR * multiplier) -> 2:1 default
+    trailing_trigger_rr: float = _env_float("TRAILING_TRIGGER_RR", 1.0)  # start trailing once trade hits 1:1 RR
+    trailing_atr_multiplier: float = _env_float("TRAILING_ATR_MULTIPLIER", 1.0)  # trailing distance once triggered
+    max_concurrent_positions: int = _env_int("MAX_CONCURRENT_POSITIONS", 3)
+    magic_number: int = 990011
+    deviation_points: int = _env_int("DEVIATION_POINTS", 20)  # max slippage tolerance
+
+    def validate(self) -> None:
+        float_settings = {
+            "RISK_PER_TRADE_PCT": self.risk_per_trade_pct,
+            "MAX_DAILY_LOSS_PCT": self.max_daily_loss_pct,
+            "MAX_DRAWDOWN_FROM_PEAK_PCT": self.max_drawdown_from_peak_pct,
+            "CORRELATION_THRESHOLD": self.correlation_threshold,
+            "ATR_SL_MULTIPLIER": self.atr_sl_multiplier,
+            "ATR_TP_MULTIPLIER": self.atr_tp_multiplier,
+            "TRAILING_TRIGGER_RR": self.trailing_trigger_rr,
+            "TRAILING_ATR_MULTIPLIER": self.trailing_atr_multiplier,
+        }
+        for name, value in float_settings.items():
+            if not math.isfinite(value):
+                raise ValueError(f"{name} must be finite")
+        percentages = {
+            "RISK_PER_TRADE_PCT": self.risk_per_trade_pct,
+            "MAX_DAILY_LOSS_PCT": self.max_daily_loss_pct,
+            "MAX_DRAWDOWN_FROM_PEAK_PCT": self.max_drawdown_from_peak_pct,
+        }
+        for name, value in percentages.items():
+            if not 0.0 < value <= 100.0:
+                raise ValueError(f"{name} must be greater than 0 and at most 100")
+        if self.max_trades_per_day < 1:
+            raise ValueError("MAX_TRADES_PER_DAY must be at least 1")
+        if self.max_concurrent_positions < 1:
+            raise ValueError("MAX_CONCURRENT_POSITIONS must be at least 1")
+        if not 0.0 <= self.correlation_threshold <= 1.0:
+            raise ValueError("CORRELATION_THRESHOLD must be between 0 and 1")
+        for name, value in (
+            ("ATR_SL_MULTIPLIER", self.atr_sl_multiplier),
+            ("ATR_TP_MULTIPLIER", self.atr_tp_multiplier),
+        ):
+            if value <= 0.0:
+                raise ValueError(f"{name} must be greater than 0")
+        if self.trailing_trigger_rr < 0.0 or self.trailing_atr_multiplier < 0.0:
+            raise ValueError("Trailing-stop multipliers must not be negative")
+        if self.deviation_points < 0:
+            raise ValueError("DEVIATION_POINTS must not be negative")
+
+
+@dataclass(frozen=True)
+class ExecutionConfig:
+    """Live order submission is opt-in; paper is the safe deployment default."""
+
+    mode: str = os.getenv("TRADING_MODE", "paper").lower()
+
+    def validate(self) -> None:
+        if self.mode not in {"paper", "live"}:
+            raise ValueError("TRADING_MODE must be either 'paper' or 'live'.")
+
+    @property
+    def live_orders_enabled(self) -> bool:
+        return self.mode == "live"
+
+
+# Correlations used as a conservative pre-trade exposure guard.  Keep this
+# explicit (rather than pretending a short price history is a reliable
+# estimate) and extend it when adding tradable symbols.
+SYMBOL_CORRELATIONS: Final[dict[tuple[str, str], float]] = {
+    ("EURUSD", "GBPUSD"): 0.85,
+    ("EURUSD", "XAUUSD"): -0.3,
+    ("GBPUSD", "XAUUSD"): -0.2,
+}
+
+
+# ----------------------------------------------------------
+# Strategy / confluence thresholds
+# ------------------------------------------------------------
+@dataclass(frozen=True)
+class StrategyConfig:
+    require_sentiment_feed: bool = os.getenv("REQUIRE_SENTIMENT_FEED", "true").lower() == "true"
+    sentiment_bullish_threshold: float = 0.5
+    sentiment_bearish_threshold: float = -0.5
+    loop_poll_seconds: int = 15  # how often the main loop checks for a new closed candle
+
+
+# ---------------------------------------------------------------
+# Logging
+# ------------------------------------------------------------
+@dataclass(frozen=True)
+class LoggingConfig:
+    log_file: str = os.getenv("LOG_FILE", "trading_bot.log")
+    level: str = os.getenv("LOG_LEVEL", "INFO")
+
+
+# ---------------------------------------------------------------
+# Advanced Analysis Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class AdvancedAnalysisConfig:
+    # Trend analysis enhancements
+    use_adx: bool = True
+    adx_period: int = 14
+    adx_trend_threshold: float = 25.0
+    use_macd: bool = True
+    macd_fast: int = 12
+    macd_slow: int = 26
+    macd_signal: int = 9
+    
+    # Volume analysis
+    use_volume_confirmation: bool = True
+    volume_surge_threshold: float = 1.5
+    volume_lookback_period: int = 20
+    
+    # Market regime detection
+    enable_regime_detection: bool = True
+    regime_volatility_threshold: float = 0.02
+    regime_adx_threshold: float = 25.0
+    
+    # Support/Resistance levels
+    enable_level_detection: bool = True
+    pivot_lookback_period: int = 50
+    psychological_level_rounding: int = 100  # For round number detection
+
+
+# ---------------------------------------------------------------
+# Prediction & AI Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class PredictionConfig:
+    # Price prediction
+    enable_price_prediction: bool = False  # Opt-in feature
+    prediction_lookahead_bars: int = 5
+    prediction_confidence_threshold: float = 0.6
+    
+    # Pattern recognition
+    enable_pattern_detection: bool = True
+    pattern_confidence_threshold: float = 0.7
+    pattern_lookback_period: int = 100
+    
+    # Volatility forecasting
+    enable_volatility_forecasting: bool = True
+    volatility_forecast_horizon: int = 10
+    garch_model_enabled: bool = False  # Requires additional dependencies
+    
+    # Ensemble AI
+    enable_ensemble_ai: bool = False  # Opt-in feature
+    ai_weight_primary: float = 0.7
+    ai_weight_secondary: float = 0.3
+
+
+# ---------------------------------------------------------------
+# Self-Healing & Automation Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class SelfHealingConfig:
+    enable_self_healing: bool = True
+    max_recovery_attempts: int = 3
+    recovery_backoff_base: float = 5.0
+    recovery_backoff_max: float = 60.0
+    
+    # Data quality monitoring
+    enable_data_quality_checks: bool = True
+    max_nan_ratio: float = 0.1
+    min_data_points: int = 50
+    
+    # Connection health monitoring
+    connection_timeout_seconds: int = 30
+    max_connection_failures: int = 5
+
+
+# ---------------------------------------------------------------
+# Adaptive Optimization Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class AdaptiveConfig:
+    enable_adaptive_parameters: bool = True
+    optimization_window_days: int = 7
+    min_trades_for_optimization: int = 10
+    
+    # Performance thresholds for parameter adjustment
+    win_rate_lower_threshold: float = 0.4
+    win_rate_upper_threshold: float = 0.6
+    profit_factor_threshold: float = 1.5
+    
+    # Parameter adjustment ranges
+    rsi_adjustment_range: float = 5.0
+    sentiment_adjustment_range: float = 0.2
+    risk_adjustment_range: float = 0.5
+
+
+# ---------------------------------------------------------------
+# Advanced Risk Management Configuration
+# ---------------------------------------------------------------
+@dataclass(frozen=True)
+class AdvancedRiskConfig:
+    # Portfolio-level controls
+    enable_portfolio_risk: bool = True
+    max_portfolio_exposure_pct: float = 10.0
+    max_correlation_exposure_pct: float = 5.0
+    max_currency_concentration_pct: float = 7.0
+    
+    # Dynamic volatility-based sizing
+    enable_volatility_adjusted_sizing: bool = True
+    volatility_lookback_period: int = 50
+    high_volatility_multiplier: float = 0.5
+    low_volatility_multiplier: float = 1.2
+    volatility_ratio_high: float = 1.5
+    volatility_ratio_low: float = 0.5
+
+
+# Single point of truth every other module imports.
+CREDENTIALS = MT5Credentials()
+NEWS_CONFIG = NewsAPIConfig()
+AI = AIConfig()
+DEPLOYMENT = DeploymentConfig()
+INDICATORS = IndicatorConfig()
+RISK = RiskConfig()
+EXECUTION = ExecutionConfig()
+STRATEGY = StrategyConfig()
+LOGGING = LoggingConfig()
+ADVANCED_ANALYSIS = AdvancedAnalysisConfig()
+PREDICTION = PredictionConfig()
+SELF_HEALING = SelfHealingConfig()
+ADAPTIVE = AdaptiveConfig()
+ADVANCED_RISK = AdvancedRiskConfig()
+
+# Max retries / backoff ceiling for connection-level operations.
+MAX_RECONNECT_ATTEMPTS = 5
+INITIAL_BACKOFF_SECONDS = 2.0
+MAX_BACKOFF_SECONDS = 30.0

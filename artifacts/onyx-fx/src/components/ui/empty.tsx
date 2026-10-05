@@ -1,1 +1,103 @@
-aW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CmltcG9ydCB7IGN2YSwgdHlwZSBWYXJpYW50UHJvcHMgfSBmcm9tICdjbGFzcy12YXJpYW5jZS1hdXRob3JpdHknOwoKZnVuY3Rpb24gRW1wdHkoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0iZW1wdHkiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2ZsZXggbWluLXctMCBmbGV4LTEgZmxleC1jb2wgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIGdhcC02IHRleHQtYmFsYW5jZSByb3VuZGVkLWxnIGJvcmRlci1kYXNoZWQgcC02IHRleHQtY2VudGVyIG1kOnAtMTInLAogICAgICAgIGNsYXNzTmFtZSwKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBFbXB0eUhlYWRlcih7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2Rpdic+KSB7CiAgcmV0dXJuICgKICAgIDxkaXYKICAgICAgZGF0YS1zbG90PSJlbXB0eS1oZWFkZXIiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2ZsZXggbWF4LXctc20gZmxleC1jb2wgaXRlbXMtY2VudGVyIGdhcC0yIHRleHQtY2VudGVyJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKY29uc3QgZW1wdHlNZWRpYVZhcmlhbnRzID0gY3ZhKAogICdtYi0yIGZsZXggc2hyaW5rLTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIFsmX3N2Z106cG9pbnRlci1ldmVudHMtbm9uZSBbJl9zdmddOnNocmluay0wJywKICB7CiAgICB2YXJpYW50czogewogICAgICB2YXJpYW50OiB7CiAgICAgICAgZGVmYXVsdDogJ2JnLXRyYW5zcGFyZW50JywKICAgICAgICBpY29uOiAiYmctbXV0ZWQgdGV4dC1mb3JlZ3JvdW5kIGZsZXggc2l6ZS0xMCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1sZyBbJl9zdmc6bm90KFtjbGFzcyo9J3NpemUtJ10pXTpzaXplLTYiLAogICAgICB9LAogICAgfSwKICAgIGRlZmF1bHRWYXJpYW50czogewogICAgICB2YXJpYW50OiAnZGVmYXVsdCcsCiAgICB9LAogIH0sCik7CgpmdW5jdGlvbiBFbXB0eU1lZGlhKHsKICBjbGFzc05hbWUsCiAgdmFyaWFudCA9ICdkZWZhdWx0JywKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4gJiBWYXJpYW50UHJvcHM8dHlwZW9mIGVtcHR5TWVkaWFWYXJpYW50cz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9ImVtcHR5LWljb24iCiAgICAgIGRhdGEtdmFyaWFudD17dmFyaWFudH0KICAgICAgY2xhc3NOYW1lPXtjbihlbXB0eU1lZGlhVmFyaWFudHMoeyB2YXJpYW50LCBjbGFzc05hbWUgfSkpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIEVtcHR5VGl0bGUoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0iZW1wdHktdGl0bGUiCiAgICAgIGNsYXNzTmFtZT17Y24oJ3RleHQtbGcgZm9udC1tZWRpdW0gdHJhY2tpbmctdGlnaHQnLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIEVtcHR5RGVzY3JpcHRpb24oeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdwJz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9ImVtcHR5LWRlc2NyaXB0aW9uIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICd0ZXh0LW11dGVkLWZvcmVncm91bmQgWyY+YTpob3Zlcl06dGV4dC1wcmltYXJ5IHRleHQtc20vcmVsYXhlZCBbJj5hXTp1bmRlcmxpbmUgWyY+YV06dW5kZXJsaW5lLW9mZnNldC00JywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gRW1wdHlDb250ZW50KHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9ImVtcHR5LWNvbnRlbnQiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2ZsZXggdy1mdWxsIG1pbi13LTAgbWF4LXctc20gZmxleC1jb2wgaXRlbXMtY2VudGVyIGdhcC00IHRleHQtYmFsYW5jZSB0ZXh0LXNtJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZXhwb3J0IHsKICBFbXB0eSwKICBFbXB0eUhlYWRlciwKICBFbXB0eVRpdGxlLAogIEVtcHR5RGVzY3JpcHRpb24sCiAgRW1wdHlDb250ZW50LAogIEVtcHR5TWVkaWEsCn07Cg==
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+function Empty({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="empty"
+      className={cn(
+        'flex min-w-0 flex-1 flex-col items-center justify-center gap-6 text-balance rounded-lg border-dashed p-6 text-center md:p-12',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function EmptyHeader({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="empty-header"
+      className={cn(
+        'flex max-w-sm flex-col items-center gap-2 text-center',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+const emptyMediaVariants = cva(
+  'mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0',
+  {
+    variants: {
+      variant: {
+        default: 'bg-transparent',
+        icon: "bg-muted text-foreground flex size-10 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-6",
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+);
+
+function EmptyMedia({
+  className,
+  variant = 'default',
+  ...props
+}: React.ComponentProps<'div'> & VariantProps<typeof emptyMediaVariants>) {
+  return (
+    <div
+      data-slot="empty-icon"
+      data-variant={variant}
+      className={cn(emptyMediaVariants({ variant, className }))}
+      {...props}
+    />
+  );
+}
+
+function EmptyTitle({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="empty-title"
+      className={cn('text-lg font-medium tracking-tight', className)}
+      {...props}
+    />
+  );
+}
+
+function EmptyDescription({ className, ...props }: React.ComponentProps<'p'>) {
+  return (
+    <div
+      data-slot="empty-description"
+      className={cn(
+        'text-muted-foreground [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function EmptyContent({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="empty-content"
+      className={cn(
+        'flex w-full min-w-0 max-w-sm flex-col items-center gap-4 text-balance text-sm',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export {
+  Empty,
+  EmptyHeader,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+  EmptyMedia,
+};

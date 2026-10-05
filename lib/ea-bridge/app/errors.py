@@ -1,1 +1,47 @@
-ZnJvbSB0eXBpbmcgaW1wb3J0IE5vUmV0dXJuCgpmcm9tIGZhc3RhcGkgaW1wb3J0IFJlcXVlc3QKZnJvbSBmYXN0YXBpLmV4Y2VwdGlvbnMgaW1wb3J0IFJlcXVlc3RWYWxpZGF0aW9uRXJyb3IKZnJvbSBmYXN0YXBpLnJlc3BvbnNlcyBpbXBvcnQgSlNPTlJlc3BvbnNlCmZyb20gc3RhcmxldHRlIGltcG9ydCBzdGF0dXMKCmZyb20gYXBwLmNvbnRyYWN0cyBpbXBvcnQgRXJyb3JSZXNwb25zZQoKCmNsYXNzIEFQSUVycm9yKEV4Y2VwdGlvbik6CiAgICBkZWYgX19pbml0X18oCiAgICAgICAgc2VsZiwKICAgICAgICBjb2RlOiBzdHIsCiAgICAgICAgbWVzc2FnZTogc3RyLAogICAgICAgIHN0YXR1c19jb2RlOiBpbnQgPSBzdGF0dXMuSFRUUF80MDBfQkFEX1JFUVVFU1QsCiAgICAgICAgZGV0YWlsczogZGljdFtzdHIsIHN0ciB8IGludCB8IGZsb2F0IHwgYm9vbCB8IE5vbmVdIHwgTm9uZSA9IE5vbmUsCiAgICApIC0+IE5vbmU6CiAgICAgICAgc2VsZi5jb2RlID0gY29kZQogICAgICAgIHNlbGYubWVzc2FnZSA9IG1lc3NhZ2UKICAgICAgICBzZWxmLnN0YXR1c19jb2RlID0gc3RhdHVzX2NvZGUKICAgICAgICBzZWxmLmRldGFpbHMgPSBkZXRhaWxzCiAgICAgICAgc3VwZXIoKS5fX2luaXRfXyhtZXNzYWdlKQoKCmFzeW5jIGRlZiBhcGlfZXJyb3JfaGFuZGxlcihfcmVxdWVzdDogUmVxdWVzdCwgZXhjOiBBUElFcnJvcikgLT4gSlNPTlJlc3BvbnNlOgogICAgcGF5bG9hZCA9IEVycm9yUmVzcG9uc2UoY29kZT1leGMuY29kZSwgbWVzc2FnZT1leGMubWVzc2FnZSwgZGV0YWlscz1leGMuZGV0YWlscykKICAgIHJldHVybiBKU09OUmVzcG9uc2Uoc3RhdHVzX2NvZGU9ZXhjLnN0YXR1c19jb2RlLCBjb250ZW50PXBheWxvYWQubW9kZWxfZHVtcChleGNsdWRlX25vbmU9VHJ1ZSkpCgoKYXN5bmMgZGVmIHZhbGlkYXRpb25fZXJyb3JfaGFuZGxlcigKICAgIF9yZXF1ZXN0OiBSZXF1ZXN0LCBleGM6IFJlcXVlc3RWYWxpZGF0aW9uRXJyb3IKKSAtPiBKU09OUmVzcG9uc2U6CiAgICBmaWVsZHMgPSBbIi4iLmpvaW4oc3RyKHBhcnQpIGZvciBwYXJ0IGluIGVycm9yWyJsb2MiXSkgZm9yIGVycm9yIGluIGV4Yy5lcnJvcnMoKV0KICAgIHBheWxvYWQgPSBFcnJvclJlc3BvbnNlKAogICAgICAgIGNvZGU9ImludmFsaWRfcmVxdWVzdCIsCiAgICAgICAgbWVzc2FnZT0iUmVxdWVzdCB2YWxpZGF0aW9uIGZhaWxlZCIsCiAgICAgICAgZGV0YWlscz17ImZpZWxkcyI6ICIsICIuam9pbihmaWVsZHMpfSwKICAgICkKICAgIHJldHVybiBKU09OUmVzcG9uc2UoCiAgICAgICAgc3RhdHVzX2NvZGU9c3RhdHVzLkhUVFBfNDIyX1VOUFJPQ0VTU0FCTEVfRU5USVRZLAogICAgICAgIGNvbnRlbnQ9cGF5bG9hZC5tb2RlbF9kdW1wKGV4Y2x1ZGVfbm9uZT1UcnVlKSwKICAgICkKCgpkZWYgdW5hdXRob3JpemVkKCkgLT4gTm9SZXR1cm46CiAgICByYWlzZSBBUElFcnJvcigidW5hdXRob3JpemVkIiwgIkF1dGhlbnRpY2F0aW9uIHJlcXVpcmVkIiwgc3RhdHVzLkhUVFBfNDAxX1VOQVVUSE9SSVpFRCk=
+from typing import NoReturn
+
+from fastapi import Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from starlette import status
+
+from app.contracts import ErrorResponse
+
+
+class APIError(Exception):
+    def __init__(
+        self,
+        code: str,
+        message: str,
+        status_code: int = status.HTTP_400_BAD_REQUEST,
+        details: dict[str, str | int | float | bool | None] | None = None,
+    ) -> None:
+        self.code = code
+        self.message = message
+        self.status_code = status_code
+        self.details = details
+        super().__init__(message)
+
+
+async def api_error_handler(_request: Request, exc: APIError) -> JSONResponse:
+    payload = ErrorResponse(code=exc.code, message=exc.message, details=exc.details)
+    return JSONResponse(status_code=exc.status_code, content=payload.model_dump(exclude_none=True))
+
+
+async def validation_error_handler(
+    _request: Request, exc: RequestValidationError
+) -> JSONResponse:
+    fields = [".".join(str(part) for part in error["loc"]) for error in exc.errors()]
+    payload = ErrorResponse(
+        code="invalid_request",
+        message="Request validation failed",
+        details={"fields": ", ".join(fields)},
+    )
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content=payload.model_dump(exclude_none=True),
+    )
+
+
+def unauthorized() -> NoReturn:
+    raise APIError("unauthorized", "Authentication required", status.HTTP_401_UNAUTHORIZED)

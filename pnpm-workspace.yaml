@@ -1,1 +1,162 @@
-IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgU0VDVVJJVFk6IE1pbmltdW0gcmVsZWFzZSBhZ2UgZm9yIG5wbSBwYWNrYWdlcyAoc3VwcGx5LWNoYWluIGF0dGFjayBkZWZlbnNlKQojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KIwojIFRoaXMgc2V0dGluZyByZXF1aXJlcyB0aGF0IGFueSBucG0gcGFja2FnZSB2ZXJzaW9uIG11c3QgaGF2ZSBiZWVuIHB1Ymxpc2hlZAojIGZvciBhdCBsZWFzdCAxIGRheSAoMTQ0MCBtaW51dGVzKSBiZWZvcmUgcG5wbSB3aWxsIGFsbG93IGluc3RhbGxpbmcgaXQuCiMgVGhpcyBpcyBhIGNyaXRpY2FsIGRlZmVuc2UgYWdhaW5zdCBzdXBwbHktY2hhaW4gYXR0YWNrcy4gSW4gbW9zdCBjYXNlcywKIyBtYWxpY2lvdXMgbnBtIHJlbGVhc2VzIGFyZSBkaXNjb3ZlcmVkIGFuZCBwdWxsZWQgd2l0aGluIGhvdXJzLCBzbyBhIDEtZGF5CiMgZGVsYXkgcHJvdmlkZXMgYSBzdHJvbmcgc2FmZXR5IGJ1ZmZlci4KIwojIERPIE5PVCBESVNBQkxFIFRISVMgU0VUVElORy4gUmVtb3Zpbmcgb3Igc2V0dGluZyBpdCB0byAwIGlzIGNvbnNpZGVyZWQKIyBleHRyZW1lbHkgZGFuZ2Vyb3VzIGFuZCBsZWF2ZXMgdGhlIGVudGlyZSB3b3Jrc3BhY2UgdnVsbmVyYWJsZSB0byBzdXBwbHktCiMgY2hhaW4gYXR0YWNrcywgd2hpY2ggaGF2ZSBiZWVuIHRoZSAjMSB2ZWN0b3IgZm9yIG5wbSBlY29zeXN0ZW0gY29tcHJvbWlzZXMuCiMKIyBJZiB5b3UgYWJzb2x1dGVseSBuZWVkIHRvIGluc3RhbGwgYSBwYWNrYWdlIGJlZm9yZSB0aGUgMS1kYXkgd2luZG93IGhhcwojIHBhc3NlZCAoZS5nLiBhbiB1cmdlbnQgc2VjdXJpdHkgYnVnZml4KSwgeW91IGNhbiBhZGQgaXQgdG8gdGhlCiMgYG1pbmltdW1SZWxlYXNlQWdlRXhjbHVkZWAgYWxsb3dsaXN0IGJlbG93LiBPbmx5IGNvbnNpZGVyIGRvaW5nIHRoaXMgZm9yCiMgcGFja2FnZXMgcmVsZWFzZWQgYnkgdHJ1c3RlZCBvcmdhbml6YXRpb25zIHdpdGggYW4gaW1wZWNjYWJsZSBzZWN1cml0eQojIHBvc3R1cmUgKGUuZy4gUmVwbGl0IHBhY2tzZ2VzLCByZWFjdCBmcm9tIE1ldGEsIHR5cGVzY3JpcHQgZnJvbSBNaWNyb3NvZnQpLiBFdmVuIHRoZW4sCiMgcmVtb3ZlIHRoZSBleGNsdXNpb24gb25jZSB0aGUgMS1kYXkgd2luZG93IGhhcyBwYXNzZWQuCiMKIyBFeGFtcGxlOgojICAgbWluaW11bVJlbGVhc2VBZ2VFeGNsdWRlOgojICAgICAtIHJlYWN0CiMgICAgIC0gdHlwZXNjcmlwdAojCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQptaW5pbXVtUmVsZWFzZUFnZTogMTQ0MAoKbWluaW11bVJlbGVhc2VBZ2VFeGNsdWRlOgogICMgRXhjbHVkZSBAcmVwbGl0IHNjb3BlZCBwYWNrYWdlcyBmcm9tIHRoZSBtaW5pbXVtIHJlbGVhc2UgYWdlIGNoZWNrLgogICMgVGhlc2UgYXJlIHB1Ymxpc2hlZCBieSBSZXBsaXQgYW5kIHRydXN0ZWQg4oCUIHRoZSBzdXBwbHktY2hhaW4gYXR0YWNrIHZlY3RvcgogICMgdGhpcyBzZXR0aW5nIGd1YXJkcyBhZ2FpbnN0IGRvZXMgbm90IGFwcGx5IHRvIG91ciBvd24gcGFja2FnZXMuCiAgLSAnQHJlcGxpdC8qJwogIC0gc3RyaXBlLXJlcGxpdC1zeW5jCgpwYWNrYWdlczoKICAtIGFydGlmYWN0cy8qCiAgLSBsaWIvKgogIC0gbGliL2ludGVncmF0aW9ucy8qCiAgLSBzY3JpcHRzCgpjYXRhbG9nOgogICdAcmVwbGl0L3ZpdGUtcGx1Z2luLWNhcnRvZ3JhcGhlcic6IF4wLjUuMjEKICAnQHJlcGxpdC92aXRlLXBsdWdpbi1kZXYtYmFubmVyJzogXjAuMS4xCiAgJ0ByZXBsaXQvdml0ZS1wbHVnaW4tcnVudGltZS1lcnJvci1tb2RhbCc6IF4wLjAuNgogICdAdGFpbHdpbmRjc3Mvdml0ZSc6IF40LjEuMTQKICAnQHRhbnN0YWNrL3JlYWN0LXF1ZXJ5JzogXjUuOTAuMjEKICAnQHR5cGVzL25vZGUnOiBeMjUuMy4zCiAgJ0B0eXBlcy9yZWFjdCc6IF4xOS4yLjAKICAnQHR5cGVzL3JlYWN0LWRvbSc6IF4xOS4yLjAKICAnQHZpdGVqcy9wbHVnaW4tcmVhY3QnOiBeNS4wLjQKICBjbGFzcy12YXJpYW5jZS1hdXRob3JpdHk6IF4wLjcuMQogIGNsc3g6IF4yLjEuMQogIGRyaXp6bGUtb3JtOiBeMC40NS4yCiAgZnJhbWVyLW1vdGlvbjogXjEyLjIzLjI0CiAgbHVjaWRlLXJlYWN0OiBeMC41NDUuMAogICMgTXVzdCBiZSB0aGlzIGV4YWN0IHZlcnNpb24gYmVjYXVzZSBleHBvIHJlcXVpcmVzIGl0CiAgcmVhY3Q6IDE5LjEuMAogICMgTXVzdCBiZSB0aGlzIGV4YWN0IHZlcnNpb24gYmVjYXVzZSBleHBvIHJlcXVpcmVzIGl0CiAgcmVhY3QtZG9tOiAxOS4xLjAKICB0YWlsd2luZC1tZXJnZTogXjMuMy4xCiAgdGFpbHdpbmRjc3M6IF40LjEuMTQKICB0c3g6IF40LjIxLjAKICB2aXRlOiBeNy4zLjIKICB3b3V0ZXI6IF4zLjMuNQogIHpvZDogXjMuMjUuNzYKCmF1dG9JbnN0YWxsUGVlcnM6IGZhbHNlCgpvbmx5QnVpbHREZXBlbmRlbmNpZXM6CiAgLSAnQHN3Yy9jb3JlJwogIC0gZXNidWlsZAogIC0gbXN3CiAgLSB1bnJzLXJlc29sdmVyCgpvdmVycmlkZXM6CiAgIyByZXBsaXQgdXNlcyBsaW51eC14NjQgb25seSwgd2UgY2FuIGV4Y2x1ZGUgYWxsIG90aGVyIHBsYXRmb3JtcwogICJlc2J1aWxkPkBlc2J1aWxkL2Rhcndpbi1hcm02NCI6ICItIgogICJlc2J1aWxkPkBlc2J1aWxkL2Rhcndpbi14NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9mcmVlYnNkLWFybTY0IjogIi0iCiAgImVzYnVpbGQ+QGVzYnVpbGQvZnJlZWJzZC14NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9saW51eC1hcm0iOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9saW51eC1hcm02NCI6ICItIgogICJlc2J1aWxkPkBlc2J1aWxkL2xpbnV4LWlhMzIiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9saW51eC1sb29uZzY0IjogIi0iCiAgImVzYnVpbGQ+QGVzYnVpbGQvbGludXgtbWlwczY0ZWwiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9saW51eC1wcGM2NCI6ICItIgogICJlc2J1aWxkPkBlc2J1aWxkL2xpbnV4LXJpc2N2NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9saW51eC1zMzkweCI6ICItIgogICJlc2J1aWxkPkBlc2J1aWxkL25ldGJzZC1hcm02NCI6ICItIgogICJlc2J1aWxkPkBlc2J1aWxkL25ldGJzZC14NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9vcGVuYnNkLWFybTY0IjogIi0iCiAgImVzYnVpbGQ+QGVzYnVpbGQvb3BlbmJzZC14NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9zdW5vcy14NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC93aW4zMi1hcm02NCI6ICItIgogICJlc2J1aWxkPkBlc2J1aWxkL3dpbjMyLWlhMzIiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC93aW4zMi14NjQiOiAiLSIKICAiZXNidWlsZD5AZXNidWlsZC9haXgtcHBjNjQiOiAnLScKICAiZXNidWlsZD5AZXNidWlsZC9hbmRyb2lkLWFybSI6ICctJwogICJlc2J1aWxkPkBlc2J1aWxkL2FuZHJvaWQtYXJtNjQiOiAnLScKICAiZXNidWlsZD5AZXNidWlsZC9hbmRyb2lkLXg2NCI6ICctJwogICJlc2J1aWxkPkBlc2J1aWxkL29wZW5oYXJtb255LWFybTY0IjogJy0nCiAgImxpZ2h0bmluZ2Nzcz5saWdodG5pbmdjc3MtYW5kcm9pZC1hcm02NCI6ICItIgogICJsaWdodG5pbmdjc3M+bGlnaHRuaW5nY3NzLWRhcndpbi1hcm02NCI6ICItIgogICJsaWdodG5pbmdjc3M+bGlnaHRuaW5nY3NzLWRhcndpbi14NjQiOiAiLSIKICAibGlnaHRuaW5nY3NzPmxpZ2h0bmluZ2Nzcy1mcmVlYnNkLXg2NCI6ICItIgogICJsaWdodG5pbmdjc3M+bGlnaHRuaW5nY3NzLWxpbnV4LWFybS1nbnVlYWJpaGYiOiAiLSIKICAibGlnaHRuaW5nY3NzPmxpZ2h0bmluZ2Nzcy1saW51eC1hcm02NC1nbnUiOiAiLSIKICAibGlnaHRuaW5nY3NzPmxpZ2h0bmluZ2Nzcy1saW51eC1hcm02NC1tdXNsIjogIi0iCiAgImxpZ2h0bmluZ2Nzcz5saWdodG5pbmdjc3MtbGludXgteDY0LW11c2wiOiAiLSIKICAibGlnaHRuaW5nY3NzPmxpZ2h0bmluZ2Nzcy13aW4zMi1hcm02NC1tc3ZjIjogIi0iCiAgImxpZ2h0bmluZ2Nzcz5saWdodG5pbmdjc3Mtd2luMzIteDY0LW1zdmMiOiAiLSIKICAiQHRhaWx3aW5kY3NzL294aWRlPkB0YWlsd2luZGNzcy9veGlkZS1hbmRyb2lkLWFybTY0IjogIi0iCiAgIkB0YWlsd2luZGNzcy9veGlkZT5AdGFpbHdpbmRjc3Mvb3hpZGUtZGFyd2luLWFybTY0IjogIi0iCiAgIkB0YWlsd2luZGNzcy9veGlkZT5AdGFpbHdpbmRjc3Mvb3hpZGUtZGFyd2luLXg2NCI6ICItIgogICJAdGFpbHdpbmRjc3Mvb3hpZGU+QHRhaWx3aW5kY3NzL294aWRlLWZyZWVic2QteDY0IjogIi0iCiAgIkB0YWlsd2luZGNzcy9veGlkZT5AdGFpbHdpbmRjc3Mvb3hpZGUtbGludXgtYXJtLWdudWVhYmloZiI6ICItIgogICJAdGFpbHdpbmRjc3Mvb3hpZGU+QHRhaWx3aW5kY3NzL294aWRlLWxpbnV4LWFybTY0LWdudSI6ICItIgogICJAdGFpbHdpbmRjc3Mvb3hpZGU+QHRhaWx3aW5kY3NzL294aWRlLWxpbnV4LWFybTY0LW11c2wiOiAiLSIKICAiQHRhaWx3aW5kY3NzL294aWRlPkB0YWlsd2luZGNzcy9veGlkZS13aW4zMi1hcm02NC1tc3ZjIjogIi0iCiAgIkB0YWlsd2luZGNzcy9veGlkZT5AdGFpbHdpbmRjc3Mvb3hpZGUtd2luMzIteDY0LW1zdmMiOiAiLSIKICAiQHRhaWx3aW5kY3NzL294aWRlPkB0YWlsd2luZGNzcy9veGlkZS1saW51eC14NjQtbXVzbCI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtYW5kcm9pZC1hcm0tZWFiaSI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtYW5kcm9pZC1hcm02NCI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtZGFyd2luLWFybTY0IjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1kYXJ3aW4teDY0IjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1mcmVlYnNkLWFybTY0IjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1mcmVlYnNkLXg2NCI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtbGludXgtYXJtLWdudWVhYmloZiI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtbGludXgtYXJtLW11c2xlYWJpaGYiOiAiLSIKICAicm9sbHVwPkByb2xsdXAvcm9sbHVwLWxpbnV4LWFybTY0LWdudSI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtbGludXgtYXJtNjQtbXVzbCI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtbGludXgtbG9vbmc2NC1nbnUiOiAiLSIKICAicm9sbHVwPkByb2xsdXAvcm9sbHVwLWxpbnV4LWxvb25nNjQtbXVzbCI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtbGludXgtcHBjNjQtZ251IjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1saW51eC1wcGM2NC1tdXNsIjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1saW51eC1yaXNjdjY0LWdudSI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtbGludXgtcmlzY3Y2NC1tdXNsIjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1saW51eC1zMzkweC1nbnUiOiAiLSIKICAicm9sbHVwPkByb2xsdXAvcm9sbHVwLWxpbnV4LXg2NC1tdXNsIjogIi0iCiAgInJvbGx1cD5Acm9sbHVwL3JvbGx1cC1vcGVuYnNkLXg2NCI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtb3Blbmhhcm1vbnktYXJtNjQiOiAiLSIKICAicm9sbHVwPkByb2xsdXAvcm9sbHVwLXdpbjMyLWFybTY0LW1zdmMiOiAiLSIKICAicm9sbHVwPkByb2xsdXAvcm9sbHVwLXdpbjMyLWlhMzItbXN2YyI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtd2luMzIteDY0LWdudSI6ICItIgogICJyb2xsdXA+QHJvbGx1cC9yb2xsdXAtd2luMzIteDY0LW1zdmMiOiAiLSIKICAiQGV4cG8vbmdyb2stYmluPkBleHBvL25ncm9rLWJpbi1kYXJ3aW4tYXJtNjQiOiAiLSIKICAiQGV4cG8vbmdyb2stYmluPkBleHBvL25ncm9rLWJpbi1kYXJ3aW4teDY0IjogIi0iCiAgIkBleHBvL25ncm9rLWJpbj5AZXhwby9uZ3Jvay1iaW4tZnJlZWJzZC1pYTMyIjogIi0iCiAgIkBleHBvL25ncm9rLWJpbj5AZXhwby9uZ3Jvay1iaW4tZnJlZWJzZC14NjQiOiAiLSIKICAiQGV4cG8vbmdyb2stYmluPkBleHBvL25ncm9rLWJpbi1saW51eC1hcm02NCI6ICItIgogICJAZXhwby9uZ3Jvay1iaW4+QGV4cG8vbmdyb2stYmluLWxpbnV4LWFybSI6ICItIgogICJAZXhwby9uZ3Jvay1iaW4+QGV4cG8vbmdyb2stYmluLWxpbnV4LWlhMzIiOiAiLSIKICAiQGV4cG8vbmdyb2stYmluPkBleHBvL25ncm9rLWJpbi1zdW5vcy14NjQiOiAiLSIKICAiQGV4cG8vbmdyb2stYmluPkBleHBvL25ncm9rLWJpbi13aW4zMi1pYTMyIjogIi0iCiAgIkBleHBvL25ncm9rLWJpbj5AZXhwby9uZ3Jvay1iaW4td2luMzIteDY0IjogIi0iCiAgIyBkcml6emxlLWtpdCB1c2VzIGVzYnVpbGQgaW50ZXJuYWxseSBvbiBhbiBvbGRlciB2ZXJzaW9uIHRoYXQncyB2dWxuZXJhYmxlLCB0aGlzIG92ZXJyaWRlcyBpdAogICJAZXNidWlsZC1raXQvZXNtLWxvYWRlciI6ICJucG06dHN4QF40LjIxLjAiCiAgZXNidWlsZDogIjAuMjguMiIKICAjIG9ydmFsIHBpbnMganMteWFtbCB0byBhbiBleGFjdCB2ZXJzaW9uIG9sZGVyIHRoYW4gdGhlIENWRSBmaXggKD49NC4zLjIpCiAganMteWFtbDogJzQuMy4yJwo=
+# ============================================================================
+# SECURITY: Minimum release age for npm packages (supply-chain attack defense)
+# ============================================================================
+#
+# This setting requires that any npm package version must have been published
+# for at least 1 day (1440 minutes) before pnpm will allow installing it.
+# This is a critical defense against supply-chain attacks. In most cases,
+# malicious npm releases are discovered and pulled within hours, so a 1-day
+# delay provides a strong safety buffer.
+#
+# DO NOT DISABLE THIS SETTING. Removing or setting it to 0 is considered
+# extremely dangerous and leaves the entire workspace vulnerable to supply-
+# chain attacks, which have been the #1 vector for npm ecosystem compromises.
+#
+# If you absolutely need to install a package before the 1-day window has
+# passed (e.g. an urgent security bugfix), you can add it to the
+# `minimumReleaseAgeExclude` allowlist below. Only consider doing this for
+# packages released by trusted organizations with an impeccable security
+# posture (e.g. Replit packsges, react from Meta, typescript from Microsoft). Even then,
+# remove the exclusion once the 1-day window has passed.
+#
+# Example:
+#   minimumReleaseAgeExclude:
+#     - react
+#     - typescript
+#
+# ============================================================================
+minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  # Exclude @replit scoped packages from the minimum release age check.
+  # These are published by Replit and trusted — the supply-chain attack vector
+  # this setting guards against does not apply to our own packages.
+  - '@replit/*'
+  - stripe-replit-sync
+
+packages:
+  - artifacts/*
+  - lib/*
+  - lib/integrations/*
+  - scripts
+
+catalog:
+  '@replit/vite-plugin-cartographer': ^0.5.21
+  '@replit/vite-plugin-dev-banner': ^0.1.1
+  '@replit/vite-plugin-runtime-error-modal': ^0.0.6
+  '@tailwindcss/vite': ^4.1.14
+  '@tanstack/react-query': ^5.90.21
+  '@types/node': ^25.3.3
+  '@types/react': ^19.2.0
+  '@types/react-dom': ^19.2.0
+  '@vitejs/plugin-react': ^5.0.4
+  class-variance-authority: ^0.7.1
+  clsx: ^2.1.1
+  drizzle-orm: ^0.45.2
+  framer-motion: ^12.23.24
+  lucide-react: ^0.545.0
+  # Must be this exact version because expo requires it
+  react: 19.1.0
+  # Must be this exact version because expo requires it
+  react-dom: 19.1.0
+  tailwind-merge: ^3.3.1
+  tailwindcss: ^4.1.14
+  tsx: ^4.21.0
+  vite: ^7.3.2
+  wouter: ^3.3.5
+  zod: ^3.25.76
+
+autoInstallPeers: false
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  - msw
+  - unrs-resolver
+
+overrides:
+  # replit uses linux-x64 only, we can exclude all other platforms
+  "esbuild>@esbuild/darwin-arm64": "-"
+  "esbuild>@esbuild/darwin-x64": "-"
+  "esbuild>@esbuild/freebsd-arm64": "-"
+  "esbuild>@esbuild/freebsd-x64": "-"
+  "esbuild>@esbuild/linux-arm": "-"
+  "esbuild>@esbuild/linux-arm64": "-"
+  "esbuild>@esbuild/linux-ia32": "-"
+  "esbuild>@esbuild/linux-loong64": "-"
+  "esbuild>@esbuild/linux-mips64el": "-"
+  "esbuild>@esbuild/linux-ppc64": "-"
+  "esbuild>@esbuild/linux-riscv64": "-"
+  "esbuild>@esbuild/linux-s390x": "-"
+  "esbuild>@esbuild/netbsd-arm64": "-"
+  "esbuild>@esbuild/netbsd-x64": "-"
+  "esbuild>@esbuild/openbsd-arm64": "-"
+  "esbuild>@esbuild/openbsd-x64": "-"
+  "esbuild>@esbuild/sunos-x64": "-"
+  "esbuild>@esbuild/win32-arm64": "-"
+  "esbuild>@esbuild/win32-ia32": "-"
+  "esbuild>@esbuild/win32-x64": "-"
+  "esbuild>@esbuild/aix-ppc64": '-'
+  "esbuild>@esbuild/android-arm": '-'
+  "esbuild>@esbuild/android-arm64": '-'
+  "esbuild>@esbuild/android-x64": '-'
+  "esbuild>@esbuild/openharmony-arm64": '-'
+  "lightningcss>lightningcss-android-arm64": "-"
+  "lightningcss>lightningcss-darwin-arm64": "-"
+  "lightningcss>lightningcss-darwin-x64": "-"
+  "lightningcss>lightningcss-freebsd-x64": "-"
+  "lightningcss>lightningcss-linux-arm-gnueabihf": "-"
+  "lightningcss>lightningcss-linux-arm64-gnu": "-"
+  "lightningcss>lightningcss-linux-arm64-musl": "-"
+  "lightningcss>lightningcss-linux-x64-musl": "-"
+  "lightningcss>lightningcss-win32-arm64-msvc": "-"
+  "lightningcss>lightningcss-win32-x64-msvc": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-android-arm64": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-darwin-arm64": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-darwin-x64": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-freebsd-x64": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-linux-arm-gnueabihf": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-linux-arm64-gnu": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-linux-arm64-musl": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-win32-arm64-msvc": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-win32-x64-msvc": "-"
+  "@tailwindcss/oxide>@tailwindcss/oxide-linux-x64-musl": "-"
+  "rollup>@rollup/rollup-android-arm-eabi": "-"
+  "rollup>@rollup/rollup-android-arm64": "-"
+  "rollup>@rollup/rollup-darwin-arm64": "-"
+  "rollup>@rollup/rollup-darwin-x64": "-"
+  "rollup>@rollup/rollup-freebsd-arm64": "-"
+  "rollup>@rollup/rollup-freebsd-x64": "-"
+  "rollup>@rollup/rollup-linux-arm-gnueabihf": "-"
+  "rollup>@rollup/rollup-linux-arm-musleabihf": "-"
+  "rollup>@rollup/rollup-linux-arm64-gnu": "-"
+  "rollup>@rollup/rollup-linux-arm64-musl": "-"
+  "rollup>@rollup/rollup-linux-loong64-gnu": "-"
+  "rollup>@rollup/rollup-linux-loong64-musl": "-"
+  "rollup>@rollup/rollup-linux-ppc64-gnu": "-"
+  "rollup>@rollup/rollup-linux-ppc64-musl": "-"
+  "rollup>@rollup/rollup-linux-riscv64-gnu": "-"
+  "rollup>@rollup/rollup-linux-riscv64-musl": "-"
+  "rollup>@rollup/rollup-linux-s390x-gnu": "-"
+  "rollup>@rollup/rollup-linux-x64-musl": "-"
+  "rollup>@rollup/rollup-openbsd-x64": "-"
+  "rollup>@rollup/rollup-openharmony-arm64": "-"
+  "rollup>@rollup/rollup-win32-arm64-msvc": "-"
+  "rollup>@rollup/rollup-win32-ia32-msvc": "-"
+  "rollup>@rollup/rollup-win32-x64-gnu": "-"
+  "rollup>@rollup/rollup-win32-x64-msvc": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-darwin-arm64": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-darwin-x64": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-freebsd-ia32": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-freebsd-x64": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-linux-arm64": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-linux-arm": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-linux-ia32": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-sunos-x64": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-win32-ia32": "-"
+  "@expo/ngrok-bin>@expo/ngrok-bin-win32-x64": "-"
+  # drizzle-kit uses esbuild internally on an older version that's vulnerable, this overrides it
+  "@esbuild-kit/esm-loader": "npm:tsx@^4.21.0"
+  esbuild: "0.28.2"
+  # orval pins js-yaml to an exact version older than the CVE fix (>=4.3.2)
+  js-yaml: '4.3.2'

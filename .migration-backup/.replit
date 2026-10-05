@@ -1,1 +1,4 @@
-bW9kdWxlcyA9IFsicHl0aG9uLTMuMTIiLCAibm9kZWpzLTIwIiwgIndlYiJdCgpbbml4XQpjaGFubmVsID0gInN0YWJsZS0yNV8wNSIK
+modules = ["python-3.12", "nodejs-20", "web"]
+
+[nix]
+channel = "stable-25_05"

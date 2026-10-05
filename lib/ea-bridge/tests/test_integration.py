@@ -1,1 +1,165 @@
-aW1wb3J0IHRpbWUKZnJvbSBkYXRldGltZSBpbXBvcnQgVVRDLCBkYXRldGltZSwgdGltZWRlbHRhCmZyb20gZGVjaW1hbCBpbXBvcnQgRGVjaW1hbApmcm9tIHV1aWQgaW1wb3J0IHV1aWQ0CgppbXBvcnQgcHl0ZXN0CmZyb20gaHR0cHggaW1wb3J0IEFTR0lUcmFuc3BvcnQsIEFzeW5jQ2xpZW50CmZyb20gcmVkaXMuYXN5bmNpbyBpbXBvcnQgUmVkaXMKZnJvbSBzcWxhbGNoZW15LmV4dC5hc3luY2lvIGltcG9ydCBBc3luY1Nlc3Npb24sIGFzeW5jX3Nlc3Npb25tYWtlciwgY3JlYXRlX2FzeW5jX2VuZ2luZQoKZnJvbSBhcHAuY29udHJhY3RzIGltcG9ydCBTaWduYWxBY3Rpb24sIFNpZ25hbEV2ZW50VHlwZSwgU2lnbmFsU3RhdGUKZnJvbSBhcHAubWFpbiBpbXBvcnQgYXBwCmZyb20gYXBwLm1vZGVscyBpbXBvcnQgQmFzZSwgRGV2aWNlLCBQYWlyaW5nQ29kZSwgUG9zaXRpb24sIFJpc2tQcm9maWxlLCBTaWduYWwsIFVzZXIsIFVzZXJTZXNzaW9uCmZyb20gYXBwLnNlY3VyaXR5IGltcG9ydCBzaGEyNTZfaGV4LCBzaWduX2VhX3JlcXVlc3QKCgpAcHl0ZXN0LmZpeHR1cmUKYXN5bmMgZGVmIHRlc3RfYXBwKCk6CiAgICAjIFNldCB1cCBpbi1tZW1vcnkgc3FsaXRlIGVuZ2luZSBmb3IgaW50ZWdyYXRpb24gdGVzdHMKICAgIGVuZ2luZSA9IGNyZWF0ZV9hc3luY19lbmdpbmUoInNxbGl0ZSthaW9zcWxpdGU6Ly8vOm1lbW9yeToiKQogICAgc2Vzc2lvbl9mYWN0b3J5ID0gYXN5bmNfc2Vzc2lvbm1ha2VyKGVuZ2luZSwgZXhwaXJlX29uX2NvbW1pdD1GYWxzZSwgY2xhc3NfPUFzeW5jU2Vzc2lvbikKICAgIHJlZGlzID0gUmVkaXMuZnJvbV91cmwoInJlZGlzOi8vMTI3LjAuMC4xOjYzNzkvMTUiLCBkZWNvZGVfcmVzcG9uc2VzPVRydWUpCgogICAgYXN5bmMgd2l0aCBlbmdpbmUuYmVnaW4oKSBhcyBjb25uOgogICAgICAgIGF3YWl0IGNvbm4ucnVuX3N5bmMoQmFzZS5tZXRhZGF0YS5jcmVhdGVfYWxsKQoKICAgIGFwcC5zdGF0ZS5lbmdpbmUgPSBlbmdpbmUKICAgIGFwcC5zdGF0ZS5zZXNzaW9uX2ZhY3RvcnkgPSBzZXNzaW9uX2ZhY3RvcnkKICAgIGFwcC5zdGF0ZS5yZWRpcyA9IHJlZGlzCgogICAgdHJ5OgogICAgICAgIHlpZWxkIGFwcAogICAgZmluYWxseToKICAgICAgICB0cnk6CiAgICAgICAgICAgIGF3YWl0IHJlZGlzLmZsdXNoZGIoKQogICAgICAgICAgICBhd2FpdCByZWRpcy5hY2xvc2UoKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgIHBhc3MKICAgICAgICBhd2FpdCBlbmdpbmUuZGlzcG9zZSgpCgoKQHB5dGVzdC5tYXJrLmFzeW5jaW8KYXN5bmMgZGVmIHRlc3RfY29tcGxldGVfZWFfbGlmZWN5Y2xlKHRlc3RfYXBwKToKICAgIHNlc3Npb25fZmFjdG9yeSA9IHRlc3RfYXBwLnN0YXRlLnNlc3Npb25fZmFjdG9yeQogICAgcmVkaXMgPSB0ZXN0X2FwcC5zdGF0ZS5yZWRpcwoKICAgICMgMS4gQ3JlYXRlIGEgdXNlciBhbmQgcGFpcmluZyBjb2RlCiAgICB1c2VyX2lkID0gdXVpZDQoKQogICAgY29kZSA9ICJBUS1URVNUODgiCiAgICBhc3luYyB3aXRoIHNlc3Npb25fZmFjdG9yeSgpIGFzIHNlc3Npb246CiAgICAgICAgdXNlciA9IFVzZXIoCiAgICAgICAgICAgIGlkPXVzZXJfaWQsCiAgICAgICAgICAgIGVtYWlsPSJ0cmFkZXJAdGVzdC5jb20iLAogICAgICAgICAgICBwYXNzd29yZF9oYXNoPSJhcmdvbjJfcGxhY2Vob2xkZXIiLAogICAgICAgICAgICByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWRfYXQ9ZGF0ZXRpbWUubm93KFVUQyksCiAgICAgICAgKQogICAgICAgIHBhaXJpbmdfY29kZSA9IFBhaXJpbmdDb2RlKAogICAgICAgICAgICB1c2VyX2lkPXVzZXJfaWQsCiAgICAgICAgICAgIGNvZGVfaGFzaD1zaGEyNTZfaGV4KGNvZGUpLAogICAgICAgICAgICBleHBpcmVzX2F0PWRhdGV0aW1lLm5vdyhVVEMpICsgdGltZWRlbHRhKG1pbnV0ZXM9MTApLAogICAgICAgICkKICAgICAgICBzZXNzaW9uLmFkZCh1c2VyKQogICAgICAgIHNlc3Npb24uYWRkKHBhaXJpbmdfY29kZSkKICAgICAgICBhd2FpdCBzZXNzaW9uLmNvbW1pdCgpCgogICAgdHJhbnNwb3J0ID0gQVNHSVRyYW5zcG9ydChhcHA9dGVzdF9hcHApCiAgICBhc3luYyB3aXRoIEFzeW5jQ2xpZW50KHRyYW5zcG9ydD10cmFuc3BvcnQsIGJhc2VfdXJsPSJodHRwOi8vdGVzdCIpIGFzIGNsaWVudDoKICAgICAgICAjIDIuIEVBIFBhaXJpbmcKICAgICAgICBwYWlyX3JlcyA9IGF3YWl0IGNsaWVudC5wb3N0KAogICAgICAgICAgICAiL2VhL3YxL3BhaXIiLAogICAgICAgICAgICBqc29uPXsKICAgICAgICAgICAgICAgICJjb2RlIjogY29kZSwKICAgICAgICAgICAgICAgICJ0ZXJtaW5hbF9idWlsZCI6ICI0MTUwIiwKICAgICAgICAgICAgICAgICJicm9rZXIiOiAiTWV0YVF1b3Rlcy1EZW1vIiwKICAgICAgICAgICAgICAgICJzZXJ2ZXIiOiAiRGVtby1TZXJ2ZXIiLAogICAgICAgICAgICAgICAgImFjY291bnRfbnVtYmVyX21hc2tlZCI6ICI1MDkxKioqKjEyIiwKICAgICAgICAgICAgICAgICJhY2NvdW50X2N1cnJlbmN5IjogIlVTRCIsCiAgICAgICAgICAgICAgICAibGV2ZXJhZ2UiOiAxMDAsCiAgICAgICAgICAgIH0sCiAgICAgICAgKQogICAgICAgIGFzc2VydCBwYWlyX3Jlcy5zdGF0dXNfY29kZSA9PSAyMDAKICAgICAgICBwYWlyX2RhdGEgPSBwYWlyX3Jlcy5qc29uKCkKICAgICAgICBkZXZpY2VfaWQgPSBwYWlyX2RhdGFbImRldmljZV9pZCJdCiAgICAgICAgZGV2aWNlX3Rva2VuID0gcGFpcl9kYXRhWyJkZXZpY2VfdG9rZW4iXQogICAgICAgIGFzc2VydCBkZXZpY2VfdG9rZW4gaXMgbm90IE5vbmUKCiAgICAgICAgIyAzLiBFQSBIZWFydGJlYXQgKFNpZ25lZCkKICAgICAgICB0cyA9IHN0cihpbnQodGltZS50aW1lKCkpKQogICAgICAgIG5vbmNlID0gIm5vbmNlX2hlYXJ0YmVhdF8xIgogICAgICAgIGJvZHkgPSB7CiAgICAgICAgICAgICJzbmFwc2hvdCI6IHsKICAgICAgICAgICAgICAgICJiYWxhbmNlIjogIjEwMDAwLjAwIiwKICAgICAgICAgICAgICAgICJlcXVpdHkiOiAiMTAwNTAuMjUiLAogICAgICAgICAgICAgICAgIm1hcmdpbiI6ICIyMDAuMDAiLAogICAgICAgICAgICAgICAgImZyZWVfbWFyZ2luIjogIjk4NTAuMjUiLAogICAgICAgICAgICAgICAgIm1hcmdpbl9sZXZlbCI6ICI1MDI1LjEyIiwKICAgICAgICAgICAgICAgICJvcGVuX3Bvc2l0aW9uc19jb3VudCI6IDEsCiAgICAgICAgICAgICAgICAiYWNjb3VudF9jdXJyZW5jeSI6ICJVU0QiLAogICAgICAgICAgICAgICAgImxldmVyYWdlIjogMTAwLAogICAgICAgICAgICAgICAgImNhcHR1cmVkX2F0IjogZGF0ZXRpbWUubm93KFVUQykuaXNvZm9ybWF0KCksCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJwb3NpdGlvbnMiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgImV4dGVybmFsX3Bvc2l0aW9uX2lkIjogIlRJQ0tFVF8xMDEiLAogICAgICAgICAgICAgICAgICAgICJzeW1ib2wiOiAiRVVSVVNEIiwKICAgICAgICAgICAgICAgICAgICAic2lkZSI6ICJCVVkiLAogICAgICAgICAgICAgICAgICAgICJ2b2x1bWUiOiAiMC4xMCIsCiAgICAgICAgICAgICAgICAgICAgImVudHJ5X3ByaWNlIjogIjEuMDg1MDAiLAogICAgICAgICAgICAgICAgICAgICJjdXJyZW50X3ByaWNlIjogIjEuMDg1NTAiLAogICAgICAgICAgICAgICAgICAgICJzdG9wX2xvc3MiOiAiMS4wODIwMCIsCiAgICAgICAgICAgICAgICAgICAgInRha2VfcHJvZml0IjogIjEuMDkxMDAiLAogICAgICAgICAgICAgICAgICAgICJ1bnJlYWxpemVkX3BubCI6ICI1MC4wMCIsCiAgICAgICAgICAgICAgICAgICAgInN3YXAiOiAiMC4yNSIsCiAgICAgICAgICAgICAgICAgICAgIm9ic2VydmVkX2F0IjogZGF0ZXRpbWUubm93KFVUQykuaXNvZm9ybWF0KCksCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0sCiAgICAgICAgfQogICAgICAgIHJhd19ib2R5ID0gY2xpZW50LmJ1aWxkX3JlcXVlc3QoIlBPU1QiLCAiL2VhL3YxL2hlYXJ0YmVhdCIsIGpzb249Ym9keSkuY29udGVudAogICAgICAgIHNpZyA9IHNpZ25fZWFfcmVxdWVzdChkZXZpY2VfdG9rZW4sICJQT1NUIiwgIi9lYS92MS9oZWFydGJlYXQiLCB0cywgbm9uY2UsIHJhd19ib2R5KQoKICAgICAgICBoYl9yZXMgPSBhd2FpdCBjbGllbnQucG9zdCgKICAgICAgICAgICAgIi9lYS92MS9oZWFydGJlYXQiLAogICAgICAgICAgICBjb250ZW50PXJhd19ib2R5LAogICAgICAgICAgICBoZWFkZXJzPXsKICAgICAgICAgICAgICAgICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgICAgICAgICAiWC1FQS1EZXZpY2UtVG9rZW4iOiBkZXZpY2VfdG9rZW4sCiAgICAgICAgICAgICAgICAiWC1FQS1UaW1lc3RhbXAiOiB0cywKICAgICAgICAgICAgICAgICJYLUVBLU5vbmNlIjogbm9uY2UsCiAgICAgICAgICAgICAgICAiWC1FQS1TaWduYXR1cmUiOiBzaWcsCiAgICAgICAgICAgIH0sCiAgICAgICAgKQogICAgICAgIGFzc2VydCBoYl9yZXMuc3RhdHVzX2NvZGUgPT0gMjAwCiAgICAgICAgaGJfZGF0YSA9IGhiX3Jlcy5qc29uKCkKICAgICAgICBhc3NlcnQgaGJfZGF0YVsiYWNjZXB0ZWQiXSBpcyBUcnVlCgogICAgICAgICMgNC4gUmVwbGF5IEF0dGFjayBQcmV2ZW50aW9uIChTYW1lIE5vbmNlKQogICAgICAgIHJlcGxheV9yZXMgPSBhd2FpdCBjbGllbnQucG9zdCgKICAgICAgICAgICAgIi9lYS92MS9oZWFydGJlYXQiLAogICAgICAgICAgICBjb250ZW50PXJhd19ib2R5LAogICAgICAgICAgICBoZWFkZXJzPXsKICAgICAgICAgICAgICAgICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgICAgICAgICAiWC1FQS1EZXZpY2UtVG9rZW4iOiBkZXZpY2VfdG9rZW4sCiAgICAgICAgICAgICAgICAiWC1FQS1UaW1lc3RhbXAiOiB0cywKICAgICAgICAgICAgICAgICJYLUVBLU5vbmNlIjogbm9uY2UsCiAgICAgICAgICAgICAgICAiWC1FQS1TaWduYXR1cmUiOiBzaWcsCiAgICAgICAgICAgIH0sCiAgICAgICAgKQogICAgICAgIGFzc2VydCByZXBsYXlfcmVzLnN0YXR1c19jb2RlID09IDQwMQoKICAgICAgICAjIDUuIFRpbWVzdGFtcCBEcmlmdCBSZWplY3Rpb24gKD4gMzBzKQogICAgICAgIHN0YWxlX3RzID0gc3RyKGludCh0aW1lLnRpbWUoKSkgLSA0NSkKICAgICAgICBzdGFsZV9ub25jZSA9ICJub25jZV9zdGFsZV90c185OSIKICAgICAgICBzdGFsZV9zaWcgPSBzaWduX2VhX3JlcXVlc3QoZGV2aWNlX3Rva2VuLCAiUE9TVCIsICIvZWEvdjEvaGVhcnRiZWF0Iiwgc3RhbGVfdHMsIHN0YWxlX25vbmNlLCByYXdfYm9keSkKICAgICAgICBzdGFsZV9yZXMgPSBhd2FpdCBjbGllbnQucG9zdCgKICAgICAgICAgICAgIi9lYS92MS9oZWFydGJlYXQiLAogICAgICAgICAgICBjb250ZW50PXJhd19ib2R5LAogICAgICAgICAgICBoZWFkZXJzPXsKICAgICAgICAgICAgICAgICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgICAgICAgICAiWC1FQS1EZXZpY2UtVG9rZW4iOiBkZXZpY2VfdG9rZW4sCiAgICAgICAgICAgICAgICAiWC1FQS1UaW1lc3RhbXAiOiBzdGFsZV90cywKICAgICAgICAgICAgICAgICJYLUVBLU5vbmNlIjogc3RhbGVfbm9uY2UsCiAgICAgICAgICAgICAgICAiWC1FQS1TaWduYXR1cmUiOiBzdGFsZV9zaWcsCiAgICAgICAgICAgIH0sCiAgICAgICAgKQogICAgICAgIGFzc2VydCBzdGFsZV9yZXMuc3RhdHVzX2NvZGUgPT0gNDAxCg==
+import time
+from datetime import UTC, datetime, timedelta
+from decimal import Decimal
+from uuid import uuid4
+
+import pytest
+from httpx import ASGITransport, AsyncClient
+from redis.asyncio import Redis
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+
+from app.contracts import SignalAction, SignalEventType, SignalState
+from app.main import app
+from app.models import Base, Device, PairingCode, Position, RiskProfile, Signal, User, UserSession
+from app.security import sha256_hex, sign_ea_request
+
+
+@pytest.fixture
+async def test_app():
+    # Set up in-memory sqlite engine for integration tests
+    engine = create_async_engine("sqlite+aiosqlite:///:memory:")
+    session_factory = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+    redis = Redis.from_url("redis://127.0.0.1:6379/15", decode_responses=True)
+
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+
+    app.state.engine = engine
+    app.state.session_factory = session_factory
+    app.state.redis = redis
+
+    try:
+        yield app
+    finally:
+        try:
+            await redis.flushdb()
+            await redis.aclose()
+        except Exception:
+            pass
+        await engine.dispose()
+
+
+@pytest.mark.asyncio
+async def test_complete_ea_lifecycle(test_app):
+    session_factory = test_app.state.session_factory
+    redis = test_app.state.redis
+
+    # 1. Create a user and pairing code
+    user_id = uuid4()
+    code = "AQ-TEST88"
+    async with session_factory() as session:
+        user = User(
+            id=user_id,
+            email="trader@test.com",
+            password_hash="argon2_placeholder",
+            risk_disclaimer_accepted_at=datetime.now(UTC),
+        )
+        pairing_code = PairingCode(
+            user_id=user_id,
+            code_hash=sha256_hex(code),
+            expires_at=datetime.now(UTC) + timedelta(minutes=10),
+        )
+        session.add(user)
+        session.add(pairing_code)
+        await session.commit()
+
+    transport = ASGITransport(app=test_app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        # 2. EA Pairing
+        pair_res = await client.post(
+            "/ea/v1/pair",
+            json={
+                "code": code,
+                "terminal_build": "4150",
+                "broker": "MetaQuotes-Demo",
+                "server": "Demo-Server",
+                "account_number_masked": "5091****12",
+                "account_currency": "USD",
+                "leverage": 100,
+            },
+        )
+        assert pair_res.status_code == 200
+        pair_data = pair_res.json()
+        device_id = pair_data["device_id"]
+        device_token = pair_data["device_token"]
+        assert device_token is not None
+
+        # 3. EA Heartbeat (Signed)
+        ts = str(int(time.time()))
+        nonce = "nonce_heartbeat_1"
+        body = {
+            "snapshot": {
+                "balance": "10000.00",
+                "equity": "10050.25",
+                "margin": "200.00",
+                "free_margin": "9850.25",
+                "margin_level": "5025.12",
+                "open_positions_count": 1,
+                "account_currency": "USD",
+                "leverage": 100,
+                "captured_at": datetime.now(UTC).isoformat(),
+            },
+            "positions": [
+                {
+                    "external_position_id": "TICKET_101",
+                    "symbol": "EURUSD",
+                    "side": "BUY",
+                    "volume": "0.10",
+                    "entry_price": "1.08500",
+                    "current_price": "1.08550",
+                    "stop_loss": "1.08200",
+                    "take_profit": "1.09100",
+                    "unrealized_pnl": "50.00",
+                    "swap": "0.25",
+                    "observed_at": datetime.now(UTC).isoformat(),
+                }
+            ],
+        }
+        raw_body = client.build_request("POST", "/ea/v1/heartbeat", json=body).content
+        sig = sign_ea_request(device_token, "POST", "/ea/v1/heartbeat", ts, nonce, raw_body)
+
+        hb_res = await client.post(
+            "/ea/v1/heartbeat",
+            content=raw_body,
+            headers={
+                "Content-Type": "application/json",
+                "X-EA-Device-Token": device_token,
+                "X-EA-Timestamp": ts,
+                "X-EA-Nonce": nonce,
+                "X-EA-Signature": sig,
+            },
+        )
+        assert hb_res.status_code == 200
+        hb_data = hb_res.json()
+        assert hb_data["accepted"] is True
+
+        # 4. Replay Attack Prevention (Same Nonce)
+        replay_res = await client.post(
+            "/ea/v1/heartbeat",
+            content=raw_body,
+            headers={
+                "Content-Type": "application/json",
+                "X-EA-Device-Token": device_token,
+                "X-EA-Timestamp": ts,
+                "X-EA-Nonce": nonce,
+                "X-EA-Signature": sig,
+            },
+        )
+        assert replay_res.status_code == 401
+
+        # 5. Timestamp Drift Rejection (> 30s)
+        stale_ts = str(int(time.time()) - 45)
+        stale_nonce = "nonce_stale_ts_99"
+        stale_sig = sign_ea_request(device_token, "POST", "/ea/v1/heartbeat", stale_ts, stale_nonce, raw_body)
+        stale_res = await client.post(
+            "/ea/v1/heartbeat",
+            content=raw_body,
+            headers={
+                "Content-Type": "application/json",
+                "X-EA-Device-Token": device_token,
+                "X-EA-Timestamp": stale_ts,
+                "X-EA-Nonce": stale_nonce,
+                "X-EA-Signature": stale_sig,
+            },
+        )
+        assert stale_res.status_code == 401

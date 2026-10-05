@@ -1,1 +1,170 @@
-IyBQcm9kdWN0aW9uIGRlcGxveW1lbnQKCkFlZ2lzIFF1YW50IGlzIHNhZmUgdG8gZGVwbG95IGZpcnN0IGluIGBUUkFESU5HX01PREU9cGFwZXJgLiBUaGUgc2VydmljZSBjYW4gcnVuIG9uIGEgV2luZG93cyBob3N0IHdpdGggdGhlIG5hdGl2ZSBNVDUgdGVybWluYWwsIG9yIG9uIExpbnV4IG9ubHkgd2hlbiBhIHRlc3RlZCBgbXQ1bGludXhgIGJyaWRnZSBpcyBhdmFpbGFibGUuIERvIG5vdCBleHBvc2UgdGhlIEFQSSBvciBNVDUgY3JlZGVudGlhbHMgZGlyZWN0bHkgdG8gdGhlIHB1YmxpYyBpbnRlcm5ldC4KCkZ1bmRlZC9saXZlIHVzZSBpcyAqKm5vdCBhcHByb3ZlZCoqIGJ5IHRoaXMgcnVuYm9vay4gVGhlIHJlbGVhc2UgY2FuZGlkYXRlLCBvd25lci1hcHByb3ZhbCB3b3Jrc2hlZXQsIGRlbW8gYWNjZXB0YW5jZSBjcml0ZXJpYSwgYW5kIGN1cnJlbnQgYmxvY2tlcnMgYXJlIHRyYWNrZWQgaW4gW1BST0RVQ1RJT05fUkVMRUFTRV9DSEVDS0xJU1QubWRdKC4uL1BST0RVQ1RJT05fUkVMRUFTRV9DSEVDS0xJU1QubWQpLiBUaGUgUHl0aG9uIHJpc2sgdmFyaWFibGVzIGJlbG93IGNvbmZpZ3VyZSBvbmx5IHRoZSBQeXRob24gcnVubmVyOyB0aGV5IGRvIG5vdCBjb25maWd1cmUgdGhlIE1RTDUgRUEuCgojIyAxLiBQcmVwYXJlIHRoZSBob3N0CgpSZXF1aXJlZDoKCi0gUHl0aG9uIDMuMTEgb3IgbmV3ZXIKLSBOb2RlLmpzIDIwIG9yIG5ld2VyIGFuZCBucG0KLSBNZXRhVHJhZGVyIDUgaW5zdGFsbGVkIGFuZCBsb2dnZWQgaW4gb24gV2luZG93cywgb3IgYSBjb25maWd1cmVkIGBtdDVsaW51eGAgYnJpZGdlIG9uIExpbnV4Ci0gc3lzdGVtZCBhbmQgTmdpbnggZm9yIHRoZSBMaW51eCBzZXJ2aWNlIHRlbXBsYXRlIGluIHRoaXMgZGlyZWN0b3J5Ci0gQSBkZWRpY2F0ZWQsIG5vbi1yb290IE9TIHVzZXIKCkluc3RhbGwgdGhlIGFwcGxpY2F0aW9uIGFzIGEgZGVkaWNhdGVkIHVzZXIgYW5kIGtlZXAgdGhlIHJlcG9zaXRvcnkgb3V0c2lkZSBzaGFyZWQvaG9tZSBkaXJlY3RvcmllczoKCmBgYGJhc2gKc3VkbyB1c2VyYWRkIC0tc3lzdGVtIC0tY3JlYXRlLWhvbWUgLS1zaGVsbCAvdXNyL3NiaW4vbm9sb2dpbiBhZWdpcwpzdWRvIGluc3RhbGwgLWQgLW8gYWVnaXMgLWcgYWVnaXMgLW0gMDc1MCAvb3B0L2FlZ2lzLXF1YW50CnN1ZG8gaW5zdGFsbCAtZCAtbyBhZWdpcyAtZyBhZWdpcyAtbSAwNzUwIC92YXIvbG9nL2FlZ2lzLXF1YW50CnN1ZG8gY3AgLWEgLiAvb3B0L2FlZ2lzLXF1YW50CnN1ZG8gY2hvd24gLVIgYWVnaXM6YWVnaXMgL29wdC9hZWdpcy1xdWFudApgYGAKCkNyZWF0ZSB0aGUgUHl0aG9uIGVudmlyb25tZW50IGFuZCBidWlsZCB0aGUgZnJvbnRlbmQ6CgpgYGBiYXNoCnN1ZG8gLXUgYWVnaXMgcHl0aG9uMyAtbSB2ZW52IC9vcHQvYWVnaXMtcXVhbnQvLnZlbnYKc3VkbyAtdSBhZWdpcyAvb3B0L2FlZ2lzLXF1YW50Ly52ZW52L2Jpbi9weXRob24gLW0gcGlwIGluc3RhbGwgLS11cGdyYWRlIHBpcApzdWRvIC11IGFlZ2lzIC9vcHQvYWVnaXMtcXVhbnQvLnZlbnYvYmluL3B5dGhvbiAtbSBwaXAgaW5zdGFsbCAtciAvb3B0L2FlZ2lzLXF1YW50L3NlcnZlci9yZXF1aXJlbWVudHMudHh0CnN1ZG8gLXUgYWVnaXMgbnBtIC0tcHJlZml4IC9vcHQvYWVnaXMtcXVhbnQvY2xpZW50IGNpCnN1ZG8gLXUgYWVnaXMgbnBtIC0tcHJlZml4IC9vcHQvYWVnaXMtcXVhbnQvY2xpZW50IHJ1biBidWlsZApgYGAKClJ1biB0aGUgdGVzdCBzdWl0ZSBiZWZvcmUgaW5zdGFsbGF0aW9uIHdoZW4gdGhlIGhvc3QgaGFzIHRoZSByZXF1aXJlZCBkZXBlbmRlbmNpZXM6CgpgYGBiYXNoCnN1ZG8gLXUgYWVnaXMgL29wdC9hZWdpcy1xdWFudC8udmVudi9iaW4vcHl0aG9uIC1tIHB5dGVzdCAtcSAvb3B0L2FlZ2lzLXF1YW50L3Rlc3RzCmBgYAoKIyMgMi4gQ29uZmlndXJlIHNlY3JldHMKCkNvcHkgYHNlcnZlci8uZW52LmV4YW1wbGVgIHRvIGAvZXRjL2FlZ2lzLXF1YW50LmVudmAsIHNldCBhIHVuaXF1ZSBgQVBJX1RPS0VOYCwgc2V0IHRoZSBPcGVuQUkga2V5LCBhbmQgY29uZmlndXJlIHRoZSBNVDUgYWNjb3VudCBmb3IgdW5hdHRlbmRlZCBzdGFydHVwOgoKYGBgYmFzaApzdWRvIGNwIC9vcHQvYWVnaXMtcXVhbnQvc2VydmVyLy5lbnYuZXhhbXBsZSAvZXRjL2FlZ2lzLXF1YW50LmVudgpzdWRvIGNob3duIHJvb3Q6YWVnaXMgL2V0Yy9hZWdpcy1xdWFudC5lbnYKc3VkbyBjaG1vZCAwNjQwIC9ldGMvYWVnaXMtcXVhbnQuZW52CnN1ZG9lZGl0IC9ldGMvYWVnaXMtcXVhbnQuZW52CmBgYAoKTWluaW11bSBwcm9kdWN0aW9uIHZhbHVlczoKCmBgYGRvdGVudgpBUElfSE9TVD0xMjcuMC4wLjEKQVBJX1BPUlQ9ODAwMApDT1JTX09SSUdJTlM9aHR0cHM6Ly95b3VyLWRvbWFpbi5leGFtcGxlCkFQSV9UT0tFTj08bG9uZy1yYW5kb20tdmFsdWU+ClRSQURJTkdfTU9ERT1wYXBlcgpPUEVOQUlfQVBJX0tFWT08b3BlbmFpLWtleT4KTVQ1X0xPR0lOPTxkZW1vLWxvZ2luPgpNVDVfUEFTU1dPUkQ9PGRlbW8tcGFzc3dvcmQ+Ck1UNV9TRVJWRVI9PGJyb2tlci1zZXJ2ZXI+Ck1UNUxJTlVYX0VOQUJMRUQ9MApMT0dfTEVWRUw9SU5GTwpNQVhfQ0FORExFX0FHRV9TRUNPTkRTPTcyMDAKYGBgCgpgTVQ1X0xPR0lOYCwgYE1UNV9QQVNTV09SRGAsIGFuZCBgTVQ1X1NFUlZFUmAgbWF5IGJlIGxlZnQgZW1wdHkgb25seSB3aGVuIGFuIG9wZXJhdG9yIHdpbGwgZW50ZXIgdGhlbSB0aHJvdWdoIFNldHRpbmdzIGFmdGVyIHN0YXJ0dXAuIFRoZXkgYXJlIHJlcXVpcmVkIGZvciBhbiB1bmF0dGVuZGVkIHNlcnZpY2UuCgpUaGUgUHl0aG9uIHJ1bm5lciByZWFkcyB0aGVzZSByaXNrIHNldHRpbmdzIGZyb20gdGhlIGVudmlyb25tZW50OiBgUklTS19QRVJfVFJBREVfUENUYCwgYE1BWF9EQUlMWV9MT1NTX1BDVGAsIGBNQVhfRFJBV0RPV05fRlJPTV9QRUFLX1BDVGAsIGBNQVhfVFJBREVTX1BFUl9EQVlgLCBgQ09SUkVMQVRJT05fVEhSRVNIT0xEYCwgYEFUUl9TTF9NVUxUSVBMSUVSYCwgYEFUUl9UUF9NVUxUSVBMSUVSYCwgYFRSQUlMSU5HX1RSSUdHRVJfUlJgLCBgVFJBSUxJTkdfQVRSX01VTFRJUExJRVJgLCBgTUFYX0NPTkNVUlJFTlRfUE9TSVRJT05TYCwgYW5kIGBERVZJQVRJT05fUE9JTlRTYC4gVGhleSBhcmUgdmFsaWRhdGVkIGF0IHN0YXJ0dXAuIFNldCB0aGVtIG9ubHkgdG8gdGhlIGFjY291bnQgb3duZXIncyBzaWduZWQgdmFsdWVzOyB1bnNldCB2YWx1ZXMgdXNlIHNvdXJjZSBkZWZhdWx0cywgd2hpY2ggYXJlIG5vdCBhcHByb3ZlZCBsaW1pdHMuIFRoZXNlIHNldHRpbmdzIGRvIG5vdCBwcm92aWRlIHBlcnNpc3RlbnQgZ3VhcmRzIG9yIGFuIGFnZ3JlZ2F0ZSBvcGVuLXJpc2sgbGltaXQuCgpCdWlsZCB0aGUgZnJvbnRlbmQgYWdhaW5zdCB0aGUgcHVibGljIG9yaWdpbiBhbmQgdGhlIHNhbWUgQVBJIHRva2VuOgoKYGBgYmFzaApzdWRvIC11IGFlZ2lzIFZJVEVfQVBJX0JBU0U9aHR0cHM6Ly95b3VyLWRvbWFpbi5leGFtcGxlIFwKICBWSVRFX0FQSV9UT0tFTj0nPHNhbWUtYXBpLXRva2VuPicgXAogIG5wbSAtLXByZWZpeCAvb3B0L2FlZ2lzLXF1YW50L2NsaWVudCBydW4gYnVpbGQKYGBgCgpUaGUgQVBJIHRva2VuIGlzIG5lY2Vzc2FyaWx5IHByZXNlbnQgaW4gdGhlIGJyb3dzZXIgYnVuZGxlLiBVc2UgVExTLCByZXN0cmljdCBhY2Nlc3MgdG8gdGhlIGRlcGxveW1lbnQsIGFuZCByb3RhdGUgdGhlIHRva2VuIGlmIHRoZSBidW5kbGUgaXMgZXZlciBkaXN0cmlidXRlZCBvdXRzaWRlIHRoZSBpbnRlbmRlZCB1c2Vycy4KCiMjIDMuIEluc3RhbGwgdGhlIHNlcnZpY2UKCkNvcHkgdGhlIHN5c3RlbWQgdGVtcGxhdGUgYW5kIGFkanVzdCB0aGUgcGF0aHMgb25seSBpZiB0aGUgaW5zdGFsbGF0aW9uIHJvb3Qgb3IgdXNlciBkaWZmZXJzOgoKYGBgYmFzaApzdWRvIGNwIC9vcHQvYWVnaXMtcXVhbnQvZGVwbG95L2FlZ2lzLXF1YW50LnNlcnZpY2UgL2V0Yy9zeXN0ZW1kL3N5c3RlbS9hZWdpcy1xdWFudC5zZXJ2aWNlCnN1ZG8gc3lzdGVtZC1hbmFseXplIHZlcmlmeSAvZXRjL3N5c3RlbWQvc3lzdGVtL2FlZ2lzLXF1YW50LnNlcnZpY2UKc3VkbyBzeXN0ZW1jdGwgZGFlbW9uLXJlbG9hZApzdWRvIHN5c3RlbWN0bCBlbmFibGUgLS1ub3cgYWVnaXMtcXVhbnQKc3lzdGVtY3RsIHN0YXR1cyBhZWdpcy1xdWFudApgYGAKClRoZSBzZXJ2aWNlIHVzZXMgYFR5cGU9bm90aWZ5YCBhbmQgYSAxMjAtc2Vjb25kIHdhdGNoZG9nLiBUaGUgYXBwbGljYXRpb24gc2VuZHMgYFJFQURZPTFgLCBgV0FUQ0hET0c9MWAsIGFuZCBgU1RPUFBJTkc9MWAgbm90aWZpY2F0aW9ucyB3aGVuIHJ1biBieSBzeXN0ZW1kLgoKIyMgNC4gUHV0IE5naW54IGluIGZyb250IG9mIHRoZSBBUEkKCkNvcHkgYGRlcGxveS9uZ2lueC5jb25mYCB0byBgL2V0Yy9uZ2lueC9zaXRlcy1hdmFpbGFibGUvYWVnaXMtcXVhbnRgLCByZXBsYWNlIGBDSEFOR0VfTUVgIHdpdGggdGhlIHB1YmxpYyBob3N0bmFtZSwgYW5kIGVuYWJsZSB0aGUgc2l0ZToKCmBgYGJhc2gKc3VkbyBjcCAvb3B0L2FlZ2lzLXF1YW50L2RlcGxveS9uZ2lueC5jb25mIC9ldGMvbmdpbngvc2l0ZXMtYXZhaWxhYmxlL2FlZ2lzLXF1YW50CnN1ZG8gc2VkIC1pICdzL0NIQU5HRV9NRS95b3VyLWRvbWFpbi5leGFtcGxlLycgL2V0Yy9uZ2lueC9zaXRlcy1hdmFpbGFibGUvYWVnaXMtcXVhbnQKc3VkbyBsbiAtcyAvZXRjL25naW54L3NpdGVzLWF2YWlsYWJsZS9hZWdpcy1xdWFudCAvZXRjL25naW54L3NpdGVzLWVuYWJsZWQvYWVnaXMtcXVhbnQKc3VkbyBuZ2lueCAtdApzdWRvIHN5c3RlbWN0bCByZWxvYWQgbmdpbngKYGBgCgpUZXJtaW5hdGUgVExTIGF0IE5naW54IG9yIGFuIHVwc3RyZWFtIGxvYWQgYmFsYW5jZXIuIFRoZSBBUEkgcmVtYWlucyBib3VuZCB0byBgMTI3LjAuMC4xOjgwMDBgIGJ5IGRlZmF1bHQuIGAvbWV0cmljc2AgaXMgcmVzdHJpY3RlZCB0byBsb2NhbGhvc3QgYnkgdGhlIHRlbXBsYXRlLgoKIyMgNS4gVmVyaWZ5IHRoZSBkZXBsb3ltZW50CgpGcm9tIHRoZSBob3N0OgoKYGBgYmFzaApjdXJsIC0tZmFpbCBodHRwOi8vMTI3LjAuMC4xOjgwMDAvaGVhbHRoegpjdXJsIC0tZmFpbCAtSCAiWC1BUEktS2V5OiA8YXBpLXRva2VuPiIgaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FwaS9oZWFsdGgKY3VybCAtLWZhaWwgaHR0cDovLzEyNy4wLjAuMTo4MDAwL21ldHJpY3MKYGBgCgpGcm9tIGEgYnJvd3NlciBvciByZW1vdGUgaG9zdDoKCmBgYGJhc2gKY3VybCAtLWZhaWwgaHR0cHM6Ly95b3VyLWRvbWFpbi5leGFtcGxlLwpjdXJsIC0tZmFpbCBodHRwczovL3lvdXItZG9tYWluLmV4YW1wbGUvaGVhbHRoegpgYGAKCmAvYXBpL2hlYWx0aGAgcmV0dXJucyBIVFRQIDUwMyB3aGVuIHRoZSBNVDUgdGVybWluYWwgaXMgZGlzY29ubmVjdGVkLCB0aGUgY29uZmlndXJlZCBzeW1ib2xzIGNhbm5vdCBiZSB2YWxpZGF0ZWQsIG9yIHRoZSBuZXdlc3QgY2xvc2VkIEgxIGNhbmRsZSBpcyBvbGRlciB0aGFuIGBNQVhfQ0FORExFX0FHRV9TRUNPTkRTYC4KCkluc3BlY3Qgc2VydmljZSBhbmQgYXBwbGljYXRpb24gbG9nczoKCmBgYGJhc2gKam91cm5hbGN0bCAtdSBhZWdpcy1xdWFudCAtZgp0YWlsIC1mIC9vcHQvYWVnaXMtcXVhbnQvc2VydmVyL3RyYWRpbmdfYm90LmxvZwpgYGAKCiMjIDYuIERlbW8tYWNjb3VudCBhY2NlcHRhbmNlIGdhdGUKClVzZSB0aGUgY29tcGxldGUgc3RhZ2VkIHF1YWxpZmljYXRpb24gYW5kIGV2aWRlbmNlIGNoZWNrbGlzdCBpbiBbUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZF0oLi4vUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZCkuIFRoZSBtYXJrZXQtd2VlayBkZW1vIHJlcXVpcmVtZW50IGJlbG93IGlzIGEgbWluaW11bSBnYXRlLCBub3QgcGVybWlzc2lvbiB0byBlbmFibGUgbGl2ZSB0cmFkaW5nLgoKQmVmb3JlIGVuYWJsaW5nIGBUUkFESU5HX01PREU9bGl2ZWAsIHJ1biBhdCBsZWFzdCBvbmUgZnVsbCBtYXJrZXQtd2VlayBvbiBhIGRlZGljYXRlZCBkZW1vIGFjY291bnQgYW5kIHZlcmlmeToKCi0gY2xlYW4gc3RhcnR1cCwgcmVzdGFydCwgTVQ1IGRpc2Nvbm5lY3QsIGFuZCByZWNvbm5lY3QgYmVoYXZpb3I7Ci0gQUkgSE9MRCBhbmQgcmVqZWN0ZWQtcHJvcG9zYWwgcGF0aHMgd2l0aG91dCBwcm9jZXNzIGNyYXNoZXM7Ci0gaW52YWxpZCBzdG9wLCB2b2x1bWUsIG1hcmdpbiwgYW5kIHN5bWJvbCBjaGVja3MgYmxvY2sgYG9yZGVyX3NlbmRgOwotIGRhaWx5LWxvc3MsIHBlYWstZHJhd2Rvd24sIG1heC10cmFkZSwgYW5kIGNvcnJlbGF0aW9uIGd1YXJkczsKLSBPcGVuQUkgYW5kIG5ld3Mgb3V0YWdlcyBmYWlsIGNsb3NlZCB0byBIT0xEOwotIHRyYWlsaW5nLXN0b3AgdXBkYXRlcyBhbmQgYHBvc2l0aW9uX3N0YXRlLmpzb25gIHJlY292ZXJ5IGFmdGVyIHJlc3RhcnQ7Ci0gYnJva2VyIGhpc3RvcnkgcmVjb25jaWxlcyB3aXRoIHRoZSBib3QncyBwb3NpdGlvbiBzdGF0ZS4KCkRvIG5vdCBwcm9tb3RlIHRvIGZ1bmRlZCBjYXBpdGFsIGlmIGFueSBjaGVjayBpcyBtaXNzaW5nIG9yIHJlY29uY2lsaWF0aW9uIGRpZmZlcnMuCgojIyA3LiBSb2xsYmFjayBhbmQgcmVjb3ZlcnkKClN0b3AgdGhlIHNlcnZpY2Ugd2l0aG91dCBjaGFuZ2luZyBjb25maWd1cmF0aW9uOgoKYGBgYmFzaApzdWRvIHN5c3RlbWN0bCBzdG9wIGFlZ2lzLXF1YW50CmBgYAoKUmVzdG9yZSB0aGUgcHJldmlvdXMgZnJvbnRlbmQgYnVpbGQgb3IgcmVwb3NpdG9yeSByZXZpc2lvbiwgdGhlbiByZXN0YXJ0OgoKYGBgYmFzaApzdWRvIHN5c3RlbWN0bCByZXN0YXJ0IGFlZ2lzLXF1YW50CnN5c3RlbWN0bCBzdGF0dXMgYWVnaXMtcXVhbnQKYGBgCgpSb3RhdGUgYEFQSV9UT0tFTmAgYW5kIGBPUEVOQUlfQVBJX0tFWWAgb24gdGhlIG9yZ2FuaXphdGlvbidzIGRlZmluZWQgc2NoZWR1bGUuIE5ldmVyIGNvbW1pdCBgLmVudmAsIGBzZXJ2ZXIvLmVudmAsIGBjbGllbnQvLmVudmAsIGxvZ3MsIG9yIGBwb3NpdGlvbl9zdGF0ZS5qc29uYC4K
+# Production deployment
+
+Aegis Quant is safe to deploy first in `TRADING_MODE=paper`. The service can run on a Windows host with the native MT5 terminal, or on Linux only when a tested `mt5linux` bridge is available. Do not expose the API or MT5 credentials directly to the public internet.
+
+Funded/live use is **not approved** by this runbook. The release candidate, owner-approval worksheet, demo acceptance criteria, and current blockers are tracked in [PRODUCTION_RELEASE_CHECKLIST.md](../PRODUCTION_RELEASE_CHECKLIST.md). The Python risk variables below configure only the Python runner; they do not configure the MQL5 EA.
+
+## 1. Prepare the host
+
+Required:
+
+- Python 3.11 or newer
+- Node.js 20 or newer and npm
+- MetaTrader 5 installed and logged in on Windows, or a configured `mt5linux` bridge on Linux
+- systemd and Nginx for the Linux service template in this directory
+- A dedicated, non-root OS user
+
+Install the application as a dedicated user and keep the repository outside shared/home directories:
+
+```bash
+sudo useradd --system --create-home --shell /usr/sbin/nologin aegis
+sudo install -d -o aegis -g aegis -m 0750 /opt/aegis-quant
+sudo install -d -o aegis -g aegis -m 0750 /var/log/aegis-quant
+sudo cp -a . /opt/aegis-quant
+sudo chown -R aegis:aegis /opt/aegis-quant
+```
+
+Create the Python environment and build the frontend:
+
+```bash
+sudo -u aegis python3 -m venv /opt/aegis-quant/.venv
+sudo -u aegis /opt/aegis-quant/.venv/bin/python -m pip install --upgrade pip
+sudo -u aegis /opt/aegis-quant/.venv/bin/python -m pip install -r /opt/aegis-quant/server/requirements.txt
+sudo -u aegis npm --prefix /opt/aegis-quant/client ci
+sudo -u aegis npm --prefix /opt/aegis-quant/client run build
+```
+
+Run the test suite before installation when the host has the required dependencies:
+
+```bash
+sudo -u aegis /opt/aegis-quant/.venv/bin/python -m pytest -q /opt/aegis-quant/tests
+```
+
+## 2. Configure secrets
+
+Copy `server/.env.example` to `/etc/aegis-quant.env`, set a unique `API_TOKEN`, set the OpenAI key, and configure the MT5 account for unattended startup:
+
+```bash
+sudo cp /opt/aegis-quant/server/.env.example /etc/aegis-quant.env
+sudo chown root:aegis /etc/aegis-quant.env
+sudo chmod 0640 /etc/aegis-quant.env
+sudoedit /etc/aegis-quant.env
+```
+
+Minimum production values:
+
+```dotenv
+API_HOST=127.0.0.1
+API_PORT=8000
+CORS_ORIGINS=https://your-domain.example
+API_TOKEN=<long-random-value>
+TRADING_MODE=paper
+OPENAI_API_KEY=<openai-key>
+MT5_LOGIN=<demo-login>
+MT5_PASSWORD=<demo-password>
+MT5_SERVER=<broker-server>
+MT5LINUX_ENABLED=0
+LOG_LEVEL=INFO
+MAX_CANDLE_AGE_SECONDS=7200
+```
+
+`MT5_LOGIN`, `MT5_PASSWORD`, and `MT5_SERVER` may be left empty only when an operator will enter them through Settings after startup. They are required for an unattended service.
+
+The Python runner reads these risk settings from the environment: `RISK_PER_TRADE_PCT`, `MAX_DAILY_LOSS_PCT`, `MAX_DRAWDOWN_FROM_PEAK_PCT`, `MAX_TRADES_PER_DAY`, `CORRELATION_THRESHOLD`, `ATR_SL_MULTIPLIER`, `ATR_TP_MULTIPLIER`, `TRAILING_TRIGGER_RR`, `TRAILING_ATR_MULTIPLIER`, `MAX_CONCURRENT_POSITIONS`, and `DEVIATION_POINTS`. They are validated at startup. Set them only to the account owner's signed values; unset values use source defaults, which are not approved limits. These settings do not provide persistent guards or an aggregate open-risk limit.
+
+Build the frontend against the public origin and the same API token:
+
+```bash
+sudo -u aegis VITE_API_BASE=https://your-domain.example \
+  VITE_API_TOKEN='<same-api-token>' \
+  npm --prefix /opt/aegis-quant/client run build
+```
+
+The API token is necessarily present in the browser bundle. Use TLS, restrict access to the deployment, and rotate the token if the bundle is ever distributed outside the intended users.
+
+## 3. Install the service
+
+Copy the systemd template and adjust the paths only if the installation root or user differs:
+
+```bash
+sudo cp /opt/aegis-quant/deploy/aegis-quant.service /etc/systemd/system/aegis-quant.service
+sudo systemd-analyze verify /etc/systemd/system/aegis-quant.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now aegis-quant
+systemctl status aegis-quant
+```
+
+The service uses `Type=notify` and a 120-second watchdog. The application sends `READY=1`, `WATCHDOG=1`, and `STOPPING=1` notifications when run by systemd.
+
+## 4. Put Nginx in front of the API
+
+Copy `deploy/nginx.conf` to `/etc/nginx/sites-available/aegis-quant`, replace `CHANGE_ME` with the public hostname, and enable the site:
+
+```bash
+sudo cp /opt/aegis-quant/deploy/nginx.conf /etc/nginx/sites-available/aegis-quant
+sudo sed -i 's/CHANGE_ME/your-domain.example/' /etc/nginx/sites-available/aegis-quant
+sudo ln -s /etc/nginx/sites-available/aegis-quant /etc/nginx/sites-enabled/aegis-quant
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+Terminate TLS at Nginx or an upstream load balancer. The API remains bound to `127.0.0.1:8000` by default. `/metrics` is restricted to localhost by the template.
+
+## 5. Verify the deployment
+
+From the host:
+
+```bash
+curl --fail http://127.0.0.1:8000/healthz
+curl --fail -H "X-API-Key: <api-token>" http://127.0.0.1:8000/api/health
+curl --fail http://127.0.0.1:8000/metrics
+```
+
+From a browser or remote host:
+
+```bash
+curl --fail https://your-domain.example/
+curl --fail https://your-domain.example/healthz
+```
+
+`/api/health` returns HTTP 503 when the MT5 terminal is disconnected, the configured symbols cannot be validated, or the newest closed H1 candle is older than `MAX_CANDLE_AGE_SECONDS`.
+
+Inspect service and application logs:
+
+```bash
+journalctl -u aegis-quant -f
+tail -f /opt/aegis-quant/server/trading_bot.log
+```
+
+## 6. Demo-account acceptance gate
+
+Use the complete staged qualification and evidence checklist in [PRODUCTION_RELEASE_CHECKLIST.md](../PRODUCTION_RELEASE_CHECKLIST.md). The market-week demo requirement below is a minimum gate, not permission to enable live trading.
+
+Before enabling `TRADING_MODE=live`, run at least one full market-week on a dedicated demo account and verify:
+
+- clean startup, restart, MT5 disconnect, and reconnect behavior;
+- AI HOLD and rejected-proposal paths without process crashes;
+- invalid stop, volume, margin, and symbol checks block `order_send`;
+- daily-loss, peak-drawdown, max-trade, and correlation guards;
+- OpenAI and news outages fail closed to HOLD;
+- trailing-stop updates and `position_state.json` recovery after restart;
+- broker history reconciles with the bot's position state.
+
+Do not promote to funded capital if any check is missing or reconciliation differs.
+
+## 7. Rollback and recovery
+
+Stop the service without changing configuration:
+
+```bash
+sudo systemctl stop aegis-quant
+```
+
+Restore the previous frontend build or repository revision, then restart:
+
+```bash
+sudo systemctl restart aegis-quant
+systemctl status aegis-quant
+```
+
+Rotate `API_TOKEN` and `OPENAI_API_KEY` on the organization's defined schedule. Never commit `.env`, `server/.env`, `client/.env`, logs, or `position_state.json`.

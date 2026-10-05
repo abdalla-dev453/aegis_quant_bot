@@ -1,1 +1,432 @@
-IyBQcm9kdWN0aW9uIERlcGxveW1lbnQgR3VpZGUgZm9yIEFlZ2lzIFF1YW50IFRyYWRpbmcgQm90Cgo+ICoqTGVnYWN5IHJlZmVyZW5jZSwgbm90IGRlcGxveW1lbnQgYXV0aG9yaXphdGlvbi4qKiBUaGUgY3VycmVudCByZWxlYXNlIHN0YXR1cyBpcyAqKk5PLUdPIGZvciBmdW5kZWQvbGl2ZSB0cmFkaW5nKiouIEZvbGxvdyBbZGVwbG95L0RFUExPWU1FTlQubWRdKGRlcGxveS9ERVBMT1lNRU5ULm1kKSBmb3IgdGhlIHBhcGVyLWZpcnN0IGRlcGxveW1lbnQgcHJvY2VkdXJlIGFuZCBbUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZF0oUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZCkgZm9yIHF1YWxpZmljYXRpb24gZ2F0ZXMuIFZhbHVlcyBpbiB0aGlzIG9sZGVyIGRvY3VtZW50IGFyZSBub3QgYWNjb3VudC1vd25lciBhcHByb3ZhbHM7IGRvIG5vdCB1c2UgaXRzIHByZXZpb3VzIGxpdmUtbW9kZSByZWNvbW1lbmRhdGlvbi4KCiMjIENsaWVudC1TZXJ2ZXIgQ29tcGF0aWJpbGl0eSBBbmFseXNpcyDinIUKCiMjIyBBUEkgQ29udHJhY3QgVmVyaWZpY2F0aW9uCioqU3RhdHVzOiBGVUxMWSBDT01QQVRJQkxFKioKClRoZSBleGlzdGluZyBBUEkgY29udHJhY3RzIGJldHdlZW4gY2xpZW50IGFuZCBzZXJ2ZXIgcmVtYWluIGludGFjdDoKLSBBbGwgZXhpc3RpbmcgZW5kcG9pbnRzIChgL2FwaS9hY2NvdW50YCwgYC9hcGkvcmlza2AsIGAvYXBpL3Bvc2l0aW9uc2AsIGV0Yy4pIGFyZSB1bmNoYW5nZWQKLSBDbGllbnQtc2lkZSBkYXRhIHN0cnVjdHVyZXMgaW4gYGJvdEZlZWQuanNgIG1hdGNoIHNlcnZlci1zaWRlIG1vZGVscyBpbiBgbW9kZWxzLnB5YAotIE5ldyBmZWF0dXJlcyBhcmUgYWRkaXRpdmUgdmlhIG5ldyBlbmRwb2ludHMsIG5vdCBicmVha2luZyBjaGFuZ2VzCi0gQmFja3dhcmQgY29tcGF0aWJpbGl0eSBtYWludGFpbmVkIGZvciBleGlzdGluZyBmdW5jdGlvbmFsaXR5CgojIyMgTmV3IEFQSSBFbmRwb2ludHMgQWRkZWQKLSBgL2FwaS9hZHZhbmNlZC1hbmFseXNpc2AgLSBTdGF0dXMgb2YgYWR2YW5jZWQgdGVjaG5pY2FsIGFuYWx5c2lzIGZlYXR1cmVzCi0gYC9hcGkvc2VsZi1oZWFsaW5nYCAtIFNlbGYtaGVhbGluZyBzeXN0ZW0gc3RhdHVzCi0gYC9hcGkvYWRhcHRpdmUtb3B0aW1pemF0aW9uYCAtIEFkYXB0aXZlIG9wdGltaXphdGlvbiBzdGF0dXMKLSBgL2FwaS9hZGFwdGl2ZS1vcHRpbWl6YXRpb24vcnVuYCAtIE1hbnVhbCBvcHRpbWl6YXRpb24gdHJpZ2dlcgotIGAvYXBpL3BvcnRmb2xpby1yaXNrYCAtIFBvcnRmb2xpbyByaXNrIGFuYWx5c2lzCi0gYC9hcGkvc3lzdGVtLWhlYWx0aGAgLSBDb21wcmVoZW5zaXZlIHN5c3RlbSBoZWFsdGggY2hlY2sKCiMjIyBDbGllbnQtU2lkZSBVcGRhdGVzCkFkZGVkIGNvcnJlc3BvbmRpbmcgQVBJIGNsaWVudCBmdW5jdGlvbnMgaW4gYGJvdEZlZWQuanNgOgotIGBmZXRjaEFkdmFuY2VkQW5hbHlzaXNTdGF0dXMoKWAKLSBgZmV0Y2hTZWxmSGVhbGluZ1N0YXR1cygpYAotIGBmZXRjaEFkYXB0aXZlT3B0aW1pemF0aW9uU3RhdHVzKClgCi0gYHJ1bkFkYXB0aXZlT3B0aW1pemF0aW9uKClgCi0gYGZldGNoUG9ydGZvbGlvUmlza1N0YXR1cygpYAotIGBmZXRjaFN5c3RlbUhlYWx0aCgpYAoKIyMgUGVyZm9ybWFuY2UgT3B0aW1pemF0aW9uIEFuYWx5c2lzCgojIyMgQ3VycmVudCBQZXJmb3JtYW5jZSBDaGFyYWN0ZXJpc3RpY3MKCioqQm90dGxlbmVjayBBbmFseXNpczoqKgoxLiAqKk1UNSBJUEMgQ2FsbHMqKjogVGhlIG1haW4gcGVyZm9ybWFuY2UgYm90dGxlbmVjayBpcyBNVDUgdGVybWluYWwgY29tbXVuaWNhdGlvbgoyLiAqKkFJIEFQSSBDYWxscyoqOiBPcGVuQUkgQVBJIGNhbGxzIGhhdmUgbmV0d29yayBsYXRlbmN5ICh+NTAwbXMtMnMpCjMuICoqSW5kaWNhdG9yIENhbGN1bGF0aW9ucyoqOiBwYW5kYXNfdGEgY2FsY3VsYXRpb25zIGFyZSBDUFUtaW50ZW5zaXZlCjQuICoqRGF0YSBQcm9jZXNzaW5nKio6IERhdGFGcmFtZSBvcGVyYXRpb25zIGZvciBlYWNoIHN5bWJvbAoKKipPcHRpbWl6YXRpb25zIEltcGxlbWVudGVkOioqCjEuICoqQXN5bmMgT3BlcmF0aW9ucyoqOiBBbGwgaGVhdnkgY29tcHV0YXRpb25zIHJ1biBpbiB0aHJlYWQgcG9vbHMKMi4gKipDb25jdXJyZW50IERhdGEgRmV0Y2hpbmcqKjogSDEgYW5kIEg0IGRhdGEgZmV0Y2hlZCBzaW11bHRhbmVvdXNseQozLiAqKkNvbm5lY3Rpb24gUG9vbGluZyoqOiBTeW1ib2wgaW5mbyBjYWNoaW5nIHRvIHJlZHVjZSBNVDUgY2FsbHMKNC4gKipCb3VuZGVkIE1lbW9yeSoqOiBIaXN0b3J5IHF1ZXVlcyBsaW1pdGVkIHRvIHByZXZlbnQgbWVtb3J5IGJsb2F0CjUuICoqTm9uLWJsb2NraW5nIExvZ2dpbmcqKjogUXVldWUtYmFzZWQgYXN5bmMgbG9nZ2luZyBzeXN0ZW0KCiMjIyBQZXJmb3JtYW5jZSBJbXBhY3Qgb2YgTmV3IEZlYXR1cmVzCgoqKkFkZGl0aW9uYWwgT3ZlcmhlYWQ6KioKLSAqKkFkdmFuY2VkIEluZGljYXRvcnMqKjogKzUwLTEwMG1zIHBlciBzeW1ib2wgKEFEWCwgTUFDRCBjYWxjdWxhdGlvbnMpCi0gKipQYXR0ZXJuIFJlY29nbml0aW9uKio6ICsxMDAtMjAwbXMgcGVyIHN5bWJvbCAocGF0dGVybiBkZXRlY3Rpb24gYWxnb3JpdGhtcykKLSAqKlBvcnRmb2xpbyBSaXNrIEFuYWx5c2lzKio6ICsyMDAtMzAwbXMgKGNvcnJlbGF0aW9uIGNhbGN1bGF0aW9ucykKLSAqKlNlbGYtSGVhbGluZyBNb25pdG9yaW5nKio6ICs1LTEwbXMgKGxpZ2h0d2VpZ2h0IGhlYWx0aCBjaGVja3MpCi0gKipBZGFwdGl2ZSBPcHRpbWl6YXRpb24qKjogKzUwLTEwMG1zIChwZXJmb3JtYW5jZSBhbmFseXNpcykKCioqVG90YWwgRXN0aW1hdGVkIE92ZXJoZWFkOioqIH40MDAtNjAwbXMgcGVyIHRyYWRpbmcgY3ljbGUKCioqTWl0aWdhdGlvbiBTdHJhdGVnaWVzOioqCjEuICoqRmVhdHVyZSBGbGFncyoqOiBBbGwgYWR2YW5jZWQgZmVhdHVyZXMgYXJlIG9wdC1pbiB2aWEgY29uZmlndXJhdGlvbgoyLiAqKlNlbGVjdGl2ZSBBY3RpdmF0aW9uKio6IEVuYWJsZSBvbmx5IGhpZ2gtaW1wYWN0IGZlYXR1cmVzCjMuICoqQXN5bmMgUHJvY2Vzc2luZyoqOiBIZWF2eSBvcGVyYXRpb25zIGRvbid0IGJsb2NrIG1haW4gdHJhZGluZyBsb29wCjQuICoqQ2FjaGluZyoqOiBSZXN1bHRzIGNhY2hlZCB3aGVyZSBhcHByb3ByaWF0ZQo1LiAqKkdyYWNlZnVsIERlZ3JhZGF0aW9uKio6IFN5c3RlbSBjb250aW51ZXMgaWYgZmVhdHVyZXMgZmFpbAoKIyMjIFByb2R1Y3Rpb24gUGVyZm9ybWFuY2UgUmVjb21tZW5kYXRpb25zCgoqKk1pbmltdW0gSGFyZHdhcmUgUmVxdWlyZW1lbnRzOioqCi0gKipDUFUqKjogMisgY29yZXMgKDQrIHJlY29tbWVuZGVkIGZvciBtdWx0aXBsZSBzeW1ib2xzKQotICoqUkFNKio6IDRHQiBtaW5pbXVtICg4R0IgcmVjb21tZW5kZWQpCi0gKipTdG9yYWdlKio6IDIwR0IgU1NECi0gKipOZXR3b3JrKio6IFN0YWJsZSBpbnRlcm5ldCBjb25uZWN0aW9uICg8MTAwbXMgbGF0ZW5jeSB0byBicm9rZXIpCgoqKk9wdGltaXphdGlvbiBDb25maWd1cmF0aW9uOioqCmBgYHB5dGhvbgojIGNvbmZpZy5weSBvcHRpbWl6YXRpb25zClNUUkFURUdZLmxvb3BfcG9sbF9zZWNvbmRzID0gMTAgICMgUmVkdWNlIGZyb20gMTUgZm9yIGZhc3RlciByZWFjdGlvbgpBRFZBTkNFRF9BTkFMWVNJUy51c2VfYWR4ID0gVHJ1ZSAgIyBMb3cgb3ZlcmhlYWQKQURWQU5DRURfQU5BTFlTSVMudXNlX21hY2QgPSBUcnVlICAjIExvdyBvdmVyaGVhZApQUkVESUNUSU9OLmVuYWJsZV9wYXR0ZXJuX2RldGVjdGlvbiA9IFRydWUgICMgTWVkaXVtIG92ZXJoZWFkClBSRURJQ1RJT04uZW5hYmxlX3ByaWNlX3ByZWRpY3Rpb24gPSBGYWxzZSAgIyBIaWdoIG92ZXJoZWFkIChvcHRpb25hbCkKU0VMRl9IRUFMSU5HLmVuYWJsZV9zZWxmX2hlYWxpbmcgPSBUcnVlICAjIFZlcnkgbG93IG92ZXJoZWFkCkFEQVBUSVZFLmVuYWJsZV9hZGFwdGl2ZV9wYXJhbWV0ZXJzID0gVHJ1ZSAgIyBMb3cgb3ZlcmhlYWQKQURWQU5DRURfUklTSy5lbmFibGVfcG9ydGZvbGlvX3Jpc2sgPSBUcnVlICAjIE1lZGl1bSBvdmVyaGVhZApgYGAKCiMjIFByb2R1Y3Rpb24gRGVwbG95bWVudCBDb25maWd1cmF0aW9uCgojIyMgRG9ja2VyIERlcGxveW1lbnQgKFJlY29tbWVuZGVkKQoKKipEb2NrZXJmaWxlOioqCmBgYGRvY2tlcmZpbGUKRlJPTSBweXRob246My4xMS1zbGltCgojIEluc3RhbGwgc3lzdGVtIGRlcGVuZGVuY2llcwpSVU4gYXB0LWdldCB1cGRhdGUgJiYgYXB0LWdldCBpbnN0YWxsIC15IFwKICAgIGdjYyBcCiAgICBnKysgXAogICAgJiYgcm0gLXJmIC92YXIvbGliL2FwdC9saXN0cy8qCgojIFNldCB3b3JraW5nIGRpcmVjdG9yeQpXT1JLRElSIC9hcHAKCiMgQ29weSByZXF1aXJlbWVudHMgZmlyc3QgZm9yIGNhY2hpbmcKQ09QWSBzZXJ2ZXIvcmVxdWlyZW1lbnRzLnR4dCAuClJVTiBwaXAgaW5zdGFsbCAtLW5vLWNhY2hlLWRpciAtciByZXF1aXJlbWVudHMudHh0CgojIENvcHkgYXBwbGljYXRpb24gY29kZQpDT1BZIHNlcnZlci8gLgoKIyBDcmVhdGUgbW9kZWxzIGRpcmVjdG9yeSBmb3IgTUwgbW9kZWxzClJVTiBta2RpciAtcCBtb2RlbHMKCiMgU2V0IGVudmlyb25tZW50IHZhcmlhYmxlcwpFTlYgUFlUSE9OVU5CVUZGRVJFRD0xCkVOViBUWj1VVEMKCiMgUnVuIHRoZSBhcHBsaWNhdGlvbgpDTUQgWyJweXRob24iLCAibWFpbi5weSJdCmBgYAoKKipkb2NrZXItY29tcG9zZS55bWw6KioKYGBgeWFtbAp2ZXJzaW9uOiAnMy44JwoKc2VydmljZXM6CiAgdHJhZGluZy1ib3Q6CiAgICBidWlsZDogLgogICAgY29udGFpbmVyX25hbWU6IGFlZ2lzLXF1YW50LWJvdAogICAgcmVzdGFydDogdW5sZXNzLXN0b3BwZWQKICAgIGVudmlyb25tZW50OgogICAgICAtIFRSQURJTkdfTU9ERT1wYXBlcgogICAgICAtIE9QRU5BSV9BUElfS0VZPSR7T1BFTkFJX0FQSV9LRVl9CiAgICAgIC0gQVBJX1RPS0VOPSR7QVBJX1RPS0VOfQogICAgICAtIEFQSV9IT1NUPTEyNy4wLjAuMQogICAgICAtIEFQSV9QT1JUPTgwMDAKICAgIHZvbHVtZXM6CiAgICAgIC0gLi9zZXJ2ZXIvLmVudjovYXBwLy5lbnYKICAgICAgLSAuL21vZGVsczovYXBwL21vZGVscwogICAgICAtIC4vbG9nczovYXBwL2xvZ3MKICAgIHBvcnRzOgogICAgICAtICIxMjcuMC4wLjE6ODAwMDo4MDAwIgogICAgbmV0d29ya19tb2RlOiBob3N0ICAjIFJlcXVpcmVkIGZvciBNVDUgdGVybWluYWwgYWNjZXNzCiAgICAjIEFsdGVybmF0aXZlOiBVc2UgbXQ1bGludXggYnJpZGdlIGZvciBjb250YWluZXJpemVkIE1UNSBhY2Nlc3MKYGBgCgojIyMgU3lzdGVtZCBTZXJ2aWNlIChMaW51eCkKCioqRmlsZTogL2V0Yy9zeXN0ZW1kL3N5c3RlbS9hZWdpcy1xdWFudC5zZXJ2aWNlKioKYGBgaW5pCltVbml0XQpEZXNjcmlwdGlvbj1BZWdpcyBRdWFudCBUcmFkaW5nIEJvdApBZnRlcj1uZXR3b3JrLnRhcmdldApXYW50cz1uZXR3b3JrLnRhcmdldAoKW1NlcnZpY2VdClR5cGU9c2ltcGxlClVzZXI9dHJhZGluZwpXb3JraW5nRGlyZWN0b3J5PS9ob21lL3RyYWRpbmcvYWVnaXNfcXVhbnQvc2VydmVyCkVudmlyb25tZW50PSJQQVRIPS9ob21lL3RyYWRpbmcvYWVnaXNfcXVhbnQvLnZlbnYvYmluIgpFbnZpcm9ubWVudEZpbGU9L2hvbWUvdHJhZGluZy9hZWdpc19xdWFudC9zZXJ2ZXIvLmVudgpFeGVjU3RhcnQ9L2hvbWUvdHJhZGluZy9hZWdpc19xdWFudC8udmVudi9iaW4vcHl0aG9uIG1haW4ucHkKUmVzdGFydD1hbHdheXMKUmVzdGFydFNlYz0xMApTdGFuZGFyZE91dHB1dD1qb3VybmFsClN0YW5kYXJkRXJyb3I9am91cm5hbApTeXNsb2dJZGVudGlmaWVyPWFlZ2lzLXF1YW50CgpbSW5zdGFsbF0KV2FudGVkQnk9bXVsdGktdXNlci50YXJnZXQKYGBgCgoqKkVuYWJsZSBzZXJ2aWNlOioqCmBgYGJhc2gKc3VkbyBzeXN0ZW1jdGwgZGFlbW9uLXJlbG9hZApzdWRvIHN5c3RlbWN0bCBlbmFibGUgYWVnaXMtcXVhbnQKc3VkbyBzeXN0ZW1jdGwgc3RhcnQgYWVnaXMtcXVhbnQKc3VkbyBzeXN0ZW1jdGwgc3RhdHVzIGFlZ2lzLXF1YW50CmBgYAoKIyMjIFdpbmRvd3MgU2VydmljZQoKKipVc2UgTlNTTSAoTm9uLVN1Y2tpbmcgU2VydmljZSBNYW5hZ2VyKToqKgpgYGBiYXNoCiMgRG93bmxvYWQgTlNTTSBmcm9tIGh0dHBzOi8vbnNzbS5jYy9kb3dubG9hZApuc3NtIGluc3RhbGwgQWVnaXNRdWFudCAiQzpcUHl0aG9uMzExXHB5dGhvbi5leGUiICJDOlxwYXRoXHRvXHNlcnZlclxtYWluLnB5Igpuc3NtIHNldCBBZWdpc1F1YW50IEFwcERpcmVjdG9yeSAiQzpccGF0aFx0b1xhZWdpc19xdWFudCIKbnNzbSBzZXQgQWVnaXNRdWFudCBBcHBFbnZpcm9ubWVudEV4dHJhICJQWVRIT05VTkJVRkZFUkVEPTEiCm5zc20gc2V0IEFlZ2lzUXVhbnQgQXBwU3Rkb3V0ICJDOlxwYXRoXHRvXGxvZ3Ncc2VydmljZS5sb2ciCm5zc20gc2V0IEFlZ2lzUXVhbnQgQXBwU3RkZXJyICJDOlxwYXRoXHRvXGxvZ3Ncc2VydmljZV9lcnJvci5sb2ciCm5zc20gc2V0IEFlZ2lzUXVhbnQgQXBwU3RvcE1ldGhvZFNraXAgNgpuc3NtIHNldCBBZWdpc1F1YW50IEFwcFJlc3RhcnREZWxheSA2MDAwMApuc3NtIHN0YXJ0IEFlZ2lzUXVhbnQKYGBgCgojIyBFbnZpcm9ubWVudCBDb25maWd1cmF0aW9uCgojIyMgUHJvZHVjdGlvbiAuZW52IFRlbXBsYXRlCmBgYGJhc2gKIyBDb3JlIENvbmZpZ3VyYXRpb24KVFJBRElOR19NT0RFPXBhcGVyCkFQSV9IT1NUPTEyNy4wLjAuMQpBUElfUE9SVD04MDAwCkFQSV9UT0tFTj15b3VyX3NlY3VyZV90b2tlbl9oZXJlCkNPUlNfT1JJR0lOUz1odHRwOi8vbG9jYWxob3N0OjUxNzMsaHR0cDovL3lvdXItZGFzaGJvYXJkLWRvbWFpbgoKIyBNVDUgQ3JlZGVudGlhbHMgKFNFQ1VSRSBUSEVTRSEpCk1UNV9MT0dJTj15b3VyX2FjY291bnRfbnVtYmVyCk1UNV9QQVNTV09SRD15b3VyX3NlY3VyZV9wYXNzd29yZApNVDVfU0VSVkVSPXlvdXJfYnJva2VyX3NlcnZlcgpNVDVfVEVSTUlOQUxfUEFUSD1DOlxQcm9ncmFtIEZpbGVzXE1ldGFUcmFkZXIgNVx0ZXJtaW5hbDY0LmV4ZQoKIyBBSSBDb25maWd1cmF0aW9uCk9QRU5BSV9BUElfS0VZPXlvdXJfb3BlbmFpX2FwaV9rZXkKT1BFTkFJX01PREVMPWdwdC00bwpPUEVOQUlfVElNRU9VVF9TRUNPTkRTPTMwCgojIE5ld3MgQVBJIChPcHRpb25hbCkKTkVXU19BUElfS0VZPXlvdXJfbmV3c19hcGlfa2V5CllBSE9PX0ZJTkFOQ0VfUlNTX1VSTD1odHRwczovL2ZlZWRzLmZpbmFuY2UueWFob28uY29tL3Jzcy8yLjAvaGVhZGxpbmU/cz1FVVJVU0QlM0RYJTJDR0JQVVNEJTNEWCUyQ0dDJTNERiZyZWdpb249VVMmbGFuZz1lbi1VUwoKIyBBZHZhbmNlZCBGZWF0dXJlcyAoUFJPRFVDVElPTiBTRVRUSU5HUykKQURWQU5DRURfQU5BTFlTSVNfVVNFX0FEWD10cnVlCkFEVkFOQ0VEX0FOQUxZU0lTX1VTRV9NQUNEPXRydWUKQURWQU5DRURfQU5BTFlTSVNfRU5BQkxFX1JFR0lNRV9ERVRFQ1RJT049dHJ1ZQpBRFZBTkNFRF9BTkFMWVNJU19VU0VfVk9MVU1FX0NPTkZJUk1BVElPTj10cnVlCkFEVkFOQ0VEX0FOQUxZU0lTX0VOQUJMRV9MRVZFTF9ERVRFQ1RJT049dHJ1ZQoKUFJFRElDVElPTl9FTkFCTEVfUFJJQ0VfUFJFRElDVElPTj1mYWxzZSAgIyBEaXNhYmxlIE1MIGZvciBwcm9kdWN0aW9uIGluaXRpYWxseQpQUkVESUNUSU9OX0VOQUJMRV9QQVRURVJOX0RFVEVDVElPTj10cnVlClBSRURJQ1RJT05fRU5BQkxFX1ZPTEFUSUxJVFlfRk9SRUNBU1RJTkc9dHJ1ZQpQUkVESUNUSU9OX0VOQUJMRV9FTlNFTUJMRV9BST1mYWxzZQoKU0VMRl9IRUFMSU5HX0VOQUJMRV9TRUxGX0hFQUxJTkc9dHJ1ZQpTRUxGX0hFQUxJTkdfRU5BQkxFX0RBVEFfUVVBTElUWV9DSEVDS1M9dHJ1ZQpTRUxGX0hFQUxJTkdfTUFYX1JFQ09WRVJZX0FUVEVNUFRTPTMKCkFEQVBUSVZFX0VOQUJMRV9BREFQVElWRV9QQVJBTUVURVJTPXRydWUKQURBUFRJVkVfT1BUSU1JWkFUSU9OX1dJTkRPV19EQVlTPTcKQURBUFRJVkVfTUlOX1RSQURFU19GT1JfT1BUSU1JWkFUSU9OPTEwCgpBRFZBTkNFRF9SSVNLX0VOQUJMRV9QT1JURk9MSU9fUklTSz10cnVlCkFEVkFOQ0VEX1JJU0tfRU5BQkxFX1ZPTEFUSUxJVFlfQURKVVNURURfU0laSU5HPXRydWUKQURWQU5DRURfUklTS19NQVhfUE9SVEZPTElPX0VYUE9TVVJFX1BDVD0xMC4wCkFEVkFOQ0VEX1JJU0tfTUFYX0NPUlJFTEFUSU9OX0VYUE9TVVJFX1BDVD01LjAKQURWQU5DRURfUklTS19NQVhfQ1VSUkVOQ1lfQ09OQ0VOVFJBVElPTl9QQ1Q9Ny4wCgojIFB5dGhvbiByaXNrIHNldHRpbmcgbmFtZXMgKHNvdXJjZSBkZWZhdWx0cyBzaG93biBoZXJlIGFyZSBub3QgYXBwcm92ZWQgbGltaXRzKQpSSVNLX1BFUl9UUkFERV9QQ1Q9MS41Ck1BWF9EQUlMWV9MT1NTX1BDVD00LjAKTUFYX0RSQVdET1dOX0ZST01fUEVBS19QQ1Q9OC4wCk1BWF9UUkFERVNfUEVSX0RBWT02Ck1BWF9DT05DVVJSRU5UX1BPU0lUSU9OUz0zCgojIExvZ2dpbmcKTE9HX0ZJTEU9dHJhZGluZ19ib3QubG9nCkxPR19MRVZFTD1JTkZPCmBgYAoKIyMgRGVwbG95bWVudCBDaGVja2xpc3QKCiMjIyBQcmUtRGVwbG95bWVudAotIFsgXSBUZXN0IGFsbCBmZWF0dXJlcyBpbiBwYXBlciB0cmFkaW5nIG1vZGUKLSBbIF0gVmVyaWZ5IE1UNSBjb25uZWN0aW9uIHN0YWJpbGl0eQotIFsgXSBUZXN0IEFQSSBrZXkgdmFsaWRpdHkgKE9wZW5BSSwgTmV3cyBBUEkpCi0gWyBdIFZhbGlkYXRlIGNvbmZpZ3VyYXRpb24gcGFyYW1ldGVycwotIFsgXSBUZXN0IGNsaWVudC1zZXJ2ZXIgY29tbXVuaWNhdGlvbgotIFsgXSBWZXJpZnkgc2VsZi1oZWFsaW5nIGZ1bmN0aW9uYWxpdHkKLSBbIF0gVGVzdCBhZGFwdGl2ZSBvcHRpbWl6YXRpb24gbG9naWMKLSBbIF0gVmFsaWRhdGUgcG9ydGZvbGlvIHJpc2sgY2FsY3VsYXRpb25zCgojIyMgU2VjdXJpdHkgSGFyZGVuaW5nCi0gWyBdIFVzZSBzdHJvbmcgQVBJIHRva2VucwotIFsgXSBTZWN1cmUgTVQ1IGNyZWRlbnRpYWxzCi0gWyBdIEVuYWJsZSBIVFRQUyBmb3IgZGFzaGJvYXJkIChpZiByZW1vdGUgYWNjZXNzKQotIFsgXSBJbXBsZW1lbnQgcmF0ZSBsaW1pdGluZwotIFsgXSBSZWd1bGFyIHNlY3VyaXR5IHVwZGF0ZXMKLSBbIF0gTW9uaXRvciBmb3IgdW5hdXRob3JpemVkIGFjY2VzcwotIFsgXSBVc2UgZmlyZXdhbGwgcnVsZXMgdG8gcmVzdHJpY3QgQVBJIGFjY2VzcwoKIyMjIE1vbml0b3JpbmcgU2V0dXAKLSBbIF0gQ29uZmlndXJlIGxvZyByb3RhdGlvbgotIFsgXSBTZXQgdXAgZXJyb3IgYWxlcnRpbmcKLSBbIF0gTW9uaXRvciBzeXN0ZW0gcmVzb3VyY2VzIChDUFUsIFJBTSwgZGlzaykKLSBbIF0gVHJhY2sgQVBJIHJlc3BvbnNlIHRpbWVzCi0gWyBdIE1vbml0b3IgTVQ1IGNvbm5lY3Rpb24gaGVhbHRoCi0gWyBdIFNldCB1cCBkYXNoYm9hcmQgYWxlcnRzCi0gWyBdIENvbmZpZ3VyZSBQcm9tZXRoZXVzIG1ldHJpY3Mgc2NyYXBpbmcKCiMjIyBQZXJmb3JtYW5jZSBNb25pdG9yaW5nCi0gWyBdIFRyYWNrIHRyYWRpbmcgY3ljbGUgZHVyYXRpb24KLSBbIF0gTW9uaXRvciBBUEkgbGF0ZW5jeQotIFsgXSBXYXRjaCBtZW1vcnkgdXNhZ2UgdHJlbmRzCi0gWyBdIENoZWNrIGZvciBtZW1vcnkgbGVha3MKLSBbIF0gTW9uaXRvciB0aHJlYWQgcG9vbCBwZXJmb3JtYW5jZQotIFsgXSBUcmFjayBkYXRhYmFzZS9maWxlIEkvTyBwZXJmb3JtYW5jZQoKIyMgUHJvZHVjdGlvbiBSb2xsb3V0IFN0cmF0ZWd5CgojIyMgUGhhc2UgMTogQmFzZWxpbmUgKFdlZWsgMSkKMS4gRGVwbG95IGV4aXN0aW5nIHN5c3RlbSB3aXRob3V0IG5ldyBmZWF0dXJlcwoyLiBFc3RhYmxpc2ggcGVyZm9ybWFuY2UgYmFzZWxpbmVzCjMuIE1vbml0b3Igc3RhYmlsaXR5IGFuZCByZXNvdXJjZSB1c2FnZQo0LiBGaW5lLXR1bmUgYmFzaWMgcmlzayBwYXJhbWV0ZXJzCgojIyMgUGhhc2UgMjogQWR2YW5jZWQgQW5hbHlzaXMgKFdlZWsgMikKMS4gRW5hYmxlIEFEWCBhbmQgTUFDRCBpbmRpY2F0b3JzCjIuIEVuYWJsZSBtYXJrZXQgcmVnaW1lIGRldGVjdGlvbgozLiBFbmFibGUgc3VwcG9ydC9yZXNpc3RhbmNlIGxldmVsIGRldGVjdGlvbgo0LiBNb25pdG9yIHBlcmZvcm1hbmNlIGltcGFjdAo1LiBWYWxpZGF0ZSBpbXByb3ZlZCBzaWduYWwgcXVhbGl0eQoKIyMjIFBoYXNlIDM6IFJpc2sgRW5oYW5jZW1lbnRzIChXZWVrIDMpCjEuIEVuYWJsZSBwb3J0Zm9saW8gcmlzayBtYW5hZ2VtZW50CjIuIEVuYWJsZSB2b2xhdGlsaXR5LWJhc2VkIHNpemluZwozLiBFbmFibGUgc2VsZi1oZWFsaW5nIHN5c3RlbQo0LiBNb25pdG9yIHJlY292ZXJ5IGVmZmVjdGl2ZW5lc3MKNS4gVmFsaWRhdGUgcmlzayByZWR1Y3Rpb24KCiMjIyBQaGFzZSA0OiBJbnRlbGxpZ2VuY2UgRmVhdHVyZXMgKFdlZWsgNCkKMS4gRW5hYmxlIHBhdHRlcm4gcmVjb2duaXRpb24KMi4gRW5hYmxlIHZvbGF0aWxpdHkgZm9yZWNhc3RpbmcKMy4gRW5hYmxlIGFkYXB0aXZlIG9wdGltaXphdGlvbgo0LiBNb25pdG9yIHBhcmFtZXRlciBhZGp1c3RtZW50cwo1LiBWYWxpZGF0ZSBwZXJmb3JtYW5jZSBpbXByb3ZlbWVudHMKCiMjIyBQaGFzZSA1OiBPcHRpb25hbCBNTCAoV2VlayA1KykKMS4gSW5zdGFsbCBzY2lraXQtbGVhcm4gYW5kIG51bXB5CjIuIFRyYWluIE1MIG1vZGVsIG9uIGhpc3RvcmljYWwgZGF0YQozLiBFbmFibGUgcHJpY2UgcHJlZGljdGlvbgo0LiBNb25pdG9yIHByZWRpY3Rpb24gYWNjdXJhY3kKNS4gVmFsaWRhdGUgTUwgY29udHJpYnV0aW9uIHRvIHBlcmZvcm1hbmNlCgojIyBQcm9kdWN0aW9uIFN1cnZpdmFsIEFzc2Vzc21lbnQKCiMjIyBSZWxpYWJpbGl0eSBGZWF0dXJlcyDinIUKMS4gKipTZWxmLUhlYWxpbmcqKjogQXV0b21hdGljIHJlY292ZXJ5IGZyb20gY29tbW9uIGZhaWx1cmVzCjIuICoqR3JhY2VmdWwgRGVncmFkYXRpb24qKjogU3lzdGVtIGNvbnRpbnVlcyB3aGVuIGNvbXBvbmVudHMgZmFpbAozLiAqKkNpcmN1aXQgQnJlYWtlcnMqKjogUmlzayBsaW1pdHMgcHJldmVudCBjYXRhc3Ryb3BoaWMgbG9zc2VzCjQuICoqRGF0YSBWYWxpZGF0aW9uKio6IFF1YWxpdHkgY2hlY2tzIHByZXZlbnQgYmFkIHRyYWRlcwo1LiAqKkNvbm5lY3Rpb24gUmVzaWxpZW5jZSoqOiBBdXRvbWF0aWMgcmVjb25uZWN0aW9uIHdpdGggYmFja29mZgoKIyMjIFBlcmZvcm1hbmNlIEZlYXR1cmVzIOKchQoxLiAqKkFzeW5jIFByb2Nlc3NpbmcqKjogTm9uLWJsb2NraW5nIG9wZXJhdGlvbnMKMi4gKipDb25uZWN0aW9uIFBvb2xpbmcqKjogUmVkdWNlZCBNVDUgSVBDIG92ZXJoZWFkCjMuICoqQm91bmRlZCBSZXNvdXJjZXMqKjogTWVtb3J5IGFuZCBDUFUgbGltaXRzCjQuICoqRWZmaWNpZW50IENhY2hpbmcqKjogU3ltYm9sIGluZm8gYW5kIGNhbGN1bGF0aW9uIGNhY2hpbmcKNS4gKipPcHRpbWl6ZWQgTG9nZ2luZyoqOiBOb24tYmxvY2tpbmcgYXN5bmMgbG9nZ2luZwoKIyMjIFJpc2sgTWFuYWdlbWVudCDinIUKMS4gKipNdWx0aS1sYXllciBSaXNrKio6IFBlci10cmFkZSwgZGFpbHksIHBvcnRmb2xpby1sZXZlbAoyLiAqKkNvcnJlbGF0aW9uIEF3YXJlbmVzcyoqOiBQcmV2ZW50cyBjb3JyZWxhdGVkIGV4cG9zdXJlCjMuICoqQ29uY2VudHJhdGlvbiBMaW1pdHMqKjogQ3VycmVuY3kgZGl2ZXJzaWZpY2F0aW9uCjQuICoqRHluYW1pYyBTaXppbmcqKjogVm9sYXRpbGl0eS1hZGp1c3RlZCBwb3NpdGlvbnMKNS4gKipFeGl0IFN0cmF0ZWdpZXMqKjogSW50ZWxsaWdlbnQgcG9zaXRpb24gbWFuYWdlbWVudAoKIyMjIE1vbml0b3JpbmcgRmVhdHVyZXMg4pyFCjEuICoqSGVhbHRoIERhc2hib2FyZCoqOiBDb21wcmVoZW5zaXZlIHN5c3RlbSBzdGF0dXMKMi4gKipQZXJmb3JtYW5jZSBNZXRyaWNzKio6IFRyYWRpbmcgcGVyZm9ybWFuY2UgdHJhY2tpbmcKMy4gKipFcnJvciBUcmFja2luZyoqOiBSZWNvdmVyeSBhdHRlbXB0IG1vbml0b3JpbmcKNC4gKipSZXNvdXJjZSBNb25pdG9yaW5nKio6IENQVSwgbWVtb3J5LCBkaXNrIHVzYWdlCjUuICoqQVBJIE1ldHJpY3MqKjogUmVzcG9uc2UgdGltZSBhbmQgZXJyb3IgcmF0ZXMKCiMjIEV4cGVjdGVkIFByb2R1Y3Rpb24gUGVyZm9ybWFuY2UKCiMjIyBUcmFkaW5nIEN5Y2xlIFBlcmZvcm1hbmNlCi0gKipCYXNlbGluZSBTeXN0ZW0qKjogfjItMyBzZWNvbmRzIHBlciBjeWNsZSAoMyBzeW1ib2xzKQotICoqV2l0aCBBbGwgRmVhdHVyZXMqKjogfjMtNCBzZWNvbmRzIHBlciBjeWNsZSAoMyBzeW1ib2xzKQotICoqSW1wYWN0Kio6IH41MCUgaW5jcmVhc2UgaW4gY3ljbGUgdGltZQotICoqQWNjZXB0YWJsZSoqOiBZRVMgKGN5Y2xlIHRpbWUgc3RpbGwgPCBIMSBiYXIgZHVyYXRpb24pCgojIyMgUmVzb3VyY2UgVXNhZ2UKLSAqKk1lbW9yeSoqOiB+MjAwLTQwME1CIGJhc2VsaW5lLCArMTAwLTIwME1CIHdpdGggYWxsIGZlYXR1cmVzCi0gKipDUFUqKjogfjUtMTAlIGJhc2VsaW5lLCArMTAtMTUlIHdpdGggYWxsIGZlYXR1cmVzCi0gKipEaXNrKio6IH4xMDBNQi9kYXkgZm9yIGxvZ3MKLSAqKk5ldHdvcmsqKjogfjEtMk1CL2RheSBmb3IgQVBJIGNhbGxzCgojIyMgU2NhbGFiaWxpdHkKLSAqKlNpbmdsZSBTeW1ib2wqKjogRXhjZWxsZW50IHBlcmZvcm1hbmNlCi0gKiozIFN5bWJvbHMqKjogR29vZCBwZXJmb3JtYW5jZSAoY3VycmVudCBjb25maWd1cmF0aW9uKQotICoqNSsgU3ltYm9scyoqOiBNYXkgbmVlZCBob3Jpem9udGFsIHNjYWxpbmcKLSAqKlJlY29tbWVuZGF0aW9uKio6IE1heCAzLTUgc3ltYm9scyBwZXIgaW5zdGFuY2UKCiMjIyBSZWxpYWJpbGl0eQotICoqVXB0aW1lIFRhcmdldCoqOiA5OSUrIChleGNsdWRpbmcgbWFpbnRlbmFuY2UpCi0gKipSZWNvdmVyeSBUaW1lKio6IDwxIG1pbnV0ZSBmb3IgY29tbW9uIGZhaWx1cmVzCi0gKipEYXRhIExvc3MgUmlzayoqOiBNaW5pbWFsIChzdGF0ZSBwZXJzaXN0ZW5jZSkKLSAqKk1UNSBEZXBlbmRlbmN5Kio6IFNpbmdsZSBwb2ludCBvZiBmYWlsdXJlIChtaXRpZ2F0ZWQgYnkgc2VsZi1oZWFsaW5nKQoKIyMgQ29uY2x1c2lvbgoKIyMjIFByb2R1Y3Rpb24gUmVhZGluZXNzOiBOT1QgQVBQUk9WRUQKCkRvIG5vdCB0cmVhdCB0aGlzIGxlZ2FjeSBmZWF0dXJlIG92ZXJ2aWV3IGFzIGV2aWRlbmNlIG9mIHByb2R1Y3Rpb24gcmVhZGluZXNzLiBUaGUgY3VycmVudCByZWxlYXNlIGlzICoqbm90IGFwcHJvdmVkKiogZm9yIGZ1bmRlZC9saXZlIHRyYWRpbmcuIFRoZSBzb3VyY2UgYXVkaXQgaWRlbnRpZmllcyB1bnJlc29sdmVkIGFjY291bnQtaWRlbnRpdHksIGR1cmFibGUgcmlzay1zdGF0ZSwgYWdncmVnYXRlLXJpc2ssIG9yZGVyIHJlY29uY2lsaWF0aW9uLCBzZWN1cml0eSwgYnJva2VyLXZhbGlkYXRpb24sIGFuZCBmb3J3YXJkLWRlbW8gZ2F0ZXMuIFNlZSBbUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZF0oUFJPRFVDVElPTl9SRUxFQVNFX0NIRUNLTElTVC5tZCkgZm9yIGN1cnJlbnQgc3RhdHVzIGFuZCByZXF1aXJlZCBldmlkZW5jZS4KCioqSGlnaCBDb25maWRlbmNlOioqCi0gQ29yZSB0cmFkaW5nIGxvZ2ljIChwcm92ZW4gaW4gZXhpc3Rpbmcgc3lzdGVtKQotIFJpc2sgbWFuYWdlbWVudCAobXVsdGktbGF5ZXIgcHJvdGVjdGlvbikKLSBTZWxmLWhlYWxpbmcgKGF1dG9tYXRpYyByZWNvdmVyeSkKLSBBUEkgY29tcGF0aWJpbGl0eSAobWFpbnRhaW5lZCkKCioqTWVkaXVtIENvbmZpZGVuY2U6KioKLSBBZHZhbmNlZCBpbmRpY2F0b3JzICh3ZWxsLXRlc3RlZCBhbGdvcml0aG1zKQotIFBvcnRmb2xpbyByaXNrIChzb3VuZCBtYXRoZW1hdGljYWwgYmFzaXMpCi0gUGVyZm9ybWFuY2UgKGFjY2VwdGFibGUgb3ZlcmhlYWQpCgoqKlJlcXVpcmVzIFRlc3Rpbmc6KioKLSBNTCBwcmVkaWN0aW9uIChuZWVkcyB0cmFpbmluZyBhbmQgdmFsaWRhdGlvbikKLSBFbnNlbWJsZSBBSSAocmVxdWlyZXMgYWRkaXRpb25hbCBBUEkga2V5cykKLSBDb21wbGV4IHBhdHRlcm4gcmVjb2duaXRpb24gKG5lZWRzIG1hcmtldCB2YWxpZGF0aW9uKQoKIyMjIERlcGxveW1lbnQgUmVjb21tZW5kYXRpb24KCioqSW1tZWRpYXRlIERlcGxveW1lbnQgKFdlZWsgMSk6KioKLSBFbmFibGU6IEFEWCwgTUFDRCwgcmVnaW1lIGRldGVjdGlvbiwgc2VsZi1oZWFsaW5nCi0gRGlzYWJsZTogTUwgcHJlZGljdGlvbiwgZW5zZW1ibGUgQUkKLSBNb25pdG9yOiBQZXJmb3JtYW5jZSwgc3RhYmlsaXR5LCByZWNvdmVyeSBlZmZlY3RpdmVuZXNzCgoqKkdyYWR1YWwgUm9sbG91dCAoV2Vla3MgMi00KToqKgotIEFkZDogUGF0dGVybiByZWNvZ25pdGlvbiwgdm9sYXRpbGl0eSBmb3JlY2FzdGluZwotIEFkZDogUG9ydGZvbGlvIHJpc2sgbWFuYWdlbWVudAotIEFkZDogQWRhcHRpdmUgb3B0aW1pemF0aW9uCi0gTW9uaXRvcjogRmVhdHVyZSBlZmZlY3RpdmVuZXNzLCBwZXJmb3JtYW5jZSBpbXBhY3QKCioqQWR2YW5jZWQgRmVhdHVyZXMgKFdlZWsgNSspOioqCi0gQ29uc2lkZXI6IE1MIHByZWRpY3Rpb24gKGFmdGVyIHRyYWluaW5nKQotIENvbnNpZGVyOiBFbnNlbWJsZSBBSSAoaWYgYWRkaXRpb25hbCBidWRnZXQpCi0gTW9uaXRvcjogUHJlZGljdGlvbiBhY2N1cmFjeSwgY29zdC9iZW5lZml0CgpObyBwcm9kdWN0aW9uIHJlbGlhYmlsaXR5IG9yIHBlcmZvcm1hbmNlIGNsYWltIGlzIGVzdGFibGlzaGVkIGJ5IHRoaXMgbGVnYWN5IGRvY3VtZW50LiBDb21wbGV0ZSB0aGUgY3VycmVudCByZWxlYXNlIGNoZWNrbGlzdCBhbmQgcmV0YWluIHRlc3QgZXZpZGVuY2UgYmVmb3JlIGFueSBwcm9tb3Rpb24u
+# Production Deployment Guide for Aegis Quant Trading Bot
+
+> **Legacy reference, not deployment authorization.** The current release status is **NO-GO for funded/live trading**. Follow [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md) for the paper-first deployment procedure and [PRODUCTION_RELEASE_CHECKLIST.md](PRODUCTION_RELEASE_CHECKLIST.md) for qualification gates. Values in this older document are not account-owner approvals; do not use its previous live-mode recommendation.
+
+## Client-Server Compatibility Analysis ✅
+
+### API Contract Verification
+**Status: FULLY COMPATIBLE**
+
+The existing API contracts between client and server remain intact:
+- All existing endpoints (`/api/account`, `/api/risk`, `/api/positions`, etc.) are unchanged
+- Client-side data structures in `botFeed.js` match server-side models in `models.py`
+- New features are additive via new endpoints, not breaking changes
+- Backward compatibility maintained for existing functionality
+
+### New API Endpoints Added
+- `/api/advanced-analysis` - Status of advanced technical analysis features
+- `/api/self-healing` - Self-healing system status
+- `/api/adaptive-optimization` - Adaptive optimization status
+- `/api/adaptive-optimization/run` - Manual optimization trigger
+- `/api/portfolio-risk` - Portfolio risk analysis
+- `/api/system-health` - Comprehensive system health check
+
+### Client-Side Updates
+Added corresponding API client functions in `botFeed.js`:
+- `fetchAdvancedAnalysisStatus()`
+- `fetchSelfHealingStatus()`
+- `fetchAdaptiveOptimizationStatus()`
+- `runAdaptiveOptimization()`
+- `fetchPortfolioRiskStatus()`
+- `fetchSystemHealth()`
+
+## Performance Optimization Analysis
+
+### Current Performance Characteristics
+
+**Bottleneck Analysis:**
+1. **MT5 IPC Calls**: The main performance bottleneck is MT5 terminal communication
+2. **AI API Calls**: OpenAI API calls have network latency (~500ms-2s)
+3. **Indicator Calculations**: pandas_ta calculations are CPU-intensive
+4. **Data Processing**: DataFrame operations for each symbol
+
+**Optimizations Implemented:**
+1. **Async Operations**: All heavy computations run in thread pools
+2. **Concurrent Data Fetching**: H1 and H4 data fetched simultaneously
+3. **Connection Pooling**: Symbol info caching to reduce MT5 calls
+4. **Bounded Memory**: History queues limited to prevent memory bloat
+5. **Non-blocking Logging**: Queue-based async logging system
+
+### Performance Impact of New Features
+
+**Additional Overhead:**
+- **Advanced Indicators**: +50-100ms per symbol (ADX, MACD calculations)
+- **Pattern Recognition**: +100-200ms per symbol (pattern detection algorithms)
+- **Portfolio Risk Analysis**: +200-300ms (correlation calculations)
+- **Self-Healing Monitoring**: +5-10ms (lightweight health checks)
+- **Adaptive Optimization**: +50-100ms (performance analysis)
+
+**Total Estimated Overhead:** ~400-600ms per trading cycle
+
+**Mitigation Strategies:**
+1. **Feature Flags**: All advanced features are opt-in via configuration
+2. **Selective Activation**: Enable only high-impact features
+3. **Async Processing**: Heavy operations don't block main trading loop
+4. **Caching**: Results cached where appropriate
+5. **Graceful Degradation**: System continues if features fail
+
+### Production Performance Recommendations
+
+**Minimum Hardware Requirements:**
+- **CPU**: 2+ cores (4+ recommended for multiple symbols)
+- **RAM**: 4GB minimum (8GB recommended)
+- **Storage**: 20GB SSD
+- **Network**: Stable internet connection (<100ms latency to broker)
+
+**Optimization Configuration:**
+```python
+# config.py optimizations
+STRATEGY.loop_poll_seconds = 10  # Reduce from 15 for faster reaction
+ADVANCED_ANALYSIS.use_adx = True  # Low overhead
+ADVANCED_ANALYSIS.use_macd = True  # Low overhead
+PREDICTION.enable_pattern_detection = True  # Medium overhead
+PREDICTION.enable_price_prediction = False  # High overhead (optional)
+SELF_HEALING.enable_self_healing = True  # Very low overhead
+ADAPTIVE.enable_adaptive_parameters = True  # Low overhead
+ADVANCED_RISK.enable_portfolio_risk = True  # Medium overhead
+```
+
+## Production Deployment Configuration
+
+### Docker Deployment (Recommended)
+
+**Dockerfile:**
+```dockerfile
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for caching
+COPY server/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY server/ .
+
+# Create models directory for ML models
+RUN mkdir -p models
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV TZ=UTC
+
+# Run the application
+CMD ["python", "main.py"]
+```
+
+**docker-compose.yml:**
+```yaml
+version: '3.8'
+
+services:
+  trading-bot:
+    build: .
+    container_name: aegis-quant-bot
+    restart: unless-stopped
+    environment:
+      - TRADING_MODE=paper
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - API_TOKEN=${API_TOKEN}
+      - API_HOST=127.0.0.1
+      - API_PORT=8000
+    volumes:
+      - ./server/.env:/app/.env
+      - ./models:/app/models
+      - ./logs:/app/logs
+    ports:
+      - "127.0.0.1:8000:8000"
+    network_mode: host  # Required for MT5 terminal access
+    # Alternative: Use mt5linux bridge for containerized MT5 access
+```
+
+### Systemd Service (Linux)
+
+**File: /etc/systemd/system/aegis-quant.service**
+```ini
+[Unit]
+Description=Aegis Quant Trading Bot
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=trading
+WorkingDirectory=/home/trading/aegis_quant/server
+Environment="PATH=/home/trading/aegis_quant/.venv/bin"
+EnvironmentFile=/home/trading/aegis_quant/server/.env
+ExecStart=/home/trading/aegis_quant/.venv/bin/python main.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=aegis-quant
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Enable service:**
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable aegis-quant
+sudo systemctl start aegis-quant
+sudo systemctl status aegis-quant
+```
+
+### Windows Service
+
+**Use NSSM (Non-Sucking Service Manager):**
+```bash
+# Download NSSM from https://nssm.cc/download
+nssm install AegisQuant "C:\Python311\python.exe" "C:\path\to\server\main.py"
+nssm set AegisQuant AppDirectory "C:\path\to\aegis_quant"
+nssm set AegisQuant AppEnvironmentExtra "PYTHONUNBUFFERED=1"
+nssm set AegisQuant AppStdout "C:\path\to\logs\service.log"
+nssm set AegisQuant AppStderr "C:\path\to\logs\service_error.log"
+nssm set AegisQuant AppStopMethodSkip 6
+nssm set AegisQuant AppRestartDelay 60000
+nssm start AegisQuant
+```
+
+## Environment Configuration
+
+### Production .env Template
+```bash
+# Core Configuration
+TRADING_MODE=paper
+API_HOST=127.0.0.1
+API_PORT=8000
+API_TOKEN=your_secure_token_here
+CORS_ORIGINS=http://localhost:5173,http://your-dashboard-domain
+
+# MT5 Credentials (SECURE THESE!)
+MT5_LOGIN=your_account_number
+MT5_PASSWORD=your_secure_password
+MT5_SERVER=your_broker_server
+MT5_TERMINAL_PATH=C:\Program Files\MetaTrader 5\terminal64.exe
+
+# AI Configuration
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-4o
+OPENAI_TIMEOUT_SECONDS=30
+
+# News API (Optional)
+NEWS_API_KEY=your_news_api_key
+YAHOO_FINANCE_RSS_URL=https://feeds.finance.yahoo.com/rss/2.0/headline?s=EURUSD%3DX%2CGBPUSD%3DX%2CGC%3DF&region=US&lang=en-US
+
+# Advanced Features (PRODUCTION SETTINGS)
+ADVANCED_ANALYSIS_USE_ADX=true
+ADVANCED_ANALYSIS_USE_MACD=true
+ADVANCED_ANALYSIS_ENABLE_REGIME_DETECTION=true
+ADVANCED_ANALYSIS_USE_VOLUME_CONFIRMATION=true
+ADVANCED_ANALYSIS_ENABLE_LEVEL_DETECTION=true
+
+PREDICTION_ENABLE_PRICE_PREDICTION=false  # Disable ML for production initially
+PREDICTION_ENABLE_PATTERN_DETECTION=true
+PREDICTION_ENABLE_VOLATILITY_FORECASTING=true
+PREDICTION_ENABLE_ENSEMBLE_AI=false
+
+SELF_HEALING_ENABLE_SELF_HEALING=true
+SELF_HEALING_ENABLE_DATA_QUALITY_CHECKS=true
+SELF_HEALING_MAX_RECOVERY_ATTEMPTS=3
+
+ADAPTIVE_ENABLE_ADAPTIVE_PARAMETERS=true
+ADAPTIVE_OPTIMIZATION_WINDOW_DAYS=7
+ADAPTIVE_MIN_TRADES_FOR_OPTIMIZATION=10
+
+ADVANCED_RISK_ENABLE_PORTFOLIO_RISK=true
+ADVANCED_RISK_ENABLE_VOLATILITY_ADJUSTED_SIZING=true
+ADVANCED_RISK_MAX_PORTFOLIO_EXPOSURE_PCT=10.0
+ADVANCED_RISK_MAX_CORRELATION_EXPOSURE_PCT=5.0
+ADVANCED_RISK_MAX_CURRENCY_CONCENTRATION_PCT=7.0
+
+# Python risk setting names (source defaults shown here are not approved limits)
+RISK_PER_TRADE_PCT=1.5
+MAX_DAILY_LOSS_PCT=4.0
+MAX_DRAWDOWN_FROM_PEAK_PCT=8.0
+MAX_TRADES_PER_DAY=6
+MAX_CONCURRENT_POSITIONS=3
+
+# Logging
+LOG_FILE=trading_bot.log
+LOG_LEVEL=INFO
+```
+
+## Deployment Checklist
+
+### Pre-Deployment
+- [ ] Test all features in paper trading mode
+- [ ] Verify MT5 connection stability
+- [ ] Test API key validity (OpenAI, News API)
+- [ ] Validate configuration parameters
+- [ ] Test client-server communication
+- [ ] Verify self-healing functionality
+- [ ] Test adaptive optimization logic
+- [ ] Validate portfolio risk calculations
+
+### Security Hardening
+- [ ] Use strong API tokens
+- [ ] Secure MT5 credentials
+- [ ] Enable HTTPS for dashboard (if remote access)
+- [ ] Implement rate limiting
+- [ ] Regular security updates
+- [ ] Monitor for unauthorized access
+- [ ] Use firewall rules to restrict API access
+
+### Monitoring Setup
+- [ ] Configure log rotation
+- [ ] Set up error alerting
+- [ ] Monitor system resources (CPU, RAM, disk)
+- [ ] Track API response times
+- [ ] Monitor MT5 connection health
+- [ ] Set up dashboard alerts
+- [ ] Configure Prometheus metrics scraping
+
+### Performance Monitoring
+- [ ] Track trading cycle duration
+- [ ] Monitor API latency
+- [ ] Watch memory usage trends
+- [ ] Check for memory leaks
+- [ ] Monitor thread pool performance
+- [ ] Track database/file I/O performance
+
+## Production Rollout Strategy
+
+### Phase 1: Baseline (Week 1)
+1. Deploy existing system without new features
+2. Establish performance baselines
+3. Monitor stability and resource usage
+4. Fine-tune basic risk parameters
+
+### Phase 2: Advanced Analysis (Week 2)
+1. Enable ADX and MACD indicators
+2. Enable market regime detection
+3. Enable support/resistance level detection
+4. Monitor performance impact
+5. Validate improved signal quality
+
+### Phase 3: Risk Enhancements (Week 3)
+1. Enable portfolio risk management
+2. Enable volatility-based sizing
+3. Enable self-healing system
+4. Monitor recovery effectiveness
+5. Validate risk reduction
+
+### Phase 4: Intelligence Features (Week 4)
+1. Enable pattern recognition
+2. Enable volatility forecasting
+3. Enable adaptive optimization
+4. Monitor parameter adjustments
+5. Validate performance improvements
+
+### Phase 5: Optional ML (Week 5+)
+1. Install scikit-learn and numpy
+2. Train ML model on historical data
+3. Enable price prediction
+4. Monitor prediction accuracy
+5. Validate ML contribution to performance
+
+## Production Survival Assessment
+
+### Reliability Features ✅
+1. **Self-Healing**: Automatic recovery from common failures
+2. **Graceful Degradation**: System continues when components fail
+3. **Circuit Breakers**: Risk limits prevent catastrophic losses
+4. **Data Validation**: Quality checks prevent bad trades
+5. **Connection Resilience**: Automatic reconnection with backoff
+
+### Performance Features ✅
+1. **Async Processing**: Non-blocking operations
+2. **Connection Pooling**: Reduced MT5 IPC overhead
+3. **Bounded Resources**: Memory and CPU limits
+4. **Efficient Caching**: Symbol info and calculation caching
+5. **Optimized Logging**: Non-blocking async logging
+
+### Risk Management ✅
+1. **Multi-layer Risk**: Per-trade, daily, portfolio-level
+2. **Correlation Awareness**: Prevents correlated exposure
+3. **Concentration Limits**: Currency diversification
+4. **Dynamic Sizing**: Volatility-adjusted positions
+5. **Exit Strategies**: Intelligent position management
+
+### Monitoring Features ✅
+1. **Health Dashboard**: Comprehensive system status
+2. **Performance Metrics**: Trading performance tracking
+3. **Error Tracking**: Recovery attempt monitoring
+4. **Resource Monitoring**: CPU, memory, disk usage
+5. **API Metrics**: Response time and error rates
+
+## Expected Production Performance
+
+### Trading Cycle Performance
+- **Baseline System**: ~2-3 seconds per cycle (3 symbols)
+- **With All Features**: ~3-4 seconds per cycle (3 symbols)
+- **Impact**: ~50% increase in cycle time
+- **Acceptable**: YES (cycle time still < H1 bar duration)
+
+### Resource Usage
+- **Memory**: ~200-400MB baseline, +100-200MB with all features
+- **CPU**: ~5-10% baseline, +10-15% with all features
+- **Disk**: ~100MB/day for logs
+- **Network**: ~1-2MB/day for API calls
+
+### Scalability
+- **Single Symbol**: Excellent performance
+- **3 Symbols**: Good performance (current configuration)
+- **5+ Symbols**: May need horizontal scaling
+- **Recommendation**: Max 3-5 symbols per instance
+
+### Reliability
+- **Uptime Target**: 99%+ (excluding maintenance)
+- **Recovery Time**: <1 minute for common failures
+- **Data Loss Risk**: Minimal (state persistence)
+- **MT5 Dependency**: Single point of failure (mitigated by self-healing)
+
+## Conclusion
+
+### Production Readiness: NOT APPROVED
+
+Do not treat this legacy feature overview as evidence of production readiness. The current release is **not approved** for funded/live trading. The source audit identifies unresolved account-identity, durable risk-state, aggregate-risk, order reconciliation, security, broker-validation, and forward-demo gates. See [PRODUCTION_RELEASE_CHECKLIST.md](PRODUCTION_RELEASE_CHECKLIST.md) for current status and required evidence.
+
+**High Confidence:**
+- Core trading logic (proven in existing system)
+- Risk management (multi-layer protection)
+- Self-healing (automatic recovery)
+- API compatibility (maintained)
+
+**Medium Confidence:**
+- Advanced indicators (well-tested algorithms)
+- Portfolio risk (sound mathematical basis)
+- Performance (acceptable overhead)
+
+**Requires Testing:**
+- ML prediction (needs training and validation)
+- Ensemble AI (requires additional API keys)
+- Complex pattern recognition (needs market validation)
+
+### Deployment Recommendation
+
+**Immediate Deployment (Week 1):**
+- Enable: ADX, MACD, regime detection, self-healing
+- Disable: ML prediction, ensemble AI
+- Monitor: Performance, stability, recovery effectiveness
+
+**Gradual Rollout (Weeks 2-4):**
+- Add: Pattern recognition, volatility forecasting
+- Add: Portfolio risk management
+- Add: Adaptive optimization
+- Monitor: Feature effectiveness, performance impact
+
+**Advanced Features (Week 5+):**
+- Consider: ML prediction (after training)
+- Consider: Ensemble AI (if additional budget)
+- Monitor: Prediction accuracy, cost/benefit
+
+No production reliability or performance claim is established by this legacy document. Complete the current release checklist and retain test evidence before any promotion.

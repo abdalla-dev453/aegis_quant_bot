@@ -1,1 +1,148 @@
-IiIiUmlzay1ndWFyZCB1bml0IHRlc3RzOyBhbGwgZXh0ZXJuYWwgTVQ1IGNhbGxzIGFyZSByZXBsYWNlZCB3aXRoIGZha2VzLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSB0eXBlcyBpbXBvcnQgU2ltcGxlTmFtZXNwYWNlCgppbXBvcnQgZGF0YV9wcm92aWRlcgppbXBvcnQgZXhlY3V0aW9uCmltcG9ydCBydW50aW1lX3N0YXRlCmZyb20gc3RyYXRlZ3kgaW1wb3J0IFRyYWRlRGlyZWN0aW9uCgoKZGVmIHRlc3RfY29ycmVsYXRlZF9zYW1lX2RpcmVjdGlvbl9leHBvc3VyZV9pc19ibG9ja2VkKG1vbmtleXBhdGNoKSAtPiBOb25lOgogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJtdDUiLCBTaW1wbGVOYW1lc3BhY2UoUE9TSVRJT05fVFlQRV9CVVk9MCkpCiAgICBwb3NpdGlvbnMgPSBbU2ltcGxlTmFtZXNwYWNlKHN5bWJvbD0iRVVSVVNELmEiLCB0eXBlPTApXQoKICAgIGFzc2VydCBleGVjdXRpb24uaXNfY29ycmVsYXRlZF9leHBvc3VyZV9ibG9ja2VkKCJHQlBVU0QiLCBUcmFkZURpcmVjdGlvbi5CVVksIHBvc2l0aW9ucykKICAgIGFzc2VydCBub3QgZXhlY3V0aW9uLmlzX2NvcnJlbGF0ZWRfZXhwb3N1cmVfYmxvY2tlZCgiR0JQVVNEIiwgVHJhZGVEaXJlY3Rpb24uU0VMTCwgcG9zaXRpb25zKQoKCmRlZiB0ZXN0X3BlYWtfZHJhd2Rvd25fbGF0Y2hlc191bnRpbF9tYW51YWxfcmVzZXQobW9ua2V5cGF0Y2gpIC0+IE5vbmU6CiAgICB2YWx1ZXMgPSBpdGVyKCgxMDAwLjAsIDkwMC4wLCA5MDAuMCwgOTAwLjAsIDkwMC4wKSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiZ2V0X2FjY291bnRfZXF1aXR5IiwgbGFtYmRhOiBuZXh0KHZhbHVlcykpCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgIl9wZWFrX2VxdWl0eSIsIE5vbmUpCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgIl9wZWFrX2VxdWl0eV9oYWx0ZWQiLCBGYWxzZSkKCiAgICBhc3NlcnQgbm90IGV4ZWN1dGlvbi5jaGVja19tYXhfZHJhd2Rvd25fZ3VhcmQoKQogICAgYXNzZXJ0IGV4ZWN1dGlvbi5jaGVja19tYXhfZHJhd2Rvd25fZ3VhcmQoKQogICAgYXNzZXJ0IGV4ZWN1dGlvbi5jaGVja19tYXhfZHJhd2Rvd25fZ3VhcmQoKQogICAgZXhlY3V0aW9uLnJlc2V0X21heF9kcmF3ZG93bl9ndWFyZCgpCiAgICBhc3NlcnQgbm90IGV4ZWN1dGlvbi5yaXNrX2d1YXJkX3N0YXR1cygpWyJwZWFrRHJhd2Rvd25IYWx0ZWQiXQoKCmRlZiB0ZXN0X3BsYWNlX29yZGVyX3Jlc3BlY3RzX3J1bnRpbWVfY29udHJvbChtb25rZXlwYXRjaCkgLT4gTm9uZToKICAgIGRlZiBmYWtlX2FzZGljdChzZWxmKToKICAgICAgICByZXR1cm4geyJvcmRlciI6IDEsICJyZXRjb2RlIjogMCwgInByaWNlIjogMS4xLCAiY29tbWVudCI6ICJvayJ9CgogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJtdDUiLCBTaW1wbGVOYW1lc3BhY2UoCiAgICAgICAgUE9TSVRJT05fVFlQRV9CVVk9MCwKICAgICAgICBPUkRFUl9UWVBFX0JVWT0xLAogICAgICAgIE9SREVSX1RZUEVfU0VMTD0yLAogICAgICAgIFRSQURFX0FDVElPTl9ERUFMPTAsCiAgICAgICAgT1JERVJfVElNRV9HVEM9MCwKICAgICAgICBPUkRFUl9GSUxMSU5HX0lPQz0wLAogICAgICAgIFRSQURFX1JFVENPREVfRE9ORT0wLAogICAgICAgIG9yZGVyX2NoZWNrPWxhbWJkYSBfOiBTaW1wbGVOYW1lc3BhY2UocmV0Y29kZT0wLCBjb21tZW50PSJvayIpLAogICAgICAgIG9yZGVyX3NlbmQ9bGFtYmRhIF86IFNpbXBsZU5hbWVzcGFjZShvcmRlcj0xLCByZXRjb2RlPTAsIHByaWNlPTEuMSwgY29tbWVudD0ib2siLCBfYXNkaWN0PWZha2VfYXNkaWN0KSwKICAgICAgICBvcmRlcnNfZ2V0PWxhbWJkYTogW10sCiAgICAgICAgc3ltYm9sX2luZm9fdGljaz1sYW1iZGEgXzogU2ltcGxlTmFtZXNwYWNlKGFzaz0xLjEsIGJpZD0xLjApLAogICAgICAgIGxhc3RfZXJyb3I9bGFtYmRhOiAiIiwKICAgICAgICBhY2NvdW50X2luZm89bGFtYmRhOiBTaW1wbGVOYW1lc3BhY2UoZXF1aXR5PTEwMDAsIGJhbGFuY2U9MTAwMCwgbWFyZ2luPTEwMCwgbWFyZ2luX2ZyZWU9OTAwLCBtYXJnaW5fbGV2ZWw9MTAwMCksCiAgICAgICAgc3ltYm9sX2luZm89bGFtYmRhIF86IFNpbXBsZU5hbWVzcGFjZShkaWdpdHM9NSwgdm9sdW1lX21pbj0wLjAxLCB2b2x1bWVfbWF4PTEwMCwgdHJhZGVfc3RvcHNfbGV2ZWw9MTAsIHRyYWRlX2ZyZWV6ZV9sZXZlbD0wLCB0cmFkZV9tb2RlPVRydWUpLAogICAgKSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiZW5zdXJlX2Nvbm5lY3RlZCIsIGxhbWJkYTogTm9uZSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiZ2V0X29wZW5fcG9zaXRpb25zIiwgbGFtYmRhICoqXzogW10pCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImNhbGN1bGF0ZV9sb3Rfc2l6ZSIsIGxhbWJkYSAqYSwgKiprOiAwLjEpCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImNhbGN1bGF0ZV9zbF90cCIsIGxhbWJkYSAqYSwgKiprOiAoMS4wLCAxLjEpKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJjaGVja19kYWlseV9sb3NzX2d1YXJkIiwgbGFtYmRhOiBGYWxzZSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiY2hlY2tfbWF4X2RyYXdkb3duX2d1YXJkIiwgbGFtYmRhOiBGYWxzZSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiY2hlY2tfbWF4X3RyYWRlc19ndWFyZCIsIGxhbWJkYTogRmFsc2UpCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgIl9yZWNvcmRfZmlsbGVkX3RyYWRlIiwgbGFtYmRhOiBOb25lKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJjb250cm9sX3N0YXRlIiwgcnVudGltZV9zdGF0ZS5jb250cm9sX3N0YXRlKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihkYXRhX3Byb3ZpZGVyLCAidmFsaWRhdGVfc3ltYm9sX3RyYWRlX2NvbnN0cmFpbnRzIiwgbGFtYmRhICpfLCAqKl9fOiBOb25lKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cigKICAgICAgICBleGVjdXRpb24sCiAgICAgICAgIl9nZXRfc3ltYm9sIiwKICAgICAgICBsYW1iZGEgXzogU2ltcGxlTmFtZXNwYWNlKAogICAgICAgICAgICBpbmZvPVNpbXBsZU5hbWVzcGFjZShkaWdpdHM9NSwgdm9sdW1lX21pbj0wLjAxLCB2b2x1bWVfbWF4PTEwMCksCiAgICAgICAgICAgIHRpY2tfc2l6ZT0wLjAwMDEsCiAgICAgICAgICAgIHRpY2tfdmFsdWU9MTAuMCwKICAgICAgICAgICAgc3RlcD0wLjAxLAogICAgICAgICAgICBzdGVwX2RlY2ltYWxzPTIsCiAgICAgICAgICAgIG1pbl9zdG9wX3BvaW50cz0wLjAwMSwKICAgICAgICApLAogICAgKQoKICAgIHJ1bnRpbWVfc3RhdGUuc2V0X2NvbnRyb2woIlBBVVNFRCIsIHJlYXNvbj0idGVzdCBwYXVzZSIsIHNvdXJjZT0icHl0ZXN0IikKCiAgICByZXN1bHQgPSBleGVjdXRpb24ucGxhY2Vfb3JkZXIoIkVVUlVTRCIsIFRyYWRlRGlyZWN0aW9uLkJVWSwgMC4wMDEsICJ0ZXN0IikKCiAgICBhc3NlcnQgcmVzdWx0IGlzIE5vbmUKICAgIGFzc2VydCBydW50aW1lX3N0YXRlLmNvbnRyb2xfc3RhdGUoKVsic3RhdHVzIl0gPT0gIlBBVVNFRCIKCiAgICBydW50aW1lX3N0YXRlLnNldF9jb250cm9sKCJSVU5OSU5HIiwgcmVhc29uPSIiLCBzb3VyY2U9InB5dGVzdCIpCiAgICByZXN1bHQgPSBleGVjdXRpb24ucGxhY2Vfb3JkZXIoIkVVUlVTRCIsIFRyYWRlRGlyZWN0aW9uLkJVWSwgMC4wMDEsICJ0ZXN0IikKICAgIGFzc2VydCByZXN1bHQgaXMgbm90IE5vbmUKCgpkZWYgdGVzdF9jbG9zZV9ib3RfcG9zaXRpb25zX3JlcG9ydHNfYnJva2VyX3Jlc3VsdHMobW9ua2V5cGF0Y2gpIC0+IE5vbmU6CiAgICBwb3NpdGlvbnMgPSBbCiAgICAgICAgU2ltcGxlTmFtZXNwYWNlKHRpY2tldD0xMSwgc3ltYm9sPSJFVVJVU0QiLCB2b2x1bWU9MC4xLCB0eXBlPTApLAogICAgICAgIFNpbXBsZU5hbWVzcGFjZSh0aWNrZXQ9MTIsIHN5bWJvbD0iR0JQVVNEIiwgdm9sdW1lPTAuMiwgdHlwZT0xKSwKICAgIF0KICAgIHJlcXVlc3RzID0gW10KICAgIHJlc3VsdHMgPSBpdGVyKCgKICAgICAgICBTaW1wbGVOYW1lc3BhY2UocmV0Y29kZT0xMDAsIGNvbW1lbnQ9ImNsb3NlZCIpLAogICAgICAgIFNpbXBsZU5hbWVzcGFjZShyZXRjb2RlPTk5OSwgY29tbWVudD0ibWFya2V0IGNsb3NlZCIpLAogICAgKSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiZW5zdXJlX2Nvbm5lY3RlZCIsIGxhbWJkYTogTm9uZSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiZ2V0X29wZW5fcG9zaXRpb25zIiwgbGFtYmRhICoqXzogcG9zaXRpb25zKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJtdDUiLCBTaW1wbGVOYW1lc3BhY2UoCiAgICAgICAgUE9TSVRJT05fVFlQRV9CVVk9MCwKICAgICAgICBUUkFERV9BQ1RJT05fREVBTD0xLAogICAgICAgIE9SREVSX1RZUEVfQlVZPTAsCiAgICAgICAgT1JERVJfVFlQRV9TRUxMPTEsCiAgICAgICAgT1JERVJfVElNRV9HVEM9MCwKICAgICAgICBPUkRFUl9GSUxMSU5HX0lPQz0wLAogICAgICAgIFRSQURFX1JFVENPREVfRE9ORT0xMDAsCiAgICAgICAgVFJBREVfUkVUQ09ERV9ET05FX1BBUlRJQUw9MTAxLAogICAgICAgIHN5bWJvbF9pbmZvX3RpY2s9bGFtYmRhIF86IFNpbXBsZU5hbWVzcGFjZShiaWQ9MS4xLCBhc2s9MS4yKSwKICAgICAgICBvcmRlcl9zZW5kPWxhbWJkYSByZXF1ZXN0OiAocmVxdWVzdHMuYXBwZW5kKHJlcXVlc3QpLCBuZXh0KHJlc3VsdHMpKVsxXSwKICAgICAgICBsYXN0X2Vycm9yPWxhbWJkYTogIiIsCiAgICApKQoKICAgIHJlc3VsdCA9IGV4ZWN1dGlvbi5jbG9zZV9ib3RfcG9zaXRpb25zKCkKCiAgICBhc3NlcnQgcmVzdWx0ID09IHsKICAgICAgICAiY2xvc2VkIjogWyIxMSJdLAogICAgICAgICJmYWlsZWQiOiBbeyJ0aWNrZXQiOiAiMTIiLCAiZXJyb3IiOiAibWFya2V0IGNsb3NlZCJ9XSwKICAgIH0KICAgIGFzc2VydCByZXF1ZXN0c1swXVsidHlwZSJdID09IGV4ZWN1dGlvbi5tdDUuT1JERVJfVFlQRV9TRUxMCiAgICBhc3NlcnQgcmVxdWVzdHNbMF1bInByaWNlIl0gPT0gMS4xCiAgICBhc3NlcnQgcmVxdWVzdHNbMV1bInR5cGUiXSA9PSBleGVjdXRpb24ubXQ1Lk9SREVSX1RZUEVfQlVZCiAgICBhc3NlcnQgcmVxdWVzdHNbMV1bInByaWNlIl0gPT0gMS4yCgoKZGVmIHRlc3RfdHJhaWxpbmdfc3RvcHNfZG9fbm90X211dGF0ZV9wb3NpdGlvbnNfaW5fcGFwZXJfbW9kZShtb25rZXlwYXRjaCkgLT4gTm9uZToKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiRVhFQ1VUSU9OIiwgU2ltcGxlTmFtZXNwYWNlKGxpdmVfb3JkZXJzX2VuYWJsZWQ9RmFsc2UpKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cigKICAgICAgICBleGVjdXRpb24sCiAgICAgICAgImVuc3VyZV9jb25uZWN0ZWQiLAogICAgICAgIGxhbWJkYTogKF8gZm9yIF8gaW4gKCkpLnRocm93KEFzc2VydGlvbkVycm9yKCJwYXBlciBtb2RlIG11c3Qgbm90IGNvbm5lY3QgZm9yIHRyYWlsaW5nIHVwZGF0ZXMiKSksCiAgICApCgogICAgZXhlY3V0aW9uLm1hbmFnZV90cmFpbGluZ19zdG9wcygpCgoKZGVmIHRlc3RfdHJhaWxpbmdfc3RvcHNfcmVzcGVjdF9oYWx0ZWRfY29udHJvbChtb25rZXlwYXRjaCkgLT4gTm9uZToKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiRVhFQ1VUSU9OIiwgU2ltcGxlTmFtZXNwYWNlKGxpdmVfb3JkZXJzX2VuYWJsZWQ9VHJ1ZSkpCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImNvbnRyb2xfc3RhdGUiLCBsYW1iZGE6IHsic3RhdHVzIjogIkhBTFRFRCIsICJtYW5hZ2VtZW50QWxsb3dlZCI6IEZhbHNlfSkKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoCiAgICAgICAgZXhlY3V0aW9uLAogICAgICAgICJlbnN1cmVfY29ubmVjdGVkIiwKICAgICAgICBsYW1iZGE6IChfIGZvciBfIGluICgpKS50aHJvdyhBc3NlcnRpb25FcnJvcigiSEFMVEVEIG11c3Qgbm90IGNvbm5lY3QgZm9yIHRyYWlsaW5nIHVwZGF0ZXMiKSksCiAgICApCgogICAgZXhlY3V0aW9uLm1hbmFnZV90cmFpbGluZ19zdG9wcygpCgo=
+"""Risk-guard unit tests; all external MT5 calls are replaced with fakes."""
+
+from __future__ import annotations
+
+from types import SimpleNamespace
+
+import data_provider
+import execution
+import runtime_state
+from strategy import TradeDirection
+
+
+def test_correlated_same_direction_exposure_is_blocked(monkeypatch) -> None:
+    monkeypatch.setattr(execution, "mt5", SimpleNamespace(POSITION_TYPE_BUY=0))
+    positions = [SimpleNamespace(symbol="EURUSD.a", type=0)]
+
+    assert execution.is_correlated_exposure_blocked("GBPUSD", TradeDirection.BUY, positions)
+    assert not execution.is_correlated_exposure_blocked("GBPUSD", TradeDirection.SELL, positions)
+
+
+def test_peak_drawdown_latches_until_manual_reset(monkeypatch) -> None:
+    values = iter((1000.0, 900.0, 900.0, 900.0, 900.0))
+    monkeypatch.setattr(execution, "get_account_equity", lambda: next(values))
+    monkeypatch.setattr(execution, "_peak_equity", None)
+    monkeypatch.setattr(execution, "_peak_equity_halted", False)
+
+    assert not execution.check_max_drawdown_guard()
+    assert execution.check_max_drawdown_guard()
+    assert execution.check_max_drawdown_guard()
+    execution.reset_max_drawdown_guard()
+    assert not execution.risk_guard_status()["peakDrawdownHalted"]
+
+
+def test_place_order_respects_runtime_control(monkeypatch) -> None:
+    def fake_asdict(self):
+        return {"order": 1, "retcode": 0, "price": 1.1, "comment": "ok"}
+
+    monkeypatch.setattr(execution, "mt5", SimpleNamespace(
+        POSITION_TYPE_BUY=0,
+        ORDER_TYPE_BUY=1,
+        ORDER_TYPE_SELL=2,
+        TRADE_ACTION_DEAL=0,
+        ORDER_TIME_GTC=0,
+        ORDER_FILLING_IOC=0,
+        TRADE_RETCODE_DONE=0,
+        order_check=lambda _: SimpleNamespace(retcode=0, comment="ok"),
+        order_send=lambda _: SimpleNamespace(order=1, retcode=0, price=1.1, comment="ok", _asdict=fake_asdict),
+        orders_get=lambda: [],
+        symbol_info_tick=lambda _: SimpleNamespace(ask=1.1, bid=1.0),
+        last_error=lambda: "",
+        account_info=lambda: SimpleNamespace(equity=1000, balance=1000, margin=100, margin_free=900, margin_level=1000),
+        symbol_info=lambda _: SimpleNamespace(digits=5, volume_min=0.01, volume_max=100, trade_stops_level=10, trade_freeze_level=0, trade_mode=True),
+    ))
+    monkeypatch.setattr(execution, "ensure_connected", lambda: None)
+    monkeypatch.setattr(execution, "get_open_positions", lambda **_: [])
+    monkeypatch.setattr(execution, "calculate_lot_size", lambda *a, **k: 0.1)
+    monkeypatch.setattr(execution, "calculate_sl_tp", lambda *a, **k: (1.0, 1.1))
+    monkeypatch.setattr(execution, "check_daily_loss_guard", lambda: False)
+    monkeypatch.setattr(execution, "check_max_drawdown_guard", lambda: False)
+    monkeypatch.setattr(execution, "check_max_trades_guard", lambda: False)
+    monkeypatch.setattr(execution, "_record_filled_trade", lambda: None)
+    monkeypatch.setattr(execution, "control_state", runtime_state.control_state)
+    monkeypatch.setattr(data_provider, "validate_symbol_trade_constraints", lambda *_, **__: None)
+    monkeypatch.setattr(
+        execution,
+        "_get_symbol",
+        lambda _: SimpleNamespace(
+            info=SimpleNamespace(digits=5, volume_min=0.01, volume_max=100),
+            tick_size=0.0001,
+            tick_value=10.0,
+            step=0.01,
+            step_decimals=2,
+            min_stop_points=0.001,
+        ),
+    )
+
+    runtime_state.set_control("PAUSED", reason="test pause", source="pytest")
+
+    result = execution.place_order("EURUSD", TradeDirection.BUY, 0.001, "test")
+
+    assert result is None
+    assert runtime_state.control_state()["status"] == "PAUSED"
+
+    runtime_state.set_control("RUNNING", reason="", source="pytest")
+    result = execution.place_order("EURUSD", TradeDirection.BUY, 0.001, "test")
+    assert result is not None
+
+
+def test_close_bot_positions_reports_broker_results(monkeypatch) -> None:
+    positions = [
+        SimpleNamespace(ticket=11, symbol="EURUSD", volume=0.1, type=0),
+        SimpleNamespace(ticket=12, symbol="GBPUSD", volume=0.2, type=1),
+    ]
+    requests = []
+    results = iter((
+        SimpleNamespace(retcode=100, comment="closed"),
+        SimpleNamespace(retcode=999, comment="market closed"),
+    ))
+    monkeypatch.setattr(execution, "ensure_connected", lambda: None)
+    monkeypatch.setattr(execution, "get_open_positions", lambda **_: positions)
+    monkeypatch.setattr(execution, "mt5", SimpleNamespace(
+        POSITION_TYPE_BUY=0,
+        TRADE_ACTION_DEAL=1,
+        ORDER_TYPE_BUY=0,
+        ORDER_TYPE_SELL=1,
+        ORDER_TIME_GTC=0,
+        ORDER_FILLING_IOC=0,
+        TRADE_RETCODE_DONE=100,
+        TRADE_RETCODE_DONE_PARTIAL=101,
+        symbol_info_tick=lambda _: SimpleNamespace(bid=1.1, ask=1.2),
+        order_send=lambda request: (requests.append(request), next(results))[1],
+        last_error=lambda: "",
+    ))
+
+    result = execution.close_bot_positions()
+
+    assert result == {
+        "closed": ["11"],
+        "failed": [{"ticket": "12", "error": "market closed"}],
+    }
+    assert requests[0]["type"] == execution.mt5.ORDER_TYPE_SELL
+    assert requests[0]["price"] == 1.1
+    assert requests[1]["type"] == execution.mt5.ORDER_TYPE_BUY
+    assert requests[1]["price"] == 1.2
+
+
+def test_trailing_stops_do_not_mutate_positions_in_paper_mode(monkeypatch) -> None:
+    monkeypatch.setattr(execution, "EXECUTION", SimpleNamespace(live_orders_enabled=False))
+    monkeypatch.setattr(
+        execution,
+        "ensure_connected",
+        lambda: (_ for _ in ()).throw(AssertionError("paper mode must not connect for trailing updates")),
+    )
+
+    execution.manage_trailing_stops()
+
+
+def test_trailing_stops_respect_halted_control(monkeypatch) -> None:
+    monkeypatch.setattr(execution, "EXECUTION", SimpleNamespace(live_orders_enabled=True))
+    monkeypatch.setattr(execution, "control_state", lambda: {"status": "HALTED", "managementAllowed": False})
+    monkeypatch.setattr(
+        execution,
+        "ensure_connected",
+        lambda: (_ for _ in ()).throw(AssertionError("HALTED must not connect for trailing updates")),
+    )
+
+    execution.manage_trailing_stops()
+

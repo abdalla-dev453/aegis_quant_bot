@@ -1,1 +1,28 @@
-aW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CgpmdW5jdGlvbiBLYmQoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdrYmQnPikgewogIHJldHVybiAoCiAgICA8a2JkCiAgICAgIGRhdGEtc2xvdD0ia2JkIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICdiZy1tdXRlZCB0ZXh0LW11dGVkLWZvcmVncm91bmQgcG9pbnRlci1ldmVudHMtbm9uZSBpbmxpbmUtZmxleCBoLTUgdy1maXQgbWluLXctNSBzZWxlY3Qtbm9uZSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEgcm91bmRlZC1zbSBweC0xIGZvbnQtc2FucyB0ZXh0LXhzIGZvbnQtbWVkaXVtJywKICAgICAgICAiWyZfc3ZnOm5vdChbY2xhc3MqPSdzaXplLSddKV06c2l6ZS0zIiwKICAgICAgICAnW1tkYXRhLXNsb3Q9dG9vbHRpcC1jb250ZW50XV8mXTpiZy1iYWNrZ3JvdW5kLzIwIFtbZGF0YS1zbG90PXRvb2x0aXAtY29udGVudF1fJl06dGV4dC1iYWNrZ3JvdW5kIGRhcms6W1tkYXRhLXNsb3Q9dG9vbHRpcC1jb250ZW50XV8mXTpiZy1iYWNrZ3JvdW5kLzEwJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gS2JkR3JvdXAoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8a2JkCiAgICAgIGRhdGEtc2xvdD0ia2JkLWdyb3VwIgogICAgICBjbGFzc05hbWU9e2NuKCdpbmxpbmUtZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEnLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmV4cG9ydCB7IEtiZCwgS2JkR3JvdXAgfTsK
+import { cn } from '@/lib/utils';
+
+function Kbd({ className, ...props }: React.ComponentProps<'kbd'>) {
+  return (
+    <kbd
+      data-slot="kbd"
+      className={cn(
+        'bg-muted text-muted-foreground pointer-events-none inline-flex h-5 w-fit min-w-5 select-none items-center justify-center gap-1 rounded-sm px-1 font-sans text-xs font-medium',
+        "[&_svg:not([class*='size-'])]:size-3",
+        '[[data-slot=tooltip-content]_&]:bg-background/20 [[data-slot=tooltip-content]_&]:text-background dark:[[data-slot=tooltip-content]_&]:bg-background/10',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function KbdGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <kbd
+      data-slot="kbd-group"
+      className={cn('inline-flex items-center gap-1', className)}
+      {...props}
+    />
+  );
+}
+
+export { Kbd, KbdGroup };

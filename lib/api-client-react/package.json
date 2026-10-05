@@ -1,1 +1,15 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2UvYXBpLWNsaWVudC1yZWFjdCIsCiAgInZlcnNpb24iOiAiMC4wLjAiLAogICJwcml2YXRlIjogdHJ1ZSwKICAidHlwZSI6ICJtb2R1bGUiLAogICJleHBvcnRzIjogewogICAgIi4iOiAiLi9zcmMvaW5kZXgudHMiCiAgfSwKICAiZGVwZW5kZW5jaWVzIjogewogICAgIkB0YW5zdGFjay9yZWFjdC1xdWVyeSI6ICJjYXRhbG9nOiIKICB9LAogICJwZWVyRGVwZW5kZW5jaWVzIjogewogICAgInJlYWN0IjogIj49MTgiCiAgfQp9Cg==
+{
+  "name": "@workspace/api-client-react",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  }
+}

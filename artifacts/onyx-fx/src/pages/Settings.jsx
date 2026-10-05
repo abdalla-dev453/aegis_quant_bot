@@ -1,1 +1,213 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4uL2NvbXBvbmVudHMvUGFuZWwuanN4IjsKaW1wb3J0IFRvcEJhciBmcm9tICIuLi9jb21wb25lbnRzL1RvcEJhci5qc3giOwppbXBvcnQgeyBmZXRjaFNldHRpbmdzLCBzYXZlQ3JlZGVudGlhbHMgfSBmcm9tICIuLi9saWIvYm90RmVlZC5qcyI7CmltcG9ydCB7IFNrZWxldG9uUm93IH0gZnJvbSAiLi4vY29tcG9uZW50cy9Ta2VsZXRvbkxvYWRlcnMuanN4IjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFNldHRpbmdzKCkgewogIGNvbnN0IFtzZXR0aW5ncywgc2V0U2V0dGluZ3NdID0gdXNlU3RhdGUobnVsbCk7CiAgY29uc3QgW2Zvcm0sIHNldEZvcm1dID0gdXNlU3RhdGUoewogICAgbG9naW46ICIiLAogICAgcGFzc3dvcmQ6ICIiLAogICAgc2VydmVyOiAiIiwKICAgIHRlcm1pbmFsX3BhdGg6ICIiLAogIH0pOwogIGNvbnN0IFtzdGF0dXMsIHNldFN0YXR1c10gPSB1c2VTdGF0ZSgiTG9hZGluZyBzZXJ2ZXIgc2V0dGluZ3MuLi4iKTsKICBjb25zdCBbc2F2aW5nLCBzZXRTYXZpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKHRydWUpOwogIGNvbnN0IFthcGlUb2tlbiwgc2V0QXBpVG9rZW5dID0gdXNlU3RhdGUoKCkgPT4gc2Vzc2lvblN0b3JhZ2UuZ2V0SXRlbSgib255eC1hcGktdG9rZW4iKSB8fCAiIik7CgogIGNvbnN0IGNvbm5lY3RBcGkgPSBhc3luYyAoZXZlbnQpID0+IHsKICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7CiAgICBzZXNzaW9uU3RvcmFnZS5zZXRJdGVtKCJvbnl4LWFwaS10b2tlbiIsIGFwaVRva2VuLnRyaW0oKSk7CiAgICBzZXRTdGF0dXMoIkNoZWNraW5nIEFQSSBhY2Nlc3MuLi4iKTsKICAgIHRyeSB7CiAgICAgIHNldFNldHRpbmdzKGF3YWl0IGZldGNoU2V0dGluZ3MoKSk7CiAgICAgIHNldFN0YXR1cygiQVBJIGNvbm5lY3RlZC4gTVQ1IHRlcm1pbmFsIGNvbm5lY3Rpb24gaXMgc2VwYXJhdGUuIik7CiAgICB9IGNhdGNoIChlcnJvcikgewogICAgICBzZXRTdGF0dXMoZXJyb3IubWVzc2FnZSk7CiAgICB9CiAgfTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGZldGNoU2V0dGluZ3MoKQogICAgICAudGhlbigoZGF0YSkgPT4gewogICAgICAgIHNldFNldHRpbmdzKGRhdGEpOwogICAgICAgIHNldFN0YXR1cygiUmVhZHkiKTsKICAgICAgICBzZXRMb2FkaW5nKGZhbHNlKTsKICAgICAgfSkKICAgICAgLmNhdGNoKChlcnJvcikgPT4gewogICAgICAgIHNldFN0YXR1cyhlcnJvci5tZXNzYWdlKTsKICAgICAgICBzZXRMb2FkaW5nKGZhbHNlKTsKICAgICAgfSk7CiAgfSwgW10pOwoKICBjb25zdCBzdWJtaXQgPSBhc3luYyAoZXZlbnQpID0+IHsKICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7CiAgICBpZiAod2luZG93LmxvY2F0aW9uLnByb3RvY29sICE9PSAiaHR0cHM6IiAmJiAhWyJsb2NhbGhvc3QiLCAiMTI3LjAuMC4xIl0uaW5jbHVkZXMod2luZG93LmxvY2F0aW9uLmhvc3RuYW1lKSkgewogICAgICBzZXRTdGF0dXMoIlNlY3VyZSBIVFRQUyBjb25uZWN0aW9uIHJlcXVpcmVkIGJlZm9yZSBzZW5kaW5nIGJyb2tlciBjcmVkZW50aWFscy4iKTsKICAgICAgcmV0dXJuOwogICAgfQogICAgc2V0U2F2aW5nKHRydWUpOwogICAgc2V0U3RhdHVzKCJDb25uZWN0aW5nIHRvIE1UNS4uLiIpOwogICAgdHJ5IHsKICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgc2F2ZUNyZWRlbnRpYWxzKHsKICAgICAgICAuLi5mb3JtLAogICAgICAgIGxvZ2luOiBOdW1iZXIoZm9ybS5sb2dpbiksCiAgICAgICAgdGVybWluYWxfcGF0aDogZm9ybS50ZXJtaW5hbF9wYXRoIHx8IG51bGwsCiAgICAgIH0pOwogICAgICBzZXRTdGF0dXMocmVzdWx0Lm1lc3NhZ2UpOwogICAgICBzZXRGb3JtKHsgLi4uZm9ybSwgcGFzc3dvcmQ6ICIiIH0pOwogICAgICBzZXRTZXR0aW5ncyhhd2FpdCBmZXRjaFNldHRpbmdzKCkpOwogICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgc2V0U3RhdHVzKGVycm9yLm1lc3NhZ2UpOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0U2F2aW5nKGZhbHNlKTsKICAgIH0KICB9OwoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9ImZsZXggbWluLWgtZnVsbCBmbGV4LWNvbCI+CiAgICAgIDxUb3BCYXIKICAgICAgICB0aXRsZT0iU2V0dGluZ3MiCiAgICAgICAgc3VidGl0bGU9IkNvbm5lY3Rpb24gYW5kIHNlcnZlciBzdHJhdGVneSBjb25maWd1cmF0aW9uIgogICAgICAvPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBmbGV4LTEgZ2FwLTQgb3ZlcmZsb3cteS1hdXRvIHB4LTggcHktNSBsZzpncmlkLWNvbHMtMiI+CiAgICAgICAgPFBhbmVsIHRpdGxlPSJBUEkgYWNjZXNzIj4KICAgICAgICAgIDxmb3JtIG9uU3VibWl0PXtjb25uZWN0QXBpfSBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC14cyB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgIFNldCBBUElfVE9LRU4gaW4gdGhlIHNlcnZlcidzIFNlY3JldHMsIHRoZW4gZW50ZXIgdGhlIHNhbWUgdG9rZW4gaGVyZS4KICAgICAgICAgICAgICBJdCBpcyBrZXB0IG9ubHkgaW4gdGhpcyBicm93c2VyIHRhYiwgbmV2ZXIgaW5jbHVkZWQgaW4gdGhlIHB1YmxpYyBhcHAgYnVpbGQuCiAgICAgICAgICAgICAgTVQ1IHJlcXVpcmVzIGEgc2VwYXJhdGVseSBxdWFsaWZpZWQgV2luZG93cyB0ZXJtaW5hbC4KICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8RmllbGQgbGFiZWw9IkFQSSBhY2Nlc3MgdG9rZW4iIHR5cGU9InBhc3N3b3JkIiB2YWx1ZT17YXBpVG9rZW59CiAgICAgICAgICAgICAgb25DaGFuZ2U9e3NldEFwaVRva2VufSAvPgogICAgICAgICAgICA8YnV0dG9uIHR5cGU9InN1Ym1pdCIgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIGJnLWFjY2VudCBweC0zIHB5LTIgdGV4dC1bMTJweF0gZm9udC1tZWRpdW0gdGV4dC13aGl0ZSI+CiAgICAgICAgICAgICAgQ29ubmVjdCBBUEkKICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDxwIHJvbGU9InN0YXR1cyIgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtaW5rLWRpbSI+e3N0YXR1c308L3A+CiAgICAgICAgICA8L2Zvcm0+CiAgICAgICAgPC9QYW5lbD4KICAgICAgICA8UGFuZWwgdGl0bGU9Ik1UNSBhY2NvdW50IGNvbm5lY3Rpb24iPgogICAgICAgICAgeyFsb2FkaW5nID8gKAogICAgICAgICAgICA8Zm9ybSBvblN1Ym1pdD17c3VibWl0fSBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPEZpZWxkCiAgICAgICAgICAgICAgICBsYWJlbD0iQWNjb3VudCBsb2dpbiIKICAgICAgICAgICAgICAgIHR5cGU9Im51bWJlciIKICAgICAgICAgICAgICAgIHZhbHVlPXtmb3JtLmxvZ2lufQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyh2YWx1ZSkgPT4gc2V0Rm9ybSh7IC4uLmZvcm0sIGxvZ2luOiB2YWx1ZSB9KX0KICAgICAgICAgICAgICAgIHJlcXVpcmVkCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8RmllbGQKICAgICAgICAgICAgICAgIGxhYmVsPSJQYXNzd29yZCIKICAgICAgICAgICAgICAgIHR5cGU9InBhc3N3b3JkIgogICAgICAgICAgICAgICAgdmFsdWU9e2Zvcm0ucGFzc3dvcmR9CiAgICAgICAgICAgICAgICBvbkNoYW5nZT17KHZhbHVlKSA9PiBzZXRGb3JtKHsgLi4uZm9ybSwgcGFzc3dvcmQ6IHZhbHVlIH0pfQogICAgICAgICAgICAgICAgcmVxdWlyZWQKICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDxGaWVsZAogICAgICAgICAgICAgICAgbGFiZWw9IkJyb2tlciBzZXJ2ZXIiCiAgICAgICAgICAgICAgICB2YWx1ZT17Zm9ybS5zZXJ2ZXJ9CiAgICAgICAgICAgICAgICBvbkNoYW5nZT17KHZhbHVlKSA9PiBzZXRGb3JtKHsgLi4uZm9ybSwgc2VydmVyOiB2YWx1ZSB9KX0KICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJCcm9rZXItRGVtbyIKICAgICAgICAgICAgICAgIHJlcXVpcmVkCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8RmllbGQKICAgICAgICAgICAgICAgIGxhYmVsPSJUZXJtaW5hbCBwYXRoIChvcHRpb25hbCkiCiAgICAgICAgICAgICAgICB2YWx1ZT17Zm9ybS50ZXJtaW5hbF9wYXRofQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyh2YWx1ZSkgPT4gc2V0Rm9ybSh7IC4uLmZvcm0sIHRlcm1pbmFsX3BhdGg6IHZhbHVlIH0pfQogICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9IkM6XFxQcm9ncmFtIEZpbGVzXFxNZXRhVHJhZGVyIDVcXHRlcm1pbmFsNjQuZXhlIgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgdHlwZT0ic3VibWl0IgogICAgICAgICAgICAgICAgZGlzYWJsZWQ9e3NhdmluZ30KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1tZCBiZy1hY2NlbnQgcHgtMyBweS0yIHRleHQtWzEycHhdIGZvbnQtbWVkaXVtIHRleHQtd2hpdGUgZGlzYWJsZWQ6Y3Vyc29yLXdhaXQgZGlzYWJsZWQ6b3BhY2l0eS02MCB3LWZ1bGwgc206dy1hdXRvIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHtzYXZpbmcgPyAiQ29ubmVjdGluZy4uLiIgOiAiQ29ubmVjdCBNVDUifQogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bMTFweF0gbGVhZGluZy1yZWxheGVkIHRleHQtaW5rLWZhaW50Ij4KICAgICAgICAgICAgICAgIENyZWRlbnRpYWxzIGFyZSBzZW50IHRvIHRoZSBzZXJ2ZXIgZm9yIHRoaXMgc2Vzc2lvbiBvbmx5LiBUaGUgQVBJCiAgICAgICAgICAgICAgICBkb2VzIG5vdCByZXR1cm4gb3IgcGVyc2lzdCB0aGUgcGFzc3dvcmQuIFVzZSBIVFRQUyBvciBhIHByaXZhdGUKICAgICAgICAgICAgICAgIG5ldHdvcmsgYmVmb3JlIGVudGVyaW5nIGxpdmUgY3JlZGVudGlhbHMuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgIDxwIHJvbGU9InN0YXR1cyIgYXJpYS1saXZlPSJwb2xpdGUiIGNsYXNzTmFtZT0idGV4dC1bMTFweF0gdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICAgIHtzdGF0dXN9CiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L2Zvcm0+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17MX0gLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApfQogICAgICAgIDwvUGFuZWw+CgogICAgICAgIDxQYW5lbCB0aXRsZT0iRWZmZWN0aXZlIHNlcnZlciBjb25maWd1cmF0aW9uIj4KICAgICAgICAgIHtzZXR0aW5ncyA/ICgKICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktMiB0ZXh0LVsxMnB4XSI+CiAgICAgICAgICAgICAgPFJvdwogICAgICAgICAgICAgICAgbGFiZWw9IkNyZWRlbnRpYWwgc3RhdHVzIgogICAgICAgICAgICAgICAgdmFsdWU9ewogICAgICAgICAgICAgICAgICBzZXR0aW5ncy5jcmVkZW50aWFsc0NvbmZpZ3VyZWQKICAgICAgICAgICAgICAgICAgICA/ICJDb25maWd1cmVkIgogICAgICAgICAgICAgICAgICAgIDogIk5vdCBjb25maWd1cmVkIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPFJvdyBsYWJlbD0iU3ltYm9scyIgdmFsdWU9e3NldHRpbmdzLnN5bWJvbHMuam9pbigiLCAiKSB8fCAiLSJ9IC8+CiAgICAgICAgICAgICAgPFJvdwogICAgICAgICAgICAgICAgbGFiZWw9IlRyaWdnZXIgLyBiaWFzIgogICAgICAgICAgICAgICAgdmFsdWU9e2Ake3NldHRpbmdzLnRpbWVmcmFtZVRyaWdnZXJ9IC8gJHtzZXR0aW5ncy50aW1lZnJhbWVCaWFzfWB9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8Um93CiAgICAgICAgICAgICAgICBsYWJlbD0iUmlzayBwZXIgdHJhZGUiCiAgICAgICAgICAgICAgICB2YWx1ZT17YCR7c2V0dGluZ3Mucmlza1BlclRyYWRlUGN0fSVgfQogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPFJvdwogICAgICAgICAgICAgICAgbGFiZWw9IkFUUiBzdG9wIC8gdGFyZ2V0IgogICAgICAgICAgICAgICAgdmFsdWU9e2Ake3NldHRpbmdzLmF0clN0b3BNdWx0aXBsaWVyfSAvICR7c2V0dGluZ3MuYXRyVGFrZVByb2ZpdE11bHRpcGxpZXJ9YH0KICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDxSb3cKICAgICAgICAgICAgICAgIGxhYmVsPSJNYXggcG9zaXRpb25zIgogICAgICAgICAgICAgICAgdmFsdWU9e3NldHRpbmdzLm1heENvbmN1cnJlbnRQb3NpdGlvbnN9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8Um93IGxhYmVsPSJNYWdpYyBudW1iZXIiIHZhbHVlPXtzZXR0aW5ncy5tYWdpY051bWJlcn0gLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApfQogICAgICAgIDwvUGFuZWw+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKZnVuY3Rpb24gRmllbGQoeyBsYWJlbCwgdHlwZSA9ICJ0ZXh0IiwgdmFsdWUsIG9uQ2hhbmdlLCAuLi5wcm9wcyB9KSB7CiAgcmV0dXJuICgKICAgIDxsYWJlbCBjbGFzc05hbWU9ImJsb2NrIHRleHQtWzExcHhdIHRleHQtaW5rLWRpbSI+CiAgICAgIHtsYWJlbH0KICAgICAgPGlucHV0CiAgICAgICAgey4uLnByb3BzfQogICAgICAgIHR5cGU9e3R5cGV9CiAgICAgICAgdmFsdWU9e3ZhbHVlfQogICAgICAgIG9uQ2hhbmdlPXsoZXZlbnQpID0+IG9uQ2hhbmdlKGV2ZW50LnRhcmdldC52YWx1ZSl9CiAgICAgICAgY2xhc3NOYW1lPSJtdC0xIHctZnVsbCByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMiB0ZXh0LXNtIHRleHQtaW5rIG91dGxpbmUtbm9uZSBmb2N1czpib3JkZXItYWNjZW50IgogICAgICAvPgogICAgPC9sYWJlbD4KICApOwp9CgpmdW5jdGlvbiBSb3coeyBsYWJlbCwgdmFsdWUgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGJvcmRlci1iIGJvcmRlci1ib3JkZXIgcHktMiI+CiAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1pbmstZmFpbnQiPntsYWJlbH08L3NwYW4+CiAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtaW5rIj57dmFsdWV9PC9zcGFuPgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useEffect, useState } from "react";
+import Panel from "../components/Panel.jsx";
+import TopBar from "../components/TopBar.jsx";
+import { fetchSettings, saveCredentials } from "../lib/botFeed.js";
+import { SkeletonRow } from "../components/SkeletonLoaders.jsx";
+
+export default function Settings() {
+  const [settings, setSettings] = useState(null);
+  const [form, setForm] = useState({
+    login: "",
+    password: "",
+    server: "",
+    terminal_path: "",
+  });
+  const [status, setStatus] = useState("Loading server settings...");
+  const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [apiToken, setApiToken] = useState(() => sessionStorage.getItem("onyx-api-token") || "");
+
+  const connectApi = async (event) => {
+    event.preventDefault();
+    sessionStorage.setItem("onyx-api-token", apiToken.trim());
+    setStatus("Checking API access...");
+    try {
+      setSettings(await fetchSettings());
+      setStatus("API connected. MT5 terminal connection is separate.");
+    } catch (error) {
+      setStatus(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchSettings()
+      .then((data) => {
+        setSettings(data);
+        setStatus("Ready");
+        setLoading(false);
+      })
+      .catch((error) => {
+        setStatus(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  const submit = async (event) => {
+    event.preventDefault();
+    if (window.location.protocol !== "https:" && !["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+      setStatus("Secure HTTPS connection required before sending broker credentials.");
+      return;
+    }
+    setSaving(true);
+    setStatus("Connecting to MT5...");
+    try {
+      const result = await saveCredentials({
+        ...form,
+        login: Number(form.login),
+        terminal_path: form.terminal_path || null,
+      });
+      setStatus(result.message);
+      setForm({ ...form, password: "" });
+      setSettings(await fetchSettings());
+    } catch (error) {
+      setStatus(error.message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="flex min-h-full flex-col">
+      <TopBar
+        title="Settings"
+        subtitle="Connection and server strategy configuration"
+      />
+      <div className="grid flex-1 gap-4 overflow-y-auto px-8 py-5 lg:grid-cols-2">
+        <Panel title="API access">
+          <form onSubmit={connectApi} className="space-y-3">
+            <p className="text-xs text-ink-dim">
+              Set API_TOKEN in the server's Secrets, then enter the same token here.
+              It is kept only in this browser tab, never included in the public app build.
+              MT5 requires a separately qualified Windows terminal.
+            </p>
+            <Field label="API access token" type="password" value={apiToken}
+              onChange={setApiToken} />
+            <button type="submit" className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white">
+              Connect API
+            </button>
+            <p role="status" className="text-xs text-ink-dim">{status}</p>
+          </form>
+        </Panel>
+        <Panel title="MT5 account connection">
+          {!loading ? (
+            <form onSubmit={submit} className="space-y-3">
+              <Field
+                label="Account login"
+                type="number"
+                value={form.login}
+                onChange={(value) => setForm({ ...form, login: value })}
+                required
+              />
+              <Field
+                label="Password"
+                type="password"
+                value={form.password}
+                onChange={(value) => setForm({ ...form, password: value })}
+                required
+              />
+              <Field
+                label="Broker server"
+                value={form.server}
+                onChange={(value) => setForm({ ...form, server: value })}
+                placeholder="Broker-Demo"
+                required
+              />
+              <Field
+                label="Terminal path (optional)"
+                value={form.terminal_path}
+                onChange={(value) => setForm({ ...form, terminal_path: value })}
+                placeholder="C:\\Program Files\\MetaTrader 5\\terminal64.exe"
+              />
+              <button
+                type="submit"
+                disabled={saving}
+                className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white disabled:cursor-wait disabled:opacity-60 w-full sm:w-auto"
+              >
+                {saving ? "Connecting..." : "Connect MT5"}
+              </button>
+              <p className="text-[11px] leading-relaxed text-ink-faint">
+                Credentials are sent to the server for this session only. The API
+                does not return or persist the password. Use HTTPS or a private
+                network before entering live credentials.
+              </p>
+              <p role="status" aria-live="polite" className="text-[11px] text-ink-dim">
+                {status}
+              </p>
+            </form>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={1} />
+            </div>
+          )}
+        </Panel>
+
+        <Panel title="Effective server configuration">
+          {settings ? (
+            <div className="space-y-2 text-[12px]">
+              <Row
+                label="Credential status"
+                value={
+                  settings.credentialsConfigured
+                    ? "Configured"
+                    : "Not configured"
+                }
+              />
+              <Row label="Symbols" value={settings.symbols.join(", ") || "-"} />
+              <Row
+                label="Trigger / bias"
+                value={`${settings.timeframeTrigger} / ${settings.timeframeBias}`}
+              />
+              <Row
+                label="Risk per trade"
+                value={`${settings.riskPerTradePct}%`}
+              />
+              <Row
+                label="ATR stop / target"
+                value={`${settings.atrStopMultiplier} / ${settings.atrTakeProfitMultiplier}`}
+              />
+              <Row
+                label="Max positions"
+                value={settings.maxConcurrentPositions}
+              />
+              <Row label="Magic number" value={settings.magicNumber} />
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+            </div>
+          )}
+        </Panel>
+      </div>
+    </div>
+  );
+}
+
+function Field({ label, type = "text", value, onChange, ...props }) {
+  return (
+    <label className="block text-[11px] text-ink-dim">
+      {label}
+      <input
+        {...props}
+        type={type}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="mt-1 w-full rounded-md border border-border bg-surface-alt px-3 py-2 text-sm text-ink outline-none focus:border-accent"
+      />
+    </label>
+  );
+}
+
+function Row({ label, value }) {
+  return (
+    <div className="flex items-center justify-between border-b border-border py-2">
+      <span className="text-ink-faint">{label}</span>
+      <span className="font-mono text-ink">{value}</span>
+    </div>
+  );
+}

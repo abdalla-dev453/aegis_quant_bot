@@ -1,1 +1,20 @@
-aW1wb3J0IHBpbm8gZnJvbSAicGlubyI7Cgpjb25zdCBpc1Byb2R1Y3Rpb24gPSBwcm9jZXNzLmVudi5OT0RFX0VOViA9PT0gInByb2R1Y3Rpb24iOwoKZXhwb3J0IGNvbnN0IGxvZ2dlciA9IHBpbm8oewogIGxldmVsOiBwcm9jZXNzLmVudi5MT0dfTEVWRUwgPz8gImluZm8iLAogIHJlZGFjdDogWwogICAgInJlcS5oZWFkZXJzLmF1dGhvcml6YXRpb24iLAogICAgInJlcS5oZWFkZXJzLmNvb2tpZSIsCiAgICAicmVzLmhlYWRlcnNbJ3NldC1jb29raWUnXSIsCiAgXSwKICAuLi4oaXNQcm9kdWN0aW9uCiAgICA/IHt9CiAgICA6IHsKICAgICAgICB0cmFuc3BvcnQ6IHsKICAgICAgICAgIHRhcmdldDogInBpbm8tcHJldHR5IiwKICAgICAgICAgIG9wdGlvbnM6IHsgY29sb3JpemU6IHRydWUgfSwKICAgICAgICB9LAogICAgICB9KSwKfSk7Cg==
+import pino from "pino";
+
+const isProduction = process.env.NODE_ENV === "production";
+
+export const logger = pino({
+  level: process.env.LOG_LEVEL ?? "info",
+  redact: [
+    "req.headers.authorization",
+    "req.headers.cookie",
+    "res.headers['set-cookie']",
+  ],
+  ...(isProduction
+    ? {}
+    : {
+        transport: {
+          target: "pino-pretty",
+          options: { colorize: true },
+        },
+      }),
+});

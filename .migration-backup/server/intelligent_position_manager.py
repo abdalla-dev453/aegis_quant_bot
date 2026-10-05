@@ -1,1 +1,469 @@
-IiIiCmludGVsbGlnZW50X3Bvc2l0aW9uX21hbmFnZXIucHkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KSW50ZWxsaWdlbnQgcG9zaXRpb24gbWFuYWdlbWVudCBzeXN0ZW0gZm9yIGR5bmFtaWMgZXhpdCBzdHJhdGVnaWVzLAphZGFwdGl2ZSBwb3NpdGlvbiBzaXppbmcsIGFuZCBzbWFydCBzdG9wIG1hbmFnZW1lbnQuCiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGxvZ2dpbmcKaW1wb3J0IHRocmVhZGluZwpmcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBkZXF1ZQpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUsIHRpbWVkZWx0YSwgdGltZXpvbmUKZnJvbSBlbnVtIGltcG9ydCBFbnVtCmZyb20gdHlwaW5nIGltcG9ydCBBbnkKCmltcG9ydCBwYW5kYXMgYXMgcGQKZnJvbSBhZHZhbmNlZF90ZWNobmljYWxfYW5hbHlzaXMgaW1wb3J0ICgKICAgIE1hcmtldFJlZ2ltZSwKKQpmcm9tIGNvbmZpZyBpbXBvcnQgQURWQU5DRURfUklTSywgUklTSwpmcm9tIGRhdGFfcHJvdmlkZXIgaW1wb3J0IGVuc3VyZV9jb25uZWN0ZWQsIGdldF9vcGVuX3Bvc2l0aW9ucywgbXQ1Cgpsb2dnZXIgPSBsb2dnaW5nLmdldExvZ2dlcigidHJhZGluZ19ib3QuaW50ZWxsaWdlbnRfcG9zaXRpb25fbWFuYWdlciIpCgoKY2xhc3MgRXhpdERlY2lzaW9uKHN0ciwgRW51bSk6CiAgICAiIiJQb3NpdGlvbiBleGl0IGRlY2lzaW9uIHR5cGVzIiIiCiAgICBIT0xEID0gImhvbGQiCiAgICBFWElUX0VBUkxZID0gImV4aXRfZWFybHkiCiAgICBUSUdIVEVOX1NUT1BTID0gInRpZ2h0ZW5fc3RvcHMiCiAgICBNT1ZFX0JSRUFLRVZFTiA9ICJtb3ZlX2JyZWFrZXZlbiIKICAgIFBBUlRJQUxfRVhJVCA9ICJwYXJ0aWFsX2V4aXQiCgoKY2xhc3MgUG9zaXRpb25IZWFsdGgoc3RyLCBFbnVtKToKICAgICIiIkhlYWx0aCBzdGF0dXMgb2YgYSBwb3NpdGlvbiIiIgogICAgRVhDRUxMRU5UID0gImV4Y2VsbGVudCIKICAgIEdPT0QgPSAiZ29vZCIKICAgIEZBSVIgPSAiZmFpciIKICAgIFBPT1IgPSAicG9vciIKICAgIENSSVRJQ0FMID0gImNyaXRpY2FsIgoKCkBkYXRhY2xhc3MKY2xhc3MgUG9zaXRpb25BbmFseXNpczoKICAgICIiIkFuYWx5c2lzIG9mIGEgc2luZ2xlIHBvc2l0aW9uIiIiCiAgICB0aWNrZXQ6IGludAogICAgc3ltYm9sOiBzdHIKICAgIGRpcmVjdGlvbjogc3RyCiAgICBlbnRyeV9wcmljZTogZmxvYXQKICAgIGN1cnJlbnRfcHJpY2U6IGZsb2F0CiAgICB1bnJlYWxpemVkX3BubDogZmxvYXQKICAgIHVucmVhbGl6ZWRfcG5sX3BjdDogZmxvYXQKICAgIHRpbWVfaW5fcG9zaXRpb246IHRpbWVkZWx0YQogICAgaGVhbHRoOiBQb3NpdGlvbkhlYWx0aAogICAgcmVjb21tZW5kYXRpb246IEV4aXREZWNpc2lvbgogICAgcmVhc29uaW5nOiBzdHIKICAgIHN1Z2dlc3RlZF9zdG9wOiBmbG9hdCB8IE5vbmUKICAgIHN1Z2dlc3RlZF90YWtlX3Byb2ZpdDogZmxvYXQgfCBOb25lCiAgICBjb25maWRlbmNlOiBmbG9hdAoKCkBkYXRhY2xhc3MKY2xhc3MgVm9sYXRpbGl0eUFkanVzdG1lbnQ6CiAgICAiIiJWb2xhdGlsaXR5LWJhc2VkIHBvc2l0aW9uIHNpemluZyBhZGp1c3RtZW50IiIiCiAgICBzeW1ib2w6IHN0cgogICAgYmFzZV9zaXplOiBmbG9hdAogICAgYWRqdXN0ZWRfc2l6ZTogZmxvYXQKICAgIHZvbGF0aWxpdHlfcmF0aW86IGZsb2F0CiAgICBhZGp1c3RtZW50X2ZhY3RvcjogZmxvYXQKICAgIHJlYXNvbjogc3RyCgoKY2xhc3MgSW50ZWxsaWdlbnRQb3NpdGlvbk1hbmFnZXI6CiAgICAiIiIKICAgIEFkdmFuY2VkIHBvc2l0aW9uIG1hbmFnZW1lbnQgd2l0aCBkeW5hbWljIGV4aXQgc3RyYXRlZ2llcyBhbmQgCiAgICB2b2xhdGlsaXR5LWJhc2VkIHNpemluZyBhZGp1c3RtZW50cy4KICAgICIiIgogICAgCiAgICBkZWYgX19pbml0X18oc2VsZik6CiAgICAgICAgc2VsZi5wb3NpdGlvbl9oaXN0b3J5OiBkZXF1ZVtQb3NpdGlvbkFuYWx5c2lzXSA9IGRlcXVlKG1heGxlbj0xMDApCiAgICAgICAgc2VsZi5leGl0X2RlY2lzaW9uczogZGVxdWVbdHVwbGVbaW50LCBFeGl0RGVjaXNpb24sIHN0cl1dID0gZGVxdWUobWF4bGVuPTUwKQogICAgICAgIHNlbGYuX2xvY2sgPSB0aHJlYWRpbmcuTG9jaygpCiAgICAgICAgCiAgICAgICAgbG9nZ2VyLmluZm8oIkludGVsbGlnZW50IHBvc2l0aW9uIG1hbmFnZXIgaW5pdGlhbGl6ZWQiKQogICAgCiAgICBkZWYgYW5hbHl6ZV9wb3NpdGlvbihzZWxmLCBwb3NpdGlvbjogQW55LCBtYXJrZXRfZGF0YTogZGljdFtzdHIsIEFueV0pIC0+IFBvc2l0aW9uQW5hbHlzaXM6CiAgICAgICAgIiIiCiAgICAgICAgQW5hbHl6ZSBhIHBvc2l0aW9uIGFuZCBwcm92aWRlIGludGVsbGlnZW50IG1hbmFnZW1lbnQgcmVjb21tZW5kYXRpb25zLgogICAgICAgIAogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIHBvc2l0aW9uOiBNVDUgcG9zaXRpb24gb2JqZWN0CiAgICAgICAgICAgIG1hcmtldF9kYXRhOiBDdXJyZW50IG1hcmtldCBkYXRhIGFuZCBhbmFseXNpcwogICAgICAgICAgICAKICAgICAgICBSZXR1cm5zOgogICAgICAgICAgICBQb3NpdGlvbkFuYWx5c2lzIHdpdGggcmVjb21tZW5kYXRpb25zCiAgICAgICAgIiIiCiAgICAgICAgdHJ5OgogICAgICAgICAgICB0aWNrZXQgPSBwb3NpdGlvbi50aWNrZXQKICAgICAgICAgICAgc3ltYm9sID0gcG9zaXRpb24uc3ltYm9sCiAgICAgICAgICAgIGRpcmVjdGlvbiA9ICJCVVkiIGlmIHBvc2l0aW9uLnR5cGUgPT0gbXQ1LlBPU0lUSU9OX1RZUEVfQlVZIGVsc2UgIlNFTEwiCiAgICAgICAgICAgIGVudHJ5X3ByaWNlID0gcG9zaXRpb24ucHJpY2Vfb3BlbgogICAgICAgICAgICBjdXJyZW50X3ByaWNlID0gcG9zaXRpb24ucHJpY2VfY3VycmVudAogICAgICAgICAgICAKICAgICAgICAgICAgIyBDYWxjdWxhdGUgUG5MCiAgICAgICAgICAgIGlmIGRpcmVjdGlvbiA9PSAiQlVZIjoKICAgICAgICAgICAgICAgIHVucmVhbGl6ZWRfcG5sID0gKGN1cnJlbnRfcHJpY2UgLSBlbnRyeV9wcmljZSkgKiBwb3NpdGlvbi52b2x1bWUKICAgICAgICAgICAgZWxzZToKICAgICAgICAgICAgICAgIHVucmVhbGl6ZWRfcG5sID0gKGVudHJ5X3ByaWNlIC0gY3VycmVudF9wcmljZSkgKiBwb3NpdGlvbi52b2x1bWUKICAgICAgICAgICAgCiAgICAgICAgICAgIHVucmVhbGl6ZWRfcG5sX3BjdCA9ICh1bnJlYWxpemVkX3BubCAvIChlbnRyeV9wcmljZSAqIHBvc2l0aW9uLnZvbHVtZSkpICogMTAwIGlmIGVudHJ5X3ByaWNlID4gMCBlbHNlIDAuMAogICAgICAgICAgICAKICAgICAgICAgICAgIyBDYWxjdWxhdGUgdGltZSBpbiBwb3NpdGlvbgogICAgICAgICAgICBvcGVuX3RpbWUgPSBkYXRldGltZS5mcm9tdGltZXN0YW1wKHBvc2l0aW9uLnRpbWUsIHRpbWV6b25lLnV0YykKICAgICAgICAgICAgdGltZV9pbl9wb3NpdGlvbiA9IGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpIC0gb3Blbl90aW1lCiAgICAgICAgICAgIAogICAgICAgICAgICAjIERldGVybWluZSBwb3NpdGlvbiBoZWFsdGgKICAgICAgICAgICAgaGVhbHRoID0gc2VsZi5fYXNzZXNzX3Bvc2l0aW9uX2hlYWx0aCh1bnJlYWxpemVkX3BubF9wY3QsIHRpbWVfaW5fcG9zaXRpb24pCiAgICAgICAgICAgIAogICAgICAgICAgICAjIE1ha2UgcmVjb21tZW5kYXRpb24gYmFzZWQgb24gYW5hbHlzaXMKICAgICAgICAgICAgcmVjb21tZW5kYXRpb24sIHJlYXNvbmluZywgc3VnZ2VzdGVkX3N0b3AsIHN1Z2dlc3RlZF90cCA9IHNlbGYuX21ha2VfZXhpdF9kZWNpc2lvbigKICAgICAgICAgICAgICAgIHBvc2l0aW9uLCBtYXJrZXRfZGF0YSwgdW5yZWFsaXplZF9wbmxfcGN0LCB0aW1lX2luX3Bvc2l0aW9uLCBoZWFsdGgKICAgICAgICAgICAgKQogICAgICAgICAgICAKICAgICAgICAgICAgYW5hbHlzaXMgPSBQb3NpdGlvbkFuYWx5c2lzKAogICAgICAgICAgICAgICAgdGlja2V0PXRpY2tldCwKICAgICAgICAgICAgICAgIHN5bWJvbD1zeW1ib2wsCiAgICAgICAgICAgICAgICBkaXJlY3Rpb249ZGlyZWN0aW9uLAogICAgICAgICAgICAgICAgZW50cnlfcHJpY2U9ZW50cnlfcHJpY2UsCiAgICAgICAgICAgICAgICBjdXJyZW50X3ByaWNlPWN1cnJlbnRfcHJpY2UsCiAgICAgICAgICAgICAgICB1bnJlYWxpemVkX3BubD11bnJlYWxpemVkX3BubCwKICAgICAgICAgICAgICAgIHVucmVhbGl6ZWRfcG5sX3BjdD11bnJlYWxpemVkX3BubF9wY3QsCiAgICAgICAgICAgICAgICB0aW1lX2luX3Bvc2l0aW9uPXRpbWVfaW5fcG9zaXRpb24sCiAgICAgICAgICAgICAgICBoZWFsdGg9aGVhbHRoLAogICAgICAgICAgICAgICAgcmVjb21tZW5kYXRpb249cmVjb21tZW5kYXRpb24sCiAgICAgICAgICAgICAgICByZWFzb25pbmc9cmVhc29uaW5nLAogICAgICAgICAgICAgICAgc3VnZ2VzdGVkX3N0b3A9c3VnZ2VzdGVkX3N0b3AsCiAgICAgICAgICAgICAgICBzdWdnZXN0ZWRfdGFrZV9wcm9maXQ9c3VnZ2VzdGVkX3RwLAogICAgICAgICAgICAgICAgY29uZmlkZW5jZT1zZWxmLl9jYWxjdWxhdGVfY29uZmlkZW5jZShoZWFsdGgsIG1hcmtldF9kYXRhKQogICAgICAgICAgICApCiAgICAgICAgICAgIAogICAgICAgICAgICAjIFN0b3JlIGluIGhpc3RvcnkKICAgICAgICAgICAgd2l0aCBzZWxmLl9sb2NrOgogICAgICAgICAgICAgICAgc2VsZi5wb3NpdGlvbl9oaXN0b3J5LmFwcGVuZChhbmFseXNpcykKICAgICAgICAgICAgCiAgICAgICAgICAgIHJldHVybiBhbmFseXNpcwogICAgICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBhbmFseXNpcyBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIkVycm9yIGFuYWx5emluZyBwb3NpdGlvbiB7cG9zaXRpb24udGlja2V0fToge2V9IikKICAgICAgICAgICAgcmV0dXJuIHNlbGYuX2RlZmF1bHRfYW5hbHlzaXMocG9zaXRpb24pCiAgICAKICAgIGRlZiBfZGVmYXVsdF9hbmFseXNpcyhzZWxmLCBwb3NpdGlvbjogQW55KSAtPiBQb3NpdGlvbkFuYWx5c2lzOgogICAgICAgICIiIlJldHVybiBkZWZhdWx0IGFuYWx5c2lzIHdoZW4gcmVhbCBhbmFseXNpcyBmYWlscyIiIgogICAgICAgIHJldHVybiBQb3NpdGlvbkFuYWx5c2lzKAogICAgICAgICAgICB0aWNrZXQ9cG9zaXRpb24udGlja2V0LAogICAgICAgICAgICBzeW1ib2w9cG9zaXRpb24uc3ltYm9sLAogICAgICAgICAgICBkaXJlY3Rpb249IkJVWSIgaWYgcG9zaXRpb24udHlwZSA9PSBtdDUuUE9TSVRJT05fVFlQRV9CVVkgZWxzZSAiU0VMTCIsCiAgICAgICAgICAgIGVudHJ5X3ByaWNlPXBvc2l0aW9uLnByaWNlX29wZW4sCiAgICAgICAgICAgIGN1cnJlbnRfcHJpY2U9cG9zaXRpb24ucHJpY2VfY3VycmVudCwKICAgICAgICAgICAgdW5yZWFsaXplZF9wbmw9MC4wLAogICAgICAgICAgICB1bnJlYWxpemVkX3BubF9wY3Q9MC4wLAogICAgICAgICAgICB0aW1lX2luX3Bvc2l0aW9uPXRpbWVkZWx0YSgwKSwKICAgICAgICAgICAgaGVhbHRoPVBvc2l0aW9uSGVhbHRoLkZBSVIsCiAgICAgICAgICAgIHJlY29tbWVuZGF0aW9uPUV4aXREZWNpc2lvbi5IT0xELAogICAgICAgICAgICByZWFzb25pbmc9IkFuYWx5c2lzIGZhaWxlZCAtIHVzaW5nIGRlZmF1bHQgaG9sZCIsCiAgICAgICAgICAgIHN1Z2dlc3RlZF9zdG9wPU5vbmUsCiAgICAgICAgICAgIHN1Z2dlc3RlZF90YWtlX3Byb2ZpdD1Ob25lLAogICAgICAgICAgICBjb25maWRlbmNlPTAuMwogICAgICAgICkKICAgIAogICAgZGVmIF9hc3Nlc3NfcG9zaXRpb25faGVhbHRoKHNlbGYsIHBubF9wY3Q6IGZsb2F0LCB0aW1lX2luX3Bvc2l0aW9uOiB0aW1lZGVsdGEpIC0+IFBvc2l0aW9uSGVhbHRoOgogICAgICAgICIiIkFzc2VzcyB0aGUgaGVhbHRoIG9mIGEgcG9zaXRpb24gYmFzZWQgb24gUG5MIGFuZCB0aW1lIiIiCiAgICAgICAgIyBFeGNlbGxlbnQ6IFN0cm9uZyBwcm9maXQgaW4gcmVhc29uYWJsZSB0aW1lCiAgICAgICAgaWYgcG5sX3BjdCA+IDEuMCBhbmQgdGltZV9pbl9wb3NpdGlvbiA8IHRpbWVkZWx0YShob3Vycz0yNCk6CiAgICAgICAgICAgIHJldHVybiBQb3NpdGlvbkhlYWx0aC5FWENFTExFTlQKICAgICAgICAKICAgICAgICAjIEdvb2Q6IFByb2ZpdGFibGUgb3Igc21hbGwgbG9zcwogICAgICAgIGlmIHBubF9wY3QgPiAwLjA6CiAgICAgICAgICAgIHJldHVybiBQb3NpdGlvbkhlYWx0aC5HT09ECiAgICAgICAgCiAgICAgICAgIyBGYWlyOiBTbWFsbCBsb3NzCiAgICAgICAgaWYgcG5sX3BjdCA+IC0wLjU6CiAgICAgICAgICAgIHJldHVybiBQb3NpdGlvbkhlYWx0aC5GQUlSCiAgICAgICAgCiAgICAgICAgIyBQb29yOiBNb2RlcmF0ZSBsb3NzCiAgICAgICAgaWYgcG5sX3BjdCA+IC0xLjU6CiAgICAgICAgICAgIHJldHVybiBQb3NpdGlvbkhlYWx0aC5QT09SCiAgICAgICAgCiAgICAgICAgIyBDcml0aWNhbDogTGFyZ2UgbG9zcwogICAgICAgIHJldHVybiBQb3NpdGlvbkhlYWx0aC5DUklUSUNBTAogICAgCiAgICBkZWYgX21ha2VfZXhpdF9kZWNpc2lvbihzZWxmLCBwb3NpdGlvbjogQW55LCBtYXJrZXRfZGF0YTogZGljdFtzdHIsIEFueV0sIAogICAgICAgICAgICAgICAgICAgICAgICAgICBwbmxfcGN0OiBmbG9hdCwgdGltZV9pbl9wb3NpdGlvbjogdGltZWRlbHRhLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgaGVhbHRoOiBQb3NpdGlvbkhlYWx0aCkgLT4gdHVwbGVbRXhpdERlY2lzaW9uLCBzdHIsIGZsb2F0IHwgTm9uZSwgZmxvYXQgfCBOb25lXToKICAgICAgICAiIiJNYWtlIGludGVsbGlnZW50IGV4aXQgZGVjaXNpb24gYmFzZWQgb24gbXVsdGlwbGUgZmFjdG9ycyIiIgogICAgICAgIAogICAgICAgICMgQ2hlY2sgZm9yIGltbWVkaWF0ZSBleGl0IGNvbmRpdGlvbnMKICAgICAgICBpZiBoZWFsdGggPT0gUG9zaXRpb25IZWFsdGguQ1JJVElDQUw6CiAgICAgICAgICAgIHJldHVybiBFeGl0RGVjaXNpb24uRVhJVF9FQVJMWSwgIkNyaXRpY2FsIHBvc2l0aW9uIGhlYWx0aCAtIGV4aXQgcmVjb21tZW5kZWQiLCBOb25lLCBOb25lCiAgICAgICAgCiAgICAgICAgIyBDaGVjayBmb3IgdHJlbmQgcmV2ZXJzYWwgc2lnbmFscwogICAgICAgIGlmIHNlbGYuX3NpZ25hbGluZ190cmVuZF9yZXZlcnNhbChwb3NpdGlvbiwgbWFya2V0X2RhdGEpOgogICAgICAgICAgICByZXR1cm4gRXhpdERlY2lzaW9uLkVYSVRfRUFSTFksICJUcmVuZCByZXZlcnNhbCBkZXRlY3RlZCAtIGV4aXQgcmVjb21tZW5kZWQiLCBOb25lLCBOb25lCiAgICAgICAgCiAgICAgICAgIyBDaGVjayBmb3IgYXBwcm9hY2hpbmcga2V5IGxldmVscwogICAgICAgIHByb3hpbWl0eV90b19sZXZlbCA9IG1hcmtldF9kYXRhLmdldCgncHJveGltaXR5X3RvX2xldmVsJywgMC4wKQogICAgICAgIGlmIHByb3hpbWl0eV90b19sZXZlbCA+IDAuODogICMgVmVyeSBjbG9zZSB0byBrZXkgbGV2ZWwKICAgICAgICAgICAgaWYgcG5sX3BjdCA+IDAuNTogICMgSWYgcHJvZml0YWJsZQogICAgICAgICAgICAgICAgcmV0dXJuIEV4aXREZWNpc2lvbi5FWElUX0VBUkxZLCAiTmVhciBrZXkgcmVzaXN0YW5jZS9zdXBwb3J0IHdpdGggcHJvZml0IC0gdGFrZSBleGl0IiwgTm9uZSwgTm9uZQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgcmV0dXJuIEV4aXREZWNpc2lvbi5USUdIVEVOX1NUT1BTLCAiTmVhciBrZXkgbGV2ZWwgLSB0aWdodGVuIHN0b3BzIiwgc2VsZi5fY2FsY3VsYXRlX3RpZ2h0ZW5lZF9zdG9wKHBvc2l0aW9uLCBtYXJrZXRfZGF0YSksIE5vbmUKICAgICAgICAKICAgICAgICAjIENoZWNrIGZvciByZWdpbWUgY2hhbmdlCiAgICAgICAgY3VycmVudF9yZWdpbWUgPSBtYXJrZXRfZGF0YS5nZXQoJ21hcmtldF9yZWdpbWUnLCBNYXJrZXRSZWdpbWUuVU5DRVJUQUlOKQogICAgICAgIGlmIGN1cnJlbnRfcmVnaW1lID09IE1hcmtldFJlZ2ltZS5WT0xBVElMRSBhbmQgcG5sX3BjdCA+IDAuMzoKICAgICAgICAgICAgcmV0dXJuIEV4aXREZWNpc2lvbi5QQVJUSUFMX0VYSVQsICJIaWdoIHZvbGF0aWxpdHkgd2l0aCBwcm9maXQgLSBwYXJ0aWFsIGV4aXQgcmVjb21tZW5kZWQiLCBOb25lLCBOb25lCiAgICAgICAgCiAgICAgICAgIyBDaGVjayBmb3IgbW9tZW50dW0gZGl2ZXJnZW5jZQogICAgICAgIGlmIHNlbGYuX2NoZWNrX21vbWVudHVtX2RpdmVyZ2VuY2UocG9zaXRpb24sIG1hcmtldF9kYXRhKToKICAgICAgICAgICAgaWYgcG5sX3BjdCA+IDAuNToKICAgICAgICAgICAgICAgIHJldHVybiBFeGl0RGVjaXNpb24uRVhJVF9FQVJMWSwgIk1vbWVudHVtIGRpdmVyZ2VuY2Ugd2l0aCBwcm9maXQgLSBleGl0IiwgTm9uZSwgTm9uZQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgcmV0dXJuIEV4aXREZWNpc2lvbi5USUdIVEVOX1NUT1BTLCAiTW9tZW50dW0gZGl2ZXJnZW5jZSAtIHRpZ2h0ZW4gc3RvcHMiLCBzZWxmLl9jYWxjdWxhdGVfdGlnaHRlbmVkX3N0b3AocG9zaXRpb24sIG1hcmtldF9kYXRhKSwgTm9uZQogICAgICAgIAogICAgICAgICMgQ2hlY2sgZm9yIGJyZWFrZXZlbiBvcHBvcnR1bml0eQogICAgICAgIGlmIHBubF9wY3QgPiAwLjggYW5kIHRpbWVfaW5fcG9zaXRpb24gPiB0aW1lZGVsdGEoaG91cnM9NCk6CiAgICAgICAgICAgIHJldHVybiBFeGl0RGVjaXNpb24uTU9WRV9CUkVBS0VWRU4sICJTdHJvbmcgcHJvZml0IC0gbW92ZSB0byBicmVha2V2ZW4iLCBwb3NpdGlvbi5wcmljZV9vcGVuLCBOb25lCiAgICAgICAgCiAgICAgICAgIyBEZWZhdWx0OiBob2xkIHdpdGggc3VnZ2VzdGlvbnMKICAgICAgICBzdWdnZXN0ZWRfc3RvcCA9IHNlbGYuX2NhbGN1bGF0ZV9keW5hbWljX3N0b3AocG9zaXRpb24sIG1hcmtldF9kYXRhKQogICAgICAgIHN1Z2dlc3RlZF90cCA9IHNlbGYuX2NhbGN1bGF0ZV9keW5hbWljX3Rha2VfcHJvZml0KHBvc2l0aW9uLCBtYXJrZXRfZGF0YSkKICAgICAgICAKICAgICAgICByZXR1cm4gRXhpdERlY2lzaW9uLkhPTEQsICJQb3NpdGlvbiBwZXJmb3JtaW5nIG5vcm1hbGx5IC0gaG9sZCB3aXRoIG1vbml0b3JpbmciLCBzdWdnZXN0ZWRfc3RvcCwgc3VnZ2VzdGVkX3RwCiAgICAKICAgIGRlZiBfc2lnbmFsaW5nX3RyZW5kX3JldmVyc2FsKHNlbGYsIHBvc2l0aW9uOiBBbnksIG1hcmtldF9kYXRhOiBkaWN0W3N0ciwgQW55XSkgLT4gYm9vbDoKICAgICAgICAiIiJDaGVjayBpZiBtYXJrZXQgaXMgc2lnbmFsaW5nIGEgdHJlbmQgcmV2ZXJzYWwiIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgICMgQ2hlY2sgQURYIHRyZW5kIHN0cmVuZ3RoCiAgICAgICAgICAgIGFkeF92YWx1ZSA9IG1hcmtldF9kYXRhLmdldCgnYWR4X3ZhbHVlJywgMCkKICAgICAgICAgICAgaWYgYWR4X3ZhbHVlIDwgMjA6ICAjIFdlYWsgdHJlbmQKICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIAogICAgICAgICAgICAjIENoZWNrIE1BQ0QgY3Jvc3NvdmVyCiAgICAgICAgICAgIG1hY2Rfc2lnbmFsID0gbWFya2V0X2RhdGEuZ2V0KCdtYWNkX3NpZ25hbF90eXBlJywgJ25ldXRyYWwnKQogICAgICAgICAgICBpZiBtYWNkX3NpZ25hbCBpbiBbJ2JlYXJpc2hfY3Jvc3NvdmVyJywgJ2J1bGxpc2hfY3Jvc3NvdmVyJ106CiAgICAgICAgICAgICAgICAjIENoZWNrIGlmIGNyb3Nzb3ZlciBvcHBvc2VzIHBvc2l0aW9uIGRpcmVjdGlvbgogICAgICAgICAgICAgICAgcG9zaXRpb25fZGlyZWN0aW9uID0gImJ1bGxpc2giIGlmIHBvc2l0aW9uLnR5cGUgPT0gbXQ1LlBPU0lUSU9OX1RZUEVfQlVZIGVsc2UgImJlYXJpc2giCiAgICAgICAgICAgICAgICBpZiAobWFjZF9zaWduYWwgPT0gJ2JlYXJpc2hfY3Jvc3NvdmVyJyBhbmQgcG9zaXRpb25fZGlyZWN0aW9uID09ICdidWxsaXNoJykgb3IgXAogICAgICAgICAgICAgICAgICAgKG1hY2Rfc2lnbmFsID09ICdidWxsaXNoX2Nyb3Nzb3ZlcicgYW5kIHBvc2l0aW9uX2RpcmVjdGlvbiA9PSAnYmVhcmlzaCcpOgogICAgICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIAogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgICAgICAgICAgCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjogICMgbm9xYTogQkxFMDAxIC0gcmV0dXJuIEZhbHNlIG9uIGFueSBlcnJvcgogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgIAogICAgZGVmIF9jaGVja19tb21lbnR1bV9kaXZlcmdlbmNlKHNlbGYsIHBvc2l0aW9uOiBBbnksIG1hcmtldF9kYXRhOiBkaWN0W3N0ciwgQW55XSkgLT4gYm9vbDoKICAgICAgICAiIiJDaGVjayBmb3IgbW9tZW50dW0gZGl2ZXJnZW5jZSIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgIyBTaW1wbGUgZGl2ZXJnZW5jZSBjaGVjazogcHJpY2UgbW92aW5nIG9uZSB3YXksIG1vbWVudHVtIGFub3RoZXIKICAgICAgICAgICAgcnNpID0gbWFya2V0X2RhdGEuZ2V0KCdyc2knLCA1MCkKICAgICAgICAgICAgcHJpY2VfbW9tZW50dW0gPSBtYXJrZXRfZGF0YS5nZXQoJ3ByaWNlX21vbWVudHVtJywgMCkKICAgICAgICAgICAgCiAgICAgICAgICAgIHBvc2l0aW9uX2RpcmVjdGlvbiA9ICJidWxsaXNoIiBpZiBwb3NpdGlvbi50eXBlID09IG10NS5QT1NJVElPTl9UWVBFX0JVWSBlbHNlICJiZWFyaXNoIgogICAgICAgICAgICAKICAgICAgICAgICAgIyBCdWxsaXNoIGRpdmVyZ2VuY2UgZm9yIGJlYXJpc2ggcG9zaXRpb24KICAgICAgICAgICAgaWYgcG9zaXRpb25fZGlyZWN0aW9uID09ICJiZWFyaXNoIiBhbmQgcHJpY2VfbW9tZW50dW0gPCAwIGFuZCByc2kgPiA1MDoKICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIAogICAgICAgICAgICAjIEJlYXJpc2ggZGl2ZXJnZW5jZSBmb3IgYnVsbGlzaCBwb3NpdGlvbgogICAgICAgICAgICBpZiBwb3NpdGlvbl9kaXJlY3Rpb24gPT0gImJ1bGxpc2giIGFuZCBwcmljZV9tb21lbnR1bSA+IDAgYW5kIHJzaSA8IDUwOiAgIyBub3FhOiBTSU0xMDMKICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIAogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgICAgICAgICAgCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjogICMgbm9xYTogQkxFMDAxIC0gcmV0dXJuIEZhbHNlIG9uIGFueSBlcnJvcgogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgIAogICAgZGVmIF9jYWxjdWxhdGVfdGlnaHRlbmVkX3N0b3Aoc2VsZiwgcG9zaXRpb246IEFueSwgbWFya2V0X2RhdGE6IGRpY3Rbc3RyLCBBbnldKSAtPiBmbG9hdDoKICAgICAgICAiIiJDYWxjdWxhdGUgYSB0aWdodGVuZWQgc3RvcCBsb3NzIiIiCiAgICAgICAgY3VycmVudF9wcmljZSA9IHBvc2l0aW9uLnByaWNlX2N1cnJlbnQKICAgICAgICBhdHIgPSBtYXJrZXRfZGF0YS5nZXQoJ2F0cicsIGN1cnJlbnRfcHJpY2UgKiAwLjAwMSkKICAgICAgICAKICAgICAgICBpZiBwb3NpdGlvbi50eXBlID09IG10NS5QT1NJVElPTl9UWVBFX0JVWToKICAgICAgICAgICAgcmV0dXJuIGN1cnJlbnRfcHJpY2UgLSAoYXRyICogMC41KSAgIyBUaWdodGVyIHRoYW4gbm9ybWFsCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmV0dXJuIGN1cnJlbnRfcHJpY2UgKyAoYXRyICogMC41KQogICAgCiAgICBkZWYgX2NhbGN1bGF0ZV9keW5hbWljX3N0b3Aoc2VsZiwgcG9zaXRpb246IEFueSwgbWFya2V0X2RhdGE6IGRpY3Rbc3RyLCBBbnldKSAtPiBmbG9hdDoKICAgICAgICAiIiJDYWxjdWxhdGUgZHluYW1pYyBzdG9wIGJhc2VkIG9uIG1hcmtldCBjb25kaXRpb25zIiIiCiAgICAgICAgY3VycmVudF9wcmljZSA9IHBvc2l0aW9uLnByaWNlX2N1cnJlbnQKICAgICAgICBhdHIgPSBtYXJrZXRfZGF0YS5nZXQoJ2F0cicsIGN1cnJlbnRfcHJpY2UgKiAwLjAwMSkKICAgICAgICAKICAgICAgICAjIEFkanVzdCBzdG9wIGJhc2VkIG9uIHZvbGF0aWxpdHkKICAgICAgICB2b2xhdGlsaXR5X3JlZ2ltZSA9IG1hcmtldF9kYXRhLmdldCgndm9sYXRpbGl0eV9yZWdpbWUnLCAnbm9ybWFsJykKICAgICAgICBpZiB2b2xhdGlsaXR5X3JlZ2ltZSA9PSAnaGlnaCc6CiAgICAgICAgICAgIGF0cl9tdWx0aXBsaWVyID0gMi4wICAjIFdpZGVyIHN0b3BzIGluIGhpZ2ggdm9sYXRpbGl0eQogICAgICAgIGVsaWYgdm9sYXRpbGl0eV9yZWdpbWUgPT0gJ2xvdyc6CiAgICAgICAgICAgIGF0cl9tdWx0aXBsaWVyID0gMS4wICAjIFRpZ2h0ZXIgc3RvcHMgaW4gbG93IHZvbGF0aWxpdHkKICAgICAgICBlbHNlOgogICAgICAgICAgICBhdHJfbXVsdGlwbGllciA9IDEuNSAgIyBOb3JtYWwKICAgICAgICAKICAgICAgICBpZiBwb3NpdGlvbi50eXBlID09IG10NS5QT1NJVElPTl9UWVBFX0JVWToKICAgICAgICAgICAgcmV0dXJuIGN1cnJlbnRfcHJpY2UgLSAoYXRyICogYXRyX211bHRpcGxpZXIpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmV0dXJuIGN1cnJlbnRfcHJpY2UgKyAoYXRyICogYXRyX211bHRpcGxpZXIpCiAgICAKICAgIGRlZiBfY2FsY3VsYXRlX2R5bmFtaWNfdGFrZV9wcm9maXQoc2VsZiwgcG9zaXRpb246IEFueSwgbWFya2V0X2RhdGE6IGRpY3Rbc3RyLCBBbnldKSAtPiBmbG9hdDoKICAgICAgICAiIiJDYWxjdWxhdGUgZHluYW1pYyB0YWtlIHByb2ZpdCBiYXNlZCBvbiBtYXJrZXQgY29uZGl0aW9ucyIiIgogICAgICAgIGN1cnJlbnRfcHJpY2UgPSBwb3NpdGlvbi5wcmljZV9jdXJyZW50CiAgICAgICAgYXRyID0gbWFya2V0X2RhdGEuZ2V0KCdhdHInLCBjdXJyZW50X3ByaWNlICogMC4wMDEpCiAgICAgICAgCiAgICAgICAgIyBVc2Ugc3VwcG9ydC9yZXNpc3RhbmNlIGxldmVscyBpZiBhdmFpbGFibGUKICAgICAgICByZXNpc3RhbmNlX2xldmVscyA9IG1hcmtldF9kYXRhLmdldCgncmVzaXN0YW5jZV9sZXZlbHMnLCBbXSkKICAgICAgICBzdXBwb3J0X2xldmVscyA9IG1hcmtldF9kYXRhLmdldCgnc3VwcG9ydF9sZXZlbHMnLCBbXSkKICAgICAgICAKICAgICAgICBpZiBwb3NpdGlvbi50eXBlID09IG10NS5QT1NJVElPTl9UWVBFX0JVWSBhbmQgcmVzaXN0YW5jZV9sZXZlbHM6CiAgICAgICAgICAgICMgVXNlIG5lYXJlc3QgcmVzaXN0YW5jZSBhcyB0YXJnZXQKICAgICAgICAgICAgbmVhcmVzdF9yZXNpc3RhbmNlID0gbWluKFtyIGZvciByIGluIHJlc2lzdGFuY2VfbGV2ZWxzIGlmIHIgPiBjdXJyZW50X3ByaWNlXSwgZGVmYXVsdD1Ob25lKQogICAgICAgICAgICBpZiBuZWFyZXN0X3Jlc2lzdGFuY2U6CiAgICAgICAgICAgICAgICByZXR1cm4gbmVhcmVzdF9yZXNpc3RhbmNlCiAgICAgICAgZWxpZiBwb3NpdGlvbi50eXBlID09IG10NS5QT1NJVElPTl9UWVBFX1NFTEwgYW5kIHN1cHBvcnRfbGV2ZWxzOgogICAgICAgICAgICAjIFVzZSBuZWFyZXN0IHN1cHBvcnQgYXMgdGFyZ2V0CiAgICAgICAgICAgIG5lYXJlc3Rfc3VwcG9ydCA9IG1heChbcyBmb3IgcyBpbiBzdXBwb3J0X2xldmVscyBpZiBzIDwgY3VycmVudF9wcmljZV0sIGRlZmF1bHQ9Tm9uZSkKICAgICAgICAgICAgaWYgbmVhcmVzdF9zdXBwb3J0OgogICAgICAgICAgICAgICAgcmV0dXJuIG5lYXJlc3Rfc3VwcG9ydAogICAgICAgIAogICAgICAgICMgRmFsbGJhY2sgdG8gQVRSLWJhc2VkIHRhcmdldAogICAgICAgIGlmIHBvc2l0aW9uLnR5cGUgPT0gbXQ1LlBPU0lUSU9OX1RZUEVfQlVZOgogICAgICAgICAgICByZXR1cm4gY3VycmVudF9wcmljZSArIChhdHIgKiAzLjApCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmV0dXJuIGN1cnJlbnRfcHJpY2UgLSAoYXRyICogMy4wKQogICAgCiAgICBkZWYgX2NhbGN1bGF0ZV9jb25maWRlbmNlKHNlbGYsIGhlYWx0aDogUG9zaXRpb25IZWFsdGgsIG1hcmtldF9kYXRhOiBkaWN0W3N0ciwgQW55XSkgLT4gZmxvYXQ6CiAgICAgICAgIiIiQ2FsY3VsYXRlIGNvbmZpZGVuY2UgaW4gdGhlIHJlY29tbWVuZGF0aW9uIiIiCiAgICAgICAgYmFzZV9jb25maWRlbmNlID0gewogICAgICAgICAgICBQb3NpdGlvbkhlYWx0aC5FWENFTExFTlQ6IDAuOSwKICAgICAgICAgICAgUG9zaXRpb25IZWFsdGguR09PRDogMC43LAogICAgICAgICAgICBQb3NpdGlvbkhlYWx0aC5GQUlSOiAwLjUsCiAgICAgICAgICAgIFBvc2l0aW9uSGVhbHRoLlBPT1I6IDAuNiwKICAgICAgICAgICAgUG9zaXRpb25IZWFsdGguQ1JJVElDQUw6IDAuOAogICAgICAgIH0uZ2V0KGhlYWx0aCwgMC41KQogICAgICAgIAogICAgICAgICMgQWRqdXN0IGJhc2VkIG9uIGRhdGEgcXVhbGl0eQogICAgICAgIGRhdGFfcXVhbGl0eSA9IG1hcmtldF9kYXRhLmdldCgnZGF0YV9xdWFsaXR5JywgMS4wKQogICAgICAgIHJldHVybiBiYXNlX2NvbmZpZGVuY2UgKiBkYXRhX3F1YWxpdHkKICAgIAogICAgZGVmIGFuYWx5emVfYWxsX3Bvc2l0aW9ucyhzZWxmLCBtYXJrZXRfZGF0YTogZGljdFtzdHIsIEFueV0pIC0+IGxpc3RbUG9zaXRpb25BbmFseXNpc106CiAgICAgICAgIiIiQW5hbHl6ZSBhbGwgb3BlbiBwb3NpdGlvbnMiIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgIGVuc3VyZV9jb25uZWN0ZWQoKQogICAgICAgICAgICBwb3NpdGlvbnMgPSBnZXRfb3Blbl9wb3NpdGlvbnMobWFnaWM9UklTSy5tYWdpY19udW1iZXIpCiAgICAgICAgICAgIAogICAgICAgICAgICBhbmFseXNlcyA9IFtdCiAgICAgICAgICAgIGZvciBwb3NpdGlvbiBpbiBwb3NpdGlvbnM6CiAgICAgICAgICAgICAgICBhbmFseXNpcyA9IHNlbGYuYW5hbHl6ZV9wb3NpdGlvbihwb3NpdGlvbiwgbWFya2V0X2RhdGEpCiAgICAgICAgICAgICAgICBhbmFseXNlcy5hcHBlbmQoYW5hbHlzaXMpCiAgICAgICAgICAgIAogICAgICAgICAgICByZXR1cm4gYW5hbHlzZXMKICAgICAgICAgICAgCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOiAgIyBub3FhOiBCTEUwMDEgLSBjYXRjaCBhbnkgYW5hbHlzaXMgZmFpbHVyZQogICAgICAgICAgICBsb2dnZXIuZXJyb3IoZiJFcnJvciBhbmFseXppbmcgYWxsIHBvc2l0aW9uczoge2V9IikKICAgICAgICAgICAgcmV0dXJuIFtdCiAgICAKICAgIGRlZiBjYWxjdWxhdGVfdm9sYXRpbGl0eV9hZGp1c3RlZF9zaXplKHNlbGYsIHN5bWJvbDogc3RyLCBiYXNlX3NpemU6IGZsb2F0LCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZjogcGQuRGF0YUZyYW1lKSAtPiBWb2xhdGlsaXR5QWRqdXN0bWVudDoKICAgICAgICAiIiIKICAgICAgICBDYWxjdWxhdGUgcG9zaXRpb24gc2l6ZSBhZGp1c3RlZCBmb3IgY3VycmVudCB2b2xhdGlsaXR5LgogICAgICAgIAogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIHN5bWJvbDogVHJhZGluZyBzeW1ib2wKICAgICAgICAgICAgYmFzZV9zaXplOiBCYXNlIHBvc2l0aW9uIHNpemUgZnJvbSByaXNrIGNhbGN1bGF0aW9uCiAgICAgICAgICAgIGRmOiBEYXRhRnJhbWUgd2l0aCBwcmljZSBkYXRhCiAgICAgICAgICAgIAogICAgICAgIFJldHVybnM6CiAgICAgICAgICAgIFZvbGF0aWxpdHlBZGp1c3RtZW50IHdpdGggYWRqdXN0ZWQgc2l6ZSBhbmQgcmVhc29uaW5nCiAgICAgICAgIiIiCiAgICAgICAgaWYgbm90IEFEVkFOQ0VEX1JJU0suZW5hYmxlX3ZvbGF0aWxpdHlfYWRqdXN0ZWRfc2l6aW5nOgogICAgICAgICAgICByZXR1cm4gVm9sYXRpbGl0eUFkanVzdG1lbnQoCiAgICAgICAgICAgICAgICBzeW1ib2w9c3ltYm9sLAogICAgICAgICAgICAgICAgYmFzZV9zaXplPWJhc2Vfc2l6ZSwKICAgICAgICAgICAgICAgIGFkanVzdGVkX3NpemU9YmFzZV9zaXplLAogICAgICAgICAgICAgICAgdm9sYXRpbGl0eV9yYXRpbz0xLjAsCiAgICAgICAgICAgICAgICBhZGp1c3RtZW50X2ZhY3Rvcj0xLjAsCiAgICAgICAgICAgICAgICByZWFzb249IlZvbGF0aWxpdHkgYWRqdXN0bWVudCBkaXNhYmxlZCIKICAgICAgICAgICAgKQogICAgICAgIAogICAgICAgIHRyeToKICAgICAgICAgICAgIyBDYWxjdWxhdGUgY3VycmVudCB2b2xhdGlsaXR5CiAgICAgICAgICAgIHJldHVybnMgPSBkZlsnY2xvc2UnXS5wY3RfY2hhbmdlKCkuZHJvcG5hKCkKICAgICAgICAgICAgY3VycmVudF92b2xhdGlsaXR5ID0gcmV0dXJucy5yb2xsaW5nKEFEVkFOQ0VEX1JJU0sudm9sYXRpbGl0eV9sb29rYmFja19wZXJpb2QpLnN0ZCgpLmlsb2NbLTFdCiAgICAgICAgICAgIGF2Z192b2xhdGlsaXR5ID0gcmV0dXJucy5yb2xsaW5nKEFEVkFOQ0VEX1JJU0sudm9sYXRpbGl0eV9sb29rYmFja19wZXJpb2QgKiAyKS5zdGQoKS5tZWFuKCkKICAgICAgICAgICAgCiAgICAgICAgICAgIGlmIGF2Z192b2xhdGlsaXR5ID09IDAgb3IgcGQuaXNuYShjdXJyZW50X3ZvbGF0aWxpdHkpIG9yIHBkLmlzbmEoYXZnX3ZvbGF0aWxpdHkpOgogICAgICAgICAgICAgICAgcmV0dXJuIFZvbGF0aWxpdHlBZGp1c3RtZW50KAogICAgICAgICAgICAgICAgICAgIHN5bWJvbD1zeW1ib2wsCiAgICAgICAgICAgICAgICAgICAgYmFzZV9zaXplPWJhc2Vfc2l6ZSwKICAgICAgICAgICAgICAgICAgICBhZGp1c3RlZF9zaXplPWJhc2Vfc2l6ZSwKICAgICAgICAgICAgICAgICAgICB2b2xhdGlsaXR5X3JhdGlvPTEuMCwKICAgICAgICAgICAgICAgICAgICBhZGp1c3RtZW50X2ZhY3Rvcj0xLjAsCiAgICAgICAgICAgICAgICAgICAgcmVhc29uPSJDb3VsZCBub3QgY2FsY3VsYXRlIHZvbGF0aWxpdHkiCiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgIAogICAgICAgICAgICB2b2xhdGlsaXR5X3JhdGlvID0gY3VycmVudF92b2xhdGlsaXR5IC8gYXZnX3ZvbGF0aWxpdHkKICAgICAgICAgICAgCiAgICAgICAgICAgICMgRGV0ZXJtaW5lIGFkanVzdG1lbnQgZmFjdG9yCiAgICAgICAgICAgIGlmIHZvbGF0aWxpdHlfcmF0aW8gPj0gQURWQU5DRURfUklTSy52b2xhdGlsaXR5X3JhdGlvX2hpZ2g6CiAgICAgICAgICAgICAgICBhZGp1c3RtZW50X2ZhY3RvciA9IEFEVkFOQ0VEX1JJU0suaGlnaF92b2xhdGlsaXR5X211bHRpcGxpZXIKICAgICAgICAgICAgICAgIHJlYXNvbiA9IGYiSGlnaCB2b2xhdGlsaXR5ICh7dm9sYXRpbGl0eV9yYXRpbzouMmZ9eCBub3JtYWwpIC0gcmVkdWNpbmcgcG9zaXRpb24gc2l6ZSIKICAgICAgICAgICAgZWxpZiB2b2xhdGlsaXR5X3JhdGlvIDw9IEFEVkFOQ0VEX1JJU0sudm9sYXRpbGl0eV9yYXRpb19sb3c6CiAgICAgICAgICAgICAgICBhZGp1c3RtZW50X2ZhY3RvciA9IEFEVkFOQ0VEX1JJU0subG93X3ZvbGF0aWxpdHlfbXVsdGlwbGllcgogICAgICAgICAgICAgICAgcmVhc29uID0gZiJMb3cgdm9sYXRpbGl0eSAoe3ZvbGF0aWxpdHlfcmF0aW86LjJmfXggbm9ybWFsKSAtIGluY3JlYXNpbmcgcG9zaXRpb24gc2l6ZSIKICAgICAgICAgICAgZWxzZToKICAgICAgICAgICAgICAgIGFkanVzdG1lbnRfZmFjdG9yID0gMS4wCiAgICAgICAgICAgICAgICByZWFzb24gPSBmIk5vcm1hbCB2b2xhdGlsaXR5ICh7dm9sYXRpbGl0eV9yYXRpbzouMmZ9eCBub3JtYWwpIC0gbm8gYWRqdXN0bWVudCIKICAgICAgICAgICAgCiAgICAgICAgICAgIGFkanVzdGVkX3NpemUgPSBiYXNlX3NpemUgKiBhZGp1c3RtZW50X2ZhY3RvcgogICAgICAgICAgICAKICAgICAgICAgICAgcmV0dXJuIFZvbGF0aWxpdHlBZGp1c3RtZW50KAogICAgICAgICAgICAgICAgc3ltYm9sPXN5bWJvbCwKICAgICAgICAgICAgICAgIGJhc2Vfc2l6ZT1iYXNlX3NpemUsCiAgICAgICAgICAgICAgICBhZGp1c3RlZF9zaXplPWFkanVzdGVkX3NpemUsCiAgICAgICAgICAgICAgICB2b2xhdGlsaXR5X3JhdGlvPXZvbGF0aWxpdHlfcmF0aW8sCiAgICAgICAgICAgICAgICBhZGp1c3RtZW50X2ZhY3Rvcj1hZGp1c3RtZW50X2ZhY3RvciwKICAgICAgICAgICAgICAgIHJlYXNvbj1yZWFzb24KICAgICAgICAgICAgKQogICAgICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBjYWxjdWxhdGlvbiBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIkVycm9yIGNhbGN1bGF0aW5nIHZvbGF0aWxpdHkgYWRqdXN0bWVudCBmb3Ige3N5bWJvbH06IHtlfSIpCiAgICAgICAgICAgIHJldHVybiBWb2xhdGlsaXR5QWRqdXN0bWVudCgKICAgICAgICAgICAgICAgIHN5bWJvbD1zeW1ib2wsCiAgICAgICAgICAgICAgICBiYXNlX3NpemU9YmFzZV9zaXplLAogICAgICAgICAgICAgICAgYWRqdXN0ZWRfc2l6ZT1iYXNlX3NpemUsCiAgICAgICAgICAgICAgICB2b2xhdGlsaXR5X3JhdGlvPTEuMCwKICAgICAgICAgICAgICAgIGFkanVzdG1lbnRfZmFjdG9yPTEuMCwKICAgICAgICAgICAgICAgIHJlYXNvbj1mIkVycm9yIGluIGNhbGN1bGF0aW9uOiB7ZSFzfSIKICAgICAgICAgICAgKQogICAgCiAgICBkZWYgZ2V0X3Bvc2l0aW9uX3N1bW1hcnkoc2VsZikgLT4gZGljdFtzdHIsIEFueV06CiAgICAgICAgIiIiR2V0IHN1bW1hcnkgb2YgYWxsIHBvc2l0aW9uIGFuYWx5c2VzIiIiCiAgICAgICAgd2l0aCBzZWxmLl9sb2NrOgogICAgICAgICAgICByZWNlbnRfYW5hbHlzZXMgPSBsaXN0KHNlbGYucG9zaXRpb25faGlzdG9yeSlbLTEwOl0KICAgICAgICAgICAgCiAgICAgICAgICAgIGhlYWx0aF9kaXN0cmlidXRpb24gPSB7fQogICAgICAgICAgICBmb3IgYW5hbHlzaXMgaW4gcmVjZW50X2FuYWx5c2VzOgogICAgICAgICAgICAgICAgaGVhbHRoID0gYW5hbHlzaXMuaGVhbHRoLnZhbHVlCiAgICAgICAgICAgICAgICBoZWFsdGhfZGlzdHJpYnV0aW9uW2hlYWx0aF0gPSBoZWFsdGhfZGlzdHJpYnV0aW9uLmdldChoZWFsdGgsIDApICsgMQogICAgICAgICAgICAKICAgICAgICAgICAgcmVjb21tZW5kYXRpb25fZGlzdHJpYnV0aW9uID0ge30KICAgICAgICAgICAgZm9yIGFuYWx5c2lzIGluIHJlY2VudF9hbmFseXNlczoKICAgICAgICAgICAgICAgIHJlYyA9IGFuYWx5c2lzLnJlY29tbWVuZGF0aW9uLnZhbHVlCiAgICAgICAgICAgICAgICByZWNvbW1lbmRhdGlvbl9kaXN0cmlidXRpb25bcmVjXSA9IHJlY29tbWVuZGF0aW9uX2Rpc3RyaWJ1dGlvbi5nZXQocmVjLCAwKSArIDEKICAgICAgICAgICAgCiAgICAgICAgICAgIHJldHVybiB7CiAgICAgICAgICAgICAgICAidG90YWxfYW5hbHl6ZWQiOiBsZW4oc2VsZi5wb3NpdGlvbl9oaXN0b3J5KSwKICAgICAgICAgICAgICAgICJyZWNlbnRfYW5hbHlzZXMiOiBsZW4ocmVjZW50X2FuYWx5c2VzKSwKICAgICAgICAgICAgICAgICJoZWFsdGhfZGlzdHJpYnV0aW9uIjogaGVhbHRoX2Rpc3RyaWJ1dGlvbiwKICAgICAgICAgICAgICAgICJyZWNvbW1lbmRhdGlvbl9kaXN0cmlidXRpb24iOiByZWNvbW1lbmRhdGlvbl9kaXN0cmlidXRpb24sCiAgICAgICAgICAgICAgICAicmVjZW50X2RlY2lzaW9ucyI6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICJ0aWNrZXQiOiB0aWNrZXQsCiAgICAgICAgICAgICAgICAgICAgICAgICJkZWNpc2lvbiI6IGRlY2lzaW9uLnZhbHVlLAogICAgICAgICAgICAgICAgICAgICAgICAicmVhc29uIjogcmVhc29uCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGZvciB0aWNrZXQsIGRlY2lzaW9uLCByZWFzb24gaW4gbGlzdChzZWxmLmV4aXRfZGVjaXNpb25zKVstMTA6XQogICAgICAgICAgICAgICAgXQogICAgICAgICAgICB9
+"""
+intelligent_position_manager.py
+--------------------------------
+Intelligent position management system for dynamic exit strategies,
+adaptive position sizing, and smart stop management.
+"""
+
+from __future__ import annotations
+
+import logging
+import threading
+from collections import deque
+from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
+from enum import Enum
+from typing import Any
+
+import pandas as pd
+from advanced_technical_analysis import (
+    MarketRegime,
+)
+from config import ADVANCED_RISK, RISK
+from data_provider import ensure_connected, get_open_positions, mt5
+
+logger = logging.getLogger("trading_bot.intelligent_position_manager")
+
+
+class ExitDecision(str, Enum):
+    """Position exit decision types"""
+    HOLD = "hold"
+    EXIT_EARLY = "exit_early"
+    TIGHTEN_STOPS = "tighten_stops"
+    MOVE_BREAKEVEN = "move_breakeven"
+    PARTIAL_EXIT = "partial_exit"
+
+
+class PositionHealth(str, Enum):
+    """Health status of a position"""
+    EXCELLENT = "excellent"
+    GOOD = "good"
+    FAIR = "fair"
+    POOR = "poor"
+    CRITICAL = "critical"
+
+
+@dataclass
+class PositionAnalysis:
+    """Analysis of a single position"""
+    ticket: int
+    symbol: str
+    direction: str
+    entry_price: float
+    current_price: float
+    unrealized_pnl: float
+    unrealized_pnl_pct: float
+    time_in_position: timedelta
+    health: PositionHealth
+    recommendation: ExitDecision
+    reasoning: str
+    suggested_stop: float | None
+    suggested_take_profit: float | None
+    confidence: float
+
+
+@dataclass
+class VolatilityAdjustment:
+    """Volatility-based position sizing adjustment"""
+    symbol: str
+    base_size: float
+    adjusted_size: float
+    volatility_ratio: float
+    adjustment_factor: float
+    reason: str
+
+
+class IntelligentPositionManager:
+    """
+    Advanced position management with dynamic exit strategies and 
+    volatility-based sizing adjustments.
+    """
+    
+    def __init__(self):
+        self.position_history: deque[PositionAnalysis] = deque(maxlen=100)
+        self.exit_decisions: deque[tuple[int, ExitDecision, str]] = deque(maxlen=50)
+        self._lock = threading.Lock()
+        
+        logger.info("Intelligent position manager initialized")
+    
+    def analyze_position(self, position: Any, market_data: dict[str, Any]) -> PositionAnalysis:
+        """
+        Analyze a position and provide intelligent management recommendations.
+        
+        Args:
+            position: MT5 position object
+            market_data: Current market data and analysis
+            
+        Returns:
+            PositionAnalysis with recommendations
+        """
+        try:
+            ticket = position.ticket
+            symbol = position.symbol
+            direction = "BUY" if position.type == mt5.POSITION_TYPE_BUY else "SELL"
+            entry_price = position.price_open
+            current_price = position.price_current
+            
+            # Calculate PnL
+            if direction == "BUY":
+                unrealized_pnl = (current_price - entry_price) * position.volume
+            else:
+                unrealized_pnl = (entry_price - current_price) * position.volume
+            
+            unrealized_pnl_pct = (unrealized_pnl / (entry_price * position.volume)) * 100 if entry_price > 0 else 0.0
+            
+            # Calculate time in position
+            open_time = datetime.fromtimestamp(position.time, timezone.utc)
+            time_in_position = datetime.now(timezone.utc) - open_time
+            
+            # Determine position health
+            health = self._assess_position_health(unrealized_pnl_pct, time_in_position)
+            
+            # Make recommendation based on analysis
+            recommendation, reasoning, suggested_stop, suggested_tp = self._make_exit_decision(
+                position, market_data, unrealized_pnl_pct, time_in_position, health
+            )
+            
+            analysis = PositionAnalysis(
+                ticket=ticket,
+                symbol=symbol,
+                direction=direction,
+                entry_price=entry_price,
+                current_price=current_price,
+                unrealized_pnl=unrealized_pnl,
+                unrealized_pnl_pct=unrealized_pnl_pct,
+                time_in_position=time_in_position,
+                health=health,
+                recommendation=recommendation,
+                reasoning=reasoning,
+                suggested_stop=suggested_stop,
+                suggested_take_profit=suggested_tp,
+                confidence=self._calculate_confidence(health, market_data)
+            )
+            
+            # Store in history
+            with self._lock:
+                self.position_history.append(analysis)
+            
+            return analysis
+            
+        except Exception as e:  # noqa: BLE001 - catch any analysis failure
+            logger.error(f"Error analyzing position {position.ticket}: {e}")
+            return self._default_analysis(position)
+    
+    def _default_analysis(self, position: Any) -> PositionAnalysis:
+        """Return default analysis when real analysis fails"""
+        return PositionAnalysis(
+            ticket=position.ticket,
+            symbol=position.symbol,
+            direction="BUY" if position.type == mt5.POSITION_TYPE_BUY else "SELL",
+            entry_price=position.price_open,
+            current_price=position.price_current,
+            unrealized_pnl=0.0,
+            unrealized_pnl_pct=0.0,
+            time_in_position=timedelta(0),
+            health=PositionHealth.FAIR,
+            recommendation=ExitDecision.HOLD,
+            reasoning="Analysis failed - using default hold",
+            suggested_stop=None,
+            suggested_take_profit=None,
+            confidence=0.3
+        )
+    
+    def _assess_position_health(self, pnl_pct: float, time_in_position: timedelta) -> PositionHealth:
+        """Assess the health of a position based on PnL and time"""
+        # Excellent: Strong profit in reasonable time
+        if pnl_pct > 1.0 and time_in_position < timedelta(hours=24):
+            return PositionHealth.EXCELLENT
+        
+        # Good: Profitable or small loss
+        if pnl_pct > 0.0:
+            return PositionHealth.GOOD
+        
+        # Fair: Small loss
+        if pnl_pct > -0.5:
+            return PositionHealth.FAIR
+        
+        # Poor: Moderate loss
+        if pnl_pct > -1.5:
+            return PositionHealth.POOR
+        
+        # Critical: Large loss
+        return PositionHealth.CRITICAL
+    
+    def _make_exit_decision(self, position: Any, market_data: dict[str, Any], 
+                           pnl_pct: float, time_in_position: timedelta, 
+                           health: PositionHealth) -> tuple[ExitDecision, str, float | None, float | None]:
+        """Make intelligent exit decision based on multiple factors"""
+        
+        # Check for immediate exit conditions
+        if health == PositionHealth.CRITICAL:
+            return ExitDecision.EXIT_EARLY, "Critical position health - exit recommended", None, None
+        
+        # Check for trend reversal signals
+        if self._signaling_trend_reversal(position, market_data):
+            return ExitDecision.EXIT_EARLY, "Trend reversal detected - exit recommended", None, None
+        
+        # Check for approaching key levels
+        proximity_to_level = market_data.get('proximity_to_level', 0.0)
+        if proximity_to_level > 0.8:  # Very close to key level
+            if pnl_pct > 0.5:  # If profitable
+                return ExitDecision.EXIT_EARLY, "Near key resistance/support with profit - take exit", None, None
+            else:
+                return ExitDecision.TIGHTEN_STOPS, "Near key level - tighten stops", self._calculate_tightened_stop(position, market_data), None
+        
+        # Check for regime change
+        current_regime = market_data.get('market_regime', MarketRegime.UNCERTAIN)
+        if current_regime == MarketRegime.VOLATILE and pnl_pct > 0.3:
+            return ExitDecision.PARTIAL_EXIT, "High volatility with profit - partial exit recommended", None, None
+        
+        # Check for momentum divergence
+        if self._check_momentum_divergence(position, market_data):
+            if pnl_pct > 0.5:
+                return ExitDecision.EXIT_EARLY, "Momentum divergence with profit - exit", None, None
+            else:
+                return ExitDecision.TIGHTEN_STOPS, "Momentum divergence - tighten stops", self._calculate_tightened_stop(position, market_data), None
+        
+        # Check for breakeven opportunity
+        if pnl_pct > 0.8 and time_in_position > timedelta(hours=4):
+            return ExitDecision.MOVE_BREAKEVEN, "Strong profit - move to breakeven", position.price_open, None
+        
+        # Default: hold with suggestions
+        suggested_stop = self._calculate_dynamic_stop(position, market_data)
+        suggested_tp = self._calculate_dynamic_take_profit(position, market_data)
+        
+        return ExitDecision.HOLD, "Position performing normally - hold with monitoring", suggested_stop, suggested_tp
+    
+    def _signaling_trend_reversal(self, position: Any, market_data: dict[str, Any]) -> bool:
+        """Check if market is signaling a trend reversal"""
+        try:
+            # Check ADX trend strength
+            adx_value = market_data.get('adx_value', 0)
+            if adx_value < 20:  # Weak trend
+                return True
+            
+            # Check MACD crossover
+            macd_signal = market_data.get('macd_signal_type', 'neutral')
+            if macd_signal in ['bearish_crossover', 'bullish_crossover']:
+                # Check if crossover opposes position direction
+                position_direction = "bullish" if position.type == mt5.POSITION_TYPE_BUY else "bearish"
+                if (macd_signal == 'bearish_crossover' and position_direction == 'bullish') or \
+                   (macd_signal == 'bullish_crossover' and position_direction == 'bearish'):
+                    return True
+            
+            return False
+            
+        except Exception:  # noqa: BLE001 - return False on any error
+            return False
+    
+    def _check_momentum_divergence(self, position: Any, market_data: dict[str, Any]) -> bool:
+        """Check for momentum divergence"""
+        try:
+            # Simple divergence check: price moving one way, momentum another
+            rsi = market_data.get('rsi', 50)
+            price_momentum = market_data.get('price_momentum', 0)
+            
+            position_direction = "bullish" if position.type == mt5.POSITION_TYPE_BUY else "bearish"
+            
+            # Bullish divergence for bearish position
+            if position_direction == "bearish" and price_momentum < 0 and rsi > 50:
+                return True
+            
+            # Bearish divergence for bullish position
+            if position_direction == "bullish" and price_momentum > 0 and rsi < 50:  # noqa: SIM103
+                return True
+            
+            return False
+            
+        except Exception:  # noqa: BLE001 - return False on any error
+            return False
+    
+    def _calculate_tightened_stop(self, position: Any, market_data: dict[str, Any]) -> float:
+        """Calculate a tightened stop loss"""
+        current_price = position.price_current
+        atr = market_data.get('atr', current_price * 0.001)
+        
+        if position.type == mt5.POSITION_TYPE_BUY:
+            return current_price - (atr * 0.5)  # Tighter than normal
+        else:
+            return current_price + (atr * 0.5)
+    
+    def _calculate_dynamic_stop(self, position: Any, market_data: dict[str, Any]) -> float:
+        """Calculate dynamic stop based on market conditions"""
+        current_price = position.price_current
+        atr = market_data.get('atr', current_price * 0.001)
+        
+        # Adjust stop based on volatility
+        volatility_regime = market_data.get('volatility_regime', 'normal')
+        if volatility_regime == 'high':
+            atr_multiplier = 2.0  # Wider stops in high volatility
+        elif volatility_regime == 'low':
+            atr_multiplier = 1.0  # Tighter stops in low volatility
+        else:
+            atr_multiplier = 1.5  # Normal
+        
+        if position.type == mt5.POSITION_TYPE_BUY:
+            return current_price - (atr * atr_multiplier)
+        else:
+            return current_price + (atr * atr_multiplier)
+    
+    def _calculate_dynamic_take_profit(self, position: Any, market_data: dict[str, Any]) -> float:
+        """Calculate dynamic take profit based on market conditions"""
+        current_price = position.price_current
+        atr = market_data.get('atr', current_price * 0.001)
+        
+        # Use support/resistance levels if available
+        resistance_levels = market_data.get('resistance_levels', [])
+        support_levels = market_data.get('support_levels', [])
+        
+        if position.type == mt5.POSITION_TYPE_BUY and resistance_levels:
+            # Use nearest resistance as target
+            nearest_resistance = min([r for r in resistance_levels if r > current_price], default=None)
+            if nearest_resistance:
+                return nearest_resistance
+        elif position.type == mt5.POSITION_TYPE_SELL and support_levels:
+            # Use nearest support as target
+            nearest_support = max([s for s in support_levels if s < current_price], default=None)
+            if nearest_support:
+                return nearest_support
+        
+        # Fallback to ATR-based target
+        if position.type == mt5.POSITION_TYPE_BUY:
+            return current_price + (atr * 3.0)
+        else:
+            return current_price - (atr * 3.0)
+    
+    def _calculate_confidence(self, health: PositionHealth, market_data: dict[str, Any]) -> float:
+        """Calculate confidence in the recommendation"""
+        base_confidence = {
+            PositionHealth.EXCELLENT: 0.9,
+            PositionHealth.GOOD: 0.7,
+            PositionHealth.FAIR: 0.5,
+            PositionHealth.POOR: 0.6,
+            PositionHealth.CRITICAL: 0.8
+        }.get(health, 0.5)
+        
+        # Adjust based on data quality
+        data_quality = market_data.get('data_quality', 1.0)
+        return base_confidence * data_quality
+    
+    def analyze_all_positions(self, market_data: dict[str, Any]) -> list[PositionAnalysis]:
+        """Analyze all open positions"""
+        try:
+            ensure_connected()
+            positions = get_open_positions(magic=RISK.magic_number)
+            
+            analyses = []
+            for position in positions:
+                analysis = self.analyze_position(position, market_data)
+                analyses.append(analysis)
+            
+            return analyses
+            
+        except Exception as e:  # noqa: BLE001 - catch any analysis failure
+            logger.error(f"Error analyzing all positions: {e}")
+            return []
+    
+    def calculate_volatility_adjusted_size(self, symbol: str, base_size: float, 
+                                         df: pd.DataFrame) -> VolatilityAdjustment:
+        """
+        Calculate position size adjusted for current volatility.
+        
+        Args:
+            symbol: Trading symbol
+            base_size: Base position size from risk calculation
+            df: DataFrame with price data
+            
+        Returns:
+            VolatilityAdjustment with adjusted size and reasoning
+        """
+        if not ADVANCED_RISK.enable_volatility_adjusted_sizing:
+            return VolatilityAdjustment(
+                symbol=symbol,
+                base_size=base_size,
+                adjusted_size=base_size,
+                volatility_ratio=1.0,
+                adjustment_factor=1.0,
+                reason="Volatility adjustment disabled"
+            )
+        
+        try:
+            # Calculate current volatility
+            returns = df['close'].pct_change().dropna()
+            current_volatility = returns.rolling(ADVANCED_RISK.volatility_lookback_period).std().iloc[-1]
+            avg_volatility = returns.rolling(ADVANCED_RISK.volatility_lookback_period * 2).std().mean()
+            
+            if avg_volatility == 0 or pd.isna(current_volatility) or pd.isna(avg_volatility):
+                return VolatilityAdjustment(
+                    symbol=symbol,
+                    base_size=base_size,
+                    adjusted_size=base_size,
+                    volatility_ratio=1.0,
+                    adjustment_factor=1.0,
+                    reason="Could not calculate volatility"
+                )
+            
+            volatility_ratio = current_volatility / avg_volatility
+            
+            # Determine adjustment factor
+            if volatility_ratio >= ADVANCED_RISK.volatility_ratio_high:
+                adjustment_factor = ADVANCED_RISK.high_volatility_multiplier
+                reason = f"High volatility ({volatility_ratio:.2f}x normal) - reducing position size"
+            elif volatility_ratio <= ADVANCED_RISK.volatility_ratio_low:
+                adjustment_factor = ADVANCED_RISK.low_volatility_multiplier
+                reason = f"Low volatility ({volatility_ratio:.2f}x normal) - increasing position size"
+            else:
+                adjustment_factor = 1.0
+                reason = f"Normal volatility ({volatility_ratio:.2f}x normal) - no adjustment"
+            
+            adjusted_size = base_size * adjustment_factor
+            
+            return VolatilityAdjustment(
+                symbol=symbol,
+                base_size=base_size,
+                adjusted_size=adjusted_size,
+                volatility_ratio=volatility_ratio,
+                adjustment_factor=adjustment_factor,
+                reason=reason
+            )
+            
+        except Exception as e:  # noqa: BLE001 - catch any calculation failure
+            logger.error(f"Error calculating volatility adjustment for {symbol}: {e}")
+            return VolatilityAdjustment(
+                symbol=symbol,
+                base_size=base_size,
+                adjusted_size=base_size,
+                volatility_ratio=1.0,
+                adjustment_factor=1.0,
+                reason=f"Error in calculation: {e!s}"
+            )
+    
+    def get_position_summary(self) -> dict[str, Any]:
+        """Get summary of all position analyses"""
+        with self._lock:
+            recent_analyses = list(self.position_history)[-10:]
+            
+            health_distribution = {}
+            for analysis in recent_analyses:
+                health = analysis.health.value
+                health_distribution[health] = health_distribution.get(health, 0) + 1
+            
+            recommendation_distribution = {}
+            for analysis in recent_analyses:
+                rec = analysis.recommendation.value
+                recommendation_distribution[rec] = recommendation_distribution.get(rec, 0) + 1
+            
+            return {
+                "total_analyzed": len(self.position_history),
+                "recent_analyses": len(recent_analyses),
+                "health_distribution": health_distribution,
+                "recommendation_distribution": recommendation_distribution,
+                "recent_decisions": [
+                    {
+                        "ticket": ticket,
+                        "decision": decision.value,
+                        "reason": reason
+                    }
+                    for ticket, decision, reason in list(self.exit_decisions)[-10:]
+                ]
+            }

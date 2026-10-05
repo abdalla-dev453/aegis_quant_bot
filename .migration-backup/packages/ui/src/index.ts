@@ -1,1 +1,41 @@
-LyoqCiAqIEBhZWdpcy1xdWFudC91aQogKiBJbnN0cnVtZW50LUdyYWRlIERlc2lnbiBTeXN0ZW0gRm91bmRhdGlvbnMgYW5kIFRva2VucwogKi8KCmV4cG9ydCBjb25zdCBUSEVNRV9UT0tFTlMgPSB7CiAgY29sb3JzOiB7CiAgICBiZzogewogICAgICBjYW52YXM6ICIjMDkwQTBGIiwKICAgICAgc3VyZmFjZTogIiMxMTEzMUEiLAogICAgICBzdXJmYWNlRWxldmF0ZWQ6ICIjMTgxQjI0IiwKICAgICAgc3VyZmFjZUhvdmVyOiAiIzIwMjQzMCIsCiAgICB9LAogICAgYm9yZGVyOiB7CiAgICAgIGhhaXJsaW5lOiAiIzIzMjczNCIsCiAgICAgIGFjdGl2ZTogIiMzQjQyNTQiLAogICAgICBmb2N1czogIiMyNTYzRUIiLAogICAgfSwKICAgIGFjY2VudDogewogICAgICBwcmltYXJ5OiAiIzI1NjNFQiIsCiAgICAgIHByaW1hcnlIb3ZlcjogIiMxRDRFRDgiLAogICAgICBnbG93OiAicmdiYSgzNywgOTksIDIzNSwgMC4xNSkiLAogICAgfSwKICAgIHBubDogewogICAgICBwcm9maXQ6ICIjMTBCOTgxIiwKICAgICAgbG9zczogIiNGNDNGNUUiLAogICAgICBuZXV0cmFsOiAiIzk0QTNCOCIsCiAgICB9LAogIH0sCiAgdHlwb2dyYXBoeTogewogICAgZm9udFVpOiAiR2Vpc3QsIC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgUm9ib3RvLCBzYW5zLXNlcmlmIiwKICAgIGZvbnRNb25vOiAiJ0dlaXN0IE1vbm8nLCAnSmV0QnJhaW5zIE1vbm8nLCBtb25vc3BhY2UiLAogIH0sCiAgcmFkaXVzOiB7CiAgICBzbTogIjZweCIsCiAgICBtZDogIjEwcHgiLAogICAgbGc6ICIxNHB4IiwKICB9LAp9IGFzIGNvbnN0OwoKZXhwb3J0IHR5cGUgVGhlbWVUb2tlbnMgPSB0eXBlb2YgVEhFTUVfVE9LRU5TOwo=
+/**
+ * @aegis-quant/ui
+ * Instrument-Grade Design System Foundations and Tokens
+ */
+
+export const THEME_TOKENS = {
+  colors: {
+    bg: {
+      canvas: "#090A0F",
+      surface: "#11131A",
+      surfaceElevated: "#181B24",
+      surfaceHover: "#202430",
+    },
+    border: {
+      hairline: "#232734",
+      active: "#3B4254",
+      focus: "#2563EB",
+    },
+    accent: {
+      primary: "#2563EB",
+      primaryHover: "#1D4ED8",
+      glow: "rgba(37, 99, 235, 0.15)",
+    },
+    pnl: {
+      profit: "#10B981",
+      loss: "#F43F5E",
+      neutral: "#94A3B8",
+    },
+  },
+  typography: {
+    fontUi: "Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    fontMono: "'Geist Mono', 'JetBrains Mono', monospace",
+  },
+  radius: {
+    sm: "6px",
+    md: "10px",
+    lg: "14px",
+  },
+} as const;
+
+export type ThemeTokens = typeof THEME_TOKENS;

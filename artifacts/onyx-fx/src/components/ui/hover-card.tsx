@@ -1,1 +1,26 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgKiBhcyBIb3ZlckNhcmRQcmltaXRpdmUgZnJvbSAnQHJhZGl4LXVpL3JlYWN0LWhvdmVyLWNhcmQnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKCmNvbnN0IEhvdmVyQ2FyZCA9IEhvdmVyQ2FyZFByaW1pdGl2ZS5Sb290OwoKY29uc3QgSG92ZXJDYXJkVHJpZ2dlciA9IEhvdmVyQ2FyZFByaW1pdGl2ZS5UcmlnZ2VyOwoKY29uc3QgSG92ZXJDYXJkQ29udGVudCA9IFJlYWN0LmZvcndhcmRSZWY8CiAgUmVhY3QuRWxlbWVudFJlZjx0eXBlb2YgSG92ZXJDYXJkUHJpbWl0aXZlLkNvbnRlbnQ+LAogIFJlYWN0LkNvbXBvbmVudFByb3BzV2l0aG91dFJlZjx0eXBlb2YgSG92ZXJDYXJkUHJpbWl0aXZlLkNvbnRlbnQ+Cj4oKHsgY2xhc3NOYW1lLCBhbGlnbiA9ICdjZW50ZXInLCBzaWRlT2Zmc2V0ID0gNCwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPEhvdmVyQ2FyZFByaW1pdGl2ZS5Db250ZW50CiAgICByZWY9e3JlZn0KICAgIGFsaWduPXthbGlnbn0KICAgIHNpZGVPZmZzZXQ9e3NpZGVPZmZzZXR9CiAgICBjbGFzc05hbWU9e2NuKAogICAgICAnei01MCB3LTY0IHJvdW5kZWQtbWQgYm9yZGVyIGJnLXBvcG92ZXIgcC00IHRleHQtcG9wb3Zlci1mb3JlZ3JvdW5kIHNoYWRvdy1tZCBvdXRsaW5lLW5vbmUgZGF0YS1bc3RhdGU9b3Blbl06YW5pbWF0ZS1pbiBkYXRhLVtzdGF0ZT1jbG9zZWRdOmFuaW1hdGUtb3V0IGRhdGEtW3N0YXRlPWNsb3NlZF06ZmFkZS1vdXQtMCBkYXRhLVtzdGF0ZT1vcGVuXTpmYWRlLWluLTAgZGF0YS1bc3RhdGU9Y2xvc2VkXTp6b29tLW91dC05NSBkYXRhLVtzdGF0ZT1vcGVuXTp6b29tLWluLTk1IGRhdGEtW3NpZGU9Ym90dG9tXTpzbGlkZS1pbi1mcm9tLXRvcC0yIGRhdGEtW3NpZGU9bGVmdF06c2xpZGUtaW4tZnJvbS1yaWdodC0yIGRhdGEtW3NpZGU9cmlnaHRdOnNsaWRlLWluLWZyb20tbGVmdC0yIGRhdGEtW3NpZGU9dG9wXTpzbGlkZS1pbi1mcm9tLWJvdHRvbS0yIG9yaWdpbi1bLS1yYWRpeC1ob3Zlci1jYXJkLWNvbnRlbnQtdHJhbnNmb3JtLW9yaWdpbl0nLAogICAgICBjbGFzc05hbWUsCiAgICApfQogICAgey4uLnByb3BzfQogIC8+CikpOwpIb3ZlckNhcmRDb250ZW50LmRpc3BsYXlOYW1lID0gSG92ZXJDYXJkUHJpbWl0aXZlLkNvbnRlbnQuZGlzcGxheU5hbWU7CgpleHBvcnQgeyBIb3ZlckNhcmQsIEhvdmVyQ2FyZFRyaWdnZXIsIEhvdmVyQ2FyZENvbnRlbnQgfTsK
+import * as React from 'react';
+import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
+import { cn } from '@/lib/utils';
+
+const HoverCard = HoverCardPrimitive.Root;
+
+const HoverCardTrigger = HoverCardPrimitive.Trigger;
+
+const HoverCardContent = React.forwardRef<
+  React.ElementRef<typeof HoverCardPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
+>(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
+  <HoverCardPrimitive.Content
+    ref={ref}
+    align={align}
+    sideOffset={sideOffset}
+    className={cn(
+      'z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-hover-card-content-transform-origin]',
+      className,
+    )}
+    {...props}
+  />
+));
+HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;
+
+export { HoverCard, HoverCardTrigger, HoverCardContent };

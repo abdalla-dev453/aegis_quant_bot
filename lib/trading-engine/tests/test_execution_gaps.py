@@ -1,1 +1,184 @@
-IiIiVGVzdHMgZm9yIGV4ZWN1dGlvbi5weTogbG90IHNpemluZywgU0wvVFAgbWF0aCwgYW5kIHRyYWRlIGd1YXJkcy4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmZyb20gdHlwZXMgaW1wb3J0IFNpbXBsZU5hbWVzcGFjZQoKaW1wb3J0IGV4ZWN1dGlvbgppbXBvcnQgcHl0ZXN0CmZyb20gZXhlY3V0aW9uIGltcG9ydCAoCiAgICBPcmRlckVycm9yLAogICAgY2FsY3VsYXRlX2xvdF9zaXplLAogICAgY2FsY3VsYXRlX3NsX3RwLAopCmZyb20gc3RyYXRlZ3kgaW1wb3J0IFRyYWRlRGlyZWN0aW9uCgpfT1JJR0lOQUxfR0VUX1NZTUJPTCA9IGV4ZWN1dGlvbi5fZ2V0X3N5bWJvbAoKCmRlZiBfbWFrZV9zeW0oKipvdmVycmlkZXMpOgogICAgZGVmYXVsdHMgPSB7CiAgICAgICAgImluZm8iOiBTaW1wbGVOYW1lc3BhY2UoZGlnaXRzPTUsIHZvbHVtZV9taW49MC4wMSwgdm9sdW1lX21heD0xMDAsIHBvaW50PTAuMDAwMSksCiAgICAgICAgInRpY2tfc2l6ZSI6IDAuMDAwMSwKICAgICAgICAidGlja192YWx1ZSI6IDEwLjAsCiAgICAgICAgInN0ZXAiOiAwLjAxLAogICAgICAgICJzdGVwX2RlY2ltYWxzIjogMiwKICAgICAgICAibWluX3N0b3BfcG9pbnRzIjogMC4wMDEsCiAgICB9CiAgICBkZWZhdWx0cy51cGRhdGUob3ZlcnJpZGVzKQogICAgcmV0dXJuIFNpbXBsZU5hbWVzcGFjZSgqKmRlZmF1bHRzKQoKCkBweXRlc3QuZml4dHVyZShhdXRvdXNlPVRydWUpCmRlZiBfZmFrZV9tdDUobW9ua2V5cGF0Y2g6IHB5dGVzdC5Nb25rZXlQYXRjaCkgLT4gTm9uZToKICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAibXQ1IiwgU2ltcGxlTmFtZXNwYWNlKAogICAgICAgIFBPU0lUSU9OX1RZUEVfQlVZPTAsCiAgICAgICAgT1JERVJfVFlQRV9CVVk9MSwKICAgICAgICBPUkRFUl9UWVBFX1NFTEw9MiwKICAgICAgICBUUkFERV9BQ1RJT05fREVBTD0wLAogICAgICAgIFRSQURFX1JFVENPREVfRE9ORT0wLAogICAgICAgIFRSQURFX1JFVENPREVfUkVRVU9URT0xLAogICAgICAgIE9SREVSX0ZJTExJTkdfSU9DPTAsCiAgICAgICAgT1JERVJfVElNRV9HVEM9MCwKICAgICAgICBhY2NvdW50X2luZm89bGFtYmRhOiBTaW1wbGVOYW1lc3BhY2UoZXF1aXR5PTEwMDAwLCBiYWxhbmNlPTEwMDAwLCBtYXJnaW49MCwgbWFyZ2luX2ZyZWU9MTAwMDAsIG1hcmdpbl9sZXZlbD0xMDAwKSwKICAgICAgICBzeW1ib2xfaW5mb190aWNrPWxhbWJkYSBfczogU2ltcGxlTmFtZXNwYWNlKGFzaz0xLjEsIGJpZD0xLjApLAogICAgICAgIG9yZGVyX2NhbGNfbWFyZ2luPWxhbWJkYSAqXzogMTAwLjAsCiAgICApKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJyZXF1aXJlX210NV9ydW50aW1lIiwgbGFtYmRhOiBOb25lKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJlbnN1cmVfY29ubmVjdGVkIiwgbGFtYmRhOiBOb25lKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJnZXRfYWNjb3VudF9lcXVpdHkiLCBsYW1iZGE6IDEwMDAwLjApCiAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgIl9nZXRfc3ltYm9sIiwgbGFtYmRhIF9zOiBfbWFrZV9zeW0oKSkKCgpjbGFzcyBUZXN0TG90U2l6ZToKICAgIGRlZiB0ZXN0X3N5bWJvbF9tZXRhZGF0YV9yZWZyZXNoZXNfYWZ0ZXJfdHRsKHNlbGYsIG1vbmtleXBhdGNoKToKICAgICAgICBjdXJyZW50X3RpbWUgPSBbMTAwLjBdCiAgICAgICAgbG9va3VwcyA9IFtdCiAgICAgICAgZmlyc3RfaW5mbyA9IFNpbXBsZU5hbWVzcGFjZSgKICAgICAgICAgICAgdHJhZGVfdGlja19zaXplPTAuMDAwMSwKICAgICAgICAgICAgdHJhZGVfdGlja192YWx1ZT0xMC4wLAogICAgICAgICAgICBwb2ludD0wLjAwMDEsCiAgICAgICAgICAgIHZvbHVtZV9zdGVwPTAuMDEsCiAgICAgICAgICAgIHRyYWRlX3N0b3BzX2xldmVsPTEwLAogICAgICAgICkKICAgICAgICByZWZyZXNoZWRfaW5mbyA9IFNpbXBsZU5hbWVzcGFjZSgKICAgICAgICAgICAgdHJhZGVfdGlja19zaXplPTAuMDAwMSwKICAgICAgICAgICAgdHJhZGVfdGlja192YWx1ZT0yMC4wLAogICAgICAgICAgICBwb2ludD0wLjAwMDEsCiAgICAgICAgICAgIHZvbHVtZV9zdGVwPTAuMDEsCiAgICAgICAgICAgIHRyYWRlX3N0b3BzX2xldmVsPTIwLAogICAgICAgICkKCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJfc3ltYm9sX2NhY2hlIiwge30pCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJfZ2V0X3N5bWJvbCIsIF9PUklHSU5BTF9HRVRfU1lNQk9MKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLnRpbWUsICJtb25vdG9uaWMiLCBsYW1iZGE6IGN1cnJlbnRfdGltZVswXSkKICAgICAgICBtb25rZXlwYXRjaC5zZXRhdHRyKAogICAgICAgICAgICBleGVjdXRpb24ubXQ1LAogICAgICAgICAgICAic3ltYm9sX2luZm8iLAogICAgICAgICAgICBsYW1iZGEgX3N5bWJvbDogbG9va3Vwcy5hcHBlbmQoVHJ1ZSkgb3IgKGZpcnN0X2luZm8gaWYgbGVuKGxvb2t1cHMpID09IDEgZWxzZSByZWZyZXNoZWRfaW5mbyksCiAgICAgICAgICAgIHJhaXNpbmc9RmFsc2UsCiAgICAgICAgKQoKICAgICAgICBpbml0aWFsID0gZXhlY3V0aW9uLl9nZXRfc3ltYm9sKCJFVVJVU0QiKQogICAgICAgIGN1cnJlbnRfdGltZVswXSArPSBleGVjdXRpb24uX1NZTUJPTF9DQUNIRV9UVExfU0VDT05EUyArIDEKICAgICAgICByZWZyZXNoZWQgPSBleGVjdXRpb24uX2dldF9zeW1ib2woIkVVUlVTRCIpCgogICAgICAgIGFzc2VydCBpbml0aWFsLnRpY2tfdmFsdWUgPT0gMTAuMAogICAgICAgIGFzc2VydCByZWZyZXNoZWQudGlja192YWx1ZSA9PSAyMC4wCiAgICAgICAgYXNzZXJ0IHJlZnJlc2hlZC5taW5fc3RvcF9wb2ludHMgPT0gMC4wMDIKICAgICAgICBhc3NlcnQgbGVuKGxvb2t1cHMpID09IDIKCiAgICBkZWYgdGVzdF9iYXNpY19sb3Rfc2l6ZShzZWxmLCBtb25rZXlwYXRjaCk6CiAgICAgICAgbG90cyA9IGNhbGN1bGF0ZV9sb3Rfc2l6ZSgiRVVSVVNEIiwgMC4wMDUwKQogICAgICAgIGFzc2VydCAwLjAxIDw9IGxvdHMgPD0gMTAwLjAKCiAgICBkZWYgdGVzdF96ZXJvX3NsX2Rpc3RhbmNlX3JhaXNlcyhzZWxmKToKICAgICAgICB3aXRoIHB5dGVzdC5yYWlzZXMoT3JkZXJFcnJvcik6CiAgICAgICAgICAgIGNhbGN1bGF0ZV9sb3Rfc2l6ZSgiRVVSVVNEIiwgMC4wKQoKICAgIGRlZiB0ZXN0X25lZ2F0aXZlX3NsX2Rpc3RhbmNlX3JhaXNlcyhzZWxmKToKICAgICAgICB3aXRoIHB5dGVzdC5yYWlzZXMoT3JkZXJFcnJvcik6CiAgICAgICAgICAgIGNhbGN1bGF0ZV9sb3Rfc2l6ZSgiRVVSVVNEIiwgLTEuMCkKCiAgICBkZWYgdGVzdF9sb3Rfc25hcHBlZF90b19zdGVwKHNlbGYpOgogICAgICAgIGxvdHMgPSBjYWxjdWxhdGVfbG90X3NpemUoIkVVUlVTRCIsIDAuMDEwMCkKICAgICAgICBhc3NlcnQgbG90cyAqIDEwMCA9PSBpbnQobG90cyAqIDEwMCkKCiAgICBkZWYgdGVzdF9sb3Rfc2l6ZV9hYm92ZV9icm9rZXJfbWluaW11bV9pc19hY2NlcHRlZChzZWxmLCBtb25rZXlwYXRjaCk6CiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJfZ2V0X3N5bWJvbCIsIGxhbWJkYSBfczogX21ha2Vfc3ltKAogICAgICAgICAgICBpbmZvPVNpbXBsZU5hbWVzcGFjZShkaWdpdHM9NSwgdm9sdW1lX21pbj0wLjEwLCB2b2x1bWVfbWF4PTEwMCwgcG9pbnQ9MC4wMDAxKSwKICAgICAgICAgICAgc3RlcD0wLjAxLAogICAgICAgICkpCiAgICAgICAgbG90cyA9IGNhbGN1bGF0ZV9sb3Rfc2l6ZSgiRVVSVVNEIiwgMC4wMDUwKQogICAgICAgIGFzc2VydCBsb3RzID09IHB5dGVzdC5hcHByb3goMC4zMCkKCiAgICBkZWYgdGVzdF9sb3RfY2xhbXBlZF90b19tYXgoc2VsZiwgbW9ua2V5cGF0Y2gpOgogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiX2dldF9zeW1ib2wiLCBsYW1iZGEgX3M6IF9tYWtlX3N5bSgKICAgICAgICAgICAgaW5mbz1TaW1wbGVOYW1lc3BhY2UoZGlnaXRzPTUsIHZvbHVtZV9taW49MC4wMSwgdm9sdW1lX21heD0xLjAsIHBvaW50PTAuMDAwMSksCiAgICAgICAgICAgIHRpY2tfdmFsdWU9MTAuMCwKICAgICAgICAgICAgc3RlcD0wLjAxLAogICAgICAgICkpCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJnZXRfYWNjb3VudF9lcXVpdHkiLCBsYW1iZGE6IDUwMDAwMC4wKQogICAgICAgIGxvdHMgPSBjYWxjdWxhdGVfbG90X3NpemUoIkVVUlVTRCIsIDAuMDAxMCkKICAgICAgICBhc3NlcnQgbG90cyA8PSAxLjAKCiAgICBkZWYgdGVzdF9iZWxvd19taW5pbXVtX3ZvbHVtZV9pc19yZWplY3RlZF90b19wcmVzZXJ2ZV9yaXNrKHNlbGYsIG1vbmtleXBhdGNoKToKICAgICAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImdldF9hY2NvdW50X2VxdWl0eSIsIGxhbWJkYTogMS4wKQoKICAgICAgICB3aXRoIHB5dGVzdC5yYWlzZXMoT3JkZXJFcnJvciwgbWF0Y2g9ImJlbG93IGJyb2tlciBtaW5pbXVtIik6CiAgICAgICAgICAgIGNhbGN1bGF0ZV9sb3Rfc2l6ZSgiRVVSVVNEIiwgMC4wMDUwKQoKICAgIGRlZiB0ZXN0X3NlbGxfbWFyZ2luX2NoZWNrX3VzZXNfc2VsbF9vcmRlcl90eXBlKHNlbGYsIG1vbmtleXBhdGNoKToKICAgICAgICBjYWxscyA9IFtdCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cigKICAgICAgICAgICAgZXhlY3V0aW9uLm10NSwKICAgICAgICAgICAgIm9yZGVyX2NhbGNfbWFyZ2luIiwKICAgICAgICAgICAgbGFtYmRhIG9yZGVyX3R5cGUsICpfOiBjYWxscy5hcHBlbmQob3JkZXJfdHlwZSkgb3IgMTAwLjAsCiAgICAgICAgKQoKICAgICAgICBjYWxjdWxhdGVfbG90X3NpemUoIkVVUlVTRCIsIDAuMDA1MCwgVHJhZGVEaXJlY3Rpb24uU0VMTCkKCiAgICAgICAgYXNzZXJ0IGNhbGxzID09IFtleGVjdXRpb24ubXQ1Lk9SREVSX1RZUEVfU0VMTF0KCgpjbGFzcyBUZXN0U0xUUDoKICAgIGRlZiB0ZXN0X2J1eV9zbF9iZWxvd19lbnRyeV90cF9hYm92ZShzZWxmKToKICAgICAgICBzbCwgdHAgPSBjYWxjdWxhdGVfc2xfdHAoIkVVUlVTRCIsIFRyYWRlRGlyZWN0aW9uLkJVWSwgMS4xMDAwLCAwLjAwNTApCiAgICAgICAgYXNzZXJ0IHNsIDwgMS4xMDAwCiAgICAgICAgYXNzZXJ0IHRwID4gMS4xMDAwCgogICAgZGVmIHRlc3Rfc2VsbF9zbF9hYm92ZV9lbnRyeV90cF9iZWxvdyhzZWxmKToKICAgICAgICBzbCwgdHAgPSBjYWxjdWxhdGVfc2xfdHAoIkVVUlVTRCIsIFRyYWRlRGlyZWN0aW9uLlNFTEwsIDEuMTAwMCwgMC4wMDUwKQogICAgICAgIGFzc2VydCBzbCA+IDEuMTAwMAogICAgICAgIGFzc2VydCB0cCA8IDEuMTAwMAoKICAgIGRlZiB0ZXN0X25vbmVfZGlyZWN0aW9uX3JhaXNlcyhzZWxmKToKICAgICAgICB3aXRoIHB5dGVzdC5yYWlzZXMoT3JkZXJFcnJvcik6CiAgICAgICAgICAgIGNhbGN1bGF0ZV9zbF90cCgiRVVSVVNEIiwgVHJhZGVEaXJlY3Rpb24uTk9ORSwgMS4xMDAwLCAwLjAwNTApCgoKY2xhc3MgVGVzdFRyYWRlR3VhcmRzOgogICAgZGVmIHRlc3RfaGFsdF9vbl9tYXhfY29uY3VycmVudChzZWxmLCBtb25rZXlwYXRjaCk6CiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJjb250cm9sX3N0YXRlIiwgbGFtYmRhOiB7InN0YXR1cyI6ICJSVU5OSU5HIiwgImVudHJpZXNBbGxvd2VkIjogVHJ1ZX0pCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJjaGVja19kYWlseV9sb3NzX2d1YXJkIiwgbGFtYmRhOiBGYWxzZSkKICAgICAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImNoZWNrX21heF9kcmF3ZG93bl9ndWFyZCIsIGxhbWJkYTogRmFsc2UpCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJjaGVja19tYXhfdHJhZGVzX2d1YXJkIiwgbGFtYmRhOiBUcnVlKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiaXNfY29ycmVsYXRlZF9leHBvc3VyZV9ibG9ja2VkIiwgbGFtYmRhICphLCAqKms6IEZhbHNlKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiZ2V0X29wZW5fcG9zaXRpb25zIiwgbGFtYmRhICoqa3c6IGxpc3QocmFuZ2UoNSkpKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiY2FsY3VsYXRlX2xvdF9zaXplIiwgbGFtYmRhICphLCAqKms6IDAuMSkKICAgICAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImNhbGN1bGF0ZV9zbF90cCIsIGxhbWJkYSAqYSwgKiprOiAoMS4wLCAxLjEpKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiUklTSyIsIFNpbXBsZU5hbWVzcGFjZSgKICAgICAgICAgICAgbWF4X2NvbmN1cnJlbnRfcG9zaXRpb25zPTMsCiAgICAgICAgICAgIG1heF90cmFkZXNfcGVyX2RheT0xMCwKICAgICAgICApKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiRVhFQ1VUSU9OIiwgU2ltcGxlTmFtZXNwYWNlKG1vZGU9InBhcGVyIiwgbGl2ZV9vcmRlcnNfZW5hYmxlZD1GYWxzZSkpCiAgICAgICAgcmVzdWx0ID0gZXhlY3V0aW9uLnBsYWNlX29yZGVyKCJFVVJVU0QiLCBUcmFkZURpcmVjdGlvbi5CVVksIDAuMDAxLCAidGVzdCIpCiAgICAgICAgYXNzZXJ0IHJlc3VsdCBpcyBOb25lCgogICAgZGVmIHRlc3RfZGFpbHlfbG9zc19ndWFyZF9ibG9ja3Moc2VsZiwgbW9ua2V5cGF0Y2gpOgogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiY29udHJvbF9zdGF0ZSIsIGxhbWJkYTogeyJzdGF0dXMiOiAiUlVOTklORyIsICJlbnRyaWVzQWxsb3dlZCI6IFRydWV9KQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoZXhlY3V0aW9uLCAiY2hlY2tfZGFpbHlfbG9zc19ndWFyZCIsIGxhbWJkYTogVHJ1ZSkKICAgICAgICBtb25rZXlwYXRjaC5zZXRhdHRyKGV4ZWN1dGlvbiwgImNoZWNrX21heF9kcmF3ZG93bl9ndWFyZCIsIGxhbWJkYTogRmFsc2UpCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cihleGVjdXRpb24sICJjaGVja19tYXhfdHJhZGVzX2d1YXJkIiwgbGFtYmRhOiBGYWxzZSkKICAgICAgICByZXN1bHQgPSBleGVjdXRpb24ucGxhY2Vfb3JkZXIoIkVVUlVTRCIsIFRyYWRlRGlyZWN0aW9uLkJVWSwgMC4wMDEsICJ0ZXN0IikKICAgICAgICBhc3NlcnQgcmVzdWx0IGlzIE5vbmUK
+"""Tests for execution.py: lot sizing, SL/TP math, and trade guards."""
+
+from __future__ import annotations
+
+from types import SimpleNamespace
+
+import execution
+import pytest
+from execution import (
+    OrderError,
+    calculate_lot_size,
+    calculate_sl_tp,
+)
+from strategy import TradeDirection
+
+_ORIGINAL_GET_SYMBOL = execution._get_symbol
+
+
+def _make_sym(**overrides):
+    defaults = {
+        "info": SimpleNamespace(digits=5, volume_min=0.01, volume_max=100, point=0.0001),
+        "tick_size": 0.0001,
+        "tick_value": 10.0,
+        "step": 0.01,
+        "step_decimals": 2,
+        "min_stop_points": 0.001,
+    }
+    defaults.update(overrides)
+    return SimpleNamespace(**defaults)
+
+
+@pytest.fixture(autouse=True)
+def _fake_mt5(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(execution, "mt5", SimpleNamespace(
+        POSITION_TYPE_BUY=0,
+        ORDER_TYPE_BUY=1,
+        ORDER_TYPE_SELL=2,
+        TRADE_ACTION_DEAL=0,
+        TRADE_RETCODE_DONE=0,
+        TRADE_RETCODE_REQUOTE=1,
+        ORDER_FILLING_IOC=0,
+        ORDER_TIME_GTC=0,
+        account_info=lambda: SimpleNamespace(equity=10000, balance=10000, margin=0, margin_free=10000, margin_level=1000),
+        symbol_info_tick=lambda _s: SimpleNamespace(ask=1.1, bid=1.0),
+        order_calc_margin=lambda *_: 100.0,
+    ))
+    monkeypatch.setattr(execution, "require_mt5_runtime", lambda: None)
+    monkeypatch.setattr(execution, "ensure_connected", lambda: None)
+    monkeypatch.setattr(execution, "get_account_equity", lambda: 10000.0)
+    monkeypatch.setattr(execution, "_get_symbol", lambda _s: _make_sym())
+
+
+class TestLotSize:
+    def test_symbol_metadata_refreshes_after_ttl(self, monkeypatch):
+        current_time = [100.0]
+        lookups = []
+        first_info = SimpleNamespace(
+            trade_tick_size=0.0001,
+            trade_tick_value=10.0,
+            point=0.0001,
+            volume_step=0.01,
+            trade_stops_level=10,
+        )
+        refreshed_info = SimpleNamespace(
+            trade_tick_size=0.0001,
+            trade_tick_value=20.0,
+            point=0.0001,
+            volume_step=0.01,
+            trade_stops_level=20,
+        )
+
+        monkeypatch.setattr(execution, "_symbol_cache", {})
+        monkeypatch.setattr(execution, "_get_symbol", _ORIGINAL_GET_SYMBOL)
+        monkeypatch.setattr(execution.time, "monotonic", lambda: current_time[0])
+        monkeypatch.setattr(
+            execution.mt5,
+            "symbol_info",
+            lambda _symbol: lookups.append(True) or (first_info if len(lookups) == 1 else refreshed_info),
+            raising=False,
+        )
+
+        initial = execution._get_symbol("EURUSD")
+        current_time[0] += execution._SYMBOL_CACHE_TTL_SECONDS + 1
+        refreshed = execution._get_symbol("EURUSD")
+
+        assert initial.tick_value == 10.0
+        assert refreshed.tick_value == 20.0
+        assert refreshed.min_stop_points == 0.002
+        assert len(lookups) == 2
+
+    def test_basic_lot_size(self, monkeypatch):
+        lots = calculate_lot_size("EURUSD", 0.0050)
+        assert 0.01 <= lots <= 100.0
+
+    def test_zero_sl_distance_raises(self):
+        with pytest.raises(OrderError):
+            calculate_lot_size("EURUSD", 0.0)
+
+    def test_negative_sl_distance_raises(self):
+        with pytest.raises(OrderError):
+            calculate_lot_size("EURUSD", -1.0)
+
+    def test_lot_snapped_to_step(self):
+        lots = calculate_lot_size("EURUSD", 0.0100)
+        assert lots * 100 == int(lots * 100)
+
+    def test_lot_size_above_broker_minimum_is_accepted(self, monkeypatch):
+        monkeypatch.setattr(execution, "_get_symbol", lambda _s: _make_sym(
+            info=SimpleNamespace(digits=5, volume_min=0.10, volume_max=100, point=0.0001),
+            step=0.01,
+        ))
+        lots = calculate_lot_size("EURUSD", 0.0050)
+        assert lots == pytest.approx(0.30)
+
+    def test_lot_clamped_to_max(self, monkeypatch):
+        monkeypatch.setattr(execution, "_get_symbol", lambda _s: _make_sym(
+            info=SimpleNamespace(digits=5, volume_min=0.01, volume_max=1.0, point=0.0001),
+            tick_value=10.0,
+            step=0.01,
+        ))
+        monkeypatch.setattr(execution, "get_account_equity", lambda: 500000.0)
+        lots = calculate_lot_size("EURUSD", 0.0010)
+        assert lots <= 1.0
+
+    def test_below_minimum_volume_is_rejected_to_preserve_risk(self, monkeypatch):
+        monkeypatch.setattr(execution, "get_account_equity", lambda: 1.0)
+
+        with pytest.raises(OrderError, match="below broker minimum"):
+            calculate_lot_size("EURUSD", 0.0050)
+
+    def test_sell_margin_check_uses_sell_order_type(self, monkeypatch):
+        calls = []
+        monkeypatch.setattr(
+            execution.mt5,
+            "order_calc_margin",
+            lambda order_type, *_: calls.append(order_type) or 100.0,
+        )
+
+        calculate_lot_size("EURUSD", 0.0050, TradeDirection.SELL)
+
+        assert calls == [execution.mt5.ORDER_TYPE_SELL]
+
+
+class TestSLTP:
+    def test_buy_sl_below_entry_tp_above(self):
+        sl, tp = calculate_sl_tp("EURUSD", TradeDirection.BUY, 1.1000, 0.0050)
+        assert sl < 1.1000
+        assert tp > 1.1000
+
+    def test_sell_sl_above_entry_tp_below(self):
+        sl, tp = calculate_sl_tp("EURUSD", TradeDirection.SELL, 1.1000, 0.0050)
+        assert sl > 1.1000
+        assert tp < 1.1000
+
+    def test_none_direction_raises(self):
+        with pytest.raises(OrderError):
+            calculate_sl_tp("EURUSD", TradeDirection.NONE, 1.1000, 0.0050)
+
+
+class TestTradeGuards:
+    def test_halt_on_max_concurrent(self, monkeypatch):
+        monkeypatch.setattr(execution, "control_state", lambda: {"status": "RUNNING", "entriesAllowed": True})
+        monkeypatch.setattr(execution, "check_daily_loss_guard", lambda: False)
+        monkeypatch.setattr(execution, "check_max_drawdown_guard", lambda: False)
+        monkeypatch.setattr(execution, "check_max_trades_guard", lambda: True)
+        monkeypatch.setattr(execution, "is_correlated_exposure_blocked", lambda *a, **k: False)
+        monkeypatch.setattr(execution, "get_open_positions", lambda **kw: list(range(5)))
+        monkeypatch.setattr(execution, "calculate_lot_size", lambda *a, **k: 0.1)
+        monkeypatch.setattr(execution, "calculate_sl_tp", lambda *a, **k: (1.0, 1.1))
+        monkeypatch.setattr(execution, "RISK", SimpleNamespace(
+            max_concurrent_positions=3,
+            max_trades_per_day=10,
+        ))
+        monkeypatch.setattr(execution, "EXECUTION", SimpleNamespace(mode="paper", live_orders_enabled=False))
+        result = execution.place_order("EURUSD", TradeDirection.BUY, 0.001, "test")
+        assert result is None
+
+    def test_daily_loss_guard_blocks(self, monkeypatch):
+        monkeypatch.setattr(execution, "control_state", lambda: {"status": "RUNNING", "entriesAllowed": True})
+        monkeypatch.setattr(execution, "check_daily_loss_guard", lambda: True)
+        monkeypatch.setattr(execution, "check_max_drawdown_guard", lambda: False)
+        monkeypatch.setattr(execution, "check_max_trades_guard", lambda: False)
+        result = execution.place_order("EURUSD", TradeDirection.BUY, 0.001, "test")
+        assert result is None

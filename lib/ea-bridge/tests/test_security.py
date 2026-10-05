@@ -1,1 +1,49 @@
-aW1wb3J0IGhhc2hsaWIKaW1wb3J0IGhtYWMKaW1wb3J0IHRpbWUKCmZyb20gYXBwLnNlY3VyaXR5IGltcG9ydCAoCiAgICBjYW5vbmljYWxfZWFfcmVxdWVzdCwKICAgIHNoYTI1Nl9oZXgsCiAgICBzaWduX2VhX3JlcXVlc3QsCikKCgpkZWYgdGVzdF9zaGEyNTZfaGV4KCkgLT4gTm9uZToKICAgIGRpZ2VzdCA9IHNoYTI1Nl9oZXgoInRlc3Rfc2VjcmV0IikKICAgIGFzc2VydCBkaWdlc3QgPT0gaGFzaGxpYi5zaGEyNTYoYiJ0ZXN0X3NlY3JldCIpLmhleGRpZ2VzdCgpCiAgICBhc3NlcnQgbGVuKGRpZ2VzdCkgPT0gNjQKCgpkZWYgdGVzdF9jYW5vbmljYWxfZWFfcmVxdWVzdF9hbmRfc2lnbmluZygpIC0+IE5vbmU6CiAgICB0b2tlbiA9ICJhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OSIKICAgIG1ldGhvZCA9ICJQT1NUIgogICAgcGF0aCA9ICIvZWEvdjEvaGVhcnRiZWF0IgogICAgdGltZXN0YW1wID0gc3RyKGludCh0aW1lLnRpbWUoKSkpCiAgICBub25jZSA9ICJhMWIyYzNkNGU1ZjZnN2g4IgogICAgYm9keSA9IGIneyJiYWxhbmNlIjogIjEwMDAwLjAwIn0nCgogICAgZXhwZWN0ZWRfY2Fub25pY2FsID0gZiJ7bWV0aG9kfVxue3BhdGh9XG57dGltZXN0YW1wfVxue25vbmNlfVxue3NoYTI1Nl9oZXgoJ3tcImJhbGFuY2VcIjogXCIxMDAwMC4wMFwifScpfSIuZW5jb2RlKCkKICAgIGFzc2VydCBjYW5vbmljYWxfZWFfcmVxdWVzdChtZXRob2QsIHBhdGgsIHRpbWVzdGFtcCwgbm9uY2UsIGJvZHkpID09IGV4cGVjdGVkX2Nhbm9uaWNhbAoKICAgIHNpZ25hdHVyZSA9IHNpZ25fZWFfcmVxdWVzdCh0b2tlbiwgbWV0aG9kLCBwYXRoLCB0aW1lc3RhbXAsIG5vbmNlLCBib2R5KQogICAgYXNzZXJ0IGxlbihzaWduYXR1cmUpID09IDY0CiAgICBhc3NlcnQgaG1hYy5jb21wYXJlX2RpZ2VzdCgKICAgICAgICBzaWduYXR1cmUsCiAgICAgICAgaG1hYy5uZXcodG9rZW4uZW5jb2RlKCJhc2NpaSIpLCBleHBlY3RlZF9jYW5vbmljYWwsIGhhc2hsaWIuc2hhMjU2KS5oZXhkaWdlc3QoKSwKICAgICkKCgpkZWYgdGVzdF90YW1wZXJlZF9wYXlsb2FkX3NpZ25hdHVyZV9taXNtYXRjaCgpIC0+IE5vbmU6CiAgICB0b2tlbiA9ICJhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OSIKICAgIG1ldGhvZCA9ICJQT1NUIgogICAgcGF0aCA9ICIvZWEvdjEvaGVhcnRiZWF0IgogICAgdGltZXN0YW1wID0gc3RyKGludCh0aW1lLnRpbWUoKSkpCiAgICBub25jZSA9ICJhMWIyYzNkNGU1ZjZnN2g4IgogICAgYm9keSA9IGIneyJiYWxhbmNlIjogIjEwMDAwLjAwIn0nCgogICAgc2lnMSA9IHNpZ25fZWFfcmVxdWVzdCh0b2tlbiwgbWV0aG9kLCBwYXRoLCB0aW1lc3RhbXAsIG5vbmNlLCBib2R5KQogICAgdGFtcGVyZWRfYm9keSA9IGIneyJiYWxhbmNlIjogIjk5OTk5LjAwIn0nCiAgICBzaWcyID0gc2lnbl9lYV9yZXF1ZXN0KHRva2VuLCBtZXRob2QsIHBhdGgsIHRpbWVzdGFtcCwgbm9uY2UsIHRhbXBlcmVkX2JvZHkpCgogICAgYXNzZXJ0IHNpZzEgIT0gc2lnMgo=
+import hashlib
+import hmac
+import time
+
+from app.security import (
+    canonical_ea_request,
+    sha256_hex,
+    sign_ea_request,
+)
+
+
+def test_sha256_hex() -> None:
+    digest = sha256_hex("test_secret")
+    assert digest == hashlib.sha256(b"test_secret").hexdigest()
+    assert len(digest) == 64
+
+
+def test_canonical_ea_request_and_signing() -> None:
+    token = "abcdef0123456789abcdef0123456789"
+    method = "POST"
+    path = "/ea/v1/heartbeat"
+    timestamp = str(int(time.time()))
+    nonce = "a1b2c3d4e5f6g7h8"
+    body = b'{"balance": "10000.00"}'
+
+    expected_canonical = f"{method}\n{path}\n{timestamp}\n{nonce}\n{sha256_hex('{\"balance\": \"10000.00\"}')}".encode()
+    assert canonical_ea_request(method, path, timestamp, nonce, body) == expected_canonical
+
+    signature = sign_ea_request(token, method, path, timestamp, nonce, body)
+    assert len(signature) == 64
+    assert hmac.compare_digest(
+        signature,
+        hmac.new(token.encode("ascii"), expected_canonical, hashlib.sha256).hexdigest(),
+    )
+
+
+def test_tampered_payload_signature_mismatch() -> None:
+    token = "abcdef0123456789abcdef0123456789"
+    method = "POST"
+    path = "/ea/v1/heartbeat"
+    timestamp = str(int(time.time()))
+    nonce = "a1b2c3d4e5f6g7h8"
+    body = b'{"balance": "10000.00"}'
+
+    sig1 = sign_ea_request(token, method, path, timestamp, nonce, body)
+    tampered_body = b'{"balance": "99999.00"}'
+    sig2 = sign_ea_request(token, method, path, timestamp, nonce, tampered_body)
+
+    assert sig1 != sig2

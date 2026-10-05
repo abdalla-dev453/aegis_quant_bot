@@ -1,1 +1,82 @@
-aW1wb3J0IHsgU2xvdCB9IGZyb20gJ0ByYWRpeC11aS9yZWFjdC1zbG90JzsKaW1wb3J0IHsgU2VwYXJhdG9yIH0gZnJvbSAnQC9jb21wb25lbnRzL3VpL3NlcGFyYXRvcic7CmltcG9ydCB7IGNuIH0gZnJvbSAnQC9saWIvdXRpbHMnOwppbXBvcnQgeyBjdmEsIHR5cGUgVmFyaWFudFByb3BzIH0gZnJvbSAnY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5JzsKCmNvbnN0IGJ1dHRvbkdyb3VwVmFyaWFudHMgPSBjdmEoCiAgImZsZXggdy1maXQgaXRlbXMtc3RyZXRjaCBoYXMtWz5bZGF0YS1zbG90PWJ1dHRvbi1ncm91cF1dOmdhcC0yIFsmPipdOmZvY3VzLXZpc2libGU6cmVsYXRpdmUgWyY+Kl06Zm9jdXMtdmlzaWJsZTp6LTEwIGhhcy1bc2VsZWN0W2FyaWEtaGlkZGVuPXRydWVdOmxhc3QtY2hpbGRdOlsmPltkYXRhLXNsb3Q9c2VsZWN0LXRyaWdnZXJdOmxhc3Qtb2YtdHlwZV06cm91bmRlZC1yLW1kIFsmPltkYXRhLXNsb3Q9c2VsZWN0LXRyaWdnZXJdOm5vdChbY2xhc3MqPSd3LSddKV06dy1maXQgWyY+aW5wdXRdOmZsZXgtMSIsCiAgewogICAgdmFyaWFudHM6IHsKICAgICAgb3JpZW50YXRpb246IHsKICAgICAgICBob3Jpem9udGFsOgogICAgICAgICAgJ1smPio6bm90KDpmaXJzdC1jaGlsZCldOnJvdW5kZWQtbC1ub25lIFsmPio6bm90KDpmaXJzdC1jaGlsZCldOmJvcmRlci1sLTAgWyY+Kjpub3QoOmxhc3QtY2hpbGQpXTpyb3VuZGVkLXItbm9uZScsCiAgICAgICAgdmVydGljYWw6CiAgICAgICAgICAnZmxleC1jb2wgWyY+Kjpub3QoOmZpcnN0LWNoaWxkKV06cm91bmRlZC10LW5vbmUgWyY+Kjpub3QoOmZpcnN0LWNoaWxkKV06Ym9yZGVyLXQtMCBbJj4qOm5vdCg6bGFzdC1jaGlsZCldOnJvdW5kZWQtYi1ub25lJywKICAgICAgfSwKICAgIH0sCiAgICBkZWZhdWx0VmFyaWFudHM6IHsKICAgICAgb3JpZW50YXRpb246ICdob3Jpem9udGFsJywKICAgIH0sCiAgfSwKKTsKCmZ1bmN0aW9uIEJ1dHRvbkdyb3VwKHsKICBjbGFzc05hbWUsCiAgb3JpZW50YXRpb24sCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2Rpdic+ICYgVmFyaWFudFByb3BzPHR5cGVvZiBidXR0b25Hcm91cFZhcmlhbnRzPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIHJvbGU9Imdyb3VwIgogICAgICBkYXRhLXNsb3Q9ImJ1dHRvbi1ncm91cCIKICAgICAgZGF0YS1vcmllbnRhdGlvbj17b3JpZW50YXRpb259CiAgICAgIGNsYXNzTmFtZT17Y24oYnV0dG9uR3JvdXBWYXJpYW50cyh7IG9yaWVudGF0aW9uIH0pLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIEJ1dHRvbkdyb3VwVGV4dCh7CiAgY2xhc3NOYW1lLAogIGFzQ2hpbGQgPSBmYWxzZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4gJiB7CiAgYXNDaGlsZD86IGJvb2xlYW47Cn0pIHsKICBjb25zdCBDb21wID0gYXNDaGlsZCA/IFNsb3QgOiAnZGl2JzsKCiAgcmV0dXJuICgKICAgIDxDb21wCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgImJnLW11dGVkIHNoYWRvdy14cyBmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiByb3VuZGVkLW1kIGJvcmRlciBweC00IHRleHQtc20gZm9udC1tZWRpdW0gWyZfc3ZnOm5vdChbY2xhc3MqPSdzaXplLSddKV06c2l6ZS00IFsmX3N2Z106cG9pbnRlci1ldmVudHMtbm9uZSIsCiAgICAgICAgY2xhc3NOYW1lLAogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIEJ1dHRvbkdyb3VwU2VwYXJhdG9yKHsKICBjbGFzc05hbWUsCiAgb3JpZW50YXRpb24gPSAndmVydGljYWwnLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBTZXBhcmF0b3I+KSB7CiAgcmV0dXJuICgKICAgIDxTZXBhcmF0b3IKICAgICAgZGF0YS1zbG90PSJidXR0b24tZ3JvdXAtc2VwYXJhdG9yIgogICAgICBvcmllbnRhdGlvbj17b3JpZW50YXRpb259CiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2JnLWlucHV0IHJlbGF0aXZlICFtLTAgc2VsZi1zdHJldGNoIGRhdGEtW29yaWVudGF0aW9uPXZlcnRpY2FsXTpoLWF1dG8nLAogICAgICAgIGNsYXNzTmFtZSwKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpleHBvcnQgewogIEJ1dHRvbkdyb3VwLAogIEJ1dHRvbkdyb3VwU2VwYXJhdG9yLAogIEJ1dHRvbkdyb3VwVGV4dCwKICBidXR0b25Hcm91cFZhcmlhbnRzLAp9Owo=
+import { Slot } from '@radix-ui/react-slot';
+import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+const buttonGroupVariants = cva(
+  "flex w-fit items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
+  {
+    variants: {
+      orientation: {
+        horizontal:
+          '[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none',
+        vertical:
+          'flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none',
+      },
+    },
+    defaultVariants: {
+      orientation: 'horizontal',
+    },
+  },
+);
+
+function ButtonGroup({
+  className,
+  orientation,
+  ...props
+}: React.ComponentProps<'div'> & VariantProps<typeof buttonGroupVariants>) {
+  return (
+    <div
+      role="group"
+      data-slot="button-group"
+      data-orientation={orientation}
+      className={cn(buttonGroupVariants({ orientation }), className)}
+      {...props}
+    />
+  );
+}
+
+function ButtonGroupText({
+  className,
+  asChild = false,
+  ...props
+}: React.ComponentProps<'div'> & {
+  asChild?: boolean;
+}) {
+  const Comp = asChild ? Slot : 'div';
+
+  return (
+    <Comp
+      className={cn(
+        "bg-muted shadow-xs flex items-center gap-2 rounded-md border px-4 text-sm font-medium [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function ButtonGroupSeparator({
+  className,
+  orientation = 'vertical',
+  ...props
+}: React.ComponentProps<typeof Separator>) {
+  return (
+    <Separator
+      data-slot="button-group-separator"
+      orientation={orientation}
+      className={cn(
+        'bg-input relative !m-0 self-stretch data-[orientation=vertical]:h-auto',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+  buttonGroupVariants,
+};

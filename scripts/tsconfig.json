@@ -1,1 +1,9 @@
-ewogICJleHRlbmRzIjogIi4uL3RzY29uZmlnLmJhc2UuanNvbiIsCiAgImNvbXBpbGVyT3B0aW9ucyI6IHsKICAgICJvdXREaXIiOiAiZGlzdCIsCiAgICAicm9vdERpciI6ICJzcmMiLAogICAgInR5cGVzIjogWyJub2RlIl0KICB9LAogICJpbmNsdWRlIjogWyJzcmMiXQp9Cg==
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["node"]
+  },
+  "include": ["src"]
+}

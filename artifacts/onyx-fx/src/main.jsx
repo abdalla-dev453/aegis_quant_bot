@@ -1,1 +1,24 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFJlYWN0RG9tIGZyb20gInJlYWN0LWRvbS9jbGllbnQiOwppbXBvcnQgeyBIZWxtZXRQcm92aWRlciB9IGZyb20gInJlYWN0LWhlbG1ldC1hc3luYyI7CmltcG9ydCAnLi9pbmRleC5jc3MnCmltcG9ydCBBcHAgZnJvbSAnLi9BcHAuanN4JwppbXBvcnQgVGVybWluYWwgZnJvbSAnLi9wYWdlcy9UZXJtaW5hbCcKaW1wb3J0IHsgUm91dGVyLCBSb3V0ZSwgU3dpdGNoIH0gZnJvbSAid291dGVyIjsKClJlYWN0RG9tLmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSkucmVuZGVyKAogIDxSZWFjdC5TdHJpY3RNb2RlPgogICAgPEhlbG1ldFByb3ZpZGVyPgogICAgICA8Um91dGVyIGJhc2U9e2ltcG9ydC5tZXRhLmVudi5CQVNFX1VSTC5yZXBsYWNlKC9cLyQvLCAiIil9PgogICAgICAgIDxTd2l0Y2g+CiAgICAgICAgICA8Um91dGUgcGF0aD0iL3Rlcm1pbmFsIj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im1pbi1oLXNjcmVlbiBiZy1bIzA5MEEwRl0gdGV4dC1bI0Y4RkFGQ10gYW50aWFsaWFzZWQiPgogICAgICAgICAgICAgIDxUZXJtaW5hbCAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvUm91dGU+CiAgICAgICAgICA8Um91dGU+PEFwcCAvPjwvUm91dGU+CiAgICAgICAgPC9Td2l0Y2g+CiAgICAgIDwvUm91dGVyPgogICAgPC9IZWxtZXRQcm92aWRlcj4KICA8L1JlYWN0LlN0cmljdE1vZGU+LAopCg==
+import React from "react";
+import ReactDom from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
+import './index.css'
+import App from './App.jsx'
+import Terminal from './pages/Terminal'
+import { Router, Route, Switch } from "wouter";
+
+ReactDom.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <Router base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <Switch>
+          <Route path="/terminal">
+            <div className="min-h-screen bg-[#090A0F] text-[#F8FAFC] antialiased">
+              <Terminal />
+            </div>
+          </Route>
+          <Route><App /></Route>
+        </Switch>
+      </Router>
+    </HelmetProvider>
+  </React.StrictMode>,
+)

@@ -1,1 +1,31 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGpzb24KZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCgpmcm9tIGZhc3RhcGkub3BlbmFwaS51dGlscyBpbXBvcnQgZ2V0X29wZW5hcGkKCmZyb20gYXBwLm1haW4gaW1wb3J0IGNyZWF0ZV9hcHAKCgpkZWYgZXhwb3J0X29wZW5hcGkoKSAtPiBOb25lOgogICAgYXBwID0gY3JlYXRlX2FwcCgpCiAgICBzY2hlbWEgPSBnZXRfb3BlbmFwaSgKICAgICAgICB0aXRsZT0iQWVnaXNRdWFudCBBUEkiLAogICAgICAgIHZlcnNpb249IjEuMC4wIiwKICAgICAgICBkZXNjcmlwdGlvbj0iSW5zdHJ1bWVudC1HcmFkZSBNVDUgRUEgQnJpZGdlIGFuZCBBSSBRdWFudGl0YXRpdmUgVHJhZGluZyBCYWNrZW5kIiwKICAgICAgICByb3V0ZXM9YXBwLnJvdXRlcywKICAgICkKCiAgICBjb250cmFjdHNfZGlyID0gUGF0aChfX2ZpbGVfXykucmVzb2x2ZSgpLnBhcmVudC5wYXJlbnQucGFyZW50LnBhcmVudCAvICJwYWNrYWdlcyIgLyAiY29udHJhY3RzIgogICAgY29udHJhY3RzX2Rpci5ta2RpcihwYXJlbnRzPVRydWUsIGV4aXN0X29rPVRydWUpCiAgICBvdXRfZmlsZSA9IGNvbnRyYWN0c19kaXIgLyAib3BlbmFwaS5qc29uIgoKICAgIHdpdGggb3BlbihvdXRfZmlsZSwgInciLCBlbmNvZGluZz0idXRmLTgiKSBhcyBmOgogICAgICAgIGpzb24uZHVtcChzY2hlbWEsIGYsIGluZGVudD0yKQoKICAgIHByaW50KGYiT3BlbkFQSSBzY2hlbWEgc3VjY2Vzc2Z1bGx5IHdyaXR0ZW4gdG8ge291dF9maWxlfSIpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIGV4cG9ydF9vcGVuYXBpKCkK
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from fastapi.openapi.utils import get_openapi
+
+from app.main import create_app
+
+
+def export_openapi() -> None:
+    app = create_app()
+    schema = get_openapi(
+        title="AegisQuant API",
+        version="1.0.0",
+        description="Instrument-Grade MT5 EA Bridge and AI Quantitative Trading Backend",
+        routes=app.routes,
+    )
+
+    contracts_dir = Path(__file__).resolve().parent.parent.parent.parent / "packages" / "contracts"
+    contracts_dir.mkdir(parents=True, exist_ok=True)
+    out_file = contracts_dir / "openapi.json"
+
+    with open(out_file, "w", encoding="utf-8") as f:
+        json.dump(schema, f, indent=2)
+
+    print(f"OpenAPI schema successfully written to {out_file}")
+
+
+if __name__ == "__main__":
+    export_openapi()

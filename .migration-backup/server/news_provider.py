@@ -1,1 +1,236 @@
-IiIiTGl2ZSBtYWNyby1uZXdzIGluZ2VzdGlvbiB3aXRoIHRlcm1pbmFsLWZpcnN0LCBSU1MtZmFsbGJhY2sgcmVzaWxpZW5jZS4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBsb2dnaW5nCmltcG9ydCBsb2dnaW5nLmhhbmRsZXJzCmltcG9ydCByZQppbXBvcnQgdGltZQppbXBvcnQgeG1sLmV0cmVlLkVsZW1lbnRUcmVlIGFzIEVUCmZyb20gY29sbGVjdGlvbnMuYWJjIGltcG9ydCBJdGVyYWJsZQpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUsIHRpbWVkZWx0YSwgdGltZXpvbmUKZnJvbSBlbWFpbC51dGlscyBpbXBvcnQgcGFyc2VkYXRlX3RvX2RhdGV0aW1lCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApmcm9tIHRocmVhZGluZyBpbXBvcnQgTG9jawpmcm9tIHR5cGluZyBpbXBvcnQgQW55CgppbXBvcnQgcmVxdWVzdHMKZnJvbSBjb25maWcgaW1wb3J0IE5FV1NfQ09ORklHCmZyb20gZGF0YV9wcm92aWRlciBpbXBvcnQgZW5zdXJlX2Nvbm5lY3RlZCwgbXQ1LCBtdDVfb3BlcmF0aW9uX2xvY2sKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKCJ0cmFkaW5nX2JvdC5uZXdzIikKX2Vycm9yX2xvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKCJ0cmFkaW5nX2JvdC5uZXdzLmNvbm5lY3Rpb24iKQpfZXJyb3JfbG9nZ2VyLnNldExldmVsKGxvZ2dpbmcuRVJST1IpCl9lcnJvcl9sb2dnZXIucHJvcGFnYXRlID0gRmFsc2UKaWYgbm90IF9lcnJvcl9sb2dnZXIuaGFuZGxlcnM6CiAgICBoYW5kbGVyID0gbG9nZ2luZy5oYW5kbGVycy5Sb3RhdGluZ0ZpbGVIYW5kbGVyKAogICAgICAgIFBhdGgoX19maWxlX18pLndpdGhfbmFtZSgibmV3c19lcnJvci5sb2ciKSwgbWF4Qnl0ZXM9NV8wMDBfMDAwLCBiYWNrdXBDb3VudD0zLCBlbmNvZGluZz0idXRmLTgiCiAgICApCiAgICBoYW5kbGVyLnNldEZvcm1hdHRlcihsb2dnaW5nLkZvcm1hdHRlcigiJShhc2N0aW1lKXMgJShsZXZlbG5hbWUpcyAlKG1lc3NhZ2UpcyIpKQogICAgX2Vycm9yX2xvZ2dlci5hZGRIYW5kbGVyKGhhbmRsZXIpCgpfSElHSF9JTVBBQ1RfVEVSTVMgPSAoCiAgICAiZm9tYyIsICJmZWQiLCAiaW50ZXJlc3QgcmF0ZSIsICJyYXRlIGRlY2lzaW9uIiwgIm5vbi1mYXJtIiwgIm5vbmZhcm0iLAogICAgIm5mcCIsICJjcGkiLCAiaW5mbGF0aW9uIiwgImdkcCIsICJwYXlyb2xsIiwgImVtcGxveW1lbnQiLCAiZWNiIiwKICAgICJib2UiLCAiYm9qIiwgInRhcmlmZiIsICJzYW5jdGlvbiIsICJ3YXIiLCAiZW1lcmdlbmN5IiwKKQpfTUVESVVNX0lNUEFDVF9URVJNUyA9ICgicG1pIiwgInJldGFpbCBzYWxlcyIsICJtYW51ZmFjdHVyaW5nIiwgImJvbmQiLCAieWllbGQiKQpfQ1VSUkVOQ0lFUyA9ICgiVVNEIiwgIkVVUiIsICJHQlAiLCAiSlBZIiwgIkNIRiIsICJBVUQiLCAiQ0FEIiwgIk5aRCIsICJYQVUiKQpfY2FjaGVfbG9jayA9IExvY2soKQpfY2FjaGU6IHR1cGxlW2Zsb2F0LCBOZXdzRmV0Y2hSZXN1bHRdIHwgTm9uZSA9IE5vbmUKCgpAZGF0YWNsYXNzKGZyb3plbj1UcnVlKQpjbGFzcyBOZXdzRmV0Y2hSZXN1bHQ6CiAgICBpdGVtczogbGlzdFtkaWN0W3N0ciwgc3RyXV0KICAgIHdhcm5pbmc6IHN0ciB8IE5vbmUgPSBOb25lCgoKZGVmIF9jbGVhbih2YWx1ZTogb2JqZWN0LCBmYWxsYmFjazogc3RyID0gIiIpIC0+IHN0cjoKICAgIHdpdGhvdXRfaHRtbCA9IHJlLnN1YihyIjxbXj5dKz4iLCAiICIsIHN0cih2YWx1ZSBvciBmYWxsYmFjaykpCiAgICByZXR1cm4gcmUuc3ViKHIiXHMrIiwgIiAiLCB3aXRob3V0X2h0bWwpLnN0cmlwKCkKCgpkZWYgX2FzX3V0Yyh2YWx1ZTogb2JqZWN0KSAtPiBkYXRldGltZSB8IE5vbmU6CiAgICBpZiBpc2luc3RhbmNlKHZhbHVlLCBkYXRldGltZSk6CiAgICAgICAgcmV0dXJuIHZhbHVlLnJlcGxhY2UodHppbmZvPXZhbHVlLnR6aW5mbyBvciB0aW1lem9uZS51dGMpLmFzdGltZXpvbmUodGltZXpvbmUudXRjKQogICAgaWYgaXNpbnN0YW5jZSh2YWx1ZSwgKGludCwgZmxvYXQpKToKICAgICAgICByZXR1cm4gZGF0ZXRpbWUuZnJvbXRpbWVzdGFtcCh2YWx1ZSwgdGltZXpvbmUudXRjKQogICAgaWYgaXNpbnN0YW5jZSh2YWx1ZSwgc3RyKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJldHVybiBkYXRldGltZS5mcm9taXNvZm9ybWF0KHZhbHVlLnJlcGxhY2UoIloiLCAiKzAwOjAwIikpLmFzdGltZXpvbmUodGltZXpvbmUudXRjKQogICAgICAgIGV4Y2VwdCBWYWx1ZUVycm9yOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICByZXR1cm4gcGFyc2VkYXRlX3RvX2RhdGV0aW1lKHZhbHVlKS5hc3RpbWV6b25lKHRpbWV6b25lLnV0YykKICAgICAgICAgICAgZXhjZXB0IChUeXBlRXJyb3IsIFZhbHVlRXJyb3IpOgogICAgICAgICAgICAgICAgcmV0dXJuIE5vbmUKICAgIHJldHVybiBOb25lCgoKZGVmIF9pbXBhY3QodmFsdWU6IG9iamVjdCwgdGl0bGU6IHN0cikgLT4gc3RyOgogICAgdGV4dCA9IGYie3ZhbHVlIG9yICcnfSB7dGl0bGV9Ii5sb3dlcigpCiAgICBpZiBhbnkodGVybSBpbiB0ZXh0IGZvciB0ZXJtIGluIF9ISUdIX0lNUEFDVF9URVJNUykgb3Igc3RyKHZhbHVlKS51cHBlcigpIGluIHsiMyIsICJISUdIIn06CiAgICAgICAgcmV0dXJuICJISUdIIgogICAgaWYgYW55KHRlcm0gaW4gdGV4dCBmb3IgdGVybSBpbiBfTUVESVVNX0lNUEFDVF9URVJNUykgb3Igc3RyKHZhbHVlKS51cHBlcigpIGluIHsiMiIsICJNRURJVU0ifToKICAgICAgICByZXR1cm4gIk1FRElVTSIKICAgIHJldHVybiAiTE9XIgoKCmRlZiBfY3VycmVuY3kodmFsdWU6IG9iamVjdCwgdGl0bGU6IHN0cikgLT4gc3RyOgogICAgZXhwbGljaXQgPSBfY2xlYW4odmFsdWUpLnVwcGVyKCkKICAgIGlmIGV4cGxpY2l0IGluIF9DVVJSRU5DSUVTOgogICAgICAgIHJldHVybiBleHBsaWNpdAogICAgY29tYmluZWQgPSBmIntleHBsaWNpdH0ge3RpdGxlLnVwcGVyKCl9IgogICAgZm91bmQgPSBbY3VycmVuY3kgZm9yIGN1cnJlbmN5IGluIF9DVVJSRU5DSUVTIGlmIHJlLnNlYXJjaChyZiJcYntjdXJyZW5jeX1cYiIsIGNvbWJpbmVkKV0KICAgIHJldHVybiBmb3VuZFswXSBpZiBsZW4oZm91bmQpID09IDEgZWxzZSAiQUxMIgoKCmRlZiBfcmVjb3JkX3RvX21hcHBpbmcocmVjb3JkOiBBbnkpIC0+IGRpY3Rbc3RyLCBBbnldOgogICAgaWYgaXNpbnN0YW5jZShyZWNvcmQsIGRpY3QpOgogICAgICAgIHJldHVybiByZWNvcmQKICAgIGlmIGhhc2F0dHIocmVjb3JkLCAiX2FzZGljdCIpOgogICAgICAgIHJldHVybiByZWNvcmQuX2FzZGljdCgpCiAgICByZXR1cm4ge25hbWU6IGdldGF0dHIocmVjb3JkLCBuYW1lKSBmb3IgbmFtZSBpbiBkaXIocmVjb3JkKSBpZiBub3QgbmFtZS5zdGFydHN3aXRoKCJfIil9CgoKZGVmIF9ub3JtYWxpemVfcmVjb3JkKHJlY29yZDogQW55LCBzb3VyY2U6IHN0cikgLT4gZGljdFtzdHIsIHN0cl0gfCBOb25lOgogICAgcmF3ID0gX3JlY29yZF90b19tYXBwaW5nKHJlY29yZCkKICAgIHRpdGxlID0gX2NsZWFuKHJhdy5nZXQoInRpdGxlIikgb3IgcmF3LmdldCgibmFtZSIpIG9yIHJhdy5nZXQoImV2ZW50Iikgb3IgcmF3LmdldCgiaGVhZGxpbmUiKSkKICAgIHRpbWVzdGFtcCA9IF9hc191dGMocmF3LmdldCgidGltZXN0YW1wIikgb3IgcmF3LmdldCgidGltZSIpIG9yIHJhdy5nZXQoImRhdGUiKSBvciByYXcuZ2V0KCJwdWJsaXNoZWQiKSkKICAgIGlmIG5vdCB0aXRsZSBvciB0aW1lc3RhbXAgaXMgTm9uZToKICAgICAgICByZXR1cm4gTm9uZQogICAgcmV0dXJuIHsKICAgICAgICAidGltZXN0YW1wIjogdGltZXN0YW1wLmlzb2Zvcm1hdCgpLAogICAgICAgICJzb3VyY2UiOiBzb3VyY2UsCiAgICAgICAgInRpdGxlIjogdGl0bGUsCiAgICAgICAgImltcGFjdF9sZXZlbCI6IF9pbXBhY3QocmF3LmdldCgiaW1wYWN0Iikgb3IgcmF3LmdldCgiaW1wb3J0YW5jZSIpLCB0aXRsZSksCiAgICAgICAgImN1cnJlbmN5X2FmZmVjdGVkIjogX2N1cnJlbmN5KHJhdy5nZXQoImN1cnJlbmN5IiksIHRpdGxlKSwKICAgICAgICAic3VtbWFyeSI6IF9jbGVhbihyYXcuZ2V0KCJzdW1tYXJ5Iikgb3IgcmF3LmdldCgiZGVzY3JpcHRpb24iKSwgdGl0bGUpLAogICAgfQoKCmRlZiBfdGVybWluYWxfbmV3cyhzdGFydDogZGF0ZXRpbWUsIGVuZDogZGF0ZXRpbWUpIC0+IGxpc3RbZGljdFtzdHIsIHN0cl1dOgogICAgIiIiUmVhZCBicm9rZXIgY2FsZW5kYXIvbmV3cyBvbmx5IGlmIHRoZSBpbnN0YWxsZWQgdGVybWluYWwgYnJpZGdlIGV4cG9zZXMgaXQuIiIiCiAgICBpZiBtdDUgaXMgTm9uZToKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoIk1UNSB0ZXJtaW5hbCBicmlkZ2UgaXMgdW5hdmFpbGFibGUiKQogICAgd2l0aCBtdDVfb3BlcmF0aW9uX2xvY2soKToKICAgICAgICBlbnN1cmVfY29ubmVjdGVkKCkKICAgICAgICBmb3IgbWV0aG9kX25hbWUgaW4gKCJjYWxlbmRhcl9nZXQiLCAibmV3c19nZXQiKToKICAgICAgICAgICAgbWV0aG9kID0gZ2V0YXR0cihtdDUsIG1ldGhvZF9uYW1lLCBOb25lKQogICAgICAgICAgICBpZiBub3QgY2FsbGFibGUobWV0aG9kKToKICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIHJlY29yZHMgPSBtZXRob2Qoc3RhcnQsIGVuZCkKICAgICAgICAgICAgZXhjZXB0IFR5cGVFcnJvcjoKICAgICAgICAgICAgICAgIHJlY29yZHMgPSBtZXRob2QoKQogICAgICAgICAgICBpZiByZWNvcmRzIGlzIE5vbmU6CiAgICAgICAgICAgICAgICBjb250aW51ZQogICAgICAgICAgICByZXR1cm4gWwogICAgICAgICAgICAgICAgaXRlbSBmb3IgcmVjb3JkIGluIHJlY29yZHMgaWYgKGl0ZW0gOj0gX25vcm1hbGl6ZV9yZWNvcmQocmVjb3JkLCAiTVQ1X1Rlcm1pbmFsIikpIGlzIG5vdCBOb25lCiAgICAgICAgICAgIF0KICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiQ29ubmVjdGVkIHRlcm1pbmFsIGRvZXMgbm90IGV4cG9zZSBjYWxlbmRhcl9nZXQoKSBvciBuZXdzX2dldCgpIikKCgpkZWYgX3lhaG9vX3JzcygpIC0+IGxpc3RbZGljdFtzdHIsIHN0cl1dOgogICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5nZXQoCiAgICAgICAgTkVXU19DT05GSUcueWFob29fcnNzX3VybCwKICAgICAgICBoZWFkZXJzPXsiVXNlci1BZ2VudCI6ICJBZWdpc1F1YW50LzEuMCAoK21hcmtldC1uZXdzLWluZ2VzdGlvbikifSwKICAgICAgICB0aW1lb3V0PSgzLjAsIE5FV1NfQ09ORklHLmFwaV90aW1lb3V0X3NlY29uZHMpLAogICAgKQogICAgcmVzcG9uc2UucmFpc2VfZm9yX3N0YXR1cygpCiAgICByb290ID0gRVQuZnJvbXN0cmluZyhyZXNwb25zZS5jb250ZW50KQogICAgcmVjb3JkczogbGlzdFtkaWN0W3N0ciwgc3RyXV0gPSBbXQogICAgZm9yIG5vZGUgaW4gcm9vdC5maW5kYWxsKCIuLy9pdGVtIik6CiAgICAgICAgcmVjb3JkID0gewogICAgICAgICAgICAidGl0bGUiOiBub2RlLmZpbmR0ZXh0KCJ0aXRsZSIpLAogICAgICAgICAgICAicHVibGlzaGVkIjogbm9kZS5maW5kdGV4dCgicHViRGF0ZSIpLAogICAgICAgICAgICAiZGVzY3JpcHRpb24iOiBub2RlLmZpbmR0ZXh0KCJkZXNjcmlwdGlvbiIpLAogICAgICAgIH0KICAgICAgICBub3JtYWxpemVkID0gX25vcm1hbGl6ZV9yZWNvcmQocmVjb3JkLCAiWWFob29fRmluYW5jZSIpCiAgICAgICAgaWYgbm9ybWFsaXplZCBpcyBub3QgTm9uZToKICAgICAgICAgICAgcmVjb3Jkcy5hcHBlbmQobm9ybWFsaXplZCkKICAgIHJldHVybiByZWNvcmRzCgoKZGVmIF9uZXdzYXBpKCkgLT4gbGlzdFtkaWN0W3N0ciwgc3RyXV06CiAgICAiIiJPcHRpb25hbCBsaWNlbnNlZC9mcmVlLXRpZXIgZmFsbGJhY2ssIHVzZWQgb25seSB3aGVuIGEga2V5IGlzIHN1cHBsaWVkLiIiIgogICAgaWYgbm90IE5FV1NfQ09ORklHLmFwaV9rZXk6CiAgICAgICAgcmV0dXJuIFtdCiAgICByZXNwb25zZSA9IHJlcXVlc3RzLmdldCgKICAgICAgICBORVdTX0NPTkZJRy5uZXdzX2FwaV91cmwsCiAgICAgICAgcGFyYW1zPXsKICAgICAgICAgICAgInEiOiAiZm9yZXggT1IgY2VudHJhbCBiYW5rIE9SIGluZmxhdGlvbiBPUiBtYXJrZXRzIiwKICAgICAgICAgICAgImxhbmd1YWdlIjogImVuIiwKICAgICAgICAgICAgInBhZ2VTaXplIjogMzAsCiAgICAgICAgICAgICJhcGlLZXkiOiBORVdTX0NPTkZJRy5hcGlfa2V5LAogICAgICAgIH0sCiAgICAgICAgdGltZW91dD0oMy4wLCBORVdTX0NPTkZJRy5hcGlfdGltZW91dF9zZWNvbmRzKSwKICAgICkKICAgIHJlc3BvbnNlLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgcGF5bG9hZCA9IHJlc3BvbnNlLmpzb24oKQogICAgaWYgcGF5bG9hZC5nZXQoInN0YXR1cyIpIG5vdCBpbiAoTm9uZSwgIm9rIik6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihwYXlsb2FkLmdldCgibWVzc2FnZSIsICJOZXdzQVBJIHJldHVybmVkIGFuIGVycm9yIikpCiAgICByZWNvcmRzID0gW10KICAgIGZvciBhcnRpY2xlIGluIHBheWxvYWQuZ2V0KCJhcnRpY2xlcyIsIFtdKToKICAgICAgICBub3JtYWxpemVkID0gX25vcm1hbGl6ZV9yZWNvcmQoCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ0aXRsZSI6IGFydGljbGUuZ2V0KCJ0aXRsZSIpLAogICAgICAgICAgICAgICAgInB1Ymxpc2hlZCI6IGFydGljbGUuZ2V0KCJwdWJsaXNoZWRBdCIpLAogICAgICAgICAgICAgICAgImRlc2NyaXB0aW9uIjogYXJ0aWNsZS5nZXQoImRlc2NyaXB0aW9uIikgb3IgYXJ0aWNsZS5nZXQoImNvbnRlbnQiKSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgIk5ld3NBUEkiLAogICAgICAgICkKICAgICAgICBpZiBub3JtYWxpemVkIGlzIG5vdCBOb25lOgogICAgICAgICAgICByZWNvcmRzLmFwcGVuZChub3JtYWxpemVkKQogICAgcmV0dXJuIHJlY29yZHMKCgpkZWYgX3JlY2VudF91bmlxdWUoaXRlbXM6IEl0ZXJhYmxlW2RpY3Rbc3RyLCBzdHJdXSwgc3RhcnQ6IGRhdGV0aW1lLCBsaW1pdDogaW50KSAtPiBsaXN0W2RpY3Rbc3RyLCBzdHJdXToKICAgIHNlZW46IHNldFt0dXBsZVtzdHIsIHN0cl1dID0gc2V0KCkKICAgIHJldGFpbmVkID0gW10KICAgIGZvciBpdGVtIGluIGl0ZW1zOgogICAgICAgIHRpbWVzdGFtcCA9IF9hc191dGMoaXRlbVsidGltZXN0YW1wIl0pCiAgICAgICAgaWYgdGltZXN0YW1wIGlzIE5vbmUgb3IgdGltZXN0YW1wIDwgc3RhcnQgb3IgaXRlbVsiaW1wYWN0X2xldmVsIl0gIT0gIkhJR0giOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGlkZW50aXR5ID0gKGl0ZW1bInNvdXJjZSJdLCBpdGVtWyJ0aXRsZSJdKQogICAgICAgIGlmIGlkZW50aXR5IG5vdCBpbiBzZWVuOgogICAgICAgICAgICBzZWVuLmFkZChpZGVudGl0eSkKICAgICAgICAgICAgcmV0YWluZWQuYXBwZW5kKGl0ZW0pCiAgICByZXR1cm4gc29ydGVkKHJldGFpbmVkLCBrZXk9bGFtYmRhIGl0ZW06IGl0ZW1bInRpbWVzdGFtcCJdLCByZXZlcnNlPVRydWUpWzpsaW1pdF0KCgpkZWYgZ2V0X2xhdGVzdF9oaWdoX2ltcGFjdF9uZXdzKGxpbWl0OiBpbnQgPSAxMCwgaG91cnM6IGludCA9IDI0KSAtPiBOZXdzRmV0Y2hSZXN1bHQ6CiAgICAiIiJSZXR1cm4gbGF0ZXN0IGhpZ2gtaW1wYWN0IGRyaXZlcnM7IGVycm9ycyBkZWdyYWRlIHRvIGFuIGV4cGxpY2l0IHdhcm5pbmcuIiIiCiAgICBnbG9iYWwgX2NhY2hlCiAgICBub3cgPSBkYXRldGltZS5ub3codGltZXpvbmUudXRjKQogICAgd2l0aCBfY2FjaGVfbG9jazoKICAgICAgICBpZiBfY2FjaGUgYW5kIHRpbWUubW9ub3RvbmljKCkgLSBfY2FjaGVbMF0gPCBORVdTX0NPTkZJRy5jYWNoZV9zZWNvbmRzOgogICAgICAgICAgICByZXR1cm4gX2NhY2hlWzFdCgogICAgICAgIHN0YXJ0ID0gbm93IC0gdGltZWRlbHRhKGhvdXJzPWhvdXJzKQogICAgICAgIHRlcm1pbmFsX2l0ZW1zOiBsaXN0W2RpY3Rbc3RyLCBzdHJdXSA9IFtdCiAgICAgICAgdHJ5OgogICAgICAgICAgICB0ZXJtaW5hbF9pdGVtcyA9IF90ZXJtaW5hbF9uZXdzKHN0YXJ0LCBub3cpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBleGM6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBNVDUgZmFpbHVyZQogICAgICAgICAgICBfZXJyb3JfbG9nZ2VyLmVycm9yKCJNVDUgdGVybWluYWwgbmV3cyByZXRyaWV2YWwgZmFpbGVkOiAlcyIsIGV4YykKCiAgICAgICAgdGVybWluYWxfaGlnaCA9IF9yZWNlbnRfdW5pcXVlKHRlcm1pbmFsX2l0ZW1zLCBzdGFydCwgbGltaXQpCiAgICAgICAgaWYgdGVybWluYWxfaGlnaDoKICAgICAgICAgICAgcmVzdWx0ID0gTmV3c0ZldGNoUmVzdWx0KHRlcm1pbmFsX2hpZ2gpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgZmFsbGJhY2tfaXRlbXM6IGxpc3RbZGljdFtzdHIsIHN0cl1dID0gW10KICAgICAgICAgICAgaWYgTkVXU19DT05GSUcuYXBpX2tleToKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBmYWxsYmFja19pdGVtcyA9IF9yZWNlbnRfdW5pcXVlKF9uZXdzYXBpKCksIHN0YXJ0LCBsaW1pdCkKICAgICAgICAgICAgICAgIGV4Y2VwdCAocmVxdWVzdHMuUmVxdWVzdEV4Y2VwdGlvbiwgVmFsdWVFcnJvcikgYXMgZXhjOgogICAgICAgICAgICAgICAgICAgIF9lcnJvcl9sb2dnZXIuZXJyb3IoIk5ld3NBUEkgcmV0cmlldmFsIGZhaWxlZDogJXMiLCBleGMpCiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIGlmIG5vdCBmYWxsYmFja19pdGVtczoKICAgICAgICAgICAgICAgICAgICBmYWxsYmFja19pdGVtcyA9IF9yZWNlbnRfdW5pcXVlKF95YWhvb19yc3MoKSwgc3RhcnQsIGxpbWl0KQogICAgICAgICAgICAgICAgcmVzdWx0ID0gTmV3c0ZldGNoUmVzdWx0KGZhbGxiYWNrX2l0ZW1zKQogICAgICAgICAgICBleGNlcHQgKHJlcXVlc3RzLlJlcXVlc3RFeGNlcHRpb24sIEVULlBhcnNlRXJyb3IsIFZhbHVlRXJyb3IpIGFzIGV4YzoKICAgICAgICAgICAgICAgIF9lcnJvcl9sb2dnZXIuZXJyb3IoIllhaG9vIEZpbmFuY2UgUlNTIHJldHJpZXZhbCBmYWlsZWQ6ICVzIiwgZXhjKQogICAgICAgICAgICAgICAgcmVzdWx0ID0gTmV3c0ZldGNoUmVzdWx0KFtdLCAiV2FybmluZzogTGl2ZSBzZW50aW1lbnQgZmVlZCBjdXJyZW50bHkgdW5hdmFpbGFibGUiKQogICAgICAgIF9jYWNoZSA9ICh0aW1lLm1vbm90b25pYygpLCByZXN1bHQpCiAgICAgICAgcmV0dXJuIHJlc3VsdAo=
+"""Live macro-news ingestion with terminal-first, RSS-fallback resilience."""
+
+from __future__ import annotations
+
+import logging
+import logging.handlers
+import re
+import time
+import xml.etree.ElementTree as ET
+from collections.abc import Iterable
+from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
+from pathlib import Path
+from threading import Lock
+from typing import Any
+
+import requests
+from config import NEWS_CONFIG
+from data_provider import ensure_connected, mt5, mt5_operation_lock
+
+logger = logging.getLogger("trading_bot.news")
+_error_logger = logging.getLogger("trading_bot.news.connection")
+_error_logger.setLevel(logging.ERROR)
+_error_logger.propagate = False
+if not _error_logger.handlers:
+    handler = logging.handlers.RotatingFileHandler(
+        Path(__file__).with_name("news_error.log"), maxBytes=5_000_000, backupCount=3, encoding="utf-8"
+    )
+    handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+    _error_logger.addHandler(handler)
+
+_HIGH_IMPACT_TERMS = (
+    "fomc", "fed", "interest rate", "rate decision", "non-farm", "nonfarm",
+    "nfp", "cpi", "inflation", "gdp", "payroll", "employment", "ecb",
+    "boe", "boj", "tariff", "sanction", "war", "emergency",
+)
+_MEDIUM_IMPACT_TERMS = ("pmi", "retail sales", "manufacturing", "bond", "yield")
+_CURRENCIES = ("USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NZD", "XAU")
+_cache_lock = Lock()
+_cache: tuple[float, NewsFetchResult] | None = None
+
+
+@dataclass(frozen=True)
+class NewsFetchResult:
+    items: list[dict[str, str]]
+    warning: str | None = None
+
+
+def _clean(value: object, fallback: str = "") -> str:
+    without_html = re.sub(r"<[^>]+>", " ", str(value or fallback))
+    return re.sub(r"\s+", " ", without_html).strip()
+
+
+def _as_utc(value: object) -> datetime | None:
+    if isinstance(value, datetime):
+        return value.replace(tzinfo=value.tzinfo or timezone.utc).astimezone(timezone.utc)
+    if isinstance(value, (int, float)):
+        return datetime.fromtimestamp(value, timezone.utc)
+    if isinstance(value, str):
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+        except ValueError:
+            try:
+                return parsedate_to_datetime(value).astimezone(timezone.utc)
+            except (TypeError, ValueError):
+                return None
+    return None
+
+
+def _impact(value: object, title: str) -> str:
+    text = f"{value or ''} {title}".lower()
+    if any(term in text for term in _HIGH_IMPACT_TERMS) or str(value).upper() in {"3", "HIGH"}:
+        return "HIGH"
+    if any(term in text for term in _MEDIUM_IMPACT_TERMS) or str(value).upper() in {"2", "MEDIUM"}:
+        return "MEDIUM"
+    return "LOW"
+
+
+def _currency(value: object, title: str) -> str:
+    explicit = _clean(value).upper()
+    if explicit in _CURRENCIES:
+        return explicit
+    combined = f"{explicit} {title.upper()}"
+    found = [currency for currency in _CURRENCIES if re.search(rf"\b{currency}\b", combined)]
+    return found[0] if len(found) == 1 else "ALL"
+
+
+def _record_to_mapping(record: Any) -> dict[str, Any]:
+    if isinstance(record, dict):
+        return record
+    if hasattr(record, "_asdict"):
+        return record._asdict()
+    return {name: getattr(record, name) for name in dir(record) if not name.startswith("_")}
+
+
+def _normalize_record(record: Any, source: str) -> dict[str, str] | None:
+    raw = _record_to_mapping(record)
+    title = _clean(raw.get("title") or raw.get("name") or raw.get("event") or raw.get("headline"))
+    timestamp = _as_utc(raw.get("timestamp") or raw.get("time") or raw.get("date") or raw.get("published"))
+    if not title or timestamp is None:
+        return None
+    return {
+        "timestamp": timestamp.isoformat(),
+        "source": source,
+        "title": title,
+        "impact_level": _impact(raw.get("impact") or raw.get("importance"), title),
+        "currency_affected": _currency(raw.get("currency"), title),
+        "summary": _clean(raw.get("summary") or raw.get("description"), title),
+    }
+
+
+def _terminal_news(start: datetime, end: datetime) -> list[dict[str, str]]:
+    """Read broker calendar/news only if the installed terminal bridge exposes it."""
+    if mt5 is None:
+        raise RuntimeError("MT5 terminal bridge is unavailable")
+    with mt5_operation_lock():
+        ensure_connected()
+        for method_name in ("calendar_get", "news_get"):
+            method = getattr(mt5, method_name, None)
+            if not callable(method):
+                continue
+            try:
+                records = method(start, end)
+            except TypeError:
+                records = method()
+            if records is None:
+                continue
+            return [
+                item for record in records if (item := _normalize_record(record, "MT5_Terminal")) is not None
+            ]
+    raise RuntimeError("Connected terminal does not expose calendar_get() or news_get()")
+
+
+def _yahoo_rss() -> list[dict[str, str]]:
+    response = requests.get(
+        NEWS_CONFIG.yahoo_rss_url,
+        headers={"User-Agent": "AegisQuant/1.0 (+market-news-ingestion)"},
+        timeout=(3.0, NEWS_CONFIG.api_timeout_seconds),
+    )
+    response.raise_for_status()
+    root = ET.fromstring(response.content)
+    records: list[dict[str, str]] = []
+    for node in root.findall(".//item"):
+        record = {
+            "title": node.findtext("title"),
+            "published": node.findtext("pubDate"),
+            "description": node.findtext("description"),
+        }
+        normalized = _normalize_record(record, "Yahoo_Finance")
+        if normalized is not None:
+            records.append(normalized)
+    return records
+
+
+def _newsapi() -> list[dict[str, str]]:
+    """Optional licensed/free-tier fallback, used only when a key is supplied."""
+    if not NEWS_CONFIG.api_key:
+        return []
+    response = requests.get(
+        NEWS_CONFIG.news_api_url,
+        params={
+            "q": "forex OR central bank OR inflation OR markets",
+            "language": "en",
+            "pageSize": 30,
+            "apiKey": NEWS_CONFIG.api_key,
+        },
+        timeout=(3.0, NEWS_CONFIG.api_timeout_seconds),
+    )
+    response.raise_for_status()
+    payload = response.json()
+    if payload.get("status") not in (None, "ok"):
+        raise ValueError(payload.get("message", "NewsAPI returned an error"))
+    records = []
+    for article in payload.get("articles", []):
+        normalized = _normalize_record(
+            {
+                "title": article.get("title"),
+                "published": article.get("publishedAt"),
+                "description": article.get("description") or article.get("content"),
+            },
+            "NewsAPI",
+        )
+        if normalized is not None:
+            records.append(normalized)
+    return records
+
+
+def _recent_unique(items: Iterable[dict[str, str]], start: datetime, limit: int) -> list[dict[str, str]]:
+    seen: set[tuple[str, str]] = set()
+    retained = []
+    for item in items:
+        timestamp = _as_utc(item["timestamp"])
+        if timestamp is None or timestamp < start or item["impact_level"] != "HIGH":
+            continue
+        identity = (item["source"], item["title"])
+        if identity not in seen:
+            seen.add(identity)
+            retained.append(item)
+    return sorted(retained, key=lambda item: item["timestamp"], reverse=True)[:limit]
+
+
+def get_latest_high_impact_news(limit: int = 10, hours: int = 24) -> NewsFetchResult:
+    """Return latest high-impact drivers; errors degrade to an explicit warning."""
+    global _cache
+    now = datetime.now(timezone.utc)
+    with _cache_lock:
+        if _cache and time.monotonic() - _cache[0] < NEWS_CONFIG.cache_seconds:
+            return _cache[1]
+
+        start = now - timedelta(hours=hours)
+        terminal_items: list[dict[str, str]] = []
+        try:
+            terminal_items = _terminal_news(start, now)
+        except Exception as exc:  # noqa: BLE001 - catch any MT5 failure
+            _error_logger.error("MT5 terminal news retrieval failed: %s", exc)
+
+        terminal_high = _recent_unique(terminal_items, start, limit)
+        if terminal_high:
+            result = NewsFetchResult(terminal_high)
+        else:
+            fallback_items: list[dict[str, str]] = []
+            if NEWS_CONFIG.api_key:
+                try:
+                    fallback_items = _recent_unique(_newsapi(), start, limit)
+                except (requests.RequestException, ValueError) as exc:
+                    _error_logger.error("NewsAPI retrieval failed: %s", exc)
+            try:
+                if not fallback_items:
+                    fallback_items = _recent_unique(_yahoo_rss(), start, limit)
+                result = NewsFetchResult(fallback_items)
+            except (requests.RequestException, ET.ParseError, ValueError) as exc:
+                _error_logger.error("Yahoo Finance RSS retrieval failed: %s", exc)
+                result = NewsFetchResult([], "Warning: Live sentiment feed currently unavailable")
+        _cache = (time.monotonic(), result)
+        return result

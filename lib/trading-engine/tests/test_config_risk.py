@@ -1,1 +1,56 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IG9zCmltcG9ydCBzdWJwcm9jZXNzCmltcG9ydCBzeXMKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCgoKZGVmIF9ydW5fY29uZmlnX2NoZWNrKCoqb3ZlcnJpZGVzOiBzdHIpIC0+IHN1YnByb2Nlc3MuQ29tcGxldGVkUHJvY2Vzc1tzdHJdOgogICAgZW52aXJvbm1lbnQgPSBvcy5lbnZpcm9uLmNvcHkoKQogICAgZm9yIG5hbWUgaW4gKAogICAgICAgICJSSVNLX1BFUl9UUkFERV9QQ1QiLAogICAgICAgICJNQVhfREFJTFlfTE9TU19QQ1QiLAogICAgICAgICJNQVhfRFJBV0RPV05fRlJPTV9QRUFLX1BDVCIsCiAgICAgICAgIk1BWF9UUkFERVNfUEVSX0RBWSIsCiAgICAgICAgIk1BWF9DT05DVVJSRU5UX1BPU0lUSU9OUyIsCiAgICApOgogICAgICAgIGVudmlyb25tZW50LnBvcChuYW1lLCBOb25lKQogICAgZW52aXJvbm1lbnQudXBkYXRlKG92ZXJyaWRlcykKICAgIHNlcnZlcl9kaXIgPSBzdHIoUGF0aChfX2ZpbGVfXykucmVzb2x2ZSgpLnBhcmVudHNbMV0gLyAic2VydmVyIikKICAgIGVudmlyb25tZW50WyJQWVRIT05QQVRIIl0gPSBvcy5wYXRoc2VwLmpvaW4oCiAgICAgICAgcGF0aCBmb3IgcGF0aCBpbiAoc2VydmVyX2RpciwgZW52aXJvbm1lbnQuZ2V0KCJQWVRIT05QQVRIIiwgIiIpKSBpZiBwYXRoCiAgICApCiAgICByZXR1cm4gc3VicHJvY2Vzcy5ydW4oCiAgICAgICAgW3N5cy5leGVjdXRhYmxlLCAiLWMiLCAiZnJvbSBjb25maWcgaW1wb3J0IFJJU0s7IFJJU0sudmFsaWRhdGUoKSJdLAogICAgICAgIGNoZWNrPUZhbHNlLAogICAgICAgIGNhcHR1cmVfb3V0cHV0PVRydWUsCiAgICAgICAgdGV4dD1UcnVlLAogICAgICAgIGVudj1lbnZpcm9ubWVudCwKICAgICkKCgpkZWYgdGVzdF9yaXNrX2xpbWl0c19sb2FkX2Zyb21fZW52aXJvbm1lbnQoKSAtPiBOb25lOgogICAgcmVzdWx0ID0gX3J1bl9jb25maWdfY2hlY2soCiAgICAgICAgUklTS19QRVJfVFJBREVfUENUPSIwLjI1IiwKICAgICAgICBNQVhfREFJTFlfTE9TU19QQ1Q9IjEuMCIsCiAgICAgICAgTUFYX0RSQVdET1dOX0ZST01fUEVBS19QQ1Q9IjIuMCIsCiAgICAgICAgTUFYX1RSQURFU19QRVJfREFZPSIzIiwKICAgICAgICBNQVhfQ09OQ1VSUkVOVF9QT1NJVElPTlM9IjIiLAogICAgKQoKICAgIGFzc2VydCByZXN1bHQucmV0dXJuY29kZSA9PSAwLCByZXN1bHQuc3RkZXJyCgoKZGVmIHRlc3RfaW52YWxpZF9lbnZpcm9ubWVudF9yaXNrX2xpbWl0X2ZhaWxzX3ZhbGlkYXRpb24oKSAtPiBOb25lOgogICAgcmVzdWx0ID0gX3J1bl9jb25maWdfY2hlY2soUklTS19QRVJfVFJBREVfUENUPSIwIikKCiAgICBhc3NlcnQgcmVzdWx0LnJldHVybmNvZGUgIT0gMAogICAgYXNzZXJ0ICJSSVNLX1BFUl9UUkFERV9QQ1QgbXVzdCBiZSBncmVhdGVyIHRoYW4gMCIgaW4gcmVzdWx0LnN0ZGVycgoKCmRlZiB0ZXN0X25vbl9maW5pdGVfZW52aXJvbm1lbnRfcmlza19tdWx0aXBsaWVyX2ZhaWxzX3ZhbGlkYXRpb24oKSAtPiBOb25lOgogICAgcmVzdWx0ID0gX3J1bl9jb25maWdfY2hlY2soQVRSX1NMX01VTFRJUExJRVI9Im5hbiIpCgogICAgYXNzZXJ0IHJlc3VsdC5yZXR1cm5jb2RlICE9IDAKICAgIGFzc2VydCAiQVRSX1NMX01VTFRJUExJRVIgbXVzdCBiZSBmaW5pdGUiIGluIHJlc3VsdC5zdGRlcnI=
+from __future__ import annotations
+
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+
+def _run_config_check(**overrides: str) -> subprocess.CompletedProcess[str]:
+    environment = os.environ.copy()
+    for name in (
+        "RISK_PER_TRADE_PCT",
+        "MAX_DAILY_LOSS_PCT",
+        "MAX_DRAWDOWN_FROM_PEAK_PCT",
+        "MAX_TRADES_PER_DAY",
+        "MAX_CONCURRENT_POSITIONS",
+    ):
+        environment.pop(name, None)
+    environment.update(overrides)
+    server_dir = str(Path(__file__).resolve().parents[1] / "server")
+    environment["PYTHONPATH"] = os.pathsep.join(
+        path for path in (server_dir, environment.get("PYTHONPATH", "")) if path
+    )
+    return subprocess.run(
+        [sys.executable, "-c", "from config import RISK; RISK.validate()"],
+        check=False,
+        capture_output=True,
+        text=True,
+        env=environment,
+    )
+
+
+def test_risk_limits_load_from_environment() -> None:
+    result = _run_config_check(
+        RISK_PER_TRADE_PCT="0.25",
+        MAX_DAILY_LOSS_PCT="1.0",
+        MAX_DRAWDOWN_FROM_PEAK_PCT="2.0",
+        MAX_TRADES_PER_DAY="3",
+        MAX_CONCURRENT_POSITIONS="2",
+    )
+
+    assert result.returncode == 0, result.stderr
+
+
+def test_invalid_environment_risk_limit_fails_validation() -> None:
+    result = _run_config_check(RISK_PER_TRADE_PCT="0")
+
+    assert result.returncode != 0
+    assert "RISK_PER_TRADE_PCT must be greater than 0" in result.stderr
+
+
+def test_non_finite_environment_risk_multiplier_fails_validation() -> None:
+    result = _run_config_check(ATR_SL_MULTIPLIER="nan")
+
+    assert result.returncode != 0
+    assert "ATR_SL_MULTIPLIER must be finite" in result.stderr

@@ -1,1 +1,45 @@
-IyBbUHJvamVjdCBuYW1lXQoKX1JlcGxhY2UgdGhlIGhlYWRpbmcgYWJvdmUgd2l0aCB0aGUgcHJvamVjdCdzIG5hbWUsIGFuZCB0aGlzIGxpbmUgd2l0aCBvbmUgc2VudGVuY2UgZGVzY3JpYmluZyB3aGF0IHRoaXMgYXBwIGRvZXMgZm9yIHVzZXJzLl8KCiMjIFJ1biAmIE9wZXJhdGUKCi0gYHBucG0gLS1maWx0ZXIgQHdvcmtzcGFjZS9hcGktc2VydmVyIHJ1biBkZXZgIOKAlCBydW4gdGhlIEFQSSBzZXJ2ZXIgKHBvcnQgNTAwMCkKLSBgcG5wbSBydW4gdHlwZWNoZWNrYCDigJQgZnVsbCB0eXBlY2hlY2sgYWNyb3NzIGFsbCBwYWNrYWdlcwotIGBwbnBtIHJ1biBidWlsZGAg4oCUIHR5cGVjaGVjayArIGJ1aWxkIGFsbCBwYWNrYWdlcwotIGBwbnBtIC0tZmlsdGVyIEB3b3Jrc3BhY2UvYXBpLXNwZWMgcnVuIGNvZGVnZW5gIOKAlCByZWdlbmVyYXRlIEFQSSBob29rcyBhbmQgWm9kIHNjaGVtYXMgZnJvbSB0aGUgT3BlbkFQSSBzcGVjCi0gYHBucG0gLS1maWx0ZXIgQHdvcmtzcGFjZS9kYiBydW4gcHVzaGAg4oCUIHB1c2ggREIgc2NoZW1hIGNoYW5nZXMgKGRldiBvbmx5KQotIFJlcXVpcmVkIGVudjogYERBVEFCQVNFX1VSTGAg4oCUIFBvc3RncmVzIGNvbm5lY3Rpb24gc3RyaW5nCgojIyBTdGFjawoKLSBwbnBtIHdvcmtzcGFjZXMsIE5vZGUuanMgMjQsIFR5cGVTY3JpcHQgNS45Ci0gQVBJOiBFeHByZXNzIDUKLSBEQjogUG9zdGdyZVNRTCArIERyaXp6bGUgT1JNCi0gVmFsaWRhdGlvbjogWm9kIChgem9kL3Y0YCksIGBkcml6emxlLXpvZGAKLSBBUEkgY29kZWdlbjogT3J2YWwgKGZyb20gT3BlbkFQSSBzcGVjKQotIEJ1aWxkOiBlc2J1aWxkIChDSlMgYnVuZGxlKQoKIyMgV2hlcmUgdGhpbmdzIGxpdmUKCl9Qb3B1bGF0ZSBhcyB5b3UgYnVpbGQg4oCUIHNob3J0IHJlcG8gbWFwIHBsdXMgcG9pbnRlcnMgdG8gdGhlIHNvdXJjZS1vZi10cnV0aCBmaWxlIGZvciBEQiBzY2hlbWEsIEFQSSBjb250cmFjdHMsIHRoZW1lIGZpbGVzLCBldGMuXwoKIyMgQXJjaGl0ZWN0dXJlIGRlY2lzaW9ucwoKX1BvcHVsYXRlIGFzIHlvdSBidWlsZCDigJQgbm9uLW9idmlvdXMgY2hvaWNlcyBhIHJlYWRlciBjb3VsZG4ndCBpbmZlciBmcm9tIHRoZSBjb2RlICgzLTUgYnVsbGV0cykuXwoKIyMgUHJvZHVjdAoKX0Rlc2NyaWJlIHRoZSBoaWdoLWxldmVsIHVzZXItZmFjaW5nIGNhcGFiaWxpdGllcyBvZiB0aGlzIGFwcCBvbmNlIHRoZXkgZXhpc3QuXwoKIyMgVXNlciBwcmVmZXJlbmNlcwoKX1BvcHVsYXRlIGFzIHlvdSBidWlsZCDigJQgZXhwbGljaXQgdXNlciBpbnN0cnVjdGlvbnMgd29ydGggcmVtZW1iZXJpbmcgYWNyb3NzIHNlc3Npb25zLl8KCiMjIEdvdGNoYXMKCl9Qb3B1bGF0ZSBhcyB5b3UgYnVpbGQg4oCUIHNoYXJwIGVkZ2VzLCAiYWx3YXlzIHJ1biBYIGJlZm9yZSBZIiBydWxlcy5fCgojIyBQb2ludGVycwoKLSBTZWUgdGhlIGBwbnBtLXdvcmtzcGFjZWAgc2tpbGwgZm9yIHdvcmtzcGFjZSBzdHJ1Y3R1cmUsIFR5cGVTY3JpcHQgc2V0dXAsIGFuZCBwYWNrYWdlIGRldGFpbHMK
+# [Project name]
+
+_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+
+## Run & Operate
+
+- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm run typecheck` — full typecheck across all packages
+- `pnpm run build` — typecheck + build all packages
+- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
+- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
+- Required env: `DATABASE_URL` — Postgres connection string
+
+## Stack
+
+- pnpm workspaces, Node.js 24, TypeScript 5.9
+- API: Express 5
+- DB: PostgreSQL + Drizzle ORM
+- Validation: Zod (`zod/v4`), `drizzle-zod`
+- API codegen: Orval (from OpenAPI spec)
+- Build: esbuild (CJS bundle)
+
+## Where things live
+
+_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+
+## Architecture decisions
+
+_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+
+## Product
+
+_Describe the high-level user-facing capabilities of this app once they exist._
+
+## User preferences
+
+_Populate as you build — explicit user instructions worth remembering across sessions._
+
+## Gotchas
+
+_Populate as you build — sharp edges, "always run X before Y" rules._
+
+## Pointers
+
+- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details

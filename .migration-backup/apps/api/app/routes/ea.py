@@ -1,1 +1,426 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IHNlY3JldHMKZnJvbSBkYXRldGltZSBpbXBvcnQgVVRDLCBkYXRldGltZQpmcm9tIGRlY2ltYWwgaW1wb3J0IERlY2ltYWwKZnJvbSB0eXBpbmcgaW1wb3J0IEFubm90YXRlZApmcm9tIHV1aWQgaW1wb3J0IFVVSUQKCmZyb20gZmFzdGFwaSBpbXBvcnQgQVBJUm91dGVyLCBEZXBlbmRzLCBRdWVyeSwgUmVxdWVzdApmcm9tIHJlZGlzLmFzeW5jaW8gaW1wb3J0IFJlZGlzCmZyb20gc3FsYWxjaGVteSBpbXBvcnQgc2VsZWN0CmZyb20gc3FsYWxjaGVteS5leHQuYXN5bmNpbyBpbXBvcnQgQXN5bmNTZXNzaW9uCmZyb20gc3RhcmxldHRlIGltcG9ydCBzdGF0dXMKCmZyb20gYXBwLmNvbmZpZyBpbXBvcnQgU2V0dGluZ3MsIGdldF9zZXR0aW5ncwpmcm9tIGFwcC5jb250cmFjdHMgaW1wb3J0ICgKICAgIEVBUGFpclJlcXVlc3QsCiAgICBFQVBhaXJSZXNwb25zZSwKICAgIEVycm9yUmVzcG9uc2UsCiAgICBIZWFydGJlYXRSZXF1ZXN0LAogICAgSGVhcnRiZWF0UmVzcG9uc2UsCiAgICBTaWduYWxBY2tSZXF1ZXN0LAogICAgU2lnbmFsQWNrUmVzcG9uc2UsCiAgICBTaWduYWxEZWxpdmVyeSwKICAgIFNpZ25hbFJhdGlvbmFsZSwKICAgIFNpZ25hbFN0YXRlLAogICAgVHJhZGVSZXBvcnRJbnB1dCwKKQpmcm9tIGFwcC5kYXRhYmFzZSBpbXBvcnQgZ2V0X3JlZGlzLCBnZXRfc2Vzc2lvbgpmcm9tIGFwcC5lcnJvcnMgaW1wb3J0IEFQSUVycm9yCmZyb20gYXBwLm1vZGVscyBpbXBvcnQgKAogICAgQWNjb3VudFNuYXBzaG90LAogICAgQXVkaXRMb2csCiAgICBEZXZpY2UsCiAgICBQYWlyaW5nQ29kZSwKICAgIFBvc2l0aW9uLAogICAgUmlza1Byb2ZpbGUsCiAgICBTaWduYWwsCiAgICBTaWduYWxFdmVudCwKICAgIFRyYWRlUmVwb3J0LAopCmZyb20gYXBwLnJlYWx0aW1lIGltcG9ydCBwdWJsaXNoX3VzZXJfZXZlbnQKZnJvbSBhcHAuc2VjdXJpdHkgaW1wb3J0ICgKICAgIEF1dGhlbnRpY2F0ZWREZXZpY2UsCiAgICBlbmZvcmNlX3JhdGVfbGltaXQsCiAgICBnZXRfY3VycmVudF9kZXZpY2UsCiAgICBzaGEyNTZfaGV4LAopCgpyb3V0ZXIgPSBBUElSb3V0ZXIocHJlZml4PSIvZWEvdjEiLCB0YWdzPVsiZWEiXSkKClNlc3Npb25EZXAgPSBBbm5vdGF0ZWRbQXN5bmNTZXNzaW9uLCBEZXBlbmRzKGdldF9zZXNzaW9uKV0KUmVkaXNEZXAgPSBBbm5vdGF0ZWRbUmVkaXMsIERlcGVuZHMoZ2V0X3JlZGlzKV0KU2V0dGluZ3NEZXAgPSBBbm5vdGF0ZWRbU2V0dGluZ3MsIERlcGVuZHMoZ2V0X3NldHRpbmdzKV0KQ3VycmVudERldmljZURlcCA9IEFubm90YXRlZFtBdXRoZW50aWNhdGVkRGV2aWNlLCBEZXBlbmRzKGdldF9jdXJyZW50X2RldmljZSldCgoKQHJvdXRlci5wb3N0KAogICAgIi9wYWlyIiwKICAgIHJlc3BvbnNlX21vZGVsPUVBUGFpclJlc3BvbnNlLAogICAgc3RhdHVzX2NvZGU9c3RhdHVzLkhUVFBfMjAwX09LLAogICAgcmVzcG9uc2VzPXs0MDA6IHsibW9kZWwiOiBFcnJvclJlc3BvbnNlfSwgNDAxOiB7Im1vZGVsIjogRXJyb3JSZXNwb25zZX19LAopCmFzeW5jIGRlZiBwYWlyX2RldmljZSgKICAgIHBheWxvYWQ6IEVBUGFpclJlcXVlc3QsCiAgICByZXF1ZXN0OiBSZXF1ZXN0LAogICAgc2Vzc2lvbjogU2Vzc2lvbkRlcCwKICAgIHJlZGlzOiBSZWRpc0RlcCwKICAgIHNldHRpbmdzOiBTZXR0aW5nc0RlcCwKKSAtPiBFQVBhaXJSZXNwb25zZToKICAgIGNsaWVudF9pcCA9IHJlcXVlc3QuY2xpZW50Lmhvc3QgaWYgcmVxdWVzdC5jbGllbnQgZWxzZSAidW5rbm93biIKICAgIGF3YWl0IGVuZm9yY2VfcmF0ZV9saW1pdChyZWRpcywgZiJyYXRlOmVhOnBhaXI6e2NsaWVudF9pcH0iLCAxMCkKCiAgICBjb2RlX2hhc2ggPSBzaGEyNTZfaGV4KHBheWxvYWQuY29kZSkKICAgIHBhaXJpbmdfY29kZSA9IGF3YWl0IHNlc3Npb24uc2NhbGFyKAogICAgICAgIHNlbGVjdChQYWlyaW5nQ29kZSkud2hlcmUoCiAgICAgICAgICAgIFBhaXJpbmdDb2RlLmNvZGVfaGFzaCA9PSBjb2RlX2hhc2gsCiAgICAgICAgICAgIFBhaXJpbmdDb2RlLmNvbnN1bWVkX2F0LmlzXyhOb25lKSwKICAgICAgICAgICAgUGFpcmluZ0NvZGUuZXhwaXJlc19hdCA+IGRhdGV0aW1lLm5vdyhVVEMpLAogICAgICAgICkKICAgICkKICAgIGlmIHBhaXJpbmdfY29kZSBpcyBOb25lOgogICAgICAgIHJhaXNlIEFQSUVycm9yKCJpbnZhbGlkX3BhaXJpbmdfY29kZSIsICJQYWlyaW5nIGNvZGUgaXMgaW52YWxpZCBvciBleHBpcmVkIiwgc3RhdHVzLkhUVFBfNDAxX1VOQVVUSE9SSVpFRCkKCiAgICBwYWlyaW5nX2NvZGUuY29uc3VtZWRfYXQgPSBkYXRldGltZS5ub3coVVRDKQoKICAgIHJhd19kZXZpY2VfdG9rZW4gPSBzZWNyZXRzLnRva2VuX2hleCgzMikgICMgMjU2LWJpdCBlbnRyb3B5CiAgICB0b2tlbl9oYXNoID0gc2hhMjU2X2hleChyYXdfZGV2aWNlX3Rva2VuKQoKICAgIGRldmljZSA9IERldmljZSgKICAgICAgICB1c2VyX2lkPXBhaXJpbmdfY29kZS51c2VyX2lkLAogICAgICAgIHRva2VuX2hhc2g9dG9rZW5faGFzaCwKICAgICAgICB0ZXJtaW5hbF9idWlsZD1wYXlsb2FkLnRlcm1pbmFsX2J1aWxkLAogICAgICAgIGJyb2tlcj1wYXlsb2FkLmJyb2tlciwKICAgICAgICBzZXJ2ZXI9cGF5bG9hZC5zZXJ2ZXIsCiAgICAgICAgYWNjb3VudF9udW1iZXJfbWFza2VkPXBheWxvYWQuYWNjb3VudF9udW1iZXJfbWFza2VkLAogICAgICAgIGFjY291bnRfY3VycmVuY3k9cGF5bG9hZC5hY2NvdW50X2N1cnJlbmN5LnVwcGVyKCksCiAgICAgICAgbGV2ZXJhZ2U9cGF5bG9hZC5sZXZlcmFnZSwKICAgICAgICBzdGF0dXM9IkFDVElWRSIsCiAgICAgICAgbGFzdF9zZWVuX2F0PWRhdGV0aW1lLm5vdyhVVEMpLAogICAgKQogICAgc2Vzc2lvbi5hZGQoZGV2aWNlKQogICAgYXdhaXQgc2Vzc2lvbi5mbHVzaCgpCgogICAgcmlza19wcm9maWxlID0gUmlza1Byb2ZpbGUoCiAgICAgICAgdXNlcl9pZD1wYWlyaW5nX2NvZGUudXNlcl9pZCwKICAgICAgICBkZXZpY2VfaWQ9ZGV2aWNlLmlkLAogICAgICAgIHJpc2tfcGVyX3RyYWRlX3BjdD1EZWNpbWFsKCIwLjUwMDAiKSwKICAgICAgICBtYXhfZGFpbHlfbG9zc19wY3Q9RGVjaW1hbCgiMi4wMDAwIiksCiAgICAgICAgbWF4X29wZW5fcmlza19wY3Q9RGVjaW1hbCgiMy4wMDAwIiksCiAgICAgICAgbWF4X29wZW5fcG9zaXRpb25zPTUsCiAgICAgICAgYXV0b19leGVjdXRlPUZhbHNlLAogICAgKQogICAgc2Vzc2lvbi5hZGQocmlza19wcm9maWxlKQoKICAgIHNlc3Npb24uYWRkKAogICAgICAgIEF1ZGl0TG9nKAogICAgICAgICAgICB1c2VyX2lkPXBhaXJpbmdfY29kZS51c2VyX2lkLAogICAgICAgICAgICBkZXZpY2VfaWQ9ZGV2aWNlLmlkLAogICAgICAgICAgICBldmVudF90eXBlPSJkZXZpY2UucGFpcmVkIiwKICAgICAgICAgICAgYWN0aW9uPSJQQUlSIiwKICAgICAgICAgICAgaXBfYWRkcmVzcz1jbGllbnRfaXAsCiAgICAgICAgICAgIGRldGFpbHM9ewogICAgICAgICAgICAgICAgImJyb2tlciI6IHBheWxvYWQuYnJva2VyLAogICAgICAgICAgICAgICAgInNlcnZlciI6IHBheWxvYWQuc2VydmVyLAogICAgICAgICAgICAgICAgImFjY291bnRfbnVtYmVyX21hc2tlZCI6IHBheWxvYWQuYWNjb3VudF9udW1iZXJfbWFza2VkLAogICAgICAgICAgICB9LAogICAgICAgICkKICAgICkKICAgIGF3YWl0IHNlc3Npb24uY29tbWl0KCkKCiAgICBhd2FpdCBwdWJsaXNoX3VzZXJfZXZlbnQoCiAgICAgICAgcmVkaXMsCiAgICAgICAgcGFpcmluZ19jb2RlLnVzZXJfaWQsCiAgICAgICAgImRldmljZS5wYWlyZWQiLAogICAgICAgIHsKICAgICAgICAgICAgImRldmljZV9pZCI6IHN0cihkZXZpY2UuaWQpLAogICAgICAgICAgICAiYnJva2VyIjogZGV2aWNlLmJyb2tlciwKICAgICAgICAgICAgInNlcnZlciI6IGRldmljZS5zZXJ2ZXIsCiAgICAgICAgICAgICJhY2NvdW50X251bWJlcl9tYXNrZWQiOiBkZXZpY2UuYWNjb3VudF9udW1iZXJfbWFza2VkLAogICAgICAgIH0sCiAgICApCgogICAgcmV0dXJuIEVBUGFpclJlc3BvbnNlKAogICAgICAgIGRldmljZV9pZD1kZXZpY2UuaWQsCiAgICAgICAgZGV2aWNlX3Rva2VuPXJhd19kZXZpY2VfdG9rZW4sCiAgICAgICAgdG9rZW5fdHlwZT0iQWVnaXNRdWFudC1ITUFDLVNIQTI1NiIsCiAgICAgICAgdG9rZW5fc2hvd25fb25jZT1UcnVlLAogICAgKQoKCkByb3V0ZXIucG9zdCgKICAgICIvaGVhcnRiZWF0IiwKICAgIHJlc3BvbnNlX21vZGVsPUhlYXJ0YmVhdFJlc3BvbnNlLAogICAgcmVzcG9uc2VzPXs0MDE6IHsibW9kZWwiOiBFcnJvclJlc3BvbnNlfX0sCikKYXN5bmMgZGVmIGhlYXJ0YmVhdCgKICAgIHBheWxvYWQ6IEhlYXJ0YmVhdFJlcXVlc3QsCiAgICBjdXJyZW50X2RldmljZTogQ3VycmVudERldmljZURlcCwKICAgIHNlc3Npb246IFNlc3Npb25EZXAsCiAgICByZWRpczogUmVkaXNEZXAsCikgLT4gSGVhcnRiZWF0UmVzcG9uc2U6CiAgICBkZXZpY2UgPSBjdXJyZW50X2RldmljZS5kZXZpY2UKICAgIG5vdyA9IGRhdGV0aW1lLm5vdyhVVEMpCiAgICBkZXZpY2UubGFzdF9zZWVuX2F0ID0gbm93CgogICAgc25hcHNob3QgPSBBY2NvdW50U25hcHNob3QoCiAgICAgICAgZGV2aWNlX2lkPWRldmljZS5pZCwKICAgICAgICBiYWxhbmNlPXBheWxvYWQuc25hcHNob3QuYmFsYW5jZSwKICAgICAgICBlcXVpdHk9cGF5bG9hZC5zbmFwc2hvdC5lcXVpdHksCiAgICAgICAgbWFyZ2luPXBheWxvYWQuc25hcHNob3QubWFyZ2luLAogICAgICAgIGZyZWVfbWFyZ2luPXBheWxvYWQuc25hcHNob3QuZnJlZV9tYXJnaW4sCiAgICAgICAgbWFyZ2luX2xldmVsPXBheWxvYWQuc25hcHNob3QubWFyZ2luX2xldmVsLAogICAgICAgIG9wZW5fcG9zaXRpb25zX2NvdW50PWxlbihwYXlsb2FkLnBvc2l0aW9ucyksCiAgICAgICAgYWNjb3VudF9jdXJyZW5jeT1wYXlsb2FkLnNuYXBzaG90LmFjY291bnRfY3VycmVuY3ksCiAgICAgICAgbGV2ZXJhZ2U9cGF5bG9hZC5zbmFwc2hvdC5sZXZlcmFnZSwKICAgICAgICBjYXB0dXJlZF9hdD1wYXlsb2FkLnNuYXBzaG90LmNhcHR1cmVkX2F0LAogICAgKQogICAgc2Vzc2lvbi5hZGQoc25hcHNob3QpCgogICAgIyBVcGRhdGUgb3BlbiBwb3NpdGlvbnMKICAgIGV4aXN0aW5nX3Bvc2l0aW9ucyA9IGxpc3QoCiAgICAgICAgYXdhaXQgc2Vzc2lvbi5zY2FsYXJzKAogICAgICAgICAgICBzZWxlY3QoUG9zaXRpb24pLndoZXJlKFBvc2l0aW9uLmRldmljZV9pZCA9PSBkZXZpY2UuaWQsIFBvc2l0aW9uLmlzX29wZW4uaXNfKFRydWUpKQogICAgICAgICkKICAgICkKICAgIGV4aXN0aW5nX21hcCA9IHtwb3MuZXh0ZXJuYWxfcG9zaXRpb25faWQ6IHBvcyBmb3IgcG9zIGluIGV4aXN0aW5nX3Bvc2l0aW9uc30KICAgIGluY29taW5nX2lkcyA9IHNldCgpCgogICAgZm9yIHBvc19pbiBpbiBwYXlsb2FkLnBvc2l0aW9uczoKICAgICAgICBpbmNvbWluZ19pZHMuYWRkKHBvc19pbi5leHRlcm5hbF9wb3NpdGlvbl9pZCkKICAgICAgICBpZiBwb3NfaW4uZXh0ZXJuYWxfcG9zaXRpb25faWQgaW4gZXhpc3RpbmdfbWFwOgogICAgICAgICAgICBwb3MgPSBleGlzdGluZ19tYXBbcG9zX2luLmV4dGVybmFsX3Bvc2l0aW9uX2lkXQogICAgICAgICAgICBwb3MuY3VycmVudF9wcmljZSA9IHBvc19pbi5jdXJyZW50X3ByaWNlCiAgICAgICAgICAgIHBvcy5zdG9wX2xvc3MgPSBwb3NfaW4uc3RvcF9sb3NzCiAgICAgICAgICAgIHBvcy50YWtlX3Byb2ZpdCA9IHBvc19pbi50YWtlX3Byb2ZpdAogICAgICAgICAgICBwb3MudW5yZWFsaXplZF9wbmwgPSBwb3NfaW4udW5yZWFsaXplZF9wbmwKICAgICAgICAgICAgcG9zLnN3YXAgPSBwb3NfaW4uc3dhcAogICAgICAgICAgICBwb3Mub2JzZXJ2ZWRfYXQgPSBwb3NfaW4ub2JzZXJ2ZWRfYXQKICAgICAgICBlbHNlOgogICAgICAgICAgICBzZXNzaW9uLmFkZCgKICAgICAgICAgICAgICAgIFBvc2l0aW9uKAogICAgICAgICAgICAgICAgICAgIGRldmljZV9pZD1kZXZpY2UuaWQsCiAgICAgICAgICAgICAgICAgICAgZXh0ZXJuYWxfcG9zaXRpb25faWQ9cG9zX2luLmV4dGVybmFsX3Bvc2l0aW9uX2lkLAogICAgICAgICAgICAgICAgICAgIHN5bWJvbD1wb3NfaW4uc3ltYm9sLAogICAgICAgICAgICAgICAgICAgIHNpZGU9cG9zX2luLnNpZGUudmFsdWUsCiAgICAgICAgICAgICAgICAgICAgdm9sdW1lPXBvc19pbi52b2x1bWUsCiAgICAgICAgICAgICAgICAgICAgZW50cnlfcHJpY2U9cG9zX2luLmVudHJ5X3ByaWNlLAogICAgICAgICAgICAgICAgICAgIGN1cnJlbnRfcHJpY2U9cG9zX2luLmN1cnJlbnRfcHJpY2UsCiAgICAgICAgICAgICAgICAgICAgc3RvcF9sb3NzPXBvc19pbi5zdG9wX2xvc3MsCiAgICAgICAgICAgICAgICAgICAgdGFrZV9wcm9maXQ9cG9zX2luLnRha2VfcHJvZml0LAogICAgICAgICAgICAgICAgICAgIHVucmVhbGl6ZWRfcG5sPXBvc19pbi51bnJlYWxpemVkX3BubCwKICAgICAgICAgICAgICAgICAgICBzd2FwPXBvc19pbi5zd2FwLAogICAgICAgICAgICAgICAgICAgIG1hZ2ljX251bWJlcj1wb3NfaW4ubWFnaWNfbnVtYmVyLAogICAgICAgICAgICAgICAgICAgIGNvbW1lbnQ9cG9zX2luLmNvbW1lbnQsCiAgICAgICAgICAgICAgICAgICAgb2JzZXJ2ZWRfYXQ9cG9zX2luLm9ic2VydmVkX2F0LAogICAgICAgICAgICAgICAgICAgIGlzX29wZW49VHJ1ZSwKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgKQoKICAgICMgTWFyayBjbG9zZWQgcG9zaXRpb25zCiAgICBmb3IgZXh0X2lkLCBwb3MgaW4gZXhpc3RpbmdfbWFwLml0ZW1zKCk6CiAgICAgICAgaWYgZXh0X2lkIG5vdCBpbiBpbmNvbWluZ19pZHM6CiAgICAgICAgICAgIHBvcy5pc19vcGVuID0gRmFsc2UKICAgICAgICAgICAgcG9zLm9ic2VydmVkX2F0ID0gbm93CgogICAgcmlza19wcm9maWxlID0gYXdhaXQgc2Vzc2lvbi5zY2FsYXIoCiAgICAgICAgc2VsZWN0KFJpc2tQcm9maWxlKS53aGVyZShSaXNrUHJvZmlsZS5kZXZpY2VfaWQgPT0gZGV2aWNlLmlkKQogICAgKQogICAgYXV0b19leGVjdXRlID0gcmlza19wcm9maWxlLmF1dG9fZXhlY3V0ZSBpZiByaXNrX3Byb2ZpbGUgZWxzZSBGYWxzZQoKICAgICMgQ2hlY2sga2lsbC1zd2l0Y2ggZmxhZyBpbiBSZWRpcwogICAga2lsbF9zd2l0Y2hfYWN0aXZlID0gYm9vbChhd2FpdCByZWRpcy5nZXQoZiJraWxsX3N3aXRjaDp7ZGV2aWNlLnVzZXJfaWR9IikpCgogICAgYXdhaXQgc2Vzc2lvbi5jb21taXQoKQoKICAgIGF3YWl0IHB1Ymxpc2hfdXNlcl9ldmVudCgKICAgICAgICByZWRpcywKICAgICAgICBkZXZpY2UudXNlcl9pZCwKICAgICAgICAiYWNjb3VudC50ZWxlbWV0cnkiLAogICAgICAgIHsKICAgICAgICAgICAgImRldmljZV9pZCI6IHN0cihkZXZpY2UuaWQpLAogICAgICAgICAgICAiYmFsYW5jZSI6IHN0cihwYXlsb2FkLnNuYXBzaG90LmJhbGFuY2UpLAogICAgICAgICAgICAiZXF1aXR5Ijogc3RyKHBheWxvYWQuc25hcHNob3QuZXF1aXR5KSwKICAgICAgICAgICAgImZyZWVfbWFyZ2luIjogc3RyKHBheWxvYWQuc25hcHNob3QuZnJlZV9tYXJnaW4pLAogICAgICAgICAgICAib3Blbl9wb3NpdGlvbnMiOiBsZW4ocGF5bG9hZC5wb3NpdGlvbnMpLAogICAgICAgICAgICAidGltZXN0YW1wIjogbm93Lmlzb2Zvcm1hdCgpLAogICAgICAgIH0sCiAgICApCgogICAgcmV0dXJuIEhlYXJ0YmVhdFJlc3BvbnNlKAogICAgICAgIGFjY2VwdGVkPVRydWUsCiAgICAgICAgc2VydmVyX3RpbWU9bm93LAogICAgICAgIGF1dG9fZXhlY3V0ZT1hdXRvX2V4ZWN1dGUsCiAgICAgICAga2lsbF9zd2l0Y2g9a2lsbF9zd2l0Y2hfYWN0aXZlLAogICAgKQoKCkByb3V0ZXIuZ2V0KAogICAgIi9zaWduYWxzIiwKICAgIHJlc3BvbnNlX21vZGVsPWxpc3RbU2lnbmFsRGVsaXZlcnldLAogICAgcmVzcG9uc2VzPXs0MDE6IHsibW9kZWwiOiBFcnJvclJlc3BvbnNlfX0sCikKYXN5bmMgZGVmIHBvbGxfc2lnbmFscygKICAgIGN1cnJlbnRfZGV2aWNlOiBDdXJyZW50RGV2aWNlRGVwLAogICAgc2Vzc2lvbjogU2Vzc2lvbkRlcCwKICAgIHNpbmNlOiBBbm5vdGF0ZWRbc3RyIHwgTm9uZSwgUXVlcnkoKV0gPSBOb25lLAopIC0+IGxpc3RbU2lnbmFsRGVsaXZlcnldOgogICAgZGV2aWNlID0gY3VycmVudF9kZXZpY2UuZGV2aWNlCiAgICBub3cgPSBkYXRldGltZS5ub3coVVRDKQoKICAgIHNpZ25hbHMgPSBsaXN0KAogICAgICAgIGF3YWl0IHNlc3Npb24uc2NhbGFycygKICAgICAgICAgICAgc2VsZWN0KFNpZ25hbCkKICAgICAgICAgICAgLndoZXJlKAogICAgICAgICAgICAgICAgU2lnbmFsLmRldmljZV9pZCA9PSBkZXZpY2UuaWQsCiAgICAgICAgICAgICAgICBTaWduYWwuc3RhdGUuaW5fKFtTaWduYWxTdGF0ZS5DUkVBVEVELnZhbHVlLCBTaWduYWxTdGF0ZS5ERUxJVkVSRUQudmFsdWVdKSwKICAgICAgICAgICAgICAgIFNpZ25hbC5leHBpcmVzX2F0ID4gbm93LAogICAgICAgICAgICApCiAgICAgICAgICAgIC5vcmRlcl9ieShTaWduYWwuY3JlYXRlZF9hdC5hc2MoKSkKICAgICAgICApCiAgICApCgogICAgZGVsaXZlcmllczogbGlzdFtTaWduYWxEZWxpdmVyeV0gPSBbXQogICAgcmlza19wcm9maWxlID0gYXdhaXQgc2Vzc2lvbi5zY2FsYXIoCiAgICAgICAgc2VsZWN0KFJpc2tQcm9maWxlKS53aGVyZShSaXNrUHJvZmlsZS5kZXZpY2VfaWQgPT0gZGV2aWNlLmlkKQogICAgKQogICAgYXV0b19leGVjdXRlID0gcmlza19wcm9maWxlLmF1dG9fZXhlY3V0ZSBpZiByaXNrX3Byb2ZpbGUgZWxzZSBGYWxzZQoKICAgIGZvciBzaWcgaW4gc2lnbmFsczoKICAgICAgICBpZiBzaWcuc3RhdGUgPT0gU2lnbmFsU3RhdGUuQ1JFQVRFRC52YWx1ZToKICAgICAgICAgICAgc2lnLnN0YXRlID0gU2lnbmFsU3RhdGUuREVMSVZFUkVELnZhbHVlCiAgICAgICAgICAgIHNlc3Npb24uYWRkKAogICAgICAgICAgICAgICAgU2lnbmFsRXZlbnQoCiAgICAgICAgICAgICAgICAgICAgc2lnbmFsX2lkPXNpZy5pZCwKICAgICAgICAgICAgICAgICAgICBkZXZpY2VfaWQ9ZGV2aWNlLmlkLAogICAgICAgICAgICAgICAgICAgIGZyb21fc3RhdGU9U2lnbmFsU3RhdGUuQ1JFQVRFRC52YWx1ZSwKICAgICAgICAgICAgICAgICAgICB0b19zdGF0ZT1TaWduYWxTdGF0ZS5ERUxJVkVSRUQudmFsdWUsCiAgICAgICAgICAgICAgICAgICAgc291cmNlPSJTRVJWRVIiLAogICAgICAgICAgICAgICAgICAgIG9jY3VycmVkX2F0PW5vdywKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgKQoKICAgICAgICBkZWxpdmVyaWVzLmFwcGVuZCgKICAgICAgICAgICAgU2lnbmFsRGVsaXZlcnkoCiAgICAgICAgICAgICAgICBzaWduYWxfaWQ9c2lnLmlkLAogICAgICAgICAgICAgICAgc3ltYm9sPXNpZy5zeW1ib2wsCiAgICAgICAgICAgICAgICBhY3Rpb249c2lnLmFjdGlvbiwgICMgdHlwZTogaWdub3JlW2FyZy10eXBlXQogICAgICAgICAgICAgICAgcmVmZXJlbmNlX3ByaWNlPXNpZy5yZWZlcmVuY2VfcHJpY2UsCiAgICAgICAgICAgICAgICBwb2ludF9zaXplPXNpZy5wb2ludF9zaXplLAogICAgICAgICAgICAgICAgbWF4X2RldmlhdGlvbl9wb2ludHM9c2lnLm1heF9kZXZpYXRpb25fcG9pbnRzLAogICAgICAgICAgICAgICAgdm9sdW1lPXNpZy52b2x1bWUsCiAgICAgICAgICAgICAgICBzdG9wX2xvc3M9c2lnLnN0b3BfbG9zcywKICAgICAgICAgICAgICAgIHRha2VfcHJvZml0PXNpZy50YWtlX3Byb2ZpdCwKICAgICAgICAgICAgICAgIGNvbmZpZGVuY2U9c2lnLmNvbmZpZGVuY2UsCiAgICAgICAgICAgICAgICByYXRpb25hbGU9U2lnbmFsUmF0aW9uYWxlLm1vZGVsX3ZhbGlkYXRlKHNpZy5yYXRpb25hbGUpLAogICAgICAgICAgICAgICAgbW9kZWxfdmVyc2lvbj1zaWcubW9kZWxfdmVyc2lvbiwKICAgICAgICAgICAgICAgIGV4cGlyZXNfYXQ9c2lnLmV4cGlyZXNfYXQsCiAgICAgICAgICAgICAgICBhdXRvX2V4ZWN1dGU9YXV0b19leGVjdXRlLAogICAgICAgICAgICApCiAgICAgICAgKQoKICAgIGF3YWl0IHNlc3Npb24uY29tbWl0KCkKICAgIHJldHVybiBkZWxpdmVyaWVzCgoKQHJvdXRlci5wb3N0KAogICAgIi9zaWduYWxzL3tzaWduYWxfaWR9L2FjayIsCiAgICByZXNwb25zZV9tb2RlbD1TaWduYWxBY2tSZXNwb25zZSwKICAgIHJlc3BvbnNlcz17NDAxOiB7Im1vZGVsIjogRXJyb3JSZXNwb25zZX0sIDQwNDogeyJtb2RlbCI6IEVycm9yUmVzcG9uc2V9fSwKKQphc3luYyBkZWYgYWNrX3NpZ25hbCgKICAgIHNpZ25hbF9pZDogVVVJRCwKICAgIHBheWxvYWQ6IFNpZ25hbEFja1JlcXVlc3QsCiAgICBjdXJyZW50X2RldmljZTogQ3VycmVudERldmljZURlcCwKICAgIHNlc3Npb246IFNlc3Npb25EZXAsCiAgICByZWRpczogUmVkaXNEZXAsCikgLT4gU2lnbmFsQWNrUmVzcG9uc2U6CiAgICBkZXZpY2UgPSBjdXJyZW50X2RldmljZS5kZXZpY2UKICAgIHNpZ25hbCA9IGF3YWl0IHNlc3Npb24uc2NhbGFyKAogICAgICAgIHNlbGVjdChTaWduYWwpLndoZXJlKFNpZ25hbC5pZCA9PSBzaWduYWxfaWQsIFNpZ25hbC5kZXZpY2VfaWQgPT0gZGV2aWNlLmlkKQogICAgKQogICAgaWYgc2lnbmFsIGlzIE5vbmU6CiAgICAgICAgcmFpc2UgQVBJRXJyb3IoInNpZ25hbF9ub3RfZm91bmQiLCAiU2lnbmFsIG5vdCBmb3VuZCBmb3IgdGhpcyBkZXZpY2UiLCBzdGF0dXMuSFRUUF80MDRfTk9UX0ZPVU5EKQoKICAgIHByZXZfc3RhdGUgPSBzaWduYWwuc3RhdGUKICAgIG5ld19zdGF0ZSA9IHBheWxvYWQuZXZlbnQudmFsdWUKCiAgICBzaWduYWwuc3RhdGUgPSBuZXdfc3RhdGUKICAgIHNlc3Npb24uYWRkKAogICAgICAgIFNpZ25hbEV2ZW50KAogICAgICAgICAgICBzaWduYWxfaWQ9c2lnbmFsLmlkLAogICAgICAgICAgICBkZXZpY2VfaWQ9ZGV2aWNlLmlkLAogICAgICAgICAgICBmcm9tX3N0YXRlPXByZXZfc3RhdGUsCiAgICAgICAgICAgIHRvX3N0YXRlPW5ld19zdGF0ZSwKICAgICAgICAgICAgc291cmNlPSJFQSIsCiAgICAgICAgICAgIHJlYXNvbl9jb2RlPXBheWxvYWQucmVhc29uX2NvZGUsCiAgICAgICAgICAgIHJlYXNvbj1wYXlsb2FkLnJlYXNvbiwKICAgICAgICAgICAgZXhlY3V0aW9uX3ByaWNlPXBheWxvYWQuZXhlY3V0aW9uX3ByaWNlLAogICAgICAgICAgICBleGVjdXRpb25fdm9sdW1lPXBheWxvYWQuZXhlY3V0aW9uX3ZvbHVtZSwKICAgICAgICAgICAgb2NjdXJyZWRfYXQ9cGF5bG9hZC5vY2N1cnJlZF9hdCwKICAgICAgICApCiAgICApCiAgICBhd2FpdCBzZXNzaW9uLmNvbW1pdCgpCgogICAgYXdhaXQgcHVibGlzaF91c2VyX2V2ZW50KAogICAgICAgIHJlZGlzLAogICAgICAgIGRldmljZS51c2VyX2lkLAogICAgICAgICJzaWduYWwuc3RhdGVfY2hhbmdlZCIsCiAgICAgICAgewogICAgICAgICAgICAic2lnbmFsX2lkIjogc3RyKHNpZ25hbC5pZCksCiAgICAgICAgICAgICJkZXZpY2VfaWQiOiBzdHIoZGV2aWNlLmlkKSwKICAgICAgICAgICAgInN0YXRlIjogbmV3X3N0YXRlLAogICAgICAgICAgICAicmVhc29uX2NvZGUiOiBwYXlsb2FkLnJlYXNvbl9jb2RlLAogICAgICAgIH0sCiAgICApCgogICAgcmV0dXJuIFNpZ25hbEFja1Jlc3BvbnNlKHNpZ25hbF9pZD1zaWduYWwuaWQsIHN0YXRlPVNpZ25hbFN0YXRlKG5ld19zdGF0ZSksIGFjY2VwdGVkPVRydWUpCgoKQHJvdXRlci5wb3N0KAogICAgIi90cmFkZS1yZXBvcnRzIiwKICAgIHN0YXR1c19jb2RlPXN0YXR1cy5IVFRQXzIwMV9DUkVBVEVELAogICAgcmVzcG9uc2VzPXs0MDE6IHsibW9kZWwiOiBFcnJvclJlc3BvbnNlfX0sCikKYXN5bmMgZGVmIGNyZWF0ZV90cmFkZV9yZXBvcnQoCiAgICBwYXlsb2FkOiBUcmFkZVJlcG9ydElucHV0LAogICAgY3VycmVudF9kZXZpY2U6IEN1cnJlbnREZXZpY2VEZXAsCiAgICBzZXNzaW9uOiBTZXNzaW9uRGVwLAogICAgcmVkaXM6IFJlZGlzRGVwLAopIC0+IGRpY3Rbc3RyLCBzdHIgfCBib29sXToKICAgIGRldmljZSA9IGN1cnJlbnRfZGV2aWNlLmRldmljZQoKICAgIHJlcG9ydCA9IFRyYWRlUmVwb3J0KAogICAgICAgIHVzZXJfaWQ9ZGV2aWNlLnVzZXJfaWQsCiAgICAgICAgZGV2aWNlX2lkPWRldmljZS5pZCwKICAgICAgICBzaWduYWxfaWQ9cGF5bG9hZC5zaWduYWxfaWQsCiAgICAgICAgZXh0ZXJuYWxfb3JkZXJfaWQ9cGF5bG9hZC50aWNrZXQsCiAgICAgICAgc3ltYm9sPXBheWxvYWQuc3ltYm9sLAogICAgICAgIHNpZGU9cGF5bG9hZC5zaWRlLnZhbHVlLAogICAgICAgIHZvbHVtZT1wYXlsb2FkLnZvbHVtZSwKICAgICAgICBlbnRyeV9wcmljZT1wYXlsb2FkLmV4ZWN1dGlvbl9wcmljZSwKICAgICAgICBleGl0X3ByaWNlPXBheWxvYWQuZXhpdF9wcmljZSwKICAgICAgICBzbGlwcGFnZV9wb2ludHM9cGF5bG9hZC5zbGlwcGFnZV9wb2ludHMsCiAgICAgICAgY29tbWlzc2lvbj1wYXlsb2FkLmNvbW1pc3Npb24sCiAgICAgICAgc3dhcD1wYXlsb2FkLnN3YXAsCiAgICAgICAgcmVhbGl6ZWRfcG5sPXBheWxvYWQucHJvZml0LAogICAgICAgIG9wZW5lZF9hdD1wYXlsb2FkLm9wZW5lZF9hdCwKICAgICAgICBjbG9zZWRfYXQ9cGF5bG9hZC5jbG9zZWRfYXQsCiAgICApCiAgICBzZXNzaW9uLmFkZChyZXBvcnQpCiAgICBhd2FpdCBzZXNzaW9uLmNvbW1pdCgpCgogICAgYXdhaXQgcHVibGlzaF91c2VyX2V2ZW50KAogICAgICAgIHJlZGlzLAogICAgICAgIGRldmljZS51c2VyX2lkLAogICAgICAgICJ0cmFkZS5yZXBvcnRlZCIsCiAgICAgICAgewogICAgICAgICAgICAiZGV2aWNlX2lkIjogc3RyKGRldmljZS5pZCksCiAgICAgICAgICAgICJ0aWNrZXQiOiBwYXlsb2FkLnRpY2tldCwKICAgICAgICAgICAgInN5bWJvbCI6IHBheWxvYWQuc3ltYm9sLAogICAgICAgICAgICAicHJvZml0Ijogc3RyKHBheWxvYWQucHJvZml0KSBpZiBwYXlsb2FkLnByb2ZpdCBpcyBub3QgTm9uZSBlbHNlIE5vbmUsCiAgICAgICAgfSwKICAgICkKCiAgICByZXR1cm4geyJhY2NlcHRlZCI6IFRydWV9Cg==
+from __future__ import annotations
+
+import secrets
+from datetime import UTC, datetime
+from decimal import Decimal
+from typing import Annotated
+from uuid import UUID
+
+from fastapi import APIRouter, Depends, Query, Request
+from redis.asyncio import Redis
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+from starlette import status
+
+from app.config import Settings, get_settings
+from app.contracts import (
+    EAPairRequest,
+    EAPairResponse,
+    ErrorResponse,
+    HeartbeatRequest,
+    HeartbeatResponse,
+    SignalAckRequest,
+    SignalAckResponse,
+    SignalDelivery,
+    SignalRationale,
+    SignalState,
+    TradeReportInput,
+)
+from app.database import get_redis, get_session
+from app.errors import APIError
+from app.models import (
+    AccountSnapshot,
+    AuditLog,
+    Device,
+    PairingCode,
+    Position,
+    RiskProfile,
+    Signal,
+    SignalEvent,
+    TradeReport,
+)
+from app.realtime import publish_user_event
+from app.security import (
+    AuthenticatedDevice,
+    enforce_rate_limit,
+    get_current_device,
+    sha256_hex,
+)
+
+router = APIRouter(prefix="/ea/v1", tags=["ea"])
+
+SessionDep = Annotated[AsyncSession, Depends(get_session)]
+RedisDep = Annotated[Redis, Depends(get_redis)]
+SettingsDep = Annotated[Settings, Depends(get_settings)]
+CurrentDeviceDep = Annotated[AuthenticatedDevice, Depends(get_current_device)]
+
+
+@router.post(
+    "/pair",
+    response_model=EAPairResponse,
+    status_code=status.HTTP_200_OK,
+    responses={400: {"model": ErrorResponse}, 401: {"model": ErrorResponse}},
+)
+async def pair_device(
+    payload: EAPairRequest,
+    request: Request,
+    session: SessionDep,
+    redis: RedisDep,
+    settings: SettingsDep,
+) -> EAPairResponse:
+    client_ip = request.client.host if request.client else "unknown"
+    await enforce_rate_limit(redis, f"rate:ea:pair:{client_ip}", 10)
+
+    code_hash = sha256_hex(payload.code)
+    pairing_code = await session.scalar(
+        select(PairingCode).where(
+            PairingCode.code_hash == code_hash,
+            PairingCode.consumed_at.is_(None),
+            PairingCode.expires_at > datetime.now(UTC),
+        )
+    )
+    if pairing_code is None:
+        raise APIError("invalid_pairing_code", "Pairing code is invalid or expired", status.HTTP_401_UNAUTHORIZED)
+
+    pairing_code.consumed_at = datetime.now(UTC)
+
+    raw_device_token = secrets.token_hex(32)  # 256-bit entropy
+    token_hash = sha256_hex(raw_device_token)
+
+    device = Device(
+        user_id=pairing_code.user_id,
+        token_hash=token_hash,
+        terminal_build=payload.terminal_build,
+        broker=payload.broker,
+        server=payload.server,
+        account_number_masked=payload.account_number_masked,
+        account_currency=payload.account_currency.upper(),
+        leverage=payload.leverage,
+        status="ACTIVE",
+        last_seen_at=datetime.now(UTC),
+    )
+    session.add(device)
+    await session.flush()
+
+    risk_profile = RiskProfile(
+        user_id=pairing_code.user_id,
+        device_id=device.id,
+        risk_per_trade_pct=Decimal("0.5000"),
+        max_daily_loss_pct=Decimal("2.0000"),
+        max_open_risk_pct=Decimal("3.0000"),
+        max_open_positions=5,
+        auto_execute=False,
+    )
+    session.add(risk_profile)
+
+    session.add(
+        AuditLog(
+            user_id=pairing_code.user_id,
+            device_id=device.id,
+            event_type="device.paired",
+            action="PAIR",
+            ip_address=client_ip,
+            details={
+                "broker": payload.broker,
+                "server": payload.server,
+                "account_number_masked": payload.account_number_masked,
+            },
+        )
+    )
+    await session.commit()
+
+    await publish_user_event(
+        redis,
+        pairing_code.user_id,
+        "device.paired",
+        {
+            "device_id": str(device.id),
+            "broker": device.broker,
+            "server": device.server,
+            "account_number_masked": device.account_number_masked,
+        },
+    )
+
+    return EAPairResponse(
+        device_id=device.id,
+        device_token=raw_device_token,
+        token_type="AegisQuant-HMAC-SHA256",
+        token_shown_once=True,
+    )
+
+
+@router.post(
+    "/heartbeat",
+    response_model=HeartbeatResponse,
+    responses={401: {"model": ErrorResponse}},
+)
+async def heartbeat(
+    payload: HeartbeatRequest,
+    current_device: CurrentDeviceDep,
+    session: SessionDep,
+    redis: RedisDep,
+) -> HeartbeatResponse:
+    device = current_device.device
+    now = datetime.now(UTC)
+    device.last_seen_at = now
+
+    snapshot = AccountSnapshot(
+        device_id=device.id,
+        balance=payload.snapshot.balance,
+        equity=payload.snapshot.equity,
+        margin=payload.snapshot.margin,
+        free_margin=payload.snapshot.free_margin,
+        margin_level=payload.snapshot.margin_level,
+        open_positions_count=len(payload.positions),
+        account_currency=payload.snapshot.account_currency,
+        leverage=payload.snapshot.leverage,
+        captured_at=payload.snapshot.captured_at,
+    )
+    session.add(snapshot)
+
+    # Update open positions
+    existing_positions = list(
+        await session.scalars(
+            select(Position).where(Position.device_id == device.id, Position.is_open.is_(True))
+        )
+    )
+    existing_map = {pos.external_position_id: pos for pos in existing_positions}
+    incoming_ids = set()
+
+    for pos_in in payload.positions:
+        incoming_ids.add(pos_in.external_position_id)
+        if pos_in.external_position_id in existing_map:
+            pos = existing_map[pos_in.external_position_id]
+            pos.current_price = pos_in.current_price
+            pos.stop_loss = pos_in.stop_loss
+            pos.take_profit = pos_in.take_profit
+            pos.unrealized_pnl = pos_in.unrealized_pnl
+            pos.swap = pos_in.swap
+            pos.observed_at = pos_in.observed_at
+        else:
+            session.add(
+                Position(
+                    device_id=device.id,
+                    external_position_id=pos_in.external_position_id,
+                    symbol=pos_in.symbol,
+                    side=pos_in.side.value,
+                    volume=pos_in.volume,
+                    entry_price=pos_in.entry_price,
+                    current_price=pos_in.current_price,
+                    stop_loss=pos_in.stop_loss,
+                    take_profit=pos_in.take_profit,
+                    unrealized_pnl=pos_in.unrealized_pnl,
+                    swap=pos_in.swap,
+                    magic_number=pos_in.magic_number,
+                    comment=pos_in.comment,
+                    observed_at=pos_in.observed_at,
+                    is_open=True,
+                )
+            )
+
+    # Mark closed positions
+    for ext_id, pos in existing_map.items():
+        if ext_id not in incoming_ids:
+            pos.is_open = False
+            pos.observed_at = now
+
+    risk_profile = await session.scalar(
+        select(RiskProfile).where(RiskProfile.device_id == device.id)
+    )
+    auto_execute = risk_profile.auto_execute if risk_profile else False
+
+    # Check kill-switch flag in Redis
+    kill_switch_active = bool(await redis.get(f"kill_switch:{device.user_id}"))
+
+    await session.commit()
+
+    await publish_user_event(
+        redis,
+        device.user_id,
+        "account.telemetry",
+        {
+            "device_id": str(device.id),
+            "balance": str(payload.snapshot.balance),
+            "equity": str(payload.snapshot.equity),
+            "free_margin": str(payload.snapshot.free_margin),
+            "open_positions": len(payload.positions),
+            "timestamp": now.isoformat(),
+        },
+    )
+
+    return HeartbeatResponse(
+        accepted=True,
+        server_time=now,
+        auto_execute=auto_execute,
+        kill_switch=kill_switch_active,
+    )
+
+
+@router.get(
+    "/signals",
+    response_model=list[SignalDelivery],
+    responses={401: {"model": ErrorResponse}},
+)
+async def poll_signals(
+    current_device: CurrentDeviceDep,
+    session: SessionDep,
+    since: Annotated[str | None, Query()] = None,
+) -> list[SignalDelivery]:
+    device = current_device.device
+    now = datetime.now(UTC)
+
+    signals = list(
+        await session.scalars(
+            select(Signal)
+            .where(
+                Signal.device_id == device.id,
+                Signal.state.in_([SignalState.CREATED.value, SignalState.DELIVERED.value]),
+                Signal.expires_at > now,
+            )
+            .order_by(Signal.created_at.asc())
+        )
+    )
+
+    deliveries: list[SignalDelivery] = []
+    risk_profile = await session.scalar(
+        select(RiskProfile).where(RiskProfile.device_id == device.id)
+    )
+    auto_execute = risk_profile.auto_execute if risk_profile else False
+
+    for sig in signals:
+        if sig.state == SignalState.CREATED.value:
+            sig.state = SignalState.DELIVERED.value
+            session.add(
+                SignalEvent(
+                    signal_id=sig.id,
+                    device_id=device.id,
+                    from_state=SignalState.CREATED.value,
+                    to_state=SignalState.DELIVERED.value,
+                    source="SERVER",
+                    occurred_at=now,
+                )
+            )
+
+        deliveries.append(
+            SignalDelivery(
+                signal_id=sig.id,
+                symbol=sig.symbol,
+                action=sig.action,  # type: ignore[arg-type]
+                reference_price=sig.reference_price,
+                point_size=sig.point_size,
+                max_deviation_points=sig.max_deviation_points,
+                volume=sig.volume,
+                stop_loss=sig.stop_loss,
+                take_profit=sig.take_profit,
+                confidence=sig.confidence,
+                rationale=SignalRationale.model_validate(sig.rationale),
+                model_version=sig.model_version,
+                expires_at=sig.expires_at,
+                auto_execute=auto_execute,
+            )
+        )
+
+    await session.commit()
+    return deliveries
+
+
+@router.post(
+    "/signals/{signal_id}/ack",
+    response_model=SignalAckResponse,
+    responses={401: {"model": ErrorResponse}, 404: {"model": ErrorResponse}},
+)
+async def ack_signal(
+    signal_id: UUID,
+    payload: SignalAckRequest,
+    current_device: CurrentDeviceDep,
+    session: SessionDep,
+    redis: RedisDep,
+) -> SignalAckResponse:
+    device = current_device.device
+    signal = await session.scalar(
+        select(Signal).where(Signal.id == signal_id, Signal.device_id == device.id)
+    )
+    if signal is None:
+        raise APIError("signal_not_found", "Signal not found for this device", status.HTTP_404_NOT_FOUND)
+
+    prev_state = signal.state
+    new_state = payload.event.value
+
+    signal.state = new_state
+    session.add(
+        SignalEvent(
+            signal_id=signal.id,
+            device_id=device.id,
+            from_state=prev_state,
+            to_state=new_state,
+            source="EA",
+            reason_code=payload.reason_code,
+            reason=payload.reason,
+            execution_price=payload.execution_price,
+            execution_volume=payload.execution_volume,
+            occurred_at=payload.occurred_at,
+        )
+    )
+    await session.commit()
+
+    await publish_user_event(
+        redis,
+        device.user_id,
+        "signal.state_changed",
+        {
+            "signal_id": str(signal.id),
+            "device_id": str(device.id),
+            "state": new_state,
+            "reason_code": payload.reason_code,
+        },
+    )
+
+    return SignalAckResponse(signal_id=signal.id, state=SignalState(new_state), accepted=True)
+
+
+@router.post(
+    "/trade-reports",
+    status_code=status.HTTP_201_CREATED,
+    responses={401: {"model": ErrorResponse}},
+)
+async def create_trade_report(
+    payload: TradeReportInput,
+    current_device: CurrentDeviceDep,
+    session: SessionDep,
+    redis: RedisDep,
+) -> dict[str, str | bool]:
+    device = current_device.device
+
+    report = TradeReport(
+        user_id=device.user_id,
+        device_id=device.id,
+        signal_id=payload.signal_id,
+        external_order_id=payload.ticket,
+        symbol=payload.symbol,
+        side=payload.side.value,
+        volume=payload.volume,
+        entry_price=payload.execution_price,
+        exit_price=payload.exit_price,
+        slippage_points=payload.slippage_points,
+        commission=payload.commission,
+        swap=payload.swap,
+        realized_pnl=payload.profit,
+        opened_at=payload.opened_at,
+        closed_at=payload.closed_at,
+    )
+    session.add(report)
+    await session.commit()
+
+    await publish_user_event(
+        redis,
+        device.user_id,
+        "trade.reported",
+        {
+            "device_id": str(device.id),
+            "ticket": payload.ticket,
+            "symbol": payload.symbol,
+            "profit": str(payload.profit) if payload.profit is not None else None,
+        },
+    )
+
+    return {"accepted": True}

@@ -1,1 +1,31 @@
-a2luZCA9ICJhcGkiCnByZXZpZXdQYXRoID0gIi9hcGkiCnRpdGxlID0gIkFQSSBTZXJ2ZXIiCnZlcnNpb24gPSAiMS4wLjAiCmlkID0gIjNCNF9GRlNrRVZCa0FlWU1GUkoyZSIKCltbc2VydmljZXNdXQpsb2NhbFBvcnQgPSA4MDgwCm5hbWUgPSAiQVBJIFNlcnZlciIKcGF0aHMgPSBbIi9hcGkiLCAiL2FwcC92MSIsICIvZWEvdjEiXQoKW3NlcnZpY2VzLmRldmVsb3BtZW50XQpydW4gPSAicG5wbSAtLWZpbHRlciBAd29ya3NwYWNlL2FwaS1zZXJ2ZXIgcnVuIGRldiIKCltzZXJ2aWNlcy5wcm9kdWN0aW9uXQoKW3NlcnZpY2VzLnByb2R1Y3Rpb24uYnVpbGRdCmFyZ3MgPSBbInBucG0iLCAiLS1maWx0ZXIiLCAiQHdvcmtzcGFjZS9hcGktc2VydmVyIiwgInJ1biIsICJidWlsZCJdCgpbc2VydmljZXMucHJvZHVjdGlvbi5idWlsZC5lbnZdCk5PREVfRU5WID0gInByb2R1Y3Rpb24iCgpbc2VydmljZXMucHJvZHVjdGlvbi5ydW5dCmFyZ3MgPSBbInB5dGhvbiIsICJhcnRpZmFjdHMvYXBpLXNlcnZlci9ydW4ucHkiXQoKW3NlcnZpY2VzLnByb2R1Y3Rpb24ucnVuLmVudl0KUE9SVCA9ICI4MDgwIgpOT0RFX0VOViA9ICJwcm9kdWN0aW9uIgoKW3NlcnZpY2VzLnByb2R1Y3Rpb24uaGVhbHRoLnN0YXJ0dXBdCnBhdGggPSAiL2FwaS9oZWFsdGh6Ig==
+kind = "api"
+previewPath = "/api"
+title = "API Server"
+version = "1.0.0"
+id = "3B4_FFSkEVBkAeYMFRJ2e"
+
+[[services]]
+localPort = 8080
+name = "API Server"
+paths = ["/api", "/app/v1", "/ea/v1"]
+
+[services.development]
+run = "pnpm --filter @workspace/api-server run dev"
+
+[services.production]
+
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/api-server", "run", "build"]
+
+[services.production.build.env]
+NODE_ENV = "production"
+
+[services.production.run]
+args = ["python", "artifacts/api-server/run.py"]
+
+[services.production.run.env]
+PORT = "8080"
+NODE_ENV = "production"
+
+[services.production.health.startup]
+path = "/api/healthz"

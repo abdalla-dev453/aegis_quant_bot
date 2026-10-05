@@ -1,1 +1,117 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgYXBpIH0gZnJvbSAiLi4vbGliL2FwaS5qcyI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQZXJmb3JtYW5jZU1hdHJpeCgpIHsKICBjb25zdCBbbWV0cmljcywgc2V0TWV0cmljc10gPSB1c2VTdGF0ZSh7CiAgICB0b3RhbF90cmFkZXM6IDAsCiAgICB3aW5uaW5nX3RyYWRlczogMCwKICAgIGxvc2luZ190cmFkZXM6IDAsCiAgICB3aW5fcmF0ZV9wY3Q6ICIwLjAiLAogICAgcHJvZml0X2ZhY3RvcjogIjAuMCIsCiAgICBleHBlY3RhbmN5OiAiMC4wIiwKICAgIGF2ZXJhZ2Vfcl9tdWx0aXBsZTogIjAuMCIsCiAgICBtYXhfZHJhd2Rvd25fcGN0OiAiMC4wIiwKICAgIG5ldF9wbmw6ICIwLjAiLAogIH0pOwogIGNvbnN0IFtoZWF0bWFwLCBzZXRIZWF0bWFwXSA9IHVzZVN0YXRlKFtdKTsKICBjb25zdCBbbG9hZGluZywgc2V0TG9hZGluZ10gPSB1c2VTdGF0ZSh0cnVlKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIFByb21pc2UuYWxsKFthcGkuZ2V0Sm91cm5hbE1ldHJpY3MoKSwgYXBpLmdldEpvdXJuYWxIZWF0bWFwKCldKQogICAgICAudGhlbigoW20sIGhdKSA9PiB7CiAgICAgICAgaWYgKG0pIHNldE1ldHJpY3MobSk7CiAgICAgICAgaWYgKGgpIHNldEhlYXRtYXAoaCB8fCBbXSk7CiAgICAgIH0pCiAgICAgIC5jYXRjaChjb25zb2xlLmVycm9yKQogICAgICAuZmluYWxseSgoKSA9PiBzZXRMb2FkaW5nKGZhbHNlKSk7CiAgfSwgW10pOwoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctNXhsIHAtNiBzcGFjZS15LTgiPgogICAgICB7LyogSGVhZGVyICovfQogICAgICA8ZGl2IGNsYXNzTmFtZT0iYm9yZGVyLWIgYm9yZGVyLWJvcmRlciBwYi00Ij4KICAgICAgICA8aDEgY2xhc3NOYW1lPSJ0ZXh0LXhsIGZvbnQtYm9sZCB0ZXh0LWluayI+UXVhbnRpdGF0aXZlIEpvdXJuYWwgJiBBbmFseXRpY3M8L2gxPgogICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMSB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICBEZWVwIHRlbGVtZXRyeSBvbiBBSSBlZGdlLCBleHBlY3RhbmN5IGRpc3RyaWJ1dGlvbiwgYW5kIGRyYXdkb3duIHJlY292ZXJ5LgogICAgICAgIDwvcD4KICAgICAgPC9kaXY+CgogICAgICB7LyogTWV0cmljcyBDYXJkcyBHcmlkICovfQogICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMiBtZDpncmlkLWNvbHMtNCBnYXAtNCI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzExcHhdIGZvbnQtbW9ubyB1cHBlcmNhc2UgdGV4dC1pbmstZGltIj5XaW4gUmF0ZTwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTIgZm9udC1tb25vIHRleHQtMnhsIGZvbnQtZXh0cmFib2xkIHRleHQtYnVsbCI+CiAgICAgICAgICAgIHttZXRyaWNzLndpbl9yYXRlX3BjdH0lCiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC0xIHRleHQtWzEwcHhdIHRleHQtaW5rLWZhaW50IGZvbnQtbW9ubyI+CiAgICAgICAgICAgIHttZXRyaWNzLndpbm5pbmdfdHJhZGVzfVcgLyB7bWV0cmljcy5sb3NpbmdfdHJhZGVzfUwgKHttZXRyaWNzLnRvdGFsX3RyYWRlc30gVG90YWwpCiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzExcHhdIGZvbnQtbW9ubyB1cHBlcmNhc2UgdGV4dC1pbmstZGltIj5Qcm9maXQgRmFjdG9yPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMiBmb250LW1vbm8gdGV4dC0yeGwgZm9udC1leHRyYWJvbGQgdGV4dC1hY2NlbnQiPgogICAgICAgICAgICB7bWV0cmljcy5wcm9maXRfZmFjdG9yfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMSB0ZXh0LVsxMHB4XSB0ZXh0LWluay1mYWludCBmb250LW1vbm8iPkdyb3NzIFdpbnMgLyBHcm9zcyBMb3NzZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzExcHhdIGZvbnQtbW9ubyB1cHBlcmNhc2UgdGV4dC1pbmstZGltIj5BdmVyYWdlIEV4cGVjdGFuY3k8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC0yIGZvbnQtbW9ubyB0ZXh0LTJ4bCBmb250LWV4dHJhYm9sZCB0ZXh0LWluayI+CiAgICAgICAgICAgICR7bWV0cmljcy5leHBlY3RhbmN5fQogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMSB0ZXh0LVsxMHB4XSB0ZXh0LWluay1mYWludCBmb250LW1vbm8iPkV4cGVjdGVkIFZhbHVlIC8gVHJhZGU8L2Rpdj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzExcHhdIGZvbnQtbW9ubyB1cHBlcmNhc2UgdGV4dC1pbmstZGltIj5NYXggRHJhd2Rvd248L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC0yIGZvbnQtbW9ubyB0ZXh0LTJ4bCBmb250LWV4dHJhYm9sZCB0ZXh0LWJlYXIiPgogICAgICAgICAgICB7bWV0cmljcy5tYXhfZHJhd2Rvd25fcGN0fSUKICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTEgdGV4dC1bMTBweF0gdGV4dC1pbmstZmFpbnQgZm9udC1tb25vIj5QZWFrLXRvLVRyb3VnaCBEZWx0YTwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KCiAgICAgIHsvKiBEYWlseSBQbkwgSGVhdG1hcCAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBwLTYgc3BhY2UteS00Ij4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIj4KICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtc20gZm9udC1ib2xkIHRleHQtaW5rIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciI+RGFpbHkgUC9MIERpc3RyaWJ1dGlvbjwvaDI+CiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImZvbnQtbW9ubyB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+Q2FsZW5kYXIgTWF0cml4PC9zcGFuPgogICAgICAgIDwvZGl2PgoKICAgICAgICB7bG9hZGluZyA/ICgKICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJweS04IHRleHQtY2VudGVyIHRleHQteHMgdGV4dC1pbmstZGltIj5Mb2FkaW5nIHRlbGVtZXRyeSBtYXRyaXguLi48L2Rpdj4KICAgICAgICApIDogaGVhdG1hcC5sZW5ndGggPT09IDAgPyAoCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHktOCB0ZXh0LWNlbnRlciB0ZXh0LXhzIHRleHQtaW5rLWRpbSI+Tm8gaGlzdG9yaWNhbCB0cmFkZSBkYXRhIHJlY29yZGVkIHlldC48L2Rpdj4KICAgICAgICApIDogKAogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTIgbWQ6Z3JpZC1jb2xzLTcgZ2FwLTIiPgogICAgICAgICAgICB7aGVhdG1hcC5tYXAoKGVudHJ5KSA9PiB7CiAgICAgICAgICAgICAgY29uc3QgcG5sTnVtID0gcGFyc2VGbG9hdChlbnRyeS5wbmwpOwogICAgICAgICAgICAgIGNvbnN0IGlzUHJvZml0ID0gcG5sTnVtID4gMDsKICAgICAgICAgICAgICBjb25zdCBpc0xvc3MgPSBwbmxOdW0gPCAwOwogICAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgICA8ZGl2CiAgICAgICAgICAgICAgICAgIGtleT17ZW50cnkuZGF0ZX0KICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgcm91bmRlZC1sZyBib3JkZXIgcC0zIGZvbnQtbW9ubyAkewogICAgICAgICAgICAgICAgICAgIGlzUHJvZml0CiAgICAgICAgICAgICAgICAgICAgICA/ICJib3JkZXItYnVsbC8zMCBiZy1idWxsLWRpbS8yMCB0ZXh0LWJ1bGwiCiAgICAgICAgICAgICAgICAgICAgICA6IGlzTG9zcwogICAgICAgICAgICAgICAgICAgICAgPyAiYm9yZGVyLWJlYXIvMzAgYmctYmVhci1kaW0vMjAgdGV4dC1iZWFyIgogICAgICAgICAgICAgICAgICAgICAgOiAiYm9yZGVyLWJvcmRlciBiZy1jYW52YXMgdGV4dC1pbmstZGltIgogICAgICAgICAgICAgICAgICB9YH0KICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzEwcHhdIHRleHQtaW5rLWRpbSI+e2VudHJ5LmRhdGV9PC9kaXY+CiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC0xIHRleHQtc20gZm9udC1ib2xkIj4KICAgICAgICAgICAgICAgICAgICB7aXNQcm9maXQgPyBgKyQke3BubE51bS50b0ZpeGVkKDIpfWAgOiBgJCR7cG5sTnVtLnRvRml4ZWQoMil9YH0KICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LVs5cHhdIHRleHQtaW5rLWZhaW50Ij57ZW50cnkudHJhZGVfY291bnR9IHRyYWRlczwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgKTsKICAgICAgICAgICAgfSl9CiAgICAgICAgICA8L2Rpdj4KICAgICAgICApfQogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0=
+import { useState, useEffect } from "react";
+import { api } from "../lib/api.js";
+
+export default function PerformanceMatrix() {
+  const [metrics, setMetrics] = useState({
+    total_trades: 0,
+    winning_trades: 0,
+    losing_trades: 0,
+    win_rate_pct: "0.0",
+    profit_factor: "0.0",
+    expectancy: "0.0",
+    average_r_multiple: "0.0",
+    max_drawdown_pct: "0.0",
+    net_pnl: "0.0",
+  });
+  const [heatmap, setHeatmap] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([api.getJournalMetrics(), api.getJournalHeatmap()])
+      .then(([m, h]) => {
+        if (m) setMetrics(m);
+        if (h) setHeatmap(h || []);
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
+  return (
+    <div className="mx-auto max-w-5xl p-6 space-y-8">
+      {/* Header */}
+      <div className="border-b border-border pb-4">
+        <h1 className="text-xl font-bold text-ink">Quantitative Journal & Analytics</h1>
+        <p className="mt-1 text-xs text-ink-dim">
+          Deep telemetry on AI edge, expectancy distribution, and drawdown recovery.
+        </p>
+      </div>
+
+      {/* Metrics Cards Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <div className="text-[11px] font-mono uppercase text-ink-dim">Win Rate</div>
+          <div className="mt-2 font-mono text-2xl font-extrabold text-bull">
+            {metrics.win_rate_pct}%
+          </div>
+          <div className="mt-1 text-[10px] text-ink-faint font-mono">
+            {metrics.winning_trades}W / {metrics.losing_trades}L ({metrics.total_trades} Total)
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <div className="text-[11px] font-mono uppercase text-ink-dim">Profit Factor</div>
+          <div className="mt-2 font-mono text-2xl font-extrabold text-accent">
+            {metrics.profit_factor}
+          </div>
+          <div className="mt-1 text-[10px] text-ink-faint font-mono">Gross Wins / Gross Losses</div>
+        </div>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <div className="text-[11px] font-mono uppercase text-ink-dim">Average Expectancy</div>
+          <div className="mt-2 font-mono text-2xl font-extrabold text-ink">
+            ${metrics.expectancy}
+          </div>
+          <div className="mt-1 text-[10px] text-ink-faint font-mono">Expected Value / Trade</div>
+        </div>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <div className="text-[11px] font-mono uppercase text-ink-dim">Max Drawdown</div>
+          <div className="mt-2 font-mono text-2xl font-extrabold text-bear">
+            {metrics.max_drawdown_pct}%
+          </div>
+          <div className="mt-1 text-[10px] text-ink-faint font-mono">Peak-to-Trough Delta</div>
+        </div>
+      </div>
+
+      {/* Daily PnL Heatmap */}
+      <div className="rounded-xl border border-border bg-surface p-6 space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-bold text-ink uppercase tracking-wider">Daily P/L Distribution</h2>
+          <span className="font-mono text-xs text-ink-dim">Calendar Matrix</span>
+        </div>
+
+        {loading ? (
+          <div className="py-8 text-center text-xs text-ink-dim">Loading telemetry matrix...</div>
+        ) : heatmap.length === 0 ? (
+          <div className="py-8 text-center text-xs text-ink-dim">No historical trade data recorded yet.</div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
+            {heatmap.map((entry) => {
+              const pnlNum = parseFloat(entry.pnl);
+              const isProfit = pnlNum > 0;
+              const isLoss = pnlNum < 0;
+              return (
+                <div
+                  key={entry.date}
+                  className={`rounded-lg border p-3 font-mono ${
+                    isProfit
+                      ? "border-bull/30 bg-bull-dim/20 text-bull"
+                      : isLoss
+                      ? "border-bear/30 bg-bear-dim/20 text-bear"
+                      : "border-border bg-canvas text-ink-dim"
+                  }`}
+                >
+                  <div className="text-[10px] text-ink-dim">{entry.date}</div>
+                  <div className="mt-1 text-sm font-bold">
+                    {isProfit ? `+$${pnlNum.toFixed(2)}` : `$${pnlNum.toFixed(2)}`}
+                  </div>
+                  <div className="text-[9px] text-ink-faint">{entry.trade_count} trades</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

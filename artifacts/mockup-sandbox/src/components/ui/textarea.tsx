@@ -1,1 +1,22 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCgppbXBvcnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3QgVGV4dGFyZWEgPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxUZXh0QXJlYUVsZW1lbnQsCiAgUmVhY3QuQ29tcG9uZW50UHJvcHM8InRleHRhcmVhIj4KPigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gewogIHJldHVybiAoCiAgICA8dGV4dGFyZWEKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAiZmxleCBtaW4taC1bNjBweF0gdy1mdWxsIHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci1pbnB1dCBiZy10cmFuc3BhcmVudCBweC0zIHB5LTIgdGV4dC1iYXNlIHNoYWRvdy1zbSBwbGFjZWhvbGRlcjp0ZXh0LW11dGVkLWZvcmVncm91bmQgZm9jdXMtdmlzaWJsZTpvdXRsaW5lLW5vbmUgZm9jdXMtdmlzaWJsZTpyaW5nLTEgZm9jdXMtdmlzaWJsZTpyaW5nLXJpbmcgZGlzYWJsZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAgbWQ6dGV4dC1zbSIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHJlZj17cmVmfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICkKfSkKVGV4dGFyZWEuZGlzcGxheU5hbWUgPSAiVGV4dGFyZWEiCgpleHBvcnQgeyBUZXh0YXJlYSB9Cg==
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Textarea = React.forwardRef<
+  HTMLTextAreaElement,
+  React.ComponentProps<"textarea">
+>(({ className, ...props }, ref) => {
+  return (
+    <textarea
+      className={cn(
+        "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+        className
+      )}
+      ref={ref}
+      {...props}
+    />
+  )
+})
+Textarea.displayName = "Textarea"
+
+export { Textarea }

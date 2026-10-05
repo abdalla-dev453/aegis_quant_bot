@@ -1,1 +1,20 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2UvZWEtY29udHJhY3RzIiwKICAidmVyc2lvbiI6ICIwLjEuMCIsCiAgInByaXZhdGUiOiB0cnVlLAogICJ0eXBlIjogIm1vZHVsZSIsCiAgImV4cG9ydHMiOiB7CiAgICAiLiI6ICIuL3NyYy9pbmRleC50cyIsCiAgICAiLi90eXBlcyI6ICIuL3NyYy9nZW5lcmF0ZWQudHMiCiAgfSwKICAic2NyaXB0cyI6IHsKICAgICJnZW5lcmF0ZSI6ICJvcGVuYXBpLXR5cGVzY3JpcHQgb3BlbmFwaS5qc29uIC1vIHNyYy9nZW5lcmF0ZWQudHMiLAogICAgImJ1aWxkIjogInRzYyAtcCB0c2NvbmZpZy5qc29uIC0tbm9FbWl0IiwKICAgICJ0eXBlY2hlY2siOiAidHNjIC1wIHRzY29uZmlnLmpzb24gLS1ub0VtaXQiLAogICAgInRlc3QiOiAidHNjIC1wIHRzY29uZmlnLmpzb24gLS1ub0VtaXQiCiAgfSwKICAiZGV2RGVwZW5kZW5jaWVzIjogewogICAgIm9wZW5hcGktdHlwZXNjcmlwdCI6ICI3LjEzLjAiLAogICAgInR5cGVzY3JpcHQiOiAiXjUuOS4zIgogIH0KfQ==
+{
+  "name": "@workspace/ea-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/generated.ts"
+  },
+  "scripts": {
+    "generate": "openapi-typescript openapi.json -o src/generated.ts",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "openapi-typescript": "7.13.0",
+    "typescript": "^5.9.3"
+  }
+}

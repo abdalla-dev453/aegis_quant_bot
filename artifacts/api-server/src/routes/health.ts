@@ -1,1 +1,11 @@
-aW1wb3J0IHsgUm91dGVyLCB0eXBlIElSb3V0ZXIgfSBmcm9tICJleHByZXNzIjsKaW1wb3J0IHsgSGVhbHRoQ2hlY2tSZXNwb25zZSB9IGZyb20gIkB3b3Jrc3BhY2UvYXBpLXpvZCI7Cgpjb25zdCByb3V0ZXI6IElSb3V0ZXIgPSBSb3V0ZXIoKTsKCnJvdXRlci5nZXQoIi9oZWFsdGh6IiwgKF9yZXEsIHJlcykgPT4gewogIGNvbnN0IGRhdGEgPSBIZWFsdGhDaGVja1Jlc3BvbnNlLnBhcnNlKHsgc3RhdHVzOiAib2siIH0pOwogIHJlcy5qc29uKGRhdGEpOwp9KTsKCmV4cG9ydCBkZWZhdWx0IHJvdXRlcjsK
+import { Router, type IRouter } from "express";
+import { HealthCheckResponse } from "@workspace/api-zod";
+
+const router: IRouter = Router();
+
+router.get("/healthz", (_req, res) => {
+  const data = HealthCheckResponse.parse({ status: "ok" });
+  res.json(data);
+});
+
+export default router;

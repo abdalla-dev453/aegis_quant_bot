@@ -1,1 +1,185 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4uL2NvbXBvbmVudHMvUGFuZWwuanN4IjsKaW1wb3J0IFRvcEJhciBmcm9tICIuLi9jb21wb25lbnRzL1RvcEJhci5qc3giOwppbXBvcnQgeyBmZXRjaFNldHRpbmdzLCBzYXZlQ3JlZGVudGlhbHMgfSBmcm9tICIuLi9saWIvYm90RmVlZC5qcyI7CmltcG9ydCB7IFNrZWxldG9uUm93IH0gZnJvbSAiLi4vY29tcG9uZW50cy9Ta2VsZXRvbkxvYWRlcnMuanN4IjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFNldHRpbmdzKCkgewogIGNvbnN0IFtzZXR0aW5ncywgc2V0U2V0dGluZ3NdID0gdXNlU3RhdGUobnVsbCk7CiAgY29uc3QgW2Zvcm0sIHNldEZvcm1dID0gdXNlU3RhdGUoewogICAgbG9naW46ICIiLAogICAgcGFzc3dvcmQ6ICIiLAogICAgc2VydmVyOiAiIiwKICAgIHRlcm1pbmFsX3BhdGg6ICIiLAogIH0pOwogIGNvbnN0IFtzdGF0dXMsIHNldFN0YXR1c10gPSB1c2VTdGF0ZSgiTG9hZGluZyBzZXJ2ZXIgc2V0dGluZ3MuLi4iKTsKICBjb25zdCBbc2F2aW5nLCBzZXRTYXZpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKHRydWUpOwoKICB1c2VFZmZlY3QoKCkgPT4gewogICAgZmV0Y2hTZXR0aW5ncygpCiAgICAgIC50aGVuKChkYXRhKSA9PiB7CiAgICAgICAgc2V0U2V0dGluZ3MoZGF0YSk7CiAgICAgICAgc2V0U3RhdHVzKCJSZWFkeSIpOwogICAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgICB9KQogICAgICAuY2F0Y2goKGVycm9yKSA9PiB7CiAgICAgICAgc2V0U3RhdHVzKGVycm9yLm1lc3NhZ2UpOwogICAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgICB9KTsKICB9LCBbXSk7CgogIGNvbnN0IHN1Ym1pdCA9IGFzeW5jIChldmVudCkgPT4gewogICAgZXZlbnQucHJldmVudERlZmF1bHQoKTsKICAgIGlmICh3aW5kb3cubG9jYXRpb24ucHJvdG9jb2wgIT09ICJodHRwczoiICYmICFbImxvY2FsaG9zdCIsICIxMjcuMC4wLjEiXS5pbmNsdWRlcyh3aW5kb3cubG9jYXRpb24uaG9zdG5hbWUpKSB7CiAgICAgIHNldFN0YXR1cygiU2VjdXJlIEhUVFBTIGNvbm5lY3Rpb24gcmVxdWlyZWQgYmVmb3JlIHNlbmRpbmcgYnJva2VyIGNyZWRlbnRpYWxzLiIpOwogICAgICByZXR1cm47CiAgICB9CiAgICBzZXRTYXZpbmcodHJ1ZSk7CiAgICBzZXRTdGF0dXMoIkNvbm5lY3RpbmcgdG8gTVQ1Li4uIik7CiAgICB0cnkgewogICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBzYXZlQ3JlZGVudGlhbHMoewogICAgICAgIC4uLmZvcm0sCiAgICAgICAgbG9naW46IE51bWJlcihmb3JtLmxvZ2luKSwKICAgICAgICB0ZXJtaW5hbF9wYXRoOiBmb3JtLnRlcm1pbmFsX3BhdGggfHwgbnVsbCwKICAgICAgfSk7CiAgICAgIHNldFN0YXR1cyhyZXN1bHQubWVzc2FnZSk7CiAgICAgIHNldEZvcm0oeyAuLi5mb3JtLCBwYXNzd29yZDogIiIgfSk7CiAgICAgIHNldFNldHRpbmdzKGF3YWl0IGZldGNoU2V0dGluZ3MoKSk7CiAgICB9IGNhdGNoIChlcnJvcikgewogICAgICBzZXRTdGF0dXMoZXJyb3IubWVzc2FnZSk7CiAgICB9IGZpbmFsbHkgewogICAgICBzZXRTYXZpbmcoZmFsc2UpOwogICAgfQogIH07CgogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBtaW4taC1mdWxsIGZsZXgtY29sIj4KICAgICAgPFRvcEJhcgogICAgICAgIHRpdGxlPSJTZXR0aW5ncyIKICAgICAgICBzdWJ0aXRsZT0iQ29ubmVjdGlvbiBhbmQgc2VydmVyIHN0cmF0ZWd5IGNvbmZpZ3VyYXRpb24iCiAgICAgIC8+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGZsZXgtMSBnYXAtNCBvdmVyZmxvdy15LWF1dG8gcHgtOCBweS01IGxnOmdyaWQtY29scy0yIj4KICAgICAgICA8UGFuZWwgdGl0bGU9Ik1UNSBhY2NvdW50IGNvbm5lY3Rpb24iPgogICAgICAgICAgeyFsb2FkaW5nID8gKAogICAgICAgICAgICA8Zm9ybSBvblN1Ym1pdD17c3VibWl0fSBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPEZpZWxkCiAgICAgICAgICAgICAgICBsYWJlbD0iQWNjb3VudCBsb2dpbiIKICAgICAgICAgICAgICAgIHR5cGU9Im51bWJlciIKICAgICAgICAgICAgICAgIHZhbHVlPXtmb3JtLmxvZ2lufQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyh2YWx1ZSkgPT4gc2V0Rm9ybSh7IC4uLmZvcm0sIGxvZ2luOiB2YWx1ZSB9KX0KICAgICAgICAgICAgICAgIHJlcXVpcmVkCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8RmllbGQKICAgICAgICAgICAgICAgIGxhYmVsPSJQYXNzd29yZCIKICAgICAgICAgICAgICAgIHR5cGU9InBhc3N3b3JkIgogICAgICAgICAgICAgICAgdmFsdWU9e2Zvcm0ucGFzc3dvcmR9CiAgICAgICAgICAgICAgICBvbkNoYW5nZT17KHZhbHVlKSA9PiBzZXRGb3JtKHsgLi4uZm9ybSwgcGFzc3dvcmQ6IHZhbHVlIH0pfQogICAgICAgICAgICAgICAgcmVxdWlyZWQKICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDxGaWVsZAogICAgICAgICAgICAgICAgbGFiZWw9IkJyb2tlciBzZXJ2ZXIiCiAgICAgICAgICAgICAgICB2YWx1ZT17Zm9ybS5zZXJ2ZXJ9CiAgICAgICAgICAgICAgICBvbkNoYW5nZT17KHZhbHVlKSA9PiBzZXRGb3JtKHsgLi4uZm9ybSwgc2VydmVyOiB2YWx1ZSB9KX0KICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJCcm9rZXItRGVtbyIKICAgICAgICAgICAgICAgIHJlcXVpcmVkCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8RmllbGQKICAgICAgICAgICAgICAgIGxhYmVsPSJUZXJtaW5hbCBwYXRoIChvcHRpb25hbCkiCiAgICAgICAgICAgICAgICB2YWx1ZT17Zm9ybS50ZXJtaW5hbF9wYXRofQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyh2YWx1ZSkgPT4gc2V0Rm9ybSh7IC4uLmZvcm0sIHRlcm1pbmFsX3BhdGg6IHZhbHVlIH0pfQogICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9IkM6XFxQcm9ncmFtIEZpbGVzXFxNZXRhVHJhZGVyIDVcXHRlcm1pbmFsNjQuZXhlIgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgdHlwZT0ic3VibWl0IgogICAgICAgICAgICAgICAgZGlzYWJsZWQ9e3NhdmluZ30KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1tZCBiZy1hY2NlbnQgcHgtMyBweS0yIHRleHQtWzEycHhdIGZvbnQtbWVkaXVtIHRleHQtd2hpdGUgZGlzYWJsZWQ6Y3Vyc29yLXdhaXQgZGlzYWJsZWQ6b3BhY2l0eS02MCB3LWZ1bGwgc206dy1hdXRvIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHtzYXZpbmcgPyAiQ29ubmVjdGluZy4uLiIgOiAiQ29ubmVjdCBNVDUifQogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bMTFweF0gbGVhZGluZy1yZWxheGVkIHRleHQtaW5rLWZhaW50Ij4KICAgICAgICAgICAgICAgIENyZWRlbnRpYWxzIGFyZSBzZW50IHRvIHRoZSBzZXJ2ZXIgZm9yIHRoaXMgc2Vzc2lvbiBvbmx5LiBUaGUgQVBJCiAgICAgICAgICAgICAgICBkb2VzIG5vdCByZXR1cm4gb3IgcGVyc2lzdCB0aGUgcGFzc3dvcmQuIFVzZSBIVFRQUyBvciBhIHByaXZhdGUKICAgICAgICAgICAgICAgIG5ldHdvcmsgYmVmb3JlIGVudGVyaW5nIGxpdmUgY3JlZGVudGlhbHMuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgIDxwIHJvbGU9InN0YXR1cyIgYXJpYS1saXZlPSJwb2xpdGUiIGNsYXNzTmFtZT0idGV4dC1bMTFweF0gdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICAgIHtzdGF0dXN9CiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L2Zvcm0+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17MX0gLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApfQogICAgICAgIDwvUGFuZWw+CgogICAgICAgIDxQYW5lbCB0aXRsZT0iRWZmZWN0aXZlIHNlcnZlciBjb25maWd1cmF0aW9uIj4KICAgICAgICAgIHtzZXR0aW5ncyA/ICgKICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktMiB0ZXh0LVsxMnB4XSI+CiAgICAgICAgICAgICAgPFJvdwogICAgICAgICAgICAgICAgbGFiZWw9IkNyZWRlbnRpYWwgc3RhdHVzIgogICAgICAgICAgICAgICAgdmFsdWU9ewogICAgICAgICAgICAgICAgICBzZXR0aW5ncy5jcmVkZW50aWFsc0NvbmZpZ3VyZWQKICAgICAgICAgICAgICAgICAgICA/ICJDb25maWd1cmVkIgogICAgICAgICAgICAgICAgICAgIDogIk5vdCBjb25maWd1cmVkIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPFJvdyBsYWJlbD0iU3ltYm9scyIgdmFsdWU9e3NldHRpbmdzLnN5bWJvbHMuam9pbigiLCAiKSB8fCAiLSJ9IC8+CiAgICAgICAgICAgICAgPFJvdwogICAgICAgICAgICAgICAgbGFiZWw9IlRyaWdnZXIgLyBiaWFzIgogICAgICAgICAgICAgICAgdmFsdWU9e2Ake3NldHRpbmdzLnRpbWVmcmFtZVRyaWdnZXJ9IC8gJHtzZXR0aW5ncy50aW1lZnJhbWVCaWFzfWB9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8Um93CiAgICAgICAgICAgICAgICBsYWJlbD0iUmlzayBwZXIgdHJhZGUiCiAgICAgICAgICAgICAgICB2YWx1ZT17YCR7c2V0dGluZ3Mucmlza1BlclRyYWRlUGN0fSVgfQogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPFJvdwogICAgICAgICAgICAgICAgbGFiZWw9IkFUUiBzdG9wIC8gdGFyZ2V0IgogICAgICAgICAgICAgICAgdmFsdWU9e2Ake3NldHRpbmdzLmF0clN0b3BNdWx0aXBsaWVyfSAvICR7c2V0dGluZ3MuYXRyVGFrZVByb2ZpdE11bHRpcGxpZXJ9YH0KICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDxSb3cKICAgICAgICAgICAgICAgIGxhYmVsPSJNYXggcG9zaXRpb25zIgogICAgICAgICAgICAgICAgdmFsdWU9e3NldHRpbmdzLm1heENvbmN1cnJlbnRQb3NpdGlvbnN9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8Um93IGxhYmVsPSJNYWdpYyBudW1iZXIiIHZhbHVlPXtzZXR0aW5ncy5tYWdpY051bWJlcn0gLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgICA8U2tlbGV0b25Sb3cgY29sdW1ucz17Mn0gLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApfQogICAgICAgIDwvUGFuZWw+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKZnVuY3Rpb24gRmllbGQoeyBsYWJlbCwgdHlwZSA9ICJ0ZXh0IiwgdmFsdWUsIG9uQ2hhbmdlLCAuLi5wcm9wcyB9KSB7CiAgcmV0dXJuICgKICAgIDxsYWJlbCBjbGFzc05hbWU9ImJsb2NrIHRleHQtWzExcHhdIHRleHQtaW5rLWRpbSI+CiAgICAgIHtsYWJlbH0KICAgICAgPGlucHV0CiAgICAgICAgey4uLnByb3BzfQogICAgICAgIHR5cGU9e3R5cGV9CiAgICAgICAgdmFsdWU9e3ZhbHVlfQogICAgICAgIG9uQ2hhbmdlPXsoZXZlbnQpID0+IG9uQ2hhbmdlKGV2ZW50LnRhcmdldC52YWx1ZSl9CiAgICAgICAgY2xhc3NOYW1lPSJtdC0xIHctZnVsbCByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMiB0ZXh0LXNtIHRleHQtaW5rIG91dGxpbmUtbm9uZSBmb2N1czpib3JkZXItYWNjZW50IgogICAgICAvPgogICAgPC9sYWJlbD4KICApOwp9CgpmdW5jdGlvbiBSb3coeyBsYWJlbCwgdmFsdWUgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGJvcmRlci1iIGJvcmRlci1ib3JkZXIgcHktMiI+CiAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1pbmstZmFpbnQiPntsYWJlbH08L3NwYW4+CiAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtaW5rIj57dmFsdWV9PC9zcGFuPgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useEffect, useState } from "react";
+import Panel from "../components/Panel.jsx";
+import TopBar from "../components/TopBar.jsx";
+import { fetchSettings, saveCredentials } from "../lib/botFeed.js";
+import { SkeletonRow } from "../components/SkeletonLoaders.jsx";
+
+export default function Settings() {
+  const [settings, setSettings] = useState(null);
+  const [form, setForm] = useState({
+    login: "",
+    password: "",
+    server: "",
+    terminal_path: "",
+  });
+  const [status, setStatus] = useState("Loading server settings...");
+  const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchSettings()
+      .then((data) => {
+        setSettings(data);
+        setStatus("Ready");
+        setLoading(false);
+      })
+      .catch((error) => {
+        setStatus(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  const submit = async (event) => {
+    event.preventDefault();
+    if (window.location.protocol !== "https:" && !["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+      setStatus("Secure HTTPS connection required before sending broker credentials.");
+      return;
+    }
+    setSaving(true);
+    setStatus("Connecting to MT5...");
+    try {
+      const result = await saveCredentials({
+        ...form,
+        login: Number(form.login),
+        terminal_path: form.terminal_path || null,
+      });
+      setStatus(result.message);
+      setForm({ ...form, password: "" });
+      setSettings(await fetchSettings());
+    } catch (error) {
+      setStatus(error.message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="flex min-h-full flex-col">
+      <TopBar
+        title="Settings"
+        subtitle="Connection and server strategy configuration"
+      />
+      <div className="grid flex-1 gap-4 overflow-y-auto px-8 py-5 lg:grid-cols-2">
+        <Panel title="MT5 account connection">
+          {!loading ? (
+            <form onSubmit={submit} className="space-y-3">
+              <Field
+                label="Account login"
+                type="number"
+                value={form.login}
+                onChange={(value) => setForm({ ...form, login: value })}
+                required
+              />
+              <Field
+                label="Password"
+                type="password"
+                value={form.password}
+                onChange={(value) => setForm({ ...form, password: value })}
+                required
+              />
+              <Field
+                label="Broker server"
+                value={form.server}
+                onChange={(value) => setForm({ ...form, server: value })}
+                placeholder="Broker-Demo"
+                required
+              />
+              <Field
+                label="Terminal path (optional)"
+                value={form.terminal_path}
+                onChange={(value) => setForm({ ...form, terminal_path: value })}
+                placeholder="C:\\Program Files\\MetaTrader 5\\terminal64.exe"
+              />
+              <button
+                type="submit"
+                disabled={saving}
+                className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white disabled:cursor-wait disabled:opacity-60 w-full sm:w-auto"
+              >
+                {saving ? "Connecting..." : "Connect MT5"}
+              </button>
+              <p className="text-[11px] leading-relaxed text-ink-faint">
+                Credentials are sent to the server for this session only. The API
+                does not return or persist the password. Use HTTPS or a private
+                network before entering live credentials.
+              </p>
+              <p role="status" aria-live="polite" className="text-[11px] text-ink-dim">
+                {status}
+              </p>
+            </form>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={1} />
+            </div>
+          )}
+        </Panel>
+
+        <Panel title="Effective server configuration">
+          {settings ? (
+            <div className="space-y-2 text-[12px]">
+              <Row
+                label="Credential status"
+                value={
+                  settings.credentialsConfigured
+                    ? "Configured"
+                    : "Not configured"
+                }
+              />
+              <Row label="Symbols" value={settings.symbols.join(", ") || "-"} />
+              <Row
+                label="Trigger / bias"
+                value={`${settings.timeframeTrigger} / ${settings.timeframeBias}`}
+              />
+              <Row
+                label="Risk per trade"
+                value={`${settings.riskPerTradePct}%`}
+              />
+              <Row
+                label="ATR stop / target"
+                value={`${settings.atrStopMultiplier} / ${settings.atrTakeProfitMultiplier}`}
+              />
+              <Row
+                label="Max positions"
+                value={settings.maxConcurrentPositions}
+              />
+              <Row label="Magic number" value={settings.magicNumber} />
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+            </div>
+          )}
+        </Panel>
+      </div>
+    </div>
+  );
+}
+
+function Field({ label, type = "text", value, onChange, ...props }) {
+  return (
+    <label className="block text-[11px] text-ink-dim">
+      {label}
+      <input
+        {...props}
+        type={type}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="mt-1 w-full rounded-md border border-border bg-surface-alt px-3 py-2 text-sm text-ink outline-none focus:border-accent"
+      />
+    </label>
+  );
+}
+
+function Row({ label, value }) {
+  return (
+    <div className="flex items-center justify-between border-b border-border py-2">
+      <span className="text-ink-faint">{label}</span>
+      <span className="font-mono text-ink">{value}</span>
+    </div>
+  );
+}

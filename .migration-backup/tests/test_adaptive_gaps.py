@@ -1,1 +1,158 @@
-IiIiVGVzdHMgZm9yIGFkYXB0aXZlX29wdGltaXphdGlvbiBwYXJhbWV0ZXIgYWRqdXN0bWVudHMgYW5kIHBlcnNpc3RlbmNlLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUsIHRpbWVkZWx0YSwgdGltZXpvbmUKCmltcG9ydCBhZGFwdGl2ZV9vcHRpbWl6YXRpb24KaW1wb3J0IHB5dGVzdApmcm9tIGFkYXB0aXZlX29wdGltaXphdGlvbiBpbXBvcnQgKAogICAgQWRhcHRpdmVPcHRpbWl6ZXIsCiAgICBBZGp1c3RtZW50RGlyZWN0aW9uLAogICAgUGVyZm9ybWFuY2VNZXRyaWNzLAogICAgZ2V0X2FsbF9lZmZlY3RpdmVfcGFyYW1ldGVycywKICAgIGdldF9lZmZlY3RpdmVfcGFyYW0sCikKCgpjbGFzcyBUZXN0UGFyYW1ldGVyT3ZlcnJpZGVzOgogICAgZGVmIHRlc3RfZGVmYXVsdF9yZXR1cm5zX2NvbmZpZ192YWx1ZShzZWxmKToKICAgICAgICBmcm9tIGNvbmZpZyBpbXBvcnQgUklTSwogICAgICAgIGFzc2VydCBnZXRfZWZmZWN0aXZlX3BhcmFtKCJyaXNrX3Blcl90cmFkZV9wY3QiLCAxLjUpID09IFJJU0sucmlza19wZXJfdHJhZGVfcGN0CgogICAgZGVmIHRlc3Rfb3ZlcnJpZGVfcGVyc2lzdHNfYWNyb3NzX2NhbGxzKHNlbGYpOgogICAgICAgIGFkYXB0aXZlX29wdGltaXphdGlvbi5fcGFyYW1ldGVyX292ZXJyaWRlc1sicmlza19wZXJfdHJhZGVfcGN0Il0gPSAwLjUKICAgICAgICBhc3NlcnQgZ2V0X2VmZmVjdGl2ZV9wYXJhbSgicmlza19wZXJfdHJhZGVfcGN0IiwgMS41KSA9PSAwLjUKICAgICAgICBhc3NlcnQgZ2V0X2FsbF9lZmZlY3RpdmVfcGFyYW1ldGVycygpWyJyaXNrX3Blcl90cmFkZV9wY3QiXSA9PSAwLjUKICAgICAgICBkZWwgYWRhcHRpdmVfb3B0aW1pemF0aW9uLl9wYXJhbWV0ZXJfb3ZlcnJpZGVzWyJyaXNrX3Blcl90cmFkZV9wY3QiXQoKCmNsYXNzIFRlc3RQZXJmb3JtYW5jZUFuYWx5c2lzOgogICAgZGVmIHRlc3RfZW1wdHlfbWV0cmljc193aGVuX25vX29yZGVycyhzZWxmKToKICAgICAgICBvcHQgPSBBZGFwdGl2ZU9wdGltaXplcigpCiAgICAgICAgbW9ua2V5cGF0Y2ggPSBweXRlc3QuTW9ua2V5UGF0Y2goKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoImFkYXB0aXZlX29wdGltaXphdGlvbi5yZWFkIiwgbGFtYmRhOiB7Im9yZGVycyI6IFtdfSkKICAgICAgICBtZXRyaWNzID0gb3B0LmFuYWx5emVfcmVjZW50X3BlcmZvcm1hbmNlKCkKICAgICAgICBhc3NlcnQgbWV0cmljcy50b3RhbF90cmFkZXMgPT0gMAogICAgICAgIG1vbmtleXBhdGNoLnVuZG8oKQoKICAgIGRlZiB0ZXN0X21ldHJpY3NfY2FsY3VsYXRpb24oc2VsZik6CiAgICAgICAgb3B0ID0gQWRhcHRpdmVPcHRpbWl6ZXIoKQogICAgICAgIG9wdC5taW5fdHJhZGVzX2Zvcl9vcHRpbWl6YXRpb24gPSAzCiAgICAgICAgbW9ua2V5cGF0Y2ggPSBweXRlc3QuTW9ua2V5UGF0Y2goKQogICAgICAgIG9yZGVycyA9IFsKICAgICAgICAgICAgeyJwbmwiOiAxMDAuMCwgInRpbWVzdGFtcCI6IGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLmlzb2Zvcm1hdCgpfSwKICAgICAgICAgICAgeyJwbmwiOiAtNTAuMCwgInRpbWVzdGFtcCI6IGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLmlzb2Zvcm1hdCgpfSwKICAgICAgICAgICAgeyJwbmwiOiAyMDAuMCwgInRpbWVzdGFtcCI6IGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLmlzb2Zvcm1hdCgpfSwKICAgICAgICBdCiAgICAgICAgbW9ua2V5cGF0Y2guc2V0YXR0cigiYWRhcHRpdmVfb3B0aW1pemF0aW9uLnJlYWQiLCBsYW1iZGE6IHsib3JkZXJzIjogb3JkZXJzfSkKICAgICAgICBtZXRyaWNzID0gb3B0LmFuYWx5emVfcmVjZW50X3BlcmZvcm1hbmNlKCkKICAgICAgICBhc3NlcnQgbWV0cmljcy50b3RhbF90cmFkZXMgPT0gMwogICAgICAgIGFzc2VydCBtZXRyaWNzLndpbm5pbmdfdHJhZGVzID09IDIKICAgICAgICBhc3NlcnQgbWV0cmljcy5sb3NpbmdfdHJhZGVzID09IDEKICAgICAgICBhc3NlcnQgbWV0cmljcy50b3RhbF9wcm9maXQgPT0gMzAwLjAKICAgICAgICBhc3NlcnQgbWV0cmljcy50b3RhbF9sb3NzID09IDUwLjAKICAgICAgICBtb25rZXlwYXRjaC51bmRvKCkKCgpjbGFzcyBUZXN0QWRqdXN0bWVudExvZ2ljOgogICAgZGVmIHRlc3RfbG93X3dpbl9yYXRlX3RpZ2h0ZW5zX2NyaXRlcmlhKHNlbGYpOgogICAgICAgIG9wdCA9IEFkYXB0aXZlT3B0aW1pemVyKCkKICAgICAgICBvcHQuY3VycmVudF9wYXJhbWV0ZXJzID0gewogICAgICAgICAgICAicnNpX292ZXJib3VnaHQiOiA3MC4wLAogICAgICAgICAgICAicnNpX292ZXJzb2xkIjogMzAuMCwKICAgICAgICAgICAgInNlbnRpbWVudF9idWxsaXNoX3RocmVzaG9sZCI6IDAuNSwKICAgICAgICAgICAgInNlbnRpbWVudF9iZWFyaXNoX3RocmVzaG9sZCI6IC0wLjUsCiAgICAgICAgICAgICJyaXNrX3Blcl90cmFkZV9wY3QiOiAxLjUsCiAgICAgICAgICAgICJhdHJfc2xfbXVsdGlwbGllciI6IDEuNSwKICAgICAgICAgICAgImF0cl90cF9tdWx0aXBsaWVyIjogMy4wLAogICAgICAgIH0KICAgICAgICBtZXRyaWNzID0gUGVyZm9ybWFuY2VNZXRyaWNzKAogICAgICAgICAgICB0b3RhbF90cmFkZXM9MjAsCiAgICAgICAgICAgIHdpbm5pbmdfdHJhZGVzPTUsCiAgICAgICAgICAgIGxvc2luZ190cmFkZXM9MTUsCiAgICAgICAgICAgIHdpbl9yYXRlPTAuMjUsCiAgICAgICAgICAgIHRvdGFsX3Byb2ZpdD01MDAuMCwKICAgICAgICAgICAgdG90YWxfbG9zcz0xMDAwLjAsCiAgICAgICAgICAgIHByb2ZpdF9mYWN0b3I9MC41LAogICAgICAgICAgICBhdmVyYWdlX3dpbj0xMDAuMCwKICAgICAgICAgICAgYXZlcmFnZV9sb3NzPS02Ni43LAogICAgICAgICAgICBtYXhfZHJhd2Rvd249MC4wNSwKICAgICAgICAgICAgc2hhcnBlX3JhdGlvPTAuNSwKICAgICAgICAgICAgcGVyaW9kX3N0YXJ0PWRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpIC0gdGltZWRlbHRhKGRheXM9NyksCiAgICAgICAgICAgIHBlcmlvZF9lbmQ9ZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YyksCiAgICAgICAgKQogICAgICAgIGFkanVzdG1lbnRzID0gb3B0LmRldGVybWluZV9hZGp1c3RtZW50cyhtZXRyaWNzKQogICAgICAgIGFzc2VydCBsZW4oYWRqdXN0bWVudHMpID4gMAogICAgICAgIHJzaV9hZGogPSBbYSBmb3IgYSBpbiBhZGp1c3RtZW50cyBpZiBhLnBhcmFtZXRlcl9uYW1lID09ICJyc2lfb3ZlcmJvdWdodCJdCiAgICAgICAgYXNzZXJ0IGxlbihyc2lfYWRqKSA9PSAxCiAgICAgICAgYXNzZXJ0IHJzaV9hZGpbMF0uZGlyZWN0aW9uID09IEFkanVzdG1lbnREaXJlY3Rpb24uSU5DUkVBU0UKCiAgICBkZWYgdGVzdF9oaWdoX3dpbl9yYXRlX2xvb3NlbnNfY3JpdGVyaWEoc2VsZik6CiAgICAgICAgb3B0ID0gQWRhcHRpdmVPcHRpbWl6ZXIoKQogICAgICAgIG9wdC5jdXJyZW50X3BhcmFtZXRlcnMgPSB7CiAgICAgICAgICAgICJyc2lfb3ZlcmJvdWdodCI6IDc1LjAsCiAgICAgICAgICAgICJyc2lfb3ZlcnNvbGQiOiAyNS4wLAogICAgICAgICAgICAic2VudGltZW50X2J1bGxpc2hfdGhyZXNob2xkIjogMC41LAogICAgICAgICAgICAic2VudGltZW50X2JlYXJpc2hfdGhyZXNob2xkIjogLTAuNSwKICAgICAgICAgICAgInJpc2tfcGVyX3RyYWRlX3BjdCI6IDEuNSwKICAgICAgICAgICAgImF0cl9zbF9tdWx0aXBsaWVyIjogMS41LAogICAgICAgICAgICAiYXRyX3RwX211bHRpcGxpZXIiOiAzLjAsCiAgICAgICAgfQogICAgICAgIG1ldHJpY3MgPSBQZXJmb3JtYW5jZU1ldHJpY3MoCiAgICAgICAgICAgIHRvdGFsX3RyYWRlcz0yMCwKICAgICAgICAgICAgd2lubmluZ190cmFkZXM9MTYsCiAgICAgICAgICAgIGxvc2luZ190cmFkZXM9NCwKICAgICAgICAgICAgd2luX3JhdGU9MC44MCwKICAgICAgICAgICAgdG90YWxfcHJvZml0PTE2MDAuMCwKICAgICAgICAgICAgdG90YWxfbG9zcz00MDAuMCwKICAgICAgICAgICAgcHJvZml0X2ZhY3Rvcj00LjAsCiAgICAgICAgICAgIGF2ZXJhZ2Vfd2luPTEwMC4wLAogICAgICAgICAgICBhdmVyYWdlX2xvc3M9LTEwMC4wLAogICAgICAgICAgICBtYXhfZHJhd2Rvd249MC4wMywKICAgICAgICAgICAgc2hhcnBlX3JhdGlvPTIuMCwKICAgICAgICAgICAgcGVyaW9kX3N0YXJ0PWRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpIC0gdGltZWRlbHRhKGRheXM9NyksCiAgICAgICAgICAgIHBlcmlvZF9lbmQ9ZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YyksCiAgICAgICAgKQogICAgICAgIGFkanVzdG1lbnRzID0gb3B0LmRldGVybWluZV9hZGp1c3RtZW50cyhtZXRyaWNzKQogICAgICAgIGFzc2VydCBsZW4oYWRqdXN0bWVudHMpID4gMAogICAgICAgIHJzaV9hZGogPSBbYSBmb3IgYSBpbiBhZGp1c3RtZW50cyBpZiBhLnBhcmFtZXRlcl9uYW1lID09ICJyc2lfb3ZlcmJvdWdodCJdCiAgICAgICAgYXNzZXJ0IGxlbihyc2lfYWRqKSA9PSAxCiAgICAgICAgYXNzZXJ0IHJzaV9hZGpbMF0uZGlyZWN0aW9uID09IEFkanVzdG1lbnREaXJlY3Rpb24uREVDUkVBU0UKCiAgICBkZWYgdGVzdF9pbnN1ZmZpY2llbnRfdHJhZGVzX25vX2FkanVzdG1lbnRzKHNlbGYpOgogICAgICAgIG9wdCA9IEFkYXB0aXZlT3B0aW1pemVyKCkKICAgICAgICBtZXRyaWNzID0gUGVyZm9ybWFuY2VNZXRyaWNzKAogICAgICAgICAgICB0b3RhbF90cmFkZXM9NSwKICAgICAgICAgICAgd2lubmluZ190cmFkZXM9MywKICAgICAgICAgICAgbG9zaW5nX3RyYWRlcz0yLAogICAgICAgICAgICB3aW5fcmF0ZT0wLjYsCiAgICAgICAgICAgIHRvdGFsX3Byb2ZpdD0zMDAuMCwKICAgICAgICAgICAgdG90YWxfbG9zcz0yMDAuMCwKICAgICAgICAgICAgcHJvZml0X2ZhY3Rvcj0xLjUsCiAgICAgICAgICAgIGF2ZXJhZ2Vfd2luPTEwMC4wLAogICAgICAgICAgICBhdmVyYWdlX2xvc3M9LTEwMC4wLAogICAgICAgICAgICBtYXhfZHJhd2Rvd249MC4wMiwKICAgICAgICAgICAgc2hhcnBlX3JhdGlvPTEuMCwKICAgICAgICAgICAgcGVyaW9kX3N0YXJ0PWRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpIC0gdGltZWRlbHRhKGRheXM9NyksCiAgICAgICAgICAgIHBlcmlvZF9lbmQ9ZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YyksCiAgICAgICAgKQogICAgICAgIGFkanVzdG1lbnRzID0gb3B0LmRldGVybWluZV9hZGp1c3RtZW50cyhtZXRyaWNzKQogICAgICAgIGFzc2VydCBsZW4oYWRqdXN0bWVudHMpID09IDAKCgpjbGFzcyBUZXN0T3B0aW1pemF0aW9uQ3ljbGU6CiAgICBkZWYgdGVzdF9kaXNhYmxlZF9yZXR1cm5zX2Rpc2FibGVkX3N0YXR1cyhzZWxmKToKICAgICAgICBpbXBvcnQgcHl0ZXN0CiAgICAgICAgbW9ua2V5cGF0Y2ggPSBweXRlc3QuTW9ua2V5UGF0Y2goKQogICAgICAgIG9wdCA9IEFkYXB0aXZlT3B0aW1pemVyKCkKICAgICAgICBtb25rZXlwYXRjaC5zZXRhdHRyKG9wdCwgImVuYWJsZWQiLCBGYWxzZSkKICAgICAgICByZXN1bHQgPSBvcHQucnVuX29wdGltaXphdGlvbl9jeWNsZSgpCiAgICAgICAgYXNzZXJ0IHJlc3VsdFsic3RhdHVzIl0gPT0gImRpc2FibGVkIgogICAgICAgIGFzc2VydCByZXN1bHRbImFkanVzdG1lbnRzX21hZGUiXSA9PSAwCiAgICAgICAgbW9ua2V5cGF0Y2gudW5kbygpCgogICAgZGVmIHRlc3RfaW5zdWZmaWNpZW50X2RhdGFfY3ljbGUoc2VsZik6CiAgICAgICAgb3B0ID0gQWRhcHRpdmVPcHRpbWl6ZXIoKQogICAgICAgIHJlc3VsdCA9IG9wdC5ydW5fb3B0aW1pemF0aW9uX2N5Y2xlKCkKICAgICAgICBhc3NlcnQgcmVzdWx0WyJzdGF0dXMiXSBpbiAoImluc3VmZmljaWVudF9kYXRhIiwgImRpc2FibGVkIikK
+"""Tests for adaptive_optimization parameter adjustments and persistence."""
+
+from __future__ import annotations
+
+from datetime import datetime, timedelta, timezone
+
+import adaptive_optimization
+import pytest
+from adaptive_optimization import (
+    AdaptiveOptimizer,
+    AdjustmentDirection,
+    PerformanceMetrics,
+    get_all_effective_parameters,
+    get_effective_param,
+)
+
+
+class TestParameterOverrides:
+    def test_default_returns_config_value(self):
+        from config import RISK
+        assert get_effective_param("risk_per_trade_pct", 1.5) == RISK.risk_per_trade_pct
+
+    def test_override_persists_across_calls(self):
+        adaptive_optimization._parameter_overrides["risk_per_trade_pct"] = 0.5
+        assert get_effective_param("risk_per_trade_pct", 1.5) == 0.5
+        assert get_all_effective_parameters()["risk_per_trade_pct"] == 0.5
+        del adaptive_optimization._parameter_overrides["risk_per_trade_pct"]
+
+
+class TestPerformanceAnalysis:
+    def test_empty_metrics_when_no_orders(self):
+        opt = AdaptiveOptimizer()
+        monkeypatch = pytest.MonkeyPatch()
+        monkeypatch.setattr("adaptive_optimization.read", lambda: {"orders": []})
+        metrics = opt.analyze_recent_performance()
+        assert metrics.total_trades == 0
+        monkeypatch.undo()
+
+    def test_metrics_calculation(self):
+        opt = AdaptiveOptimizer()
+        opt.min_trades_for_optimization = 3
+        monkeypatch = pytest.MonkeyPatch()
+        orders = [
+            {"pnl": 100.0, "timestamp": datetime.now(timezone.utc).isoformat()},
+            {"pnl": -50.0, "timestamp": datetime.now(timezone.utc).isoformat()},
+            {"pnl": 200.0, "timestamp": datetime.now(timezone.utc).isoformat()},
+        ]
+        monkeypatch.setattr("adaptive_optimization.read", lambda: {"orders": orders})
+        metrics = opt.analyze_recent_performance()
+        assert metrics.total_trades == 3
+        assert metrics.winning_trades == 2
+        assert metrics.losing_trades == 1
+        assert metrics.total_profit == 300.0
+        assert metrics.total_loss == 50.0
+        monkeypatch.undo()
+
+
+class TestAdjustmentLogic:
+    def test_low_win_rate_tightens_criteria(self):
+        opt = AdaptiveOptimizer()
+        opt.current_parameters = {
+            "rsi_overbought": 70.0,
+            "rsi_oversold": 30.0,
+            "sentiment_bullish_threshold": 0.5,
+            "sentiment_bearish_threshold": -0.5,
+            "risk_per_trade_pct": 1.5,
+            "atr_sl_multiplier": 1.5,
+            "atr_tp_multiplier": 3.0,
+        }
+        metrics = PerformanceMetrics(
+            total_trades=20,
+            winning_trades=5,
+            losing_trades=15,
+            win_rate=0.25,
+            total_profit=500.0,
+            total_loss=1000.0,
+            profit_factor=0.5,
+            average_win=100.0,
+            average_loss=-66.7,
+            max_drawdown=0.05,
+            sharpe_ratio=0.5,
+            period_start=datetime.now(timezone.utc) - timedelta(days=7),
+            period_end=datetime.now(timezone.utc),
+        )
+        adjustments = opt.determine_adjustments(metrics)
+        assert len(adjustments) > 0
+        rsi_adj = [a for a in adjustments if a.parameter_name == "rsi_overbought"]
+        assert len(rsi_adj) == 1
+        assert rsi_adj[0].direction == AdjustmentDirection.INCREASE
+
+    def test_high_win_rate_loosens_criteria(self):
+        opt = AdaptiveOptimizer()
+        opt.current_parameters = {
+            "rsi_overbought": 75.0,
+            "rsi_oversold": 25.0,
+            "sentiment_bullish_threshold": 0.5,
+            "sentiment_bearish_threshold": -0.5,
+            "risk_per_trade_pct": 1.5,
+            "atr_sl_multiplier": 1.5,
+            "atr_tp_multiplier": 3.0,
+        }
+        metrics = PerformanceMetrics(
+            total_trades=20,
+            winning_trades=16,
+            losing_trades=4,
+            win_rate=0.80,
+            total_profit=1600.0,
+            total_loss=400.0,
+            profit_factor=4.0,
+            average_win=100.0,
+            average_loss=-100.0,
+            max_drawdown=0.03,
+            sharpe_ratio=2.0,
+            period_start=datetime.now(timezone.utc) - timedelta(days=7),
+            period_end=datetime.now(timezone.utc),
+        )
+        adjustments = opt.determine_adjustments(metrics)
+        assert len(adjustments) > 0
+        rsi_adj = [a for a in adjustments if a.parameter_name == "rsi_overbought"]
+        assert len(rsi_adj) == 1
+        assert rsi_adj[0].direction == AdjustmentDirection.DECREASE
+
+    def test_insufficient_trades_no_adjustments(self):
+        opt = AdaptiveOptimizer()
+        metrics = PerformanceMetrics(
+            total_trades=5,
+            winning_trades=3,
+            losing_trades=2,
+            win_rate=0.6,
+            total_profit=300.0,
+            total_loss=200.0,
+            profit_factor=1.5,
+            average_win=100.0,
+            average_loss=-100.0,
+            max_drawdown=0.02,
+            sharpe_ratio=1.0,
+            period_start=datetime.now(timezone.utc) - timedelta(days=7),
+            period_end=datetime.now(timezone.utc),
+        )
+        adjustments = opt.determine_adjustments(metrics)
+        assert len(adjustments) == 0
+
+
+class TestOptimizationCycle:
+    def test_disabled_returns_disabled_status(self):
+        import pytest
+        monkeypatch = pytest.MonkeyPatch()
+        opt = AdaptiveOptimizer()
+        monkeypatch.setattr(opt, "enabled", False)
+        result = opt.run_optimization_cycle()
+        assert result["status"] == "disabled"
+        assert result["adjustments_made"] == 0
+        monkeypatch.undo()
+
+    def test_insufficient_data_cycle(self):
+        opt = AdaptiveOptimizer()
+        result = opt.run_optimization_cycle()
+        assert result["status"] in ("insufficient_data", "disabled")

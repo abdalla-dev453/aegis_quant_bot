@@ -1,1 +1,279 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgYXBpIH0gZnJvbSAiLi4vbGliL2FwaS5qcyI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBSaXNrTWFuYWdlbWVudCgpIHsKICBjb25zdCBbZGV2aWNlcywgc2V0RGV2aWNlc10gPSB1c2VTdGF0ZShbXSk7CiAgY29uc3QgW3NlbGVjdGVkRGV2aWNlSWQsIHNldFNlbGVjdGVkRGV2aWNlSWRdID0gdXNlU3RhdGUobnVsbCk7CiAgY29uc3QgW3Jpc2tQZXJUcmFkZSwgc2V0Umlza1BlclRyYWRlXSA9IHVzZVN0YXRlKCIwLjUwIik7CiAgY29uc3QgW21heERhaWx5TG9zcywgc2V0TWF4RGFpbHlMb3NzXSA9IHVzZVN0YXRlKCIyLjAwIik7CiAgY29uc3QgW21heE9wZW5Qb3NpdGlvbnMsIHNldE1heE9wZW5Qb3NpdGlvbnNdID0gdXNlU3RhdGUoNSk7CiAgY29uc3QgW2F1dG9FeGVjdXRlLCBzZXRBdXRvRXhlY3V0ZV0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW3Nob3dBdXRvTW9kYWwsIHNldFNob3dBdXRvTW9kYWxdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtzaG93S2lsbE1vZGFsLCBzZXRTaG93S2lsbE1vZGFsXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBba2lsbENvbmZpcm1JbnB1dCwgc2V0S2lsbENvbmZpcm1JbnB1dF0gPSB1c2VTdGF0ZSgiIik7CiAgY29uc3QgW3NhdmluZywgc2V0U2F2aW5nXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbbXNnLCBzZXRNc2ddID0gdXNlU3RhdGUobnVsbCk7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBhcGkuZ2V0RGV2aWNlcygpCiAgICAgIC50aGVuKChkZXZzKSA9PiB7CiAgICAgICAgc2V0RGV2aWNlcyhkZXZzIHx8IFtdKTsKICAgICAgICBpZiAoZGV2cyAmJiBkZXZzLmxlbmd0aCA+IDApIHsKICAgICAgICAgIHNldFNlbGVjdGVkRGV2aWNlSWQoZGV2c1swXS5pZCk7CiAgICAgICAgICBzZXRBdXRvRXhlY3V0ZShkZXZzWzBdLmF1dG9fZXhlY3V0ZSk7CiAgICAgICAgfQogICAgICB9KQogICAgICAuY2F0Y2goY29uc29sZS5lcnJvcik7CiAgfSwgW10pOwoKICBjb25zdCBoYW5kbGVTYXZlUmlzayA9IGFzeW5jICgpID0+IHsKICAgIGlmICghc2VsZWN0ZWREZXZpY2VJZCkgcmV0dXJuOwogICAgc2V0U2F2aW5nKHRydWUpOwogICAgc2V0TXNnKG51bGwpOwogICAgdHJ5IHsKICAgICAgYXdhaXQgYXBpLnVwZGF0ZVJpc2tQcm9maWxlKHNlbGVjdGVkRGV2aWNlSWQsIHsKICAgICAgICByaXNrX3Blcl90cmFkZV9wY3Q6IHJpc2tQZXJUcmFkZSwKICAgICAgICBtYXhfZGFpbHlfbG9zc19wY3Q6IG1heERhaWx5TG9zcywKICAgICAgICBtYXhfb3Blbl9wb3NpdGlvbnM6IHBhcnNlSW50KG1heE9wZW5Qb3NpdGlvbnMsIDEwKSwKICAgICAgICBhdXRvX2V4ZWN1dGU6IGF1dG9FeGVjdXRlLAogICAgICB9KTsKICAgICAgc2V0TXNnKHsgdHlwZTogInN1Y2Nlc3MiLCB0ZXh0OiAiUmlzayBsaW1pdHMgdXBkYXRlZCBzdWNjZXNzZnVsbHkuIFN5bmNocm9uaXplZCB0byBFQS4iIH0pOwogICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgIHNldE1zZyh7IHR5cGU6ICJlcnJvciIsIHRleHQ6IGVyci5tZXNzYWdlIH0pOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0U2F2aW5nKGZhbHNlKTsKICAgIH0KICB9OwoKICBjb25zdCBoYW5kbGVUb2dnbGVBdXRvID0gKCkgPT4gewogICAgaWYgKCFhdXRvRXhlY3V0ZSkgewogICAgICBzZXRTaG93QXV0b01vZGFsKHRydWUpOwogICAgfSBlbHNlIHsKICAgICAgc2V0QXV0b0V4ZWN1dGUoZmFsc2UpOwogICAgfQogIH07CgogIGNvbnN0IGNvbmZpcm1FbmFibGVBdXRvID0gKCkgPT4gewogICAgc2V0QXV0b0V4ZWN1dGUodHJ1ZSk7CiAgICBzZXRTaG93QXV0b01vZGFsKGZhbHNlKTsKICB9OwoKICBjb25zdCBoYW5kbGVFeGVjdXRlS2lsbCA9IGFzeW5jICgpID0+IHsKICAgIGlmIChraWxsQ29uZmlybUlucHV0ICE9PSAiQ09ORklSTSBLSUxMIikgcmV0dXJuOwogICAgdHJ5IHsKICAgICAgYXdhaXQgYXBpLnRyaWdnZXJLaWxsU3dpdGNoKCk7CiAgICAgIHNldEF1dG9FeGVjdXRlKGZhbHNlKTsKICAgICAgc2V0U2hvd0tpbGxNb2RhbChmYWxzZSk7CiAgICAgIHNldEtpbGxDb25maXJtSW5wdXQoIiIpOwogICAgICBzZXRNc2coeyB0eXBlOiAiZXJyb3IiLCB0ZXh0OiAiS0lMTCBTV0lUQ0ggVFJJR0dFUkVELiBBbGwgb3BlbiBwb3NpdGlvbnMgZmxhdHRlbmVkIGFuZCB0cmFkaW5nIHBhdXNlZC4iIH0pOwogICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgIGFsZXJ0KCJLaWxsIHN3aXRjaCBlcnJvcjogIiArIGVyci5tZXNzYWdlKTsKICAgIH0KICB9OwoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctNHhsIHAtNiBzcGFjZS15LTgiPgogICAgICB7LyogVGl0bGUgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJib3JkZXItYiBib3JkZXItYm9yZGVyIHBiLTQiPgogICAgICAgIDxoMSBjbGFzc05hbWU9InRleHQteGwgZm9udC1ib2xkIHRleHQtaW5rIj5SaXNrIEVudmVsb3BlICYgQ2lyY3VpdCBCcmVha2VyczwvaDE+CiAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0xIHRleHQteHMgdGV4dC1pbmstZGltIj4KICAgICAgICAgIENvbmZpZ3VyZSBkdWFsLWxheWVyIG1hdGhlbWF0aWNhbCByaXNrIGNvbnN0cmFpbnRzIGFuZCBlbWVyZ2VuY3kgZXhlY3V0aW9uIGhhbHRzLgogICAgICAgIDwvcD4KICAgICAgPC9kaXY+CgogICAgICB7bXNnICYmICgKICAgICAgICA8ZGl2CiAgICAgICAgICBjbGFzc05hbWU9e2Byb3VuZGVkLWxnIGJvcmRlciBwLTQgdGV4dC14cyAkewogICAgICAgICAgICBtc2cudHlwZSA9PT0gInN1Y2Nlc3MiCiAgICAgICAgICAgICAgPyAiYm9yZGVyLWJ1bGwvNDAgYmctYnVsbC1kaW0vMjAgdGV4dC1idWxsIgogICAgICAgICAgICAgIDogImJvcmRlci1iZWFyLzQwIGJnLWJlYXItZGltLzIwIHRleHQtYmVhciBmb250LXNlbWlib2xkIgogICAgICAgICAgfWB9CiAgICAgICAgPgogICAgICAgICAge21zZy50ZXh0fQogICAgICAgIDwvZGl2PgogICAgICApfQoKICAgICAgey8qIERldmljZSBTZWxlY3RvciAqL30KICAgICAge2RldmljZXMubGVuZ3RoID4gMSAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC14cyB0ZXh0LWluay1kaW0iPlRhcmdldCBUZXJtaW5hbDo8L3NwYW4+CiAgICAgICAgICA8c2VsZWN0CiAgICAgICAgICAgIHZhbHVlPXtzZWxlY3RlZERldmljZUlkIHx8ICIifQogICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldFNlbGVjdGVkRGV2aWNlSWQoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICBjbGFzc05hbWU9InJvdW5kZWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZSBweC0zIHB5LTEuNSBmb250LW1vbm8gdGV4dC14cyB0ZXh0LWluayIKICAgICAgICAgID4KICAgICAgICAgICAge2RldmljZXMubWFwKChkKSA9PiAoCiAgICAgICAgICAgICAgPG9wdGlvbiBrZXk9e2QuaWR9IHZhbHVlPXtkLmlkfT4KICAgICAgICAgICAgICAgIHtkLm5hbWV9ICh7ZC5icm9rZXJ9IC0ge2QuYWNjb3VudF9udW1iZXJfbWFza2VkfSkKICAgICAgICAgICAgICA8L29wdGlvbj4KICAgICAgICAgICAgKSl9CiAgICAgICAgICA8L3NlbGVjdD4KICAgICAgICA8L2Rpdj4KICAgICAgKX0KCiAgICAgIHsvKiBHcmlkOiBMaW1pdHMgJiBBdXRvbWF0aW9uIFN3aXRjaCAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTEgbWQ6Z3JpZC1jb2xzLTIgZ2FwLTYiPgogICAgICAgIHsvKiBMZWZ0IENhcmQ6IFJpc2sgTGltaXRzICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTUgcm91bmRlZC14bCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHAtNiI+CiAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LXNtIGZvbnQtYm9sZCB0ZXh0LWluayB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIiPlBlci1UcmFkZSAmIERhaWx5IExvc3MgTGltaXRzPC9oMj4KCiAgICAgICAgICA8ZGl2PgogICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9jayB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPk1heCBSaXNrIFBlciBUcmFkZSAoJSk8L2xhYmVsPgogICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtWzExcHhdIHRleHQtaW5rLWRpbSI+UGVyY2VudGFnZSBvZiBlcXVpdHkgYXQgcmlzayBwZXIgcG9zaXRpb24gc3RvcCBsb3NzLjwvcD4KICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgdHlwZT0ibnVtYmVyIgogICAgICAgICAgICAgIHN0ZXA9IjAuMDUiCiAgICAgICAgICAgICAgbWluPSIwLjEwIgogICAgICAgICAgICAgIG1heD0iNS4wMCIKICAgICAgICAgICAgICB2YWx1ZT17cmlza1BlclRyYWRlfQogICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0Umlza1BlclRyYWRlKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9Im10LTIgdy1mdWxsIHJvdW5kZWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctY2FudmFzIHB4LTMgcHktMiBmb250LW1vbm8gdGV4dC14cyB0ZXh0LWluayIKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxsYWJlbCBjbGFzc05hbWU9ImJsb2NrIHRleHQteHMgZm9udC1zZW1pYm9sZCB0ZXh0LWluayI+TWF4IERhaWx5IExvc3MgRmxvb3IgKCUpPC9sYWJlbD4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMXB4XSB0ZXh0LWluay1kaW0iPkVBIGhhbHRzIGFsbCB0cmFkaW5nIGlmIGN1bXVsYXRpdmUgZGFpbHkgbG9zcyByZWFjaGVzIHRoaXMgdGhyZXNob2xkLjwvcD4KICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgdHlwZT0ibnVtYmVyIgogICAgICAgICAgICAgIHN0ZXA9IjAuMTAiCiAgICAgICAgICAgICAgbWluPSIwLjUwIgogICAgICAgICAgICAgIG1heD0iMTAuMDAiCiAgICAgICAgICAgICAgdmFsdWU9e21heERhaWx5TG9zc30KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldE1heERhaWx5TG9zcyhlLnRhcmdldC52YWx1ZSl9CiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJtdC0yIHctZnVsbCByb3VuZGVkIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLWNhbnZhcyBweC0zIHB5LTIgZm9udC1tb25vIHRleHQteHMgdGV4dC1pbmsiCiAgICAgICAgICAgIC8+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICA8ZGl2PgogICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9jayB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPk1heCBDb25jdXJyZW50IFBvc2l0aW9uczwvbGFiZWw+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bMTFweF0gdGV4dC1pbmstZGltIj5IYXJkIGNlaWxpbmcgb24gb3BlbiB0aWNrZXRzIGFjcm9zcyBhbGwgY3VycmVuY3kgcGFpcnMuPC9wPgogICAgICAgICAgICA8aW5wdXQKICAgICAgICAgICAgICB0eXBlPSJudW1iZXIiCiAgICAgICAgICAgICAgbWluPSIxIgogICAgICAgICAgICAgIG1heD0iMjAiCiAgICAgICAgICAgICAgdmFsdWU9e21heE9wZW5Qb3NpdGlvbnN9CiAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRNYXhPcGVuUG9zaXRpb25zKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9Im10LTIgdy1mdWxsIHJvdW5kZWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctY2FudmFzIHB4LTMgcHktMiBmb250LW1vbm8gdGV4dC14cyB0ZXh0LWluayIKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgb25DbGljaz17aGFuZGxlU2F2ZVJpc2t9CiAgICAgICAgICAgIGRpc2FibGVkPXtzYXZpbmd9CiAgICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIHJvdW5kZWQtbGcgYmctYWNjZW50IHB5LTIuNSB0ZXh0LXhzIGZvbnQtYm9sZCB0ZXh0LXdoaXRlIGhvdmVyOmJnLWFjY2VudC85MCIKICAgICAgICAgID4KICAgICAgICAgICAge3NhdmluZyA/ICJTYXZpbmcgQ2hhbmdlcy4uLiIgOiAiU2F2ZSAmIFN5bmMgUmlzayBMaW1pdHMifQogICAgICAgICAgPC9idXR0b24+CiAgICAgICAgPC9kaXY+CgogICAgICAgIHsvKiBSaWdodCBDYXJkOiBBdXRvIEV4ZWN1dGlvbiAmIEVtZXJnZW5jeSBLaWxsICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTYiPgogICAgICAgICAgey8qIEF1dG8gRXhlY3V0ZSBTd2l0Y2ggKi99CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm91bmRlZC14bCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHAtNiBzcGFjZS15LTQiPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIj4KICAgICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT0idGV4dC1zbSBmb250LWJvbGQgdGV4dC1pbmsiPkFJIEF1dG8tRXhlY3V0aW9uIFN3aXRjaDwvaDM+CiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQteHMgdGV4dC1pbmstZGltIj5BbGxvdyB0ZXJtaW5hbCBFQSB0byBhdXRvbWF0aWNhbGx5IHBsYWNlIHF1YWxpZnlpbmcgc2lnbmFsczwvcD4KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICBvbkNsaWNrPXtoYW5kbGVUb2dnbGVBdXRvfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgcmVsYXRpdmUgaW5saW5lLWZsZXggaC02IHctMTEgaXRlbXMtY2VudGVyIHJvdW5kZWQtZnVsbCB0cmFuc2l0aW9uLWNvbG9ycyAkewogICAgICAgICAgICAgICAgICBhdXRvRXhlY3V0ZSA/ICJiZy1idWxsIiA6ICJiZy1zdXJmYWNlLWFsdCIKICAgICAgICAgICAgICAgIH1gfQogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIDxzcGFuCiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YGlubGluZS1ibG9jayBoLTQgdy00IHRyYW5zZm9ybSByb3VuZGVkLWZ1bGwgYmctd2hpdGUgdHJhbnNpdGlvbi10cmFuc2Zvcm0gJHsKICAgICAgICAgICAgICAgICAgICBhdXRvRXhlY3V0ZSA/ICJ0cmFuc2xhdGUteC02IiA6ICJ0cmFuc2xhdGUteC0xIgogICAgICAgICAgICAgICAgICB9YH0KICAgICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm91bmRlZCBiZy1jYW52YXMgcC0zIHRleHQtWzExcHhdIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgPHN0cm9uZz5EdWFsLUtleSBSdWxlOjwvc3Ryb25nPiBCb3RoIHRoZSBDbG91ZCBBdXRvLUV4ZWN1dGUgc3dpdGNoIGFuZCB0aGUgTVQ1IEVBIG9uLWNoYXJ0IHN3aXRjaCBtdXN0IGJlIGFjdGl2ZSBmb3Igb3JkZXJzIHRvIGV4ZWN1dGUgYXV0b21hdGljYWxseS4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICB7LyogRU1FUkdFTkNZIEtJTEwgU1dJVENIICovfQogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1iZWFyLzUwIGJnLWJlYXItZGltLzEwIHAtNiBzcGFjZS15LTQiPgogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9InRleHQtc20gZm9udC1ib2xkIHRleHQtYmVhciB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIiPkVtZXJnZW5jeSBLaWxsIFN3aXRjaDwvaDM+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0xIHRleHQteHMgdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICAgIEltbWVkaWF0ZWx5IGZsYXR0ZW5zIGFsbCBvcGVuIHBvc2l0aW9ucyBvbiB0aGUgTVQ1IHRlcm1pbmFsIGFuZCB0ZXJtaW5hdGVzIGF1dG9tYXRlZCB0cmFkaW5nLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRTaG93S2lsbE1vZGFsKHRydWUpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIHJvdW5kZWQtbGcgYmctYmVhciBweS0zIHRleHQteHMgZm9udC1ib2xkIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LXdoaXRlIGhvdmVyOmJnLWJlYXIvOTAgc2hhZG93LWxnIgogICAgICAgICAgICA+CiAgICAgICAgICAgICAgVHJpZ2dlciBFbWVyZ2VuY3kgS2lsbCBTd2l0Y2gKICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CgogICAgICB7LyogQXV0by1FeGVjdXRlIENvbmZpcm1hdGlvbiBNb2RhbCAqL30KICAgICAge3Nob3dBdXRvTW9kYWwgJiYgKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmaXhlZCBpbnNldC0wIHotNTAgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgYmctYmxhY2svNzAgcC00Ij4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ3LWZ1bGwgbWF4LXctbWQgcm91bmRlZC14bCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlIHAtNiBzcGFjZS15LTQgc2hhZG93LTJ4bCI+CiAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9InRleHQtYmFzZSBmb250LWJvbGQgdGV4dC1pbmsiPkVuYWJsZSBBdXRvbWF0ZWQgRXhlY3V0aW9uPzwvaDM+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC14cyB0ZXh0LWluay1kaW0gbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICBCeSBlbmFibGluZyBBSSBhdXRvLWV4ZWN1dGlvbiwgeW91ciBsb2NhbCBNZXRhVHJhZGVyIDUgRXhwZXJ0IEFkdmlzb3Igd2lsbCBhdXRvbWF0aWNhbGx5IHBsYWNlIG1hcmtldCBvcmRlcnMgd2l0aGluIHlvdXIgY29uZmlndXJlZCByaXNrIGVudmVsb3BlLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGp1c3RpZnktZW5kIGdhcC0zIHB0LTQiPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFNob3dBdXRvTW9kYWwoZmFsc2UpfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLWxnIGJvcmRlciBib3JkZXItYm9yZGVyIHB4LTQgcHktMiB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmstZGltIGhvdmVyOnRleHQtaW5rIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIENhbmNlbAogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIG9uQ2xpY2s9e2NvbmZpcm1FbmFibGVBdXRvfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLWxnIGJnLWJ1bGwgcHgtNSBweS0yIHRleHQteHMgZm9udC1ib2xkIHRleHQtYmxhY2sgaG92ZXI6YmctYnVsbC85MCIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICBDb25maXJtICYgRW5hYmxlCiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAgICB7LyogS2lsbCBTd2l0Y2ggQ29uZmlybWF0aW9uIE1vZGFsICovfQogICAgICB7c2hvd0tpbGxNb2RhbCAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZpeGVkIGluc2V0LTAgei01MCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBiZy1ibGFjay84MCBwLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InctZnVsbCBtYXgtdy1tZCByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItYmVhci82MCBiZy1zdXJmYWNlIHAtNiBzcGFjZS15LTQgc2hhZG93LTJ4bCI+CiAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9InRleHQtYmFzZSBmb250LWJvbGQgdGV4dC1iZWFyIHVwcGVyY2FzZSI+Q29uZmlybSBFbWVyZ2VuY3kgS2lsbDwvaDM+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC14cyB0ZXh0LWluayBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgIFRoaXMgYWN0aW9uIHdpbGwgaW1tZWRpYXRlbHkgY2xvc2UgYWxsIGFjdGl2ZSBwb3NpdGlvbnMgYW5kIHBhdXNlIHNpZ25hbCBleGVjdXRpb24uIFR5cGUgPHNwYW4gY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC1iZWFyIGZvbnQtYm9sZCI+Q09ORklSTSBLSUxMPC9zcGFuPiB0byBwcm9jZWVkLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgIHR5cGU9InRleHQiCiAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9IkNPTkZJUk0gS0lMTCIKICAgICAgICAgICAgICB2YWx1ZT17a2lsbENvbmZpcm1JbnB1dH0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldEtpbGxDb25maXJtSW5wdXQoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIHJvdW5kZWQgYm9yZGVyIGJvcmRlci1iZWFyLzUwIGJnLWNhbnZhcyBweC0zIHB5LTIgZm9udC1tb25vIHRleHQteHMgdGV4dC1pbmsiCiAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGp1c3RpZnktZW5kIGdhcC0zIHB0LTQiPgogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHsKICAgICAgICAgICAgICAgICAgc2V0U2hvd0tpbGxNb2RhbChmYWxzZSk7CiAgICAgICAgICAgICAgICAgIHNldEtpbGxDb25maXJtSW5wdXQoIiIpOwogICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1sZyBib3JkZXIgYm9yZGVyLWJvcmRlciBweC00IHB5LTIgdGV4dC14cyBmb250LXNlbWlib2xkIHRleHQtaW5rLWRpbSBob3Zlcjp0ZXh0LWluayIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICBDYW5jZWwKICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICBkaXNhYmxlZD17a2lsbENvbmZpcm1JbnB1dCAhPT0gIkNPTkZJUk0gS0lMTCJ9CiAgICAgICAgICAgICAgICBvbkNsaWNrPXtoYW5kbGVFeGVjdXRlS2lsbH0KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1sZyBiZy1iZWFyIHB4LTUgcHktMiB0ZXh0LXhzIGZvbnQtYm9sZCB1cHBlcmNhc2UgdGV4dC13aGl0ZSBob3ZlcjpiZy1iZWFyLzkwIGRpc2FibGVkOm9wYWNpdHktNDAiCiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgRmxhdHRlbiBBbGwgUG9zaXRpb25zCiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CiAgICA8L2Rpdj4KICApOwp9Cg==
+import { useState, useEffect } from "react";
+import { api } from "../lib/api.js";
+
+export default function RiskManagement() {
+  const [devices, setDevices] = useState([]);
+  const [selectedDeviceId, setSelectedDeviceId] = useState(null);
+  const [riskPerTrade, setRiskPerTrade] = useState("0.50");
+  const [maxDailyLoss, setMaxDailyLoss] = useState("2.00");
+  const [maxOpenPositions, setMaxOpenPositions] = useState(5);
+  const [autoExecute, setAutoExecute] = useState(false);
+  const [showAutoModal, setShowAutoModal] = useState(false);
+  const [showKillModal, setShowKillModal] = useState(false);
+  const [killConfirmInput, setKillConfirmInput] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [msg, setMsg] = useState(null);
+
+  useEffect(() => {
+    api.getDevices()
+      .then((devs) => {
+        setDevices(devs || []);
+        if (devs && devs.length > 0) {
+          setSelectedDeviceId(devs[0].id);
+          setAutoExecute(devs[0].auto_execute);
+        }
+      })
+      .catch(console.error);
+  }, []);
+
+  const handleSaveRisk = async () => {
+    if (!selectedDeviceId) return;
+    setSaving(true);
+    setMsg(null);
+    try {
+      await api.updateRiskProfile(selectedDeviceId, {
+        risk_per_trade_pct: riskPerTrade,
+        max_daily_loss_pct: maxDailyLoss,
+        max_open_positions: parseInt(maxOpenPositions, 10),
+        auto_execute: autoExecute,
+      });
+      setMsg({ type: "success", text: "Risk limits updated successfully. Synchronized to EA." });
+    } catch (err) {
+      setMsg({ type: "error", text: err.message });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleToggleAuto = () => {
+    if (!autoExecute) {
+      setShowAutoModal(true);
+    } else {
+      setAutoExecute(false);
+    }
+  };
+
+  const confirmEnableAuto = () => {
+    setAutoExecute(true);
+    setShowAutoModal(false);
+  };
+
+  const handleExecuteKill = async () => {
+    if (killConfirmInput !== "CONFIRM KILL") return;
+    try {
+      await api.triggerKillSwitch();
+      setAutoExecute(false);
+      setShowKillModal(false);
+      setKillConfirmInput("");
+      setMsg({ type: "error", text: "KILL SWITCH TRIGGERED. All open positions flattened and trading paused." });
+    } catch (err) {
+      alert("Kill switch error: " + err.message);
+    }
+  };
+
+  return (
+    <div className="mx-auto max-w-4xl p-6 space-y-8">
+      {/* Title */}
+      <div className="border-b border-border pb-4">
+        <h1 className="text-xl font-bold text-ink">Risk Envelope & Circuit Breakers</h1>
+        <p className="mt-1 text-xs text-ink-dim">
+          Configure dual-layer mathematical risk constraints and emergency execution halts.
+        </p>
+      </div>
+
+      {msg && (
+        <div
+          className={`rounded-lg border p-4 text-xs ${
+            msg.type === "success"
+              ? "border-bull/40 bg-bull-dim/20 text-bull"
+              : "border-bear/40 bg-bear-dim/20 text-bear font-semibold"
+          }`}
+        >
+          {msg.text}
+        </div>
+      )}
+
+      {/* Device Selector */}
+      {devices.length > 1 && (
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-ink-dim">Target Terminal:</span>
+          <select
+            value={selectedDeviceId || ""}
+            onChange={(e) => setSelectedDeviceId(e.target.value)}
+            className="rounded border border-border bg-surface px-3 py-1.5 font-mono text-xs text-ink"
+          >
+            {devices.map((d) => (
+              <option key={d.id} value={d.id}>
+                {d.name} ({d.broker} - {d.account_number_masked})
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* Grid: Limits & Automation Switch */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Left Card: Risk Limits */}
+        <div className="space-y-5 rounded-xl border border-border bg-surface p-6">
+          <h2 className="text-sm font-bold text-ink uppercase tracking-wider">Per-Trade & Daily Loss Limits</h2>
+
+          <div>
+            <label className="block text-xs font-semibold text-ink">Max Risk Per Trade (%)</label>
+            <p className="text-[11px] text-ink-dim">Percentage of equity at risk per position stop loss.</p>
+            <input
+              type="number"
+              step="0.05"
+              min="0.10"
+              max="5.00"
+              value={riskPerTrade}
+              onChange={(e) => setRiskPerTrade(e.target.value)}
+              className="mt-2 w-full rounded border border-border bg-canvas px-3 py-2 font-mono text-xs text-ink"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-ink">Max Daily Loss Floor (%)</label>
+            <p className="text-[11px] text-ink-dim">EA halts all trading if cumulative daily loss reaches this threshold.</p>
+            <input
+              type="number"
+              step="0.10"
+              min="0.50"
+              max="10.00"
+              value={maxDailyLoss}
+              onChange={(e) => setMaxDailyLoss(e.target.value)}
+              className="mt-2 w-full rounded border border-border bg-canvas px-3 py-2 font-mono text-xs text-ink"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-ink">Max Concurrent Positions</label>
+            <p className="text-[11px] text-ink-dim">Hard ceiling on open tickets across all currency pairs.</p>
+            <input
+              type="number"
+              min="1"
+              max="20"
+              value={maxOpenPositions}
+              onChange={(e) => setMaxOpenPositions(e.target.value)}
+              className="mt-2 w-full rounded border border-border bg-canvas px-3 py-2 font-mono text-xs text-ink"
+            />
+          </div>
+
+          <button
+            onClick={handleSaveRisk}
+            disabled={saving}
+            className="w-full rounded-lg bg-accent py-2.5 text-xs font-bold text-white hover:bg-accent/90"
+          >
+            {saving ? "Saving Changes..." : "Save & Sync Risk Limits"}
+          </button>
+        </div>
+
+        {/* Right Card: Auto Execution & Emergency Kill */}
+        <div className="space-y-6">
+          {/* Auto Execute Switch */}
+          <div className="rounded-xl border border-border bg-surface p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-bold text-ink">AI Auto-Execution Switch</h3>
+                <p className="text-xs text-ink-dim">Allow terminal EA to automatically place qualifying signals</p>
+              </div>
+              <button
+                onClick={handleToggleAuto}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                  autoExecute ? "bg-bull" : "bg-surface-alt"
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    autoExecute ? "translate-x-6" : "translate-x-1"
+                  }`}
+                />
+              </button>
+            </div>
+            <div className="rounded bg-canvas p-3 text-[11px] text-ink-dim">
+              <strong>Dual-Key Rule:</strong> Both the Cloud Auto-Execute switch and the MT5 EA on-chart switch must be active for orders to execute automatically.
+            </div>
+          </div>
+
+          {/* EMERGENCY KILL SWITCH */}
+          <div className="rounded-xl border border-bear/50 bg-bear-dim/10 p-6 space-y-4">
+            <div>
+              <h3 className="text-sm font-bold text-bear uppercase tracking-wider">Emergency Kill Switch</h3>
+              <p className="mt-1 text-xs text-ink-dim">
+                Immediately flattens all open positions on the MT5 terminal and terminates automated trading.
+              </p>
+            </div>
+            <button
+              onClick={() => setShowKillModal(true)}
+              className="w-full rounded-lg bg-bear py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-bear/90 shadow-lg"
+            >
+              Trigger Emergency Kill Switch
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Auto-Execute Confirmation Modal */}
+      {showAutoModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="w-full max-w-md rounded-xl border border-border bg-surface p-6 space-y-4 shadow-2xl">
+            <h3 className="text-base font-bold text-ink">Enable Automated Execution?</h3>
+            <p className="text-xs text-ink-dim leading-relaxed">
+              By enabling AI auto-execution, your local MetaTrader 5 Expert Advisor will automatically place market orders within your configured risk envelope.
+            </p>
+            <div className="flex justify-end gap-3 pt-4">
+              <button
+                onClick={() => setShowAutoModal(false)}
+                className="rounded-lg border border-border px-4 py-2 text-xs font-semibold text-ink-dim hover:text-ink"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmEnableAuto}
+                className="rounded-lg bg-bull px-5 py-2 text-xs font-bold text-black hover:bg-bull/90"
+              >
+                Confirm & Enable
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Kill Switch Confirmation Modal */}
+      {showKillModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+          <div className="w-full max-w-md rounded-xl border border-bear/60 bg-surface p-6 space-y-4 shadow-2xl">
+            <h3 className="text-base font-bold text-bear uppercase">Confirm Emergency Kill</h3>
+            <p className="text-xs text-ink leading-relaxed">
+              This action will immediately close all active positions and pause signal execution. Type <span className="font-mono text-bear font-bold">CONFIRM KILL</span> to proceed.
+            </p>
+            <input
+              type="text"
+              placeholder="CONFIRM KILL"
+              value={killConfirmInput}
+              onChange={(e) => setKillConfirmInput(e.target.value)}
+              className="w-full rounded border border-bear/50 bg-canvas px-3 py-2 font-mono text-xs text-ink"
+            />
+            <div className="flex justify-end gap-3 pt-4">
+              <button
+                onClick={() => {
+                  setShowKillModal(false);
+                  setKillConfirmInput("");
+                }}
+                className="rounded-lg border border-border px-4 py-2 text-xs font-semibold text-ink-dim hover:text-ink"
+              >
+                Cancel
+              </button>
+              <button
+                disabled={killConfirmInput !== "CONFIRM KILL"}
+                onClick={handleExecuteKill}
+                className="rounded-lg bg-bear px-5 py-2 text-xs font-bold uppercase text-white hover:bg-bear/90 disabled:opacity-40"
+              >
+                Flatten All Positions
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

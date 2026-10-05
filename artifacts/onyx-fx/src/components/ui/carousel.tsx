@@ -1,1 +1,259 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBCdXR0b24gfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvYnV0dG9uJzsKaW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CmltcG9ydCB1c2VFbWJsYUNhcm91c2VsLCB7CiAgdHlwZSBVc2VFbWJsYUNhcm91c2VsVHlwZSwKfSBmcm9tICdlbWJsYS1jYXJvdXNlbC1yZWFjdCc7CmltcG9ydCB7IEFycm93TGVmdCwgQXJyb3dSaWdodCB9IGZyb20gJ2x1Y2lkZS1yZWFjdCc7Cgp0eXBlIENhcm91c2VsQXBpID0gVXNlRW1ibGFDYXJvdXNlbFR5cGVbMV07CnR5cGUgVXNlQ2Fyb3VzZWxQYXJhbWV0ZXJzID0gUGFyYW1ldGVyczx0eXBlb2YgdXNlRW1ibGFDYXJvdXNlbD47CnR5cGUgQ2Fyb3VzZWxPcHRpb25zID0gVXNlQ2Fyb3VzZWxQYXJhbWV0ZXJzWzBdOwp0eXBlIENhcm91c2VsUGx1Z2luID0gVXNlQ2Fyb3VzZWxQYXJhbWV0ZXJzWzFdOwoKdHlwZSBDYXJvdXNlbFByb3BzID0gewogIG9wdHM/OiBDYXJvdXNlbE9wdGlvbnM7CiAgcGx1Z2lucz86IENhcm91c2VsUGx1Z2luOwogIG9yaWVudGF0aW9uPzogJ2hvcml6b250YWwnIHwgJ3ZlcnRpY2FsJzsKICBzZXRBcGk/OiAoYXBpOiBDYXJvdXNlbEFwaSkgPT4gdm9pZDsKfTsKCnR5cGUgQ2Fyb3VzZWxDb250ZXh0UHJvcHMgPSB7CiAgY2Fyb3VzZWxSZWY6IFJldHVyblR5cGU8dHlwZW9mIHVzZUVtYmxhQ2Fyb3VzZWw+WzBdOwogIGFwaTogUmV0dXJuVHlwZTx0eXBlb2YgdXNlRW1ibGFDYXJvdXNlbD5bMV07CiAgc2Nyb2xsUHJldjogKCkgPT4gdm9pZDsKICBzY3JvbGxOZXh0OiAoKSA9PiB2b2lkOwogIGNhblNjcm9sbFByZXY6IGJvb2xlYW47CiAgY2FuU2Nyb2xsTmV4dDogYm9vbGVhbjsKfSAmIENhcm91c2VsUHJvcHM7Cgpjb25zdCBDYXJvdXNlbENvbnRleHQgPSBSZWFjdC5jcmVhdGVDb250ZXh0PENhcm91c2VsQ29udGV4dFByb3BzIHwgbnVsbD4obnVsbCk7CgpmdW5jdGlvbiB1c2VDYXJvdXNlbCgpIHsKICBjb25zdCBjb250ZXh0ID0gUmVhY3QudXNlQ29udGV4dChDYXJvdXNlbENvbnRleHQpOwoKICBpZiAoIWNvbnRleHQpIHsKICAgIHRocm93IG5ldyBFcnJvcigndXNlQ2Fyb3VzZWwgbXVzdCBiZSB1c2VkIHdpdGhpbiBhIDxDYXJvdXNlbCAvPicpOwogIH0KCiAgcmV0dXJuIGNvbnRleHQ7Cn0KCmNvbnN0IENhcm91c2VsID0gUmVhY3QuZm9yd2FyZFJlZjwKICBIVE1MRGl2RWxlbWVudCwKICBSZWFjdC5IVE1MQXR0cmlidXRlczxIVE1MRGl2RWxlbWVudD4gJiBDYXJvdXNlbFByb3BzCj4oCiAgKAogICAgewogICAgICBvcmllbnRhdGlvbiA9ICdob3Jpem9udGFsJywKICAgICAgb3B0cywKICAgICAgc2V0QXBpLAogICAgICBwbHVnaW5zLAogICAgICBjbGFzc05hbWUsCiAgICAgIGNoaWxkcmVuLAogICAgICAuLi5wcm9wcwogICAgfSwKICAgIHJlZiwKICApID0+IHsKICAgIGNvbnN0IFtjYXJvdXNlbFJlZiwgYXBpXSA9IHVzZUVtYmxhQ2Fyb3VzZWwoCiAgICAgIHsKICAgICAgICAuLi5vcHRzLAogICAgICAgIGF4aXM6IG9yaWVudGF0aW9uID09PSAnaG9yaXpvbnRhbCcgPyAneCcgOiAneScsCiAgICAgIH0sCiAgICAgIHBsdWdpbnMsCiAgICApOwogICAgY29uc3QgW2NhblNjcm9sbFByZXYsIHNldENhblNjcm9sbFByZXZdID0gUmVhY3QudXNlU3RhdGUoZmFsc2UpOwogICAgY29uc3QgW2NhblNjcm9sbE5leHQsIHNldENhblNjcm9sbE5leHRdID0gUmVhY3QudXNlU3RhdGUoZmFsc2UpOwoKICAgIGNvbnN0IG9uU2VsZWN0ID0gUmVhY3QudXNlQ2FsbGJhY2soKGFwaTogQ2Fyb3VzZWxBcGkpID0+IHsKICAgICAgaWYgKCFhcGkpIHsKICAgICAgICByZXR1cm47CiAgICAgIH0KCiAgICAgIHNldENhblNjcm9sbFByZXYoYXBpLmNhblNjcm9sbFByZXYoKSk7CiAgICAgIHNldENhblNjcm9sbE5leHQoYXBpLmNhblNjcm9sbE5leHQoKSk7CiAgICB9LCBbXSk7CgogICAgY29uc3Qgc2Nyb2xsUHJldiA9IFJlYWN0LnVzZUNhbGxiYWNrKCgpID0+IHsKICAgICAgYXBpPy5zY3JvbGxQcmV2KCk7CiAgICB9LCBbYXBpXSk7CgogICAgY29uc3Qgc2Nyb2xsTmV4dCA9IFJlYWN0LnVzZUNhbGxiYWNrKCgpID0+IHsKICAgICAgYXBpPy5zY3JvbGxOZXh0KCk7CiAgICB9LCBbYXBpXSk7CgogICAgY29uc3QgaGFuZGxlS2V5RG93biA9IFJlYWN0LnVzZUNhbGxiYWNrKAogICAgICAoZXZlbnQ6IFJlYWN0LktleWJvYXJkRXZlbnQ8SFRNTERpdkVsZW1lbnQ+KSA9PiB7CiAgICAgICAgaWYgKGV2ZW50LmtleSA9PT0gJ0Fycm93TGVmdCcpIHsKICAgICAgICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7CiAgICAgICAgICBzY3JvbGxQcmV2KCk7CiAgICAgICAgfSBlbHNlIGlmIChldmVudC5rZXkgPT09ICdBcnJvd1JpZ2h0JykgewogICAgICAgICAgZXZlbnQucHJldmVudERlZmF1bHQoKTsKICAgICAgICAgIHNjcm9sbE5leHQoKTsKICAgICAgICB9CiAgICAgIH0sCiAgICAgIFtzY3JvbGxQcmV2LCBzY3JvbGxOZXh0XSwKICAgICk7CgogICAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHsKICAgICAgaWYgKCFhcGkgfHwgIXNldEFwaSkgewogICAgICAgIHJldHVybjsKICAgICAgfQoKICAgICAgc2V0QXBpKGFwaSk7CiAgICB9LCBbYXBpLCBzZXRBcGldKTsKCiAgICBSZWFjdC51c2VFZmZlY3QoKCkgPT4gewogICAgICBpZiAoIWFwaSkgewogICAgICAgIHJldHVybjsKICAgICAgfQoKICAgICAgb25TZWxlY3QoYXBpKTsKICAgICAgYXBpLm9uKCdyZUluaXQnLCBvblNlbGVjdCk7CiAgICAgIGFwaS5vbignc2VsZWN0Jywgb25TZWxlY3QpOwoKICAgICAgcmV0dXJuICgpID0+IHsKICAgICAgICBhcGk/Lm9mZignc2VsZWN0Jywgb25TZWxlY3QpOwogICAgICB9OwogICAgfSwgW2FwaSwgb25TZWxlY3RdKTsKCiAgICByZXR1cm4gKAogICAgICA8Q2Fyb3VzZWxDb250ZXh0LlByb3ZpZGVyCiAgICAgICAgdmFsdWU9e3sKICAgICAgICAgIGNhcm91c2VsUmVmLAogICAgICAgICAgYXBpOiBhcGksCiAgICAgICAgICBvcHRzLAogICAgICAgICAgb3JpZW50YXRpb246CiAgICAgICAgICAgIG9yaWVudGF0aW9uIHx8IChvcHRzPy5heGlzID09PSAneScgPyAndmVydGljYWwnIDogJ2hvcml6b250YWwnKSwKICAgICAgICAgIHNjcm9sbFByZXYsCiAgICAgICAgICBzY3JvbGxOZXh0LAogICAgICAgICAgY2FuU2Nyb2xsUHJldiwKICAgICAgICAgIGNhblNjcm9sbE5leHQsCiAgICAgICAgfX0KICAgICAgPgogICAgICAgIDxkaXYKICAgICAgICAgIHJlZj17cmVmfQogICAgICAgICAgb25LZXlEb3duQ2FwdHVyZT17aGFuZGxlS2V5RG93bn0KICAgICAgICAgIGNsYXNzTmFtZT17Y24oJ3JlbGF0aXZlJywgY2xhc3NOYW1lKX0KICAgICAgICAgIHJvbGU9InJlZ2lvbiIKICAgICAgICAgIGFyaWEtcm9sZWRlc2NyaXB0aW9uPSJjYXJvdXNlbCIKICAgICAgICAgIHsuLi5wcm9wc30KICAgICAgICA+CiAgICAgICAgICB7Y2hpbGRyZW59CiAgICAgICAgPC9kaXY+CiAgICAgIDwvQ2Fyb3VzZWxDb250ZXh0LlByb3ZpZGVyPgogICAgKTsKICB9LAopOwpDYXJvdXNlbC5kaXNwbGF5TmFtZSA9ICdDYXJvdXNlbCc7Cgpjb25zdCBDYXJvdXNlbENvbnRlbnQgPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxEaXZFbGVtZW50LAogIFJlYWN0LkhUTUxBdHRyaWJ1dGVzPEhUTUxEaXZFbGVtZW50Pgo+KCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiB7CiAgY29uc3QgeyBjYXJvdXNlbFJlZiwgb3JpZW50YXRpb24gfSA9IHVzZUNhcm91c2VsKCk7CgogIHJldHVybiAoCiAgICA8ZGl2IHJlZj17Y2Fyb3VzZWxSZWZ9IGNsYXNzTmFtZT0ib3ZlcmZsb3ctaGlkZGVuIj4KICAgICAgPGRpdgogICAgICAgIHJlZj17cmVmfQogICAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgICAnZmxleCcsCiAgICAgICAgICBvcmllbnRhdGlvbiA9PT0gJ2hvcml6b250YWwnID8gJy1tbC00JyA6ICctbXQtNCBmbGV4LWNvbCcsCiAgICAgICAgICBjbGFzc05hbWUsCiAgICAgICAgKX0KICAgICAgICB7Li4ucHJvcHN9CiAgICAgIC8+CiAgICA8L2Rpdj4KICApOwp9KTsKQ2Fyb3VzZWxDb250ZW50LmRpc3BsYXlOYW1lID0gJ0Nhcm91c2VsQ29udGVudCc7Cgpjb25zdCBDYXJvdXNlbEl0ZW0gPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxEaXZFbGVtZW50LAogIFJlYWN0LkhUTUxBdHRyaWJ1dGVzPEhUTUxEaXZFbGVtZW50Pgo+KCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiB7CiAgY29uc3QgeyBvcmllbnRhdGlvbiB9ID0gdXNlQ2Fyb3VzZWwoKTsKCiAgcmV0dXJuICgKICAgIDxkaXYKICAgICAgcmVmPXtyZWZ9CiAgICAgIHJvbGU9Imdyb3VwIgogICAgICBhcmlhLXJvbGVkZXNjcmlwdGlvbj0ic2xpZGUiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ21pbi13LTAgc2hyaW5rLTAgZ3Jvdy0wIGJhc2lzLWZ1bGwnLAogICAgICAgIG9yaWVudGF0aW9uID09PSAnaG9yaXpvbnRhbCcgPyAncGwtNCcgOiAncHQtNCcsCiAgICAgICAgY2xhc3NOYW1lLAogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0pOwpDYXJvdXNlbEl0ZW0uZGlzcGxheU5hbWUgPSAnQ2Fyb3VzZWxJdGVtJzsKCmNvbnN0IENhcm91c2VsUHJldmlvdXMgPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxCdXR0b25FbGVtZW50LAogIFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBCdXR0b24+Cj4oKHsgY2xhc3NOYW1lLCB2YXJpYW50ID0gJ291dGxpbmUnLCBzaXplID0gJ2ljb24nLCAuLi5wcm9wcyB9LCByZWYpID0+IHsKICBjb25zdCB7IG9yaWVudGF0aW9uLCBzY3JvbGxQcmV2LCBjYW5TY3JvbGxQcmV2IH0gPSB1c2VDYXJvdXNlbCgpOwoKICByZXR1cm4gKAogICAgPEJ1dHRvbgogICAgICByZWY9e3JlZn0KICAgICAgdmFyaWFudD17dmFyaWFudH0KICAgICAgc2l6ZT17c2l6ZX0KICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAnYWJzb2x1dGUgIGgtOCB3LTggcm91bmRlZC1mdWxsJywKICAgICAgICBvcmllbnRhdGlvbiA9PT0gJ2hvcml6b250YWwnCiAgICAgICAgICA/ICctbGVmdC0xMiB0b3AtMS8yIC10cmFuc2xhdGUteS0xLzInCiAgICAgICAgICA6ICctdG9wLTEyIGxlZnQtMS8yIC10cmFuc2xhdGUteC0xLzIgcm90YXRlLTkwJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIGRpc2FibGVkPXshY2FuU2Nyb2xsUHJldn0KICAgICAgb25DbGljaz17c2Nyb2xsUHJldn0KICAgICAgey4uLnByb3BzfQogICAgPgogICAgICA8QXJyb3dMZWZ0IGNsYXNzTmFtZT0iaC00IHctNCIgLz4KICAgICAgPHNwYW4gY2xhc3NOYW1lPSJzci1vbmx5Ij5QcmV2aW91cyBzbGlkZTwvc3Bhbj4KICAgIDwvQnV0dG9uPgogICk7Cn0pOwpDYXJvdXNlbFByZXZpb3VzLmRpc3BsYXlOYW1lID0gJ0Nhcm91c2VsUHJldmlvdXMnOwoKY29uc3QgQ2Fyb3VzZWxOZXh0ID0gUmVhY3QuZm9yd2FyZFJlZjwKICBIVE1MQnV0dG9uRWxlbWVudCwKICBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgQnV0dG9uPgo+KCh7IGNsYXNzTmFtZSwgdmFyaWFudCA9ICdvdXRsaW5lJywgc2l6ZSA9ICdpY29uJywgLi4ucHJvcHMgfSwgcmVmKSA9PiB7CiAgY29uc3QgeyBvcmllbnRhdGlvbiwgc2Nyb2xsTmV4dCwgY2FuU2Nyb2xsTmV4dCB9ID0gdXNlQ2Fyb3VzZWwoKTsKCiAgcmV0dXJuICgKICAgIDxCdXR0b24KICAgICAgcmVmPXtyZWZ9CiAgICAgIHZhcmlhbnQ9e3ZhcmlhbnR9CiAgICAgIHNpemU9e3NpemV9CiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2Fic29sdXRlIGgtOCB3LTggcm91bmRlZC1mdWxsJywKICAgICAgICBvcmllbnRhdGlvbiA9PT0gJ2hvcml6b250YWwnCiAgICAgICAgICA/ICctcmlnaHQtMTIgdG9wLTEvMiAtdHJhbnNsYXRlLXktMS8yJwogICAgICAgICAgOiAnLWJvdHRvbS0xMiBsZWZ0LTEvMiAtdHJhbnNsYXRlLXgtMS8yIHJvdGF0ZS05MCcsCiAgICAgICAgY2xhc3NOYW1lLAogICAgICApfQogICAgICBkaXNhYmxlZD17IWNhblNjcm9sbE5leHR9CiAgICAgIG9uQ2xpY2s9e3Njcm9sbE5leHR9CiAgICAgIHsuLi5wcm9wc30KICAgID4KICAgICAgPEFycm93UmlnaHQgY2xhc3NOYW1lPSJoLTQgdy00IiAvPgogICAgICA8c3BhbiBjbGFzc05hbWU9InNyLW9ubHkiPk5leHQgc2xpZGU8L3NwYW4+CiAgICA8L0J1dHRvbj4KICApOwp9KTsKQ2Fyb3VzZWxOZXh0LmRpc3BsYXlOYW1lID0gJ0Nhcm91c2VsTmV4dCc7CgpleHBvcnQgewogIHR5cGUgQ2Fyb3VzZWxBcGksCiAgQ2Fyb3VzZWwsCiAgQ2Fyb3VzZWxDb250ZW50LAogIENhcm91c2VsSXRlbSwKICBDYXJvdXNlbFByZXZpb3VzLAogIENhcm91c2VsTmV4dCwKfTsK
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from 'embla-carousel-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+type CarouselApi = UseEmblaCarouselType[1];
+type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
+type CarouselOptions = UseCarouselParameters[0];
+type CarouselPlugin = UseCarouselParameters[1];
+
+type CarouselProps = {
+  opts?: CarouselOptions;
+  plugins?: CarouselPlugin;
+  orientation?: 'horizontal' | 'vertical';
+  setApi?: (api: CarouselApi) => void;
+};
+
+type CarouselContextProps = {
+  carouselRef: ReturnType<typeof useEmblaCarousel>[0];
+  api: ReturnType<typeof useEmblaCarousel>[1];
+  scrollPrev: () => void;
+  scrollNext: () => void;
+  canScrollPrev: boolean;
+  canScrollNext: boolean;
+} & CarouselProps;
+
+const CarouselContext = React.createContext<CarouselContextProps | null>(null);
+
+function useCarousel() {
+  const context = React.useContext(CarouselContext);
+
+  if (!context) {
+    throw new Error('useCarousel must be used within a <Carousel />');
+  }
+
+  return context;
+}
+
+const Carousel = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & CarouselProps
+>(
+  (
+    {
+      orientation = 'horizontal',
+      opts,
+      setApi,
+      plugins,
+      className,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const [carouselRef, api] = useEmblaCarousel(
+      {
+        ...opts,
+        axis: orientation === 'horizontal' ? 'x' : 'y',
+      },
+      plugins,
+    );
+    const [canScrollPrev, setCanScrollPrev] = React.useState(false);
+    const [canScrollNext, setCanScrollNext] = React.useState(false);
+
+    const onSelect = React.useCallback((api: CarouselApi) => {
+      if (!api) {
+        return;
+      }
+
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+    }, []);
+
+    const scrollPrev = React.useCallback(() => {
+      api?.scrollPrev();
+    }, [api]);
+
+    const scrollNext = React.useCallback(() => {
+      api?.scrollNext();
+    }, [api]);
+
+    const handleKeyDown = React.useCallback(
+      (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          scrollPrev();
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          scrollNext();
+        }
+      },
+      [scrollPrev, scrollNext],
+    );
+
+    React.useEffect(() => {
+      if (!api || !setApi) {
+        return;
+      }
+
+      setApi(api);
+    }, [api, setApi]);
+
+    React.useEffect(() => {
+      if (!api) {
+        return;
+      }
+
+      onSelect(api);
+      api.on('reInit', onSelect);
+      api.on('select', onSelect);
+
+      return () => {
+        api?.off('select', onSelect);
+      };
+    }, [api, onSelect]);
+
+    return (
+      <CarouselContext.Provider
+        value={{
+          carouselRef,
+          api: api,
+          opts,
+          orientation:
+            orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+          scrollPrev,
+          scrollNext,
+          canScrollPrev,
+          canScrollNext,
+        }}
+      >
+        <div
+          ref={ref}
+          onKeyDownCapture={handleKeyDown}
+          className={cn('relative', className)}
+          role="region"
+          aria-roledescription="carousel"
+          {...props}
+        >
+          {children}
+        </div>
+      </CarouselContext.Provider>
+    );
+  },
+);
+Carousel.displayName = 'Carousel';
+
+const CarouselContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const { carouselRef, orientation } = useCarousel();
+
+  return (
+    <div ref={carouselRef} className="overflow-hidden">
+      <div
+        ref={ref}
+        className={cn(
+          'flex',
+          orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
+          className,
+        )}
+        {...props}
+      />
+    </div>
+  );
+});
+CarouselContent.displayName = 'CarouselContent';
+
+const CarouselItem = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const { orientation } = useCarousel();
+
+  return (
+    <div
+      ref={ref}
+      role="group"
+      aria-roledescription="slide"
+      className={cn(
+        'min-w-0 shrink-0 grow-0 basis-full',
+        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        className,
+      )}
+      {...props}
+    />
+  );
+});
+CarouselItem.displayName = 'CarouselItem';
+
+const CarouselPrevious = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentProps<typeof Button>
+>(({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
+  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+
+  return (
+    <Button
+      ref={ref}
+      variant={variant}
+      size={size}
+      className={cn(
+        'absolute  h-8 w-8 rounded-full',
+        orientation === 'horizontal'
+          ? '-left-12 top-1/2 -translate-y-1/2'
+          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+        className,
+      )}
+      disabled={!canScrollPrev}
+      onClick={scrollPrev}
+      {...props}
+    >
+      <ArrowLeft className="h-4 w-4" />
+      <span className="sr-only">Previous slide</span>
+    </Button>
+  );
+});
+CarouselPrevious.displayName = 'CarouselPrevious';
+
+const CarouselNext = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentProps<typeof Button>
+>(({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
+  const { orientation, scrollNext, canScrollNext } = useCarousel();
+
+  return (
+    <Button
+      ref={ref}
+      variant={variant}
+      size={size}
+      className={cn(
+        'absolute h-8 w-8 rounded-full',
+        orientation === 'horizontal'
+          ? '-right-12 top-1/2 -translate-y-1/2'
+          : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+        className,
+      )}
+      disabled={!canScrollNext}
+      onClick={scrollNext}
+      {...props}
+    >
+      <ArrowRight className="h-4 w-4" />
+      <span className="sr-only">Next slide</span>
+    </Button>
+  );
+});
+CarouselNext.displayName = 'CarouselNext';
+
+export {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+};

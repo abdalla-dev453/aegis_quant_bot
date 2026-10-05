@@ -1,1 +1,420 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUKZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsCmZyb20gZW51bSBpbXBvcnQgU3RyRW51bQpmcm9tIHR5cGluZyBpbXBvcnQgQW5ub3RhdGVkCmZyb20gdXVpZCBpbXBvcnQgVVVJRAoKZnJvbSBweWRhbnRpYyBpbXBvcnQgQmFzZU1vZGVsLCBDb25maWdEaWN0LCBGaWVsZCwgZmllbGRfdmFsaWRhdG9yCgpQb3NpdGl2ZU1vbmV5ID0gQW5ub3RhdGVkW0RlY2ltYWwsIEZpZWxkKGdlPURlY2ltYWwoMCksIG1heF9kaWdpdHM9MjQsIGRlY2ltYWxfcGxhY2VzPTgpXQpTaWduZWRNb25leSA9IEFubm90YXRlZFtEZWNpbWFsLCBGaWVsZChtYXhfZGlnaXRzPTI0LCBkZWNpbWFsX3BsYWNlcz04KV0KUHJpY2UgPSBBbm5vdGF0ZWRbRGVjaW1hbCwgRmllbGQoZ3Q9RGVjaW1hbCgwKSwgbWF4X2RpZ2l0cz0yOCwgZGVjaW1hbF9wbGFjZXM9MTIpXQpWb2x1bWUgPSBBbm5vdGF0ZWRbRGVjaW1hbCwgRmllbGQoZ3Q9RGVjaW1hbCgwKSwgbWF4X2RpZ2l0cz0yMCwgZGVjaW1hbF9wbGFjZXM9OCldCkNvbmZpZGVuY2VTY29yZSA9IEFubm90YXRlZFtEZWNpbWFsLCBGaWVsZChnZT1EZWNpbWFsKDApLCBsZT1EZWNpbWFsKDEpLCBtYXhfZGlnaXRzPTUsIGRlY2ltYWxfcGxhY2VzPTQpXQoKCmNsYXNzIEFQSU1vZGVsKEJhc2VNb2RlbCk6CiAgICBtb2RlbF9jb25maWcgPSBDb25maWdEaWN0KGV4dHJhPSJmb3JiaWQiLCBzdHJfc3RyaXBfd2hpdGVzcGFjZT1UcnVlKQoKCmNsYXNzIEVycm9yUmVzcG9uc2UoQVBJTW9kZWwpOgogICAgY29kZTogc3RyCiAgICBtZXNzYWdlOiBzdHIKICAgIGRldGFpbHM6IGRpY3Rbc3RyLCBzdHIgfCBpbnQgfCBmbG9hdCB8IGJvb2wgfCBOb25lXSB8IE5vbmUgPSBOb25lCgoKY2xhc3MgU2lnbmFsQWN0aW9uKFN0ckVudW0pOgogICAgQlVZID0gIkJVWSIKICAgIFNFTEwgPSAiU0VMTCIKCgpjbGFzcyBTaWduYWxTdGF0ZShTdHJFbnVtKToKICAgIENSRUFURUQgPSAiQ1JFQVRFRCIKICAgIERFTElWRVJFRCA9ICJERUxJVkVSRUQiCiAgICBBQ0tFRCA9ICJBQ0tFRCIKICAgIEVYRUNVVEVEID0gIkVYRUNVVEVEIgogICAgUkVKRUNURUQgPSAiUkVKRUNURUQiCiAgICBFWFBJUkVEID0gIkVYUElSRUQiCgoKY2xhc3MgRGV2aWNlU3RhdHVzKFN0ckVudW0pOgogICAgQUNUSVZFID0gIkFDVElWRSIKICAgIFJFVk9LRUQgPSAiUkVWT0tFRCIKCgpjbGFzcyBEZXZpY2VQcmVzZW5jZShTdHJFbnVtKToKICAgIE9OTElORSA9ICJPTkxJTkUiCiAgICBTVEFMRSA9ICJTVEFMRSIKICAgIE9GRkxJTkUgPSAiT0ZGTElORSIKCgojIC0tLSBVc2VyICYgQXV0aCBDb250cmFjdHMgLS0tCgpjbGFzcyBVc2VyU2lnbnVwKEFQSU1vZGVsKToKICAgIGVtYWlsOiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTMsIG1heF9sZW5ndGg9MjU0KQogICAgcGFzc3dvcmQ6IHN0ciA9IEZpZWxkKG1pbl9sZW5ndGg9MTIsIG1heF9sZW5ndGg9MTI4KQogICAgcmlza19kaXNjbGFpbWVyX2FjY2VwdGVkOiBib29sCgogICAgQGZpZWxkX3ZhbGlkYXRvcigiZW1haWwiKQogICAgQGNsYXNzbWV0aG9kCiAgICBkZWYgbm9ybWFsaXplX2VtYWlsKGNscywgdmFsdWU6IHN0cikgLT4gc3RyOgogICAgICAgIG5vcm1hbGl6ZWQgPSB2YWx1ZS5sb3dlcigpCiAgICAgICAgaWYgbm9ybWFsaXplZC5jb3VudCgiQCIpICE9IDEgb3IgIi4iIG5vdCBpbiBub3JtYWxpemVkLnJzcGxpdCgiQCIsIDEpWzFdOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJBIHZhbGlkIGVtYWlsIGFkZHJlc3MgaXMgcmVxdWlyZWQiKQogICAgICAgIHJldHVybiBub3JtYWxpemVkCgoKY2xhc3MgVXNlckxvZ2luKEFQSU1vZGVsKToKICAgIGVtYWlsOiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTMsIG1heF9sZW5ndGg9MjU0KQogICAgcGFzc3dvcmQ6IHN0ciA9IEZpZWxkKG1pbl9sZW5ndGg9MSwgbWF4X2xlbmd0aD0xMjgpCgogICAgQGZpZWxkX3ZhbGlkYXRvcigiZW1haWwiKQogICAgQGNsYXNzbWV0aG9kCiAgICBkZWYgbm9ybWFsaXplX2VtYWlsKGNscywgdmFsdWU6IHN0cikgLT4gc3RyOgogICAgICAgIHJldHVybiB2YWx1ZS5sb3dlcigpCgoKY2xhc3MgVXNlclZpZXcoQVBJTW9kZWwpOgogICAgaWQ6IFVVSUQKICAgIGVtYWlsOiBzdHIKICAgIGlzX3ZlcmlmaWVkOiBib29sCiAgICByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWRfYXQ6IGRhdGV0aW1lCiAgICBjcmVhdGVkX2F0OiBkYXRldGltZQoKCmNsYXNzIFBhaXJpbmdDb2RlVmlldyhBUElNb2RlbCk6CiAgICBjb2RlOiBzdHIKICAgIGV4cGlyZXNfYXQ6IGRhdGV0aW1lCgoKIyAtLS0gRUEgQnJpZGdlIENvbnRyYWN0cyAoL2VhL3YxLyopIC0tLQoKY2xhc3MgRUFQYWlyUmVxdWVzdChBUElNb2RlbCk6CiAgICBjb2RlOiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTgsIG1heF9sZW5ndGg9MTYsIHBhdHRlcm49ciJeW0EtWjAtOV8tXXs4LDE2fSQiKQogICAgdGVybWluYWxfYnVpbGQ6IHN0ciA9IEZpZWxkKG1pbl9sZW5ndGg9MSwgbWF4X2xlbmd0aD0zMikKICAgIGJyb2tlcjogc3RyID0gRmllbGQobWluX2xlbmd0aD0xLCBtYXhfbGVuZ3RoPTEyMCkKICAgIHNlcnZlcjogc3RyID0gRmllbGQobWluX2xlbmd0aD0xLCBtYXhfbGVuZ3RoPTEyMCkKICAgIGFjY291bnRfbnVtYmVyX21hc2tlZDogc3RyID0gRmllbGQobWluX2xlbmd0aD0xLCBtYXhfbGVuZ3RoPTY0KQogICAgYWNjb3VudF9jdXJyZW5jeTogc3RyID0gRmllbGQobWluX2xlbmd0aD0zLCBtYXhfbGVuZ3RoPTgpCiAgICBsZXZlcmFnZTogaW50ID0gRmllbGQoZ2U9MSwgbGU9MTAwXzAwMCkKCgpjbGFzcyBFQVBhaXJSZXNwb25zZShBUElNb2RlbCk6CiAgICBkZXZpY2VfaWQ6IFVVSUQKICAgIGRldmljZV90b2tlbjogc3RyCiAgICB0b2tlbl90eXBlOiBzdHIgPSAiQWVnaXNRdWFudC1ITUFDLVNIQTI1NiIKICAgIHRva2VuX3Nob3duX29uY2U6IGJvb2wgPSBUcnVlCgoKY2xhc3MgQWNjb3VudFNuYXBzaG90SW5wdXQoQVBJTW9kZWwpOgogICAgYmFsYW5jZTogUG9zaXRpdmVNb25leQogICAgZXF1aXR5OiBQb3NpdGl2ZU1vbmV5CiAgICBtYXJnaW46IFBvc2l0aXZlTW9uZXkgPSBEZWNpbWFsKDApCiAgICBmcmVlX21hcmdpbjogUG9zaXRpdmVNb25leQogICAgbWFyZ2luX2xldmVsOiBEZWNpbWFsIHwgTm9uZSA9IE5vbmUKICAgIG9wZW5fcG9zaXRpb25zX2NvdW50OiBpbnQgPSBGaWVsZChnZT0wLCBkZWZhdWx0PTApCiAgICBhY2NvdW50X2N1cnJlbmN5OiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTMsIG1heF9sZW5ndGg9OCkKICAgIGxldmVyYWdlOiBpbnQgPSBGaWVsZChnZT0xLCBsZT0xMDBfMDAwKQogICAgY2FwdHVyZWRfYXQ6IGRhdGV0aW1lCgoKY2xhc3MgUG9zaXRpb25JbnB1dChBUElNb2RlbCk6CiAgICBleHRlcm5hbF9wb3NpdGlvbl9pZDogc3RyID0gRmllbGQobWluX2xlbmd0aD0xLCBtYXhfbGVuZ3RoPTgwKQogICAgc3ltYm9sOiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTMsIG1heF9sZW5ndGg9MzIpCiAgICBzaWRlOiBTaWduYWxBY3Rpb24KICAgIHZvbHVtZTogVm9sdW1lCiAgICBlbnRyeV9wcmljZTogUHJpY2UKICAgIGN1cnJlbnRfcHJpY2U6IFByaWNlCiAgICBzdG9wX2xvc3M6IFByaWNlIHwgTm9uZSA9IE5vbmUKICAgIHRha2VfcHJvZml0OiBQcmljZSB8IE5vbmUgPSBOb25lCiAgICB1bnJlYWxpemVkX3BubDogU2lnbmVkTW9uZXkKICAgIHN3YXA6IFNpZ25lZE1vbmV5ID0gRGVjaW1hbCgwKQogICAgbWFnaWNfbnVtYmVyOiBpbnQgfCBOb25lID0gTm9uZQogICAgY29tbWVudDogc3RyIHwgTm9uZSA9IEZpZWxkKGRlZmF1bHQ9Tm9uZSwgbWF4X2xlbmd0aD0xMjApCiAgICBvYnNlcnZlZF9hdDogZGF0ZXRpbWUKCiAgICBAZmllbGRfdmFsaWRhdG9yKCJzeW1ib2wiKQogICAgQGNsYXNzbWV0aG9kCiAgICBkZWYgbm9ybWFsaXplX3N5bWJvbChjbHMsIHZhbHVlOiBzdHIpIC0+IHN0cjoKICAgICAgICByZXR1cm4gdmFsdWUudXBwZXIoKQoKCmNsYXNzIEhlYXJ0YmVhdFJlcXVlc3QoQVBJTW9kZWwpOgogICAgc25hcHNob3Q6IEFjY291bnRTbmFwc2hvdElucHV0CiAgICBwb3NpdGlvbnM6IGxpc3RbUG9zaXRpb25JbnB1dF0gPSBGaWVsZChtYXhfbGVuZ3RoPTUwMCkKCgpjbGFzcyBIZWFydGJlYXRSZXNwb25zZShBUElNb2RlbCk6CiAgICBhY2NlcHRlZDogYm9vbAogICAgc2VydmVyX3RpbWU6IGRhdGV0aW1lCiAgICBhdXRvX2V4ZWN1dGU6IGJvb2wKICAgIGtpbGxfc3dpdGNoOiBib29sID0gRmFsc2UKCgojIC0tLSBTaWduYWwgRW5naW5lIENvbnRyYWN0cyAtLS0KCmNsYXNzIFNpZ25hbFJhdGlvbmFsZUZhY3RvcihBUElNb2RlbCk6CiAgICBuYW1lOiBzdHIKICAgIHdlaWdodDogRGVjaW1hbCA9IEZpZWxkKGdlPURlY2ltYWwoMCksIGxlPURlY2ltYWwoMSkpCiAgICBkZXNjcmlwdGlvbjogc3RyCgoKY2xhc3MgU2lnbmFsUmF0aW9uYWxlKEFQSU1vZGVsKToKICAgIHN1bW1hcnk6IHN0cgogICAgZmFjdG9yczogbGlzdFtTaWduYWxSYXRpb25hbGVGYWN0b3JdID0gRmllbGQoZGVmYXVsdF9mYWN0b3J5PWxpc3QpCgoKY2xhc3MgU2lnbmFsQ3JlYXRlKEFQSU1vZGVsKToKICAgIGRldmljZV9pZDogVVVJRAogICAgc2lnbmFsX2lkOiBVVUlECiAgICBzeW1ib2w6IHN0ciA9IEZpZWxkKG1pbl9sZW5ndGg9MywgbWF4X2xlbmd0aD0zMikKICAgIGFjdGlvbjogU2lnbmFsQWN0aW9uCiAgICByZWZlcmVuY2VfcHJpY2U6IFByaWNlCiAgICBwb2ludF9zaXplOiBBbm5vdGF0ZWRbRGVjaW1hbCwgRmllbGQoZ3Q9MCwgbWF4X2RpZ2l0cz0yMCwgZGVjaW1hbF9wbGFjZXM9MTIpXQogICAgbWF4X2RldmlhdGlvbl9wb2ludHM6IGludCA9IEZpZWxkKGdlPTAsIGxlPTEwMF8wMDApCiAgICB2b2x1bWU6IFZvbHVtZQogICAgc3RvcF9sb3NzOiBQcmljZQogICAgdGFrZV9wcm9maXQ6IFByaWNlCiAgICBjb25maWRlbmNlOiBDb25maWRlbmNlU2NvcmUgPSBEZWNpbWFsKCIwLjg1MDAiKQogICAgcmF0aW9uYWxlOiBTaWduYWxSYXRpb25hbGUKICAgIG1vZGVsX3ZlcnNpb246IHN0ciA9IEZpZWxkKGRlZmF1bHQ9InYxLjAtcnVsZS1iYXNlZCIsIG1heF9sZW5ndGg9NjQpCiAgICBleHBpcmVzX2F0OiBkYXRldGltZQoKICAgIEBmaWVsZF92YWxpZGF0b3IoInN5bWJvbCIpCiAgICBAY2xhc3NtZXRob2QKICAgIGRlZiBub3JtYWxpemVfc3ltYm9sKGNscywgdmFsdWU6IHN0cikgLT4gc3RyOgogICAgICAgIHJldHVybiB2YWx1ZS51cHBlcigpCgoKY2xhc3MgU2lnbmFsRGVsaXZlcnkoQVBJTW9kZWwpOgogICAgc2lnbmFsX2lkOiBVVUlECiAgICBzeW1ib2w6IHN0cgogICAgYWN0aW9uOiBTaWduYWxBY3Rpb24KICAgIHJlZmVyZW5jZV9wcmljZTogUHJpY2UKICAgIHBvaW50X3NpemU6IERlY2ltYWwKICAgIG1heF9kZXZpYXRpb25fcG9pbnRzOiBpbnQKICAgIHZvbHVtZTogVm9sdW1lCiAgICBzdG9wX2xvc3M6IFByaWNlCiAgICB0YWtlX3Byb2ZpdDogUHJpY2UKICAgIGNvbmZpZGVuY2U6IENvbmZpZGVuY2VTY29yZQogICAgcmF0aW9uYWxlOiBTaWduYWxSYXRpb25hbGUKICAgIG1vZGVsX3ZlcnNpb246IHN0cgogICAgZXhwaXJlc19hdDogZGF0ZXRpbWUKICAgIGF1dG9fZXhlY3V0ZTogYm9vbAoKCmNsYXNzIFNpZ25hbEV2ZW50VHlwZShTdHJFbnVtKToKICAgIEFDS0VEID0gIkFDS0VEIgogICAgRVhFQ1VURUQgPSAiRVhFQ1VURUQiCiAgICBSRUpFQ1RFRCA9ICJSRUpFQ1RFRCIKCgpjbGFzcyBTaWduYWxBY2tSZXF1ZXN0KEFQSU1vZGVsKToKICAgIGV2ZW50OiBTaWduYWxFdmVudFR5cGUKICAgIG9jY3VycmVkX2F0OiBkYXRldGltZQogICAgZXhlY3V0aW9uX3ByaWNlOiBQcmljZSB8IE5vbmUgPSBOb25lCiAgICBleGVjdXRpb25fdm9sdW1lOiBWb2x1bWUgfCBOb25lID0gTm9uZQogICAgcmVhc29uX2NvZGU6IHN0ciB8IE5vbmUgPSBGaWVsZChkZWZhdWx0PU5vbmUsIG1heF9sZW5ndGg9NjQpCiAgICByZWFzb246IHN0ciB8IE5vbmUgPSBGaWVsZChkZWZhdWx0PU5vbmUsIG1heF9sZW5ndGg9NTAwKQoKCmNsYXNzIFNpZ25hbEFja1Jlc3BvbnNlKEFQSU1vZGVsKToKICAgIHNpZ25hbF9pZDogVVVJRAogICAgc3RhdGU6IFNpZ25hbFN0YXRlCiAgICBhY2NlcHRlZDogYm9vbAoKCmNsYXNzIFNpZ25hbFZpZXcoQVBJTW9kZWwpOgogICAgaWQ6IFVVSUQKICAgIGRldmljZV9pZDogVVVJRAogICAgc3ltYm9sOiBzdHIKICAgIGFjdGlvbjogU2lnbmFsQWN0aW9uCiAgICByZWZlcmVuY2VfcHJpY2U6IFByaWNlCiAgICB2b2x1bWU6IFZvbHVtZQogICAgc3RvcF9sb3NzOiBQcmljZQogICAgdGFrZV9wcm9maXQ6IFByaWNlCiAgICBjb25maWRlbmNlOiBDb25maWRlbmNlU2NvcmUKICAgIHJhdGlvbmFsZTogU2lnbmFsUmF0aW9uYWxlCiAgICBtb2RlbF92ZXJzaW9uOiBzdHIKICAgIHN0YXRlOiBTaWduYWxTdGF0ZQogICAgZXhwaXJlc19hdDogZGF0ZXRpbWUKICAgIGNyZWF0ZWRfYXQ6IGRhdGV0aW1lCgoKY2xhc3MgU2lnbmFsRXZlbnRWaWV3KEFQSU1vZGVsKToKICAgIGlkOiBVVUlECiAgICBzaWduYWxfaWQ6IFVVSUQKICAgIGRldmljZV9pZDogVVVJRAogICAgZnJvbV9zdGF0ZTogc3RyIHwgTm9uZQogICAgdG9fc3RhdGU6IHN0cgogICAgc291cmNlOiBzdHIKICAgIHJlYXNvbl9jb2RlOiBzdHIgfCBOb25lCiAgICByZWFzb246IHN0ciB8IE5vbmUKICAgIGV4ZWN1dGlvbl9wcmljZTogUHJpY2UgfCBOb25lCiAgICBleGVjdXRpb25fdm9sdW1lOiBWb2x1bWUgfCBOb25lCiAgICBvY2N1cnJlZF9hdDogZGF0ZXRpbWUKCgpjbGFzcyBTaWduYWxEZXRhaWxWaWV3KEFQSU1vZGVsKToKICAgIHNpZ25hbDogU2lnbmFsVmlldwogICAgZXZlbnRzOiBsaXN0W1NpZ25hbEV2ZW50Vmlld10KICAgIGV4ZWN1dGlvbl9wbmw6IFNpZ25lZE1vbmV5IHwgTm9uZSA9IE5vbmUKCgojIC0tLSBSaXNrIFByb2ZpbGUgQ29udHJhY3RzIC0tLQoKY2xhc3MgUmlza1Byb2ZpbGVWaWV3KEFQSU1vZGVsKToKICAgIGlkOiBVVUlECiAgICBkZXZpY2VfaWQ6IFVVSUQKICAgIHJpc2tfcGVyX3RyYWRlX3BjdDogRGVjaW1hbAogICAgbWF4X2RhaWx5X2xvc3NfcGN0OiBEZWNpbWFsCiAgICBtYXhfb3Blbl9yaXNrX3BjdDogRGVjaW1hbAogICAgbWF4X29wZW5fcG9zaXRpb25zOiBpbnQKICAgIGFsbG93ZWRfc3ltYm9sczogbGlzdFtzdHJdIHwgTm9uZSA9IE5vbmUKICAgIHRyYWRpbmdfaG91cnM6IGRpY3Rbc3RyLCBzdHIgfCBpbnQgfCBmbG9hdCB8IGJvb2wgfCBOb25lXSB8IE5vbmUgPSBOb25lCiAgICBhdXRvX2V4ZWN1dGU6IGJvb2wKCgpjbGFzcyBSaXNrUHJvZmlsZVVwZGF0ZShBUElNb2RlbCk6CiAgICByaXNrX3Blcl90cmFkZV9wY3Q6IEFubm90YXRlZFtEZWNpbWFsLCBGaWVsZChndD0wLCBsZT01LCBtYXhfZGlnaXRzPTgsIGRlY2ltYWxfcGxhY2VzPTQpXSB8IE5vbmUgPSBOb25lCiAgICBtYXhfZGFpbHlfbG9zc19wY3Q6IEFubm90YXRlZFtEZWNpbWFsLCBGaWVsZChndD0wLCBsZT0xMDAsIG1heF9kaWdpdHM9OCwgZGVjaW1hbF9wbGFjZXM9NCldIHwgTm9uZSA9IE5vbmUKICAgIG1heF9vcGVuX3Jpc2tfcGN0OiBBbm5vdGF0ZWRbRGVjaW1hbCwgRmllbGQoZ3Q9MCwgbGU9MTAwLCBtYXhfZGlnaXRzPTgsIGRlY2ltYWxfcGxhY2VzPTQpXSB8IE5vbmUgPSBOb25lCiAgICBtYXhfb3Blbl9wb3NpdGlvbnM6IEFubm90YXRlZFtpbnQsIEZpZWxkKGdlPTEsIGxlPTUwKV0gfCBOb25lID0gTm9uZQogICAgYWxsb3dlZF9zeW1ib2xzOiBsaXN0W3N0cl0gfCBOb25lID0gTm9uZQogICAgdHJhZGluZ19ob3VyczogZGljdFtzdHIsIHN0ciB8IGludCB8IGZsb2F0IHwgYm9vbCB8IE5vbmVdIHwgTm9uZSA9IE5vbmUKICAgIGF1dG9fZXhlY3V0ZTogYm9vbCB8IE5vbmUgPSBOb25lCgoKIyAtLS0gRGV2aWNlIE1hbmFnZW1lbnQgQ29udHJhY3RzIC0tLQoKY2xhc3MgRGV2aWNlVmlldyhBUElNb2RlbCk6CiAgICBpZDogVVVJRAogICAgbmFtZTogc3RyCiAgICBicm9rZXI6IHN0cgogICAgc2VydmVyOiBzdHIKICAgIHRlcm1pbmFsX2J1aWxkOiBzdHIgfCBOb25lCiAgICBhY2NvdW50X251bWJlcl9tYXNrZWQ6IHN0cgogICAgYWNjb3VudF9jdXJyZW5jeTogc3RyCiAgICBsZXZlcmFnZTogaW50CiAgICBzdGF0dXM6IHN0cgogICAgcHJlc2VuY2U6IERldmljZVByZXNlbmNlCiAgICBsYXN0X3NlZW5fYXQ6IGRhdGV0aW1lIHwgTm9uZQogICAgYXV0b19leGVjdXRlOiBib29sCiAgICBjcmVhdGVkX2F0OiBkYXRldGltZQoKCmNsYXNzIERldmljZVJlbmFtZShBUElNb2RlbCk6CiAgICBuYW1lOiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTEsIG1heF9sZW5ndGg9MTAwKQoKCiMgLS0tIFRyYWRlIFJlcG9ydHMgJiBBbmFseXRpY3MgQ29udHJhY3RzIC0tLQoKY2xhc3MgVHJhZGVSZXBvcnRJbnB1dChBUElNb2RlbCk6CiAgICBzaWduYWxfaWQ6IFVVSUQgfCBOb25lID0gTm9uZQogICAgdGlja2V0OiBzdHIgPSBGaWVsZChtaW5fbGVuZ3RoPTEsIG1heF9sZW5ndGg9ODApCiAgICBzeW1ib2w6IHN0ciA9IEZpZWxkKG1pbl9sZW5ndGg9MywgbWF4X2xlbmd0aD0zMikKICAgIHNpZGU6IFNpZ25hbEFjdGlvbgogICAgdm9sdW1lOiBWb2x1bWUKICAgIGV4ZWN1dGlvbl9wcmljZTogUHJpY2UKICAgIGV4aXRfcHJpY2U6IFByaWNlIHwgTm9uZSA9IE5vbmUKICAgIHNsaXBwYWdlX3BvaW50czogRGVjaW1hbCB8IE5vbmUgPSBOb25lCiAgICBjb21taXNzaW9uOiBTaWduZWRNb25leSA9IERlY2ltYWwoMCkKICAgIHN3YXA6IFNpZ25lZE1vbmV5ID0gRGVjaW1hbCgwKQogICAgcHJvZml0OiBTaWduZWRNb25leSB8IE5vbmUgPSBOb25lCiAgICBvcGVuZWRfYXQ6IGRhdGV0aW1lCiAgICBjbG9zZWRfYXQ6IGRhdGV0aW1lIHwgTm9uZSA9IE5vbmUKCgpjbGFzcyBUcmFkZVJlcG9ydFZpZXcoQVBJTW9kZWwpOgogICAgaWQ6IFVVSUQKICAgIHNpZ25hbF9pZDogVVVJRCB8IE5vbmUKICAgIGRldmljZV9pZDogVVVJRAogICAgdGlja2V0OiBzdHIKICAgIHN5bWJvbDogc3RyCiAgICBzaWRlOiBTaWduYWxBY3Rpb24KICAgIHZvbHVtZTogVm9sdW1lCiAgICBleGVjdXRpb25fcHJpY2U6IFByaWNlCiAgICBleGl0X3ByaWNlOiBQcmljZSB8IE5vbmUKICAgIHNsaXBwYWdlX3BvaW50czogRGVjaW1hbCB8IE5vbmUKICAgIGNvbW1pc3Npb246IFNpZ25lZE1vbmV5CiAgICBzd2FwOiBTaWduZWRNb25leQogICAgcmVhbGl6ZWRfcG5sOiBTaWduZWRNb25leSB8IE5vbmUKICAgIG9wZW5lZF9hdDogZGF0ZXRpbWUKICAgIGNsb3NlZF9hdDogZGF0ZXRpbWUgfCBOb25lCiAgICBjcmVhdGVkX2F0OiBkYXRldGltZQoKCmNsYXNzIEVxdWl0eVBvaW50KEFQSU1vZGVsKToKICAgIHRpbWVzdGFtcDogZGF0ZXRpbWUKICAgIGJhbGFuY2U6IFBvc2l0aXZlTW9uZXkKICAgIGVxdWl0eTogUG9zaXRpdmVNb25leQogICAgZHJhd2Rvd25fcGN0OiBEZWNpbWFsID0gRGVjaW1hbCgwKQoKCmNsYXNzIEpvdXJuYWxNZXRyaWNzKEFQSU1vZGVsKToKICAgIHRvdGFsX3RyYWRlczogaW50CiAgICB3aW5uaW5nX3RyYWRlczogaW50CiAgICBsb3NpbmdfdHJhZGVzOiBpbnQKICAgIHdpbl9yYXRlX3BjdDogRGVjaW1hbAogICAgcHJvZml0X2ZhY3RvcjogRGVjaW1hbAogICAgZXhwZWN0YW5jeTogU2lnbmVkTW9uZXkKICAgIGF2ZXJhZ2Vfcl9tdWx0aXBsZTogRGVjaW1hbAogICAgbWF4X2RyYXdkb3duX3BjdDogRGVjaW1hbAogICAgbmV0X3BubDogU2lnbmVkTW9uZXkKCgpjbGFzcyBEYWlseUhlYXRtYXBFbnRyeShBUElNb2RlbCk6CiAgICBkYXRlOiBzdHIKICAgIHBubDogU2lnbmVkTW9uZXkKICAgIHRyYWRlX2NvdW50OiBpbnQKCgojIC0tLSBBdWRpdCBMb2cgQ29udHJhY3RzIC0tLQoKY2xhc3MgQXVkaXRMb2dWaWV3KEFQSU1vZGVsKToKICAgIGlkOiBVVUlECiAgICB1c2VyX2lkOiBVVUlEIHwgTm9uZQogICAgZGV2aWNlX2lkOiBVVUlEIHwgTm9uZQogICAgZXZlbnRfdHlwZTogc3RyCiAgICBhY3Rpb246IHN0ciB8IE5vbmUKICAgIHJlcXVlc3RfaWQ6IHN0ciB8IE5vbmUKICAgIGlwX2FkZHJlc3M6IHN0ciB8IE5vbmUKICAgIHVzZXJfYWdlbnQ6IHN0ciB8IE5vbmUKICAgIGRldGFpbHM6IGRpY3Rbc3RyLCBzdHIgfCBpbnQgfCBmbG9hdCB8IGJvb2wgfCBOb25lXQogICAgY3JlYXRlZF9hdDogZGF0ZXRpbWUKCgojIC0tLSBEYXNoYm9hcmQgT3ZlcnZpZXcgQ29udHJhY3RzIC0tLQoKY2xhc3MgRGFzaGJvYXJkQWNjb3VudChBUElNb2RlbCk6CiAgICBkZXZpY2VfaWQ6IFVVSUQKICAgIGNhcHR1cmVkX2F0OiBkYXRldGltZQogICAgYmFsYW5jZTogUG9zaXRpdmVNb25leQogICAgZXF1aXR5OiBQb3NpdGl2ZU1vbmV5CiAgICBtYXJnaW46IFBvc2l0aXZlTW9uZXkKICAgIGZyZWVfbWFyZ2luOiBQb3NpdGl2ZU1vbmV5CiAgICBtYXJnaW5fbGV2ZWw6IERlY2ltYWwgfCBOb25lCiAgICBvcGVuX3Bvc2l0aW9uc19jb3VudDogaW50CiAgICBhY2NvdW50X2N1cnJlbmN5OiBzdHIKCgpjbGFzcyBEYXNoYm9hcmRQb3NpdGlvbihBUElNb2RlbCk6CiAgICBkZXZpY2VfaWQ6IFVVSUQKICAgIGV4dGVybmFsX3Bvc2l0aW9uX2lkOiBzdHIKICAgIHN5bWJvbDogc3RyCiAgICBzaWRlOiBTaWduYWxBY3Rpb24KICAgIHZvbHVtZTogVm9sdW1lCiAgICBlbnRyeV9wcmljZTogUHJpY2UKICAgIGN1cnJlbnRfcHJpY2U6IFByaWNlCiAgICBzdG9wX2xvc3M6IFByaWNlIHwgTm9uZQogICAgdGFrZV9wcm9maXQ6IFByaWNlIHwgTm9uZQogICAgdW5yZWFsaXplZF9wbmw6IFNpZ25lZE1vbmV5CiAgICBvYnNlcnZlZF9hdDogZGF0ZXRpbWUKCgpjbGFzcyBEYXNoYm9hcmRSZXNwb25zZShBUElNb2RlbCk6CiAgICBkZXZpY2VzOiBsaXN0W0RldmljZVZpZXddCiAgICBhY2NvdW50czogbGlzdFtEYXNoYm9hcmRBY2NvdW50XQogICAgcG9zaXRpb25zOiBsaXN0W0Rhc2hib2FyZFBvc2l0aW9uXQ==
+from __future__ import annotations
+
+from datetime import datetime
+from decimal import Decimal
+from enum import StrEnum
+from typing import Annotated
+from uuid import UUID
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+PositiveMoney = Annotated[Decimal, Field(ge=Decimal(0), max_digits=24, decimal_places=8)]
+SignedMoney = Annotated[Decimal, Field(max_digits=24, decimal_places=8)]
+Price = Annotated[Decimal, Field(gt=Decimal(0), max_digits=28, decimal_places=12)]
+Volume = Annotated[Decimal, Field(gt=Decimal(0), max_digits=20, decimal_places=8)]
+ConfidenceScore = Annotated[Decimal, Field(ge=Decimal(0), le=Decimal(1), max_digits=5, decimal_places=4)]
+
+
+class APIModel(BaseModel):
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
+
+
+class ErrorResponse(APIModel):
+    code: str
+    message: str
+    details: dict[str, str | int | float | bool | None] | None = None
+
+
+class SignalAction(StrEnum):
+    BUY = "BUY"
+    SELL = "SELL"
+
+
+class SignalState(StrEnum):
+    CREATED = "CREATED"
+    DELIVERED = "DELIVERED"
+    ACKED = "ACKED"
+    EXECUTED = "EXECUTED"
+    REJECTED = "REJECTED"
+    EXPIRED = "EXPIRED"
+
+
+class DeviceStatus(StrEnum):
+    ACTIVE = "ACTIVE"
+    REVOKED = "REVOKED"
+
+
+class DevicePresence(StrEnum):
+    ONLINE = "ONLINE"
+    STALE = "STALE"
+    OFFLINE = "OFFLINE"
+
+
+# --- User & Auth Contracts ---
+
+class UserSignup(APIModel):
+    email: str = Field(min_length=3, max_length=254)
+    password: str = Field(min_length=12, max_length=128)
+    risk_disclaimer_accepted: bool
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: str) -> str:
+        normalized = value.lower()
+        if normalized.count("@") != 1 or "." not in normalized.rsplit("@", 1)[1]:
+            raise ValueError("A valid email address is required")
+        return normalized
+
+
+class UserLogin(APIModel):
+    email: str = Field(min_length=3, max_length=254)
+    password: str = Field(min_length=1, max_length=128)
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: str) -> str:
+        return value.lower()
+
+
+class UserView(APIModel):
+    id: UUID
+    email: str
+    is_verified: bool
+    risk_disclaimer_accepted_at: datetime
+    created_at: datetime
+
+
+class PairingCodeView(APIModel):
+    code: str
+    expires_at: datetime
+
+
+# --- EA Bridge Contracts (/ea/v1/*) ---
+
+class EAPairRequest(APIModel):
+    code: str = Field(min_length=8, max_length=16, pattern=r"^[A-Z0-9_-]{8,16}$")
+    terminal_build: str = Field(min_length=1, max_length=32)
+    broker: str = Field(min_length=1, max_length=120)
+    server: str = Field(min_length=1, max_length=120)
+    account_number_masked: str = Field(min_length=1, max_length=64)
+    account_currency: str = Field(min_length=3, max_length=8)
+    leverage: int = Field(ge=1, le=100_000)
+
+
+class EAPairResponse(APIModel):
+    device_id: UUID
+    device_token: str
+    token_type: str = "AegisQuant-HMAC-SHA256"
+    token_shown_once: bool = True
+
+
+class AccountSnapshotInput(APIModel):
+    balance: PositiveMoney
+    equity: PositiveMoney
+    margin: PositiveMoney = Decimal(0)
+    free_margin: PositiveMoney
+    margin_level: Decimal | None = None
+    open_positions_count: int = Field(ge=0, default=0)
+    account_currency: str = Field(min_length=3, max_length=8)
+    leverage: int = Field(ge=1, le=100_000)
+    captured_at: datetime
+
+
+class PositionInput(APIModel):
+    external_position_id: str = Field(min_length=1, max_length=80)
+    symbol: str = Field(min_length=3, max_length=32)
+    side: SignalAction
+    volume: Volume
+    entry_price: Price
+    current_price: Price
+    stop_loss: Price | None = None
+    take_profit: Price | None = None
+    unrealized_pnl: SignedMoney
+    swap: SignedMoney = Decimal(0)
+    magic_number: int | None = None
+    comment: str | None = Field(default=None, max_length=120)
+    observed_at: datetime
+
+    @field_validator("symbol")
+    @classmethod
+    def normalize_symbol(cls, value: str) -> str:
+        return value.upper()
+
+
+class HeartbeatRequest(APIModel):
+    snapshot: AccountSnapshotInput
+    positions: list[PositionInput] = Field(max_length=500)
+
+
+class HeartbeatResponse(APIModel):
+    accepted: bool
+    server_time: datetime
+    auto_execute: bool
+    kill_switch: bool = False
+
+
+# --- Signal Engine Contracts ---
+
+class SignalRationaleFactor(APIModel):
+    name: str
+    weight: Decimal = Field(ge=Decimal(0), le=Decimal(1))
+    description: str
+
+
+class SignalRationale(APIModel):
+    summary: str
+    factors: list[SignalRationaleFactor] = Field(default_factory=list)
+
+
+class SignalCreate(APIModel):
+    device_id: UUID
+    signal_id: UUID
+    symbol: str = Field(min_length=3, max_length=32)
+    action: SignalAction
+    reference_price: Price
+    point_size: Annotated[Decimal, Field(gt=0, max_digits=20, decimal_places=12)]
+    max_deviation_points: int = Field(ge=0, le=100_000)
+    volume: Volume
+    stop_loss: Price
+    take_profit: Price
+    confidence: ConfidenceScore = Decimal("0.8500")
+    rationale: SignalRationale
+    model_version: str = Field(default="v1.0-rule-based", max_length=64)
+    expires_at: datetime
+
+    @field_validator("symbol")
+    @classmethod
+    def normalize_symbol(cls, value: str) -> str:
+        return value.upper()
+
+
+class SignalDelivery(APIModel):
+    signal_id: UUID
+    symbol: str
+    action: SignalAction
+    reference_price: Price
+    point_size: Decimal
+    max_deviation_points: int
+    volume: Volume
+    stop_loss: Price
+    take_profit: Price
+    confidence: ConfidenceScore
+    rationale: SignalRationale
+    model_version: str
+    expires_at: datetime
+    auto_execute: bool
+
+
+class SignalEventType(StrEnum):
+    ACKED = "ACKED"
+    EXECUTED = "EXECUTED"
+    REJECTED = "REJECTED"
+
+
+class SignalAckRequest(APIModel):
+    event: SignalEventType
+    occurred_at: datetime
+    execution_price: Price | None = None
+    execution_volume: Volume | None = None
+    reason_code: str | None = Field(default=None, max_length=64)
+    reason: str | None = Field(default=None, max_length=500)
+
+
+class SignalAckResponse(APIModel):
+    signal_id: UUID
+    state: SignalState
+    accepted: bool
+
+
+class SignalView(APIModel):
+    id: UUID
+    device_id: UUID
+    symbol: str
+    action: SignalAction
+    reference_price: Price
+    volume: Volume
+    stop_loss: Price
+    take_profit: Price
+    confidence: ConfidenceScore
+    rationale: SignalRationale
+    model_version: str
+    state: SignalState
+    expires_at: datetime
+    created_at: datetime
+
+
+class SignalEventView(APIModel):
+    id: UUID
+    signal_id: UUID
+    device_id: UUID
+    from_state: str | None
+    to_state: str
+    source: str
+    reason_code: str | None
+    reason: str | None
+    execution_price: Price | None
+    execution_volume: Volume | None
+    occurred_at: datetime
+
+
+class SignalDetailView(APIModel):
+    signal: SignalView
+    events: list[SignalEventView]
+    execution_pnl: SignedMoney | None = None
+
+
+# --- Risk Profile Contracts ---
+
+class RiskProfileView(APIModel):
+    id: UUID
+    device_id: UUID
+    risk_per_trade_pct: Decimal
+    max_daily_loss_pct: Decimal
+    max_open_risk_pct: Decimal
+    max_open_positions: int
+    allowed_symbols: list[str] | None = None
+    trading_hours: dict[str, str | int | float | bool | None] | None = None
+    auto_execute: bool
+
+
+class RiskProfileUpdate(APIModel):
+    risk_per_trade_pct: Annotated[Decimal, Field(gt=0, le=5, max_digits=8, decimal_places=4)] | None = None
+    max_daily_loss_pct: Annotated[Decimal, Field(gt=0, le=100, max_digits=8, decimal_places=4)] | None = None
+    max_open_risk_pct: Annotated[Decimal, Field(gt=0, le=100, max_digits=8, decimal_places=4)] | None = None
+    max_open_positions: Annotated[int, Field(ge=1, le=50)] | None = None
+    allowed_symbols: list[str] | None = None
+    trading_hours: dict[str, str | int | float | bool | None] | None = None
+    auto_execute: bool | None = None
+
+
+# --- Device Management Contracts ---
+
+class DeviceView(APIModel):
+    id: UUID
+    name: str
+    broker: str
+    server: str
+    terminal_build: str | None
+    account_number_masked: str
+    account_currency: str
+    leverage: int
+    status: str
+    presence: DevicePresence
+    last_seen_at: datetime | None
+    auto_execute: bool
+    created_at: datetime
+
+
+class DeviceRename(APIModel):
+    name: str = Field(min_length=1, max_length=100)
+
+
+# --- Trade Reports & Analytics Contracts ---
+
+class TradeReportInput(APIModel):
+    signal_id: UUID | None = None
+    ticket: str = Field(min_length=1, max_length=80)
+    symbol: str = Field(min_length=3, max_length=32)
+    side: SignalAction
+    volume: Volume
+    execution_price: Price
+    exit_price: Price | None = None
+    slippage_points: Decimal | None = None
+    commission: SignedMoney = Decimal(0)
+    swap: SignedMoney = Decimal(0)
+    profit: SignedMoney | None = None
+    opened_at: datetime
+    closed_at: datetime | None = None
+
+
+class TradeReportView(APIModel):
+    id: UUID
+    signal_id: UUID | None
+    device_id: UUID
+    ticket: str
+    symbol: str
+    side: SignalAction
+    volume: Volume
+    execution_price: Price
+    exit_price: Price | None
+    slippage_points: Decimal | None
+    commission: SignedMoney
+    swap: SignedMoney
+    realized_pnl: SignedMoney | None
+    opened_at: datetime
+    closed_at: datetime | None
+    created_at: datetime
+
+
+class EquityPoint(APIModel):
+    timestamp: datetime
+    balance: PositiveMoney
+    equity: PositiveMoney
+    drawdown_pct: Decimal = Decimal(0)
+
+
+class JournalMetrics(APIModel):
+    total_trades: int
+    winning_trades: int
+    losing_trades: int
+    win_rate_pct: Decimal
+    profit_factor: Decimal
+    expectancy: SignedMoney
+    average_r_multiple: Decimal
+    max_drawdown_pct: Decimal
+    net_pnl: SignedMoney
+
+
+class DailyHeatmapEntry(APIModel):
+    date: str
+    pnl: SignedMoney
+    trade_count: int
+
+
+# --- Audit Log Contracts ---
+
+class AuditLogView(APIModel):
+    id: UUID
+    user_id: UUID | None
+    device_id: UUID | None
+    event_type: str
+    action: str | None
+    request_id: str | None
+    ip_address: str | None
+    user_agent: str | None
+    details: dict[str, str | int | float | bool | None]
+    created_at: datetime
+
+
+# --- Dashboard Overview Contracts ---
+
+class DashboardAccount(APIModel):
+    device_id: UUID
+    captured_at: datetime
+    balance: PositiveMoney
+    equity: PositiveMoney
+    margin: PositiveMoney
+    free_margin: PositiveMoney
+    margin_level: Decimal | None
+    open_positions_count: int
+    account_currency: str
+
+
+class DashboardPosition(APIModel):
+    device_id: UUID
+    external_position_id: str
+    symbol: str
+    side: SignalAction
+    volume: Volume
+    entry_price: Price
+    current_price: Price
+    stop_loss: Price | None
+    take_profit: Price | None
+    unrealized_pnl: SignedMoney
+    observed_at: datetime
+
+
+class DashboardResponse(APIModel):
+    devices: list[DeviceView]
+    accounts: list[DashboardAccount]
+    positions: list[DashboardPosition]

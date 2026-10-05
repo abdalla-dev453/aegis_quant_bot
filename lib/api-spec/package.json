@@ -1,1 +1,11 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2UvYXBpLXNwZWMiLAogICJ2ZXJzaW9uIjogIjAuMC4wIiwKICAicHJpdmF0ZSI6IHRydWUsCiAgInNjcmlwdHMiOiB7CiAgICAiY29kZWdlbiI6ICJvcnZhbCAtLWNvbmZpZyAuL29ydmFsLmNvbmZpZy50cyAmJiBwbnBtIC13IHJ1biB0eXBlY2hlY2s6bGlicyIKICB9LAogICJkZXZEZXBlbmRlbmNpZXMiOiB7CiAgICAib3J2YWwiOiAiXjguMzAuMCIKICB9Cn0K
+{
+  "name": "@workspace/api-spec",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "codegen": "orval --config ./orval.config.ts && pnpm -w run typecheck:libs"
+  },
+  "devDependencies": {
+    "orval": "^8.30.0"
+  }
+}

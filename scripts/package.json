@@ -1,1 +1,14 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2Uvc2NyaXB0cyIsCiAgInZlcnNpb24iOiAiMC4wLjAiLAogICJwcml2YXRlIjogdHJ1ZSwKICAidHlwZSI6ICJtb2R1bGUiLAogICJzY3JpcHRzIjogewogICAgImhlbGxvIjogInRzeCAuL3NyYy9oZWxsby50cyIsCiAgICAidHlwZWNoZWNrIjogInRzYyAtcCB0c2NvbmZpZy5qc29uIC0tbm9FbWl0IgogIH0sCiAgImRldkRlcGVuZGVuY2llcyI6IHsKICAgICJAdHlwZXMvbm9kZSI6ICJjYXRhbG9nOiIsCiAgICAidHN4IjogImNhdGFsb2c6IgogIH0KfQo=
+{
+  "name": "@workspace/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "hello": "tsx ./src/hello.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsx": "catalog:"
+  }
+}

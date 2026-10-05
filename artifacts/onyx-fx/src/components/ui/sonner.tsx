@@ -1,1 +1,31 @@
-J3VzZSBjbGllbnQnOwoKaW1wb3J0IHsgdXNlVGhlbWUgfSBmcm9tICduZXh0LXRoZW1lcyc7CmltcG9ydCB7IFRvYXN0ZXIgYXMgU29ubmVyIH0gZnJvbSAnc29ubmVyJzsKCnR5cGUgVG9hc3RlclByb3BzID0gUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFNvbm5lcj47Cgpjb25zdCBUb2FzdGVyID0gKHsgLi4ucHJvcHMgfTogVG9hc3RlclByb3BzKSA9PiB7CiAgY29uc3QgeyB0aGVtZSA9ICdzeXN0ZW0nIH0gPSB1c2VUaGVtZSgpOwoKICByZXR1cm4gKAogICAgPFNvbm5lcgogICAgICB0aGVtZT17dGhlbWUgYXMgVG9hc3RlclByb3BzWyd0aGVtZSddfQogICAgICBjbGFzc05hbWU9InRvYXN0ZXIgZ3JvdXAiCiAgICAgIHRvYXN0T3B0aW9ucz17ewogICAgICAgIGNsYXNzTmFtZXM6IHsKICAgICAgICAgIHRvYXN0OgogICAgICAgICAgICAnZ3JvdXAgdG9hc3QgZ3JvdXAtWy50b2FzdGVyXTpiZy1iYWNrZ3JvdW5kIGdyb3VwLVsudG9hc3Rlcl06dGV4dC1mb3JlZ3JvdW5kIGdyb3VwLVsudG9hc3Rlcl06Ym9yZGVyLWJvcmRlciBncm91cC1bLnRvYXN0ZXJdOnNoYWRvdy1sZycsCiAgICAgICAgICBkZXNjcmlwdGlvbjogJ2dyb3VwLVsudG9hc3RdOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCcsCiAgICAgICAgICBhY3Rpb25CdXR0b246CiAgICAgICAgICAgICdncm91cC1bLnRvYXN0XTpiZy1wcmltYXJ5IGdyb3VwLVsudG9hc3RdOnRleHQtcHJpbWFyeS1mb3JlZ3JvdW5kJywKICAgICAgICAgIGNhbmNlbEJ1dHRvbjoKICAgICAgICAgICAgJ2dyb3VwLVsudG9hc3RdOmJnLW11dGVkIGdyb3VwLVsudG9hc3RdOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCcsCiAgICAgICAgfSwKICAgICAgfX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9OwoKZXhwb3J0IHsgVG9hc3RlciB9Owo=
+'use client';
+
+import { useTheme } from 'next-themes';
+import { Toaster as Sonner } from 'sonner';
+
+type ToasterProps = React.ComponentProps<typeof Sonner>;
+
+const Toaster = ({ ...props }: ToasterProps) => {
+  const { theme = 'system' } = useTheme();
+
+  return (
+    <Sonner
+      theme={theme as ToasterProps['theme']}
+      className="toaster group"
+      toastOptions={{
+        classNames: {
+          toast:
+            'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',
+          description: 'group-[.toast]:text-muted-foreground',
+          actionButton:
+            'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',
+          cancelButton:
+            'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
+        },
+      }}
+      {...props}
+    />
+  );
+};
+
+export { Toaster };

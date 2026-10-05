@@ -1,1 +1,16 @@
-ewogICJjb21waWxlck9wdGlvbnMiOiB7CiAgICAidGFyZ2V0IjogIkVTMjAyMiIsCiAgICAibGliIjogWyJFUzIwMjIiLCAiRE9NIiwgIkRPTS5JdGVyYWJsZSJdLAogICAgIm1vZHVsZSI6ICJFU05leHQiLAogICAgIm1vZHVsZVJlc29sdXRpb24iOiAiQnVuZGxlciIsCiAgICAic3RyaWN0IjogdHJ1ZSwKICAgICJub1VuY2hlY2tlZEluZGV4ZWRBY2Nlc3MiOiB0cnVlLAogICAgImV4YWN0T3B0aW9uYWxQcm9wZXJ0eVR5cGVzIjogdHJ1ZSwKICAgICJub0ltcGxpY2l0T3ZlcnJpZGUiOiB0cnVlLAogICAgIm5vRmFsbHRocm91Z2hDYXNlc0luU3dpdGNoIjogdHJ1ZSwKICAgICJmb3JjZUNvbnNpc3RlbnRDYXNpbmdJbkZpbGVOYW1lcyI6IHRydWUsCiAgICAic2tpcExpYkNoZWNrIjogdHJ1ZSwKICAgICJ2ZXJiYXRpbU1vZHVsZVN5bnRheCI6IHRydWUKICB9Cn0=
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true
+  }
+}

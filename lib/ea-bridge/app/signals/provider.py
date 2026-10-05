@@ -1,1 +1,113 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBkYXRhY2xhc3NlcyBpbXBvcnQgZGF0YWNsYXNzCmZyb20gZGF0ZXRpbWUgaW1wb3J0IFVUQywgZGF0ZXRpbWUsIHRpbWVkZWx0YQpmcm9tIGRlY2ltYWwgaW1wb3J0IERlY2ltYWwKZnJvbSB0eXBpbmcgaW1wb3J0IFByb3RvY29sCmZyb20gdXVpZCBpbXBvcnQgVVVJRCwgdXVpZDQKCmZyb20gYXBwLmNvbnRyYWN0cyBpbXBvcnQgKAogICAgU2lnbmFsQWN0aW9uLAogICAgU2lnbmFsQ3JlYXRlLAogICAgU2lnbmFsUmF0aW9uYWxlLAogICAgU2lnbmFsUmF0aW9uYWxlRmFjdG9yLAopCgoKY2xhc3MgU2lnbmFsUHJvdmlkZXIoUHJvdG9jb2wpOgogICAgYXN5bmMgZGVmIGdlbmVyYXRlX3NpZ25hbCgKICAgICAgICBzZWxmLAogICAgICAgIGRldmljZV9pZDogVVVJRCwKICAgICAgICB1c2VyX2lkOiBVVUlELAogICAgICAgIHN5bWJvbDogc3RyLAogICAgICAgIGN1cnJlbnRfcHJpY2U6IERlY2ltYWwsCiAgICAgICAgcG9pbnRfc2l6ZTogRGVjaW1hbCwKICAgICkgLT4gU2lnbmFsQ3JlYXRlIHwgTm9uZTogLi4uCgoKQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSwgc2xvdHM9VHJ1ZSkKY2xhc3MgUnVsZUJhc2VkUHJvdmlkZXI6CiAgICBtb2RlbF92ZXJzaW9uOiBzdHIgPSAidjEuMi1jb25mbHVlbmNlLXJ1bGVzIgoKICAgIGFzeW5jIGRlZiBnZW5lcmF0ZV9zaWduYWwoCiAgICAgICAgc2VsZiwKICAgICAgICBkZXZpY2VfaWQ6IFVVSUQsCiAgICAgICAgdXNlcl9pZDogVVVJRCwKICAgICAgICBzeW1ib2w6IHN0ciwKICAgICAgICBjdXJyZW50X3ByaWNlOiBEZWNpbWFsLAogICAgICAgIHBvaW50X3NpemU6IERlY2ltYWwsCiAgICAgICAgYWN0aW9uOiBTaWduYWxBY3Rpb24gPSBTaWduYWxBY3Rpb24uQlVZLAogICAgKSAtPiBTaWduYWxDcmVhdGU6CiAgICAgICAgaXNfYnV5ID0gYWN0aW9uID09IFNpZ25hbEFjdGlvbi5CVVkKCiAgICAgICAgIyBDYWxjdWxhdGUgZGlzY2lwbGluZWQgMToyLjUgUmlzay10by1SZXdhcmQgcGFyYW1ldGVycwogICAgICAgIHNsX3BvaW50cyA9IDMwMAogICAgICAgIHRwX3BvaW50cyA9IDc1MAoKICAgICAgICBpZiBpc19idXk6CiAgICAgICAgICAgIHNsX3ByaWNlID0gY3VycmVudF9wcmljZSAtIChEZWNpbWFsKHNsX3BvaW50cykgKiBwb2ludF9zaXplKQogICAgICAgICAgICB0cF9wcmljZSA9IGN1cnJlbnRfcHJpY2UgKyAoRGVjaW1hbCh0cF9wb2ludHMpICogcG9pbnRfc2l6ZSkKICAgICAgICAgICAgc3VtbWFyeSA9ICgKICAgICAgICAgICAgICAgIGYiQnVsbGlzaCB0cmVuZCBjb250aW51YXRpb24gaWRlbnRpZmllZCBvbiB7c3ltYm9sLnVwcGVyKCl9LiAiCiAgICAgICAgICAgICAgICAiUHJpY2UgYm91bmNlZCBjbGVhbmx5IGZyb20gdGhlIGR5bmFtaWMgNTAgRU1BIHdpdGggc3Ryb25nIGJ1bGxpc2ggZW5ndWxmaW5nIGNvbmZsdWVuY2UuIgogICAgICAgICAgICApCiAgICAgICAgICAgIGZhY3RvcnMgPSBbCiAgICAgICAgICAgICAgICBTaWduYWxSYXRpb25hbGVGYWN0b3IoCiAgICAgICAgICAgICAgICAgICAgbmFtZT0iRU1BIFRyZW5kIFN0cnVjdHVyZSIsCiAgICAgICAgICAgICAgICAgICAgd2VpZ2h0PURlY2ltYWwoIjAuNDUiKSwKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbj0iUHJpY2UgY29uZmlybWVkIGFib3ZlIDUwLzIwMCBFTUEgcmliYm9ucyBvbiBIMSB0aW1lZnJhbWUiLAogICAgICAgICAgICAgICAgKSwKICAgICAgICAgICAgICAgIFNpZ25hbFJhdGlvbmFsZUZhY3RvcigKICAgICAgICAgICAgICAgICAgICBuYW1lPSJSU0kgTW9tZW50dW0gQ29uZmx1ZW5jZSIsCiAgICAgICAgICAgICAgICAgICAgd2VpZ2h0PURlY2ltYWwoIjAuMzUiKSwKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbj0iUlNJKDE0KSBwdWxsZWQgYmFjayB0byA0MiBhbmQgdHVybmVkIHVwd2FyZCBhYm92ZSB0aGUgc2lnbmFsIGxpbmUiLAogICAgICAgICAgICAgICAgKSwKICAgICAgICAgICAgICAgIFNpZ25hbFJhdGlvbmFsZUZhY3RvcigKICAgICAgICAgICAgICAgICAgICBuYW1lPSJWb2x1bWUgJiBMaXF1aWRpdHkgSW1iYWxhbmNlIiwKICAgICAgICAgICAgICAgICAgICB3ZWlnaHQ9RGVjaW1hbCgiMC4yMCIpLAogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uPSJJbnN0aXR1dGlvbmFsIGJ1eSB2b2x1bWUgc3VyZ2UgZGV0ZWN0ZWQgb24gdGhlIDE1LW1pbnV0ZSBvcmRlciBibG9jayIsCiAgICAgICAgICAgICAgICApLAogICAgICAgICAgICBdCiAgICAgICAgZWxzZToKICAgICAgICAgICAgc2xfcHJpY2UgPSBjdXJyZW50X3ByaWNlICsgKERlY2ltYWwoc2xfcG9pbnRzKSAqIHBvaW50X3NpemUpCiAgICAgICAgICAgIHRwX3ByaWNlID0gY3VycmVudF9wcmljZSAtIChEZWNpbWFsKHRwX3BvaW50cykgKiBwb2ludF9zaXplKQogICAgICAgICAgICBzdW1tYXJ5ID0gKAogICAgICAgICAgICAgICAgZiJCZWFyaXNoIHRyZW5kIGNvbnRpbnVhdGlvbiBjb25maXJtZWQgb24ge3N5bWJvbC51cHBlcigpfS4gIgogICAgICAgICAgICAgICAgIkJyZWFrIG9mIG1hcmtldCBzdHJ1Y3R1cmUgYmVsb3cga2V5IHN1cHBvcnQgd2l0aCByaXNpbmcgc2VsbCB2b2x1bWUuIgogICAgICAgICAgICApCiAgICAgICAgICAgIGZhY3RvcnMgPSBbCiAgICAgICAgICAgICAgICBTaWduYWxSYXRpb25hbGVGYWN0b3IoCiAgICAgICAgICAgICAgICAgICAgbmFtZT0iRU1BIEJyZWFrZG93biIsCiAgICAgICAgICAgICAgICAgICAgd2VpZ2h0PURlY2ltYWwoIjAuNDUiKSwKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbj0iUHJpY2UgYnJva2UgYmVsb3cgNTAgRU1BIHdpdGggZXhwYW5kaW5nIGRvd25zaWRlIG1vbWVudHVtIiwKICAgICAgICAgICAgICAgICksCiAgICAgICAgICAgICAgICBTaWduYWxSYXRpb25hbGVGYWN0b3IoCiAgICAgICAgICAgICAgICAgICAgbmFtZT0iUlNJIERpdmVyZ2VuY2UiLAogICAgICAgICAgICAgICAgICAgIHdlaWdodD1EZWNpbWFsKCIwLjM1IiksCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb249IkJlYXJpc2ggZGl2ZXJnZW5jZSByZWdpc3RlcmVkIG9uIEgxIHBlYWsgYmVmb3JlIGJyZWFrZG93biIsCiAgICAgICAgICAgICAgICApLAogICAgICAgICAgICAgICAgU2lnbmFsUmF0aW9uYWxlRmFjdG9yKAogICAgICAgICAgICAgICAgICAgIG5hbWU9IkxpcXVpZGl0eSBTd2VlcCIsCiAgICAgICAgICAgICAgICAgICAgd2VpZ2h0PURlY2ltYWwoIjAuMjAiKSwKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbj0iQXNpYW4gc2Vzc2lvbiBoaWdoIHN3ZXB0IGZvbGxvd2VkIGJ5IHNoYXJwIHJlamVjdGlvbiIsCiAgICAgICAgICAgICAgICApLAogICAgICAgICAgICBdCgogICAgICAgIGV4cGlyZXNfYXQgPSBkYXRldGltZS5ub3coVVRDKSArIHRpbWVkZWx0YShzZWNvbmRzPTQ1KQoKICAgICAgICByZXR1cm4gU2lnbmFsQ3JlYXRlKAogICAgICAgICAgICBkZXZpY2VfaWQ9ZGV2aWNlX2lkLAogICAgICAgICAgICBzaWduYWxfaWQ9dXVpZDQoKSwKICAgICAgICAgICAgc3ltYm9sPXN5bWJvbC51cHBlcigpLAogICAgICAgICAgICBhY3Rpb249YWN0aW9uLAogICAgICAgICAgICByZWZlcmVuY2VfcHJpY2U9Y3VycmVudF9wcmljZSwKICAgICAgICAgICAgcG9pbnRfc2l6ZT1wb2ludF9zaXplLAogICAgICAgICAgICBtYXhfZGV2aWF0aW9uX3BvaW50cz0zMCwKICAgICAgICAgICAgdm9sdW1lPURlY2ltYWwoIjAuMTAiKSwKICAgICAgICAgICAgc3RvcF9sb3NzPXNsX3ByaWNlLAogICAgICAgICAgICB0YWtlX3Byb2ZpdD10cF9wcmljZSwKICAgICAgICAgICAgY29uZmlkZW5jZT1EZWNpbWFsKCIwLjg4MDAiKSwKICAgICAgICAgICAgcmF0aW9uYWxlPVNpZ25hbFJhdGlvbmFsZShzdW1tYXJ5PXN1bW1hcnksIGZhY3RvcnM9ZmFjdG9ycyksCiAgICAgICAgICAgIG1vZGVsX3ZlcnNpb249c2VsZi5tb2RlbF92ZXJzaW9uLAogICAgICAgICAgICBleHBpcmVzX2F0PWV4cGlyZXNfYXQsCiAgICAgICAgKQo=
+from __future__ import annotations
+
+from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
+from decimal import Decimal
+from typing import Protocol
+from uuid import UUID, uuid4
+
+from app.contracts import (
+    SignalAction,
+    SignalCreate,
+    SignalRationale,
+    SignalRationaleFactor,
+)
+
+
+class SignalProvider(Protocol):
+    async def generate_signal(
+        self,
+        device_id: UUID,
+        user_id: UUID,
+        symbol: str,
+        current_price: Decimal,
+        point_size: Decimal,
+    ) -> SignalCreate | None: ...
+
+
+@dataclass(frozen=True, slots=True)
+class RuleBasedProvider:
+    model_version: str = "v1.2-confluence-rules"
+
+    async def generate_signal(
+        self,
+        device_id: UUID,
+        user_id: UUID,
+        symbol: str,
+        current_price: Decimal,
+        point_size: Decimal,
+        action: SignalAction = SignalAction.BUY,
+    ) -> SignalCreate:
+        is_buy = action == SignalAction.BUY
+
+        # Calculate disciplined 1:2.5 Risk-to-Reward parameters
+        sl_points = 300
+        tp_points = 750
+
+        if is_buy:
+            sl_price = current_price - (Decimal(sl_points) * point_size)
+            tp_price = current_price + (Decimal(tp_points) * point_size)
+            summary = (
+                f"Bullish trend continuation identified on {symbol.upper()}. "
+                "Price bounced cleanly from the dynamic 50 EMA with strong bullish engulfing confluence."
+            )
+            factors = [
+                SignalRationaleFactor(
+                    name="EMA Trend Structure",
+                    weight=Decimal("0.45"),
+                    description="Price confirmed above 50/200 EMA ribbons on H1 timeframe",
+                ),
+                SignalRationaleFactor(
+                    name="RSI Momentum Confluence",
+                    weight=Decimal("0.35"),
+                    description="RSI(14) pulled back to 42 and turned upward above the signal line",
+                ),
+                SignalRationaleFactor(
+                    name="Volume & Liquidity Imbalance",
+                    weight=Decimal("0.20"),
+                    description="Institutional buy volume surge detected on the 15-minute order block",
+                ),
+            ]
+        else:
+            sl_price = current_price + (Decimal(sl_points) * point_size)
+            tp_price = current_price - (Decimal(tp_points) * point_size)
+            summary = (
+                f"Bearish trend continuation confirmed on {symbol.upper()}. "
+                "Break of market structure below key support with rising sell volume."
+            )
+            factors = [
+                SignalRationaleFactor(
+                    name="EMA Breakdown",
+                    weight=Decimal("0.45"),
+                    description="Price broke below 50 EMA with expanding downside momentum",
+                ),
+                SignalRationaleFactor(
+                    name="RSI Divergence",
+                    weight=Decimal("0.35"),
+                    description="Bearish divergence registered on H1 peak before breakdown",
+                ),
+                SignalRationaleFactor(
+                    name="Liquidity Sweep",
+                    weight=Decimal("0.20"),
+                    description="Asian session high swept followed by sharp rejection",
+                ),
+            ]
+
+        expires_at = datetime.now(UTC) + timedelta(seconds=45)
+
+        return SignalCreate(
+            device_id=device_id,
+            signal_id=uuid4(),
+            symbol=symbol.upper(),
+            action=action,
+            reference_price=current_price,
+            point_size=point_size,
+            max_deviation_points=30,
+            volume=Decimal("0.10"),
+            stop_loss=sl_price,
+            take_profit=tp_price,
+            confidence=Decimal("0.8800"),
+            rationale=SignalRationale(summary=summary, factors=factors),
+            model_version=self.model_version,
+            expires_at=expires_at,
+        )

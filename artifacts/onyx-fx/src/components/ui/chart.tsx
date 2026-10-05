@@ -1,1 +1,366 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKaW1wb3J0ICogYXMgUmVjaGFydHNQcmltaXRpdmUgZnJvbSAncmVjaGFydHMnOwoKLy8gRm9ybWF0OiB7IFRIRU1FX05BTUU6IENTU19TRUxFQ1RPUiB9CmNvbnN0IFRIRU1FUyA9IHsgbGlnaHQ6ICcnLCBkYXJrOiAnLmRhcmsnIH0gYXMgY29uc3Q7CgpleHBvcnQgdHlwZSBDaGFydENvbmZpZyA9IHsKICBbayBpbiBzdHJpbmddOiB7CiAgICBsYWJlbD86IFJlYWN0LlJlYWN0Tm9kZTsKICAgIGljb24/OiBSZWFjdC5Db21wb25lbnRUeXBlOwogIH0gJiAoCiAgICB8IHsgY29sb3I/OiBzdHJpbmc7IHRoZW1lPzogbmV2ZXIgfQogICAgfCB7IGNvbG9yPzogbmV2ZXI7IHRoZW1lOiBSZWNvcmQ8a2V5b2YgdHlwZW9mIFRIRU1FUywgc3RyaW5nPiB9CiAgKTsKfTsKCnR5cGUgQ2hhcnRDb250ZXh0UHJvcHMgPSB7CiAgY29uZmlnOiBDaGFydENvbmZpZzsKfTsKCmNvbnN0IENoYXJ0Q29udGV4dCA9IFJlYWN0LmNyZWF0ZUNvbnRleHQ8Q2hhcnRDb250ZXh0UHJvcHMgfCBudWxsPihudWxsKTsKCmZ1bmN0aW9uIHVzZUNoYXJ0KCkgewogIGNvbnN0IGNvbnRleHQgPSBSZWFjdC51c2VDb250ZXh0KENoYXJ0Q29udGV4dCk7CgogIGlmICghY29udGV4dCkgewogICAgdGhyb3cgbmV3IEVycm9yKCd1c2VDaGFydCBtdXN0IGJlIHVzZWQgd2l0aGluIGEgPENoYXJ0Q29udGFpbmVyIC8+Jyk7CiAgfQoKICByZXR1cm4gY29udGV4dDsKfQoKY29uc3QgQ2hhcnRDb250YWluZXIgPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxEaXZFbGVtZW50LAogIFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPiAmIHsKICAgIGNvbmZpZzogQ2hhcnRDb25maWc7CiAgICBjaGlsZHJlbjogUmVhY3QuQ29tcG9uZW50UHJvcHM8CiAgICAgIHR5cGVvZiBSZWNoYXJ0c1ByaW1pdGl2ZS5SZXNwb25zaXZlQ29udGFpbmVyCiAgICA+WydjaGlsZHJlbiddOwogIH0KPigoeyBpZCwgY2xhc3NOYW1lLCBjaGlsZHJlbiwgY29uZmlnLCAuLi5wcm9wcyB9LCByZWYpID0+IHsKICBjb25zdCB1bmlxdWVJZCA9IFJlYWN0LnVzZUlkKCk7CiAgY29uc3QgY2hhcnRJZCA9IGBjaGFydC0ke2lkIHx8IHVuaXF1ZUlkLnJlcGxhY2UoLzovZywgJycpfWA7CgogIHJldHVybiAoCiAgICA8Q2hhcnRDb250ZXh0LlByb3ZpZGVyIHZhbHVlPXt7IGNvbmZpZyB9fT4KICAgICAgPGRpdgogICAgICAgIGRhdGEtY2hhcnQ9e2NoYXJ0SWR9CiAgICAgICAgcmVmPXtyZWZ9CiAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICJmbGV4IGFzcGVjdC12aWRlbyBqdXN0aWZ5LWNlbnRlciB0ZXh0LXhzIFsmXy5yZWNoYXJ0cy1jYXJ0ZXNpYW4tYXhpcy10aWNrX3RleHRdOmZpbGwtbXV0ZWQtZm9yZWdyb3VuZCBbJl8ucmVjaGFydHMtY2FydGVzaWFuLWdyaWRfbGluZVtzdHJva2U9JyNjY2MnXV06c3Ryb2tlLWJvcmRlci81MCBbJl8ucmVjaGFydHMtY3VydmUucmVjaGFydHMtdG9vbHRpcC1jdXJzb3JdOnN0cm9rZS1ib3JkZXIgWyZfLnJlY2hhcnRzLWRvdFtzdHJva2U9JyNmZmYnXV06c3Ryb2tlLXRyYW5zcGFyZW50IFsmXy5yZWNoYXJ0cy1sYXllcl06b3V0bGluZS1ub25lIFsmXy5yZWNoYXJ0cy1wb2xhci1ncmlkX1tzdHJva2U9JyNjY2MnXV06c3Ryb2tlLWJvcmRlciBbJl8ucmVjaGFydHMtcmFkaWFsLWJhci1iYWNrZ3JvdW5kLXNlY3Rvcl06ZmlsbC1tdXRlZCBbJl8ucmVjaGFydHMtcmVjdGFuZ2xlLnJlY2hhcnRzLXRvb2x0aXAtY3Vyc29yXTpmaWxsLW11dGVkIFsmXy5yZWNoYXJ0cy1yZWZlcmVuY2UtbGluZV9bc3Ryb2tlPScjY2NjJ11dOnN0cm9rZS1ib3JkZXIgWyZfLnJlY2hhcnRzLXNlY3RvcltzdHJva2U9JyNmZmYnXV06c3Ryb2tlLXRyYW5zcGFyZW50IFsmXy5yZWNoYXJ0cy1zZWN0b3JdOm91dGxpbmUtbm9uZSBbJl8ucmVjaGFydHMtc3VyZmFjZV06b3V0bGluZS1ub25lIiwKICAgICAgICAgIGNsYXNzTmFtZSwKICAgICAgICApfQogICAgICAgIHsuLi5wcm9wc30KICAgICAgPgogICAgICAgIDxDaGFydFN0eWxlIGlkPXtjaGFydElkfSBjb25maWc9e2NvbmZpZ30gLz4KICAgICAgICA8UmVjaGFydHNQcmltaXRpdmUuUmVzcG9uc2l2ZUNvbnRhaW5lcj4KICAgICAgICAgIHtjaGlsZHJlbn0KICAgICAgICA8L1JlY2hhcnRzUHJpbWl0aXZlLlJlc3BvbnNpdmVDb250YWluZXI+CiAgICAgIDwvZGl2PgogICAgPC9DaGFydENvbnRleHQuUHJvdmlkZXI+CiAgKTsKfSk7CkNoYXJ0Q29udGFpbmVyLmRpc3BsYXlOYW1lID0gJ0NoYXJ0JzsKCmNvbnN0IENoYXJ0U3R5bGUgPSAoeyBpZCwgY29uZmlnIH06IHsgaWQ6IHN0cmluZzsgY29uZmlnOiBDaGFydENvbmZpZyB9KSA9PiB7CiAgY29uc3QgY29sb3JDb25maWcgPSBPYmplY3QuZW50cmllcyhjb25maWcpLmZpbHRlcigKICAgIChbLCBjb25maWddKSA9PiBjb25maWcudGhlbWUgfHwgY29uZmlnLmNvbG9yLAogICk7CgogIGlmICghY29sb3JDb25maWcubGVuZ3RoKSB7CiAgICByZXR1cm4gbnVsbDsKICB9CgogIHJldHVybiAoCiAgICA8c3R5bGUKICAgICAgZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUw9e3sKICAgICAgICBfX2h0bWw6IE9iamVjdC5lbnRyaWVzKFRIRU1FUykKICAgICAgICAgIC5tYXAoCiAgICAgICAgICAgIChbdGhlbWUsIHByZWZpeF0pID0+IGAKJHtwcmVmaXh9IFtkYXRhLWNoYXJ0PSR7aWR9XSB7CiR7Y29sb3JDb25maWcKICAubWFwKChba2V5LCBpdGVtQ29uZmlnXSkgPT4gewogICAgY29uc3QgY29sb3IgPQogICAgICBpdGVtQ29uZmlnLnRoZW1lPy5bdGhlbWUgYXMga2V5b2YgdHlwZW9mIGl0ZW1Db25maWcudGhlbWVdIHx8CiAgICAgIGl0ZW1Db25maWcuY29sb3I7CiAgICByZXR1cm4gY29sb3IgPyBgICAtLWNvbG9yLSR7a2V5fTogJHtjb2xvcn07YCA6IG51bGw7CiAgfSkKICAuam9pbignXG4nKX0KfQpgLAogICAgICAgICAgKQogICAgICAgICAgLmpvaW4oJ1xuJyksCiAgICAgIH19CiAgICAvPgogICk7Cn07Cgpjb25zdCBDaGFydFRvb2x0aXAgPSBSZWNoYXJ0c1ByaW1pdGl2ZS5Ub29sdGlwOwoKY29uc3QgQ2hhcnRUb29sdGlwQ29udGVudCA9IFJlYWN0LmZvcndhcmRSZWY8CiAgSFRNTERpdkVsZW1lbnQsCiAgUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFJlY2hhcnRzUHJpbWl0aXZlLlRvb2x0aXA+ICYKICAgIFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPiAmIHsKICAgICAgaGlkZUxhYmVsPzogYm9vbGVhbjsKICAgICAgaGlkZUluZGljYXRvcj86IGJvb2xlYW47CiAgICAgIGluZGljYXRvcj86ICdsaW5lJyB8ICdkb3QnIHwgJ2Rhc2hlZCc7CiAgICAgIG5hbWVLZXk/OiBzdHJpbmc7CiAgICAgIGxhYmVsS2V5Pzogc3RyaW5nOwogICAgfQo+KAogICgKICAgIHsKICAgICAgYWN0aXZlLAogICAgICBwYXlsb2FkLAogICAgICBjbGFzc05hbWUsCiAgICAgIGluZGljYXRvciA9ICdkb3QnLAogICAgICBoaWRlTGFiZWwgPSBmYWxzZSwKICAgICAgaGlkZUluZGljYXRvciA9IGZhbHNlLAogICAgICBsYWJlbCwKICAgICAgbGFiZWxGb3JtYXR0ZXIsCiAgICAgIGxhYmVsQ2xhc3NOYW1lLAogICAgICBmb3JtYXR0ZXIsCiAgICAgIGNvbG9yLAogICAgICBuYW1lS2V5LAogICAgICBsYWJlbEtleSwKICAgIH0sCiAgICByZWYsCiAgKSA9PiB7CiAgICBjb25zdCB7IGNvbmZpZyB9ID0gdXNlQ2hhcnQoKTsKCiAgICBjb25zdCB0b29sdGlwTGFiZWwgPSBSZWFjdC51c2VNZW1vKCgpID0+IHsKICAgICAgaWYgKGhpZGVMYWJlbCB8fCAhcGF5bG9hZD8ubGVuZ3RoKSB7CiAgICAgICAgcmV0dXJuIG51bGw7CiAgICAgIH0KCiAgICAgIGNvbnN0IFtpdGVtXSA9IHBheWxvYWQ7CiAgICAgIGNvbnN0IGtleSA9IGAke2xhYmVsS2V5IHx8IGl0ZW0/LmRhdGFLZXkgfHwgaXRlbT8ubmFtZSB8fCAndmFsdWUnfWA7CiAgICAgIGNvbnN0IGl0ZW1Db25maWcgPSBnZXRQYXlsb2FkQ29uZmlnRnJvbVBheWxvYWQoY29uZmlnLCBpdGVtLCBrZXkpOwogICAgICBjb25zdCB2YWx1ZSA9CiAgICAgICAgIWxhYmVsS2V5ICYmIHR5cGVvZiBsYWJlbCA9PT0gJ3N0cmluZycKICAgICAgICAgID8gY29uZmlnW2xhYmVsIGFzIGtleW9mIHR5cGVvZiBjb25maWddPy5sYWJlbCB8fCBsYWJlbAogICAgICAgICAgOiBpdGVtQ29uZmlnPy5sYWJlbDsKCiAgICAgIGlmIChsYWJlbEZvcm1hdHRlcikgewogICAgICAgIHJldHVybiAoCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17Y24oJ2ZvbnQtbWVkaXVtJywgbGFiZWxDbGFzc05hbWUpfT4KICAgICAgICAgICAge2xhYmVsRm9ybWF0dGVyKHZhbHVlLCBwYXlsb2FkKX0KICAgICAgICAgIDwvZGl2PgogICAgICAgICk7CiAgICAgIH0KCiAgICAgIGlmICghdmFsdWUpIHsKICAgICAgICByZXR1cm4gbnVsbDsKICAgICAgfQoKICAgICAgcmV0dXJuIDxkaXYgY2xhc3NOYW1lPXtjbignZm9udC1tZWRpdW0nLCBsYWJlbENsYXNzTmFtZSl9Pnt2YWx1ZX08L2Rpdj47CiAgICB9LCBbCiAgICAgIGxhYmVsLAogICAgICBsYWJlbEZvcm1hdHRlciwKICAgICAgcGF5bG9hZCwKICAgICAgaGlkZUxhYmVsLAogICAgICBsYWJlbENsYXNzTmFtZSwKICAgICAgY29uZmlnLAogICAgICBsYWJlbEtleSwKICAgIF0pOwoKICAgIGlmICghYWN0aXZlIHx8ICFwYXlsb2FkPy5sZW5ndGgpIHsKICAgICAgcmV0dXJuIG51bGw7CiAgICB9CgogICAgY29uc3QgbmVzdExhYmVsID0gcGF5bG9hZC5sZW5ndGggPT09IDEgJiYgaW5kaWNhdG9yICE9PSAnZG90JzsKCiAgICByZXR1cm4gKAogICAgICA8ZGl2CiAgICAgICAgcmVmPXtyZWZ9CiAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICdncmlkIG1pbi13LVs4cmVtXSBpdGVtcy1zdGFydCBnYXAtMS41IHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ib3JkZXIvNTAgYmctYmFja2dyb3VuZCBweC0yLjUgcHktMS41IHRleHQteHMgc2hhZG93LXhsJywKICAgICAgICAgIGNsYXNzTmFtZSwKICAgICAgICApfQogICAgICA+CiAgICAgICAgeyFuZXN0TGFiZWwgPyB0b29sdGlwTGFiZWwgOiBudWxsfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdhcC0xLjUiPgogICAgICAgICAge3BheWxvYWQKICAgICAgICAgICAgLmZpbHRlcigoaXRlbSkgPT4gaXRlbS50eXBlICE9PSAnbm9uZScpCiAgICAgICAgICAgIC5tYXAoKGl0ZW0sIGluZGV4KSA9PiB7CiAgICAgICAgICAgICAgY29uc3Qga2V5ID0gYCR7bmFtZUtleSB8fCBpdGVtLm5hbWUgfHwgaXRlbS5kYXRhS2V5IHx8ICd2YWx1ZSd9YDsKICAgICAgICAgICAgICBjb25zdCBpdGVtQ29uZmlnID0gZ2V0UGF5bG9hZENvbmZpZ0Zyb21QYXlsb2FkKGNvbmZpZywgaXRlbSwga2V5KTsKICAgICAgICAgICAgICBjb25zdCBpbmRpY2F0b3JDb2xvciA9IGNvbG9yIHx8IGl0ZW0ucGF5bG9hZC5maWxsIHx8IGl0ZW0uY29sb3I7CgogICAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgICA8ZGl2CiAgICAgICAgICAgICAgICAgIGtleT17aXRlbS5kYXRhS2V5fQogICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICAgICAgICAgICAgICdmbGV4IHctZnVsbCBmbGV4LXdyYXAgaXRlbXMtc3RyZXRjaCBnYXAtMiBbJj5zdmddOmgtMi41IFsmPnN2Z106dy0yLjUgWyY+c3ZnXTp0ZXh0LW11dGVkLWZvcmVncm91bmQnLAogICAgICAgICAgICAgICAgICAgIGluZGljYXRvciA9PT0gJ2RvdCcgJiYgJ2l0ZW1zLWNlbnRlcicsCiAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgIHtmb3JtYXR0ZXIgJiYgaXRlbT8udmFsdWUgIT09IHVuZGVmaW5lZCAmJiBpdGVtLm5hbWUgPyAoCiAgICAgICAgICAgICAgICAgICAgZm9ybWF0dGVyKGl0ZW0udmFsdWUsIGl0ZW0ubmFtZSwgaXRlbSwgaW5kZXgsIGl0ZW0ucGF5bG9hZCkKICAgICAgICAgICAgICAgICAgKSA6ICgKICAgICAgICAgICAgICAgICAgICA8PgogICAgICAgICAgICAgICAgICAgICAge2l0ZW1Db25maWc/Lmljb24gPyAoCiAgICAgICAgICAgICAgICAgICAgICAgIDxpdGVtQ29uZmlnLmljb24gLz4KICAgICAgICAgICAgICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgICAgICAgICAgICFoaWRlSW5kaWNhdG9yICYmICgKICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAnc2hyaW5rLTAgcm91bmRlZC1bMnB4XSBib3JkZXItWy0tY29sb3ItYm9yZGVyXSBiZy1bLS1jb2xvci1iZ10nLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2gtMi41IHctMi41JzogaW5kaWNhdG9yID09PSAnZG90JywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAndy0xJzogaW5kaWNhdG9yID09PSAnbGluZScsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ3ctMCBib3JkZXItWzEuNXB4XSBib3JkZXItZGFzaGVkIGJnLXRyYW5zcGFyZW50JzoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGluZGljYXRvciA9PT0gJ2Rhc2hlZCcsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ215LTAuNSc6IG5lc3RMYWJlbCAmJiBpbmRpY2F0b3IgPT09ICdkYXNoZWQnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPXsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICctLWNvbG9yLWJnJzogaW5kaWNhdG9yQ29sb3IsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJy0tY29sb3ItYm9yZGVyJzogaW5kaWNhdG9yQ29sb3IsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0gYXMgUmVhY3QuQ1NTUHJvcGVydGllcwogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICAgICAgICA8ZGl2CiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgICAgICAgICAgICAgICAgICAgJ2ZsZXggZmxleC0xIGp1c3RpZnktYmV0d2VlbiBsZWFkaW5nLW5vbmUnLAogICAgICAgICAgICAgICAgICAgICAgICAgIG5lc3RMYWJlbCA/ICdpdGVtcy1lbmQnIDogJ2l0ZW1zLWNlbnRlcicsCiAgICAgICAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdhcC0xLjUiPgogICAgICAgICAgICAgICAgICAgICAgICAgIHtuZXN0TGFiZWwgPyB0b29sdGlwTGFiZWwgOiBudWxsfQogICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1tdXRlZC1mb3JlZ3JvdW5kIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtpdGVtQ29uZmlnPy5sYWJlbCB8fCBpdGVtLm5hbWV9CiAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgICAge2l0ZW0udmFsdWUgJiYgKAogICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1tb25vIGZvbnQtbWVkaXVtIHRhYnVsYXItbnVtcyB0ZXh0LWZvcmVncm91bmQiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAge2l0ZW0udmFsdWUudG9Mb2NhbGVTdHJpbmcoKX0KICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8Lz4KICAgICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICk7CiAgICAgICAgICAgIH0pfQogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICk7CiAgfSwKKTsKQ2hhcnRUb29sdGlwQ29udGVudC5kaXNwbGF5TmFtZSA9ICdDaGFydFRvb2x0aXAnOwoKY29uc3QgQ2hhcnRMZWdlbmQgPSBSZWNoYXJ0c1ByaW1pdGl2ZS5MZWdlbmQ7Cgpjb25zdCBDaGFydExlZ2VuZENvbnRlbnQgPSBSZWFjdC5mb3J3YXJkUmVmPAogIEhUTUxEaXZFbGVtZW50LAogIFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPiAmCiAgICBQaWNrPFJlY2hhcnRzUHJpbWl0aXZlLkxlZ2VuZFByb3BzLCAncGF5bG9hZCcgfCAndmVydGljYWxBbGlnbic+ICYgewogICAgICBoaWRlSWNvbj86IGJvb2xlYW47CiAgICAgIG5hbWVLZXk/OiBzdHJpbmc7CiAgICB9Cj4oCiAgKAogICAgeyBjbGFzc05hbWUsIGhpZGVJY29uID0gZmFsc2UsIHBheWxvYWQsIHZlcnRpY2FsQWxpZ24gPSAnYm90dG9tJywgbmFtZUtleSB9LAogICAgcmVmLAogICkgPT4gewogICAgY29uc3QgeyBjb25maWcgfSA9IHVzZUNoYXJ0KCk7CgogICAgaWYgKCFwYXlsb2FkPy5sZW5ndGgpIHsKICAgICAgcmV0dXJuIG51bGw7CiAgICB9CgogICAgcmV0dXJuICgKICAgICAgPGRpdgogICAgICAgIHJlZj17cmVmfQogICAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgICAnZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTQnLAogICAgICAgICAgdmVydGljYWxBbGlnbiA9PT0gJ3RvcCcgPyAncGItMycgOiAncHQtMycsCiAgICAgICAgICBjbGFzc05hbWUsCiAgICAgICAgKX0KICAgICAgPgogICAgICAgIHtwYXlsb2FkCiAgICAgICAgICAuZmlsdGVyKChpdGVtKSA9PiBpdGVtLnR5cGUgIT09ICdub25lJykKICAgICAgICAgIC5tYXAoKGl0ZW0pID0+IHsKICAgICAgICAgICAgY29uc3Qga2V5ID0gYCR7bmFtZUtleSB8fCBpdGVtLmRhdGFLZXkgfHwgJ3ZhbHVlJ31gOwogICAgICAgICAgICBjb25zdCBpdGVtQ29uZmlnID0gZ2V0UGF5bG9hZENvbmZpZ0Zyb21QYXlsb2FkKGNvbmZpZywgaXRlbSwga2V5KTsKCiAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgPGRpdgogICAgICAgICAgICAgICAga2V5PXtpdGVtLnZhbHVlfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICAgICAgICAgJ2ZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUgWyY+c3ZnXTpoLTMgWyY+c3ZnXTp3LTMgWyY+c3ZnXTp0ZXh0LW11dGVkLWZvcmVncm91bmQnLAogICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICB7aXRlbUNvbmZpZz8uaWNvbiAmJiAhaGlkZUljb24gPyAoCiAgICAgICAgICAgICAgICAgIDxpdGVtQ29uZmlnLmljb24gLz4KICAgICAgICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgICAgIDxkaXYKICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImgtMiB3LTIgc2hyaW5rLTAgcm91bmRlZC1bMnB4XSIKICAgICAgICAgICAgICAgICAgICBzdHlsZT17ewogICAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZENvbG9yOiBpdGVtLmNvbG9yLAogICAgICAgICAgICAgICAgICAgIH19CiAgICAgICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgICApfQogICAgICAgICAgICAgICAge2l0ZW1Db25maWc/LmxhYmVsfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICApOwogICAgICAgICAgfSl9CiAgICAgIDwvZGl2PgogICAgKTsKICB9LAopOwpDaGFydExlZ2VuZENvbnRlbnQuZGlzcGxheU5hbWUgPSAnQ2hhcnRMZWdlbmQnOwoKLy8gSGVscGVyIHRvIGV4dHJhY3QgaXRlbSBjb25maWcgZnJvbSBhIHBheWxvYWQuCmZ1bmN0aW9uIGdldFBheWxvYWRDb25maWdGcm9tUGF5bG9hZCgKICBjb25maWc6IENoYXJ0Q29uZmlnLAogIHBheWxvYWQ6IHVua25vd24sCiAga2V5OiBzdHJpbmcsCikgewogIGlmICh0eXBlb2YgcGF5bG9hZCAhPT0gJ29iamVjdCcgfHwgcGF5bG9hZCA9PT0gbnVsbCkgewogICAgcmV0dXJuIHVuZGVmaW5lZDsKICB9CgogIGNvbnN0IHBheWxvYWRQYXlsb2FkID0KICAgICdwYXlsb2FkJyBpbiBwYXlsb2FkICYmCiAgICB0eXBlb2YgcGF5bG9hZC5wYXlsb2FkID09PSAnb2JqZWN0JyAmJgogICAgcGF5bG9hZC5wYXlsb2FkICE9PSBudWxsCiAgICAgID8gcGF5bG9hZC5wYXlsb2FkCiAgICAgIDogdW5kZWZpbmVkOwoKICBsZXQgY29uZmlnTGFiZWxLZXk6IHN0cmluZyA9IGtleTsKCiAgaWYgKAogICAga2V5IGluIHBheWxvYWQgJiYKICAgIHR5cGVvZiBwYXlsb2FkW2tleSBhcyBrZXlvZiB0eXBlb2YgcGF5bG9hZF0gPT09ICdzdHJpbmcnCiAgKSB7CiAgICBjb25maWdMYWJlbEtleSA9IHBheWxvYWRba2V5IGFzIGtleW9mIHR5cGVvZiBwYXlsb2FkXSBhcyBzdHJpbmc7CiAgfSBlbHNlIGlmICgKICAgIHBheWxvYWRQYXlsb2FkICYmCiAgICBrZXkgaW4gcGF5bG9hZFBheWxvYWQgJiYKICAgIHR5cGVvZiBwYXlsb2FkUGF5bG9hZFtrZXkgYXMga2V5b2YgdHlwZW9mIHBheWxvYWRQYXlsb2FkXSA9PT0gJ3N0cmluZycKICApIHsKICAgIGNvbmZpZ0xhYmVsS2V5ID0gcGF5bG9hZFBheWxvYWRbCiAgICAgIGtleSBhcyBrZXlvZiB0eXBlb2YgcGF5bG9hZFBheWxvYWQKICAgIF0gYXMgc3RyaW5nOwogIH0KCiAgcmV0dXJuIGNvbmZpZ0xhYmVsS2V5IGluIGNvbmZpZwogICAgPyBjb25maWdbY29uZmlnTGFiZWxLZXldCiAgICA6IGNvbmZpZ1trZXkgYXMga2V5b2YgdHlwZW9mIGNvbmZpZ107Cn0KCmV4cG9ydCB7CiAgQ2hhcnRDb250YWluZXIsCiAgQ2hhcnRUb29sdGlwLAogIENoYXJ0VG9vbHRpcENvbnRlbnQsCiAgQ2hhcnRMZWdlbmQsCiAgQ2hhcnRMZWdlbmRDb250ZW50LAogIENoYXJ0U3R5bGUsCn07Cg==
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+import * as RechartsPrimitive from 'recharts';
+
+// Format: { THEME_NAME: CSS_SELECTOR }
+const THEMES = { light: '', dark: '.dark' } as const;
+
+export type ChartConfig = {
+  [k in string]: {
+    label?: React.ReactNode;
+    icon?: React.ComponentType;
+  } & (
+    | { color?: string; theme?: never }
+    | { color?: never; theme: Record<keyof typeof THEMES, string> }
+  );
+};
+
+type ChartContextProps = {
+  config: ChartConfig;
+};
+
+const ChartContext = React.createContext<ChartContextProps | null>(null);
+
+function useChart() {
+  const context = React.useContext(ChartContext);
+
+  if (!context) {
+    throw new Error('useChart must be used within a <ChartContainer />');
+  }
+
+  return context;
+}
+
+const ChartContainer = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<'div'> & {
+    config: ChartConfig;
+    children: React.ComponentProps<
+      typeof RechartsPrimitive.ResponsiveContainer
+    >['children'];
+  }
+>(({ id, className, children, config, ...props }, ref) => {
+  const uniqueId = React.useId();
+  const chartId = `chart-${id || uniqueId.replace(/:/g, '')}`;
+
+  return (
+    <ChartContext.Provider value={{ config }}>
+      <div
+        data-chart={chartId}
+        ref={ref}
+        className={cn(
+          "flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
+          className,
+        )}
+        {...props}
+      >
+        <ChartStyle id={chartId} config={config} />
+        <RechartsPrimitive.ResponsiveContainer>
+          {children}
+        </RechartsPrimitive.ResponsiveContainer>
+      </div>
+    </ChartContext.Provider>
+  );
+});
+ChartContainer.displayName = 'Chart';
+
+const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
+  const colorConfig = Object.entries(config).filter(
+    ([, config]) => config.theme || config.color,
+  );
+
+  if (!colorConfig.length) {
+    return null;
+  }
+
+  return (
+    <style
+      dangerouslySetInnerHTML={{
+        __html: Object.entries(THEMES)
+          .map(
+            ([theme, prefix]) => `
+${prefix} [data-chart=${id}] {
+${colorConfig
+  .map(([key, itemConfig]) => {
+    const color =
+      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+      itemConfig.color;
+    return color ? `  --color-${key}: ${color};` : null;
+  })
+  .join('\n')}
+}
+`,
+          )
+          .join('\n'),
+      }}
+    />
+  );
+};
+
+const ChartTooltip = RechartsPrimitive.Tooltip;
+
+const ChartTooltipContent = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+    React.ComponentProps<'div'> & {
+      hideLabel?: boolean;
+      hideIndicator?: boolean;
+      indicator?: 'line' | 'dot' | 'dashed';
+      nameKey?: string;
+      labelKey?: string;
+    }
+>(
+  (
+    {
+      active,
+      payload,
+      className,
+      indicator = 'dot',
+      hideLabel = false,
+      hideIndicator = false,
+      label,
+      labelFormatter,
+      labelClassName,
+      formatter,
+      color,
+      nameKey,
+      labelKey,
+    },
+    ref,
+  ) => {
+    const { config } = useChart();
+
+    const tooltipLabel = React.useMemo(() => {
+      if (hideLabel || !payload?.length) {
+        return null;
+      }
+
+      const [item] = payload;
+      const key = `${labelKey || item?.dataKey || item?.name || 'value'}`;
+      const itemConfig = getPayloadConfigFromPayload(config, item, key);
+      const value =
+        !labelKey && typeof label === 'string'
+          ? config[label as keyof typeof config]?.label || label
+          : itemConfig?.label;
+
+      if (labelFormatter) {
+        return (
+          <div className={cn('font-medium', labelClassName)}>
+            {labelFormatter(value, payload)}
+          </div>
+        );
+      }
+
+      if (!value) {
+        return null;
+      }
+
+      return <div className={cn('font-medium', labelClassName)}>{value}</div>;
+    }, [
+      label,
+      labelFormatter,
+      payload,
+      hideLabel,
+      labelClassName,
+      config,
+      labelKey,
+    ]);
+
+    if (!active || !payload?.length) {
+      return null;
+    }
+
+    const nestLabel = payload.length === 1 && indicator !== 'dot';
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',
+          className,
+        )}
+      >
+        {!nestLabel ? tooltipLabel : null}
+        <div className="grid gap-1.5">
+          {payload
+            .filter((item) => item.type !== 'none')
+            .map((item, index) => {
+              const key = `${nameKey || item.name || item.dataKey || 'value'}`;
+              const itemConfig = getPayloadConfigFromPayload(config, item, key);
+              const indicatorColor = color || item.payload.fill || item.color;
+
+              return (
+                <div
+                  key={item.dataKey}
+                  className={cn(
+                    'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
+                    indicator === 'dot' && 'items-center',
+                  )}
+                >
+                  {formatter && item?.value !== undefined && item.name ? (
+                    formatter(item.value, item.name, item, index, item.payload)
+                  ) : (
+                    <>
+                      {itemConfig?.icon ? (
+                        <itemConfig.icon />
+                      ) : (
+                        !hideIndicator && (
+                          <div
+                            className={cn(
+                              'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',
+                              {
+                                'h-2.5 w-2.5': indicator === 'dot',
+                                'w-1': indicator === 'line',
+                                'w-0 border-[1.5px] border-dashed bg-transparent':
+                                  indicator === 'dashed',
+                                'my-0.5': nestLabel && indicator === 'dashed',
+                              },
+                            )}
+                            style={
+                              {
+                                '--color-bg': indicatorColor,
+                                '--color-border': indicatorColor,
+                              } as React.CSSProperties
+                            }
+                          />
+                        )
+                      )}
+                      <div
+                        className={cn(
+                          'flex flex-1 justify-between leading-none',
+                          nestLabel ? 'items-end' : 'items-center',
+                        )}
+                      >
+                        <div className="grid gap-1.5">
+                          {nestLabel ? tooltipLabel : null}
+                          <span className="text-muted-foreground">
+                            {itemConfig?.label || item.name}
+                          </span>
+                        </div>
+                        {item.value && (
+                          <span className="font-mono font-medium tabular-nums text-foreground">
+                            {item.value.toLocaleString()}
+                          </span>
+                        )}
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+        </div>
+      </div>
+    );
+  },
+);
+ChartTooltipContent.displayName = 'ChartTooltip';
+
+const ChartLegend = RechartsPrimitive.Legend;
+
+const ChartLegendContent = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<'div'> &
+    Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
+      hideIcon?: boolean;
+      nameKey?: string;
+    }
+>(
+  (
+    { className, hideIcon = false, payload, verticalAlign = 'bottom', nameKey },
+    ref,
+  ) => {
+    const { config } = useChart();
+
+    if (!payload?.length) {
+      return null;
+    }
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'flex items-center justify-center gap-4',
+          verticalAlign === 'top' ? 'pb-3' : 'pt-3',
+          className,
+        )}
+      >
+        {payload
+          .filter((item) => item.type !== 'none')
+          .map((item) => {
+            const key = `${nameKey || item.dataKey || 'value'}`;
+            const itemConfig = getPayloadConfigFromPayload(config, item, key);
+
+            return (
+              <div
+                key={item.value}
+                className={cn(
+                  'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground',
+                )}
+              >
+                {itemConfig?.icon && !hideIcon ? (
+                  <itemConfig.icon />
+                ) : (
+                  <div
+                    className="h-2 w-2 shrink-0 rounded-[2px]"
+                    style={{
+                      backgroundColor: item.color,
+                    }}
+                  />
+                )}
+                {itemConfig?.label}
+              </div>
+            );
+          })}
+      </div>
+    );
+  },
+);
+ChartLegendContent.displayName = 'ChartLegend';
+
+// Helper to extract item config from a payload.
+function getPayloadConfigFromPayload(
+  config: ChartConfig,
+  payload: unknown,
+  key: string,
+) {
+  if (typeof payload !== 'object' || payload === null) {
+    return undefined;
+  }
+
+  const payloadPayload =
+    'payload' in payload &&
+    typeof payload.payload === 'object' &&
+    payload.payload !== null
+      ? payload.payload
+      : undefined;
+
+  let configLabelKey: string = key;
+
+  if (
+    key in payload &&
+    typeof payload[key as keyof typeof payload] === 'string'
+  ) {
+    configLabelKey = payload[key as keyof typeof payload] as string;
+  } else if (
+    payloadPayload &&
+    key in payloadPayload &&
+    typeof payloadPayload[key as keyof typeof payloadPayload] === 'string'
+  ) {
+    configLabelKey = payloadPayload[
+      key as keyof typeof payloadPayload
+    ] as string;
+  }
+
+  return configLabelKey in config
+    ? config[configLabelKey]
+    : config[key as keyof typeof config];
+}
+
+export {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+};

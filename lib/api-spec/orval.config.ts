@@ -1,1 +1,76 @@
-aW1wb3J0IHsgZGVmaW5lQ29uZmlnLCBJbnB1dFRyYW5zZm9ybWVyRm4gfSBmcm9tICJvcnZhbCI7CmltcG9ydCBwYXRoIGZyb20gInBhdGgiOwoKY29uc3Qgcm9vdCA9IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICIuLiIsICIuLiIpOwpjb25zdCBhcGlDbGllbnRSZWFjdFNyYyA9IHBhdGgucmVzb2x2ZShyb290LCAibGliIiwgImFwaS1jbGllbnQtcmVhY3QiLCAic3JjIik7CmNvbnN0IGFwaVpvZFNyYyA9IHBhdGgucmVzb2x2ZShyb290LCAibGliIiwgImFwaS16b2QiLCAic3JjIik7CgovLyBPdXIgZXhwb3J0cyBtYWtlIGFzc3VtcHRpb25zIGFib3V0IHRoZSB0aXRsZSBvZiB0aGUgQVBJIGJlaW5nICJBcGkiIChpLmUuIGdlbmVyYXRlZCBvdXRwdXQgaXMgYGFwaS50c2ApLgpjb25zdCB0aXRsZVRyYW5zZm9ybWVyOiBJbnB1dFRyYW5zZm9ybWVyRm4gPSAoY29uZmlnKSA9PiB7CiAgY29uZmlnLmluZm8gPz89IHt9OwogIGNvbmZpZy5pbmZvLnRpdGxlID0gIkFwaSI7CgogIHJldHVybiBjb25maWc7Cn07CgpleHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoewogICJhcGktY2xpZW50LXJlYWN0IjogewogICAgaW5wdXQ6IHsKICAgICAgdGFyZ2V0OiAiLi9vcGVuYXBpLnlhbWwiLAogICAgICBvdmVycmlkZTogewogICAgICAgIHRyYW5zZm9ybWVyOiB0aXRsZVRyYW5zZm9ybWVyLAogICAgICB9LAogICAgfSwKICAgIG91dHB1dDogewogICAgICB3b3Jrc3BhY2U6IGFwaUNsaWVudFJlYWN0U3JjLAogICAgICB0YXJnZXQ6ICJnZW5lcmF0ZWQiLAogICAgICBjbGllbnQ6ICJyZWFjdC1xdWVyeSIsCiAgICAgIG1vZGU6ICJzcGxpdCIsCiAgICAgIGJhc2VVcmw6ICIvYXBpIiwKICAgICAgY2xlYW46IHRydWUsCiAgICAgIHByZXR0aWVyOiB0cnVlLAogICAgICBvdmVycmlkZTogewogICAgICAgIGZldGNoOiB7CiAgICAgICAgICBpbmNsdWRlSHR0cFJlc3BvbnNlUmV0dXJuVHlwZTogZmFsc2UsCiAgICAgICAgfSwKICAgICAgICBtdXRhdG9yOiB7CiAgICAgICAgICBwYXRoOiBwYXRoLnJlc29sdmUoYXBpQ2xpZW50UmVhY3RTcmMsICJjdXN0b20tZmV0Y2gudHMiKSwKICAgICAgICAgIG5hbWU6ICJjdXN0b21GZXRjaCIsCiAgICAgICAgfSwKICAgICAgfSwKICAgIH0sCiAgfSwKICB6b2Q6IHsKICAgIGlucHV0OiB7CiAgICAgIHRhcmdldDogIi4vb3BlbmFwaS55YW1sIiwKICAgICAgb3ZlcnJpZGU6IHsKICAgICAgICB0cmFuc2Zvcm1lcjogdGl0bGVUcmFuc2Zvcm1lciwKICAgICAgfSwKICAgIH0sCiAgICBvdXRwdXQ6IHsKICAgICAgd29ya3NwYWNlOiBhcGlab2RTcmMsCiAgICAgIGNsaWVudDogInpvZCIsCiAgICAgIHRhcmdldDogImdlbmVyYXRlZCIsCiAgICAgIHNjaGVtYXM6IHsgcGF0aDogImdlbmVyYXRlZC90eXBlcyIsIHR5cGU6ICJ0eXBlc2NyaXB0IiB9LAogICAgICBtb2RlOiAic3BsaXQiLAogICAgICBjbGVhbjogdHJ1ZSwKICAgICAgcHJldHRpZXI6IHRydWUsCiAgICAgIG92ZXJyaWRlOiB7CiAgICAgICAgem9kOiB7CiAgICAgICAgICAvLyBPcnZhbCByZXNvbHZlcyBgYXV0b2AgZnJvbSBsaWIvYXBpLXNwZWMvcGFja2FnZS5qc29uLCB3aGljaCBoYXMgbm8KICAgICAgICAgIC8vIHpvZCBkZXBlbmRlbmN5LCBzbyBvcnZhbCA+PSA4LjIzIGZhbGxzIGJhY2sgdG8gWm9kIDQgc3ludGF4IHdoaWxlCiAgICAgICAgICAvLyB0aGUgY2F0YWxvZyBpbnN0YWxscyB6b2QgMy4gUGluIHRvIG1hdGNoIHRoZSBjYXRhbG9nLgogICAgICAgICAgdmVyc2lvbjogMywKICAgICAgICAgIGNvZXJjZTogewogICAgICAgICAgICBxdWVyeTogWydib29sZWFuJywgJ251bWJlcicsICdzdHJpbmcnXSwKICAgICAgICAgICAgcGFyYW06IFsnYm9vbGVhbicsICdudW1iZXInLCAnc3RyaW5nJ10sCiAgICAgICAgICAgIGJvZHk6IFsnYmlnaW50JywgJ2RhdGUnXSwKICAgICAgICAgICAgcmVzcG9uc2U6IFsnYmlnaW50JywgJ2RhdGUnXSwKICAgICAgICAgIH0sCiAgICAgICAgfSwKICAgICAgICB1c2VEYXRlczogdHJ1ZSwKICAgICAgICB1c2VCaWdJbnQ6IHRydWUsCiAgICAgIH0sCiAgICB9LAogIH0sCn0pOwo=
+import { defineConfig, InputTransformerFn } from "orval";
+import path from "path";
+
+const root = path.resolve(__dirname, "..", "..");
+const apiClientReactSrc = path.resolve(root, "lib", "api-client-react", "src");
+const apiZodSrc = path.resolve(root, "lib", "api-zod", "src");
+
+// Our exports make assumptions about the title of the API being "Api" (i.e. generated output is `api.ts`).
+const titleTransformer: InputTransformerFn = (config) => {
+  config.info ??= {};
+  config.info.title = "Api";
+
+  return config;
+};
+
+export default defineConfig({
+  "api-client-react": {
+    input: {
+      target: "./openapi.yaml",
+      override: {
+        transformer: titleTransformer,
+      },
+    },
+    output: {
+      workspace: apiClientReactSrc,
+      target: "generated",
+      client: "react-query",
+      mode: "split",
+      baseUrl: "/api",
+      clean: true,
+      prettier: true,
+      override: {
+        fetch: {
+          includeHttpResponseReturnType: false,
+        },
+        mutator: {
+          path: path.resolve(apiClientReactSrc, "custom-fetch.ts"),
+          name: "customFetch",
+        },
+      },
+    },
+  },
+  zod: {
+    input: {
+      target: "./openapi.yaml",
+      override: {
+        transformer: titleTransformer,
+      },
+    },
+    output: {
+      workspace: apiZodSrc,
+      client: "zod",
+      target: "generated",
+      schemas: { path: "generated/types", type: "typescript" },
+      mode: "split",
+      clean: true,
+      prettier: true,
+      override: {
+        zod: {
+          // Orval resolves `auto` from lib/api-spec/package.json, which has no
+          // zod dependency, so orval >= 8.23 falls back to Zod 4 syntax while
+          // the catalog installs zod 3. Pin to match the catalog.
+          version: 3,
+          coerce: {
+            query: ['boolean', 'number', 'string'],
+            param: ['boolean', 'number', 'string'],
+            body: ['bigint', 'date'],
+            response: ['bigint', 'date'],
+          },
+        },
+        useDates: true,
+        useBigInt: true,
+      },
+    },
+  },
+});

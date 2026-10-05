@@ -1,1 +1,25 @@
-ewogICJuYW1lIjogIkB3b3Jrc3BhY2UvZGIiLAogICJ2ZXJzaW9uIjogIjAuMC4wIiwKICAicHJpdmF0ZSI6IHRydWUsCiAgInR5cGUiOiAibW9kdWxlIiwKICAiZXhwb3J0cyI6IHsKICAgICIuIjogIi4vc3JjL2luZGV4LnRzIiwKICAgICIuL3NjaGVtYSI6ICIuL3NyYy9zY2hlbWEvaW5kZXgudHMiCiAgfSwKICAic2NyaXB0cyI6IHsKICAgICJwdXNoIjogImRyaXp6bGUta2l0IHB1c2ggLS1jb25maWcgLi9kcml6emxlLmNvbmZpZy50cyIsCiAgICAicHVzaC1mb3JjZSI6ICJkcml6emxlLWtpdCBwdXNoIC0tZm9yY2UgLS1jb25maWcgLi9kcml6emxlLmNvbmZpZy50cyIKICB9LAogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAiZHJpenpsZS1vcm0iOiAiY2F0YWxvZzoiLAogICAgImRyaXp6bGUtem9kIjogIl4wLjguMyIsCiAgICAicGciOiAiXjguMjMuMCIsCiAgICAiem9kIjogImNhdGFsb2c6IgogIH0sCiAgImRldkRlcGVuZGVuY2llcyI6IHsKICAgICJAdHlwZXMvbm9kZSI6ICJjYXRhbG9nOiIsCiAgICAiQHR5cGVzL3BnIjogIl44LjIzLjEiLAogICAgImRyaXp6bGUta2l0IjogIl4wLjMxLjEwIgogIH0KfQo=
+{
+  "name": "@workspace/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts"
+  },
+  "scripts": {
+    "push": "drizzle-kit push --config ./drizzle.config.ts",
+    "push-force": "drizzle-kit push --force --config ./drizzle.config.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "catalog:",
+    "drizzle-zod": "^0.8.3",
+    "pg": "^8.23.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^0.31.10"
+  }
+}

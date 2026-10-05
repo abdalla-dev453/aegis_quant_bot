@@ -1,1 +1,136 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGhhc2hsaWIKaW1wb3J0IGhtYWMKaW1wb3J0IHJlCmltcG9ydCB0aW1lCmZyb20gZGF0YWNsYXNzZXMgaW1wb3J0IGRhdGFjbGFzcwpmcm9tIGRhdGV0aW1lIGltcG9ydCBVVEMsIGRhdGV0aW1lCmZyb20gdHlwaW5nIGltcG9ydCBBbm5vdGF0ZWQKCmZyb20gZmFzdGFwaSBpbXBvcnQgRGVwZW5kcywgUmVxdWVzdApmcm9tIHJlZGlzLmFzeW5jaW8gaW1wb3J0IFJlZGlzCmZyb20gc3FsYWxjaGVteSBpbXBvcnQgc2VsZWN0CmZyb20gc3FsYWxjaGVteS5leHQuYXN5bmNpbyBpbXBvcnQgQXN5bmNTZXNzaW9uCmZyb20gc3RhcmxldHRlIGltcG9ydCBzdGF0dXMKCmZyb20gYXBwLmNvbmZpZyBpbXBvcnQgU2V0dGluZ3MsIGdldF9zZXR0aW5ncwpmcm9tIGFwcC5kYXRhYmFzZSBpbXBvcnQgZ2V0X3JlZGlzLCBnZXRfc2Vzc2lvbgpmcm9tIGFwcC5lcnJvcnMgaW1wb3J0IEFQSUVycm9yCmZyb20gYXBwLm1vZGVscyBpbXBvcnQgRGV2aWNlLCBVc2VyLCBVc2VyU2Vzc2lvbgoKTk9OQ0VfUEFUVEVSTiA9IHJlLmNvbXBpbGUociJeW0EtWmEtejAtOV8tXXsxNiwxMjh9JCIpClNlc3Npb25EZXAgPSBBbm5vdGF0ZWRbQXN5bmNTZXNzaW9uLCBEZXBlbmRzKGdldF9zZXNzaW9uKV0KUmVkaXNEZXAgPSBBbm5vdGF0ZWRbUmVkaXMsIERlcGVuZHMoZ2V0X3JlZGlzKV0KU2V0dGluZ3NEZXAgPSBBbm5vdGF0ZWRbU2V0dGluZ3MsIERlcGVuZHMoZ2V0X3NldHRpbmdzKV0KCgpkZWYgc2hhMjU2X2hleCh2YWx1ZTogc3RyKSAtPiBzdHI6CiAgICByZXR1cm4gaGFzaGxpYi5zaGEyNTYodmFsdWUuZW5jb2RlKCJ1dGYtOCIpKS5oZXhkaWdlc3QoKQoKCmRlZiBjYW5vbmljYWxfZWFfcmVxdWVzdChtZXRob2Q6IHN0ciwgcGF0aDogc3RyLCB0aW1lc3RhbXA6IHN0ciwgbm9uY2U6IHN0ciwgYm9keTogYnl0ZXMpIC0+IGJ5dGVzOgogICAgYm9keV9kaWdlc3QgPSBoYXNobGliLnNoYTI1Nihib2R5KS5oZXhkaWdlc3QoKQogICAgcmV0dXJuIGYie21ldGhvZC51cHBlcigpfVxue3BhdGh9XG57dGltZXN0YW1wfVxue25vbmNlfVxue2JvZHlfZGlnZXN0fSIuZW5jb2RlKCkKCgpkZWYgc2lnbl9lYV9yZXF1ZXN0KHRva2VuOiBzdHIsIG1ldGhvZDogc3RyLCBwYXRoOiBzdHIsIHRpbWVzdGFtcDogc3RyLCBub25jZTogc3RyLCBib2R5OiBieXRlcykgLT4gc3RyOgogICAgbWVzc2FnZSA9IGNhbm9uaWNhbF9lYV9yZXF1ZXN0KG1ldGhvZCwgcGF0aCwgdGltZXN0YW1wLCBub25jZSwgYm9keSkKICAgIHJldHVybiBobWFjLm5ldyh0b2tlbi5lbmNvZGUoImFzY2lpIiksIG1lc3NhZ2UsIGhhc2hsaWIuc2hhMjU2KS5oZXhkaWdlc3QoKQoKCmFzeW5jIGRlZiBlbmZvcmNlX3JhdGVfbGltaXQocmVkaXM6IFJlZGlzLCBrZXk6IHN0ciwgbGltaXQ6IGludCwgd2luZG93X3NlY29uZHM6IGludCA9IDYwKSAtPiBOb25lOgogICAgdHJ5OgogICAgICAgIGNvdW50ID0gYXdhaXQgcmVkaXMuaW5jcihrZXkpCiAgICAgICAgaWYgY291bnQgPT0gMToKICAgICAgICAgICAgYXdhaXQgcmVkaXMuZXhwaXJlKGtleSwgd2luZG93X3NlY29uZHMpCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGV4YzoKICAgICAgICByYWlzZSBBUElFcnJvcigKICAgICAgICAgICAgInJhdGVfbGltaXRlcl91bmF2YWlsYWJsZSIsCiAgICAgICAgICAgICJSZXF1ZXN0IGNvdWxkIG5vdCBiZSBzYWZlbHkgcmF0ZSBsaW1pdGVkIiwKICAgICAgICAgICAgc3RhdHVzLkhUVFBfNTAzX1NFUlZJQ0VfVU5BVkFJTEFCTEUsCiAgICAgICAgKSBmcm9tIGV4YwogICAgaWYgY291bnQgPiBsaW1pdDoKICAgICAgICByYWlzZSBBUElFcnJvcigicmF0ZV9saW1pdGVkIiwgIlJlcXVlc3QgcmF0ZSBsaW1pdCBleGNlZWRlZCIsIHN0YXR1cy5IVFRQXzQyOV9UT09fTUFOWV9SRVFVRVNUUykKCgpAZGF0YWNsYXNzKGZyb3plbj1UcnVlLCBzbG90cz1UcnVlKQpjbGFzcyBBdXRoZW50aWNhdGVkVXNlcjoKICAgIHVzZXI6IFVzZXIKICAgIHNlc3Npb246IFVzZXJTZXNzaW9uCgoKQGRhdGFjbGFzcyhmcm96ZW49VHJ1ZSwgc2xvdHM9VHJ1ZSkKY2xhc3MgQXV0aGVudGljYXRlZERldmljZToKICAgIGRldmljZTogRGV2aWNlCgoKYXN5bmMgZGVmIGdldF9jdXJyZW50X3VzZXIoCiAgICByZXF1ZXN0OiBSZXF1ZXN0LAogICAgc2Vzc2lvbjogU2Vzc2lvbkRlcCwKICAgIHJlZGlzOiBSZWRpc0RlcCwKICAgIHNldHRpbmdzOiBTZXR0aW5nc0RlcCwKKSAtPiBBdXRoZW50aWNhdGVkVXNlcjoKICAgIHJhd190b2tlbiA9IHJlcXVlc3QuY29va2llcy5nZXQoc2V0dGluZ3Muc2Vzc2lvbl9jb29raWVfbmFtZSkKICAgIGlmIG5vdCByYXdfdG9rZW46CiAgICAgICAgcmFpc2UgQVBJRXJyb3IoInVuYXV0aG9yaXplZCIsICJBdXRoZW50aWNhdGlvbiByZXF1aXJlZCIsIHN0YXR1cy5IVFRQXzQwMV9VTkFVVEhPUklaRUQpCiAgICB1c2VyX3Nlc3Npb24gPSBhd2FpdCBzZXNzaW9uLnNjYWxhcigKICAgICAgICBzZWxlY3QoVXNlclNlc3Npb24pLndoZXJlKAogICAgICAgICAgICBVc2VyU2Vzc2lvbi50b2tlbl9oYXNoID09IHNoYTI1Nl9oZXgocmF3X3Rva2VuKSwKICAgICAgICAgICAgVXNlclNlc3Npb24ucmV2b2tlZF9hdC5pc18oTm9uZSksCiAgICAgICAgICAgIFVzZXJTZXNzaW9uLmV4cGlyZXNfYXQgPiBkYXRldGltZS5ub3coVVRDKSwKICAgICAgICApCiAgICApCiAgICBpZiB1c2VyX3Nlc3Npb24gaXMgTm9uZToKICAgICAgICByYWlzZSBBUElFcnJvcigidW5hdXRob3JpemVkIiwgIlNlc3Npb24gaXMgaW52YWxpZCBvciBleHBpcmVkIiwgc3RhdHVzLkhUVFBfNDAxX1VOQVVUSE9SSVpFRCkKICAgIHVzZXIgPSBhd2FpdCBzZXNzaW9uLmdldChVc2VyLCB1c2VyX3Nlc3Npb24udXNlcl9pZCkKICAgIGlmIHVzZXIgaXMgTm9uZSBvciB1c2VyLmRlbGV0ZWRfYXQgaXMgbm90IE5vbmU6CiAgICAgICAgcmFpc2UgQVBJRXJyb3IoInVuYXV0aG9yaXplZCIsICJTZXNzaW9uIGlzIGludmFsaWQgb3IgZXhwaXJlZCIsIHN0YXR1cy5IVFRQXzQwMV9VTkFVVEhPUklaRUQpCiAgICBhd2FpdCBlbmZvcmNlX3JhdGVfbGltaXQocmVkaXMsIGYicmF0ZTp1c2VyOnt1c2VyLmlkfSIsIHNldHRpbmdzLmFwcF9yYXRlX2xpbWl0X3Blcl9taW51dGUpCiAgICByZXR1cm4gQXV0aGVudGljYXRlZFVzZXIodXNlcj11c2VyLCBzZXNzaW9uPXVzZXJfc2Vzc2lvbikKCgphc3luYyBkZWYgZ2V0X2N1cnJlbnRfZGV2aWNlKAogICAgcmVxdWVzdDogUmVxdWVzdCwKICAgIHNlc3Npb246IFNlc3Npb25EZXAsCiAgICByZWRpczogUmVkaXNEZXAsCiAgICBzZXR0aW5nczogU2V0dGluZ3NEZXAsCikgLT4gQXV0aGVudGljYXRlZERldmljZToKICAgIHRva2VuID0gcmVxdWVzdC5oZWFkZXJzLmdldCgiWC1FQS1EZXZpY2UtVG9rZW4iLCAiIikKICAgIHRpbWVzdGFtcCA9IHJlcXVlc3QuaGVhZGVycy5nZXQoIlgtRUEtVGltZXN0YW1wIiwgIiIpCiAgICBub25jZSA9IHJlcXVlc3QuaGVhZGVycy5nZXQoIlgtRUEtTm9uY2UiLCAiIikKICAgIHNpZ25hdHVyZSA9IHJlcXVlc3QuaGVhZGVycy5nZXQoIlgtRUEtU2lnbmF0dXJlIiwgIiIpCiAgICBpZiBub3QgdG9rZW4gb3Igbm90IHRpbWVzdGFtcC5pc2RpZ2l0KCkgb3Igbm90IE5PTkNFX1BBVFRFUk4uZnVsbG1hdGNoKG5vbmNlKToKICAgICAgICByYWlzZSBBUElFcnJvcigiaW52YWxpZF9kZXZpY2VfYXV0aCIsICJTaWduZWQgZGV2aWNlIGhlYWRlcnMgYXJlIHJlcXVpcmVkIiwgc3RhdHVzLkhUVFBfNDAxX1VOQVVUSE9SSVpFRCkKCiAgICByZXF1ZXN0X3RpbWUgPSBpbnQodGltZXN0YW1wKQogICAgaWYgYWJzKGludCh0aW1lLnRpbWUoKSkgLSByZXF1ZXN0X3RpbWUpID4gc2V0dGluZ3MucmVxdWVzdF9tYXhfYWdlX3NlY29uZHM6CiAgICAgICAgcmFpc2UgQVBJRXJyb3IoInN0YWxlX3JlcXVlc3QiLCAiU2lnbmVkIHJlcXVlc3QgdGltZXN0YW1wIGlzIG91dHNpZGUgdGhlIGFsbG93ZWQgd2luZG93Iiwgc3RhdHVzLkhUVFBfNDAxX1VOQVVUSE9SSVpFRCkKCiAgICBkZXZpY2UgPSBhd2FpdCBzZXNzaW9uLnNjYWxhcigKICAgICAgICBzZWxlY3QoRGV2aWNlKS53aGVyZShEZXZpY2UudG9rZW5faGFzaCA9PSBzaGEyNTZfaGV4KHRva2VuKSwgRGV2aWNlLnN0YXR1cyA9PSAiQUNUSVZFIikKICAgICkKICAgIGlmIGRldmljZSBpcyBOb25lOgogICAgICAgIHJhaXNlIEFQSUVycm9yKCJpbnZhbGlkX2RldmljZV9hdXRoIiwgIkRldmljZSB0b2tlbiBpcyBpbnZhbGlkIG9yIHJldm9rZWQiLCBzdGF0dXMuSFRUUF80MDFfVU5BVVRIT1JJWkVEKQoKICAgIGJvZHkgPSBhd2FpdCByZXF1ZXN0LmJvZHkoKQogICAgZXhwZWN0ZWQgPSBzaWduX2VhX3JlcXVlc3QodG9rZW4sIHJlcXVlc3QubWV0aG9kLCByZXF1ZXN0LnVybC5wYXRoLCB0aW1lc3RhbXAsIG5vbmNlLCBib2R5KQogICAgaWYgbm90IGhtYWMuY29tcGFyZV9kaWdlc3QoZXhwZWN0ZWQsIHNpZ25hdHVyZS5sb3dlcigpKToKICAgICAgICByYWlzZSBBUElFcnJvcigiaW52YWxpZF9zaWduYXR1cmUiLCAiRGV2aWNlIHJlcXVlc3Qgc2lnbmF0dXJlIGlzIGludmFsaWQiLCBzdGF0dXMuSFRUUF80MDFfVU5BVVRIT1JJWkVEKQoKICAgIHRyeToKICAgICAgICBhY2NlcHRlZCA9IGF3YWl0IHJlZGlzLnNldCgKICAgICAgICAgICAgZiJlYTpub25jZTp7ZGV2aWNlLmlkfTp7bm9uY2V9IiwgIjEiLCBleD1zZXR0aW5ncy5ub25jZV90dGxfc2Vjb25kcywgbng9VHJ1ZQogICAgICAgICkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXhjOgogICAgICAgIHJhaXNlIEFQSUVycm9yKAogICAgICAgICAgICAicmVwbGF5X2d1YXJkX3VuYXZhaWxhYmxlIiwKICAgICAgICAgICAgIkRldmljZSByZXF1ZXN0IGNvdWxkIG5vdCBiZSBzYWZlbHkgdmVyaWZpZWQiLAogICAgICAgICAgICBzdGF0dXMuSFRUUF81MDNfU0VSVklDRV9VTkFWQUlMQUJMRSwKICAgICAgICApIGZyb20gZXhjCiAgICBpZiBub3QgYWNjZXB0ZWQ6CiAgICAgICAgcmFpc2UgQVBJRXJyb3IoInJlcGxheWVkX3JlcXVlc3QiLCAiU2lnbmVkIHJlcXVlc3Qgbm9uY2UgaGFzIGFscmVhZHkgYmVlbiB1c2VkIiwgc3RhdHVzLkhUVFBfNDAxX1VOQVVUSE9SSVpFRCkKCiAgICBhd2FpdCBlbmZvcmNlX3JhdGVfbGltaXQocmVkaXMsIGYicmF0ZTpkZXZpY2U6e2RldmljZS5pZH0iLCBzZXR0aW5ncy5lYV9yYXRlX2xpbWl0X3Blcl9taW51dGUpCiAgICByZXF1ZXN0LnN0YXRlLmRldmljZV9pZCA9IGRldmljZS5pZAogICAgcmV0dXJuIEF1dGhlbnRpY2F0ZWREZXZpY2UoZGV2aWNlPWRldmljZSk=
+from __future__ import annotations
+
+import hashlib
+import hmac
+import re
+import time
+from dataclasses import dataclass
+from datetime import UTC, datetime
+from typing import Annotated
+
+from fastapi import Depends, Request
+from redis.asyncio import Redis
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+from starlette import status
+
+from app.config import Settings, get_settings
+from app.database import get_redis, get_session
+from app.errors import APIError
+from app.models import Device, User, UserSession
+
+NONCE_PATTERN = re.compile(r"^[A-Za-z0-9_-]{16,128}$")
+SessionDep = Annotated[AsyncSession, Depends(get_session)]
+RedisDep = Annotated[Redis, Depends(get_redis)]
+SettingsDep = Annotated[Settings, Depends(get_settings)]
+
+
+def sha256_hex(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def canonical_ea_request(method: str, path: str, timestamp: str, nonce: str, body: bytes) -> bytes:
+    body_digest = hashlib.sha256(body).hexdigest()
+    return f"{method.upper()}\n{path}\n{timestamp}\n{nonce}\n{body_digest}".encode()
+
+
+def sign_ea_request(token: str, method: str, path: str, timestamp: str, nonce: str, body: bytes) -> str:
+    message = canonical_ea_request(method, path, timestamp, nonce, body)
+    return hmac.new(token.encode("ascii"), message, hashlib.sha256).hexdigest()
+
+
+async def enforce_rate_limit(redis: Redis, key: str, limit: int, window_seconds: int = 60) -> None:
+    try:
+        count = await redis.incr(key)
+        if count == 1:
+            await redis.expire(key, window_seconds)
+    except Exception as exc:
+        raise APIError(
+            "rate_limiter_unavailable",
+            "Request could not be safely rate limited",
+            status.HTTP_503_SERVICE_UNAVAILABLE,
+        ) from exc
+    if count > limit:
+        raise APIError("rate_limited", "Request rate limit exceeded", status.HTTP_429_TOO_MANY_REQUESTS)
+
+
+@dataclass(frozen=True, slots=True)
+class AuthenticatedUser:
+    user: User
+    session: UserSession
+
+
+@dataclass(frozen=True, slots=True)
+class AuthenticatedDevice:
+    device: Device
+
+
+async def get_current_user(
+    request: Request,
+    session: SessionDep,
+    redis: RedisDep,
+    settings: SettingsDep,
+) -> AuthenticatedUser:
+    raw_token = request.cookies.get(settings.session_cookie_name)
+    if not raw_token:
+        raise APIError("unauthorized", "Authentication required", status.HTTP_401_UNAUTHORIZED)
+    user_session = await session.scalar(
+        select(UserSession).where(
+            UserSession.token_hash == sha256_hex(raw_token),
+            UserSession.revoked_at.is_(None),
+            UserSession.expires_at > datetime.now(UTC),
+        )
+    )
+    if user_session is None:
+        raise APIError("unauthorized", "Session is invalid or expired", status.HTTP_401_UNAUTHORIZED)
+    user = await session.get(User, user_session.user_id)
+    if user is None or user.deleted_at is not None:
+        raise APIError("unauthorized", "Session is invalid or expired", status.HTTP_401_UNAUTHORIZED)
+    await enforce_rate_limit(redis, f"rate:user:{user.id}", settings.app_rate_limit_per_minute)
+    return AuthenticatedUser(user=user, session=user_session)
+
+
+async def get_current_device(
+    request: Request,
+    session: SessionDep,
+    redis: RedisDep,
+    settings: SettingsDep,
+) -> AuthenticatedDevice:
+    token = request.headers.get("X-EA-Device-Token", "")
+    timestamp = request.headers.get("X-EA-Timestamp", "")
+    nonce = request.headers.get("X-EA-Nonce", "")
+    signature = request.headers.get("X-EA-Signature", "")
+    if not token or not timestamp.isdigit() or not NONCE_PATTERN.fullmatch(nonce):
+        raise APIError("invalid_device_auth", "Signed device headers are required", status.HTTP_401_UNAUTHORIZED)
+
+    request_time = int(timestamp)
+    if abs(int(time.time()) - request_time) > settings.request_max_age_seconds:
+        raise APIError("stale_request", "Signed request timestamp is outside the allowed window", status.HTTP_401_UNAUTHORIZED)
+
+    device = await session.scalar(
+        select(Device).where(Device.token_hash == sha256_hex(token), Device.status == "ACTIVE")
+    )
+    if device is None:
+        raise APIError("invalid_device_auth", "Device token is invalid or revoked", status.HTTP_401_UNAUTHORIZED)
+
+    body = await request.body()
+    expected = sign_ea_request(token, request.method, request.url.path, timestamp, nonce, body)
+    if not hmac.compare_digest(expected, signature.lower()):
+        raise APIError("invalid_signature", "Device request signature is invalid", status.HTTP_401_UNAUTHORIZED)
+
+    try:
+        accepted = await redis.set(
+            f"ea:nonce:{device.id}:{nonce}", "1", ex=settings.nonce_ttl_seconds, nx=True
+        )
+    except Exception as exc:
+        raise APIError(
+            "replay_guard_unavailable",
+            "Device request could not be safely verified",
+            status.HTTP_503_SERVICE_UNAVAILABLE,
+        ) from exc
+    if not accepted:
+        raise APIError("replayed_request", "Signed request nonce has already been used", status.HTTP_401_UNAUTHORIZED)
+
+    await enforce_rate_limit(redis, f"rate:device:{device.id}", settings.ea_rate_limit_per_minute)
+    request.state.device_id = device.id
+    return AuthenticatedDevice(device=device)

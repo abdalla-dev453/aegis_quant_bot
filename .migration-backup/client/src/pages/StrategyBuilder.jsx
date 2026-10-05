@@ -1,1 +1,158 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4uL2NvbXBvbmVudHMvUGFuZWwuanN4IjsKaW1wb3J0IFRvcEJhciBmcm9tICIuLi9jb21wb25lbnRzL1RvcEJhci5qc3giOwppbXBvcnQgeyBmZXRjaFNldHRpbmdzIH0gZnJvbSAiLi4vbGliL2JvdEZlZWQuanMiOwppbXBvcnQgeyBTa2VsZXRvbkNhcmQsIFNrZWxldG9uUm93IH0gZnJvbSAiLi4vY29tcG9uZW50cy9Ta2VsZXRvbkxvYWRlcnMuanN4IjsKCmNvbnN0IEVNUFRZID0gewogIHN5bWJvbHM6IFtdLAogIHRpbWVmcmFtZVRyaWdnZXI6ICJIMSIsCiAgdGltZWZyYW1lQmlhczogIkg0IiwKICByaXNrUGVyVHJhZGVQY3Q6IDAsCiAgYXRyU3RvcE11bHRpcGxpZXI6IDAsCiAgYXRyVGFrZVByb2ZpdE11bHRpcGxpZXI6IDAsCiAgbWF4Q29uY3VycmVudFBvc2l0aW9uczogMCwKICBtYWdpY051bWJlcjogIiIsCn07CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBTdHJhdGVneUJ1aWxkZXIoKSB7CiAgY29uc3QgW3NldHRpbmdzLCBzZXRTZXR0aW5nc10gPSB1c2VTdGF0ZShFTVBUWSk7CiAgY29uc3QgW3N0YXR1cywgc2V0U3RhdHVzXSA9IHVzZVN0YXRlKCJMb2FkaW5nIHNlcnZlciBjb25maWd1cmF0aW9uLi4uIik7CiAgY29uc3QgW2RyYWZ0LCBzZXREcmFmdF0gPSB1c2VTdGF0ZSh7IHJpc2s6ICIiLCBzdG9wOiAiIiwgdGFyZ2V0OiAiIiB9KTsKICBjb25zdCBbbG9hZGluZywgc2V0TG9hZGluZ10gPSB1c2VTdGF0ZSh0cnVlKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGZldGNoU2V0dGluZ3MoKQogICAgICAudGhlbigoZGF0YSkgPT4gewogICAgICAgIHNldFNldHRpbmdzKGRhdGEpOwogICAgICAgIHNldERyYWZ0KHsKICAgICAgICAgIHJpc2s6IFN0cmluZyhkYXRhLnJpc2tQZXJUcmFkZVBjdCksCiAgICAgICAgICBzdG9wOiBTdHJpbmcoZGF0YS5hdHJTdG9wTXVsdGlwbGllciksCiAgICAgICAgICB0YXJnZXQ6IFN0cmluZyhkYXRhLmF0clRha2VQcm9maXRNdWx0aXBsaWVyKSwKICAgICAgICB9KTsKICAgICAgICBzZXRTdGF0dXMoIkNvbm5lY3RlZCB0byBzZXJ2ZXIgY29uZmlndXJhdGlvbiIpOwogICAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgICB9KQogICAgICAuY2F0Y2goKGVycm9yKSA9PiB7CiAgICAgICAgc2V0U3RhdHVzKGVycm9yLm1lc3NhZ2UpOwogICAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgICB9KTsKICB9LCBbXSk7CgogIGNvbnN0IHZhbGlkYXRlID0gKCkgPT4gewogICAgY29uc3QgcmlzayA9IE51bWJlcihkcmFmdC5yaXNrKTsKICAgIGNvbnN0IHN0b3AgPSBOdW1iZXIoZHJhZnQuc3RvcCk7CiAgICBjb25zdCB0YXJnZXQgPSBOdW1iZXIoZHJhZnQudGFyZ2V0KTsKICAgIGlmICgKICAgICAgIVtyaXNrLCBzdG9wLCB0YXJnZXRdLmV2ZXJ5KE51bWJlci5pc0Zpbml0ZSkgfHwKICAgICAgcmlzayA8PSAwIHx8CiAgICAgIHJpc2sgPiA1IHx8CiAgICAgIHN0b3AgPD0gMCB8fAogICAgICB0YXJnZXQgPD0gMAogICAgKSB7CiAgICAgIHNldFN0YXR1cygKICAgICAgICAiSW52YWxpZCBkcmFmdDogcmlzayBtdXN0IGJlIDAtNSUsIGFuZCBBVFIgdmFsdWVzIG11c3QgYmUgcG9zaXRpdmUuIiwKICAgICAgKTsKICAgICAgcmV0dXJuOwogICAgfQogICAgc2V0U3RhdHVzKAogICAgICBgRHJhZnQgdmFsaWQuIFNlcnZlciByZW1haW5zIGF1dGhvcml0YXRpdmUgYXQgJHtzZXR0aW5ncy5yaXNrUGVyVHJhZGVQY3R9JSByaXNrLmAsCiAgICApOwogIH07CgogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBtaW4taC1mdWxsIGZsZXgtY29sIj4KICAgICAgPFRvcEJhcgogICAgICAgIHRpdGxlPSJTdHJhdGVneSBCdWlsZGVyIgogICAgICAgIHN1YnRpdGxlPSJJbnNwZWN0IGFuZCB2YWxpZGF0ZSB0aGUgbGl2ZSBzZXJ2ZXIgc3RyYXRlZ3kiCiAgICAgIC8+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGZsZXgtMSBnYXAtNCBvdmVyZmxvdy15LWF1dG8gcHgtOCBweS01IGxnOmdyaWQtY29scy0yIj4KICAgICAgICA8UGFuZWwgdGl0bGU9IlNlcnZlci1hdXRob3JpdGF0aXZlIHN0cmF0ZWd5Ij4KICAgICAgICAgIHshbG9hZGluZyA/ICgKICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTIgZ2FwLTMgdGV4dC1bMTJweF0iPgogICAgICAgICAgICAgIDxWYWx1ZQogICAgICAgICAgICAgICAgbGFiZWw9IlRyaWdnZXIgdGltZWZyYW1lIgogICAgICAgICAgICAgICAgdmFsdWU9e3NldHRpbmdzLnRpbWVmcmFtZVRyaWdnZXJ9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8VmFsdWUgbGFiZWw9IkJpYXMgdGltZWZyYW1lIiB2YWx1ZT17c2V0dGluZ3MudGltZWZyYW1lQmlhc30gLz4KICAgICAgICAgICAgICA8VmFsdWUgbGFiZWw9IlN5bWJvbHMiIHZhbHVlPXtzZXR0aW5ncy5zeW1ib2xzLmpvaW4oIiwgIikgfHwgIi0ifSAvPgogICAgICAgICAgICAgIDxWYWx1ZSBsYWJlbD0iTWFnaWMgbnVtYmVyIiB2YWx1ZT17c2V0dGluZ3MubWFnaWNOdW1iZXIgfHwgIi0ifSAvPgogICAgICAgICAgICAgIDxWYWx1ZQogICAgICAgICAgICAgICAgbGFiZWw9Ik1heCBwb3NpdGlvbnMiCiAgICAgICAgICAgICAgICB2YWx1ZT17c2V0dGluZ3MubWF4Q29uY3VycmVudFBvc2l0aW9uc30KICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDxWYWx1ZQogICAgICAgICAgICAgICAgbGFiZWw9IlJpc2sgcGVyIHRyYWRlIgogICAgICAgICAgICAgICAgdmFsdWU9e2Ake3NldHRpbmdzLnJpc2tQZXJUcmFkZVBjdH0lYH0KICAgICAgICAgICAgICAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICkgOiAoCiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTMiPgogICAgICAgICAgICAgIDxTa2VsZXRvblJvdyBjb2x1bW5zPXsyfSAvPgogICAgICAgICAgICAgIDxTa2VsZXRvblJvdyBjb2x1bW5zPXsyfSAvPgogICAgICAgICAgICAgIDxTa2VsZXRvblJvdyBjb2x1bW5zPXsyfSAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICl9CiAgICAgICAgICA8cCBjbGFzc05hbWU9Im10LTQgYm9yZGVyLXQgYm9yZGVyLWJvcmRlciBwdC0zIHRleHQtWzExcHhdIGxlYWRpbmctcmVsYXhlZCB0ZXh0LWluay1mYWludCI+CiAgICAgICAgICAgIEVudHJpZXMgcmVxdWlyZSBIMS9INCBFTUEgYWdyZWVtZW50LCByaXNpbmcgb3IgZmFsbGluZyBSU0kKICAgICAgICAgICAgY29uZmlybWF0aW9uLCBBVFIgc3RvcHMsIGFuZCBzZW50aW1lbnQgY29uZmlybWF0aW9uLiBUaGlzIHNjcmVlbgogICAgICAgICAgICBkb2VzIG5vdCBzaWxlbnRseSBvdmVycmlkZSB0aGUgcnVubmluZyB3b3JrZXIuCiAgICAgICAgICA8L3A+CiAgICAgICAgPC9QYW5lbD4KCiAgICAgICAgPFBhbmVsIHRpdGxlPSJQYXJhbWV0ZXIgdmFsaWRhdGlvbiI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgPEZpZWxkCiAgICAgICAgICAgICAgbGFiZWw9IlJpc2sgcGVyIHRyYWRlICglKSIKICAgICAgICAgICAgICB2YWx1ZT17ZHJhZnQucmlza30KICAgICAgICAgICAgICBvbkNoYW5nZT17KHZhbHVlKSA9PiBzZXREcmFmdCh7IC4uLmRyYWZ0LCByaXNrOiB2YWx1ZSB9KX0KICAgICAgICAgICAgLz4KICAgICAgICAgICAgPEZpZWxkCiAgICAgICAgICAgICAgbGFiZWw9IkFUUiBzdG9wIG11bHRpcGxpZXIiCiAgICAgICAgICAgICAgdmFsdWU9e2RyYWZ0LnN0b3B9CiAgICAgICAgICAgICAgb25DaGFuZ2U9eyh2YWx1ZSkgPT4gc2V0RHJhZnQoeyAuLi5kcmFmdCwgc3RvcDogdmFsdWUgfSl9CiAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDxGaWVsZAogICAgICAgICAgICAgIGxhYmVsPSJBVFIgdGFyZ2V0IG11bHRpcGxpZXIiCiAgICAgICAgICAgICAgdmFsdWU9e2RyYWZ0LnRhcmdldH0KICAgICAgICAgICAgICBvbkNoYW5nZT17KHZhbHVlKSA9PiBzZXREcmFmdCh7IC4uLmRyYWZ0LCB0YXJnZXQ6IHZhbHVlIH0pfQogICAgICAgICAgICAvPgogICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgb25DbGljaz17dmFsaWRhdGV9CiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIGJnLWFjY2VudCBweC0zIHB5LTIgdGV4dC1bMTJweF0gZm9udC1tZWRpdW0gdGV4dC13aGl0ZSBob3ZlcjpiZy1hY2NlbnQvOTAiCiAgICAgICAgICAgID4KICAgICAgICAgICAgICBWYWxpZGF0ZSBkcmFmdAogICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzExcHhdIHRleHQtaW5rLWZhaW50Ij57c3RhdHVzfTwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9QYW5lbD4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICApOwp9CgpmdW5jdGlvbiBWYWx1ZSh7IGxhYmVsLCB2YWx1ZSB9KSB7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHAtMyI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LVsxMHB4XSB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSB0ZXh0LWluay1mYWludCI+CiAgICAgICAge2xhYmVsfQogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTEgZm9udC1tb25vIHRleHQtaW5rIj57dmFsdWV9PC9kaXY+CiAgICA8L2Rpdj4KICApOwp9CgpmdW5jdGlvbiBGaWVsZCh7IGxhYmVsLCB2YWx1ZSwgb25DaGFuZ2UgfSkgewogIHJldHVybiAoCiAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9jayB0ZXh0LVsxMXB4XSB0ZXh0LWluay1kaW0iPgogICAgICB7bGFiZWx9CiAgICAgIDxpbnB1dAogICAgICAgIHR5cGU9Im51bWJlciIKICAgICAgICBzdGVwPSIwLjEiCiAgICAgICAgdmFsdWU9e3ZhbHVlfQogICAgICAgIG9uQ2hhbmdlPXsoZXZlbnQpID0+IG9uQ2hhbmdlKGV2ZW50LnRhcmdldC52YWx1ZSl9CiAgICAgICAgY2xhc3NOYW1lPSJtdC0xIHctZnVsbCByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMiB0ZXh0LXNtIHRleHQtaW5rIG91dGxpbmUtbm9uZSBmb2N1czpib3JkZXItYWNjZW50IgogICAgICAvPgogICAgPC9sYWJlbD4KICApOwp9Cg==
+import { useEffect, useState } from "react";
+import Panel from "../components/Panel.jsx";
+import TopBar from "../components/TopBar.jsx";
+import { fetchSettings } from "../lib/botFeed.js";
+import { SkeletonCard, SkeletonRow } from "../components/SkeletonLoaders.jsx";
+
+const EMPTY = {
+  symbols: [],
+  timeframeTrigger: "H1",
+  timeframeBias: "H4",
+  riskPerTradePct: 0,
+  atrStopMultiplier: 0,
+  atrTakeProfitMultiplier: 0,
+  maxConcurrentPositions: 0,
+  magicNumber: "",
+};
+
+export default function StrategyBuilder() {
+  const [settings, setSettings] = useState(EMPTY);
+  const [status, setStatus] = useState("Loading server configuration...");
+  const [draft, setDraft] = useState({ risk: "", stop: "", target: "" });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchSettings()
+      .then((data) => {
+        setSettings(data);
+        setDraft({
+          risk: String(data.riskPerTradePct),
+          stop: String(data.atrStopMultiplier),
+          target: String(data.atrTakeProfitMultiplier),
+        });
+        setStatus("Connected to server configuration");
+        setLoading(false);
+      })
+      .catch((error) => {
+        setStatus(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  const validate = () => {
+    const risk = Number(draft.risk);
+    const stop = Number(draft.stop);
+    const target = Number(draft.target);
+    if (
+      ![risk, stop, target].every(Number.isFinite) ||
+      risk <= 0 ||
+      risk > 5 ||
+      stop <= 0 ||
+      target <= 0
+    ) {
+      setStatus(
+        "Invalid draft: risk must be 0-5%, and ATR values must be positive.",
+      );
+      return;
+    }
+    setStatus(
+      `Draft valid. Server remains authoritative at ${settings.riskPerTradePct}% risk.`,
+    );
+  };
+
+  return (
+    <div className="flex min-h-full flex-col">
+      <TopBar
+        title="Strategy Builder"
+        subtitle="Inspect and validate the live server strategy"
+      />
+      <div className="grid flex-1 gap-4 overflow-y-auto px-8 py-5 lg:grid-cols-2">
+        <Panel title="Server-authoritative strategy">
+          {!loading ? (
+            <div className="grid grid-cols-2 gap-3 text-[12px]">
+              <Value
+                label="Trigger timeframe"
+                value={settings.timeframeTrigger}
+              />
+              <Value label="Bias timeframe" value={settings.timeframeBias} />
+              <Value label="Symbols" value={settings.symbols.join(", ") || "-"} />
+              <Value label="Magic number" value={settings.magicNumber || "-"} />
+              <Value
+                label="Max positions"
+                value={settings.maxConcurrentPositions}
+              />
+              <Value
+                label="Risk per trade"
+                value={`${settings.riskPerTradePct}%`}
+              />
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+              <SkeletonRow columns={2} />
+            </div>
+          )}
+          <p className="mt-4 border-t border-border pt-3 text-[11px] leading-relaxed text-ink-faint">
+            Entries require H1/H4 EMA agreement, rising or falling RSI
+            confirmation, ATR stops, and sentiment confirmation. This screen
+            does not silently override the running worker.
+          </p>
+        </Panel>
+
+        <Panel title="Parameter validation">
+          <div className="space-y-3">
+            <Field
+              label="Risk per trade (%)"
+              value={draft.risk}
+              onChange={(value) => setDraft({ ...draft, risk: value })}
+            />
+            <Field
+              label="ATR stop multiplier"
+              value={draft.stop}
+              onChange={(value) => setDraft({ ...draft, stop: value })}
+            />
+            <Field
+              label="ATR target multiplier"
+              value={draft.target}
+              onChange={(value) => setDraft({ ...draft, target: value })}
+            />
+            <button
+              onClick={validate}
+              className="rounded-md bg-accent px-3 py-2 text-[12px] font-medium text-white hover:bg-accent/90"
+            >
+              Validate draft
+            </button>
+            <div className="text-[11px] text-ink-faint">{status}</div>
+          </div>
+        </Panel>
+      </div>
+    </div>
+  );
+}
+
+function Value({ label, value }) {
+  return (
+    <div className="rounded-md border border-border bg-surface-alt p-3">
+      <div className="text-[10px] uppercase tracking-wide text-ink-faint">
+        {label}
+      </div>
+      <div className="mt-1 font-mono text-ink">{value}</div>
+    </div>
+  );
+}
+
+function Field({ label, value, onChange }) {
+  return (
+    <label className="block text-[11px] text-ink-dim">
+      {label}
+      <input
+        type="number"
+        step="0.1"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="mt-1 w-full rounded-md border border-border bg-surface-alt px-3 py-2 text-sm text-ink outline-none focus:border-accent"
+      />
+    </label>
+  );
+}

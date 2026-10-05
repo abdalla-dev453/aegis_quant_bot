@@ -1,1 +1,102 @@
-IyBBZWdpcyBRdWFudCBQeXRob24gU2VydmljZQoKUHl0aG9uIHRyYWRpbmcgbG9vcCBhbmQgRmFzdEFQSSBkYXNoYm9hcmQvY29udHJvbCBzZXJ2aWNlLiBPcGVuQUkgcHJvZHVjZXMKc2NoZW1hLXZhbGlkYXRlZCB0cmFkZSBwcm9wb3NhbHM7IGRldGVybWluaXN0aWMgc3RyYXRlZ3ksIHBvcnRmb2xpbywgYnJva2VyLAphbmQgZXhlY3V0aW9uIGNoZWNrcyByZW1haW4gYXV0aG9yaXRhdGl2ZS4KCmBUUkFESU5HX01PREU9cGFwZXJgIGlzIHRoZSBkZWZhdWx0OiBpdCBwZXJmb3JtcyBkYXRhLCBBSSwgYW5kIGJyb2tlciBwcmVmbGlnaHQKY2hlY2tzIGJ1dCBzdXBwcmVzc2VzIGBvcmRlcl9zZW5kYC4gU2VlIGAuLi9kZXBsb3kvREVQTE9ZTUVOVC5tZGAgYmVmb3JlIGFueQpkZW1vIG9yIGxpdmUgcm9sbG91dC4KCiMjIFNldHVwCgpgYGBiYXNoCiMgV2luZG93cyBvbmx5IOKAlCB0aGUgTWV0YVRyYWRlcjUgcGFja2FnZSB3cmFwcyB0aGUgbmF0aXZlIHRlcm1pbmFsIEFQSQp2ZW52XFNjcmlwdHNccHl0aG9uIC1tIHBpcCBpbnN0YWxsIC1yIHJlcXVpcmVtZW50cy50eHQKYGBgCgoxLiBDb3B5IGAuZW52LmV4YW1wbGVgIHRvIGEgbG9jYWwgZW52aXJvbm1lbnQgZmlsZSBvciBleHBvcnQgaXRzIHZhbHVlcyBpbgogICB0aGUgc2hlbGwuIE5ldmVyIGNvbW1pdCByZWFsIGNyZWRlbnRpYWxzIG9yIEFQSSB0b2tlbnMuCjIuIE9wZW4gTVQ1LCBsb2cgaW50byB5b3VyIChpZGVhbGx5ICoqZGVtbyoqKSBhY2NvdW50IG9uY2UgbWFudWFsbHkgc28gdGhlCiAgIHRlcm1pbmFsIGhhcyBjYWNoZWQgdGhlIHNlc3Npb24uCjMuIFNldCBgTVQ1X0xPR0lOYCwgYE1UNV9QQVNTV09SRGAsIGBNVDVfU0VSVkVSYCwgYW5kIGBPUEVOQUlfQVBJX0tFWWAgaW4KICAgYHNlcnZlci8uZW52YCAoZG9uJ3QgaGFyZGNvZGUgdGhlbSBpbiBgY29uZmlnLnB5YCkuIFRoZSBib3QgZXhpdHMgYmVmb3JlCiAgIGNvbm5lY3RpbmcgdG8gTVQ1IGlmIGl0cyBPcGVuQUkgY3JlZGVudGlhbCBpcyBtaXNzaW5nLgogICBPbiBMaW51eCwgc2V0IGBNVDVMSU5VWF9FTkFCTEVEPTFgIG9ubHkgYWZ0ZXIgdGhlIG10NWxpbnV4IGJyaWRnZSBoYXMgYmVlbgogICBjb25maWd1cmVkOyBpdCBpcyBkZWxpYmVyYXRlbHkgZGlzYWJsZWQgYnkgZGVmYXVsdC4KNC4gU2V0IGEgbm9uLWVtcHR5IGBBUElfVE9LRU5gIGluIGBzZXJ2ZXIvLmVudmAgYW5kIHRoZSBtYXRjaGluZwogICBgVklURV9BUElfVE9LRU5gIGluIGBjbGllbnQvLmVudmAuIFRoZSBjdXJyZW50IEFQSSByZXF1aXJlcyB0aGUgdG9rZW4gb24KICAgcHJvdGVjdGVkIHJvdXRlcyBldmVuIGluIHBhcGVyIG1vZGUgYW5kIG9uIGxvb3BiYWNrOyBhbiBlbXB0eSB0b2tlbiBjYXVzZXMKICAgZGFzaGJvYXJkIEFQSSByZXF1ZXN0cyB0byByZXR1cm4gNDAxLgo1LiBBZGp1c3QgYFRSQURJTkdfU1lNQk9MU2AgYW5kIGBSSVNLYCBpbiBgY29uZmlnLnB5YCB0byBtYXRjaCB5b3VyIGJyb2tlcidzCiAgIHN5bWJvbCBuYW1lcyAoZS5nLiBzb21lIGJyb2tlcnMgc3VmZml4IGAuYWAsIGBFVVJVU0QucHJvYCwgZXRjLikgYW5kIHlvdXIKICAgcmVhbCByaXNrIHRvbGVyYW5jZS4KNi4gUnVuOgoKICAgYGBgYmFzaAogICBweXRob24gbWFpbi5weQogICBgYGAKClRoZSBmcm9udGVuZCBkZWZhdWx0cyB0byBgaHR0cDovL2xvY2FsaG9zdDo4MDAwYCBhbmQgc3RhcnRzIGluIGBTeXN0ZW1gIHRoZW1lCm1vZGUuIFVzZSB0aGUgdGhlbWUgbWVudSBpbiB0aGUgdG9wIGJhciB0byBjaG9vc2UgYExpZ2h0YCwgYERhcmtgLCBvciBgU3lzdGVtYDsKdGhlIHNlbGVjdGlvbiBpcyBzYXZlZCBpbiB0aGUgYnJvd3Nlci4gYHB5dGhvbiBtYWluLnB5YCBzdGFydHMgYm90aCB0aGUgQVBJCmFuZCB0aGUgUHl0aG9uIHRyYWRpbmcgbG9vcC4KCiMjIEZpbGUgbWFwCgp8IEZpbGUgICAgICAgICAgICAgICB8IFJlc3BvbnNpYmlsaXR5ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAp8IC0tLS0tLS0tLS0tLS0tLS0tLSB8IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gfAp8IGBjb25maWcucHlgICAgICAgICB8IEFsbCBzZXR0aW5ncyDigJQgY3JlZGVudGlhbHMsIHN5bWJvbHMsIGluZGljYXRvci9yaXNrIHBhcmFtcy4gTm8gc2lkZSBlZmZlY3RzLiB8CnwgYGRhdGFfcHJvdmlkZXIucHlgIHwgTVQ1IGNvbm5lY3Rpb24gbGlmZWN5Y2xlLCByZWNvbm5lY3Rpb24sIGNhbmRsZS9hY2NvdW50IGRhdGEgZmV0Y2hpbmcuICAgICAgICB8CnwgYHN0cmF0ZWd5LnB5YCAgICAgIHwgQ2xvc2VkLWNhbmRsZSBpbmRpY2F0b3IgY29tcHV0YXRpb24gdXNlZCBhcyBBSSBtYXJrZXQgY29udGV4dC4gICAgICAgICAgICAgICAgfAp8IGBhaV9lbmdpbmUucHlgICAgICB8IEdQVC00byBKU09OLW1vZGUgY2FsbCwgUHlkYW50aWMgcHJvcG9zYWwgdmFsaWRhdGlvbiwgZmFpbC1jbG9zZWQgSE9MRC4gICAgICAgfAp8IGBuZXdzX3Byb3ZpZGVyLnB5YCB8IE1UNSBjYWxlbmRhci9uZXdzIGFkYXB0ZXIsIE5ld3NBUEkvWWFob28gZmFsbGJhY2ssIGNsZWFuaW5nIGFuZCBjYWNoaW5nLiAgICAgfAp8IGBleGVjdXRpb24ucHlgICAgICB8IFJpc2sgdmFsaWRhdGlvbiwgTVQ1IGBvcmRlcl9zZW5kYCwgYW5kIHRyYWlsaW5nIHN0b3AgbWFuYWdlbWVudC4gICAgICAgICAgICAgIHwKfCBgbWFpbi5weWAgICAgICAgICAgfCBBc3luYyBsb29wIOKAlCBwb2xscyBjbG9zZWQgY2FuZGxlcyBhbmQgZGlzcGF0Y2hlcyB2YWxpZGF0ZWQgQUkgcHJvcG9zYWxzLiAgICAgIHwKCiMjIEtub3duIGxpbWl0YXRpb25zIHRvIGFkZHJlc3MgYmVmb3JlIGdvaW5nIGxpdmUKCjEuICoqTm8gYmFja3Rlc3QgaGFybmVzcyBpbmNsdWRlZC4qKiBUaGlzIGlzIGxpdmUvcGFwZXItZXhlY3V0aW9uIGNvZGUuCiAgIFZhbGlkYXRlIHRoZSBzdHJhdGVneSBsb2dpYyBpbiBgc3RyYXRlZ3kucHlgIGFnYWluc3QgaGlzdG9yaWNhbCBkYXRhCiAgIChlLmcuIHZpYSBgYmFja3Rlc3RpbmcucHlgIG9yIGEgY3VzdG9tIHZlY3Rvcml6ZWQgYmFja3Rlc3QpIGJlZm9yZQogICBydW5uaW5nIGl0IGFnYWluc3QgYSBmdW5kZWQgYWNjb3VudC4KMi4gKipTaW5nbGUtcHJvY2Vzcywgc2luZ2xlLW1hY2hpbmUuKiogTm8gZGlzdHJpYnV0ZWQgbG9ja2luZyDigJQgZG9uJ3QgcnVuCiAgIHR3byBpbnN0YW5jZXMgb2YgYG1haW4ucHlgIGFnYWluc3QgdGhlIHNhbWUgYWNjb3VudC9tYWdpYyBudW1iZXIKICAgc2ltdWx0YW5lb3VzbHksIG9yIGBtYXhfY29uY3VycmVudF9wb3NpdGlvbnNgIGFjY291bnRpbmcgd2lsbCByYWNlLgozLiAqKmBkZXZpYXRpb25fcG9pbnRzYCAoc2xpcHBhZ2UgdG9sZXJhbmNlKSBhbmQgYGF0cl9zbF9tdWx0aXBsaWVyYCAvCiAgIGBhdHJfdHBfbXVsdGlwbGllcmAqKiBhcmUgcmVhc29uYWJsZSBzdGFydGluZyBkZWZhdWx0cywgbm90IHR1bmVkCiAgIHZhbHVlcyDigJQgYmFja3Rlc3QgYW5kIGFkanVzdCBwZXIgc3ltYm9sLgo0LiBQYXBlciBtb2RlIHN1cHByZXNzZXMgbmV3IGVudHJpZXMgYW5kIGF1dG9tYXRpYyB0cmFpbGluZy1zdG9wIG1vZGlmaWNhdGlvbnMuCiAgIEhBTFRFRCBhbHNvIGRpc2FibGVzIGF1dG9tYXRpYyBwb3NpdGlvbiBtYW5hZ2VtZW50LiBUaGUgZXhwbGljaXQsCiAgIGF1dGhlbnRpY2F0ZWQgY2xvc2UtcG9zaXRpb25zIG9wZXJhdG9yIGFjdGlvbiByZW1haW5zIGF2YWlsYWJsZSBpbiBlaXRoZXIKICAgZXhlY3V0aW9uIG1vZGUgYW5kIHN1Ym1pdHMgYnJva2VyIG1hcmtldCBvcmRlcnMgZm9yIGJvdC1vd25lZCBwb3NpdGlvbnMuCjUuIFRoZSBkYXNoYm9hcmQgcmVwb3J0cyBleGVjdXRpb24gbW9kZSBzZXBhcmF0ZWx5IGZyb20gUlVOTklORy9QQVVTRUQvSEFMVEVECiAgIG9wZXJhdG9yIGNvbnRyb2wgc3RhdGUuIFJlLWFybWluZyBIQUxURUQgdGhyb3VnaCB0aGUgZGFzaGJvYXJkIHJlcXVpcmVzCiAgIGNvbmZpcm1hdGlvbjsgZGlyZWN0IGF1dGhlbnRpY2F0ZWQgQVBJIGNvbnRyb2wgY2hhbmdlcyByZW1haW4gcG9zc2libGUuCgojIyBBcmNoaXRlY3R1cmUgbm90ZXMKCi0gKipBSSBwcm9wb3NhbCBib3VuZGFyeSoqOiBHUFQtNG8gcmVjZWl2ZXMgb25seSBjbG9zZWQtY2FuZGxlIEgxL0g0IGluZGljYXRvcgogIHZhbHVlcyBhbmQgcmV0dXJucyBKU09OIG1vZGUgb3V0cHV0IGF0IHRlbXBlcmF0dXJlIDAuMC4gUHlkYW50aWMgcmVqZWN0cyBhbnkKICBub24tY29uZm9ybWluZyByZXNwb25zZSwgbG9ncyB0aGUgcmF3IHJlcGx5IG9ubHkgdG8gYGVycm9yLmxvZ2AsIGFuZCBlbWl0cyBhCiAgZmFpbC1jbG9zZWQgSE9MRCBpbnN0ZWFkLgotICoqTGl2ZSBtYWNybyBjb250ZXh0Kio6IHRoZSBib3QgZmlyc3QgYXR0ZW1wdHMgYSBjYWxlbmRhci9uZXdzIG1ldGhvZCBleHBvc2VkCiAgYnkgdGhlIGNvbm5lY3RlZCBNVDUgYnJpZGdlIChpbmNsdWRpbmcgbXQ1bGludXgpLiBJZiB1bmF2YWlsYWJsZSwgaXQgdXNlcyBhbgogIG9wdGlvbmFsIGBORVdTX0FQSV9LRVlgIGZlZWQgdGhlbiBZYWhvbyBGaW5hbmNlIFJTUy4gQWxsIHNvdXJjZXMgYXJlIG5vcm1hbGl6ZWQKICBhbmQgb25seSBoaWdoLWltcGFjdCBpdGVtcyBmcm9tIHRoZSBwcmlvciAyNCBob3VycyByZWFjaCB0aGUgTExNLgotICoqTmV2ZXIgdHJhZGVzIG9uIGEgZm9ybWluZyBjYW5kbGUqKjogYGRhdGFfcHJvdmlkZXIuZ2V0X3JhdGVzKClgIHVzZXMKICBgY29weV9yYXRlc19mcm9tX3BvcyguLi4sIHN0YXJ0X3Bvcz0xLCAuLi4pYCwgYWx3YXlzIHNraXBwaW5nIHRoZQogIGN1cnJlbnRseS1vcGVuIGNhbmRsZSwgYW5kIGBtYWluLnB5YCdzIGBMYXN0Q2FuZGxlVHJhY2tlcmAgcmUtZXZhbHVhdGVzIGEKICBzeW1ib2wgb25seSBvbmNlIGl0cyBIMSBjYW5kbGUgaGFzIGFjdHVhbGx5IGNsb3NlZC4KLSAqKlBvc2l0aW9uIHNpemluZyBpcyBicm9rZXItYXdhcmUqKjogdXNlcyBgc3ltYm9sX2luZm8oKS50cmFkZV90aWNrX3ZhbHVlYAogIC8gYHRyYWRlX3RpY2tfc2l6ZWAgcmF0aGVyIHRoYW4gYSBoYXJkY29kZWQgcGlwIHZhbHVlLCBzbyAxLjUlIHJpc2sgaXMKICBhY2N1cmF0ZSBhY3Jvc3MgRlggcGFpcnMsIEpQWSBwYWlycywgYW5kIG1ldGFscyBhbGlrZS4KCi0gKipEYXNoYm9hcmQgZGF0YSBpcyBBUEktYmFja2VkKio6IGBjbGllbnQvc3JjL2xpYi9ib3RGZWVkLmpzYCBwb2xscyB0aGUKICAgRmFzdEFQSSBzZXJ2aWNlOyBpdCBpcyBub3QgYmFja2VkIGJ5IG1vY2sgZ2VuZXJhdG9ycy4gT3BlcmF0b3IgYWN0aW9ucyBhcmUKICAgYXV0aGVudGljYXRlZC4gVGhlIGV4cGxpY2l0IGNsb3NlLXBvc2l0aW9ucyBhY3Rpb24gaXMgbGltaXRlZCB0byB0aGUKICAgY29uZmlndXJlZCBib3QgbWFnaWMgbnVtYmVyIGFuZCBzdWJtaXRzIG1hcmtldCBjbG9zZSByZXF1ZXN0cy4KCiMjIERlcGxveW1lbnQKClVzZSBbYC4uL2RlcGxveS9ERVBMT1lNRU5ULm1kYF0oLi4vZGVwbG95L0RFUExPWU1FTlQubWQpIGZvciB0aGUgc3lzdGVtZCBzZXJ2aWNlLCBOZ2lueCByZXZlcnNlIHByb3h5LCBlbnZpcm9ubWVudCBzZXR1cCwgaGVhbHRoIGNoZWNrcywgYW5kIGRlbW8tYWNjb3VudCBhY2NlcHRhbmNlIGdhdGUuIFRoZSBkZWZhdWx0IGRlcGxveW1lbnQgbW9kZSBpcyBwYXBlciB0cmFkaW5nLgo=
+# Aegis Quant Python Service
+
+Python trading loop and FastAPI dashboard/control service. OpenAI produces
+schema-validated trade proposals; deterministic strategy, portfolio, broker,
+and execution checks remain authoritative.
+
+`TRADING_MODE=paper` is the default: it performs data, AI, and broker preflight
+checks but suppresses `order_send`. See `../deploy/DEPLOYMENT.md` before any
+demo or live rollout.
+
+## Setup
+
+```bash
+# Windows only — the MetaTrader5 package wraps the native terminal API
+venv\Scripts\python -m pip install -r requirements.txt
+```
+
+1. Copy `.env.example` to a local environment file or export its values in
+   the shell. Never commit real credentials or API tokens.
+2. Open MT5, log into your (ideally **demo**) account once manually so the
+   terminal has cached the session.
+3. Set `MT5_LOGIN`, `MT5_PASSWORD`, `MT5_SERVER`, and `OPENAI_API_KEY` in
+   `server/.env` (don't hardcode them in `config.py`). The bot exits before
+   connecting to MT5 if its OpenAI credential is missing.
+   On Linux, set `MT5LINUX_ENABLED=1` only after the mt5linux bridge has been
+   configured; it is deliberately disabled by default.
+4. Set a non-empty `API_TOKEN` in `server/.env` and the matching
+   `VITE_API_TOKEN` in `client/.env`. The current API requires the token on
+   protected routes even in paper mode and on loopback; an empty token causes
+   dashboard API requests to return 401.
+5. Adjust `TRADING_SYMBOLS` and `RISK` in `config.py` to match your broker's
+   symbol names (e.g. some brokers suffix `.a`, `EURUSD.pro`, etc.) and your
+   real risk tolerance.
+6. Run:
+
+   ```bash
+   python main.py
+   ```
+
+The frontend defaults to `http://localhost:8000` and starts in `System` theme
+mode. Use the theme menu in the top bar to choose `Light`, `Dark`, or `System`;
+the selection is saved in the browser. `python main.py` starts both the API
+and the Python trading loop.
+
+## File map
+
+| File               | Responsibility                                                               |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `config.py`        | All settings — credentials, symbols, indicator/risk params. No side effects. |
+| `data_provider.py` | MT5 connection lifecycle, reconnection, candle/account data fetching.        |
+| `strategy.py`      | Closed-candle indicator computation used as AI market context.                |
+| `ai_engine.py`     | GPT-4o JSON-mode call, Pydantic proposal validation, fail-closed HOLD.       |
+| `news_provider.py` | MT5 calendar/news adapter, NewsAPI/Yahoo fallback, cleaning and caching.     |
+| `execution.py`     | Risk validation, MT5 `order_send`, and trailing stop management.              |
+| `main.py`          | Async loop — polls closed candles and dispatches validated AI proposals.      |
+
+## Known limitations to address before going live
+
+1. **No backtest harness included.** This is live/paper-execution code.
+   Validate the strategy logic in `strategy.py` against historical data
+   (e.g. via `backtesting.py` or a custom vectorized backtest) before
+   running it against a funded account.
+2. **Single-process, single-machine.** No distributed locking — don't run
+   two instances of `main.py` against the same account/magic number
+   simultaneously, or `max_concurrent_positions` accounting will race.
+3. **`deviation_points` (slippage tolerance) and `atr_sl_multiplier` /
+   `atr_tp_multiplier`** are reasonable starting defaults, not tuned
+   values — backtest and adjust per symbol.
+4. Paper mode suppresses new entries and automatic trailing-stop modifications.
+   HALTED also disables automatic position management. The explicit,
+   authenticated close-positions operator action remains available in either
+   execution mode and submits broker market orders for bot-owned positions.
+5. The dashboard reports execution mode separately from RUNNING/PAUSED/HALTED
+   operator control state. Re-arming HALTED through the dashboard requires
+   confirmation; direct authenticated API control changes remain possible.
+
+## Architecture notes
+
+- **AI proposal boundary**: GPT-4o receives only closed-candle H1/H4 indicator
+  values and returns JSON mode output at temperature 0.0. Pydantic rejects any
+  non-conforming response, logs the raw reply only to `error.log`, and emits a
+  fail-closed HOLD instead.
+- **Live macro context**: the bot first attempts a calendar/news method exposed
+  by the connected MT5 bridge (including mt5linux). If unavailable, it uses an
+  optional `NEWS_API_KEY` feed then Yahoo Finance RSS. All sources are normalized
+  and only high-impact items from the prior 24 hours reach the LLM.
+- **Never trades on a forming candle**: `data_provider.get_rates()` uses
+  `copy_rates_from_pos(..., start_pos=1, ...)`, always skipping the
+  currently-open candle, and `main.py`'s `LastCandleTracker` re-evaluates a
+  symbol only once its H1 candle has actually closed.
+- **Position sizing is broker-aware**: uses `symbol_info().trade_tick_value`
+  / `trade_tick_size` rather than a hardcoded pip value, so 1.5% risk is
+  accurate across FX pairs, JPY pairs, and metals alike.
+
+- **Dashboard data is API-backed**: `client/src/lib/botFeed.js` polls the
+   FastAPI service; it is not backed by mock generators. Operator actions are
+   authenticated. The explicit close-positions action is limited to the
+   configured bot magic number and submits market close requests.
+
+## Deployment
+
+Use [`../deploy/DEPLOYMENT.md`](../deploy/DEPLOYMENT.md) for the systemd service, Nginx reverse proxy, environment setup, health checks, and demo-account acceptance gate. The default deployment mode is paper trading.

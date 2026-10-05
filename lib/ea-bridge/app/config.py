@@ -1,1 +1,27 @@
-ZnJvbSBmdW5jdG9vbHMgaW1wb3J0IGxydV9jYWNoZQoKZnJvbSBweWRhbnRpYyBpbXBvcnQgRmllbGQKZnJvbSBweWRhbnRpY19zZXR0aW5ncyBpbXBvcnQgQmFzZVNldHRpbmdzLCBTZXR0aW5nc0NvbmZpZ0RpY3QKCgpjbGFzcyBTZXR0aW5ncyhCYXNlU2V0dGluZ3MpOgogICAgbW9kZWxfY29uZmlnID0gU2V0dGluZ3NDb25maWdEaWN0KGVudl9maWxlPSIuZW52IiwgZXh0cmE9Imlnbm9yZSIpCgogICAgYXBwX2Vudjogc3RyID0gImRldmVsb3BtZW50IgogICAgZGF0YWJhc2VfdXJsOiBzdHIgPSAicG9zdGdyZXNxbCthc3luY3BnOi8vb255eDpvbnl4QDEyNy4wLjAuMTo1NDMyL29ueXgiCiAgICByZWRpc191cmw6IHN0ciA9ICJyZWRpczovLzEyNy4wLjAuMTo2Mzc5LzAiCiAgICB3ZWJfb3JpZ2luOiBzdHIgPSAiaHR0cDovL2xvY2FsaG9zdDozMDAwIgogICAgc2Vzc2lvbl9jb29raWVfbmFtZTogc3RyID0gImFlZ2lzX3Nlc3Npb24iCiAgICBzZXNzaW9uX2Nvb2tpZV9zZWN1cmU6IGJvb2wgPSBUcnVlCiAgICBzZXNzaW9uX3R0bF9zZWNvbmRzOiBpbnQgPSBGaWVsZChkZWZhdWx0PTQzXzIwMCwgZ2U9MzAwLCBsZT0yXzU5Ml8wMDApCiAgICBwYWlyaW5nX2NvZGVfdHRsX3NlY29uZHM6IGludCA9IEZpZWxkKGRlZmF1bHQ9NjAwLCBnZT02MCwgbGU9M182MDApCiAgICBzaWduYWxfdHRsX3NlY29uZHM6IGludCA9IEZpZWxkKGRlZmF1bHQ9MzAsIGdlPTEsIGxlPTMwMCkKICAgIHJlcXVlc3RfbWF4X2FnZV9zZWNvbmRzOiBpbnQgPSBGaWVsZChkZWZhdWx0PTMwLCBnZT0xLCBsZT0zMCkKICAgIG5vbmNlX3R0bF9zZWNvbmRzOiBpbnQgPSBGaWVsZChkZWZhdWx0PTYwLCBnZT0zMCwgbGU9MzAwKQogICAgZWFfcmF0ZV9saW1pdF9wZXJfbWludXRlOiBpbnQgPSBGaWVsZChkZWZhdWx0PTEyMCwgZ2U9MSwgbGU9MTBfMDAwKQogICAgYXBwX3JhdGVfbGltaXRfcGVyX21pbnV0ZTogaW50ID0gRmllbGQoZGVmYXVsdD02MCwgZ2U9MSwgbGU9MTBfMDAwKQoKCkBscnVfY2FjaGUobWF4c2l6ZT0xKQpkZWYgZ2V0X3NldHRpbmdzKCkgLT4gU2V0dGluZ3M6CiAgICByZXR1cm4gU2V0dGluZ3MoKQ==
+from functools import lru_cache
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    app_env: str = "development"
+    database_url: str = "postgresql+asyncpg://onyx:onyx@127.0.0.1:5432/onyx"
+    redis_url: str = "redis://127.0.0.1:6379/0"
+    web_origin: str = "http://localhost:3000"
+    session_cookie_name: str = "aegis_session"
+    session_cookie_secure: bool = True
+    session_ttl_seconds: int = Field(default=43_200, ge=300, le=2_592_000)
+    pairing_code_ttl_seconds: int = Field(default=600, ge=60, le=3_600)
+    signal_ttl_seconds: int = Field(default=30, ge=1, le=300)
+    request_max_age_seconds: int = Field(default=30, ge=1, le=30)
+    nonce_ttl_seconds: int = Field(default=60, ge=30, le=300)
+    ea_rate_limit_per_minute: int = Field(default=120, ge=1, le=10_000)
+    app_rate_limit_per_minute: int = Field(default=60, ge=1, le=10_000)
+
+
+@lru_cache(maxsize=1)
+def get_settings() -> Settings:
+    return Settings()

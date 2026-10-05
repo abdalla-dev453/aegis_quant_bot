@@ -1,1 +1,56 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKaW1wb3J0IHsgZm9ybWF0UHJpY2UgfSBmcm9tICIuLi9saWIvYm90RmVlZC5qcyI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBUcmFkZUFuYWx5c2lzKHsgdHJhZGVBbmFseXNpcyB9KSB7CiAgY29uc3QgeyBzdW1tYXJ5LCByZWNlbnRUcmFkZXMgfSA9IHRyYWRlQW5hbHlzaXMgPz8ge307CiAgY29uc3QgdG90YWwgPSBzdW1tYXJ5Py50b3RhbFRyYWRlcyA/PyAwOwogIGNvbnN0IG5ldFBubCA9IHN1bW1hcnk/Lm5ldFBubCA/PyAwLjA7CiAgY29uc3QgcG9zaXRpdmUgPSBuZXRQbmwgPj0gMDsKCiAgcmV0dXJuICgKICAgIDxQYW5lbAogICAgICB0aXRsZT0iVHJhZGUgQW5hbHlzaXMgwrcgUnVudGltZSBMZWRnZXIiCiAgICAgIGJhZGdlPXs8c3BhbiBjbGFzc05hbWU9ImZvbnQtbW9ubyB0ZXh0LVsxMnB4XSB0ZXh0LWluayI+e3RvdGFsfSB0cmFkZXM8L3NwYW4+fQogICAgPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMiBnYXAtMyI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgYmctc3VyZmFjZS1hbHQgcHgtMyBweS0yIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LVsxMHB4XSB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIgdGV4dC1pbmstZmFpbnQiPlRvdGFsIFRyYWRlczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZvbnQtbW9ubyB0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgdGV4dC1pbmsiPnt0b3RhbH08L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1zdXJmYWNlLWFsdCBweC0zIHB5LTIiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzEwcHhdIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LWluay1mYWludCI+TmV0IFAmTDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9e2Bmb250LW1vbm8gdGV4dC1sZyBmb250LXNlbWlib2xkICR7cG9zaXRpdmUgPyAidGV4dC1idWxsIiA6ICJ0ZXh0LWJlYXIifWB9PgogICAgICAgICAgICB7cG9zaXRpdmUgPyAiKyIgOiAiIn0ke25ldFBubC50b0ZpeGVkKDIpfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQgc3BhY2UteS0xLjUiPgogICAgICAgIHtBcnJheS5pc0FycmF5KHJlY2VudFRyYWRlcykgJiYgcmVjZW50VHJhZGVzLmxlbmd0aCA9PT0gMCAmJiAoCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHktNCB0ZXh0LWNlbnRlciB0ZXh0LVsxMnB4XSB0ZXh0LWluay1mYWludCI+Tm8gdHJhZGVzIHJlY29yZGVkIHlldC48L2Rpdj4KICAgICAgICApfQogICAgICAgIHtBcnJheS5pc0FycmF5KHJlY2VudFRyYWRlcykgJiYgcmVjZW50VHJhZGVzLm1hcCgodHJhZGUpID0+ICgKICAgICAgICAgIDxkaXYKICAgICAgICAgICAga2V5PXt0cmFkZS50aWNrZXQgPz8gYCR7dHJhZGUuc3ltYm9sfS0ke3RyYWRlLmRpcmVjdGlvbn1gfQogICAgICAgICAgICBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIHB4LTMgcHktMiB0ZXh0LVsxMnB4XSIKICAgICAgICAgID4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIj4KICAgICAgICAgICAgICA8c3BhbgogICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgcm91bmRlZCBweC0xLjUgcHktMC41IHRleHQtWzEwcHhdIGZvbnQtc2VtaWJvbGQgJHsKICAgICAgICAgICAgICAgICAgdHJhZGUuZGlyZWN0aW9uID09PSAiQlVZIiA/ICJiZy1idWxsLWRpbSB0ZXh0LWJ1bGwiIDogImJnLWJlYXItZGltIHRleHQtYmVhciIKICAgICAgICAgICAgICAgIH1gfQogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHt0cmFkZS5kaXJlY3Rpb259CiAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1pbmsiPnt0cmFkZS5zeW1ib2x9PC9zcGFuPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZvbnQtbW9ubyB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgIHtmb3JtYXRQcmljZSh0cmFkZS5zeW1ib2wsIHRyYWRlLmZpbGxfcHJpY2UsIDUpfSDCtyB7dHJhZGUudm9sdW1lfSBsb3RzCiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKSl9CiAgICAgIDwvZGl2PgogICAgPC9QYW5lbD4KICApOwp9Cg==
+import React from "react";
+import Panel from "./Panel.jsx";
+import { formatPrice } from "../lib/botFeed.js";
+
+export default function TradeAnalysis({ tradeAnalysis }) {
+  const { summary, recentTrades } = tradeAnalysis ?? {};
+  const total = summary?.totalTrades ?? 0;
+  const netPnl = summary?.netPnl ?? 0.0;
+  const positive = netPnl >= 0;
+
+  return (
+    <Panel
+      title="Trade Analysis · Runtime Ledger"
+      badge={<span className="font-mono text-[12px] text-ink">{total} trades</span>}
+    >
+      <div className="grid grid-cols-2 gap-3">
+        <div className="rounded-md border border-border bg-surface-alt px-3 py-2">
+          <div className="text-[10px] uppercase tracking-wider text-ink-faint">Total Trades</div>
+          <div className="font-mono text-lg font-semibold text-ink">{total}</div>
+        </div>
+        <div className="rounded-md border border-border bg-surface-alt px-3 py-2">
+          <div className="text-[10px] uppercase tracking-wider text-ink-faint">Net P&L</div>
+          <div className={`font-mono text-lg font-semibold ${positive ? "text-bull" : "text-bear"}`}>
+            {positive ? "+" : ""}${netPnl.toFixed(2)}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4 space-y-1.5">
+        {Array.isArray(recentTrades) && recentTrades.length === 0 && (
+          <div className="py-4 text-center text-[12px] text-ink-faint">No trades recorded yet.</div>
+        )}
+        {Array.isArray(recentTrades) && recentTrades.map((trade) => (
+          <div
+            key={trade.ticket ?? `${trade.symbol}-${trade.direction}`}
+            className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-[12px]"
+          >
+            <div className="flex items-center gap-2">
+              <span
+                className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${
+                  trade.direction === "BUY" ? "bg-bull-dim text-bull" : "bg-bear-dim text-bear"
+                }`}
+              >
+                {trade.direction}
+              </span>
+              <span className="text-ink">{trade.symbol}</span>
+            </div>
+            <div className="font-mono text-ink-dim">
+              {formatPrice(trade.symbol, trade.fill_price, 5)} · {trade.volume} lots
+            </div>
+          </div>
+        ))}
+      </div>
+    </Panel>
+  );
+}

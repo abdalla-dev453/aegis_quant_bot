@@ -1,1 +1,136 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFRvcEJhciBmcm9tICIuLi9jb21wb25lbnRzL1RvcEJhci5qc3giOwppbXBvcnQgeyBBY2NvdW50Q2FyZCwgUmlza0NhcmQsIFBlcmZvcm1hbmNlQ2FyZCB9IGZyb20gIi4uL2NvbXBvbmVudHMvU3RhdENhcmRzLmpzeCI7CmltcG9ydCBQcmljZUNoYXJ0IGZyb20gIi4uL2NvbXBvbmVudHMvUHJpY2VDaGFydC5qc3giOwppbXBvcnQgQ29uZmx1ZW5jZUdhdWdlIGZyb20gIi4uL2NvbXBvbmVudHMvQ29uZmx1ZW5jZUdhdWdlLmpzeCI7CmltcG9ydCBFY29ub21pY0NhbGVuZGFyIGZyb20gIi4uL2NvbXBvbmVudHMvRWNvbm9taWNDYWxlbmRhci5qc3giOwppbXBvcnQgRXhlY3V0aW9uTG9nIGZyb20gIi4uL2NvbXBvbmVudHMvRXhlY3V0aW9uTG9nLmpzeCI7CmltcG9ydCBQb3NpdGlvbnNUYWJsZSBmcm9tICIuLi9jb21wb25lbnRzL1Bvc2l0aW9uc1RhYmxlLmpzeCI7CmltcG9ydCBUcmFkZUFuYWx5c2lzIGZyb20gIi4uL2NvbXBvbmVudHMvVHJhZGVBbmFseXNpcy5qc3giOwppbXBvcnQgUmVjZW50T3JkZXJzIGZyb20gIi4uL2NvbXBvbmVudHMvUmVjZW50T3JkZXJzLmpzeCI7CmltcG9ydCBCb3RTdGF0dXNQYW5lbCBmcm9tICIuLi9jb21wb25lbnRzL0JvdFN0YXR1c1BhbmVsLmpzeCI7CmltcG9ydCBGb290ZXIgZnJvbSAiLi4vY29tcG9uZW50cy9Gb290ZXIuanN4IjsKaW1wb3J0IHsgdXNlQm90RmVlZCB9IGZyb20gIi4uL2xpYi91c2VCb3RGZWVkLmpzIjsKaW1wb3J0IHsKICBjbG9zZUJvdFBvc2l0aW9ucywKICByZXNldFBlYWtEcmF3ZG93bkd1YXJkLAogIHNldENvbnRyb2wgYXMgc2V0VHJhZGluZ0NvbnRyb2wsCn0gZnJvbSAiLi4vbGliL2JvdEZlZWQuanMiOwppbXBvcnQgewogIFNrZWxldG9uU3RhdENhcmQsCiAgU2tlbGV0b25DaGFydCwKICBTa2VsZXRvbkdhdWdlLAogIFNrZWxldG9uTGlzdCwKICBTa2VsZXRvblRhYmxlLAp9IGZyb20gIi4uL2NvbXBvbmVudHMvU2tlbGV0b25Mb2FkZXJzLmpzeCI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBEYXNoYm9hcmQoKSB7CiAgY29uc3QgeyBhY2NvdW50LCByaXNrLCBwZXJmb3JtYW5jZSwgY29uZmx1ZW5jZSwgY2FsZW5kYXIsIGNvbnRyb2wsIHNldHRpbmdzLCBwcm9wb3NhbHMsIG9yZGVycywgdHJhZGVBbmFseXNpcywgcG9zaXRpb25zLCBwcmljZVNlcmllcywgbG9ncywgY29ubmVjdGVkLCBsb2FkaW5nIH0gPSB1c2VCb3RGZWVkKCk7CgogIGNvbnN0IHRvdGFsRmxvYXQgPSBwb3NpdGlvbnMucmVkdWNlKChzdW0sIHApID0+IHN1bSArIHAucG5sLCAwKTsKICBjb25zdCB0b2RheSA9IG5ldyBEYXRlKCkudG9Mb2NhbGVEYXRlU3RyaW5nKCJlbi1VUyIsIHsgeWVhcjogIm51bWVyaWMiLCBtb250aDogInNob3J0IiwgZGF5OiAiMi1kaWdpdCIgfSk7CiAgY29uc3QgcmVzZXRQZWFrR3VhcmQgPSBhc3luYyAoKSA9PiB7CiAgICB0cnkgewogICAgICBhd2FpdCByZXNldFBlYWtEcmF3ZG93bkd1YXJkKCk7CiAgICB9IGNhdGNoIChlcnJvcikgewogICAgICBjb25zb2xlLmVycm9yKCJVbmFibGUgdG8gcmVzZXQgcGVhayBkcmF3ZG93biBndWFyZCIsIGVycm9yKTsKICAgIH0KICB9OwogIGNvbnN0IGNsb3NlTWFuYWdlZFBvc2l0aW9ucyA9IGFzeW5jICgpID0+IGNsb3NlQm90UG9zaXRpb25zKCk7CgogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBoLWZ1bGwgZmxleC0xIGZsZXgtY29sIG92ZXJmbG93LWhpZGRlbiI+CiAgICAgIDxUb3BCYXIKICAgICAgICB0aXRsZT0iQ29tbWFuZCBEYXNoYm9hcmQiCiAgICAgICAgc3VidGl0bGU9e2Ake3RvZGF5fSDCtyAke2Nvbm5lY3RlZCA/ICJGZWVkIENvbm5lY3RlZCIgOiAiRmVlZCBPZmZsaW5lIn0gwrcgRXhlY3V0aW9uOiAke3NldHRpbmdzLnRyYWRpbmdNb2RlfSDCtyBDb250cm9sOiAke2NvbnRyb2w/LnN0YXR1cyA/PyAiVU5LTk9XTiJ9YH0KICAgICAgICBjb250cm9sPXtjb250cm9sfQogICAgICAgIG9uQ2xvc2VBbGw9e2Nsb3NlTWFuYWdlZFBvc2l0aW9uc30KICAgICAgICBjbG9zZUFsbERpc2FibGVkPXtyaXNrLm9wZW5Qb3NpdGlvbnMgPT09IDB9CiAgICAgICAgc2V0Q29udHJvbD17c2V0VHJhZGluZ0NvbnRyb2x9CiAgICAgIC8+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleC0xIHNwYWNlLXktNCBvdmVyZmxvdy15LWF1dG8gcHgtOCBweS01Ij4KICAgICAgICA8Qm90U3RhdHVzUGFuZWwKICAgICAgICAgIGFjY291bnQ9e2FjY291bnR9CiAgICAgICAgICByaXNrPXtyaXNrfQogICAgICAgICAgY29udHJvbD17Y29udHJvbH0KICAgICAgICAgIHByb3Bvc2Fscz17cHJvcG9zYWxzfQogICAgICAgICAgb3JkZXJzPXtvcmRlcnN9CiAgICAgICAgICBsb2dzPXtsb2dzfQogICAgICAgICAgY29ubmVjdGVkPXtjb25uZWN0ZWR9CiAgICAgICAgICBhaUNvbmZpZ3VyZWQ9e3NldHRpbmdzLmFpQ29uZmlndXJlZH0KICAgICAgICAgIHRyYWRpbmdNb2RlPXtzZXR0aW5ncy50cmFkaW5nTW9kZX0KICAgICAgICAvPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdyaWQtY29scy0xIGdhcC00IGxnOmdyaWQtY29scy0zIj4KICAgICAgICAgIHtsb2FkaW5nLmFjY291bnQgPyAoCiAgICAgICAgICAgIDxTa2VsZXRvblN0YXRDYXJkIC8+CiAgICAgICAgICApIDogKAogICAgICAgICAgICA8QWNjb3VudENhcmQgYWNjb3VudD17YWNjb3VudH0gLz4KICAgICAgICAgICl9CiAgICAgICAgICB7bG9hZGluZy5yaXNrID8gKAogICAgICAgICAgICA8U2tlbGV0b25TdGF0Q2FyZCAvPgogICAgICAgICAgKSA6ICgKICAgICAgICAgICAgPFJpc2tDYXJkIHJpc2s9e3Jpc2t9IG9uUmVzZXRQZWFrR3VhcmQ9e3Jlc2V0UGVha0d1YXJkfSAvPgogICAgICAgICAgKX0KICAgICAgICAgIHtsb2FkaW5nLnBlcmZvcm1hbmNlID8gKAogICAgICAgICAgICA8U2tlbGV0b25TdGF0Q2FyZCAvPgogICAgICAgICAgKSA6ICgKICAgICAgICAgICAgPFBlcmZvcm1hbmNlQ2FyZCBwZXJmb3JtYW5jZT17cGVyZm9ybWFuY2V9IC8+CiAgICAgICAgICApfQogICAgICAgIDwvZGl2PgoKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMSBnYXAtNCBsZzpncmlkLWNvbHMtMyI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibGc6Y29sLXNwYW4tMiI+CiAgICAgICAgICAgIHtsb2FkaW5nLnByaWNlU2VyaWVzID8gKAogICAgICAgICAgICAgIDxTa2VsZXRvbkNoYXJ0IGhlaWdodD17MzIwfSAvPgogICAgICAgICAgICApIDogKAogICAgICAgICAgICAgIDxQcmljZUNoYXJ0IHN5bWJvbD17cHJpY2VTZXJpZXMuc3ltYm9sfSBzZXJpZXM9e3ByaWNlU2VyaWVzLnBvaW50c30gLz4KICAgICAgICAgICAgKX0KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNCI+CiAgICAgICAgICAgIHtsb2FkaW5nLmNvbmZsdWVuY2UgPyAoCiAgICAgICAgICAgICAgPFNrZWxldG9uR2F1Z2UgLz4KICAgICAgICAgICAgKSA6ICgKICAgICAgICAgICAgICA8Q29uZmx1ZW5jZUdhdWdlIGNvbmZsdWVuY2U9e2NvbmZsdWVuY2V9IC8+CiAgICAgICAgICAgICl9CiAgICAgICAgICAgIHtsb2FkaW5nLmNhbGVuZGFyID8gKAogICAgICAgICAgICAgIDxTa2VsZXRvbkxpc3QgaXRlbXM9ezN9IC8+CiAgICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgPEVjb25vbWljQ2FsZW5kYXIgY2FsZW5kYXI9e2NhbGVuZGFyfSAvPgogICAgICAgICAgICApfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdyaWQtY29scy0xIGdhcC00IGxnOmdyaWQtY29scy0zIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJsZzpjb2wtc3Bhbi0yIj4KICAgICAgICAgICAge2xvYWRpbmcucG9zaXRpb25zID8gKAogICAgICAgICAgICAgIDxTa2VsZXRvblRhYmxlIHJvd3M9ezV9IC8+CiAgICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgPFBvc2l0aW9uc1RhYmxlIHBvc2l0aW9ucz17cG9zaXRpb25zfSAvPgogICAgICAgICAgICApfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgICB7bG9hZGluZy5sb2dzID8gKAogICAgICAgICAgICA8U2tlbGV0b25MaXN0IGl0ZW1zPXs1fSAvPgogICAgICAgICAgKSA6ICgKICAgICAgICAgICAgPEV4ZWN1dGlvbkxvZyBsb2dzPXtsb2dzfSAvPgogICAgICAgICAgKX0KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTEgZ2FwLTQgbGc6Z3JpZC1jb2xzLTIiPgogICAgICAgICAge2xvYWRpbmcudHJhZGVBbmFseXNpcyA/ICgKICAgICAgICAgICAgPFNrZWxldG9uU3RhdENhcmQgLz4KICAgICAgICAgICkgOiAoCiAgICAgICAgICAgIDxUcmFkZUFuYWx5c2lzIHRyYWRlQW5hbHlzaXM9e3RyYWRlQW5hbHlzaXN9IC8+CiAgICAgICAgICApfQogICAgICAgICAge2xvYWRpbmcucHJvcG9zYWxzID8gKAogICAgICAgICAgICA8U2tlbGV0b25MaXN0IGl0ZW1zPXszfSAvPgogICAgICAgICAgKSA6ICgKICAgICAgICAgICAgPFJlY2VudE9yZGVycyBvcmRlcnM9e3Byb3Bvc2Fsc30gLz4KICAgICAgICAgICl9CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgPEZvb3RlciB0b3RhbEZsb2F0PXt0b3RhbEZsb2F0fSByaXNrUGVyVHJhZGVQY3Q9e3Jpc2sucmlza1BlclRyYWRlUGN0fSAvPgogICAgPC9kaXY+CiAgKTsKfQo=
+import React from "react";
+import TopBar from "../components/TopBar.jsx";
+import { AccountCard, RiskCard, PerformanceCard } from "../components/StatCards.jsx";
+import PriceChart from "../components/PriceChart.jsx";
+import ConfluenceGauge from "../components/ConfluenceGauge.jsx";
+import EconomicCalendar from "../components/EconomicCalendar.jsx";
+import ExecutionLog from "../components/ExecutionLog.jsx";
+import PositionsTable from "../components/PositionsTable.jsx";
+import TradeAnalysis from "../components/TradeAnalysis.jsx";
+import RecentOrders from "../components/RecentOrders.jsx";
+import BotStatusPanel from "../components/BotStatusPanel.jsx";
+import Footer from "../components/Footer.jsx";
+import { useBotFeed } from "../lib/useBotFeed.js";
+import {
+  closeBotPositions,
+  resetPeakDrawdownGuard,
+  setControl as setTradingControl,
+} from "../lib/botFeed.js";
+import {
+  SkeletonStatCard,
+  SkeletonChart,
+  SkeletonGauge,
+  SkeletonList,
+  SkeletonTable,
+} from "../components/SkeletonLoaders.jsx";
+
+export default function Dashboard() {
+  const { account, risk, performance, confluence, calendar, control, settings, proposals, orders, tradeAnalysis, positions, priceSeries, logs, connected, loading } = useBotFeed();
+
+  const totalFloat = positions.reduce((sum, p) => sum + p.pnl, 0);
+  const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" });
+  const resetPeakGuard = async () => {
+    try {
+      await resetPeakDrawdownGuard();
+    } catch (error) {
+      console.error("Unable to reset peak drawdown guard", error);
+    }
+  };
+  const closeManagedPositions = async () => closeBotPositions();
+
+  return (
+    <div className="flex h-full flex-1 flex-col overflow-hidden">
+      <TopBar
+        title="Command Dashboard"
+        subtitle={`${today} · ${connected ? "Feed Connected" : "Feed Offline"} · Execution: ${settings.tradingMode} · Control: ${control?.status ?? "UNKNOWN"}`}
+        control={control}
+        onCloseAll={closeManagedPositions}
+        closeAllDisabled={risk.openPositions === 0}
+        setControl={setTradingControl}
+      />
+
+      <div className="flex-1 space-y-4 overflow-y-auto px-8 py-5">
+        <BotStatusPanel
+          account={account}
+          risk={risk}
+          control={control}
+          proposals={proposals}
+          orders={orders}
+          logs={logs}
+          connected={connected}
+          aiConfigured={settings.aiConfigured}
+          tradingMode={settings.tradingMode}
+        />
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {loading.account ? (
+            <SkeletonStatCard />
+          ) : (
+            <AccountCard account={account} />
+          )}
+          {loading.risk ? (
+            <SkeletonStatCard />
+          ) : (
+            <RiskCard risk={risk} onResetPeakGuard={resetPeakGuard} />
+          )}
+          {loading.performance ? (
+            <SkeletonStatCard />
+          ) : (
+            <PerformanceCard performance={performance} />
+          )}
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            {loading.priceSeries ? (
+              <SkeletonChart height={320} />
+            ) : (
+              <PriceChart symbol={priceSeries.symbol} series={priceSeries.points} />
+            )}
+          </div>
+          <div className="space-y-4">
+            {loading.confluence ? (
+              <SkeletonGauge />
+            ) : (
+              <ConfluenceGauge confluence={confluence} />
+            )}
+            {loading.calendar ? (
+              <SkeletonList items={3} />
+            ) : (
+              <EconomicCalendar calendar={calendar} />
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            {loading.positions ? (
+              <SkeletonTable rows={5} />
+            ) : (
+              <PositionsTable positions={positions} />
+            )}
+          </div>
+          {loading.logs ? (
+            <SkeletonList items={5} />
+          ) : (
+            <ExecutionLog logs={logs} />
+          )}
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {loading.tradeAnalysis ? (
+            <SkeletonStatCard />
+          ) : (
+            <TradeAnalysis tradeAnalysis={tradeAnalysis} />
+          )}
+          {loading.proposals ? (
+            <SkeletonList items={3} />
+          ) : (
+            <RecentOrders orders={proposals} />
+          )}
+        </div>
+      </div>
+
+      <Footer totalFloat={totalFloat} riskPerTradePct={risk.riskPerTradePct} />
+    </div>
+  );
+}

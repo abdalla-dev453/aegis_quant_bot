@@ -1,1 +1,60 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKCmZ1bmN0aW9uIGZvcm1hdENvdW50ZG93bih0b3RhbFNlY29uZHMpIHsKICBjb25zdCBtID0gTWF0aC5mbG9vcih0b3RhbFNlY29uZHMgLyA2MCk7CiAgY29uc3QgcyA9IHRvdGFsU2Vjb25kcyAlIDYwOwogIHJldHVybiBgJHttfW0gJHtTdHJpbmcocykucGFkU3RhcnQoMiwgIjAiKX1zYDsKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRWNvbm9taWNDYWxlbmRhcih7IGNhbGVuZGFyIH0pIHsKICBjb25zdCBldmVudCA9IGNhbGVuZGFyPy5uZXh0RXZlbnQ7CiAgcmV0dXJuICgKICAgIDxQYW5lbCB0aXRsZT0iRWNvbm9taWMgQ2FsZW5kYXIgLyBTZW50aW1lbnQiPgogICAgICB7Y2FsZW5kYXI/LmF1dG9IYWx0QWN0aXZlICYmICgKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibWItMyBmbGV4IGl0ZW1zLXN0YXJ0IGdhcC0yIHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci13YXJuLzMwIGJnLXdhcm4tZGltIHB4LTMgcHktMiI+CiAgICAgICAgICA8V2Fybkljb24gLz4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LVsxMXB4XSBmb250LW1lZGl1bSB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSB0ZXh0LXdhcm4iPgogICAgICAgICAgICAgIEF1dG8tSGFsdCBUcmlnZ2VyIEFjdGl2ZQogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzExcHhdIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgRXhlY3V0aW9uIHBhdXNlIGluIHtmb3JtYXRDb3VudGRvd24oY2FsZW5kYXIuYXV0b0hhbHRFdGFTZWNvbmRzKX0KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgKX0KCiAgICAgIHtldmVudCAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTMgcHktMi41Ij4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icm91bmRlZCBiZy1iZWFyLWRpbSBweC0xLjUgcHktMC41IHRleHQtWzlweF0gZm9udC1zZW1pYm9sZCB1cHBlcmNhc2UgdGV4dC1iZWFyIj4KICAgICAgICAgICAgICB7ZXZlbnQuaW1wYWN0fQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtWzEycHhdIHRleHQtaW5rIj57ZXZlbnQubmFtZX08L2Rpdj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1bMTBweF0gdGV4dC1pbmstZmFpbnQiPgogICAgICAgICAgICAgICAge2V2ZW50LmN1cnJlbmN5fSDCtyB7ZXZlbnQudGltZVV0Y30gVVRDCiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImZvbnQtbW9ubyB0ZXh0LVsxMXB4XSB0ZXh0LWluay1kaW0iPntldmVudC5taW51dGVzQXdheX1tPC9zcGFuPgogICAgICAgIDwvZGl2PgogICAgICApfQogICAgPC9QYW5lbD4KICApOwp9CgpmdW5jdGlvbiBXYXJuSWNvbigpIHsKICByZXR1cm4gKAogICAgPHN2ZyBjbGFzc05hbWU9Im10LTAuNSBzaHJpbmstMCB0ZXh0LXdhcm4iIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KICAgICAgPHBhdGgKICAgICAgICBkPSJNMTIgOXY0bTAgNGguMDFNMTAuMjkgMy44NkwxLjgyIDE4YTIgMiAwIDAwMS43MSAzaDE2Ljk0YTIgMiAwIDAwMS43MS0zTDEzLjcxIDMuODZhMiAyIDAgMDAtMy40MiAweiIKICAgICAgICBzdHJva2U9ImN1cnJlbnRDb2xvciIKICAgICAgICBzdHJva2VXaWR0aD0iMiIKICAgICAgICBzdHJva2VMaW5lY2FwPSJyb3VuZCIKICAgICAgICBzdHJva2VMaW5lam9pbj0icm91bmQiCiAgICAgIC8+CiAgICA8L3N2Zz4KICApOwp9
+import React from "react";
+import Panel from "./Panel.jsx";
+
+function formatCountdown(totalSeconds) {
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m}m ${String(s).padStart(2, "0")}s`;
+}
+
+export default function EconomicCalendar({ calendar }) {
+  const event = calendar?.nextEvent;
+  return (
+    <Panel title="Economic Calendar / Sentiment">
+      {calendar?.autoHaltActive && (
+        <div className="mb-3 flex items-start gap-2 rounded-md border border-warn/30 bg-warn-dim px-3 py-2">
+          <WarnIcon />
+          <div>
+            <div className="text-[11px] font-medium uppercase tracking-wide text-warn">
+              Auto-Halt Trigger Active
+            </div>
+            <div className="text-[11px] text-ink-dim">
+              Execution pause in {formatCountdown(calendar.autoHaltEtaSeconds)}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {event && (
+        <div className="flex items-center justify-between rounded-md border border-border bg-surface-alt px-3 py-2.5">
+          <div className="flex items-center gap-2">
+            <span className="rounded bg-bear-dim px-1.5 py-0.5 text-[9px] font-semibold uppercase text-bear">
+              {event.impact}
+            </span>
+            <div>
+              <div className="text-[12px] text-ink">{event.name}</div>
+              <div className="text-[10px] text-ink-faint">
+                {event.currency} · {event.timeUtc} UTC
+              </div>
+            </div>
+          </div>
+          <span className="font-mono text-[11px] text-ink-dim">{event.minutesAway}m</span>
+        </div>
+      )}
+    </Panel>
+  );
+}
+
+function WarnIcon() {
+  return (
+    <svg className="mt-0.5 shrink-0 text-warn" width="14" height="14" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

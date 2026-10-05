@@ -1,1 +1,64 @@
-IyBBZWdpc1F1YW50IE1UNSBCcmlkZ2UgRXhwZXJ0IEFkdmlzb3IgKGBBZWdpc1F1YW50RUEubXE1YCkKCiMjIE92ZXJ2aWV3CmBBZWdpc1F1YW50RUEubXE1YCBpcyBhIHByb2R1Y3Rpb24tZ3JhZGUgTWV0YVRyYWRlciA1IEV4cGVydCBBZHZpc29yIHRoYXQgc2VjdXJlbHkgY29ubmVjdHMgYW4gTVQ1IGNsaWVudCB0ZXJtaW5hbCB0byB0aGUgQWVnaXNRdWFudCBDbG91ZCBCYWNrZW5kIG92ZXIgYW4gSE1BQy1TSEEyNTYgYXV0aGVudGljYXRlZCBIVFRQUyBicmlkZ2UuCgojIyMgQ29yZSBBcmNoaXRlY3R1cmFsIEludmFyaWFudHMKMS4gKipaZXJvIENyZWRlbnRpYWwgU2hhcmluZyoqOiBNVDUgYWNjb3VudCBjcmVkZW50aWFscyBhbmQgbWFzdGVyL2ludmVzdG9yIHBhc3N3b3JkcyBuZXZlciBsZWF2ZSB0aGUgbG9jYWwgdGVybWluYWwuCjIuICoqTG9jYWwgUmlzayBFbmZvcmNlbWVudCoqOiBUaGUgRUEgYWN0cyBhcyB0aGUgZmluYWwgZ2F0ZWtlZXBlci4gRXZlbiBpZiBhIHNpZ25hbCBwYXNzZXMgYmFja2VuZCByaXNrIHZhbGlkYXRpb24sIHRoZSBFQSBldmFsdWF0ZXMgbG9jYWwgdGljayBzcHJlYWQsIG1hcmdpbiwgZGFpbHkgbG9zcyBsaW1pdCwgYnJva2VyIHN0b3AgbGV2ZWwsIGFuZCBwcmljZSBkZXZpYXRpb24gYmVmb3JlIG9yZGVyIGRpc3BhdGNoLgozLiAqKklkZW1wb3RlbnQgU2lnbmFsIEV4ZWN1dGlvbioqOiBFdmVyeSBzaWduYWwgY29udGFpbnMgYSB1bmlxdWUgVVVJRHY3IGlkZW50aWZpZXIgdGhhdCBpcyBpbmplY3RlZCBpbnRvIHRoZSBNVDUgb3JkZXIgY29tbWVudCAoYEFROjxVVUlEPmApLiBPbiBpbml0aWFsaXphdGlvbiBvciByZWNvbm5lY3QsIGFjdGl2ZSBhbmQgaGlzdG9yaWNhbCB0aWNrZXRzIGFyZSBzY2FubmVkIHRvIGd1YXJhbnRlZSB6ZXJvIGR1cGxpY2F0ZSB0cmFkZXMgYWNyb3NzIHJlc3RhcnRzLgo0LiAqKlJlc2lsaWVudCBOb24tQmxvY2tpbmcgUG9sbGluZyoqOiBNVDUncyBgV2ViUmVxdWVzdCgpYCBpcyBzeW5jaHJvbm91cyBhbmQgYmxvY2tpbmcuIFBvbGxpbmcgaXMgZXhlY3V0ZWQgc3RyaWN0bHkgd2l0aCBhIG1heGltdW0gMzAwMCBtcyB0aW1lb3V0IG9uIHRpbWVyIGludGVydmFscywgZmVhdHVyaW5nIGV4cG9uZW50aWFsIGJhY2tvZmYgKCQxXHRleHR7c30sIDJcdGV4dHtzfSwgNFx0ZXh0e3N9IFxkb3RzIDYwXHRleHR7c30kKSB3aGVuIHRoZSBjbG91ZCBpcyBvZmZsaW5lLgoKLS0tCgojIyBTZXR1cCAmIE1UNSBDb25maWd1cmF0aW9uCgojIyMgMS4gV2hpdGVsaXN0IEJhY2tlbmQgVVJMCkluIE1ldGFUcmFkZXIgNToKMS4gTmF2aWdhdGUgdG8gKipUb29scyoqIC0+ICoqT3B0aW9ucyoqIC0+ICoqRXhwZXJ0IEFkdmlzb3JzKiouCjIuIENoZWNrICoqQWxsb3cgV2ViUmVxdWVzdCBmb3IgbGlzdGVkIFVSTCoqLgozLiBBZGQgeW91ciBBZWdpc1F1YW50IEFQSSBlbmRwb2ludDoKICAgLSBEZXZlbG9wbWVudDogYGh0dHA6Ly8xMjcuMC4wLjE6ODAwMGAKICAgLSBQcm9kdWN0aW9uOiBgaHR0cHM6Ly9hcGkuYWVnaXNxdWFudC5jb21gCjQuIENoZWNrICoqQWxsb3cgYWxnb3JpdGhtaWMgdHJhZGluZyoqLgoKIyMjIDIuIFBhaXJpbmcgd2l0aCBBZWdpc1F1YW50IENsb3VkCjEuIEluIHRoZSBBZWdpc1F1YW50IFdlYiBEYXNoYm9hcmQsIG5hdmlnYXRlIHRvICoqRGV2aWNlcyoqIC0+ICoqUGFpciBOZXcgVGVybWluYWwqKi4KMi4gQ29weSB0aGUgc2luZ2xlLXVzZSA4LWNoYXJhY3RlciBwYWlyaW5nIGNvZGUgKGUuZy4gYEFRLThYOUsyUGApLgozLiBBdHRhY2ggYEFlZ2lzUXVhbnRFQWAgdG8gYW55IGNoYXJ0IChlLmcuIGBFVVJVU0RgIE0xKS4KNC4gSW4gdGhlIGlucHV0cyBkaWFsb2c6CiAgIC0gYElucFNlcnZlclVybGA6IGBodHRwczovL2FwaS5hZWdpc3F1YW50LmNvbWAKICAgLSBgSW5wUGFpcmluZ0NvZGVgOiBFbnRlciB0aGUgOC1jaGFyYWN0ZXIgcGFpcmluZyBjb2RlLgo1LiBPbiB0aGUgZmlyc3QgZXhlY3V0aW9uIHRpY2ssIHRoZSBFQSBleGNoYW5nZXMgdGhlIHBhaXJpbmcgY29kZSB2aWEgYFBPU1QgL2VhL3YxL3BhaXJgIGZvciBhIHVuaXF1ZSAyNTYtYml0IGBkZXZpY2VUb2tlbmAgKyBITUFDIHNlY3JldC4KNi4gVGhlIGNyZWRlbnRpYWxzIGFyZSBlbmNyeXB0ZWQgYW5kIHN0b3JlZCBsb2NhbGx5IGluIHRoZSB0ZXJtaW5hbCBzYW5kYm94IGF0IGBNUUw1L0ZpbGVzL2FlZ2lzX3F1YW50X2RldmljZS5kYXRgLiBDcmVkZW50aWFscyBhcmUgKipuZXZlcioqIHdyaXR0ZW4gdG8gdGVybWluYWwgbG9ncy4KNy4gU3Vic2VxdWVudCBFQSBydW5zIHJlYWQgdGhlIHBlcnNpc3RlZCBkZXZpY2UgY3JlZGVudGlhbHMgYW5kIGJlZ2luIGhlYXJ0YmVhdCBzdHJlYW1pbmcuCgotLS0KCiMjIElucHV0IFBhcmFtZXRlcnMKCnwgUGFyYW1ldGVyIHwgVHlwZSB8IERlZmF1bHQgfCBEZXNjcmlwdGlvbiB8CnwgOi0tLSB8IDotLS0gfCA6LS0tIHwgOi0tLSB8CnwgYElucFNlcnZlclVybGAgfCBgc3RyaW5nYCB8IGAiaHR0cDovLzEyNy4wLjAuMTo4MDAwImAgfCBIVFRQUyBiYXNlIFVSTCBvZiB0aGUgQWVnaXNRdWFudCBiYWNrZW5kIHwKfCBgSW5wUGFpcmluZ0NvZGVgIHwgYHN0cmluZ2AgfCBgIiJgIHwgU2luZ2xlLXVzZSA4LWNoYXJhY3RlciBwYWlyaW5nIGNvZGUgfAp8IGBJbnBIZWFydGJlYXRTZWNgIHwgYGludGAgfCBgNWAgfCBIZWFydGJlYXQgJiBzbmFwc2hvdCBicm9hZGNhc3QgaW50ZXJ2YWwgKHNlY29uZHMpIHwKfCBgSW5wU2lnbmFsUG9sbFNlY2AgfCBgaW50YCB8IGAxYCB8IFNpZ25hbCBxdWV1ZSBwb2xsaW5nIGludGVydmFsIChzZWNvbmRzKSB8CnwgYElucE1heFNpZ25hbERldmlhdGlvblB0c2AgfCBgaW50YCB8IGAzMGAgfCBNYXhpbXVtIGFsbG93YWJsZSBwcmljZSBkZXZpYXRpb24gaW4gcG9pbnRzIHwKfCBgSW5wTWF4RGFpbHlMb3NzUGN0YCB8IGBkb3VibGVgIHwgYDIuMGAgfCBNYXhpbXVtIGRhaWx5IGxvc3MgdG9sZXJhbmNlIGJlZm9yZSBFQSBwYXVzZSB8CnwgYElucE1heE9wZW5Qb3NpdGlvbnNgIHwgYGludGAgfCBgNWAgfCBNYXhpbXVtIGNvbmN1cnJlbnQgb3BlbiBwb3NpdGlvbnMgb24gYWNjb3VudCB8CgotLS0KCiMjIFNpZ25hbCBFeGVjdXRpb24gJiBSZWplY3Rpb24gQ29kZXMKCldoZW4gdGhlIEVBIGV2YWx1YXRlcyBhIHNpZ25hbCwgaXQgZXhlY3V0ZXMgYSBzdHJpY3QgOC1zdGVwIHBpcGVsaW5lOgoxLiBgVFRMX0VYUElSRURgOiBTaWduYWwgdGltZXN0YW1wIGV4Y2VlZHMgVFRMIChzdGFsZSBzaWduYWwpLgoyLiBgUFJJQ0VfREVWSUFUSU9OYDogTWFya2V0IHByaWNlIGRyaWZ0ZWQgcGFzdCBgbWF4RGV2aWF0aW9uUG9pbnRzYCBmcm9tIHJlZmVyZW5jZSBwcmljZS4KMy4gYFNZTUJPTF9ESVNBTExPV0VEYDogU3ltYm9sIGlzIG5vdCBpbiBhbGxvd2VkIGluc3RydW1lbnQgbGlzdC4KNC4gYERBSUxZX0xPU1NfTElNSVRfUkVBQ0hFRGA6IEN1bXVsYXRpdmUgZGFpbHkgbG9zcyBleGNlZWRlZCBjb25maWd1cmVkIHJpc2sgY2VpbGluZy4KNS4gYE1BWF9QT1NJVElPTlNfUkVBQ0hFRGA6IFRlcm1pbmFsIGFscmVhZHkgaGFzIG1heGltdW0gb3BlbiBwb3NpdGlvbnMuCjYuIGBJTlNVRkZJQ0lFTlRfTUFSR0lOYDogRnJlZSBtYXJnaW4gY2hlY2sgZmFpbGVkIGZvciByZXF1ZXN0ZWQgdm9sdW1lLgo3LiBgQlJPS0VSX1NUT1BfTEVWRUxfSU5WQUxJRGA6IFNML1RQIGlzIGNsb3NlciB0byBjdXJyZW50IHByaWNlIHRoYW4gYnJva2VyIG1pbmltdW0gc3RvcCBsZXZlbC4KOC4gYE9SREVSX1NFTkRfRkFJTEVEYDogTVQ1IHRyYWRlIHNlcnZlciByZXR1cm5lZCBhbiBleGVjdXRpb24gZXJyb3IuCgpJZiByZWplY3RlZCwgdGhlIEVBIHBvc3RzIGBQT1NUIC9lYS92MS9zaWduYWxzLzppZC9hY2tgIHdpdGggc3RhdHVzIGBSRUpFQ1RFRGAgYW5kIHRoZSBzcGVjaWZpYyByZWFzb24gY29kZS4K
+# AegisQuant MT5 Bridge Expert Advisor (`AegisQuantEA.mq5`)
+
+## Overview
+`AegisQuantEA.mq5` is a production-grade MetaTrader 5 Expert Advisor that securely connects an MT5 client terminal to the AegisQuant Cloud Backend over an HMAC-SHA256 authenticated HTTPS bridge.
+
+### Core Architectural Invariants
+1. **Zero Credential Sharing**: MT5 account credentials and master/investor passwords never leave the local terminal.
+2. **Local Risk Enforcement**: The EA acts as the final gatekeeper. Even if a signal passes backend risk validation, the EA evaluates local tick spread, margin, daily loss limit, broker stop level, and price deviation before order dispatch.
+3. **Idempotent Signal Execution**: Every signal contains a unique UUIDv7 identifier that is injected into the MT5 order comment (`AQ:<UUID>`). On initialization or reconnect, active and historical tickets are scanned to guarantee zero duplicate trades across restarts.
+4. **Resilient Non-Blocking Polling**: MT5's `WebRequest()` is synchronous and blocking. Polling is executed strictly with a maximum 3000 ms timeout on timer intervals, featuring exponential backoff ($1\text{s}, 2\text{s}, 4\text{s} \dots 60\text{s}$) when the cloud is offline.
+
+---
+
+## Setup & MT5 Configuration
+
+### 1. Whitelist Backend URL
+In MetaTrader 5:
+1. Navigate to **Tools** -> **Options** -> **Expert Advisors**.
+2. Check **Allow WebRequest for listed URL**.
+3. Add your AegisQuant API endpoint:
+   - Development: `http://127.0.0.1:8000`
+   - Production: `https://api.aegisquant.com`
+4. Check **Allow algorithmic trading**.
+
+### 2. Pairing with AegisQuant Cloud
+1. In the AegisQuant Web Dashboard, navigate to **Devices** -> **Pair New Terminal**.
+2. Copy the single-use 8-character pairing code (e.g. `AQ-8X9K2P`).
+3. Attach `AegisQuantEA` to any chart (e.g. `EURUSD` M1).
+4. In the inputs dialog:
+   - `InpServerUrl`: `https://api.aegisquant.com`
+   - `InpPairingCode`: Enter the 8-character pairing code.
+5. On the first execution tick, the EA exchanges the pairing code via `POST /ea/v1/pair` for a unique 256-bit `deviceToken` + HMAC secret.
+6. The credentials are encrypted and stored locally in the terminal sandbox at `MQL5/Files/aegis_quant_device.dat`. Credentials are **never** written to terminal logs.
+7. Subsequent EA runs read the persisted device credentials and begin heartbeat streaming.
+
+---
+
+## Input Parameters
+
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `InpServerUrl` | `string` | `"http://127.0.0.1:8000"` | HTTPS base URL of the AegisQuant backend |
+| `InpPairingCode` | `string` | `""` | Single-use 8-character pairing code |
+| `InpHeartbeatSec` | `int` | `5` | Heartbeat & snapshot broadcast interval (seconds) |
+| `InpSignalPollSec` | `int` | `1` | Signal queue polling interval (seconds) |
+| `InpMaxSignalDeviationPts` | `int` | `30` | Maximum allowable price deviation in points |
+| `InpMaxDailyLossPct` | `double` | `2.0` | Maximum daily loss tolerance before EA pause |
+| `InpMaxOpenPositions` | `int` | `5` | Maximum concurrent open positions on account |
+
+---
+
+## Signal Execution & Rejection Codes
+
+When the EA evaluates a signal, it executes a strict 8-step pipeline:
+1. `TTL_EXPIRED`: Signal timestamp exceeds TTL (stale signal).
+2. `PRICE_DEVIATION`: Market price drifted past `maxDeviationPoints` from reference price.
+3. `SYMBOL_DISALLOWED`: Symbol is not in allowed instrument list.
+4. `DAILY_LOSS_LIMIT_REACHED`: Cumulative daily loss exceeded configured risk ceiling.
+5. `MAX_POSITIONS_REACHED`: Terminal already has maximum open positions.
+6. `INSUFFICIENT_MARGIN`: Free margin check failed for requested volume.
+7. `BROKER_STOP_LEVEL_INVALID`: SL/TP is closer to current price than broker minimum stop level.
+8. `ORDER_SEND_FAILED`: MT5 trade server returned an execution error.
+
+If rejected, the EA posts `POST /ea/v1/signals/:id/ack` with status `REJECTED` and the specific reason code.

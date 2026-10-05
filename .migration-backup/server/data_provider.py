@@ -1,1 +1,428 @@
-IiIiCmRhdGFfcHJvdmlkZXIucHkKLS0tLS0tLS0tLS0tLS0tLS0KT3ducyB0aGUgTVQ1IHRlcm1pbmFsIGNvbm5lY3Rpb24gbGlmZWN5Y2xlIGFuZCBhbGwgaGlzdG9yaWNhbC9saXZlIGRhdGEKZmV0Y2hpbmcuIE5vdGhpbmcgZWxzZSBpbiB0aGUgY29kZWJhc2Ugc2hvdWxkIGNhbGwgdGhlIGBNZXRhVHJhZGVyNWAKbW9kdWxlJ3MgY29ubmVjdGlvbiBmdW5jdGlvbnMgZGlyZWN0bHkg4oCUIHJvdXRlIGV2ZXJ5dGhpbmcgdGhyb3VnaCBoZXJlIHNvCnJlY29ubmVjdGlvbiBsb2dpYyBsaXZlcyBpbiBleGFjdGx5IG9uZSBwbGFjZS4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgbG9nZ2luZwppbXBvcnQgb3MKaW1wb3J0IHJhbmRvbQppbXBvcnQgdGltZQpmcm9tIGNvbnRleHRsaWIgaW1wb3J0IGNvbnRleHRtYW5hZ2VyCmZyb20gZGF0YWNsYXNzZXMgaW1wb3J0IGRhdGFjbGFzcwpmcm9tIGZ1bmN0b29scyBpbXBvcnQgd3JhcHMKZnJvbSB0aHJlYWRpbmcgaW1wb3J0IFJMb2NrCmZyb20gdHlwaW5nIGltcG9ydCBBbnksIGNhc3QKCmltcG9ydCBwYW5kYXMgYXMgcGQKCnRyeToKICAgIGltcG9ydCBNZXRhVHJhZGVyNSBhcyBtdDUKZXhjZXB0IEltcG9ydEVycm9yOiAgIyBwcmFnbWE6IG5vIGNvdmVyIC0gTGludXgvdGVzdCBlbnZpcm9ubWVudCBvbmx5LgogICAgbXQ1ID0gY2FzdChBbnksIE5vbmUpCiAgICBpZiBvcy5nZXRlbnYoIk1UNUxJTlVYX0VOQUJMRUQiLCAiIikubG93ZXIoKSBpbiB7IjEiLCAidHJ1ZSIsICJ5ZXMifToKICAgICAgICB0cnk6CiAgICAgICAgICAgICMgbXQ1bGludXggc3RhcnRzIGEgYnJpZGdlL2NvbnRhaW5lciBkdXJpbmcgY29uc3RydWN0aW9uLiAgTWFrZQogICAgICAgICAgICAjIHRoYXQgYW4gZXhwbGljaXQgZGVwbG95bWVudCBjaG9pY2UgcmF0aGVyIHRoYW4gYW4gaW1wb3J0IHNpZGUKICAgICAgICAgICAgIyBlZmZlY3Qgc28gQVBJcywgdGVzdHMsIGFuZCBoZWFsdGggdG9vbGluZyByZW1haW4gc2FmZSB0byBsb2FkLgogICAgICAgICAgICBmcm9tIG10NWxpbnV4IGltcG9ydCBNZXRhVHJhZGVyNQoKICAgICAgICAgICAgbXQ1ID0gTWV0YVRyYWRlcjUoKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXhjOiAgIyBub3FhOiBCTEUwMDEgLSBjYXRjaCBhbnkgaW5pdCBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dpbmcuZ2V0TG9nZ2VyKCJ0cmFkaW5nX2JvdC5kYXRhX3Byb3ZpZGVyIikuZXJyb3IoCiAgICAgICAgICAgICAgICAiTVQ1TElOVVhfRU5BQkxFRCBidXQgdGVybWluYWwgYnJpZGdlIGNvdWxkIG5vdCBzdGFydDogJXMiLCBleGMKICAgICAgICAgICAgKQoKZnJvbSBjb25maWcgaW1wb3J0ICgKICAgIENSRURFTlRJQUxTLAogICAgSU5JVElBTF9CQUNLT0ZGX1NFQ09ORFMsCiAgICBNQVhfQkFDS09GRl9TRUNPTkRTLAogICAgTUFYX1JFQ09OTkVDVF9BVFRFTVBUUywKICAgIFRSQURJTkdfU1lNQk9MUywKKQoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoInRyYWRpbmdfYm90LmRhdGFfcHJvdmlkZXIiKQoKCmRlZiByZXF1aXJlX210NV9ydW50aW1lKCkgLT4gTm9uZToKICAgIGlmIG10NSBpcyBOb25lOgogICAgICAgIHJhaXNlIE1UNUNvbm5lY3Rpb25FcnJvcigKICAgICAgICAgICAgIk1ldGFUcmFkZXI1IGlzIG5vdCBhdmFpbGFibGUgaW4gdGhpcyBydW50aW1lLiBUaGlzIGJvdCBtdXN0IHJ1biBvbiBhICIKICAgICAgICAgICAgIldpbmRvd3MgbWFjaGluZSB3aXRoIGFuIE1UNSB0ZXJtaW5hbCBpbnN0YWxsZWQgYW5kIGEgYnJva2VyIGxvZ2luLiIKICAgICAgICApCgoKVElNRUZSQU1FX01BUDogZGljdFtzdHIsIGludF0gPSB7fQppZiBtdDUgaXMgbm90IE5vbmU6CiAgICBUSU1FRlJBTUVfTUFQID0gewogICAgICAgICJNMSI6IGdldGF0dHIobXQ1LCAiVElNRUZSQU1FX00xIiwgMCksCiAgICAgICAgIk01IjogZ2V0YXR0cihtdDUsICJUSU1FRlJBTUVfTTUiLCAwKSwKICAgICAgICAiTTE1IjogZ2V0YXR0cihtdDUsICJUSU1FRlJBTUVfTTE1IiwgMCksCiAgICAgICAgIk0zMCI6IGdldGF0dHIobXQ1LCAiVElNRUZSQU1FX00zMCIsIDApLAogICAgICAgICJIMSI6IGdldGF0dHIobXQ1LCAiVElNRUZSQU1FX0gxIiwgMCksCiAgICAgICAgIkg0IjogZ2V0YXR0cihtdDUsICJUSU1FRlJBTUVfSDQiLCAwKSwKICAgICAgICAiRDEiOiBnZXRhdHRyKG10NSwgIlRJTUVGUkFNRV9EMSIsIDApLAogICAgfQoKCmNsYXNzIE1UNUNvbm5lY3Rpb25FcnJvcihSdW50aW1lRXJyb3IpOgogICAgIiIiUmFpc2VkIHdoZW4gdGhlIHRlcm1pbmFsIGNhbm5vdCBiZSBpbml0aWFsaXplZCBvciBpcyB1bnJlc3BvbnNpdmUuIiIiCgoKQGRhdGFjbGFzcwpjbGFzcyBDb25uZWN0aW9uU3RhdGU6CiAgICBjb25uZWN0ZWQ6IGJvb2wgPSBGYWxzZQogICAgbGFzdF9lcnJvcjogc3RyIHwgTm9uZSA9IE5vbmUKCgpfc3RhdGUgPSBDb25uZWN0aW9uU3RhdGUoKQpfcnVudGltZV9jcmVkZW50aWFsczogZGljdFtzdHIsIEFueV0gPSB7fQpfbXQ1X2xvY2sgPSBSTG9jaygpCl9zeW1ib2xfcmVzb2x1dGlvbjogZGljdFtzdHIsIHN0cl0gPSB7fQoKCkBjb250ZXh0bWFuYWdlcgpkZWYgbXQ1X29wZXJhdGlvbl9sb2NrKCk6CiAgICAiIiJTZXJpYWxpemUgTVQ1IElQQyBhbmQgY29ubmVjdGlvbiBvcGVyYXRpb25zIGFjcm9zcyB3b3JrZXIvQVBJIHRocmVhZHMuIiIiCiAgICB3aXRoIF9tdDVfbG9jazoKICAgICAgICB5aWVsZAoKCmRlZiBtdDVfc2VyaWFsaXplZChmdW5jdGlvbik6CiAgICBAd3JhcHMoZnVuY3Rpb24pCiAgICBkZWYgd3JhcHBlcigqYXJncywgKiprd2FyZ3MpOgogICAgICAgIHdpdGggX210NV9sb2NrOgogICAgICAgICAgICByZXR1cm4gZnVuY3Rpb24oKmFyZ3MsICoqa3dhcmdzKQoKICAgIHJldHVybiB3cmFwcGVyCgoKZGVmIGNvbmZpZ3VyZV9ydW50aW1lX2NyZWRlbnRpYWxzKAogICAgbG9naW46IGludCwgcGFzc3dvcmQ6IHN0ciwgc2VydmVyOiBzdHIsIHRlcm1pbmFsX3BhdGg6IHN0ciB8IE5vbmUgPSBOb25lCikgLT4gTm9uZToKICAgICIiIlNldCBzZXNzaW9uLW9ubHkgY3JlZGVudGlhbHMgc3VwcGxpZWQgYnkgdGhlIHByb3RlY3RlZCBzZXR0aW5ncyBBUEkuIiIiCiAgICB3aXRoIF9tdDVfbG9jazoKICAgICAgICBfcnVudGltZV9jcmVkZW50aWFscy5jbGVhcigpCiAgICAgICAgX3J1bnRpbWVfY3JlZGVudGlhbHMudXBkYXRlKAogICAgICAgICAgICBsb2dpbj1sb2dpbiwgcGFzc3dvcmQ9cGFzc3dvcmQsIHNlcnZlcj1zZXJ2ZXIsIHRlcm1pbmFsX3BhdGg9dGVybWluYWxfcGF0aAogICAgICAgICkKCgpkZWYgX2V4cG9uZW50aWFsX2JhY2tvZmZfZGVsYXkoYXR0ZW1wdDogaW50LCBiYXNlOiBmbG9hdCwgbWF4X2RlbGF5OiBmbG9hdCkgLT4gZmxvYXQ6CiAgICAiIiJKaXR0ZXJlZCBleHBvbmVudGlhbCBiYWNrb2ZmOiBiYXNlICogMl4oYXR0ZW1wdC0xKSArIHJhbmRvbSBqaXR0ZXIuIiIiCiAgICBkZWxheSA9IG1pbihiYXNlICogKDIgKiogKGF0dGVtcHQgLSAxKSksIG1heF9kZWxheSkKICAgIHJldHVybiBkZWxheSArIHJhbmRvbS51bmlmb3JtKDAsIGRlbGF5ICogMC4xKQoKCmRlZiBpbml0aWFsaXplX2Nvbm5lY3Rpb24oCiAgICBtYXhfcmV0cmllczogaW50ID0gTUFYX1JFQ09OTkVDVF9BVFRFTVBUUywKICAgIGluaXRpYWxfZGVsYXk6IGZsb2F0ID0gSU5JVElBTF9CQUNLT0ZGX1NFQ09ORFMsCikgLT4gTm9uZToKICAgICIiIgogICAgSW5pdGlhbGl6ZSBhbmQgbG9nIGluIHRvIHRoZSBNVDUgdGVybWluYWwgdXNpbmcgZXhwb25lbnRpYWwgYmFja29mZgogICAgd2l0aCBqaXR0ZXIuIFJldHJpZXMgdHJhbnNpZW50IGZhaWx1cmVzICh0ZXJtaW5hbCBzdGlsbCBzdGFydGluZywgYnJpZWYKICAgIG5ldHdvcmsgYmxpcCkgYmVmb3JlIGdpdmluZyB1cC4KCiAgICBSYWlzZXM6CiAgICAgICAgTVQ1Q29ubmVjdGlvbkVycm9yOiBpZiBhbGwgcmV0cmllcyBhcmUgZXhoYXVzdGVkLgogICAgIiIiCiAgICB3aXRoIF9tdDVfbG9jazoKICAgICAgICBfaW5pdGlhbGl6ZV9jb25uZWN0aW9uKG1heF9yZXRyaWVzLCBpbml0aWFsX2RlbGF5KQoKCmRlZiBfaW5pdGlhbGl6ZV9jb25uZWN0aW9uKAogICAgbWF4X3JldHJpZXM6IGludCA9IE1BWF9SRUNPTk5FQ1RfQVRURU1QVFMsCiAgICBpbml0aWFsX2RlbGF5OiBmbG9hdCA9IElOSVRJQUxfQkFDS09GRl9TRUNPTkRTLAopIC0+IE5vbmU6CiAgICByZXF1aXJlX210NV9ydW50aW1lKCkKCiAgICAjIERldGVybWluZSBjcmVkZW50aWFsczogcnVudGltZSAoZnJvbSBBUEkpIHRha2VzIHByaW9yaXR5IG92ZXIgY29uZmlnICguZW52KQogICAgbG9naW4gPSBfcnVudGltZV9jcmVkZW50aWFscy5nZXQoImxvZ2luIiwgQ1JFREVOVElBTFMubG9naW4pCiAgICBwYXNzd29yZCA9IF9ydW50aW1lX2NyZWRlbnRpYWxzLmdldCgicGFzc3dvcmQiLCBDUkVERU5USUFMUy5wYXNzd29yZCkKICAgIHNlcnZlciA9IF9ydW50aW1lX2NyZWRlbnRpYWxzLmdldCgic2VydmVyIiwgQ1JFREVOVElBTFMuc2VydmVyKQogICAgdGVybWluYWxfcGF0aCA9IF9ydW50aW1lX2NyZWRlbnRpYWxzLmdldCgidGVybWluYWxfcGF0aCIsIENSRURFTlRJQUxTLnRlcm1pbmFsX3BhdGgpCgogICAgIyBWYWxpZGF0ZSB0aGF0IHdlIGhhdmUgYXQgbGVhc3Qgb25lIGNvbXBsZXRlIHNldCBvZiBjcmVkZW50aWFscwogICAgaWYgbm90IChsb2dpbiBhbmQgcGFzc3dvcmQgYW5kIHNlcnZlcik6CiAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKAogICAgICAgICAgICAiTVQ1IGNyZWRlbnRpYWxzIG5vdCBjb25maWd1cmVkLiBQcm92aWRlIGxvZ2luLCBwYXNzd29yZCwgYW5kIHNlcnZlciAiCiAgICAgICAgICAgICJ2aWEgdGhlIGZyb250ZW5kIGxvZ2luIGZvcm0gKFBPU1QgL2FwaS9zZXR0aW5ncy9jcmVkZW50aWFscykgb3Igc2V0ICIKICAgICAgICAgICAgIk1UNV9MT0dJTiwgTVQ1X1BBU1NXT1JELCBNVDVfU0VSVkVSIGluIHRoZSBlbnZpcm9ubWVudCBmb3IgbG9jYWwgZGV2ZWxvcG1lbnQuIgogICAgICAgICkKCiAgICBmb3IgYXR0ZW1wdCBpbiByYW5nZSgxLCBtYXhfcmV0cmllcyArIDEpOgogICAgICAgIGt3YXJncyA9IHt9CiAgICAgICAgaWYgdGVybWluYWxfcGF0aDoKICAgICAgICAgICAga3dhcmdzWyJwYXRoIl0gPSB0ZXJtaW5hbF9wYXRoCgogICAgICAgIG9rID0gbXQ1LmluaXRpYWxpemUoCiAgICAgICAgICAgIGxvZ2luPWxvZ2luLAogICAgICAgICAgICBwYXNzd29yZD1wYXNzd29yZCwKICAgICAgICAgICAgc2VydmVyPXNlcnZlciwKICAgICAgICAgICAgdGltZW91dD1DUkVERU5USUFMUy50aW1lb3V0X21zLAogICAgICAgICAgICAqKmt3YXJncywKICAgICAgICApCgogICAgICAgIGlmIG9rOgogICAgICAgICAgICBhY2NvdW50X2luZm8gPSBtdDUuYWNjb3VudF9pbmZvKCkKICAgICAgICAgICAgaWYgYWNjb3VudF9pbmZvIGlzIE5vbmU6CiAgICAgICAgICAgICAgICBlcnIgPSBtdDUubGFzdF9lcnJvcigpCiAgICAgICAgICAgICAgICBsb2dnZXIud2FybmluZygKICAgICAgICAgICAgICAgICAgICAiaW5pdGlhbGl6ZSgpIHN1Y2NlZWRlZCBidXQgYWNjb3VudF9pbmZvKCkgcmV0dXJuZWQgTm9uZSAiCiAgICAgICAgICAgICAgICAgICAgIihhdHRlbXB0ICVkLyVkKTogJXMiLAogICAgICAgICAgICAgICAgICAgIGF0dGVtcHQsCiAgICAgICAgICAgICAgICAgICAgbWF4X3JldHJpZXMsCiAgICAgICAgICAgICAgICAgICAgZXJyLAogICAgICAgICAgICAgICAgKQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgX3N0YXRlLmNvbm5lY3RlZCA9IFRydWUKICAgICAgICAgICAgICAgIF9zdGF0ZS5sYXN0X2Vycm9yID0gTm9uZQogICAgICAgICAgICAgICAgbG9nZ2VyLmluZm8oCiAgICAgICAgICAgICAgICAgICAgIkNvbm5lY3RlZCB0byBNVDUuIEFjY291bnQgIyVzIHwgQmFsYW5jZTogJS4yZiAlcyB8IFNlcnZlcjogJXMiLAogICAgICAgICAgICAgICAgICAgIGFjY291bnRfaW5mby5sb2dpbiwKICAgICAgICAgICAgICAgICAgICBhY2NvdW50X2luZm8uYmFsYW5jZSwKICAgICAgICAgICAgICAgICAgICBhY2NvdW50X2luZm8uY3VycmVuY3ksCiAgICAgICAgICAgICAgICAgICAgYWNjb3VudF9pbmZvLnNlcnZlciwKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIHJldHVybgoKICAgICAgICBlcnIgPSBtdDUubGFzdF9lcnJvcigpCiAgICAgICAgX3N0YXRlLmxhc3RfZXJyb3IgPSBzdHIoZXJyKQogICAgICAgIGxvZ2dlci5lcnJvcigKICAgICAgICAgICAgIk1UNSBpbml0aWFsaXplKCkgZmFpbGVkIChhdHRlbXB0ICVkLyVkKTogJXMiLAogICAgICAgICAgICBhdHRlbXB0LAogICAgICAgICAgICBtYXhfcmV0cmllcywKICAgICAgICAgICAgZXJyLAogICAgICAgICkKICAgICAgICBtdDUuc2h1dGRvd24oKQoKICAgICAgICBpZiBhdHRlbXB0IDwgbWF4X3JldHJpZXM6CiAgICAgICAgICAgIGRlbGF5ID0gX2V4cG9uZW50aWFsX2JhY2tvZmZfZGVsYXkoCiAgICAgICAgICAgICAgICBhdHRlbXB0LAogICAgICAgICAgICAgICAgaW5pdGlhbF9kZWxheSwKICAgICAgICAgICAgICAgIE1BWF9CQUNLT0ZGX1NFQ09ORFMsCiAgICAgICAgICAgICkKICAgICAgICAgICAgbG9nZ2VyLmluZm8oIkJhY2tpbmcgb2ZmIGZvciAlLjFmcyBiZWZvcmUgcmV0cnkuLi4iLCBkZWxheSkKICAgICAgICAgICAgdGltZS5zbGVlcChkZWxheSkKCiAgICByYWlzZSBNVDVDb25uZWN0aW9uRXJyb3IoCiAgICAgICAgZiJDb3VsZCBub3QgY29ubmVjdCB0byBNVDUgdGVybWluYWwgYWZ0ZXIge21heF9yZXRyaWVzfSBhdHRlbXB0cy4gIgogICAgICAgIGYiTGFzdCBlcnJvcjoge19zdGF0ZS5sYXN0X2Vycm9yfSIKICAgICkKCgpkZWYgZW5zdXJlX2Nvbm5lY3RlZCgpIC0+IE5vbmU6CiAgICAiIiIKICAgIENoZWFwIGxpdmVuZXNzIGNoZWNrIHVzZWQgYmVmb3JlIGV2ZXJ5IHRyYWRpbmcgYWN0aW9uLiBSZWNvbm5lY3RzIG9uY2UKICAgIGlmIHRoZSB0ZXJtaW5hbCBoYXMgZHJvcHBlZCAoZS5nLiB0ZXJtaW5hbCByZXN0YXJ0ZWQsIG5ldHdvcmsgaGljY3VwKS4KICAgICIiIgogICAgd2l0aCBfbXQ1X2xvY2s6CiAgICAgICAgcmVxdWlyZV9tdDVfcnVudGltZSgpCiAgICAgICAgaW5mbyA9IG10NS50ZXJtaW5hbF9pbmZvKCkKICAgICAgICBpZiBpbmZvIGlzIE5vbmU6CiAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKAogICAgICAgICAgICAgICAgIk1UNSB0ZXJtaW5hbF9pbmZvKCkgcmV0dXJuZWQgTm9uZSDigJQgY29ubmVjdGlvbiBhcHBlYXJzIGxvc3QuIFJlY29ubmVjdGluZy4uLiIKICAgICAgICAgICAgKQogICAgICAgICAgICBfc3RhdGUuY29ubmVjdGVkID0gRmFsc2UKICAgICAgICAgICAgX2luaXRpYWxpemVfY29ubmVjdGlvbigpCiAgICAgICAgICAgIHJldHVybgoKICAgICAgICBpZiBub3QgX3N0YXRlLmNvbm5lY3RlZDoKICAgICAgICAgICAgbG9nZ2VyLmluZm8oIkNvbm5lY3Rpb24gYWxpdmUgYnV0IHN0YXRlIHVuc3luY2VkIOKAlCByZWZyZXNoaW5nLiIpCiAgICAgICAgICAgIF9zdGF0ZS5jb25uZWN0ZWQgPSBUcnVlCgoKZGVmIHNodXRkb3duX2Nvbm5lY3Rpb24oKSAtPiBOb25lOgogICAgd2l0aCBfbXQ1X2xvY2s6CiAgICAgICAgaWYgX3N0YXRlLmNvbm5lY3RlZDoKICAgICAgICAgICAgbXQ1LnNodXRkb3duKCkKICAgICAgICAgICAgX3N0YXRlLmNvbm5lY3RlZCA9IEZhbHNlCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJNVDUgY29ubmVjdGlvbiBzaHV0IGRvd24gY2xlYW5seS4iKQoKCmRlZiBfcmVzb2x2ZV9zeW1ib2xfbmFtZShiYXNlX25hbWU6IHN0cikgLT4gc3RyIHwgTm9uZToKICAgIGlmIG10NS5zeW1ib2xfaW5mbyhiYXNlX25hbWUpIGlzIG5vdCBOb25lOgogICAgICAgIHJldHVybiBiYXNlX25hbWUKICAgIGZvciBzdWZmaXggaW4gWyIiLCAiLmEiLCAiLnBybyIsICIucmF3IiwgIi1FQ04iLCAibSIsICIuYyJdOgogICAgICAgIGNhbmRpZGF0ZSA9IGYie2Jhc2VfbmFtZX17c3VmZml4fSIKICAgICAgICBpZiBtdDUuc3ltYm9sX2luZm8oY2FuZGlkYXRlKSBpcyBub3QgTm9uZToKICAgICAgICAgICAgcmV0dXJuIGNhbmRpZGF0ZQogICAgZm9yIHN5bWJvbF9pbmZvIGluIG10NS5zeW1ib2xzX2dldCgpIG9yICgpOgogICAgICAgIGlmIHN5bWJvbF9pbmZvLm5hbWUudXBwZXIoKS5zdGFydHN3aXRoKGJhc2VfbmFtZS51cHBlcigpKToKICAgICAgICAgICAgcmV0dXJuIHN5bWJvbF9pbmZvLm5hbWUKICAgIHJldHVybiBOb25lCgoKQG10NV9zZXJpYWxpemVkCmRlZiByZXNvbHZlX2FuZF92YWxpZGF0ZV9zeW1ib2xzKCkgLT4gZGljdFtzdHIsIHN0cl06CiAgICAiIiJSZXNvbHZlIGNvbmZpZ3VyZWQgc3ltYm9scyB0byBicm9rZXIgbmFtZXMgYW5kIG1ha2UgdGhlbSB2aXNpYmxlLiIiIgogICAgcmVxdWlyZV9tdDVfcnVudGltZSgpCiAgICByZXNvbHZlZDogZGljdFtzdHIsIHN0cl0gPSB7fQogICAgZm9yIHN5bV9jZmcgaW4gVFJBRElOR19TWU1CT0xTOgogICAgICAgIGFjdHVhbCA9IF9yZXNvbHZlX3N5bWJvbF9uYW1lKHN5bV9jZmcubmFtZSkKICAgICAgICBpZiBhY3R1YWwgaXMgTm9uZToKICAgICAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKAogICAgICAgICAgICAgICAgZiJDb3VsZCBub3QgcmVzb2x2ZSAne3N5bV9jZmcubmFtZX0nIHVuZGVyIGFueSBzdWZmaXggdmFyaWFudC4iCiAgICAgICAgICAgICkKICAgICAgICBpbmZvID0gbXQ1LnN5bWJvbF9pbmZvKGFjdHVhbCkKICAgICAgICBpZiBub3QgaW5mby52aXNpYmxlOgogICAgICAgICAgICBpZiBub3QgbXQ1LnN5bWJvbF9zZWxlY3QoYWN0dWFsLCBUcnVlKToKICAgICAgICAgICAgICAgIHJhaXNlIE1UNUNvbm5lY3Rpb25FcnJvcihmIkNvdWxkIG5vdCBhZGQgJ3thY3R1YWx9JyB0byBNYXJrZXQgV2F0Y2guIikKICAgICAgICAgICAgbG9nZ2VyLmluZm8oIlN5bWJvbCAlcyBhZGRlZCB0byBNYXJrZXQgV2F0Y2guIiwgYWN0dWFsKQogICAgICAgIGlmIGFjdHVhbCAhPSBzeW1fY2ZnLm5hbWU6CiAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKCJTeW1ib2wgJyVzJyByZXNvbHZlZCB0byBicm9rZXIgbmFtZSAnJXMnLiIsIHN5bV9jZmcubmFtZSwgYWN0dWFsKQogICAgICAgIHJlc29sdmVkW3N5bV9jZmcubmFtZV0gPSBhY3R1YWwKICAgIF9zeW1ib2xfcmVzb2x1dGlvbi51cGRhdGUocmVzb2x2ZWQpCiAgICByZXR1cm4gcmVzb2x2ZWQKCgpkZWYgcmVzb2x2ZWRfc3ltYm9sKGJhc2VfbmFtZTogc3RyKSAtPiBzdHI6CiAgICByZXR1cm4gX3N5bWJvbF9yZXNvbHV0aW9uLmdldChiYXNlX25hbWUsIGJhc2VfbmFtZSkKCgpAbXQ1X3NlcmlhbGl6ZWQKZGVmIHZhbGlkYXRlX3N5bWJvbF90cmFkZV9jb25zdHJhaW50cygKICAgIHN5bWJvbDogc3RyLCBlbnRyeV9wcmljZTogZmxvYXQsIHNsOiBmbG9hdCwgdHA6IGZsb2F0CikgLT4gTm9uZToKICAgICIiIlJlamVjdCBpbnZhbGlkIGJyb2tlciBsaW1pdHMgYmVmb3JlIHNlbmRpbmcgYSBzZXJ2ZXIgb3JkZXIuIiIiCiAgICByZXF1aXJlX210NV9ydW50aW1lKCkKICAgIGVuc3VyZV9jb25uZWN0ZWQoKQogICAgaW5mbyA9IG10NS5zeW1ib2xfaW5mbyhzeW1ib2wpCiAgICBpZiBpbmZvIGlzIE5vbmU6CiAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKGYic3ltYm9sX2luZm8oKSBmYWlsZWQgZm9yIHtzeW1ib2x9OiB7bXQ1Lmxhc3RfZXJyb3IoKX0iKQoKICAgIGlmIG5vdCBpbmZvLnRyYWRlX21vZGU6CiAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKGYiU3ltYm9sICd7c3ltYm9sfScgaXMgbm90IHRyYWRlYWJsZSBvbiB0aGlzIGJyb2tlci9zZXJ2ZXIuIikKCiAgICBzdG9wX2xldmVsID0gaW50KGdldGF0dHIoaW5mbywgInRyYWRlX3N0b3BzX2xldmVsIiwgMCkgb3IgMCkKICAgIGZyZWV6ZV9sZXZlbCA9IGludChnZXRhdHRyKGluZm8sICJ0cmFkZV9mcmVlemVfbGV2ZWwiLCAwKSBvciAwKQogICAgcG9pbnQgPSBmbG9hdChnZXRhdHRyKGluZm8sICJwb2ludCIsIDAuMCkgb3IgMC4wKQoKICAgIGlmIHN0b3BfbGV2ZWwgPiAwOgogICAgICAgIG1pbl9kaXN0YW5jZSA9IG1heChzdG9wX2xldmVsICogcG9pbnQsIDAuMCkKICAgICAgICBpZiBhYnMoZW50cnlfcHJpY2UgLSBzbCkgPCBtaW5fZGlzdGFuY2Ugb3IgYWJzKHRwIC0gZW50cnlfcHJpY2UpIDwgbWluX2Rpc3RhbmNlOgogICAgICAgICAgICByYWlzZSBNVDVDb25uZWN0aW9uRXJyb3IoCiAgICAgICAgICAgICAgICBmIkJyb2tlciBzdG9wIGRpc3RhbmNlIGZvciB7c3ltYm9sfSBpcyBiZWxvdyB7bWluX2Rpc3RhbmNlfSBhbmQgd2FzIHJlamVjdGVkLiIKICAgICAgICAgICAgKQoKICAgIGlmIGZyZWV6ZV9sZXZlbCA+IDA6CiAgICAgICAgdGljayA9IG10NS5zeW1ib2xfaW5mb190aWNrKHN5bWJvbCkKICAgICAgICBpZiB0aWNrIGlzIG5vdCBOb25lIGFuZCBhYnModGljay5hc2sgLSB0aWNrLmJpZCkgPiBmcmVlemVfbGV2ZWwgKiBwb2ludDoKICAgICAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKGYiU3ltYm9sIHtzeW1ib2x9IGV4Y2VlZHMgYnJva2VyIGZyZWV6ZSBsZXZlbDsgdHJhZGUgYWJvcnRlZC4iKQoKICAgIGlmIG5vdCAoZW50cnlfcHJpY2UgPiAwIGFuZCBzbCA+IDAgYW5kIHRwID4gMCk6CiAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKAogICAgICAgICAgICBmIkludmFsaWQgcHJpY2VzIGZvciB7c3ltYm9sfTogZW50cnk9e2VudHJ5X3ByaWNlfSwgc2w9e3NsfSwgdHA9e3RwfSIKICAgICAgICApCgoKQG10NV9zZXJpYWxpemVkCmRlZiBnZXRfcmF0ZXMoc3ltYm9sOiBzdHIsIHRpbWVmcmFtZV9rZXk6IHN0ciwgbl9iYXJzOiBpbnQpIC0+IHBkLkRhdGFGcmFtZToKICAgICIiIgogICAgRmV0Y2ggdGhlIGxhc3QgYG5fYmFyc2AgY29tcGxldGVkIGNhbmRsZXMgZm9yIGBzeW1ib2xgIG9uIGB0aW1lZnJhbWVfa2V5YAogICAgKGUuZy4gIkgxIiwgIkg0IikgYW5kIHJldHVybiBhIGNsZWFuLCBpbmRleGVkIERhdGFGcmFtZS4KCiAgICBOb3RlOiBtdDUuY29weV9yYXRlc19mcm9tX3BvcyguLi4sIHN0YXJ0X3Bvcz0xLCAuLi4pIGlzIHVzZWQgKG5vdCAwKSBzbwogICAgd2UgYWx3YXlzIHdvcmsgd2l0aCBmdWxseSBjbG9zZWQgY2FuZGxlcywgbmV2ZXIgdGhlIGN1cnJlbnRseSBmb3JtaW5nIG9uZS4KCiAgICBSYWlzZXM6CiAgICAgICAgTVQ1Q29ubmVjdGlvbkVycm9yOiBvbiBNVDUtbGV2ZWwgZmFpbHVyZSAodGVybWluYWwgZG93biwgYmFkIHN5bWJvbCkuCiAgICAgICAgVmFsdWVFcnJvcjogaWYgdGhlIHJldHVybmVkIGRhdGEgaXMgbWFsZm9ybWVkIChtaXNzaW5nIGNvbHVtbnMsIGFsbC1OYU4pLgogICAgIiIiCiAgICByZXF1aXJlX210NV9ydW50aW1lKCkKICAgIGVuc3VyZV9jb25uZWN0ZWQoKQoKICAgIHRmID0gVElNRUZSQU1FX01BUC5nZXQodGltZWZyYW1lX2tleSkKICAgIGlmIHRmIGlzIE5vbmU6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihmIlVuc3VwcG9ydGVkIHRpbWVmcmFtZSBrZXk6IHt0aW1lZnJhbWVfa2V5fSIpCgogICAgcmF0ZXMgPSBtdDUuY29weV9yYXRlc19mcm9tX3BvcyhzeW1ib2wsIHRmLCAxLCBuX2JhcnMpCiAgICBpZiByYXRlcyBpcyBOb25lIG9yIGxlbihyYXRlcykgPT0gMDoKICAgICAgICBlcnIgPSBtdDUubGFzdF9lcnJvcigpCiAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKAogICAgICAgICAgICBmImNvcHlfcmF0ZXNfZnJvbV9wb3MgcmV0dXJuZWQgbm8gZGF0YSBmb3Ige3N5bWJvbH0ve3RpbWVmcmFtZV9rZXl9OiB7ZXJyfSIKICAgICAgICApCgogICAgZGYgPSBwZC5EYXRhRnJhbWUocmF0ZXMpCgogICAgIyAtLS0gR3VhcmQ6IHZhbGlkYXRlIHJlcXVpcmVkIGNvbHVtbnMgZXhpc3QgLS0tCiAgICByZXF1aXJlZF9jb2xzID0geyJ0aW1lIiwgIm9wZW4iLCAiaGlnaCIsICJsb3ciLCAiY2xvc2UifQogICAgbWlzc2luZyA9IHJlcXVpcmVkX2NvbHMgLSBzZXQoZGYuY29sdW1ucykKICAgIGlmIG1pc3Npbmc6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigKICAgICAgICAgICAgZiJNVDUgcmV0dXJuZWQgbWFsZm9ybWVkIGRhdGEgZm9yIHtzeW1ib2x9L3t0aW1lZnJhbWVfa2V5fTogIgogICAgICAgICAgICBmIm1pc3NpbmcgY29sdW1ucyB7bWlzc2luZ30iCiAgICAgICAgKQoKICAgICMgLS0tIEd1YXJkOiBkcm9wIHJvd3Mgd2l0aCBOYU4gaW4gZXNzZW50aWFsIE9ITEMgY29sdW1ucyAtLS0KICAgIGRmID0gZGYuZHJvcG5hKHN1YnNldD1bIm9wZW4iLCAiaGlnaCIsICJsb3ciLCAiY2xvc2UiXSkKICAgIGlmIGRmLmVtcHR5OgogICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoCiAgICAgICAgICAgIGYiQWxsIGNhbmRsZSByb3dzIGZvciB7c3ltYm9sfS97dGltZWZyYW1lX2tleX0gY29udGFpbmVkIE5hTiB2YWx1ZXMg4oCUICIKICAgICAgICAgICAgImRhdGEgaXMgdW51c2FibGUuIgogICAgICAgICkKCiAgICBkZlsidGltZSJdID0gcGQudG9fZGF0ZXRpbWUoZGZbInRpbWUiXSwgdW5pdD0icyIsIHV0Yz1UcnVlLCBlcnJvcnM9ImNvZXJjZSIpCiAgICBkZiA9IGRmLmRyb3BuYShzdWJzZXQ9WyJ0aW1lIl0pICAjIHJlbW92ZSBhbnkgcm93cyB3aG9zZSB0aW1lc3RhbXAgZmFpbGVkIHRvIGNvZXJjZQogICAgaWYgZGYuZW1wdHk6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihmIkFsbCB0aW1lc3RhbXBzIGZvciB7c3ltYm9sfS97dGltZWZyYW1lX2tleX0gYXJlIE5hVC91bnBhcnNlYWJsZS4iKQoKICAgIGRmLnNldF9pbmRleCgidGltZSIsIGlucGxhY2U9VHJ1ZSkKCiAgICAjIC0tLSBHdWFyZDogZW5zdXJlIGluZGV4IGlzIG1vbm90b25pYyAobm8gb3V0LW9mLW9yZGVyIGNhbmRsZXMpIC0tLQogICAgaWYgbm90IGRmLmluZGV4LmlzX21vbm90b25pY19pbmNyZWFzaW5nOgogICAgICAgIGRmID0gZGYuc29ydF9pbmRleCgpCgogICAgIyB0aWNrX3ZvbHVtZSBtYXkgYmUgYWJzZW50IG9uIHNvbWUgaW5zdHJ1bWVudHM7IGRlZmF1bHQgdG8gMAogICAgaWYgInRpY2tfdm9sdW1lIiBpbiBkZi5jb2x1bW5zOgogICAgICAgIGRmLnJlbmFtZShjb2x1bW5zPXsidGlja192b2x1bWUiOiAidm9sdW1lIn0sIGlucGxhY2U9VHJ1ZSkKICAgIGVsc2U6CiAgICAgICAgZGZbInZvbHVtZSJdID0gMAoKICAgIGlmICJzcHJlYWQiIG5vdCBpbiBkZi5jb2x1bW5zOgogICAgICAgIGRmWyJzcHJlYWQiXSA9IDAuMAoKICAgIHJldHVybiBkZi5sb2NbOiwgWyJvcGVuIiwgImhpZ2giLCAibG93IiwgImNsb3NlIiwgInZvbHVtZSIsICJzcHJlYWQiXV0uY29weSgpCgoKZGVmIGdldF9sYXRlc3RfY2xvc2VkX2NhbmRsZV90aW1lKHN5bWJvbDogc3RyLCB0aW1lZnJhbWVfa2V5OiBzdHIpIC0+IHBkLlRpbWVzdGFtcDoKICAgICIiIlVzZWQgYnkgbWFpbi5weSdzIGxvb3AgdG8gZGV0ZWN0IHdoZW4gYSBuZXcgY2FuZGxlIGhhcyBjbG9zZWQuIiIiCiAgICBkZiA9IGdldF9yYXRlcyhzeW1ib2wsIHRpbWVmcmFtZV9rZXksIG5fYmFycz0xKQogICAgcmV0dXJuIHBkLlRpbWVzdGFtcChkZi5pbmRleFstMV0pCgoKQG10NV9zZXJpYWxpemVkCmRlZiBnZXRfYWNjb3VudF9lcXVpdHkoKSAtPiBmbG9hdDoKICAgIHJlcXVpcmVfbXQ1X3J1bnRpbWUoKQogICAgZW5zdXJlX2Nvbm5lY3RlZCgpCiAgICBpbmZvID0gbXQ1LmFjY291bnRfaW5mbygpCiAgICBpZiBpbmZvIGlzIE5vbmU6CiAgICAgICAgcmFpc2UgTVQ1Q29ubmVjdGlvbkVycm9yKGYiYWNjb3VudF9pbmZvKCkgZmFpbGVkOiB7bXQ1Lmxhc3RfZXJyb3IoKX0iKQogICAgcmV0dXJuIGZsb2F0KGluZm8uZXF1aXR5KQoKCkBtdDVfc2VyaWFsaXplZApkZWYgZ2V0X3N5bWJvbF9pbmZvKHN5bWJvbDogc3RyKToKICAgIHJlcXVpcmVfbXQ1X3J1bnRpbWUoKQogICAgZW5zdXJlX2Nvbm5lY3RlZCgpCiAgICBpbmZvID0gbXQ1LnN5bWJvbF9pbmZvKHN5bWJvbCkKICAgIGlmIGluZm8gaXMgTm9uZToKICAgICAgICByYWlzZSBNVDVDb25uZWN0aW9uRXJyb3IoZiJzeW1ib2xfaW5mbygpIGZhaWxlZCBmb3Ige3N5bWJvbH06IHttdDUubGFzdF9lcnJvcigpfSIpCiAgICByZXR1cm4gaW5mbwoKCkBtdDVfc2VyaWFsaXplZApkZWYgZ2V0X29wZW5fcG9zaXRpb25zKHN5bWJvbDogc3RyIHwgTm9uZSA9IE5vbmUsIG1hZ2ljOiBpbnQgfCBOb25lID0gTm9uZSkgLT4gbGlzdDoKICAgIHJlcXVpcmVfbXQ1X3J1bnRpbWUoKQogICAgZW5zdXJlX2Nvbm5lY3RlZCgpCiAgICBwb3NpdGlvbnMgPSBtdDUucG9zaXRpb25zX2dldChzeW1ib2w9c3ltYm9sKSBpZiBzeW1ib2wgZWxzZSBtdDUucG9zaXRpb25zX2dldCgpCiAgICBpZiBwb3NpdGlvbnMgaXMgTm9uZToKICAgICAgICByZXR1cm4gW10KICAgIGlmIG1hZ2ljIGlzIG5vdCBOb25lOgogICAgICAgIHBvc2l0aW9ucyA9IFtwIGZvciBwIGluIHBvc2l0aW9ucyBpZiBnZXRhdHRyKHAsICJtYWdpYyIsIE5vbmUpID09IG1hZ2ljXQogICAgcmV0dXJuIGxpc3QocG9zaXRpb25zKQo=
+"""
+data_provider.py
+-----------------
+Owns the MT5 terminal connection lifecycle and all historical/live data
+fetching. Nothing else in the codebase should call the `MetaTrader5`
+module's connection functions directly — route everything through here so
+reconnection logic lives in exactly one place.
+"""
+
+from __future__ import annotations
+
+import logging
+import os
+import random
+import time
+from contextlib import contextmanager
+from dataclasses import dataclass
+from functools import wraps
+from threading import RLock
+from typing import Any, cast
+
+import pandas as pd
+
+try:
+    import MetaTrader5 as mt5
+except ImportError:  # pragma: no cover - Linux/test environment only.
+    mt5 = cast(Any, None)
+    if os.getenv("MT5LINUX_ENABLED", "").lower() in {"1", "true", "yes"}:
+        try:
+            # mt5linux starts a bridge/container during construction.  Make
+            # that an explicit deployment choice rather than an import side
+            # effect so APIs, tests, and health tooling remain safe to load.
+            from mt5linux import MetaTrader5
+
+            mt5 = MetaTrader5()
+        except Exception as exc:  # noqa: BLE001 - catch any init failure
+            logging.getLogger("trading_bot.data_provider").error(
+                "MT5LINUX_ENABLED but terminal bridge could not start: %s", exc
+            )
+
+from config import (
+    CREDENTIALS,
+    INITIAL_BACKOFF_SECONDS,
+    MAX_BACKOFF_SECONDS,
+    MAX_RECONNECT_ATTEMPTS,
+    TRADING_SYMBOLS,
+)
+
+logger = logging.getLogger("trading_bot.data_provider")
+
+
+def require_mt5_runtime() -> None:
+    if mt5 is None:
+        raise MT5ConnectionError(
+            "MetaTrader5 is not available in this runtime. This bot must run on a "
+            "Windows machine with an MT5 terminal installed and a broker login."
+        )
+
+
+TIMEFRAME_MAP: dict[str, int] = {}
+if mt5 is not None:
+    TIMEFRAME_MAP = {
+        "M1": getattr(mt5, "TIMEFRAME_M1", 0),
+        "M5": getattr(mt5, "TIMEFRAME_M5", 0),
+        "M15": getattr(mt5, "TIMEFRAME_M15", 0),
+        "M30": getattr(mt5, "TIMEFRAME_M30", 0),
+        "H1": getattr(mt5, "TIMEFRAME_H1", 0),
+        "H4": getattr(mt5, "TIMEFRAME_H4", 0),
+        "D1": getattr(mt5, "TIMEFRAME_D1", 0),
+    }
+
+
+class MT5ConnectionError(RuntimeError):
+    """Raised when the terminal cannot be initialized or is unresponsive."""
+
+
+@dataclass
+class ConnectionState:
+    connected: bool = False
+    last_error: str | None = None
+
+
+_state = ConnectionState()
+_runtime_credentials: dict[str, Any] = {}
+_mt5_lock = RLock()
+_symbol_resolution: dict[str, str] = {}
+
+
+@contextmanager
+def mt5_operation_lock():
+    """Serialize MT5 IPC and connection operations across worker/API threads."""
+    with _mt5_lock:
+        yield
+
+
+def mt5_serialized(function):
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        with _mt5_lock:
+            return function(*args, **kwargs)
+
+    return wrapper
+
+
+def configure_runtime_credentials(
+    login: int, password: str, server: str, terminal_path: str | None = None
+) -> None:
+    """Set session-only credentials supplied by the protected settings API."""
+    with _mt5_lock:
+        _runtime_credentials.clear()
+        _runtime_credentials.update(
+            login=login, password=password, server=server, terminal_path=terminal_path
+        )
+
+
+def _exponential_backoff_delay(attempt: int, base: float, max_delay: float) -> float:
+    """Jittered exponential backoff: base * 2^(attempt-1) + random jitter."""
+    delay = min(base * (2 ** (attempt - 1)), max_delay)
+    return delay + random.uniform(0, delay * 0.1)
+
+
+def initialize_connection(
+    max_retries: int = MAX_RECONNECT_ATTEMPTS,
+    initial_delay: float = INITIAL_BACKOFF_SECONDS,
+) -> None:
+    """
+    Initialize and log in to the MT5 terminal using exponential backoff
+    with jitter. Retries transient failures (terminal still starting, brief
+    network blip) before giving up.
+
+    Raises:
+        MT5ConnectionError: if all retries are exhausted.
+    """
+    with _mt5_lock:
+        _initialize_connection(max_retries, initial_delay)
+
+
+def _initialize_connection(
+    max_retries: int = MAX_RECONNECT_ATTEMPTS,
+    initial_delay: float = INITIAL_BACKOFF_SECONDS,
+) -> None:
+    require_mt5_runtime()
+
+    # Determine credentials: runtime (from API) takes priority over config (.env)
+    login = _runtime_credentials.get("login", CREDENTIALS.login)
+    password = _runtime_credentials.get("password", CREDENTIALS.password)
+    server = _runtime_credentials.get("server", CREDENTIALS.server)
+    terminal_path = _runtime_credentials.get("terminal_path", CREDENTIALS.terminal_path)
+
+    # Validate that we have at least one complete set of credentials
+    if not (login and password and server):
+        raise MT5ConnectionError(
+            "MT5 credentials not configured. Provide login, password, and server "
+            "via the frontend login form (POST /api/settings/credentials) or set "
+            "MT5_LOGIN, MT5_PASSWORD, MT5_SERVER in the environment for local development."
+        )
+
+    for attempt in range(1, max_retries + 1):
+        kwargs = {}
+        if terminal_path:
+            kwargs["path"] = terminal_path
+
+        ok = mt5.initialize(
+            login=login,
+            password=password,
+            server=server,
+            timeout=CREDENTIALS.timeout_ms,
+            **kwargs,
+        )
+
+        if ok:
+            account_info = mt5.account_info()
+            if account_info is None:
+                err = mt5.last_error()
+                logger.warning(
+                    "initialize() succeeded but account_info() returned None "
+                    "(attempt %d/%d): %s",
+                    attempt,
+                    max_retries,
+                    err,
+                )
+            else:
+                _state.connected = True
+                _state.last_error = None
+                logger.info(
+                    "Connected to MT5. Account #%s | Balance: %.2f %s | Server: %s",
+                    account_info.login,
+                    account_info.balance,
+                    account_info.currency,
+                    account_info.server,
+                )
+                return
+
+        err = mt5.last_error()
+        _state.last_error = str(err)
+        logger.error(
+            "MT5 initialize() failed (attempt %d/%d): %s",
+            attempt,
+            max_retries,
+            err,
+        )
+        mt5.shutdown()
+
+        if attempt < max_retries:
+            delay = _exponential_backoff_delay(
+                attempt,
+                initial_delay,
+                MAX_BACKOFF_SECONDS,
+            )
+            logger.info("Backing off for %.1fs before retry...", delay)
+            time.sleep(delay)
+
+    raise MT5ConnectionError(
+        f"Could not connect to MT5 terminal after {max_retries} attempts. "
+        f"Last error: {_state.last_error}"
+    )
+
+
+def ensure_connected() -> None:
+    """
+    Cheap liveness check used before every trading action. Reconnects once
+    if the terminal has dropped (e.g. terminal restarted, network hiccup).
+    """
+    with _mt5_lock:
+        require_mt5_runtime()
+        info = mt5.terminal_info()
+        if info is None:
+            logger.warning(
+                "MT5 terminal_info() returned None — connection appears lost. Reconnecting..."
+            )
+            _state.connected = False
+            _initialize_connection()
+            return
+
+        if not _state.connected:
+            logger.info("Connection alive but state unsynced — refreshing.")
+            _state.connected = True
+
+
+def shutdown_connection() -> None:
+    with _mt5_lock:
+        if _state.connected:
+            mt5.shutdown()
+            _state.connected = False
+            logger.info("MT5 connection shut down cleanly.")
+
+
+def _resolve_symbol_name(base_name: str) -> str | None:
+    if mt5.symbol_info(base_name) is not None:
+        return base_name
+    for suffix in ["", ".a", ".pro", ".raw", "-ECN", "m", ".c"]:
+        candidate = f"{base_name}{suffix}"
+        if mt5.symbol_info(candidate) is not None:
+            return candidate
+    for symbol_info in mt5.symbols_get() or ():
+        if symbol_info.name.upper().startswith(base_name.upper()):
+            return symbol_info.name
+    return None
+
+
+@mt5_serialized
+def resolve_and_validate_symbols() -> dict[str, str]:
+    """Resolve configured symbols to broker names and make them visible."""
+    require_mt5_runtime()
+    resolved: dict[str, str] = {}
+    for sym_cfg in TRADING_SYMBOLS:
+        actual = _resolve_symbol_name(sym_cfg.name)
+        if actual is None:
+            raise MT5ConnectionError(
+                f"Could not resolve '{sym_cfg.name}' under any suffix variant."
+            )
+        info = mt5.symbol_info(actual)
+        if not info.visible:
+            if not mt5.symbol_select(actual, True):
+                raise MT5ConnectionError(f"Could not add '{actual}' to Market Watch.")
+            logger.info("Symbol %s added to Market Watch.", actual)
+        if actual != sym_cfg.name:
+            logger.warning("Symbol '%s' resolved to broker name '%s'.", sym_cfg.name, actual)
+        resolved[sym_cfg.name] = actual
+    _symbol_resolution.update(resolved)
+    return resolved
+
+
+def resolved_symbol(base_name: str) -> str:
+    return _symbol_resolution.get(base_name, base_name)
+
+
+@mt5_serialized
+def validate_symbol_trade_constraints(
+    symbol: str, entry_price: float, sl: float, tp: float
+) -> None:
+    """Reject invalid broker limits before sending a server order."""
+    require_mt5_runtime()
+    ensure_connected()
+    info = mt5.symbol_info(symbol)
+    if info is None:
+        raise MT5ConnectionError(f"symbol_info() failed for {symbol}: {mt5.last_error()}")
+
+    if not info.trade_mode:
+        raise MT5ConnectionError(f"Symbol '{symbol}' is not tradeable on this broker/server.")
+
+    stop_level = int(getattr(info, "trade_stops_level", 0) or 0)
+    freeze_level = int(getattr(info, "trade_freeze_level", 0) or 0)
+    point = float(getattr(info, "point", 0.0) or 0.0)
+
+    if stop_level > 0:
+        min_distance = max(stop_level * point, 0.0)
+        if abs(entry_price - sl) < min_distance or abs(tp - entry_price) < min_distance:
+            raise MT5ConnectionError(
+                f"Broker stop distance for {symbol} is below {min_distance} and was rejected."
+            )
+
+    if freeze_level > 0:
+        tick = mt5.symbol_info_tick(symbol)
+        if tick is not None and abs(tick.ask - tick.bid) > freeze_level * point:
+            raise MT5ConnectionError(f"Symbol {symbol} exceeds broker freeze level; trade aborted.")
+
+    if not (entry_price > 0 and sl > 0 and tp > 0):
+        raise MT5ConnectionError(
+            f"Invalid prices for {symbol}: entry={entry_price}, sl={sl}, tp={tp}"
+        )
+
+
+@mt5_serialized
+def get_rates(symbol: str, timeframe_key: str, n_bars: int) -> pd.DataFrame:
+    """
+    Fetch the last `n_bars` completed candles for `symbol` on `timeframe_key`
+    (e.g. "H1", "H4") and return a clean, indexed DataFrame.
+
+    Note: mt5.copy_rates_from_pos(..., start_pos=1, ...) is used (not 0) so
+    we always work with fully closed candles, never the currently forming one.
+
+    Raises:
+        MT5ConnectionError: on MT5-level failure (terminal down, bad symbol).
+        ValueError: if the returned data is malformed (missing columns, all-NaN).
+    """
+    require_mt5_runtime()
+    ensure_connected()
+
+    tf = TIMEFRAME_MAP.get(timeframe_key)
+    if tf is None:
+        raise ValueError(f"Unsupported timeframe key: {timeframe_key}")
+
+    rates = mt5.copy_rates_from_pos(symbol, tf, 1, n_bars)
+    if rates is None or len(rates) == 0:
+        err = mt5.last_error()
+        raise MT5ConnectionError(
+            f"copy_rates_from_pos returned no data for {symbol}/{timeframe_key}: {err}"
+        )
+
+    df = pd.DataFrame(rates)
+
+    # --- Guard: validate required columns exist ---
+    required_cols = {"time", "open", "high", "low", "close"}
+    missing = required_cols - set(df.columns)
+    if missing:
+        raise ValueError(
+            f"MT5 returned malformed data for {symbol}/{timeframe_key}: "
+            f"missing columns {missing}"
+        )
+
+    # --- Guard: drop rows with NaN in essential OHLC columns ---
+    df = df.dropna(subset=["open", "high", "low", "close"])
+    if df.empty:
+        raise ValueError(
+            f"All candle rows for {symbol}/{timeframe_key} contained NaN values — "
+            "data is unusable."
+        )
+
+    df["time"] = pd.to_datetime(df["time"], unit="s", utc=True, errors="coerce")
+    df = df.dropna(subset=["time"])  # remove any rows whose timestamp failed to coerce
+    if df.empty:
+        raise ValueError(f"All timestamps for {symbol}/{timeframe_key} are NaT/unparseable.")
+
+    df.set_index("time", inplace=True)
+
+    # --- Guard: ensure index is monotonic (no out-of-order candles) ---
+    if not df.index.is_monotonic_increasing:
+        df = df.sort_index()
+
+    # tick_volume may be absent on some instruments; default to 0
+    if "tick_volume" in df.columns:
+        df.rename(columns={"tick_volume": "volume"}, inplace=True)
+    else:
+        df["volume"] = 0
+
+    if "spread" not in df.columns:
+        df["spread"] = 0.0
+
+    return df.loc[:, ["open", "high", "low", "close", "volume", "spread"]].copy()
+
+
+def get_latest_closed_candle_time(symbol: str, timeframe_key: str) -> pd.Timestamp:
+    """Used by main.py's loop to detect when a new candle has closed."""
+    df = get_rates(symbol, timeframe_key, n_bars=1)
+    return pd.Timestamp(df.index[-1])
+
+
+@mt5_serialized
+def get_account_equity() -> float:
+    require_mt5_runtime()
+    ensure_connected()
+    info = mt5.account_info()
+    if info is None:
+        raise MT5ConnectionError(f"account_info() failed: {mt5.last_error()}")
+    return float(info.equity)
+
+
+@mt5_serialized
+def get_symbol_info(symbol: str):
+    require_mt5_runtime()
+    ensure_connected()
+    info = mt5.symbol_info(symbol)
+    if info is None:
+        raise MT5ConnectionError(f"symbol_info() failed for {symbol}: {mt5.last_error()}")
+    return info
+
+
+@mt5_serialized
+def get_open_positions(symbol: str | None = None, magic: int | None = None) -> list:
+    require_mt5_runtime()
+    ensure_connected()
+    positions = mt5.positions_get(symbol=symbol) if symbol else mt5.positions_get()
+    if positions is None:
+        return []
+    if magic is not None:
+        positions = [p for p in positions if getattr(p, "magic", None) == magic]
+    return list(positions)

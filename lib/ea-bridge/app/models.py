@@ -1,1 +1,310 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUKZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsCmZyb20gdXVpZCBpbXBvcnQgVVVJRCwgdXVpZDQKCmZyb20gc3FsYWxjaGVteSBpbXBvcnQgKAogICAgSlNPTiwKICAgIEJvb2xlYW4sCiAgICBDaGVja0NvbnN0cmFpbnQsCiAgICBEYXRlVGltZSwKICAgIEZvcmVpZ25LZXksCiAgICBJbmRleCwKICAgIEludGVnZXIsCiAgICBOdW1lcmljLAogICAgU3RyaW5nLAogICAgVW5pcXVlQ29uc3RyYWludCwKICAgIFV1aWQsCiAgICBmdW5jLAogICAgdGV4dCwKKQpmcm9tIHNxbGFsY2hlbXkub3JtIGltcG9ydCBEZWNsYXJhdGl2ZUJhc2UsIE1hcHBlZCwgbWFwcGVkX2NvbHVtbgoKdHlwZSBKU09OVmFsdWUgPSBzdHIgfCBpbnQgfCBmbG9hdCB8IGJvb2wgfCBOb25lIHwgbGlzdFtKU09OVmFsdWVdIHwgZGljdFtzdHIsIEpTT05WYWx1ZV0KCgpjbGFzcyBCYXNlKERlY2xhcmF0aXZlQmFzZSk6CiAgICBwYXNzCgoKY2xhc3MgVGltZXN0YW1wZWQ6CiAgICBjcmVhdGVkX2F0OiBNYXBwZWRbZGF0ZXRpbWVdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBEYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PWZ1bmMubm93KCkKICAgICkKICAgIHVwZGF0ZWRfYXQ6IE1hcHBlZFtkYXRldGltZV0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIERhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9ZnVuYy5ub3coKSwgb251cGRhdGU9ZnVuYy5ub3coKQogICAgKQoKCmNsYXNzIFVzZXIoVGltZXN0YW1wZWQsIEJhc2UpOgogICAgX190YWJsZW5hbWVfXyA9ICJ1c2VycyIKCiAgICBpZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbihVdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUsIGRlZmF1bHQ9dXVpZDQpCiAgICBlbWFpbDogTWFwcGVkW3N0cl0gPSBtYXBwZWRfY29sdW1uKFN0cmluZygyNTQpLCBudWxsYWJsZT1GYWxzZSwgdW5pcXVlPVRydWUsIGluZGV4PVRydWUpCiAgICBwYXNzd29yZF9oYXNoOiBNYXBwZWRbc3RyXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDI1NSksIG51bGxhYmxlPUZhbHNlKQogICAgaXNfdmVyaWZpZWQ6IE1hcHBlZFtib29sXSA9IG1hcHBlZF9jb2x1bW4oQm9vbGVhbiwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PXRleHQoImZhbHNlIikpCiAgICByaXNrX2Rpc2NsYWltZXJfYWNjZXB0ZWRfYXQ6IE1hcHBlZFtkYXRldGltZV0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIERhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZQogICAgKQogICAgdHdvX2ZhY3Rvcl9zZWNyZXQ6IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDY0KSkKICAgIGRlbGV0ZWRfYXQ6IE1hcHBlZFtkYXRldGltZSB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSkKCgpjbGFzcyBVc2VyU2Vzc2lvbihUaW1lc3RhbXBlZCwgQmFzZSk6CiAgICBfX3RhYmxlbmFtZV9fID0gInVzZXJfc2Vzc2lvbnMiCiAgICBfX3RhYmxlX2FyZ3NfXyA9ICgKICAgICAgICBJbmRleCgiaXhfdXNlcl9zZXNzaW9uc191c2VyX2V4cGlyZXMiLCAidXNlcl9pZCIsICJleHBpcmVzX2F0IiksCiAgICApCgogICAgaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlLCBkZWZhdWx0PXV1aWQ0KQogICAgdXNlcl9pZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBVdWlkKGFzX3V1aWQ9VHJ1ZSksIEZvcmVpZ25LZXkoInVzZXJzLmlkIiwgb25kZWxldGU9IkNBU0NBREUiKSwgbnVsbGFibGU9RmFsc2UKICAgICkKICAgIHRva2VuX2hhc2g6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSwgdW5pcXVlPVRydWUsIGluZGV4PVRydWUpCiAgICBleHBpcmVzX2F0OiBNYXBwZWRbZGF0ZXRpbWVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9RmFsc2UpCiAgICByZXZva2VkX2F0OiBNYXBwZWRbZGF0ZXRpbWUgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSkpCgoKY2xhc3MgUGFpcmluZ0NvZGUoVGltZXN0YW1wZWQsIEJhc2UpOgogICAgX190YWJsZW5hbWVfXyA9ICJwYWlyaW5nX2NvZGVzIgogICAgX190YWJsZV9hcmdzX18gPSAoCiAgICAgICAgSW5kZXgoIml4X3BhaXJpbmdfY29kZXNfdXNlcl9leHBpcmVzIiwgInVzZXJfaWQiLCAiZXhwaXJlc19hdCIpLAogICAgICAgIEluZGV4KCJpeF9wYWlyaW5nX2NvZGVzX2V4cGlyZXMiLCAiZXhwaXJlc19hdCIpLAogICAgKQoKICAgIGlkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKFV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSwgZGVmYXVsdD11dWlkNCkKICAgIHVzZXJfaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgVXVpZChhc191dWlkPVRydWUpLCBGb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlCiAgICApCiAgICBjb2RlX2hhc2g6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSwgdW5pcXVlPVRydWUsIGluZGV4PVRydWUpCiAgICBleHBpcmVzX2F0OiBNYXBwZWRbZGF0ZXRpbWVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9RmFsc2UpCiAgICBjb25zdW1lZF9hdDogTWFwcGVkW2RhdGV0aW1lIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKERhdGVUaW1lKHRpbWV6b25lPVRydWUpKQoKCmNsYXNzIERldmljZShUaW1lc3RhbXBlZCwgQmFzZSk6CiAgICBfX3RhYmxlbmFtZV9fID0gImRldmljZXMiCiAgICBfX3RhYmxlX2FyZ3NfXyA9ICgKICAgICAgICBJbmRleCgiaXhfZGV2aWNlc191c2VyX3N0YXR1c19sYXN0X3NlZW4iLCAidXNlcl9pZCIsICJzdGF0dXMiLCAibGFzdF9zZWVuX2F0IiksCiAgICAgICAgQ2hlY2tDb25zdHJhaW50KCJzdGF0dXMgSU4gKCdBQ1RJVkUnLCAnUkVWT0tFRCcpIiwgbmFtZT0iY2tfZGV2aWNlc19zdGF0dXMiKSwKICAgICAgICBDaGVja0NvbnN0cmFpbnQoImxldmVyYWdlID49IDEiLCBuYW1lPSJja19kZXZpY2VzX2xldmVyYWdlX3Bvc2l0aXZlIiksCiAgICApCgogICAgaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlLCBkZWZhdWx0PXV1aWQ0KQogICAgdXNlcl9pZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBVdWlkKGFzX3V1aWQ9VHJ1ZSksIEZvcmVpZ25LZXkoInVzZXJzLmlkIiwgb25kZWxldGU9IlJFU1RSSUNUIiksIG51bGxhYmxlPUZhbHNlCiAgICApCiAgICBuYW1lOiBNYXBwZWRbc3RyXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDEwMCksIG51bGxhYmxlPUZhbHNlLCBzZXJ2ZXJfZGVmYXVsdD0iTVQ1IFRlcm1pbmFsIikKICAgIHRva2VuX2hhc2g6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSwgdW5pcXVlPVRydWUsIGluZGV4PVRydWUpCiAgICBsYXN0X3NlZW5fYXQ6IE1hcHBlZFtkYXRldGltZSB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSkKICAgIHRlcm1pbmFsX2J1aWxkOiBNYXBwZWRbc3RyIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKFN0cmluZygzMikpCiAgICBicm9rZXI6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoMTIwKSwgbnVsbGFibGU9RmFsc2UpCiAgICBzZXJ2ZXI6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoMTIwKSwgbnVsbGFibGU9RmFsc2UpCiAgICBhY2NvdW50X251bWJlcl9tYXNrZWQ6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoNjQpLCBudWxsYWJsZT1GYWxzZSkKICAgIGFjY291bnRfY3VycmVuY3k6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoOCksIG51bGxhYmxlPUZhbHNlKQogICAgbGV2ZXJhZ2U6IE1hcHBlZFtpbnRdID0gbWFwcGVkX2NvbHVtbihJbnRlZ2VyLCBudWxsYWJsZT1GYWxzZSkKICAgIHN0YXR1czogTWFwcGVkW3N0cl0gPSBtYXBwZWRfY29sdW1uKFN0cmluZygxNiksIG51bGxhYmxlPUZhbHNlLCBzZXJ2ZXJfZGVmYXVsdD0iQUNUSVZFIikKICAgIHJldm9rZWRfYXQ6IE1hcHBlZFtkYXRldGltZSB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSkKICAgIGRlbGV0ZWRfYXQ6IE1hcHBlZFtkYXRldGltZSB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSkKCgpjbGFzcyBBY2NvdW50U25hcHNob3QoVGltZXN0YW1wZWQsIEJhc2UpOgogICAgX190YWJsZW5hbWVfXyA9ICJhY2NvdW50X3NuYXBzaG90cyIKICAgIF9fdGFibGVfYXJnc19fID0gKAogICAgICAgIEluZGV4KCJpeF9hY2NvdW50X3NuYXBzaG90c19kZXZpY2VfY2FwdHVyZWQiLCAiZGV2aWNlX2lkIiwgImNhcHR1cmVkX2F0IiksCiAgICAgICAgQ2hlY2tDb25zdHJhaW50KCJiYWxhbmNlID49IDAiLCBuYW1lPSJja19hY2NvdW50X3NuYXBzaG90c19iYWxhbmNlX25vbm5lZ2F0aXZlIiksCiAgICAgICAgQ2hlY2tDb25zdHJhaW50KCJlcXVpdHkgPj0gMCIsIG5hbWU9ImNrX2FjY291bnRfc25hcHNob3RzX2VxdWl0eV9ub25uZWdhdGl2ZSIpLAogICAgICAgIENoZWNrQ29uc3RyYWludCgiZnJlZV9tYXJnaW4gPj0gMCIsIG5hbWU9ImNrX2FjY291bnRfc25hcHNob3RzX21hcmdpbl9ub25uZWdhdGl2ZSIpLAogICAgKQoKICAgIGlkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKFV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSwgZGVmYXVsdD11dWlkNCkKICAgIGRldmljZV9pZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBVdWlkKGFzX3V1aWQ9VHJ1ZSksIEZvcmVpZ25LZXkoImRldmljZXMuaWQiLCBvbmRlbGV0ZT0iQ0FTQ0FERSIpLCBudWxsYWJsZT1GYWxzZQogICAgKQogICAgYmFsYW5jZTogTWFwcGVkW0RlY2ltYWxdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDI0LCA4KSwgbnVsbGFibGU9RmFsc2UpCiAgICBlcXVpdHk6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyNCwgOCksIG51bGxhYmxlPUZhbHNlKQogICAgbWFyZ2luOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjQsIDgpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9IjAiKQogICAgZnJlZV9tYXJnaW46IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyNCwgOCksIG51bGxhYmxlPUZhbHNlKQogICAgbWFyZ2luX2xldmVsOiBNYXBwZWRbRGVjaW1hbCB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDEyLCA0KSkKICAgIG9wZW5fcG9zaXRpb25zX2NvdW50OiBNYXBwZWRbaW50XSA9IG1hcHBlZF9jb2x1bW4oSW50ZWdlciwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PSIwIikKICAgIGFjY291bnRfY3VycmVuY3k6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoOCksIG51bGxhYmxlPUZhbHNlKQogICAgbGV2ZXJhZ2U6IE1hcHBlZFtpbnRdID0gbWFwcGVkX2NvbHVtbihJbnRlZ2VyLCBudWxsYWJsZT1GYWxzZSkKICAgIGNhcHR1cmVkX2F0OiBNYXBwZWRbZGF0ZXRpbWVdID0gbWFwcGVkX2NvbHVtbihEYXRlVGltZSh0aW1lem9uZT1UcnVlKSwgbnVsbGFibGU9RmFsc2UpCgoKY2xhc3MgUG9zaXRpb24oVGltZXN0YW1wZWQsIEJhc2UpOgogICAgX190YWJsZW5hbWVfXyA9ICJwb3NpdGlvbnMiCiAgICBfX3RhYmxlX2FyZ3NfXyA9ICgKICAgICAgICBVbmlxdWVDb25zdHJhaW50KCJkZXZpY2VfaWQiLCAiZXh0ZXJuYWxfcG9zaXRpb25faWQiLCBuYW1lPSJ1cV9wb3NpdGlvbnNfZGV2aWNlX2V4dGVybmFsIiksCiAgICAgICAgSW5kZXgoIml4X3Bvc2l0aW9uc19kZXZpY2Vfb3Blbl9vYnNlcnZlZCIsICJkZXZpY2VfaWQiLCAiaXNfb3BlbiIsICJvYnNlcnZlZF9hdCIpLAogICAgICAgIENoZWNrQ29uc3RyYWludCgic2lkZSBJTiAoJ0JVWScsICdTRUxMJykiLCBuYW1lPSJja19wb3NpdGlvbnNfc2lkZSIpLAogICAgICAgIENoZWNrQ29uc3RyYWludCgidm9sdW1lID4gMCIsIG5hbWU9ImNrX3Bvc2l0aW9uc192b2x1bWVfcG9zaXRpdmUiKSwKICAgICkKCiAgICBpZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbihVdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUsIGRlZmF1bHQ9dXVpZDQpCiAgICBkZXZpY2VfaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgVXVpZChhc191dWlkPVRydWUpLCBGb3JlaWduS2V5KCJkZXZpY2VzLmlkIiwgb25kZWxldGU9IkNBU0NBREUiKSwgbnVsbGFibGU9RmFsc2UKICAgICkKICAgIGV4dGVybmFsX3Bvc2l0aW9uX2lkOiBNYXBwZWRbc3RyXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDgwKSwgbnVsbGFibGU9RmFsc2UpCiAgICBzeW1ib2w6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoMzIpLCBudWxsYWJsZT1GYWxzZSkKICAgIHNpZGU6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoOCksIG51bGxhYmxlPUZhbHNlKQogICAgdm9sdW1lOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjAsIDgpLCBudWxsYWJsZT1GYWxzZSkKICAgIGVudHJ5X3ByaWNlOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9RmFsc2UpCiAgICBjdXJyZW50X3ByaWNlOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9RmFsc2UpCiAgICBzdG9wX2xvc3M6IE1hcHBlZFtEZWNpbWFsIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjgsIDEyKSkKICAgIHRha2VfcHJvZml0OiBNYXBwZWRbRGVjaW1hbCB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDI4LCAxMikpCiAgICB1bnJlYWxpemVkX3BubDogTWFwcGVkW0RlY2ltYWxdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDI0LCA4KSwgbnVsbGFibGU9RmFsc2UpCiAgICBzd2FwOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjQsIDgpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9IjAiKQogICAgbWFnaWNfbnVtYmVyOiBNYXBwZWRbaW50IHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKEludGVnZXIpCiAgICBjb21tZW50OiBNYXBwZWRbc3RyIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKFN0cmluZygxMjApKQogICAgb2JzZXJ2ZWRfYXQ6IE1hcHBlZFtkYXRldGltZV0gPSBtYXBwZWRfY29sdW1uKERhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSkKICAgIGlzX29wZW46IE1hcHBlZFtib29sXSA9IG1hcHBlZF9jb2x1bW4oQm9vbGVhbiwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PXRleHQoInRydWUiKSkKCgpjbGFzcyBSaXNrUHJvZmlsZShUaW1lc3RhbXBlZCwgQmFzZSk6CiAgICBfX3RhYmxlbmFtZV9fID0gInJpc2tfcHJvZmlsZXMiCiAgICBfX3RhYmxlX2FyZ3NfXyA9ICgKICAgICAgICBVbmlxdWVDb25zdHJhaW50KCJkZXZpY2VfaWQiLCBuYW1lPSJ1cV9yaXNrX3Byb2ZpbGVzX2RldmljZSIpLAogICAgICAgIENoZWNrQ29uc3RyYWludCgicmlza19wZXJfdHJhZGVfcGN0ID4gMCBBTkQgcmlza19wZXJfdHJhZGVfcGN0IDw9IDUiLCBuYW1lPSJja19yaXNrX3Byb2ZpbGVzX3RyYWRlX3Jpc2siKSwKICAgICAgICBDaGVja0NvbnN0cmFpbnQoIm1heF9kYWlseV9sb3NzX3BjdCA+IDAgQU5EIG1heF9kYWlseV9sb3NzX3BjdCA8PSAxMDAiLCBuYW1lPSJja19yaXNrX3Byb2ZpbGVzX2RhaWx5X2xvc3MiKSwKICAgICAgICBDaGVja0NvbnN0cmFpbnQoIm1heF9vcGVuX3Jpc2tfcGN0ID4gMCBBTkQgbWF4X29wZW5fcmlza19wY3QgPD0gMTAwIiwgbmFtZT0iY2tfcmlza19wcm9maWxlc19vcGVuX3Jpc2siKSwKICAgICAgICBDaGVja0NvbnN0cmFpbnQoIm1heF9vcGVuX3Bvc2l0aW9ucyA+PSAxIEFORCBtYXhfb3Blbl9wb3NpdGlvbnMgPD0gNTAiLCBuYW1lPSJja19yaXNrX3Byb2ZpbGVzX21heF9wb3NpdGlvbnMiKSwKICAgICkKCiAgICBpZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbihVdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUsIGRlZmF1bHQ9dXVpZDQpCiAgICB1c2VyX2lkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIFV1aWQoYXNfdXVpZD1UcnVlKSwgRm9yZWlnbktleSgidXNlcnMuaWQiLCBvbmRlbGV0ZT0iQ0FTQ0FERSIpLCBudWxsYWJsZT1GYWxzZQogICAgKQogICAgZGV2aWNlX2lkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIFV1aWQoYXNfdXVpZD1UcnVlKSwgRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlCiAgICApCiAgICByaXNrX3Blcl90cmFkZV9wY3Q6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgTnVtZXJpYyg4LCA0KSwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PSIwLjUwMDAiCiAgICApCiAgICBtYXhfZGFpbHlfbG9zc19wY3Q6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgTnVtZXJpYyg4LCA0KSwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PSIyLjAwMDAiCiAgICApCiAgICBtYXhfb3Blbl9yaXNrX3BjdDogTWFwcGVkW0RlY2ltYWxdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBOdW1lcmljKDgsIDQpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9IjMuMDAwMCIKICAgICkKICAgIG1heF9vcGVuX3Bvc2l0aW9uczogTWFwcGVkW2ludF0gPSBtYXBwZWRfY29sdW1uKEludGVnZXIsIG51bGxhYmxlPUZhbHNlLCBzZXJ2ZXJfZGVmYXVsdD0iNSIpCiAgICBhbGxvd2VkX3N5bWJvbHM6IE1hcHBlZFtsaXN0W0pTT05WYWx1ZV0gfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oSlNPTikKICAgIHRyYWRpbmdfaG91cnM6IE1hcHBlZFtkaWN0W3N0ciwgSlNPTlZhbHVlXSB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihKU09OKQogICAgYXV0b19leGVjdXRlOiBNYXBwZWRbYm9vbF0gPSBtYXBwZWRfY29sdW1uKEJvb2xlYW4sIG51bGxhYmxlPUZhbHNlLCBzZXJ2ZXJfZGVmYXVsdD10ZXh0KCJmYWxzZSIpKQoKCmNsYXNzIFNpZ25hbChUaW1lc3RhbXBlZCwgQmFzZSk6CiAgICBfX3RhYmxlbmFtZV9fID0gInNpZ25hbHMiCiAgICBfX3RhYmxlX2FyZ3NfXyA9ICgKICAgICAgICBJbmRleCgiaXhfc2lnbmFsc19kZXZpY2Vfc3RhdGVfZXhwaXJlcyIsICJkZXZpY2VfaWQiLCAic3RhdGUiLCAiZXhwaXJlc19hdCIpLAogICAgICAgIENoZWNrQ29uc3RyYWludCgiYWN0aW9uIElOICgnQlVZJywgJ1NFTEwnKSIsIG5hbWU9ImNrX3NpZ25hbHNfYWN0aW9uIiksCiAgICAgICAgQ2hlY2tDb25zdHJhaW50KAogICAgICAgICAgICAic3RhdGUgSU4gKCdDUkVBVEVEJywgJ0RFTElWRVJFRCcsICdBQ0tFRCcsICdFWEVDVVRFRCcsICdSRUpFQ1RFRCcsICdFWFBJUkVEJykiLAogICAgICAgICAgICBuYW1lPSJja19zaWduYWxzX3N0YXRlIiwKICAgICAgICApLAogICAgICAgIENoZWNrQ29uc3RyYWludCgidm9sdW1lID4gMCIsIG5hbWU9ImNrX3NpZ25hbHNfdm9sdW1lX3Bvc2l0aXZlIiksCiAgICAgICAgQ2hlY2tDb25zdHJhaW50KCJtYXhfZGV2aWF0aW9uX3BvaW50cyA+PSAwIiwgbmFtZT0iY2tfc2lnbmFsc19kZXZpYXRpb25fbm9ubmVnYXRpdmUiKSwKICAgICAgICBDaGVja0NvbnN0cmFpbnQoImNvbmZpZGVuY2UgPj0gMC4wIEFORCBjb25maWRlbmNlIDw9IDEuMCIsIG5hbWU9ImNrX3NpZ25hbHNfY29uZmlkZW5jZV9yYW5nZSIpLAogICAgKQoKICAgIGlkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKFV1aWQoYXNfdXVpZD1UcnVlKSwgcHJpbWFyeV9rZXk9VHJ1ZSkKICAgIHVzZXJfaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgVXVpZChhc191dWlkPVRydWUpLCBGb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJSRVNUUklDVCIpLCBudWxsYWJsZT1GYWxzZQogICAgKQogICAgZGV2aWNlX2lkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIFV1aWQoYXNfdXVpZD1UcnVlKSwgRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlCiAgICApCiAgICBzeW1ib2w6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoMzIpLCBudWxsYWJsZT1GYWxzZSkKICAgIGFjdGlvbjogTWFwcGVkW3N0cl0gPSBtYXBwZWRfY29sdW1uKFN0cmluZyg4KSwgbnVsbGFibGU9RmFsc2UpCiAgICByZWZlcmVuY2VfcHJpY2U6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyOCwgMTIpLCBudWxsYWJsZT1GYWxzZSkKICAgIHBvaW50X3NpemU6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyMCwgMTIpLCBudWxsYWJsZT1GYWxzZSkKICAgIG1heF9kZXZpYXRpb25fcG9pbnRzOiBNYXBwZWRbaW50XSA9IG1hcHBlZF9jb2x1bW4oSW50ZWdlciwgbnVsbGFibGU9RmFsc2UpCiAgICB2b2x1bWU6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyMCwgOCksIG51bGxhYmxlPUZhbHNlKQogICAgc3RvcF9sb3NzOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjgsIDEyKSwgbnVsbGFibGU9RmFsc2UpCiAgICB0YWtlX3Byb2ZpdDogTWFwcGVkW0RlY2ltYWxdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDI4LCAxMiksIG51bGxhYmxlPUZhbHNlKQogICAgY29uZmlkZW5jZTogTWFwcGVkW0RlY2ltYWxdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDUsIDQpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9IjAuODUwMCIpCiAgICByYXRpb25hbGU6IE1hcHBlZFtkaWN0W3N0ciwgSlNPTlZhbHVlXV0gPSBtYXBwZWRfY29sdW1uKEpTT04sIG51bGxhYmxlPUZhbHNlLCBkZWZhdWx0PWRpY3QpCiAgICBtb2RlbF92ZXJzaW9uOiBNYXBwZWRbc3RyXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDY0KSwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PSJ2MS4wLXJ1bGUtYmFzZWQiKQogICAgc3RhdGU6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoMTYpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9IkNSRUFURUQiKQogICAgZXhwaXJlc19hdDogTWFwcGVkW2RhdGV0aW1lXSA9IG1hcHBlZF9jb2x1bW4oRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPUZhbHNlKQoKCmNsYXNzIFNpZ25hbEV2ZW50KFRpbWVzdGFtcGVkLCBCYXNlKToKICAgIF9fdGFibGVuYW1lX18gPSAic2lnbmFsX2V2ZW50cyIKICAgIF9fdGFibGVfYXJnc19fID0gKAogICAgICAgIFVuaXF1ZUNvbnN0cmFpbnQoInNpZ25hbF9pZCIsICJ0b19zdGF0ZSIsIG5hbWU9InVxX3NpZ25hbF9ldmVudHNfdHJhbnNpdGlvbiIpLAogICAgICAgIEluZGV4KCJpeF9zaWduYWxfZXZlbnRzX3NpZ25hbF9jcmVhdGVkIiwgInNpZ25hbF9pZCIsICJjcmVhdGVkX2F0IiksCiAgICApCgogICAgaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlLCBkZWZhdWx0PXV1aWQ0KQogICAgc2lnbmFsX2lkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIFV1aWQoYXNfdXVpZD1UcnVlKSwgRm9yZWlnbktleSgic2lnbmFscy5pZCIsIG9uZGVsZXRlPSJDQVNDQURFIiksIG51bGxhYmxlPUZhbHNlCiAgICApCiAgICBkZXZpY2VfaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgVXVpZChhc191dWlkPVRydWUpLCBGb3JlaWduS2V5KCJkZXZpY2VzLmlkIiwgb25kZWxldGU9IkNBU0NBREUiKSwgbnVsbGFibGU9RmFsc2UKICAgICkKICAgIGZyb21fc3RhdGU6IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDE2KSkKICAgIHRvX3N0YXRlOiBNYXBwZWRbc3RyXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDE2KSwgbnVsbGFibGU9RmFsc2UpCiAgICBzb3VyY2U6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoMTYpLCBudWxsYWJsZT1GYWxzZSkKICAgIHJlYXNvbl9jb2RlOiBNYXBwZWRbc3RyIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKFN0cmluZyg2NCkpCiAgICByZWFzb246IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDUwMCkpCiAgICBleGVjdXRpb25fcHJpY2U6IE1hcHBlZFtEZWNpbWFsIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjgsIDEyKSkKICAgIGV4ZWN1dGlvbl92b2x1bWU6IE1hcHBlZFtEZWNpbWFsIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjAsIDgpKQogICAgb2NjdXJyZWRfYXQ6IE1hcHBlZFtkYXRldGltZV0gPSBtYXBwZWRfY29sdW1uKERhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSkKICAgIGRldGFpbHM6IE1hcHBlZFtkaWN0W3N0ciwgSlNPTlZhbHVlXSB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbihKU09OKQoKCmNsYXNzIFRyYWRlUmVwb3J0KFRpbWVzdGFtcGVkLCBCYXNlKToKICAgIF9fdGFibGVuYW1lX18gPSAidHJhZGVfcmVwb3J0cyIKICAgIF9fdGFibGVfYXJnc19fID0gKAogICAgICAgIFVuaXF1ZUNvbnN0cmFpbnQoImRldmljZV9pZCIsICJleHRlcm5hbF9vcmRlcl9pZCIsIG5hbWU9InVxX3RyYWRlX3JlcG9ydHNfZGV2aWNlX29yZGVyIiksCiAgICAgICAgSW5kZXgoIml4X3RyYWRlX3JlcG9ydHNfdXNlcl9jbG9zZWQiLCAidXNlcl9pZCIsICJjbG9zZWRfYXQiKSwKICAgICkKCiAgICBpZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbihVdWlkKGFzX3V1aWQ9VHJ1ZSksIHByaW1hcnlfa2V5PVRydWUsIGRlZmF1bHQ9dXVpZDQpCiAgICB1c2VyX2lkOiBNYXBwZWRbVVVJRF0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIFV1aWQoYXNfdXVpZD1UcnVlKSwgRm9yZWlnbktleSgidXNlcnMuaWQiLCBvbmRlbGV0ZT0iUkVTVFJJQ1QiKSwgbnVsbGFibGU9RmFsc2UKICAgICkKICAgIGRldmljZV9pZDogTWFwcGVkW1VVSURdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBVdWlkKGFzX3V1aWQ9VHJ1ZSksIEZvcmVpZ25LZXkoImRldmljZXMuaWQiLCBvbmRlbGV0ZT0iQ0FTQ0FERSIpLCBudWxsYWJsZT1GYWxzZQogICAgKQogICAgc2lnbmFsX2lkOiBNYXBwZWRbVVVJRCB8IE5vbmVdID0gbWFwcGVkX2NvbHVtbigKICAgICAgICBVdWlkKGFzX3V1aWQ9VHJ1ZSksIEZvcmVpZ25LZXkoInNpZ25hbHMuaWQiLCBvbmRlbGV0ZT0iU0VUIE5VTEwiKQogICAgKQogICAgZXh0ZXJuYWxfb3JkZXJfaWQ6IE1hcHBlZFtzdHJdID0gbWFwcGVkX2NvbHVtbihTdHJpbmcoODApLCBudWxsYWJsZT1GYWxzZSkKICAgIHN5bWJvbDogTWFwcGVkW3N0cl0gPSBtYXBwZWRfY29sdW1uKFN0cmluZygzMiksIG51bGxhYmxlPUZhbHNlKQogICAgc2lkZTogTWFwcGVkW3N0cl0gPSBtYXBwZWRfY29sdW1uKFN0cmluZyg4KSwgbnVsbGFibGU9RmFsc2UpCiAgICB2b2x1bWU6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyMCwgOCksIG51bGxhYmxlPUZhbHNlKQogICAgZW50cnlfcHJpY2U6IE1hcHBlZFtEZWNpbWFsXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyOCwgMTIpLCBudWxsYWJsZT1GYWxzZSkKICAgIGV4aXRfcHJpY2U6IE1hcHBlZFtEZWNpbWFsIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjgsIDEyKSkKICAgIHNsaXBwYWdlX3BvaW50czogTWFwcGVkW0RlY2ltYWwgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygxMiwgNCkpCiAgICBjb21taXNzaW9uOiBNYXBwZWRbRGVjaW1hbF0gPSBtYXBwZWRfY29sdW1uKE51bWVyaWMoMjQsIDgpLCBudWxsYWJsZT1GYWxzZSwgc2VydmVyX2RlZmF1bHQ9IjAiKQogICAgc3dhcDogTWFwcGVkW0RlY2ltYWxdID0gbWFwcGVkX2NvbHVtbihOdW1lcmljKDI0LCA4KSwgbnVsbGFibGU9RmFsc2UsIHNlcnZlcl9kZWZhdWx0PSIwIikKICAgIHJlYWxpemVkX3BubDogTWFwcGVkW0RlY2ltYWwgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oTnVtZXJpYygyNCwgOCkpCiAgICBvcGVuZWRfYXQ6IE1hcHBlZFtkYXRldGltZV0gPSBtYXBwZWRfY29sdW1uKERhdGVUaW1lKHRpbWV6b25lPVRydWUpLCBudWxsYWJsZT1GYWxzZSkKICAgIGNsb3NlZF9hdDogTWFwcGVkW2RhdGV0aW1lIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKERhdGVUaW1lKHRpbWV6b25lPVRydWUpKQoKCmNsYXNzIEF1ZGl0TG9nKEJhc2UpOgogICAgX190YWJsZW5hbWVfXyA9ICJhdWRpdF9sb2dzIgogICAgX190YWJsZV9hcmdzX18gPSAoCiAgICAgICAgSW5kZXgoIml4X2F1ZGl0X2xvZ3NfdXNlcl9jcmVhdGVkIiwgInVzZXJfaWQiLCAiY3JlYXRlZF9hdCIpLAogICAgICAgIEluZGV4KCJpeF9hdWRpdF9sb2dzX2RldmljZV9jcmVhdGVkIiwgImRldmljZV9pZCIsICJjcmVhdGVkX2F0IiksCiAgICApCgogICAgaWQ6IE1hcHBlZFtVVUlEXSA9IG1hcHBlZF9jb2x1bW4oVXVpZChhc191dWlkPVRydWUpLCBwcmltYXJ5X2tleT1UcnVlLCBkZWZhdWx0PXV1aWQ0KQogICAgdXNlcl9pZDogTWFwcGVkW1VVSUQgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgVXVpZChhc191dWlkPVRydWUpLCBGb3JlaWduS2V5KCJ1c2Vycy5pZCIsIG9uZGVsZXRlPSJTRVQgTlVMTCIpCiAgICApCiAgICBkZXZpY2VfaWQ6IE1hcHBlZFtVVUlEIHwgTm9uZV0gPSBtYXBwZWRfY29sdW1uKAogICAgICAgIFV1aWQoYXNfdXVpZD1UcnVlKSwgRm9yZWlnbktleSgiZGV2aWNlcy5pZCIsIG9uZGVsZXRlPSJTRVQgTlVMTCIpCiAgICApCiAgICBldmVudF90eXBlOiBNYXBwZWRbc3RyXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDY0KSwgbnVsbGFibGU9RmFsc2UpCiAgICBhY3Rpb246IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDY0KSkKICAgIHJlcXVlc3RfaWQ6IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDY0KSkKICAgIGlwX2FkZHJlc3M6IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDY0KSkKICAgIHVzZXJfYWdlbnQ6IE1hcHBlZFtzdHIgfCBOb25lXSA9IG1hcHBlZF9jb2x1bW4oU3RyaW5nKDI1NSkpCiAgICBkZXRhaWxzOiBNYXBwZWRbZGljdFtzdHIsIEpTT05WYWx1ZV1dID0gbWFwcGVkX2NvbHVtbihKU09OLCBudWxsYWJsZT1GYWxzZSwgZGVmYXVsdD1kaWN0KQogICAgY3JlYXRlZF9hdDogTWFwcGVkW2RhdGV0aW1lXSA9IG1hcHBlZF9jb2x1bW4oCiAgICAgICAgRGF0ZVRpbWUodGltZXpvbmU9VHJ1ZSksIG51bGxhYmxlPUZhbHNlLCBzZXJ2ZXJfZGVmYXVsdD1mdW5jLm5vdygpCiAgICAp
+from __future__ import annotations
+
+from datetime import datetime
+from decimal import Decimal
+from uuid import UUID, uuid4
+
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    CheckConstraint,
+    DateTime,
+    ForeignKey,
+    Index,
+    Integer,
+    Numeric,
+    String,
+    UniqueConstraint,
+    Uuid,
+    func,
+    text,
+)
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+
+type JSONValue = str | int | float | bool | None | list[JSONValue] | dict[str, JSONValue]
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class Timestamped:
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now()
+    )
+
+
+class User(Timestamped, Base):
+    __tablename__ = "users"
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    email: Mapped[str] = mapped_column(String(254), nullable=False, unique=True, index=True)
+    password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+    is_verified: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=text("false"))
+    risk_disclaimer_accepted_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
+    two_factor_secret: Mapped[str | None] = mapped_column(String(64))
+    deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class UserSession(Timestamped, Base):
+    __tablename__ = "user_sessions"
+    __table_args__ = (
+        Index("ix_user_sessions_user_expires", "user_id", "expires_at"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    user_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), nullable=False
+    )
+    token_hash: Mapped[str] = mapped_column(String(64), nullable=False, unique=True, index=True)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class PairingCode(Timestamped, Base):
+    __tablename__ = "pairing_codes"
+    __table_args__ = (
+        Index("ix_pairing_codes_user_expires", "user_id", "expires_at"),
+        Index("ix_pairing_codes_expires", "expires_at"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    user_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), nullable=False
+    )
+    code_hash: Mapped[str] = mapped_column(String(64), nullable=False, unique=True, index=True)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    consumed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class Device(Timestamped, Base):
+    __tablename__ = "devices"
+    __table_args__ = (
+        Index("ix_devices_user_status_last_seen", "user_id", "status", "last_seen_at"),
+        CheckConstraint("status IN ('ACTIVE', 'REVOKED')", name="ck_devices_status"),
+        CheckConstraint("leverage >= 1", name="ck_devices_leverage_positive"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    user_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="RESTRICT"), nullable=False
+    )
+    name: Mapped[str] = mapped_column(String(100), nullable=False, server_default="MT5 Terminal")
+    token_hash: Mapped[str] = mapped_column(String(64), nullable=False, unique=True, index=True)
+    last_seen_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    terminal_build: Mapped[str | None] = mapped_column(String(32))
+    broker: Mapped[str] = mapped_column(String(120), nullable=False)
+    server: Mapped[str] = mapped_column(String(120), nullable=False)
+    account_number_masked: Mapped[str] = mapped_column(String(64), nullable=False)
+    account_currency: Mapped[str] = mapped_column(String(8), nullable=False)
+    leverage: Mapped[int] = mapped_column(Integer, nullable=False)
+    status: Mapped[str] = mapped_column(String(16), nullable=False, server_default="ACTIVE")
+    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class AccountSnapshot(Timestamped, Base):
+    __tablename__ = "account_snapshots"
+    __table_args__ = (
+        Index("ix_account_snapshots_device_captured", "device_id", "captured_at"),
+        CheckConstraint("balance >= 0", name="ck_account_snapshots_balance_nonnegative"),
+        CheckConstraint("equity >= 0", name="ck_account_snapshots_equity_nonnegative"),
+        CheckConstraint("free_margin >= 0", name="ck_account_snapshots_margin_nonnegative"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    device_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="CASCADE"), nullable=False
+    )
+    balance: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False)
+    equity: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False)
+    margin: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False, server_default="0")
+    free_margin: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False)
+    margin_level: Mapped[Decimal | None] = mapped_column(Numeric(12, 4))
+    open_positions_count: Mapped[int] = mapped_column(Integer, nullable=False, server_default="0")
+    account_currency: Mapped[str] = mapped_column(String(8), nullable=False)
+    leverage: Mapped[int] = mapped_column(Integer, nullable=False)
+    captured_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class Position(Timestamped, Base):
+    __tablename__ = "positions"
+    __table_args__ = (
+        UniqueConstraint("device_id", "external_position_id", name="uq_positions_device_external"),
+        Index("ix_positions_device_open_observed", "device_id", "is_open", "observed_at"),
+        CheckConstraint("side IN ('BUY', 'SELL')", name="ck_positions_side"),
+        CheckConstraint("volume > 0", name="ck_positions_volume_positive"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    device_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="CASCADE"), nullable=False
+    )
+    external_position_id: Mapped[str] = mapped_column(String(80), nullable=False)
+    symbol: Mapped[str] = mapped_column(String(32), nullable=False)
+    side: Mapped[str] = mapped_column(String(8), nullable=False)
+    volume: Mapped[Decimal] = mapped_column(Numeric(20, 8), nullable=False)
+    entry_price: Mapped[Decimal] = mapped_column(Numeric(28, 12), nullable=False)
+    current_price: Mapped[Decimal] = mapped_column(Numeric(28, 12), nullable=False)
+    stop_loss: Mapped[Decimal | None] = mapped_column(Numeric(28, 12))
+    take_profit: Mapped[Decimal | None] = mapped_column(Numeric(28, 12))
+    unrealized_pnl: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False)
+    swap: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False, server_default="0")
+    magic_number: Mapped[int | None] = mapped_column(Integer)
+    comment: Mapped[str | None] = mapped_column(String(120))
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    is_open: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=text("true"))
+
+
+class RiskProfile(Timestamped, Base):
+    __tablename__ = "risk_profiles"
+    __table_args__ = (
+        UniqueConstraint("device_id", name="uq_risk_profiles_device"),
+        CheckConstraint("risk_per_trade_pct > 0 AND risk_per_trade_pct <= 5", name="ck_risk_profiles_trade_risk"),
+        CheckConstraint("max_daily_loss_pct > 0 AND max_daily_loss_pct <= 100", name="ck_risk_profiles_daily_loss"),
+        CheckConstraint("max_open_risk_pct > 0 AND max_open_risk_pct <= 100", name="ck_risk_profiles_open_risk"),
+        CheckConstraint("max_open_positions >= 1 AND max_open_positions <= 50", name="ck_risk_profiles_max_positions"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    user_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), nullable=False
+    )
+    device_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="CASCADE"), nullable=False
+    )
+    risk_per_trade_pct: Mapped[Decimal] = mapped_column(
+        Numeric(8, 4), nullable=False, server_default="0.5000"
+    )
+    max_daily_loss_pct: Mapped[Decimal] = mapped_column(
+        Numeric(8, 4), nullable=False, server_default="2.0000"
+    )
+    max_open_risk_pct: Mapped[Decimal] = mapped_column(
+        Numeric(8, 4), nullable=False, server_default="3.0000"
+    )
+    max_open_positions: Mapped[int] = mapped_column(Integer, nullable=False, server_default="5")
+    allowed_symbols: Mapped[list[JSONValue] | None] = mapped_column(JSON)
+    trading_hours: Mapped[dict[str, JSONValue] | None] = mapped_column(JSON)
+    auto_execute: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=text("false"))
+
+
+class Signal(Timestamped, Base):
+    __tablename__ = "signals"
+    __table_args__ = (
+        Index("ix_signals_device_state_expires", "device_id", "state", "expires_at"),
+        CheckConstraint("action IN ('BUY', 'SELL')", name="ck_signals_action"),
+        CheckConstraint(
+            "state IN ('CREATED', 'DELIVERED', 'ACKED', 'EXECUTED', 'REJECTED', 'EXPIRED')",
+            name="ck_signals_state",
+        ),
+        CheckConstraint("volume > 0", name="ck_signals_volume_positive"),
+        CheckConstraint("max_deviation_points >= 0", name="ck_signals_deviation_nonnegative"),
+        CheckConstraint("confidence >= 0.0 AND confidence <= 1.0", name="ck_signals_confidence_range"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True)
+    user_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="RESTRICT"), nullable=False
+    )
+    device_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="CASCADE"), nullable=False
+    )
+    symbol: Mapped[str] = mapped_column(String(32), nullable=False)
+    action: Mapped[str] = mapped_column(String(8), nullable=False)
+    reference_price: Mapped[Decimal] = mapped_column(Numeric(28, 12), nullable=False)
+    point_size: Mapped[Decimal] = mapped_column(Numeric(20, 12), nullable=False)
+    max_deviation_points: Mapped[int] = mapped_column(Integer, nullable=False)
+    volume: Mapped[Decimal] = mapped_column(Numeric(20, 8), nullable=False)
+    stop_loss: Mapped[Decimal] = mapped_column(Numeric(28, 12), nullable=False)
+    take_profit: Mapped[Decimal] = mapped_column(Numeric(28, 12), nullable=False)
+    confidence: Mapped[Decimal] = mapped_column(Numeric(5, 4), nullable=False, server_default="0.8500")
+    rationale: Mapped[dict[str, JSONValue]] = mapped_column(JSON, nullable=False, default=dict)
+    model_version: Mapped[str] = mapped_column(String(64), nullable=False, server_default="v1.0-rule-based")
+    state: Mapped[str] = mapped_column(String(16), nullable=False, server_default="CREATED")
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class SignalEvent(Timestamped, Base):
+    __tablename__ = "signal_events"
+    __table_args__ = (
+        UniqueConstraint("signal_id", "to_state", name="uq_signal_events_transition"),
+        Index("ix_signal_events_signal_created", "signal_id", "created_at"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    signal_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("signals.id", ondelete="CASCADE"), nullable=False
+    )
+    device_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="CASCADE"), nullable=False
+    )
+    from_state: Mapped[str | None] = mapped_column(String(16))
+    to_state: Mapped[str] = mapped_column(String(16), nullable=False)
+    source: Mapped[str] = mapped_column(String(16), nullable=False)
+    reason_code: Mapped[str | None] = mapped_column(String(64))
+    reason: Mapped[str | None] = mapped_column(String(500))
+    execution_price: Mapped[Decimal | None] = mapped_column(Numeric(28, 12))
+    execution_volume: Mapped[Decimal | None] = mapped_column(Numeric(20, 8))
+    occurred_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    details: Mapped[dict[str, JSONValue] | None] = mapped_column(JSON)
+
+
+class TradeReport(Timestamped, Base):
+    __tablename__ = "trade_reports"
+    __table_args__ = (
+        UniqueConstraint("device_id", "external_order_id", name="uq_trade_reports_device_order"),
+        Index("ix_trade_reports_user_closed", "user_id", "closed_at"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    user_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="RESTRICT"), nullable=False
+    )
+    device_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="CASCADE"), nullable=False
+    )
+    signal_id: Mapped[UUID | None] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("signals.id", ondelete="SET NULL")
+    )
+    external_order_id: Mapped[str] = mapped_column(String(80), nullable=False)
+    symbol: Mapped[str] = mapped_column(String(32), nullable=False)
+    side: Mapped[str] = mapped_column(String(8), nullable=False)
+    volume: Mapped[Decimal] = mapped_column(Numeric(20, 8), nullable=False)
+    entry_price: Mapped[Decimal] = mapped_column(Numeric(28, 12), nullable=False)
+    exit_price: Mapped[Decimal | None] = mapped_column(Numeric(28, 12))
+    slippage_points: Mapped[Decimal | None] = mapped_column(Numeric(12, 4))
+    commission: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False, server_default="0")
+    swap: Mapped[Decimal] = mapped_column(Numeric(24, 8), nullable=False, server_default="0")
+    realized_pnl: Mapped[Decimal | None] = mapped_column(Numeric(24, 8))
+    opened_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    closed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class AuditLog(Base):
+    __tablename__ = "audit_logs"
+    __table_args__ = (
+        Index("ix_audit_logs_user_created", "user_id", "created_at"),
+        Index("ix_audit_logs_device_created", "device_id", "created_at"),
+    )
+
+    id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
+    user_id: Mapped[UUID | None] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL")
+    )
+    device_id: Mapped[UUID | None] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("devices.id", ondelete="SET NULL")
+    )
+    event_type: Mapped[str] = mapped_column(String(64), nullable=False)
+    action: Mapped[str | None] = mapped_column(String(64))
+    request_id: Mapped[str | None] = mapped_column(String(64))
+    ip_address: Mapped[str | None] = mapped_column(String(64))
+    user_agent: Mapped[str | None] = mapped_column(String(255))
+    details: Mapped[dict[str, JSONValue]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )

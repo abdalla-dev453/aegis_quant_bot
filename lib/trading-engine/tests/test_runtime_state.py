@@ -1,1 +1,70 @@
-IiIiUnVudGltZSBzdGF0ZSBzbmFwc2hvdCBhbmQgY29udHJvbC1zdG9yZSB1bml0IHRlc3RzLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IHB5dGVzdAppbXBvcnQgcnVudGltZV9zdGF0ZQoKCmRlZiB0ZXN0X2NvbnRyb2xfc3RhcnRzX3J1bm5pbmdfYW5kX2VudHJpZXNfYWxsb3dlZCgpIC0+IE5vbmU6CiAgICBydW50aW1lX3N0YXRlLnNldF9jb250cm9sKCJSVU5OSU5HIiwgcmVhc29uPSIiLCBzb3VyY2U9InRlc3QiKQogICAgY29udHJvbCA9IHJ1bnRpbWVfc3RhdGUuY29udHJvbF9zdGF0ZSgpCiAgICBhc3NlcnQgY29udHJvbFsic3RhdHVzIl0gPT0gIlJVTk5JTkciCiAgICBhc3NlcnQgY29udHJvbFsiZW50cmllc0FsbG93ZWQiXSBpcyBUcnVlCiAgICBhc3NlcnQgY29udHJvbFsibWFuYWdlbWVudEFsbG93ZWQiXSBpcyBUcnVlCiAgICBhc3NlcnQgY29udHJvbFsicmV2aXNpb24iXSA+PSAwCgoKQHB5dGVzdC5tYXJrLnBhcmFtZXRyaXplKCJzdGF0dXMiLCBbIlJVTk5JTkciLCAiUEFVU0VEIiwgIkhBTFRFRCJdKQpkZWYgdGVzdF9zZXRfY29udHJvbF91cGRhdGVzX3N0YXR1c19hbmRfcGVybWlzc2lvbnMoc3RhdHVzOiBzdHIpIC0+IE5vbmU6CiAgICBydW50aW1lX3N0YXRlLnNldF9jb250cm9sKHN0YXR1cywgcmVhc29uPSJ0ZXN0Iiwgc291cmNlPSJweXRlc3QiKQogICAgY29udHJvbCA9IHJ1bnRpbWVfc3RhdGUuY29udHJvbF9zdGF0ZSgpCiAgICBhc3NlcnQgY29udHJvbFsic3RhdHVzIl0gPT0gc3RhdHVzCiAgICBhc3NlcnQgY29udHJvbFsiZW50cmllc0FsbG93ZWQiXSBpcyAoc3RhdHVzID09ICJSVU5OSU5HIikKICAgIGFzc2VydCBjb250cm9sWyJtYW5hZ2VtZW50QWxsb3dlZCJdIGlzIChzdGF0dXMgIT0gIkhBTFRFRCIpCiAgICBhc3NlcnQgY29udHJvbFsicmVhc29uIl0gPT0gInRlc3QiCiAgICBhc3NlcnQgY29udHJvbFsic291cmNlIl0gPT0gInB5dGVzdCIKICAgIGFzc2VydCBjb250cm9sWyJyZXZpc2lvbiJdID49IDEKCgpkZWYgdGVzdF9zZXRfY29udHJvbF9yZWplY3RzX2ludmFsaWRfc3RhdHVzKCkgLT4gTm9uZToKICAgIHdpdGggcHl0ZXN0LnJhaXNlcyhWYWx1ZUVycm9yKToKICAgICAgICBydW50aW1lX3N0YXRlLnNldF9jb250cm9sKCJTVE9QUEVEIikKCgpkZWYgdGVzdF9yZWNvcmRfcHJvcG9zYWxfdXBkYXRlc19sYXN0X3NpZ25hbCgpIC0+IE5vbmU6CiAgICBydW50aW1lX3N0YXRlLnVwZGF0ZShsYXN0X3NpZ25hbD17fSkKICAgIHByb3Bvc2FsID0geyJzeW1ib2wiOiAiRVVSVVNEIiwgImFjdGlvbiI6ICJCVVkiLCAic3RhdHVzIjogInJlY2VpdmVkIn0KICAgIHJ1bnRpbWVfc3RhdGUucmVjb3JkX3Byb3Bvc2FsKHByb3Bvc2FsKQogICAgc3RhdGUgPSBydW50aW1lX3N0YXRlLnJlYWQoKQogICAgYXNzZXJ0IHN0YXRlWyJsYXN0X3NpZ25hbCJdID09IHByb3Bvc2FsCiAgICBhc3NlcnQgYW55KHBbInN5bWJvbCJdID09ICJFVVJVU0QiIGZvciBwIGluIHN0YXRlWyJwcm9wb3NhbHMiXSkKCgpkZWYgdGVzdF9yZWNvcmRfb3JkZXJfdXBkYXRlc190cmFkZV9hbmFseXNpcygpIC0+IE5vbmU6CiAgICBiZWZvcmUgPSBydW50aW1lX3N0YXRlLnJlYWQoKVsidHJhZGVfYW5hbHlzaXMiXVsic3VtbWFyeSJdWyJ0b3RhbFRyYWRlcyJdCiAgICBydW50aW1lX3N0YXRlLnJlY29yZF9vcmRlcigKICAgICAgICB7CiAgICAgICAgICAgICJ0aWNrZXQiOiAxLAogICAgICAgICAgICAic3ltYm9sIjogIkVVUlVTRCIsCiAgICAgICAgICAgICJkaXJlY3Rpb24iOiAiQlVZIiwKICAgICAgICAgICAgImZpbGxfcHJpY2UiOiAxLjEwMDAsCiAgICAgICAgICAgICJ2b2x1bWUiOiAwLjEsCiAgICAgICAgICAgICJzbCI6IDEuMDk1MCwKICAgICAgICAgICAgInRwIjogMS4xMDUwLAogICAgICAgICAgICAiYXRyIjogMC4wMDEsCiAgICAgICAgICAgICJyZWFzb24iOiAidGVzdCIsCiAgICAgICAgICAgICJwbmwiOiA1MC4wLAogICAgICAgIH0KICAgICkKICAgIHN0YXRlID0gcnVudGltZV9zdGF0ZS5yZWFkKCkKICAgIGFzc2VydCBzdGF0ZVsidHJhZGVfYW5hbHlzaXMiXVsic3VtbWFyeSJdWyJ0b3RhbFRyYWRlcyJdID09IGJlZm9yZSArIDEKICAgIGFzc2VydCBzdGF0ZVsidHJhZGVfYW5hbHlzaXMiXVsic3VtbWFyeSJdWyJuZXRQbmwiXSA9PSA1MC4wCiAgICBhc3NlcnQgYW55KHRbInRpY2tldCJdID09IDEgZm9yIHQgaW4gc3RhdGVbInRyYWRlX2FuYWx5c2lzIl1bInJlY2VudFRyYWRlcyJdKQoKCmRlZiB0ZXN0X3JlYWRfcmV0dXJuc19kZWVwX2NvcHkoKSAtPiBOb25lOgogICAgcnVudGltZV9zdGF0ZS5zZXRfY29udHJvbCgiUlVOTklORyIsIHJlYXNvbj0iIiwgc291cmNlPSJweXRlc3QiKQogICAgc3RhdGUxID0gcnVudGltZV9zdGF0ZS5yZWFkKCkKICAgIHN0YXRlMVsiY29udHJvbCJdWyJzdGF0dXMiXSA9ICJQQVVTRUQiCiAgICBhc3NlcnQgcnVudGltZV9zdGF0ZS5jb250cm9sX3N0YXRlKClbInN0YXR1cyJdID09ICJSVU5OSU5HIgo=
+"""Runtime state snapshot and control-store unit tests."""
+
+from __future__ import annotations
+
+import pytest
+import runtime_state
+
+
+def test_control_starts_running_and_entries_allowed() -> None:
+    runtime_state.set_control("RUNNING", reason="", source="test")
+    control = runtime_state.control_state()
+    assert control["status"] == "RUNNING"
+    assert control["entriesAllowed"] is True
+    assert control["managementAllowed"] is True
+    assert control["revision"] >= 0
+
+
+@pytest.mark.parametrize("status", ["RUNNING", "PAUSED", "HALTED"])
+def test_set_control_updates_status_and_permissions(status: str) -> None:
+    runtime_state.set_control(status, reason="test", source="pytest")
+    control = runtime_state.control_state()
+    assert control["status"] == status
+    assert control["entriesAllowed"] is (status == "RUNNING")
+    assert control["managementAllowed"] is (status != "HALTED")
+    assert control["reason"] == "test"
+    assert control["source"] == "pytest"
+    assert control["revision"] >= 1
+
+
+def test_set_control_rejects_invalid_status() -> None:
+    with pytest.raises(ValueError):
+        runtime_state.set_control("STOPPED")
+
+
+def test_record_proposal_updates_last_signal() -> None:
+    runtime_state.update(last_signal={})
+    proposal = {"symbol": "EURUSD", "action": "BUY", "status": "received"}
+    runtime_state.record_proposal(proposal)
+    state = runtime_state.read()
+    assert state["last_signal"] == proposal
+    assert any(p["symbol"] == "EURUSD" for p in state["proposals"])
+
+
+def test_record_order_updates_trade_analysis() -> None:
+    before = runtime_state.read()["trade_analysis"]["summary"]["totalTrades"]
+    runtime_state.record_order(
+        {
+            "ticket": 1,
+            "symbol": "EURUSD",
+            "direction": "BUY",
+            "fill_price": 1.1000,
+            "volume": 0.1,
+            "sl": 1.0950,
+            "tp": 1.1050,
+            "atr": 0.001,
+            "reason": "test",
+            "pnl": 50.0,
+        }
+    )
+    state = runtime_state.read()
+    assert state["trade_analysis"]["summary"]["totalTrades"] == before + 1
+    assert state["trade_analysis"]["summary"]["netPnl"] == 50.0
+    assert any(t["ticket"] == 1 for t in state["trade_analysis"]["recentTrades"])
+
+
+def test_read_returns_deep_copy() -> None:
+    runtime_state.set_control("RUNNING", reason="", source="pytest")
+    state1 = runtime_state.read()
+    state1["control"]["status"] = "PAUSED"
+    assert runtime_state.control_state()["status"] == "RUNNING"

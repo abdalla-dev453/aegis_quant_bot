@@ -1,1 +1,21 @@
-aW1wb3J0IHR5cGUgeyBNZXRhZGF0YSB9IGZyb20gIm5leHQiOwppbXBvcnQgeyBSZWFjdE5vZGUgfSBmcm9tICJyZWFjdCI7CgpleHBvcnQgY29uc3QgbWV0YWRhdGE6IE1ldGFkYXRhID0gewogIHRpdGxlOiAiQWVnaXNRdWFudCB8IEluc3RydW1lbnQtR3JhZGUgQUkgVHJhZGluZyBCb3QiLAogIGRlc2NyaXB0aW9uOiAiTWV0YVRyYWRlciA1IEVBIEJyaWRnZSBhbmQgQUkgUXVhbnRpdGF0aXZlIFRyYWRpbmcgUGxhdGZvcm0iLAp9OwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUm9vdExheW91dCh7CiAgY2hpbGRyZW4sCn06IHsKICBjaGlsZHJlbjogUmVhY3ROb2RlOwp9KSB7CiAgcmV0dXJuICgKICAgIDxodG1sIGxhbmc9ImVuIiBjbGFzc05hbWU9ImRhcmsiPgogICAgICA8Ym9keSBjbGFzc05hbWU9Im1pbi1oLXNjcmVlbiBiZy1bIzA5MEEwRl0gdGV4dC1bI0Y4RkFGQ10gYW50aWFsaWFzZWQiPgogICAgICAgIHtjaGlsZHJlbn0KICAgICAgPC9ib2R5PgogICAgPC9odG1sPgogICk7Cn0K
+import type { Metadata } from "next";
+import { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "AegisQuant | Instrument-Grade AI Trading Bot",
+  description: "MetaTrader 5 EA Bridge and AI Quantitative Trading Platform",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <html lang="en" className="dark">
+      <body className="min-h-screen bg-[#090A0F] text-[#F8FAFC] antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}

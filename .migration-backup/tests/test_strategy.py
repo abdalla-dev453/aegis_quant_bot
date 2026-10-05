@@ -1,1 +1,52 @@
-IiIiUHVyZSBzdHJhdGVneSBnYXRlczogbm8gTVQ1IHRlcm1pbmFsIG9yIG5ldHdvcmsgY29ubmVjdGlvbiBpcyByZXF1aXJlZC4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBwYW5kYXMgYXMgcGQKaW1wb3J0IHB5dGVzdAppbXBvcnQgc3RyYXRlZ3kKZnJvbSBzdHJhdGVneSBpbXBvcnQgU2VudGltZW50UmVhZGluZywgVHJhZGVEaXJlY3Rpb24sIFRyZW5kCgoKZGVmIF9mcmFtZShmYXN0OiBmbG9hdCwgc2xvdzogZmxvYXQsIHJzaV92YWx1ZXM6IHR1cGxlW2Zsb2F0LCBmbG9hdF0pIC0+IHBkLkRhdGFGcmFtZToKICAgIHJldHVybiBwZC5EYXRhRnJhbWUoCiAgICAgICAgewogICAgICAgICAgICAiZW1hXzUwIjogW2Zhc3QsIGZhc3RdLAogICAgICAgICAgICAiZW1hXzIwMCI6IFtzbG93LCBzbG93XSwKICAgICAgICAgICAgInJzaSI6IGxpc3QocnNpX3ZhbHVlcyksCiAgICAgICAgICAgICJhdHIiOiBbMC4wMDEsIDAuMDAxXSwKICAgICAgICB9CiAgICApCgoKZGVmIHRlc3RfbXVsdGlfdGltZWZyYW1lX2NvbmZpcm1hdGlvbl9yZXF1aXJlc19ib3RoX2VtYV90cmVuZHNfYW5kX3JzaSgpIC0+IE5vbmU6CiAgICBoMSA9IF9mcmFtZSgxLjExLCAxLjEwLCAoNTQuMCwgNTYuMCkpCiAgICBoNCA9IF9mcmFtZSgxLjEyLCAxLjEwLCAoNTAuMCwgNTAuMCkpCgogICAgYXNzZXJ0IHN0cmF0ZWd5Lmhhc19tdWx0aV90aW1lZnJhbWVfZW1hX3JzaV9jb25maXJtYXRpb24oaDEsIGg0LCBUcmVuZC5CVUxMSVNIKQogICAgYXNzZXJ0IG5vdCBzdHJhdGVneS5oYXNfbXVsdGlfdGltZWZyYW1lX2VtYV9yc2lfY29uZmlybWF0aW9uKGgxLCBoNCwgVHJlbmQuQkVBUklTSCkKCgpAcHl0ZXN0Lm1hcmsucGFyYW1ldHJpemUoCiAgICAoIm1pbnV0ZXMiLCAiaW1wYWN0IiwgImV4cGVjdGVkIiksCiAgICBbKDMwLCAiSElHSCIsIFRydWUpLCAoLTMwLCAiSElHSCIsIFRydWUpLCAoMzEsICJISUdIIiwgRmFsc2UpLCAoNSwgIkxPVyIsIEZhbHNlKV0sCikKZGVmIHRlc3RfbmV3c19ibGFja291dF9vbmx5X2FwcGxpZXNfaW5zaWRlX2hpZ2hfaW1wYWN0X3dpbmRvdygKICAgIG1pbnV0ZXM6IGZsb2F0LCBpbXBhY3Q6IHN0ciwgZXhwZWN0ZWQ6IGJvb2wKKSAtPiBOb25lOgogICAgcmVhZGluZyA9IFNlbnRpbWVudFJlYWRpbmcoMC4wLCAwLCAiQ1BJIiwgbWludXRlcywgbmV4dF9ldmVudF9pbXBhY3Q9aW1wYWN0KQogICAgYXNzZXJ0IHN0cmF0ZWd5LmlzX25ld3NfYmxhY2tvdXQocmVhZGluZykgaXMgZXhwZWN0ZWQKCgpkZWYgdGVzdF9nZW5lcmF0ZV9zaWduYWxfcmVxdWlyZXNfc2VudGltZW50X2NvbmZpcm1hdGlvbihtb25rZXlwYXRjaDogcHl0ZXN0Lk1vbmtleVBhdGNoKSAtPiBOb25lOgogICAgaDEgPSBfZnJhbWUoMS4xMSwgMS4xMCwgKDU0LjAsIDU2LjApKQogICAgaDQgPSBfZnJhbWUoMS4xMiwgMS4xMCwgKDUwLjAsIDUwLjApKQogICAgbW9ua2V5cGF0Y2guc2V0YXR0cigKICAgICAgICBzdHJhdGVneSwKICAgICAgICAiYW5hbHl6ZV9tYXJrZXRfc2VudGltZW50IiwKICAgICAgICBsYW1iZGEgX3N5bWJvbDogU2VudGltZW50UmVhZGluZygwLjgsIDEsIE5vbmUsIE5vbmUpLAogICAgKQoKICAgIHNpZ25hbCA9IHN0cmF0ZWd5LmdlbmVyYXRlX3NpZ25hbCgiRVVSVVNEIiwgaDEsIGg0KQoKICAgIGFzc2VydCBzaWduYWwuZGlyZWN0aW9uID09IFRyYWRlRGlyZWN0aW9uLkJVWQo=
+"""Pure strategy gates: no MT5 terminal or network connection is required."""
+
+from __future__ import annotations
+
+import pandas as pd
+import pytest
+import strategy
+from strategy import SentimentReading, TradeDirection, Trend
+
+
+def _frame(fast: float, slow: float, rsi_values: tuple[float, float]) -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "ema_50": [fast, fast],
+            "ema_200": [slow, slow],
+            "rsi": list(rsi_values),
+            "atr": [0.001, 0.001],
+        }
+    )
+
+
+def test_multi_timeframe_confirmation_requires_both_ema_trends_and_rsi() -> None:
+    h1 = _frame(1.11, 1.10, (54.0, 56.0))
+    h4 = _frame(1.12, 1.10, (50.0, 50.0))
+
+    assert strategy.has_multi_timeframe_ema_rsi_confirmation(h1, h4, Trend.BULLISH)
+    assert not strategy.has_multi_timeframe_ema_rsi_confirmation(h1, h4, Trend.BEARISH)
+
+
+@pytest.mark.parametrize(
+    ("minutes", "impact", "expected"),
+    [(30, "HIGH", True), (-30, "HIGH", True), (31, "HIGH", False), (5, "LOW", False)],
+)
+def test_news_blackout_only_applies_inside_high_impact_window(
+    minutes: float, impact: str, expected: bool
+) -> None:
+    reading = SentimentReading(0.0, 0, "CPI", minutes, next_event_impact=impact)
+    assert strategy.is_news_blackout(reading) is expected
+
+
+def test_generate_signal_requires_sentiment_confirmation(monkeypatch: pytest.MonkeyPatch) -> None:
+    h1 = _frame(1.11, 1.10, (54.0, 56.0))
+    h4 = _frame(1.12, 1.10, (50.0, 50.0))
+    monkeypatch.setattr(
+        strategy,
+        "analyze_market_sentiment",
+        lambda _symbol: SentimentReading(0.8, 1, None, None),
+    )
+
+    signal = strategy.generate_signal("EURUSD", h1, h4)
+
+    assert signal.direction == TradeDirection.BUY

@@ -1,1 +1,465 @@
-I3Byb3BlcnR5IHN0cmljdAoKaW5wdXQgc3RyaW5nICAgSW5wU3ltYm9sICAgICAgICAgICAgICAgPSAiRVVSVVNEIjsKaW5wdXQgRU5VTV9USU1FRlJBTUUgSW5wRW50cnlURiAgICAgICAgID0gUEVSSU9EX0gxOwppbnB1dCBFTlVNX1RJTUVGUkFNRSBJbnBCaWFzVEYgICAgICAgICAgPSBQRVJJT0RfSDQ7CmlucHV0IGludCAgICAgIElucEZhc3RFbWFQZXJpb2QgICAgICAgID0gNTA7CmlucHV0IGludCAgICAgIElucFNsb3dFbWFQZXJpb2QgICAgICAgID0gMjAwOwppbnB1dCBpbnQgICAgICBJbnBSc2lQZXJpb2QgICAgICAgICAgICA9IDE0OwppbnB1dCBpbnQgICAgICBJbnBBdHJQZXJpb2QgICAgICAgICAgICA9IDE0OwppbnB1dCBkb3VibGUgICBJbnBSaXNrUGVyY2VudCAgICAgICAgICA9IDEuNTsKaW5wdXQgZG91YmxlICAgSW5wQXRyU3RvcE11bHRpcGxpZXIgICAgPSAxLjU7CmlucHV0IGRvdWJsZSAgIElucEF0clRha2VQcm9maXRNdWx0aXBsaWVyID0gMy4wOwppbnB1dCBpbnQgICAgICBJbnBTbGlwcGFnZVBvaW50cyAgICAgICA9IDIwOwppbnB1dCBpbnQgICAgICBJbnBNYWdpY051bWJlciAgICAgICAgICA9IDk5MDAxMTsKaW5wdXQgaW50ICAgICAgSW5wTWF4UG9zaXRpb25zICAgICAgICAgPSAzOwppbnB1dCBib29sICAgICBJbnBBbGxvd0xvbmdzICAgICAgICAgICA9IHRydWU7CmlucHV0IGJvb2wgICAgIElucEFsbG93U2hvcnRzICAgICAgICAgID0gZmFsc2U7CmlucHV0IGRvdWJsZSAgIElucE1pbkxvdCAgICAgICAgICAgICAgID0gMC4wMTsKaW5wdXQgZG91YmxlICAgSW5wTWF4TG90ICAgICAgICAgICAgICAgPSA1MC4wOwppbnB1dCBib29sICAgICBJbnBVc2VOZXdzQmxhY2tvdXQgICAgICA9IHRydWU7CmlucHV0IGludCAgICAgIElucE5ld3NCbGFja291dE1pbnV0ZXMgID0gMzA7CmlucHV0IGRhdGV0aW1lIElucE5leHROZXdzVGltZXN0YW1wICAgID0gMDsKCmludCBnX2Zhc3RFbWFIYW5kbGUgPSBJTlZBTElEX0hBTkRMRTsKaW50IGdfc2xvd0VtYUhhbmRsZSA9IElOVkFMSURfSEFORExFOwppbnQgZ19yc2lIYW5kbGUgPSBJTlZBTElEX0hBTkRMRTsKaW50IGdfYXRySGFuZGxlID0gSU5WQUxJRF9IQU5ETEU7CgpzdHJpbmcgZ19zeW1ib2wgPSAiIjsKRU5VTV9USU1FRlJBTUUgZ19lbnRyeVRGID0gUEVSSU9EX0gxOwpFTlVNX1RJTUVGUkFNRSBnX2JpYXNURiA9IFBFUklPRF9INDsKZGF0ZXRpbWUgZ19sYXN0QmFyVGltZSA9IDA7Cgpib29sIElzTmV3c0JsYWNrb3V0QWN0aXZlKCkKewogICBpZighSW5wVXNlTmV3c0JsYWNrb3V0KQogICAgICByZXR1cm4gZmFsc2U7CgogICBpZihJbnBOZXh0TmV3c1RpbWVzdGFtcCA8PSAwKQogICAgICByZXR1cm4gZmFsc2U7CgogICBkYXRldGltZSBub3cgPSBUaW1lQ3VycmVudCgpOwogICBkYXRldGltZSBzdGFydFdpbmRvdyA9IElucE5leHROZXdzVGltZXN0YW1wIC0gSW5wTmV3c0JsYWNrb3V0TWludXRlcyAqIDYwOwogICBkYXRldGltZSBlbmRXaW5kb3cgPSBJbnBOZXh0TmV3c1RpbWVzdGFtcCArIElucE5ld3NCbGFja291dE1pbnV0ZXMgKiA2MDsKCiAgIHJldHVybiBub3cgPj0gc3RhcnRXaW5kb3cgJiYgbm93IDw9IGVuZFdpbmRvdzsKfQoKYm9vbCBJc1RyYWRlUmVhZHkoc3RyaW5nIHN5bWJvbCkKewogICBpZighU3ltYm9sU2VsZWN0KHN5bWJvbCwgdHJ1ZSkpCiAgIHsKICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBTeW1ib2wgc2VsZWN0aW9uIGZhaWxlZDogIiwgc3ltYm9sKTsKICAgICAgcmV0dXJuIGZhbHNlOwogICB9CgogICBpbnQgdHJhZGVNb2RlID0gKGludClTeW1ib2xJbmZvSW50ZWdlcihzeW1ib2wsIFNZTUJPTF9UUkFERV9NT0RFKTsKICAgaWYodHJhZGVNb2RlICE9IFNZTUJPTF9UUkFERV9NT0RFX0ZVTEwpCiAgIHsKICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBTeW1ib2wgaXMgbm90IGZ1bGx5IHRyYWRlYWJsZTogIiwgc3ltYm9sLCAiIHRyYWRlTW9kZT0iLCB0cmFkZU1vZGUpOwogICAgICByZXR1cm4gZmFsc2U7CiAgIH0KCiAgIGRvdWJsZSBiaWQgPSBTeW1ib2xJbmZvRG91YmxlKHN5bWJvbCwgU1lNQk9MX0JJRCk7CiAgIGRvdWJsZSBhc2sgPSBTeW1ib2xJbmZvRG91YmxlKHN5bWJvbCwgU1lNQk9MX0FTSyk7CiAgIGlmKGJpZCA8PSAwLjAgfHwgYXNrIDw9IDAuMCkKICAgewogICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIEludmFsaWQgYmlkL2FzayBvbiBzeW1ib2w6ICIsIHN5bWJvbCk7CiAgICAgIHJldHVybiBmYWxzZTsKICAgfQoKICAgcmV0dXJuIHRydWU7Cn0KCmJvb2wgVmFsaWRhdGVTdG9wc0FuZEZyZWV6ZShzdHJpbmcgc3ltYm9sLCBkb3VibGUgZW50cnlQcmljZSwgZG91YmxlIHNsUHJpY2UsIGRvdWJsZSB0cFByaWNlKQp7CiAgIGRvdWJsZSBwb2ludCA9IFN5bWJvbEluZm9Eb3VibGUoc3ltYm9sLCBTWU1CT0xfUE9JTlQpOwogICBpbnQgc3RvcExldmVsID0gKGludClTeW1ib2xJbmZvSW50ZWdlcihzeW1ib2wsIFNZTUJPTF9UUkFERV9TVE9QU19MRVZFTCk7CiAgIGludCBmcmVlemVMZXZlbCA9IChpbnQpU3ltYm9sSW5mb0ludGVnZXIoc3ltYm9sLCBTWU1CT0xfVFJBREVfRlJFRVpFX0xFVkVMKTsKCiAgIGlmKHN0b3BMZXZlbCA+IDApCiAgIHsKICAgICAgaWYoTWF0aEFicyhlbnRyeVByaWNlIC0gc2xQcmljZSkgPCBzdG9wTGV2ZWwgKiBwb2ludCkKICAgICAgewogICAgICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIFN0b3AgbG9zcyBpbnZhbGlkIGZvciAiLCBzeW1ib2wsICIgfCBtaW5EaXN0YW5jZT0iLCBzdG9wTGV2ZWwgKiBwb2ludCk7CiAgICAgICAgIHJldHVybiBmYWxzZTsKICAgICAgfQoKICAgICAgaWYoTWF0aEFicyh0cFByaWNlIC0gZW50cnlQcmljZSkgPCBzdG9wTGV2ZWwgKiBwb2ludCkKICAgICAgewogICAgICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIFRha2UgcHJvZml0IGludmFsaWQgZm9yICIsIHN5bWJvbCwgIiB8IG1pbkRpc3RhbmNlPSIsIHN0b3BMZXZlbCAqIHBvaW50KTsKICAgICAgICAgcmV0dXJuIGZhbHNlOwogICAgICB9CiAgIH0KCiAgIGlmKGZyZWV6ZUxldmVsID4gMCkKICAgewogICAgICBkb3VibGUgYmlkID0gU3ltYm9sSW5mb0RvdWJsZShzeW1ib2wsIFNZTUJPTF9CSUQpOwogICAgICBkb3VibGUgYXNrID0gU3ltYm9sSW5mb0RvdWJsZShzeW1ib2wsIFNZTUJPTF9BU0spOwogICAgICBpZihNYXRoQWJzKGFzayAtIGJpZCkgPiBmcmVlemVMZXZlbCAqIHBvaW50KQogICAgICB7CiAgICAgICAgIFByaW50KCJbQWVnaXNRdWFudF0gRnJlZXplIGxldmVsIGV4Y2VlZGVkIGZvciAiLCBzeW1ib2wsICIgfCBzcHJlYWQ9IiwgTWF0aEFicyhhc2stYmlkKSwgIiBmcmVlemVMaW1pdD0iLCBmcmVlemVMZXZlbCAqIHBvaW50KTsKICAgICAgICAgcmV0dXJuIGZhbHNlOwogICAgICB9CiAgIH0KCiAgIHJldHVybiB0cnVlOwp9Cgp2b2lkIEhhbmRsZVRyYWRlUmVzdWx0KE1xbFRyYWRlUmVzdWx0ICZyZXN1bHQsIHN0cmluZyBzeW1ib2wsIHN0cmluZyBkaXJlY3Rpb24pCnsKICAgaWYocmVzdWx0LnJldGNvZGUgPT0gVFJBREVfUkVUQ09ERV9ET05FIHx8IHJlc3VsdC5yZXRjb2RlID09IFRSQURFX1JFVENPREVfRE9ORV9QQVJUSUFMKQogICB7CiAgICAgIFByaW50KCJbQWVnaXNRdWFudF0gT3JkZXIgYWNjZXB0ZWQgfCBzeW1ib2w9Iiwgc3ltYm9sLCAiIGRpcj0iLCBkaXJlY3Rpb24sCiAgICAgICAgICAgICIgdGlja2V0PSIsIHJlc3VsdC5vcmRlciwgIiBwcmljZT0iLCByZXN1bHQucHJpY2UsICIgdm9sdW1lPSIsIHJlc3VsdC52b2x1bWUpOwogICAgICByZXR1cm47CiAgIH0KCiAgIFByaW50KCJbQWVnaXNRdWFudF0gVHJhZGUgcmVqZWN0ZWQgfCBzeW1ib2w9Iiwgc3ltYm9sLCAiIGRpcj0iLCBkaXJlY3Rpb24sCiAgICAgICAgICIgcmV0Y29kZT0iLCByZXN1bHQucmV0Y29kZSwgIiBjb21tZW50PSIsIHJlc3VsdC5jb21tZW50KTsKCiAgIHN3aXRjaChyZXN1bHQucmV0Y29kZSkKICAgewogICAgICBjYXNlIFRSQURFX1JFVENPREVfUkVRVU9URToKICAgICAgY2FzZSBUUkFERV9SRVRDT0RFX1BSSUNFX0NIQU5HRUQ6CiAgICAgIGNhc2UgVFJBREVfUkVUQ09ERV9PRkZfUVVPVEVTOgogICAgICBjYXNlIFRSQURFX1JFVENPREVfVElNRU9VVDoKICAgICAgY2FzZSBUUkFERV9SRVRDT0RFX0NPTk5FQ1RJT046CiAgICAgIGNhc2UgVFJBREVfUkVUQ09ERV9CUk9LRVJfQlVTWToKICAgICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBUcmFuc2llbnQgYnJva2VyL3NlcnZlciBpc3N1ZSwgc2tpcCBhbmQgcmV0cnkgb24gbmV4dCBiYXIuIik7CiAgICAgICAgIGJyZWFrOwogICAgICBjYXNlIFRSQURFX1JFVENPREVfSU5WQUxJRF9TVE9QUzoKICAgICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBJbnZhbGlkIHN0b3BzIHJlbGF0aXZlIHRvIGJyb2tlciBjb25zdHJhaW50cy4iKTsKICAgICAgICAgYnJlYWs7CiAgICAgIGNhc2UgVFJBREVfUkVUQ09ERV9JTlZBTElEX1ZPTFVNRToKICAgICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBJbnZhbGlkIGxvdCBzaXplIG9yIHZvbHVtZSBzdGVwIHZpb2xhdGlvbi4iKTsKICAgICAgICAgYnJlYWs7CiAgICAgIGNhc2UgVFJBREVfUkVUQ09ERV9OT19NT05FWToKICAgICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBObyBhdmFpbGFibGUgbWFyZ2luIG9yIGZ1bmRzLiIpOwogICAgICAgICBicmVhazsKICAgICAgZGVmYXVsdDoKICAgICAgICAgYnJlYWs7CiAgIH0KfQoKaW50IEdldEZpbGxpbmdNb2RlKHN0cmluZyBzeW1ib2wpCnsKICAgaW50IG1vZGUgPSAoaW50KVN5bWJvbEluZm9JbnRlZ2VyKHN5bWJvbCwgU1lNQk9MX0ZJTExJTkdfTU9ERSk7CiAgIGlmKG1vZGUgPT0gU1lNQk9MX0ZJTExJTkdfSU9DKQogICAgICByZXR1cm4gT1JERVJfRklMTElOR19JT0M7CiAgIGlmKG1vZGUgPT0gU1lNQk9MX0ZJTExJTkdfRk9LKQogICAgICByZXR1cm4gT1JERVJfRklMTElOR19GT0s7CiAgIHJldHVybiBPUkRFUl9GSUxMSU5HX1JFVFVSTjsKfQoKZG91YmxlIEdldER5bmFtaWNSaXNrTG90U2l6ZShzdHJpbmcgc3ltYm9sLCBkb3VibGUgc3RvcERpc3RhbmNlUHJpY2UpCnsKICAgaWYoc3RvcERpc3RhbmNlUHJpY2UgPD0gMC4wKQogICAgICByZXR1cm4gMC4wOwoKICAgZG91YmxlIGFjY291bnRCYWxhbmNlID0gQWNjb3VudEluZm9Eb3VibGUoQUNDT1VOVF9CQUxBTkNFKTsKICAgZG91YmxlIGVxdWl0eSA9IEFjY291bnRJbmZvRG91YmxlKEFDQ09VTlRfRVFVSVRZKTsKICAgZG91YmxlIHJpc2tBbW91bnQgPSBNYXRoTWF4KDAuMCwgZXF1aXR5ICogKElucFJpc2tQZXJjZW50IC8gMTAwLjApKTsKCiAgIGRvdWJsZSB0aWNrVmFsdWUgPSBTeW1ib2xJbmZvRG91YmxlKHN5bWJvbCwgU1lNQk9MX1RSQURFX1RJQ0tfVkFMVUUpOwogICBkb3VibGUgdGlja1NpemUgPSBTeW1ib2xJbmZvRG91YmxlKHN5bWJvbCwgU1lNQk9MX1RSQURFX1RJQ0tfU0laRSk7CiAgIGRvdWJsZSBwb2ludCA9IFN5bWJvbEluZm9Eb3VibGUoc3ltYm9sLCBTWU1CT0xfUE9JTlQpOwogICBkb3VibGUgdm9sdW1lU3RlcCA9IFN5bWJvbEluZm9Eb3VibGUoc3ltYm9sLCBTWU1CT0xfVk9MVU1FX1NURVApOwogICBkb3VibGUgdm9sdW1lTWluID0gU3ltYm9sSW5mb0RvdWJsZShzeW1ib2wsIFNZTUJPTF9WT0xVTUVfTUlOKTsKICAgZG91YmxlIHZvbHVtZU1heCA9IFN5bWJvbEluZm9Eb3VibGUoc3ltYm9sLCBTWU1CT0xfVk9MVU1FX01BWCk7CgogICBpZih0aWNrVmFsdWUgPD0gMC4wIHx8IHRpY2tTaXplIDw9IDAuMCkKICAgICAgcmV0dXJuIDAuMDsKCiAgIGRvdWJsZSBzdG9wRGlzdGFuY2VUaWNrcyA9IHN0b3BEaXN0YW5jZVByaWNlIC8gTWF0aE1heChwb2ludCwgdGlja1NpemUpOwogICBkb3VibGUgdmFsdWVQZXJMb3QgPSBzdG9wRGlzdGFuY2VUaWNrcyAqIHRpY2tWYWx1ZTsKICAgaWYodmFsdWVQZXJMb3QgPD0gMC4wKQogICAgICByZXR1cm4gMC4wOwoKICAgZG91YmxlIHJhd0xvdHMgPSByaXNrQW1vdW50IC8gdmFsdWVQZXJMb3Q7CiAgIGlmKHJhd0xvdHMgPD0gMC4wKQogICAgICByZXR1cm4gMC4wOwoKICAgZG91YmxlIGxvdHMgPSBNYXRoRmxvb3IocmF3TG90cyAvIHZvbHVtZVN0ZXApICogdm9sdW1lU3RlcDsKICAgaWYobG90cyA8IHZvbHVtZU1pbikKICAgICAgbG90cyA9IHZvbHVtZU1pbjsKICAgaWYobG90cyA+IHZvbHVtZU1heCkKICAgICAgbG90cyA9IHZvbHVtZU1heDsKICAgaWYobG90cyA+IElucE1heExvdCkKICAgICAgbG90cyA9IElucE1heExvdDsKICAgaWYobG90cyA8IElucE1pbkxvdCkKICAgICAgbG90cyA9IDAuMDsKCiAgIGRvdWJsZSBmcmVlTWFyZ2luID0gQWNjb3VudEluZm9Eb3VibGUoQUNDT1VOVF9NQVJHSU5fRlJFRSk7CiAgIGRvdWJsZSBtYXJnaW5Vc2VkID0gKGxvdHMgKiBTeW1ib2xJbmZvRG91YmxlKHN5bWJvbCwgU1lNQk9MX1RSQURFX0NPTlRSQUNUX1NJWkUpICogU3ltYm9sSW5mb0RvdWJsZShzeW1ib2wsIFNZTUJPTF9BU0spKSAvIE1hdGhNYXgoKGludClBY2NvdW50SW5mb0ludGVnZXIoQUNDT1VOVF9MRVZFUkFHRSksIDEpOwogICBpZihmcmVlTWFyZ2luID4gMC4wICYmIG1hcmdpblVzZWQgPiBmcmVlTWFyZ2luKQogICAgICByZXR1cm4gMC4wOwoKICAgUHJpbnQoIltBZWdpc1F1YW50XSBEeW5hbWljIGxvdCBzaXppbmcgfCBzeW1ib2w9Iiwgc3ltYm9sLCAiIGVxdWl0eT0iLCBlcXVpdHksICIgcmlzaz0iLCByaXNrQW1vdW50LAogICAgICAgICAiIHN0b3BEaXN0YW5jZT0iLCBzdG9wRGlzdGFuY2VQcmljZSwgIiByYXdMb3RzPSIsIHJhd0xvdHMsICIgbG90cz0iLCBsb3RzKTsKICAgcmV0dXJuIGxvdHM7Cn0KCmJvb2wgR2V0SW5kaWNhdG9yVmFsdWUoaW50IGhhbmRsZSwgaW50IGluZGV4LCBkb3VibGUgJnZhbHVlKQp7CiAgIGlmKGhhbmRsZSA9PSBJTlZBTElEX0hBTkRMRSkKICAgICAgcmV0dXJuIGZhbHNlOwoKICAgZG91YmxlIGJ1ZltdOwogICBBcnJheVNldEFzU2VyaWVzKGJ1ZiwgdHJ1ZSk7CiAgIGludCBjb3BpZWQgPSBDb3B5QnVmZmVyKGhhbmRsZSwgMCwgMCwgMywgYnVmKTsKICAgaWYoY29waWVkIDw9IDApCiAgICAgIHJldHVybiBmYWxzZTsKCiAgIHZhbHVlID0gYnVmW2luZGV4XTsKICAgcmV0dXJuIHRydWU7Cn0KCmJvb2wgSXNGcmVzaEVub3VnaChzdHJpbmcgc3ltYm9sLCBFTlVNX1RJTUVGUkFNRSB0ZikKewogICBpbnQgbmVlZGVkQmFycyA9IDIwMDsKICAgaW50IGJhcnMgPSBCYXJzKHN5bWJvbCwgdGYpOwogICBpZihiYXJzIDwgbmVlZGVkQmFycykKICAgewogICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIE5vdCBlbm91Z2ggYmFycyBmb3IgIiwgc3ltYm9sLCAiIHRmPSIsIHRmLCAiIGJhcnM9IiwgYmFycyk7CiAgICAgIHJldHVybiBmYWxzZTsKICAgfQoKICAgaWYoZ19mYXN0RW1hSGFuZGxlICE9IElOVkFMSURfSEFORExFICYmIEJhcnNDYWxjdWxhdGVkKGdfZmFzdEVtYUhhbmRsZSkgPCBuZWVkZWRCYXJzKQogICAgICByZXR1cm4gZmFsc2U7CiAgIGlmKGdfc2xvd0VtYUhhbmRsZSAhPSBJTlZBTElEX0hBTkRMRSAmJiBCYXJzQ2FsY3VsYXRlZChnX3Nsb3dFbWFIYW5kbGUpIDwgbmVlZGVkQmFycykKICAgICAgcmV0dXJuIGZhbHNlOwogICBpZihnX3JzaUhhbmRsZSAhPSBJTlZBTElEX0hBTkRMRSAmJiBCYXJzQ2FsY3VsYXRlZChnX3JzaUhhbmRsZSkgPCBuZWVkZWRCYXJzKQogICAgICByZXR1cm4gZmFsc2U7CiAgIGlmKGdfYXRySGFuZGxlICE9IElOVkFMSURfSEFORExFICYmIEJhcnNDYWxjdWxhdGVkKGdfYXRySGFuZGxlKSA8IG5lZWRlZEJhcnMpCiAgICAgIHJldHVybiBmYWxzZTsKCiAgIE1xbFJhdGVzIHJhdGVzW107CiAgIGludCBjb3BpZWQgPSBDb3B5UmF0ZXMoc3ltYm9sLCB0ZiwgMCwgbmVlZGVkQmFycywgcmF0ZXMpOwogICBpZihjb3BpZWQgPCBuZWVkZWRCYXJzKQogICB7CiAgICAgIFByaW50KCJbQWVnaXNRdWFudF0gQ29weVJhdGVzIGluY29tcGxldGUgZm9yICIsIHN5bWJvbCwgIiB0Zj0iLCB0ZiwgIiBjb3BpZWQ9IiwgY29waWVkKTsKICAgICAgcmV0dXJuIGZhbHNlOwogICB9CgogICByZXR1cm4gdHJ1ZTsKfQoKYm9vbCBJc05ld0JhckZvclN5bWJvbCgpCnsKICAgaWYoZ19sYXN0QmFyVGltZSA9PSAwKQogICB7CiAgICAgIGdfbGFzdEJhclRpbWUgPSBpVGltZShnX3N5bWJvbCwgZ19lbnRyeVRGLCAwKTsKICAgICAgcmV0dXJuIHRydWU7CiAgIH0KCiAgIGRhdGV0aW1lIGN1cnJlbnRCYXIgPSBpVGltZShnX3N5bWJvbCwgZ19lbnRyeVRGLCAwKTsKICAgaWYoY3VycmVudEJhciA9PSBnX2xhc3RCYXJUaW1lKQogICAgICByZXR1cm4gZmFsc2U7CgogICBnX2xhc3RCYXJUaW1lID0gY3VycmVudEJhcjsKICAgcmV0dXJuIHRydWU7Cn0KCmRvdWJsZSBHZXRBdHJWYWx1ZShzdHJpbmcgc3ltYm9sKQp7CiAgIGRvdWJsZSBhdHIgPSAwLjA7CiAgIGlmKEdldEluZGljYXRvclZhbHVlKGdfYXRySGFuZGxlLCAwLCBhdHIpKQogICAgICByZXR1cm4gYXRyOwogICByZXR1cm4gMC4wOwp9Cgpib29sIEV2YWx1YXRlRW50cnkoc3RyaW5nIHN5bWJvbCwgaW50ICZ0cmFkZVR5cGUpCnsKICAgZG91YmxlIGZhc3QgPSAwLjAsIHNsb3cgPSAwLjAsIHJzaSA9IDAuMDsKICAgYm9vbCBmYXN0T2sgPSBHZXRJbmRpY2F0b3JWYWx1ZShnX2Zhc3RFbWFIYW5kbGUsIDAsIGZhc3QpOwogICBib29sIHNsb3dPayA9IEdldEluZGljYXRvclZhbHVlKGdfc2xvd0VtYUhhbmRsZSwgMCwgc2xvdyk7CiAgIGJvb2wgcnNpT2sgPSBHZXRJbmRpY2F0b3JWYWx1ZShnX3JzaUhhbmRsZSwgMCwgcnNpKTsKCiAgIGlmKCFmYXN0T2sgfHwgIXNsb3dPayB8fCAhcnNpT2spCiAgICAgIHJldHVybiBmYWxzZTsKCiAgIGJvb2wgbmV3c0JsYWNrb3V0ID0gSXNOZXdzQmxhY2tvdXRBY3RpdmUoKTsKICAgaWYobmV3c0JsYWNrb3V0KQogICB7CiAgICAgIFByaW50KCJbQWVnaXNRdWFudF0gTmV3cyBibGFja291dCBhY3RpdmU7IHNraXBwaW5nIG5ldyBlbnRyeS4iKTsKICAgICAgcmV0dXJuIGZhbHNlOwogICB9CgogICBib29sIHJzaUxvbmdDb25maXJtID0gcnNpID49IDUyLjAgJiYgcnNpIDwgNzAuMDsKICAgYm9vbCByc2lTaG9ydENvbmZpcm0gPSByc2kgPD0gNDguMCAmJiByc2kgPiAzMC4wOwoKICAgaWYoZmFzdCA+IHNsb3cgJiYgcnNpTG9uZ0NvbmZpcm0pCiAgIHsKICAgICAgdHJhZGVUeXBlID0gT1BfQlVZOwogICAgICByZXR1cm4gdHJ1ZTsKICAgfQogICBpZihmYXN0IDwgc2xvdyAmJiByc2lTaG9ydENvbmZpcm0pCiAgIHsKICAgICAgdHJhZGVUeXBlID0gT1BfU0VMTDsKICAgICAgcmV0dXJuIHRydWU7CiAgIH0KCiAgIHJldHVybiBmYWxzZTsKfQoKYm9vbCBTdWJtaXRNYXJrZXRPcmRlcihzdHJpbmcgc3ltYm9sLCBpbnQgb3JkZXJUeXBlLCBkb3VibGUgYXRyVmFsdWUpCnsKICAgaWYoIUlzVHJhZGVSZWFkeShzeW1ib2wpKQogICAgICByZXR1cm4gZmFsc2U7CgogICBkb3VibGUgYmlkID0gU3ltYm9sSW5mb0RvdWJsZShzeW1ib2wsIFNZTUJPTF9CSUQpOwogICBkb3VibGUgYXNrID0gU3ltYm9sSW5mb0RvdWJsZShzeW1ib2wsIFNZTUJPTF9BU0spOwogICBpZihiaWQgPD0gMC4wIHx8IGFzayA8PSAwLjApCiAgICAgIHJldHVybiBmYWxzZTsKCiAgIGRvdWJsZSBlbnRyeVByaWNlID0gKG9yZGVyVHlwZSA9PSBPUF9CVVkpID8gYXNrIDogYmlkOwogICBkb3VibGUgc3RvcERpc3RhbmNlID0gTWF0aE1heChhdHJWYWx1ZSAqIElucEF0clN0b3BNdWx0aXBsaWVyLCBTeW1ib2xJbmZvRG91YmxlKHN5bWJvbCwgU1lNQk9MX1RSQURFX1NUT1BTX0xFVkVMKSAqIFN5bWJvbEluZm9Eb3VibGUoc3ltYm9sLCBTWU1CT0xfUE9JTlQpKTsKCiAgIGRvdWJsZSBzbCA9IDAuMCwgdHAgPSAwLjA7CiAgIGlmKG9yZGVyVHlwZSA9PSBPUF9CVVkpCiAgIHsKICAgICAgc2wgPSBlbnRyeVByaWNlIC0gc3RvcERpc3RhbmNlOwogICAgICB0cCA9IGVudHJ5UHJpY2UgKyAoYXRyVmFsdWUgKiBJbnBBdHJUYWtlUHJvZml0TXVsdGlwbGllcik7CiAgIH0KICAgZWxzZQogICB7CiAgICAgIHNsID0gZW50cnlQcmljZSArIHN0b3BEaXN0YW5jZTsKICAgICAgdHAgPSBlbnRyeVByaWNlIC0gKGF0clZhbHVlICogSW5wQXRyVGFrZVByb2ZpdE11bHRpcGxpZXIpOwogICB9CgogICBpZighVmFsaWRhdGVTdG9wc0FuZEZyZWV6ZShzeW1ib2wsIGVudHJ5UHJpY2UsIHNsLCB0cCkpCiAgICAgIHJldHVybiBmYWxzZTsKCiAgIGRvdWJsZSBsb3RTaXplID0gR2V0RHluYW1pY1Jpc2tMb3RTaXplKHN5bWJvbCwgTWF0aEFicyhlbnRyeVByaWNlIC0gc2wpKTsKICAgaWYobG90U2l6ZSA8PSAwLjApCiAgIHsKICAgICAgUHJpbnQoIltBZWdpc1F1YW50XSBPcmRlciBibG9ja2VkIGJlY2F1c2UgY29tcHV0ZWQgbG90IHNpemUgaXMgemVybyBvciBpbnZhbGlkLiIpOwogICAgICByZXR1cm4gZmFsc2U7CiAgIH0KCiAgIE1xbFRyYWRlUmVxdWVzdCByZXF1ZXN0ID0ge307CiAgIE1xbFRyYWRlUmVzdWx0IHJlc3VsdCA9IHt9OwoKICAgcmVxdWVzdC5hY3Rpb24gPSBUUkFERV9BQ1RJT05fREVBTDsKICAgcmVxdWVzdC5tYWdpYyA9IElucE1hZ2ljTnVtYmVyOwogICByZXF1ZXN0LnN5bWJvbCA9IHN5bWJvbDsKICAgcmVxdWVzdC52b2x1bWUgPSBsb3RTaXplOwogICByZXF1ZXN0LnR5cGUgPSBvcmRlclR5cGU7CiAgIHJlcXVlc3QucHJpY2UgPSBlbnRyeVByaWNlOwogICByZXF1ZXN0LnNsID0gc2w7CiAgIHJlcXVlc3QudHAgPSB0cDsKICAgcmVxdWVzdC5kZXZpYXRpb24gPSBJbnBTbGlwcGFnZVBvaW50czsKICAgcmVxdWVzdC5jb21tZW50ID0gIkFlZ2lzUXVhbnRFQSI7CiAgIHJlcXVlc3QudHlwZV9maWxsaW5nID0gR2V0RmlsbGluZ01vZGUoc3ltYm9sKTsKICAgcmVxdWVzdC50eXBlX3RpbWUgPSBPUkRFUl9USU1FX0dUQzsKCiAgIGJvb2wgc2VudCA9IE9yZGVyU2VuZChyZXF1ZXN0LCByZXN1bHQpOwogICBpZighc2VudCkKICAgewogICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIE9yZGVyU2VuZCByZXR1cm5lZCBmYWxzZSB8IHN5bWJvbD0iLCBzeW1ib2wsICIgcmV0Y29kZT0iLCByZXN1bHQucmV0Y29kZSwgIiBjb21tZW50PSIsIHJlc3VsdC5jb21tZW50KTsKICAgICAgcmV0dXJuIGZhbHNlOwogICB9CgogICBIYW5kbGVUcmFkZVJlc3VsdChyZXN1bHQsIHN5bWJvbCwgKG9yZGVyVHlwZSA9PSBPUF9CVVkpID8gIkJVWSIgOiAiU0VMTCIpOwogICByZXR1cm4gKHJlc3VsdC5yZXRjb2RlID09IFRSQURFX1JFVENPREVfRE9ORSB8fCByZXN1bHQucmV0Y29kZSA9PSBUUkFERV9SRVRDT0RFX0RPTkVfUEFSVElBTCk7Cn0KCnZvaWQgRXZhbHVhdGVBbmRUcmFkZSgpCnsKICAgaWYoIUlzRnJlc2hFbm91Z2goZ19zeW1ib2wsIGdfZW50cnlURikpCiAgICAgIHJldHVybjsKCiAgIGludCB0cmFkZVR5cGUgPSAtMTsKICAgaWYoIUV2YWx1YXRlRW50cnkoZ19zeW1ib2wsIHRyYWRlVHlwZSkpCiAgICAgIHJldHVybjsKCiAgIGlmKHRyYWRlVHlwZSA9PSBPUF9CVVkgJiYgIUlucEFsbG93TG9uZ3MpCiAgICAgIHJldHVybjsKICAgaWYodHJhZGVUeXBlID09IE9QX1NFTEwgJiYgIUlucEFsbG93U2hvcnRzKQogICAgICByZXR1cm47CgogICBpbnQgb3BlblBvc2l0aW9ucyA9IDA7CiAgIGZvcihpbnQgaSA9IFBvc2l0aW9uc1RvdGFsKCkgLSAxOyBpID49IDA7IGktLSkKICAgewogICAgICB1bG9uZyB0aWNrZXQgPSBQb3NpdGlvbkdldFRpY2tldChpKTsKICAgICAgaWYodGlja2V0ID09IDApCiAgICAgICAgIGNvbnRpbnVlOwogICAgICBDUG9zaXRpb25JbmZvIHBvczsKICAgICAgaWYoIXBvcy5TZWxlY3RCeVRpY2tldCh0aWNrZXQpKQogICAgICAgICBjb250aW51ZTsKICAgICAgaWYocG9zLk1hZ2ljKCkgPT0gSW5wTWFnaWNOdW1iZXIgJiYgcG9zLlN5bWJvbCgpID09IGdfc3ltYm9sKQogICAgICAgICBvcGVuUG9zaXRpb25zKys7CiAgIH0KCiAgIGlmKG9wZW5Qb3NpdGlvbnMgPj0gSW5wTWF4UG9zaXRpb25zKQogICB7CiAgICAgIFByaW50KCJbQWVnaXNRdWFudF0gTWF4IGNvbmN1cnJlbnQgcG9zaXRpb25zIHJlYWNoZWQgZm9yICIsIGdfc3ltYm9sKTsKICAgICAgcmV0dXJuOwogICB9CgogICBkb3VibGUgYXRyID0gR2V0QXRyVmFsdWUoZ19zeW1ib2wpOwogICBpZihhdHIgPD0gMC4wKQogICB7CiAgICAgIFByaW50KCJbQWVnaXNRdWFudF0gSW52YWxpZCBBVFIgdmFsdWUsIHNraXAgb3JkZXIgZm9yICIsIGdfc3ltYm9sKTsKICAgICAgcmV0dXJuOwogICB9CgogICBTdWJtaXRNYXJrZXRPcmRlcihnX3N5bWJvbCwgdHJhZGVUeXBlLCBhdHIpOwp9CgppbnQgT25Jbml0KCkKewogICBnX3N5bWJvbCA9IElucFN5bWJvbDsKICAgZ19lbnRyeVRGID0gSW5wRW50cnlURjsKICAgZ19iaWFzVEYgPSBJbnBCaWFzVEY7CgogICBpZighSXNUcmFkZVJlYWR5KGdfc3ltYm9sKSkKICAgewogICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIFN5bWJvbCB0cmFkZSByZWFkaW5lc3MgZmFpbGVkOiAiLCBnX3N5bWJvbCk7CiAgICAgIHJldHVybiBJTklUX0ZBSUxFRDsKICAgfQoKICAgZ19mYXN0RW1hSGFuZGxlID0gaU1BKGdfc3ltYm9sLCBnX2VudHJ5VEYsIElucEZhc3RFbWFQZXJpb2QsIDAsIE1PREVfRU1BLCBQUklDRV9DTE9TRSk7CiAgIGdfc2xvd0VtYUhhbmRsZSA9IGlNQShnX3N5bWJvbCwgZ19lbnRyeVRGLCBJbnBTbG93RW1hUGVyaW9kLCAwLCBNT0RFX0VNQSwgUFJJQ0VfQ0xPU0UpOwogICBnX3JzaUhhbmRsZSA9IGlSU0koZ19zeW1ib2wsIGdfZW50cnlURiwgSW5wUnNpUGVyaW9kLCBQUklDRV9DTE9TRSk7CiAgIGdfYXRySGFuZGxlID0gaUFUUihnX3N5bWJvbCwgZ19lbnRyeVRGLCBJbnBBdHJQZXJpb2QpOwoKICAgaWYoZ19mYXN0RW1hSGFuZGxlID09IElOVkFMSURfSEFORExFIHx8IGdfc2xvd0VtYUhhbmRsZSA9PSBJTlZBTElEX0hBTkRMRSB8fCBnX3JzaUhhbmRsZSA9PSBJTlZBTElEX0hBTkRMRSB8fCBnX2F0ckhhbmRsZSA9PSBJTlZBTElEX0hBTkRMRSkKICAgewogICAgICBQcmludCgiW0FlZ2lzUXVhbnRdIEluZGljYXRvciBoYW5kbGUgY3JlYXRpb24gZmFpbGVkLiIpOwogICAgICByZXR1cm4gSU5JVF9GQUlMRUQ7CiAgIH0KCiAgIGdfbGFzdEJhclRpbWUgPSAwOwogICByZXR1cm4gSU5JVF9TVUNDRUVERUQ7Cn0KCnZvaWQgT25EZWluaXQoY29uc3QgaW50IHJlYXNvbikKewogICBpZihnX2Zhc3RFbWFIYW5kbGUgIT0gSU5WQUxJRF9IQU5ETEUpCiAgICAgIEluZGljYXRvclJlbGVhc2UoZ19mYXN0RW1hSGFuZGxlKTsKICAgaWYoZ19zbG93RW1hSGFuZGxlICE9IElOVkFMSURfSEFORExFKQogICAgICBJbmRpY2F0b3JSZWxlYXNlKGdfc2xvd0VtYUhhbmRsZSk7CiAgIGlmKGdfcnNpSGFuZGxlICE9IElOVkFMSURfSEFORExFKQogICAgICBJbmRpY2F0b3JSZWxlYXNlKGdfcnNpSGFuZGxlKTsKICAgaWYoZ19hdHJIYW5kbGUgIT0gSU5WQUxJRF9IQU5ETEUpCiAgICAgIEluZGljYXRvclJlbGVhc2UoZ19hdHJIYW5kbGUpOwoKICAgZ19mYXN0RW1hSGFuZGxlID0gSU5WQUxJRF9IQU5ETEU7CiAgIGdfc2xvd0VtYUhhbmRsZSA9IElOVkFMSURfSEFORExFOwogICBnX3JzaUhhbmRsZSA9IElOVkFMSURfSEFORExFOwogICBnX2F0ckhhbmRsZSA9IElOVkFMSURfSEFORExFOwp9Cgp2b2lkIE9uVGljaygpCnsKICAgaWYoIUlzVHJhZGVSZWFkeShnX3N5bWJvbCkpCiAgICAgIHJldHVybjsKCiAgIGlmKCFJc05ld0JhckZvclN5bWJvbCgpKQogICAgICByZXR1cm47CgogICBFdmFsdWF0ZUFuZFRyYWRlKCk7Cn0K
+#property strict
+
+input string   InpSymbol               = "EURUSD";
+input ENUM_TIMEFRAME InpEntryTF         = PERIOD_H1;
+input ENUM_TIMEFRAME InpBiasTF          = PERIOD_H4;
+input int      InpFastEmaPeriod        = 50;
+input int      InpSlowEmaPeriod        = 200;
+input int      InpRsiPeriod            = 14;
+input int      InpAtrPeriod            = 14;
+input double   InpRiskPercent          = 1.5;
+input double   InpAtrStopMultiplier    = 1.5;
+input double   InpAtrTakeProfitMultiplier = 3.0;
+input int      InpSlippagePoints       = 20;
+input int      InpMagicNumber          = 990011;
+input int      InpMaxPositions         = 3;
+input bool     InpAllowLongs           = true;
+input bool     InpAllowShorts          = false;
+input double   InpMinLot               = 0.01;
+input double   InpMaxLot               = 50.0;
+input bool     InpUseNewsBlackout      = true;
+input int      InpNewsBlackoutMinutes  = 30;
+input datetime InpNextNewsTimestamp    = 0;
+
+int g_fastEmaHandle = INVALID_HANDLE;
+int g_slowEmaHandle = INVALID_HANDLE;
+int g_rsiHandle = INVALID_HANDLE;
+int g_atrHandle = INVALID_HANDLE;
+
+string g_symbol = "";
+ENUM_TIMEFRAME g_entryTF = PERIOD_H1;
+ENUM_TIMEFRAME g_biasTF = PERIOD_H4;
+datetime g_lastBarTime = 0;
+
+bool IsNewsBlackoutActive()
+{
+   if(!InpUseNewsBlackout)
+      return false;
+
+   if(InpNextNewsTimestamp <= 0)
+      return false;
+
+   datetime now = TimeCurrent();
+   datetime startWindow = InpNextNewsTimestamp - InpNewsBlackoutMinutes * 60;
+   datetime endWindow = InpNextNewsTimestamp + InpNewsBlackoutMinutes * 60;
+
+   return now >= startWindow && now <= endWindow;
+}
+
+bool IsTradeReady(string symbol)
+{
+   if(!SymbolSelect(symbol, true))
+   {
+      Print("[AegisQuant] Symbol selection failed: ", symbol);
+      return false;
+   }
+
+   int tradeMode = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_MODE);
+   if(tradeMode != SYMBOL_TRADE_MODE_FULL)
+   {
+      Print("[AegisQuant] Symbol is not fully tradeable: ", symbol, " tradeMode=", tradeMode);
+      return false;
+   }
+
+   double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
+   double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
+   if(bid <= 0.0 || ask <= 0.0)
+   {
+      Print("[AegisQuant] Invalid bid/ask on symbol: ", symbol);
+      return false;
+   }
+
+   return true;
+}
+
+bool ValidateStopsAndFreeze(string symbol, double entryPrice, double slPrice, double tpPrice)
+{
+   double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
+   int stopLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_STOPS_LEVEL);
+   int freezeLevel = (int)SymbolInfoInteger(symbol, SYMBOL_TRADE_FREEZE_LEVEL);
+
+   if(stopLevel > 0)
+   {
+      if(MathAbs(entryPrice - slPrice) < stopLevel * point)
+      {
+         Print("[AegisQuant] Stop loss invalid for ", symbol, " | minDistance=", stopLevel * point);
+         return false;
+      }
+
+      if(MathAbs(tpPrice - entryPrice) < stopLevel * point)
+      {
+         Print("[AegisQuant] Take profit invalid for ", symbol, " | minDistance=", stopLevel * point);
+         return false;
+      }
+   }
+
+   if(freezeLevel > 0)
+   {
+      double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
+      double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
+      if(MathAbs(ask - bid) > freezeLevel * point)
+      {
+         Print("[AegisQuant] Freeze level exceeded for ", symbol, " | spread=", MathAbs(ask-bid), " freezeLimit=", freezeLevel * point);
+         return false;
+      }
+   }
+
+   return true;
+}
+
+void HandleTradeResult(MqlTradeResult &result, string symbol, string direction)
+{
+   if(result.retcode == TRADE_RETCODE_DONE || result.retcode == TRADE_RETCODE_DONE_PARTIAL)
+   {
+      Print("[AegisQuant] Order accepted | symbol=", symbol, " dir=", direction,
+            " ticket=", result.order, " price=", result.price, " volume=", result.volume);
+      return;
+   }
+
+   Print("[AegisQuant] Trade rejected | symbol=", symbol, " dir=", direction,
+         " retcode=", result.retcode, " comment=", result.comment);
+
+   switch(result.retcode)
+   {
+      case TRADE_RETCODE_REQUOTE:
+      case TRADE_RETCODE_PRICE_CHANGED:
+      case TRADE_RETCODE_OFF_QUOTES:
+      case TRADE_RETCODE_TIMEOUT:
+      case TRADE_RETCODE_CONNECTION:
+      case TRADE_RETCODE_BROKER_BUSY:
+         Print("[AegisQuant] Transient broker/server issue, skip and retry on next bar.");
+         break;
+      case TRADE_RETCODE_INVALID_STOPS:
+         Print("[AegisQuant] Invalid stops relative to broker constraints.");
+         break;
+      case TRADE_RETCODE_INVALID_VOLUME:
+         Print("[AegisQuant] Invalid lot size or volume step violation.");
+         break;
+      case TRADE_RETCODE_NO_MONEY:
+         Print("[AegisQuant] No available margin or funds.");
+         break;
+      default:
+         break;
+   }
+}
+
+int GetFillingMode(string symbol)
+{
+   int mode = (int)SymbolInfoInteger(symbol, SYMBOL_FILLING_MODE);
+   if(mode == SYMBOL_FILLING_IOC)
+      return ORDER_FILLING_IOC;
+   if(mode == SYMBOL_FILLING_FOK)
+      return ORDER_FILLING_FOK;
+   return ORDER_FILLING_RETURN;
+}
+
+double GetDynamicRiskLotSize(string symbol, double stopDistancePrice)
+{
+   if(stopDistancePrice <= 0.0)
+      return 0.0;
+
+   double accountBalance = AccountInfoDouble(ACCOUNT_BALANCE);
+   double equity = AccountInfoDouble(ACCOUNT_EQUITY);
+   double riskAmount = MathMax(0.0, equity * (InpRiskPercent / 100.0));
+
+   double tickValue = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_VALUE);
+   double tickSize = SymbolInfoDouble(symbol, SYMBOL_TRADE_TICK_SIZE);
+   double point = SymbolInfoDouble(symbol, SYMBOL_POINT);
+   double volumeStep = SymbolInfoDouble(symbol, SYMBOL_VOLUME_STEP);
+   double volumeMin = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MIN);
+   double volumeMax = SymbolInfoDouble(symbol, SYMBOL_VOLUME_MAX);
+
+   if(tickValue <= 0.0 || tickSize <= 0.0)
+      return 0.0;
+
+   double stopDistanceTicks = stopDistancePrice / MathMax(point, tickSize);
+   double valuePerLot = stopDistanceTicks * tickValue;
+   if(valuePerLot <= 0.0)
+      return 0.0;
+
+   double rawLots = riskAmount / valuePerLot;
+   if(rawLots <= 0.0)
+      return 0.0;
+
+   double lots = MathFloor(rawLots / volumeStep) * volumeStep;
+   if(lots < volumeMin)
+      lots = volumeMin;
+   if(lots > volumeMax)
+      lots = volumeMax;
+   if(lots > InpMaxLot)
+      lots = InpMaxLot;
+   if(lots < InpMinLot)
+      lots = 0.0;
+
+   double freeMargin = AccountInfoDouble(ACCOUNT_MARGIN_FREE);
+   double marginUsed = (lots * SymbolInfoDouble(symbol, SYMBOL_TRADE_CONTRACT_SIZE) * SymbolInfoDouble(symbol, SYMBOL_ASK)) / MathMax((int)AccountInfoInteger(ACCOUNT_LEVERAGE), 1);
+   if(freeMargin > 0.0 && marginUsed > freeMargin)
+      return 0.0;
+
+   Print("[AegisQuant] Dynamic lot sizing | symbol=", symbol, " equity=", equity, " risk=", riskAmount,
+         " stopDistance=", stopDistancePrice, " rawLots=", rawLots, " lots=", lots);
+   return lots;
+}
+
+bool GetIndicatorValue(int handle, int index, double &value)
+{
+   if(handle == INVALID_HANDLE)
+      return false;
+
+   double buf[];
+   ArraySetAsSeries(buf, true);
+   int copied = CopyBuffer(handle, 0, 0, 3, buf);
+   if(copied <= 0)
+      return false;
+
+   value = buf[index];
+   return true;
+}
+
+bool IsFreshEnough(string symbol, ENUM_TIMEFRAME tf)
+{
+   int neededBars = 200;
+   int bars = Bars(symbol, tf);
+   if(bars < neededBars)
+   {
+      Print("[AegisQuant] Not enough bars for ", symbol, " tf=", tf, " bars=", bars);
+      return false;
+   }
+
+   if(g_fastEmaHandle != INVALID_HANDLE && BarsCalculated(g_fastEmaHandle) < neededBars)
+      return false;
+   if(g_slowEmaHandle != INVALID_HANDLE && BarsCalculated(g_slowEmaHandle) < neededBars)
+      return false;
+   if(g_rsiHandle != INVALID_HANDLE && BarsCalculated(g_rsiHandle) < neededBars)
+      return false;
+   if(g_atrHandle != INVALID_HANDLE && BarsCalculated(g_atrHandle) < neededBars)
+      return false;
+
+   MqlRates rates[];
+   int copied = CopyRates(symbol, tf, 0, neededBars, rates);
+   if(copied < neededBars)
+   {
+      Print("[AegisQuant] CopyRates incomplete for ", symbol, " tf=", tf, " copied=", copied);
+      return false;
+   }
+
+   return true;
+}
+
+bool IsNewBarForSymbol()
+{
+   if(g_lastBarTime == 0)
+   {
+      g_lastBarTime = iTime(g_symbol, g_entryTF, 0);
+      return true;
+   }
+
+   datetime currentBar = iTime(g_symbol, g_entryTF, 0);
+   if(currentBar == g_lastBarTime)
+      return false;
+
+   g_lastBarTime = currentBar;
+   return true;
+}
+
+double GetAtrValue(string symbol)
+{
+   double atr = 0.0;
+   if(GetIndicatorValue(g_atrHandle, 0, atr))
+      return atr;
+   return 0.0;
+}
+
+bool EvaluateEntry(string symbol, int &tradeType)
+{
+   double fast = 0.0, slow = 0.0, rsi = 0.0;
+   bool fastOk = GetIndicatorValue(g_fastEmaHandle, 0, fast);
+   bool slowOk = GetIndicatorValue(g_slowEmaHandle, 0, slow);
+   bool rsiOk = GetIndicatorValue(g_rsiHandle, 0, rsi);
+
+   if(!fastOk || !slowOk || !rsiOk)
+      return false;
+
+   bool newsBlackout = IsNewsBlackoutActive();
+   if(newsBlackout)
+   {
+      Print("[AegisQuant] News blackout active; skipping new entry.");
+      return false;
+   }
+
+   bool rsiLongConfirm = rsi >= 52.0 && rsi < 70.0;
+   bool rsiShortConfirm = rsi <= 48.0 && rsi > 30.0;
+
+   if(fast > slow && rsiLongConfirm)
+   {
+      tradeType = OP_BUY;
+      return true;
+   }
+   if(fast < slow && rsiShortConfirm)
+   {
+      tradeType = OP_SELL;
+      return true;
+   }
+
+   return false;
+}
+
+bool SubmitMarketOrder(string symbol, int orderType, double atrValue)
+{
+   if(!IsTradeReady(symbol))
+      return false;
+
+   double bid = SymbolInfoDouble(symbol, SYMBOL_BID);
+   double ask = SymbolInfoDouble(symbol, SYMBOL_ASK);
+   if(bid <= 0.0 || ask <= 0.0)
+      return false;
+
+   double entryPrice = (orderType == OP_BUY) ? ask : bid;
+   double stopDistance = MathMax(atrValue * InpAtrStopMultiplier, SymbolInfoDouble(symbol, SYMBOL_TRADE_STOPS_LEVEL) * SymbolInfoDouble(symbol, SYMBOL_POINT));
+
+   double sl = 0.0, tp = 0.0;
+   if(orderType == OP_BUY)
+   {
+      sl = entryPrice - stopDistance;
+      tp = entryPrice + (atrValue * InpAtrTakeProfitMultiplier);
+   }
+   else
+   {
+      sl = entryPrice + stopDistance;
+      tp = entryPrice - (atrValue * InpAtrTakeProfitMultiplier);
+   }
+
+   if(!ValidateStopsAndFreeze(symbol, entryPrice, sl, tp))
+      return false;
+
+   double lotSize = GetDynamicRiskLotSize(symbol, MathAbs(entryPrice - sl));
+   if(lotSize <= 0.0)
+   {
+      Print("[AegisQuant] Order blocked because computed lot size is zero or invalid.");
+      return false;
+   }
+
+   MqlTradeRequest request = {};
+   MqlTradeResult result = {};
+
+   request.action = TRADE_ACTION_DEAL;
+   request.magic = InpMagicNumber;
+   request.symbol = symbol;
+   request.volume = lotSize;
+   request.type = orderType;
+   request.price = entryPrice;
+   request.sl = sl;
+   request.tp = tp;
+   request.deviation = InpSlippagePoints;
+   request.comment = "AegisQuantEA";
+   request.type_filling = GetFillingMode(symbol);
+   request.type_time = ORDER_TIME_GTC;
+
+   bool sent = OrderSend(request, result);
+   if(!sent)
+   {
+      Print("[AegisQuant] OrderSend returned false | symbol=", symbol, " retcode=", result.retcode, " comment=", result.comment);
+      return false;
+   }
+
+   HandleTradeResult(result, symbol, (orderType == OP_BUY) ? "BUY" : "SELL");
+   return (result.retcode == TRADE_RETCODE_DONE || result.retcode == TRADE_RETCODE_DONE_PARTIAL);
+}
+
+void EvaluateAndTrade()
+{
+   if(!IsFreshEnough(g_symbol, g_entryTF))
+      return;
+
+   int tradeType = -1;
+   if(!EvaluateEntry(g_symbol, tradeType))
+      return;
+
+   if(tradeType == OP_BUY && !InpAllowLongs)
+      return;
+   if(tradeType == OP_SELL && !InpAllowShorts)
+      return;
+
+   int openPositions = 0;
+   for(int i = PositionsTotal() - 1; i >= 0; i--)
+   {
+      ulong ticket = PositionGetTicket(i);
+      if(ticket == 0)
+         continue;
+      CPositionInfo pos;
+      if(!pos.SelectByTicket(ticket))
+         continue;
+      if(pos.Magic() == InpMagicNumber && pos.Symbol() == g_symbol)
+         openPositions++;
+   }
+
+   if(openPositions >= InpMaxPositions)
+   {
+      Print("[AegisQuant] Max concurrent positions reached for ", g_symbol);
+      return;
+   }
+
+   double atr = GetAtrValue(g_symbol);
+   if(atr <= 0.0)
+   {
+      Print("[AegisQuant] Invalid ATR value, skip order for ", g_symbol);
+      return;
+   }
+
+   SubmitMarketOrder(g_symbol, tradeType, atr);
+}
+
+int OnInit()
+{
+   g_symbol = InpSymbol;
+   g_entryTF = InpEntryTF;
+   g_biasTF = InpBiasTF;
+
+   if(!IsTradeReady(g_symbol))
+   {
+      Print("[AegisQuant] Symbol trade readiness failed: ", g_symbol);
+      return INIT_FAILED;
+   }
+
+   g_fastEmaHandle = iMA(g_symbol, g_entryTF, InpFastEmaPeriod, 0, MODE_EMA, PRICE_CLOSE);
+   g_slowEmaHandle = iMA(g_symbol, g_entryTF, InpSlowEmaPeriod, 0, MODE_EMA, PRICE_CLOSE);
+   g_rsiHandle = iRSI(g_symbol, g_entryTF, InpRsiPeriod, PRICE_CLOSE);
+   g_atrHandle = iATR(g_symbol, g_entryTF, InpAtrPeriod);
+
+   if(g_fastEmaHandle == INVALID_HANDLE || g_slowEmaHandle == INVALID_HANDLE || g_rsiHandle == INVALID_HANDLE || g_atrHandle == INVALID_HANDLE)
+   {
+      Print("[AegisQuant] Indicator handle creation failed.");
+      return INIT_FAILED;
+   }
+
+   g_lastBarTime = 0;
+   return INIT_SUCCEEDED;
+}
+
+void OnDeinit(const int reason)
+{
+   if(g_fastEmaHandle != INVALID_HANDLE)
+      IndicatorRelease(g_fastEmaHandle);
+   if(g_slowEmaHandle != INVALID_HANDLE)
+      IndicatorRelease(g_slowEmaHandle);
+   if(g_rsiHandle != INVALID_HANDLE)
+      IndicatorRelease(g_rsiHandle);
+   if(g_atrHandle != INVALID_HANDLE)
+      IndicatorRelease(g_atrHandle);
+
+   g_fastEmaHandle = INVALID_HANDLE;
+   g_slowEmaHandle = INVALID_HANDLE;
+   g_rsiHandle = INVALID_HANDLE;
+   g_atrHandle = INVALID_HANDLE;
+}
+
+void OnTick()
+{
+   if(!IsTradeReady(g_symbol))
+      return;
+
+   if(!IsNewBarForSymbol())
+      return;
+
+   EvaluateAndTrade();
+}

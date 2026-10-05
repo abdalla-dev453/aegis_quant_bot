@@ -1,1 +1,27 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKCmNvbnN0IExFVkVMX0NPTE9SID0gewogIElORk86ICJ0ZXh0LWFjY2VudCIsCiAgV0FSTjogInRleHQtd2FybiIsCiAgRVJST1I6ICJ0ZXh0LWJlYXIiLAp9OwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRXhlY3V0aW9uTG9nKHsgbG9ncyB9KSB7CiAgcmV0dXJuICgKICAgIDxQYW5lbAogICAgICB0aXRsZT0iU3lzdGVtIEV4ZWN1dGlvbiBMb2cgwrcgTGl2ZSIKICAgICAgYmFkZ2U9ezxzcGFuIGNsYXNzTmFtZT0iaC0xLjUgdy0xLjUgcm91bmRlZC1mdWxsIGJnLWJ1bGwiIC8+fQogICAgPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iaC02NCBzcGFjZS15LTEuNSBvdmVyZmxvdy15LWF1dG8gZm9udC1tb25vIHRleHQtWzExcHhdIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAge2xvZ3MubWFwKChsb2cpID0+ICgKICAgICAgICAgIDxkaXYga2V5PXtsb2cuaWR9IGNsYXNzTmFtZT0iZmxleCBnYXAtMiI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ic2hyaW5rLTAgdGV4dC1pbmstZmFpbnQiPntsb2cudGltZX08L3NwYW4+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YHNocmluay0wICR7TEVWRUxfQ09MT1JbbG9nLmxldmVsXSA/PyAidGV4dC1pbmstZGltIn1gfT5be2xvZy5sZXZlbH1dPC9zcGFuPgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtaW5rLWRpbSI+e2xvZy5tZXNzYWdlfTwvc3Bhbj4KICAgICAgICAgIDwvZGl2PgogICAgICAgICkpfQogICAgICA8L2Rpdj4KICAgIDwvUGFuZWw+CiAgKTsKfQ==
+import React from "react";
+import Panel from "./Panel.jsx";
+
+const LEVEL_COLOR = {
+  INFO: "text-accent",
+  WARN: "text-warn",
+  ERROR: "text-bear",
+};
+
+export default function ExecutionLog({ logs }) {
+  return (
+    <Panel
+      title="System Execution Log · Live"
+      badge={<span className="h-1.5 w-1.5 rounded-full bg-bull" />}
+    >
+      <div className="h-64 space-y-1.5 overflow-y-auto font-mono text-[11px] leading-relaxed">
+        {logs.map((log) => (
+          <div key={log.id} className="flex gap-2">
+            <span className="shrink-0 text-ink-faint">{log.time}</span>
+            <span className={`shrink-0 ${LEVEL_COLOR[log.level] ?? "text-ink-dim"}`}>[{log.level}]</span>
+            <span className="text-ink-dim">{log.message}</span>
+          </div>
+        ))}
+      </div>
+    </Panel>
+  );
+}

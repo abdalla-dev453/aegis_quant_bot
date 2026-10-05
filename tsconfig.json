@@ -1,1 +1,16 @@
-ewogICJleHRlbmRzIjogIi4vdHNjb25maWcuYmFzZS5qc29uIiwKICAiY29tcGlsZU9uU2F2ZSI6IGZhbHNlLAogICJmaWxlcyI6IFtdLAogICJyZWZlcmVuY2VzIjogWwogICAgewogICAgICAicGF0aCI6ICIuL2xpYi9kYiIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi4vbGliL2FwaS1jbGllbnQtcmVhY3QiCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIuL2xpYi9hcGktem9kIgogICAgfQogIF0KfQo=
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./lib/db"
+    },
+    {
+      "path": "./lib/api-client-react"
+    },
+    {
+      "path": "./lib/api-zod"
+    }
+  ]
+}

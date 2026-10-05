@@ -1,1 +1,726 @@
-J3VzZSBjbGllbnQnOwoKaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBTbG90IH0gZnJvbSAnQHJhZGl4LXVpL3JlYWN0LXNsb3QnOwppbXBvcnQgeyBCdXR0b24gfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvYnV0dG9uJzsKaW1wb3J0IHsgSW5wdXQgfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvaW5wdXQnOwppbXBvcnQgeyBTZXBhcmF0b3IgfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvc2VwYXJhdG9yJzsKaW1wb3J0IHsKICBTaGVldCwKICBTaGVldENvbnRlbnQsCiAgU2hlZXREZXNjcmlwdGlvbiwKICBTaGVldEhlYWRlciwKICBTaGVldFRpdGxlLAp9IGZyb20gJ0AvY29tcG9uZW50cy91aS9zaGVldCc7CmltcG9ydCB7IFNrZWxldG9uIH0gZnJvbSAnQC9jb21wb25lbnRzL3VpL3NrZWxldG9uJzsKaW1wb3J0IHsKICBUb29sdGlwLAogIFRvb2x0aXBDb250ZW50LAogIFRvb2x0aXBQcm92aWRlciwKICBUb29sdGlwVHJpZ2dlciwKfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvdG9vbHRpcCc7CmltcG9ydCB7IHVzZUlzTW9iaWxlIH0gZnJvbSAnQC9ob29rcy91c2UtbW9iaWxlJzsKaW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CmltcG9ydCB7IGN2YSwgVmFyaWFudFByb3BzIH0gZnJvbSAnY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5JzsKaW1wb3J0IHsgUGFuZWxMZWZ0SWNvbiB9IGZyb20gJ2x1Y2lkZS1yZWFjdCc7Cgpjb25zdCBTSURFQkFSX0NPT0tJRV9OQU1FID0gJ3NpZGViYXJfc3RhdGUnOwpjb25zdCBTSURFQkFSX0NPT0tJRV9NQVhfQUdFID0gNjAgKiA2MCAqIDI0ICogNzsKY29uc3QgU0lERUJBUl9XSURUSCA9ICcxNnJlbSc7CmNvbnN0IFNJREVCQVJfV0lEVEhfTU9CSUxFID0gJzE4cmVtJzsKY29uc3QgU0lERUJBUl9XSURUSF9JQ09OID0gJzNyZW0nOwpjb25zdCBTSURFQkFSX0tFWUJPQVJEX1NIT1JUQ1VUID0gJ2InOwoKdHlwZSBTaWRlYmFyQ29udGV4dFByb3BzID0gewogIHN0YXRlOiAnZXhwYW5kZWQnIHwgJ2NvbGxhcHNlZCc7CiAgb3BlbjogYm9vbGVhbjsKICBzZXRPcGVuOiAob3BlbjogYm9vbGVhbikgPT4gdm9pZDsKICBvcGVuTW9iaWxlOiBib29sZWFuOwogIHNldE9wZW5Nb2JpbGU6IChvcGVuOiBib29sZWFuKSA9PiB2b2lkOwogIGlzTW9iaWxlOiBib29sZWFuOwogIHRvZ2dsZVNpZGViYXI6ICgpID0+IHZvaWQ7Cn07Cgpjb25zdCBTaWRlYmFyQ29udGV4dCA9IFJlYWN0LmNyZWF0ZUNvbnRleHQ8U2lkZWJhckNvbnRleHRQcm9wcyB8IG51bGw+KG51bGwpOwoKZnVuY3Rpb24gdXNlU2lkZWJhcigpIHsKICBjb25zdCBjb250ZXh0ID0gUmVhY3QudXNlQ29udGV4dChTaWRlYmFyQ29udGV4dCk7CiAgaWYgKCFjb250ZXh0KSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoJ3VzZVNpZGViYXIgbXVzdCBiZSB1c2VkIHdpdGhpbiBhIFNpZGViYXJQcm92aWRlci4nKTsKICB9CgogIHJldHVybiBjb250ZXh0Owp9CgpmdW5jdGlvbiBTaWRlYmFyUHJvdmlkZXIoewogIGRlZmF1bHRPcGVuID0gdHJ1ZSwKICBvcGVuOiBvcGVuUHJvcCwKICBvbk9wZW5DaGFuZ2U6IHNldE9wZW5Qcm9wLAogIGNsYXNzTmFtZSwKICBzdHlsZSwKICBjaGlsZHJlbiwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4gJiB7CiAgZGVmYXVsdE9wZW4/OiBib29sZWFuOwogIG9wZW4/OiBib29sZWFuOwogIG9uT3BlbkNoYW5nZT86IChvcGVuOiBib29sZWFuKSA9PiB2b2lkOwp9KSB7CiAgY29uc3QgaXNNb2JpbGUgPSB1c2VJc01vYmlsZSgpOwogIGNvbnN0IFtvcGVuTW9iaWxlLCBzZXRPcGVuTW9iaWxlXSA9IFJlYWN0LnVzZVN0YXRlKGZhbHNlKTsKCiAgLy8gVGhpcyBpcyB0aGUgaW50ZXJuYWwgc3RhdGUgb2YgdGhlIHNpZGViYXIuCiAgLy8gV2UgdXNlIG9wZW5Qcm9wIGFuZCBzZXRPcGVuUHJvcCBmb3IgY29udHJvbCBmcm9tIG91dHNpZGUgdGhlIGNvbXBvbmVudC4KICBjb25zdCBbX29wZW4sIF9zZXRPcGVuXSA9IFJlYWN0LnVzZVN0YXRlKGRlZmF1bHRPcGVuKTsKICBjb25zdCBvcGVuID0gb3BlblByb3AgPz8gX29wZW47CiAgY29uc3Qgc2V0T3BlbiA9IFJlYWN0LnVzZUNhbGxiYWNrKAogICAgKHZhbHVlOiBib29sZWFuIHwgKCh2YWx1ZTogYm9vbGVhbikgPT4gYm9vbGVhbikpID0+IHsKICAgICAgY29uc3Qgb3BlblN0YXRlID0gdHlwZW9mIHZhbHVlID09PSAnZnVuY3Rpb24nID8gdmFsdWUob3BlbikgOiB2YWx1ZTsKICAgICAgaWYgKHNldE9wZW5Qcm9wKSB7CiAgICAgICAgc2V0T3BlblByb3Aob3BlblN0YXRlKTsKICAgICAgfSBlbHNlIHsKICAgICAgICBfc2V0T3BlbihvcGVuU3RhdGUpOwogICAgICB9CgogICAgICAvLyBUaGlzIHNldHMgdGhlIGNvb2tpZSB0byBrZWVwIHRoZSBzaWRlYmFyIHN0YXRlLgogICAgICBkb2N1bWVudC5jb29raWUgPSBgJHtTSURFQkFSX0NPT0tJRV9OQU1FfT0ke29wZW5TdGF0ZX07IHBhdGg9LzsgbWF4LWFnZT0ke1NJREVCQVJfQ09PS0lFX01BWF9BR0V9YDsKICAgIH0sCiAgICBbc2V0T3BlblByb3AsIG9wZW5dLAogICk7CgogIC8vIEhlbHBlciB0byB0b2dnbGUgdGhlIHNpZGViYXIuCiAgY29uc3QgdG9nZ2xlU2lkZWJhciA9IFJlYWN0LnVzZUNhbGxiYWNrKCgpID0+IHsKICAgIHJldHVybiBpc01vYmlsZSA/IHNldE9wZW5Nb2JpbGUoKG9wZW4pID0+ICFvcGVuKSA6IHNldE9wZW4oKG9wZW4pID0+ICFvcGVuKTsKICB9LCBbaXNNb2JpbGUsIHNldE9wZW4sIHNldE9wZW5Nb2JpbGVdKTsKCiAgLy8gQWRkcyBhIGtleWJvYXJkIHNob3J0Y3V0IHRvIHRvZ2dsZSB0aGUgc2lkZWJhci4KICBSZWFjdC51c2VFZmZlY3QoKCkgPT4gewogICAgY29uc3QgaGFuZGxlS2V5RG93biA9IChldmVudDogS2V5Ym9hcmRFdmVudCkgPT4gewogICAgICBpZiAoCiAgICAgICAgZXZlbnQua2V5ID09PSBTSURFQkFSX0tFWUJPQVJEX1NIT1JUQ1VUICYmCiAgICAgICAgKGV2ZW50Lm1ldGFLZXkgfHwgZXZlbnQuY3RybEtleSkKICAgICAgKSB7CiAgICAgICAgZXZlbnQucHJldmVudERlZmF1bHQoKTsKICAgICAgICB0b2dnbGVTaWRlYmFyKCk7CiAgICAgIH0KICAgIH07CgogICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLCBoYW5kbGVLZXlEb3duKTsKICAgIHJldHVybiAoKSA9PiB3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcigna2V5ZG93bicsIGhhbmRsZUtleURvd24pOwogIH0sIFt0b2dnbGVTaWRlYmFyXSk7CgogIC8vIFdlIGFkZCBhIHN0YXRlIHNvIHRoYXQgd2UgY2FuIGRvIGRhdGEtc3RhdGU9ImV4cGFuZGVkIiBvciAiY29sbGFwc2VkIi4KICAvLyBUaGlzIG1ha2VzIGl0IGVhc2llciB0byBzdHlsZSB0aGUgc2lkZWJhciB3aXRoIFRhaWx3aW5kIGNsYXNzZXMuCiAgY29uc3Qgc3RhdGUgPSBvcGVuID8gJ2V4cGFuZGVkJyA6ICdjb2xsYXBzZWQnOwoKICBjb25zdCBjb250ZXh0VmFsdWUgPSBSZWFjdC51c2VNZW1vPFNpZGViYXJDb250ZXh0UHJvcHM+KAogICAgKCkgPT4gKHsKICAgICAgc3RhdGUsCiAgICAgIG9wZW4sCiAgICAgIHNldE9wZW4sCiAgICAgIGlzTW9iaWxlLAogICAgICBvcGVuTW9iaWxlLAogICAgICBzZXRPcGVuTW9iaWxlLAogICAgICB0b2dnbGVTaWRlYmFyLAogICAgfSksCiAgICBbc3RhdGUsIG9wZW4sIHNldE9wZW4sIGlzTW9iaWxlLCBvcGVuTW9iaWxlLCBzZXRPcGVuTW9iaWxlLCB0b2dnbGVTaWRlYmFyXSwKICApOwoKICByZXR1cm4gKAogICAgPFNpZGViYXJDb250ZXh0LlByb3ZpZGVyIHZhbHVlPXtjb250ZXh0VmFsdWV9PgogICAgICA8VG9vbHRpcFByb3ZpZGVyIGRlbGF5RHVyYXRpb249ezB9PgogICAgICAgIDxkaXYKICAgICAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci13cmFwcGVyIgogICAgICAgICAgc3R5bGU9ewogICAgICAgICAgICB7CiAgICAgICAgICAgICAgJy0tc2lkZWJhci13aWR0aCc6IFNJREVCQVJfV0lEVEgsCiAgICAgICAgICAgICAgJy0tc2lkZWJhci13aWR0aC1pY29uJzogU0lERUJBUl9XSURUSF9JQ09OLAogICAgICAgICAgICAgIC4uLnN0eWxlLAogICAgICAgICAgICB9IGFzIFJlYWN0LkNTU1Byb3BlcnRpZXMKICAgICAgICAgIH0KICAgICAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgICAgICdncm91cC9zaWRlYmFyLXdyYXBwZXIgaGFzLWRhdGEtW3ZhcmlhbnQ9aW5zZXRdOmJnLXNpZGViYXIgZmxleCBtaW4taC1zdmggdy1mdWxsJywKICAgICAgICAgICAgY2xhc3NOYW1lLAogICAgICAgICAgKX0KICAgICAgICAgIHsuLi5wcm9wc30KICAgICAgICA+CiAgICAgICAgICB7Y2hpbGRyZW59CiAgICAgICAgPC9kaXY+CiAgICAgIDwvVG9vbHRpcFByb3ZpZGVyPgogICAgPC9TaWRlYmFyQ29udGV4dC5Qcm92aWRlcj4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyKHsKICBzaWRlID0gJ2xlZnQnLAogIHZhcmlhbnQgPSAnc2lkZWJhcicsCiAgY29sbGFwc2libGUgPSAnb2ZmY2FudmFzJywKICBjbGFzc05hbWUsCiAgY2hpbGRyZW4sCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2Rpdic+ICYgewogIHNpZGU/OiAnbGVmdCcgfCAncmlnaHQnOwogIHZhcmlhbnQ/OiAnc2lkZWJhcicgfCAnZmxvYXRpbmcnIHwgJ2luc2V0JzsKICBjb2xsYXBzaWJsZT86ICdvZmZjYW52YXMnIHwgJ2ljb24nIHwgJ25vbmUnOwp9KSB7CiAgY29uc3QgeyBpc01vYmlsZSwgc3RhdGUsIG9wZW5Nb2JpbGUsIHNldE9wZW5Nb2JpbGUgfSA9IHVzZVNpZGViYXIoKTsKCiAgaWYgKGNvbGxhcHNpYmxlID09PSAnbm9uZScpIHsKICAgIHJldHVybiAoCiAgICAgIDxkaXYKICAgICAgICBkYXRhLXNsb3Q9InNpZGViYXIiCiAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICdiZy1zaWRlYmFyIHRleHQtc2lkZWJhci1mb3JlZ3JvdW5kIGZsZXggaC1mdWxsIHctW3ZhcigtLXNpZGViYXItd2lkdGgpXSBmbGV4LWNvbCcsCiAgICAgICAgICBjbGFzc05hbWUsCiAgICAgICAgKX0KICAgICAgICB7Li4ucHJvcHN9CiAgICAgID4KICAgICAgICB7Y2hpbGRyZW59CiAgICAgIDwvZGl2PgogICAgKTsKICB9CgogIGlmIChpc01vYmlsZSkgewogICAgcmV0dXJuICgKICAgICAgPFNoZWV0IG9wZW49e29wZW5Nb2JpbGV9IG9uT3BlbkNoYW5nZT17c2V0T3Blbk1vYmlsZX0gey4uLnByb3BzfT4KICAgICAgICA8U2hlZXRDb250ZW50CiAgICAgICAgICBkYXRhLXNpZGViYXI9InNpZGViYXIiCiAgICAgICAgICBkYXRhLXNsb3Q9InNpZGViYXIiCiAgICAgICAgICBkYXRhLW1vYmlsZT0idHJ1ZSIKICAgICAgICAgIGNsYXNzTmFtZT0iYmctc2lkZWJhciB0ZXh0LXNpZGViYXItZm9yZWdyb3VuZCB3LVt2YXIoLS1zaWRlYmFyLXdpZHRoKV0gcC0wIFsmPmJ1dHRvbl06aGlkZGVuIgogICAgICAgICAgc3R5bGU9ewogICAgICAgICAgICB7CiAgICAgICAgICAgICAgJy0tc2lkZWJhci13aWR0aCc6IFNJREVCQVJfV0lEVEhfTU9CSUxFLAogICAgICAgICAgICB9IGFzIFJlYWN0LkNTU1Byb3BlcnRpZXMKICAgICAgICAgIH0KICAgICAgICAgIHNpZGU9e3NpZGV9CiAgICAgICAgPgogICAgICAgICAgPFNoZWV0SGVhZGVyIGNsYXNzTmFtZT0ic3Itb25seSI+CiAgICAgICAgICAgIDxTaGVldFRpdGxlPlNpZGViYXI8L1NoZWV0VGl0bGU+CiAgICAgICAgICAgIDxTaGVldERlc2NyaXB0aW9uPkRpc3BsYXlzIHRoZSBtb2JpbGUgc2lkZWJhci48L1NoZWV0RGVzY3JpcHRpb24+CiAgICAgICAgICA8L1NoZWV0SGVhZGVyPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaC1mdWxsIHctZnVsbCBmbGV4LWNvbCI+e2NoaWxkcmVufTwvZGl2PgogICAgICAgIDwvU2hlZXRDb250ZW50PgogICAgICA8L1NoZWV0PgogICAgKTsKICB9CgogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGNsYXNzTmFtZT0iZ3JvdXAgcGVlciB0ZXh0LXNpZGViYXItZm9yZWdyb3VuZCBoaWRkZW4gbWQ6YmxvY2siCiAgICAgIGRhdGEtc3RhdGU9e3N0YXRlfQogICAgICBkYXRhLWNvbGxhcHNpYmxlPXtzdGF0ZSA9PT0gJ2NvbGxhcHNlZCcgPyBjb2xsYXBzaWJsZSA6ICcnfQogICAgICBkYXRhLXZhcmlhbnQ9e3ZhcmlhbnR9CiAgICAgIGRhdGEtc2lkZT17c2lkZX0KICAgICAgZGF0YS1zbG90PSJzaWRlYmFyIgogICAgPgogICAgICB7LyogVGhpcyBpcyB3aGF0IGhhbmRsZXMgdGhlIHNpZGViYXIgZ2FwIG9uIGRlc2t0b3AgKi99CiAgICAgIDxkaXYKICAgICAgICBkYXRhLXNsb3Q9InNpZGViYXItZ2FwIgogICAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgICAncmVsYXRpdmUgdy1bdmFyKC0tc2lkZWJhci13aWR0aCldIGJnLXRyYW5zcGFyZW50IHRyYW5zaXRpb24tW3dpZHRoXSBkdXJhdGlvbi0yMDAgZWFzZS1saW5lYXInLAogICAgICAgICAgJ2dyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPW9mZmNhbnZhc106dy0wJywKICAgICAgICAgICdncm91cC1kYXRhLVtzaWRlPXJpZ2h0XTpyb3RhdGUtMTgwJywKICAgICAgICAgIHZhcmlhbnQgPT09ICdmbG9hdGluZycgfHwgdmFyaWFudCA9PT0gJ2luc2V0JwogICAgICAgICAgICA/ICdncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1pY29uXTp3LVtjYWxjKHZhcigtLXNpZGViYXItd2lkdGgtaWNvbikrdmFyKC0tc3BhY2luZy00KSldJwogICAgICAgICAgICA6ICdncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1pY29uXTp3LVt2YXIoLS1zaWRlYmFyLXdpZHRoLWljb24pXScsCiAgICAgICAgKX0KICAgICAgLz4KICAgICAgPGRpdgogICAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1jb250YWluZXIiCiAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICdmaXhlZCBpbnNldC15LTAgei0xMCBoaWRkZW4gaC1zdmggdy1bdmFyKC0tc2lkZWJhci13aWR0aCldIHRyYW5zaXRpb24tW2xlZnQscmlnaHQsd2lkdGhdIGR1cmF0aW9uLTIwMCBlYXNlLWxpbmVhciBtZDpmbGV4JywKICAgICAgICAgIHNpZGUgPT09ICdsZWZ0JwogICAgICAgICAgICA/ICdsZWZ0LTAgZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9b2ZmY2FudmFzXTpsZWZ0LVtjYWxjKHZhcigtLXNpZGViYXItd2lkdGgpKi0xKV0nCiAgICAgICAgICAgIDogJ3JpZ2h0LTAgZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9b2ZmY2FudmFzXTpyaWdodC1bY2FsYyh2YXIoLS1zaWRlYmFyLXdpZHRoKSotMSldJywKICAgICAgICAgIC8vIEFkanVzdCB0aGUgcGFkZGluZyBmb3IgZmxvYXRpbmcgYW5kIGluc2V0IHZhcmlhbnRzLgogICAgICAgICAgdmFyaWFudCA9PT0gJ2Zsb2F0aW5nJyB8fCB2YXJpYW50ID09PSAnaW5zZXQnCiAgICAgICAgICAgID8gJ3AtMiBncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1pY29uXTp3LVtjYWxjKHZhcigtLXNpZGViYXItd2lkdGgtaWNvbikrdmFyKC0tc3BhY2luZy00KSsycHgpXScKICAgICAgICAgICAgOiAnZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9aWNvbl06dy1bdmFyKC0tc2lkZWJhci13aWR0aC1pY29uKV0gZ3JvdXAtZGF0YS1bc2lkZT1sZWZ0XTpib3JkZXItciBncm91cC1kYXRhLVtzaWRlPXJpZ2h0XTpib3JkZXItbCcsCiAgICAgICAgICBjbGFzc05hbWUsCiAgICAgICAgKX0KICAgICAgICB7Li4ucHJvcHN9CiAgICAgID4KICAgICAgICA8ZGl2CiAgICAgICAgICBkYXRhLXNpZGViYXI9InNpZGViYXIiCiAgICAgICAgICBkYXRhLXNsb3Q9InNpZGViYXItaW5uZXIiCiAgICAgICAgICBjbGFzc05hbWU9ImJnLXNpZGViYXIgZ3JvdXAtZGF0YS1bdmFyaWFudD1mbG9hdGluZ106Ym9yZGVyLXNpZGViYXItYm9yZGVyIGZsZXggaC1mdWxsIHctZnVsbCBmbGV4LWNvbCBncm91cC1kYXRhLVt2YXJpYW50PWZsb2F0aW5nXTpyb3VuZGVkLWxnIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9ZmxvYXRpbmddOmJvcmRlciBncm91cC1kYXRhLVt2YXJpYW50PWZsb2F0aW5nXTpzaGFkb3ctc20iCiAgICAgICAgPgogICAgICAgICAge2NoaWxkcmVufQogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0KCmZ1bmN0aW9uIFNpZGViYXJUcmlnZ2VyKHsKICBjbGFzc05hbWUsCiAgb25DbGljaywKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgQnV0dG9uPikgewogIGNvbnN0IHsgdG9nZ2xlU2lkZWJhciB9ID0gdXNlU2lkZWJhcigpOwoKICByZXR1cm4gKAogICAgPEJ1dHRvbgogICAgICBkYXRhLXNpZGViYXI9InRyaWdnZXIiCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci10cmlnZ2VyIgogICAgICB2YXJpYW50PSJnaG9zdCIKICAgICAgc2l6ZT0iaWNvbiIKICAgICAgY2xhc3NOYW1lPXtjbignaC03IHctNycsIGNsYXNzTmFtZSl9CiAgICAgIG9uQ2xpY2s9eyhldmVudCkgPT4gewogICAgICAgIG9uQ2xpY2s/LihldmVudCk7CiAgICAgICAgdG9nZ2xlU2lkZWJhcigpOwogICAgICB9fQogICAgICB7Li4ucHJvcHN9CiAgICA+CiAgICAgIDxQYW5lbExlZnRJY29uIC8+CiAgICAgIDxzcGFuIGNsYXNzTmFtZT0ic3Itb25seSI+VG9nZ2xlIFNpZGViYXI8L3NwYW4+CiAgICA8L0J1dHRvbj4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyUmFpbCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2J1dHRvbic+KSB7CiAgY29uc3QgeyB0b2dnbGVTaWRlYmFyIH0gPSB1c2VTaWRlYmFyKCk7CgogIC8vIE5vdGU6IFRhaWx3aW5kIHYzLjQgZG9lc24ndCBzdXBwb3J0ICJpbi0iIHNlbGVjdG9ycy4gU28gdGhlIHJhaWwgd29uJ3Qgd29yayBwZXJmZWN0bHkuCiAgcmV0dXJuICgKICAgIDxidXR0b24KICAgICAgZGF0YS1zaWRlYmFyPSJyYWlsIgogICAgICBkYXRhLXNsb3Q9InNpZGViYXItcmFpbCIKICAgICAgYXJpYS1sYWJlbD0iVG9nZ2xlIFNpZGViYXIiCiAgICAgIHRhYkluZGV4PXstMX0KICAgICAgb25DbGljaz17dG9nZ2xlU2lkZWJhcn0KICAgICAgdGl0bGU9IlRvZ2dsZSBTaWRlYmFyIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICdob3ZlcjphZnRlcjpiZy1zaWRlYmFyLWJvcmRlciBhYnNvbHV0ZSBpbnNldC15LTAgei0yMCBoaWRkZW4gdy00IC10cmFuc2xhdGUteC0xLzIgdHJhbnNpdGlvbi1hbGwgZWFzZS1saW5lYXIgZ3JvdXAtZGF0YS1bc2lkZT1sZWZ0XTotcmlnaHQtNCBncm91cC1kYXRhLVtzaWRlPXJpZ2h0XTpsZWZ0LTAgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6aW5zZXQteS0wIGFmdGVyOmxlZnQtMS8yIGFmdGVyOnctWzJweF0gc206ZmxleCcsCiAgICAgICAgJ2luLWRhdGEtW3NpZGU9bGVmdF06Y3Vyc29yLXctcmVzaXplIGluLWRhdGEtW3NpZGU9cmlnaHRdOmN1cnNvci1lLXJlc2l6ZScsCiAgICAgICAgJ1tbZGF0YS1zaWRlPWxlZnRdW2RhdGEtc3RhdGU9Y29sbGFwc2VkXV8mXTpjdXJzb3ItZS1yZXNpemUgW1tkYXRhLXNpZGU9cmlnaHRdW2RhdGEtc3RhdGU9Y29sbGFwc2VkXV8mXTpjdXJzb3Itdy1yZXNpemUnLAogICAgICAgICdob3Zlcjpncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1vZmZjYW52YXNdOmJnLXNpZGViYXIgZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9b2ZmY2FudmFzXTp0cmFuc2xhdGUteC0wIGdyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPW9mZmNhbnZhc106YWZ0ZXI6bGVmdC1mdWxsJywKICAgICAgICAnW1tkYXRhLXNpZGU9bGVmdF1bZGF0YS1jb2xsYXBzaWJsZT1vZmZjYW52YXNdXyZdOi1yaWdodC0yJywKICAgICAgICAnW1tkYXRhLXNpZGU9cmlnaHRdW2RhdGEtY29sbGFwc2libGU9b2ZmY2FudmFzXV8mXTotbGVmdC0yJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gU2lkZWJhckluc2V0KHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnbWFpbic+KSB7CiAgcmV0dXJuICgKICAgIDxtYWluCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1pbnNldCIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAnYmctYmFja2dyb3VuZCByZWxhdGl2ZSBmbGV4IHctZnVsbCBmbGV4LTEgZmxleC1jb2wnLAogICAgICAgICdtZDpwZWVyLWRhdGEtW3ZhcmlhbnQ9aW5zZXRdOm0tMiBtZDpwZWVyLWRhdGEtW3ZhcmlhbnQ9aW5zZXRdOm1sLTAgbWQ6cGVlci1kYXRhLVt2YXJpYW50PWluc2V0XTpyb3VuZGVkLXhsIG1kOnBlZXItZGF0YS1bdmFyaWFudD1pbnNldF06c2hhZG93LXNtIG1kOnBlZXItZGF0YS1bdmFyaWFudD1pbnNldF06cGVlci1kYXRhLVtzdGF0ZT1jb2xsYXBzZWRdOm1sLTInLAogICAgICAgIGNsYXNzTmFtZSwKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFySW5wdXQoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgSW5wdXQ+KSB7CiAgcmV0dXJuICgKICAgIDxJbnB1dAogICAgICBkYXRhLXNsb3Q9InNpZGViYXItaW5wdXQiCiAgICAgIGRhdGEtc2lkZWJhcj0iaW5wdXQiCiAgICAgIGNsYXNzTmFtZT17Y24oJ2JnLWJhY2tncm91bmQgaC04IHctZnVsbCBzaGFkb3ctbm9uZScsIGNsYXNzTmFtZSl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gU2lkZWJhckhlYWRlcih7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2Rpdic+KSB7CiAgcmV0dXJuICgKICAgIDxkaXYKICAgICAgZGF0YS1zbG90PSJzaWRlYmFyLWhlYWRlciIKICAgICAgZGF0YS1zaWRlYmFyPSJoZWFkZXIiCiAgICAgIGNsYXNzTmFtZT17Y24oJ2ZsZXggZmxleC1jb2wgZ2FwLTIgcC0yJywgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyRm9vdGVyKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9InNpZGViYXItZm9vdGVyIgogICAgICBkYXRhLXNpZGViYXI9ImZvb3RlciIKICAgICAgY2xhc3NOYW1lPXtjbignZmxleCBmbGV4LWNvbCBnYXAtMiBwLTInLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIFNpZGViYXJTZXBhcmF0b3IoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgU2VwYXJhdG9yPikgewogIHJldHVybiAoCiAgICA8U2VwYXJhdG9yCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1zZXBhcmF0b3IiCiAgICAgIGRhdGEtc2lkZWJhcj0ic2VwYXJhdG9yIgogICAgICBjbGFzc05hbWU9e2NuKCdiZy1zaWRlYmFyLWJvcmRlciBteC0yIHctYXV0bycsIGNsYXNzTmFtZSl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gU2lkZWJhckNvbnRlbnQoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1jb250ZW50IgogICAgICBkYXRhLXNpZGViYXI9ImNvbnRlbnQiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ2ZsZXggbWluLWgtMCBmbGV4LTEgZmxleC1jb2wgZ2FwLTIgb3ZlcmZsb3ctYXV0byBncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1pY29uXTpvdmVyZmxvdy1oaWRkZW4nLAogICAgICAgIGNsYXNzTmFtZSwKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyR3JvdXAoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1ncm91cCIKICAgICAgZGF0YS1zaWRlYmFyPSJncm91cCIKICAgICAgY2xhc3NOYW1lPXtjbigncmVsYXRpdmUgZmxleCB3LWZ1bGwgbWluLXctMCBmbGV4LWNvbCBwLTInLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIFNpZGViYXJHcm91cExhYmVsKHsKICBjbGFzc05hbWUsCiAgYXNDaGlsZCA9IGZhbHNlLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPiAmIHsgYXNDaGlsZD86IGJvb2xlYW4gfSkgewogIGNvbnN0IENvbXAgPSBhc0NoaWxkID8gU2xvdCA6ICdkaXYnOwoKICByZXR1cm4gKAogICAgPENvbXAKICAgICAgZGF0YS1zbG90PSJzaWRlYmFyLWdyb3VwLWxhYmVsIgogICAgICBkYXRhLXNpZGViYXI9Imdyb3VwLWxhYmVsIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICd0ZXh0LXNpZGViYXItZm9yZWdyb3VuZC83MCByaW5nLXNpZGViYXItcmluZyBmbGV4IGgtOCBzaHJpbmstMCBpdGVtcy1jZW50ZXIgcm91bmRlZC1tZCBweC0yIHRleHQteHMgZm9udC1tZWRpdW0gb3V0bGluZS1oaWRkZW4gdHJhbnNpdGlvbi1bbWFyZ2luLG9wYWNpdHldIGR1cmF0aW9uLTIwMCBlYXNlLWxpbmVhciBmb2N1cy12aXNpYmxlOnJpbmctMiBbJj5zdmddOmgtNCBbJj5zdmddOnctNCBbJj5zdmddOnNocmluay0wJywKICAgICAgICAnZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9aWNvbl06LW10LTggZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9aWNvbl06b3BhY2l0eS0wJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gU2lkZWJhckdyb3VwQWN0aW9uKHsKICBjbGFzc05hbWUsCiAgYXNDaGlsZCA9IGZhbHNlLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdidXR0b24nPiAmIHsgYXNDaGlsZD86IGJvb2xlYW4gfSkgewogIGNvbnN0IENvbXAgPSBhc0NoaWxkID8gU2xvdCA6ICdidXR0b24nOwoKICByZXR1cm4gKAogICAgPENvbXAKICAgICAgZGF0YS1zbG90PSJzaWRlYmFyLWdyb3VwLWFjdGlvbiIKICAgICAgZGF0YS1zaWRlYmFyPSJncm91cC1hY3Rpb24iCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ3RleHQtc2lkZWJhci1mb3JlZ3JvdW5kIHJpbmctc2lkZWJhci1yaW5nIGhvdmVyOmJnLXNpZGViYXItYWNjZW50IGhvdmVyOnRleHQtc2lkZWJhci1hY2NlbnQtZm9yZWdyb3VuZCBhYnNvbHV0ZSB0b3AtMy41IHJpZ2h0LTMgZmxleCBhc3BlY3Qtc3F1YXJlIHctNSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1tZCBwLTAgb3V0bGluZS1oaWRkZW4gdHJhbnNpdGlvbi10cmFuc2Zvcm0gZm9jdXMtdmlzaWJsZTpyaW5nLTIgWyY+c3ZnXTpzaXplLTQgWyY+c3ZnXTpzaHJpbmstMCcsCiAgICAgICAgLy8gSW5jcmVhc2VzIHRoZSBoaXQgYXJlYSBvZiB0aGUgYnV0dG9uIG9uIG1vYmlsZS4KICAgICAgICAnYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6LWluc2V0LTIgbWQ6YWZ0ZXI6aGlkZGVuJywKICAgICAgICAnZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9aWNvbl06aGlkZGVuJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gU2lkZWJhckdyb3VwQ29udGVudCh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1ncm91cC1jb250ZW50IgogICAgICBkYXRhLXNpZGViYXI9Imdyb3VwLWNvbnRlbnQiCiAgICAgIGNsYXNzTmFtZT17Y24oJ3ctZnVsbCB0ZXh0LXNtJywgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyTWVudSh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J3VsJz4pIHsKICByZXR1cm4gKAogICAgPHVsCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1tZW51IgogICAgICBkYXRhLXNpZGViYXI9Im1lbnUiCiAgICAgIGNsYXNzTmFtZT17Y24oJ2ZsZXggdy1mdWxsIG1pbi13LTAgZmxleC1jb2wgZ2FwLTEnLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIFNpZGViYXJNZW51SXRlbSh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2xpJz4pIHsKICByZXR1cm4gKAogICAgPGxpCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1tZW51LWl0ZW0iCiAgICAgIGRhdGEtc2lkZWJhcj0ibWVudS1pdGVtIgogICAgICBjbGFzc05hbWU9e2NuKCdncm91cC9tZW51LWl0ZW0gcmVsYXRpdmUnLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmNvbnN0IHNpZGViYXJNZW51QnV0dG9uVmFyaWFudHMgPSBjdmEoCiAgJ3BlZXIvbWVudS1idXR0b24gZmxleCB3LWZ1bGwgaXRlbXMtY2VudGVyIGdhcC0yIG92ZXJmbG93LWhpZGRlbiByb3VuZGVkLW1kIHAtMiB0ZXh0LWxlZnQgdGV4dC1zbSBvdXRsaW5lLWhpZGRlbiByaW5nLXNpZGViYXItcmluZyB0cmFuc2l0aW9uLVt3aWR0aCxoZWlnaHQscGFkZGluZ10gaG92ZXI6Ymctc2lkZWJhci1hY2NlbnQgaG92ZXI6dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIGZvY3VzLXZpc2libGU6cmluZy0yIGFjdGl2ZTpiZy1zaWRlYmFyLWFjY2VudCBhY3RpdmU6dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIGRpc2FibGVkOnBvaW50ZXItZXZlbnRzLW5vbmUgZGlzYWJsZWQ6b3BhY2l0eS01MCBncm91cC1oYXMtZGF0YS1bc2lkZWJhcj1tZW51LWFjdGlvbl0vbWVudS1pdGVtOnByLTggYXJpYS1kaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGFyaWEtZGlzYWJsZWQ6b3BhY2l0eS01MCBkYXRhLVthY3RpdmU9dHJ1ZV06Ymctc2lkZWJhci1hY2NlbnQgZGF0YS1bYWN0aXZlPXRydWVdOmZvbnQtbWVkaXVtIGRhdGEtW2FjdGl2ZT10cnVlXTp0ZXh0LXNpZGViYXItYWNjZW50LWZvcmVncm91bmQgZGF0YS1bc3RhdGU9b3Blbl06aG92ZXI6Ymctc2lkZWJhci1hY2NlbnQgZGF0YS1bc3RhdGU9b3Blbl06aG92ZXI6dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIGdyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPWljb25dOnctOCEgZ3JvdXAtZGF0YS1bY29sbGFwc2libGU9aWNvbl06aC04ISBncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1pY29uXTpwLTIhIFsmPnNwYW46bGFzdC1jaGlsZF06dHJ1bmNhdGUgWyY+c3ZnXTpzaXplLTQgWyY+c3ZnXTpzaHJpbmstMCcsCiAgewogICAgdmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogewogICAgICAgIGRlZmF1bHQ6ICdob3ZlcjpiZy1zaWRlYmFyLWFjY2VudCBob3Zlcjp0ZXh0LXNpZGViYXItYWNjZW50LWZvcmVncm91bmQnLAogICAgICAgIG91dGxpbmU6CiAgICAgICAgICAnYmctYmFja2dyb3VuZCBzaGFkb3ctWzBfMF8wXzFweF9oc2wodmFyKC0tc2lkZWJhci1ib3JkZXIpKV0gaG92ZXI6Ymctc2lkZWJhci1hY2NlbnQgaG92ZXI6dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIGhvdmVyOnNoYWRvdy1bMF8wXzBfMXB4X2hzbCh2YXIoLS1zaWRlYmFyLWFjY2VudCkpXScsCiAgICAgIH0sCiAgICAgIHNpemU6IHsKICAgICAgICBkZWZhdWx0OiAnaC04IHRleHQtc20nLAogICAgICAgIHNtOiAnaC03IHRleHQteHMnLAogICAgICAgIGxnOiAnaC0xMiB0ZXh0LXNtIGdyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPWljb25dOnAtMCEnLAogICAgICB9LAogICAgfSwKICAgIGRlZmF1bHRWYXJpYW50czogewogICAgICB2YXJpYW50OiAnZGVmYXVsdCcsCiAgICAgIHNpemU6ICdkZWZhdWx0JywKICAgIH0sCiAgfSwKKTsKCmZ1bmN0aW9uIFNpZGViYXJNZW51QnV0dG9uKHsKICBhc0NoaWxkID0gZmFsc2UsCiAgaXNBY3RpdmUgPSBmYWxzZSwKICB2YXJpYW50ID0gJ2RlZmF1bHQnLAogIHNpemUgPSAnZGVmYXVsdCcsCiAgdG9vbHRpcCwKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2J1dHRvbic+ICYgewogIGFzQ2hpbGQ/OiBib29sZWFuOwogIGlzQWN0aXZlPzogYm9vbGVhbjsKICB0b29sdGlwPzogc3RyaW5nIHwgUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFRvb2x0aXBDb250ZW50PjsKfSAmIFZhcmlhbnRQcm9wczx0eXBlb2Ygc2lkZWJhck1lbnVCdXR0b25WYXJpYW50cz4pIHsKICBjb25zdCBDb21wID0gYXNDaGlsZCA/IFNsb3QgOiAnYnV0dG9uJzsKICBjb25zdCB7IGlzTW9iaWxlLCBzdGF0ZSB9ID0gdXNlU2lkZWJhcigpOwoKICBjb25zdCBidXR0b24gPSAoCiAgICA8Q29tcAogICAgICBkYXRhLXNsb3Q9InNpZGViYXItbWVudS1idXR0b24iCiAgICAgIGRhdGEtc2lkZWJhcj0ibWVudS1idXR0b24iCiAgICAgIGRhdGEtc2l6ZT17c2l6ZX0KICAgICAgZGF0YS1hY3RpdmU9e2lzQWN0aXZlfQogICAgICBjbGFzc05hbWU9e2NuKHNpZGViYXJNZW51QnV0dG9uVmFyaWFudHMoeyB2YXJpYW50LCBzaXplIH0pLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7CgogIGlmICghdG9vbHRpcCkgewogICAgcmV0dXJuIGJ1dHRvbjsKICB9CgogIGlmICh0eXBlb2YgdG9vbHRpcCA9PT0gJ3N0cmluZycpIHsKICAgIHRvb2x0aXAgPSB7CiAgICAgIGNoaWxkcmVuOiB0b29sdGlwLAogICAgfTsKICB9CgogIHJldHVybiAoCiAgICA8VG9vbHRpcD4KICAgICAgPFRvb2x0aXBUcmlnZ2VyIGFzQ2hpbGQ+e2J1dHRvbn08L1Rvb2x0aXBUcmlnZ2VyPgogICAgICA8VG9vbHRpcENvbnRlbnQKICAgICAgICBzaWRlPSJyaWdodCIKICAgICAgICBhbGlnbj0iY2VudGVyIgogICAgICAgIGhpZGRlbj17c3RhdGUgIT09ICdjb2xsYXBzZWQnIHx8IGlzTW9iaWxlfQogICAgICAgIHsuLi50b29sdGlwfQogICAgICAvPgogICAgPC9Ub29sdGlwPgogICk7Cn0KCmZ1bmN0aW9uIFNpZGViYXJNZW51QWN0aW9uKHsKICBjbGFzc05hbWUsCiAgYXNDaGlsZCA9IGZhbHNlLAogIHNob3dPbkhvdmVyID0gZmFsc2UsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J2J1dHRvbic+ICYgewogIGFzQ2hpbGQ/OiBib29sZWFuOwogIHNob3dPbkhvdmVyPzogYm9vbGVhbjsKfSkgewogIGNvbnN0IENvbXAgPSBhc0NoaWxkID8gU2xvdCA6ICdidXR0b24nOwoKICByZXR1cm4gKAogICAgPENvbXAKICAgICAgZGF0YS1zbG90PSJzaWRlYmFyLW1lbnUtYWN0aW9uIgogICAgICBkYXRhLXNpZGViYXI9Im1lbnUtYWN0aW9uIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICd0ZXh0LXNpZGViYXItZm9yZWdyb3VuZCByaW5nLXNpZGViYXItcmluZyBob3ZlcjpiZy1zaWRlYmFyLWFjY2VudCBob3Zlcjp0ZXh0LXNpZGViYXItYWNjZW50LWZvcmVncm91bmQgcGVlci1ob3Zlci9tZW51LWJ1dHRvbjp0ZXh0LXNpZGViYXItYWNjZW50LWZvcmVncm91bmQgYWJzb2x1dGUgdG9wLTEuNSByaWdodC0xIGZsZXggYXNwZWN0LXNxdWFyZSB3LTUgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtbWQgcC0wIG91dGxpbmUtaGlkZGVuIHRyYW5zaXRpb24tdHJhbnNmb3JtIGZvY3VzLXZpc2libGU6cmluZy0yIFsmPnN2Z106c2l6ZS00IFsmPnN2Z106c2hyaW5rLTAnLAogICAgICAgIC8vIEluY3JlYXNlcyB0aGUgaGl0IGFyZWEgb2YgdGhlIGJ1dHRvbiBvbiBtb2JpbGUuCiAgICAgICAgJ2FmdGVyOmFic29sdXRlIGFmdGVyOi1pbnNldC0yIG1kOmFmdGVyOmhpZGRlbicsCiAgICAgICAgJ3BlZXItZGF0YS1bc2l6ZT1zbV0vbWVudS1idXR0b246dG9wLTEnLAogICAgICAgICdwZWVyLWRhdGEtW3NpemU9ZGVmYXVsdF0vbWVudS1idXR0b246dG9wLTEuNScsCiAgICAgICAgJ3BlZXItZGF0YS1bc2l6ZT1sZ10vbWVudS1idXR0b246dG9wLTIuNScsCiAgICAgICAgJ2dyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPWljb25dOmhpZGRlbicsCiAgICAgICAgc2hvd09uSG92ZXIgJiYKICAgICAgICAgICdwZWVyLWRhdGEtW2FjdGl2ZT10cnVlXS9tZW51LWJ1dHRvbjp0ZXh0LXNpZGViYXItYWNjZW50LWZvcmVncm91bmQgZ3JvdXAtZm9jdXMtd2l0aGluL21lbnUtaXRlbTpvcGFjaXR5LTEwMCBncm91cC1ob3Zlci9tZW51LWl0ZW06b3BhY2l0eS0xMDAgZGF0YS1bc3RhdGU9b3Blbl06b3BhY2l0eS0xMDAgbWQ6b3BhY2l0eS0wJywKICAgICAgICBjbGFzc05hbWUsCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKTsKfQoKZnVuY3Rpb24gU2lkZWJhck1lbnVCYWRnZSh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdkaXYnPikgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1tZW51LWJhZGdlIgogICAgICBkYXRhLXNpZGViYXI9Im1lbnUtYmFkZ2UiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ3RleHQtc2lkZWJhci1mb3JlZ3JvdW5kIHBvaW50ZXItZXZlbnRzLW5vbmUgYWJzb2x1dGUgcmlnaHQtMSBmbGV4IGgtNSBtaW4tdy01IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLW1kIHB4LTEgdGV4dC14cyBmb250LW1lZGl1bSB0YWJ1bGFyLW51bXMgc2VsZWN0LW5vbmUnLAogICAgICAgICdwZWVyLWhvdmVyL21lbnUtYnV0dG9uOnRleHQtc2lkZWJhci1hY2NlbnQtZm9yZWdyb3VuZCBwZWVyLWRhdGEtW2FjdGl2ZT10cnVlXS9tZW51LWJ1dHRvbjp0ZXh0LXNpZGViYXItYWNjZW50LWZvcmVncm91bmQnLAogICAgICAgICdwZWVyLWRhdGEtW3NpemU9c21dL21lbnUtYnV0dG9uOnRvcC0xJywKICAgICAgICAncGVlci1kYXRhLVtzaXplPWRlZmF1bHRdL21lbnUtYnV0dG9uOnRvcC0xLjUnLAogICAgICAgICdwZWVyLWRhdGEtW3NpemU9bGddL21lbnUtYnV0dG9uOnRvcC0yLjUnLAogICAgICAgICdncm91cC1kYXRhLVtjb2xsYXBzaWJsZT1pY29uXTpoaWRkZW4nLAogICAgICAgIGNsYXNzTmFtZSwKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyTWVudVNrZWxldG9uKHsKICBjbGFzc05hbWUsCiAgc2hvd0ljb24gPSBmYWxzZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnZGl2Jz4gJiB7CiAgc2hvd0ljb24/OiBib29sZWFuOwp9KSB7CiAgLy8gUmFuZG9tIHdpZHRoIGJldHdlZW4gNTAgdG8gOTAlLgogIGNvbnN0IHdpZHRoID0gUmVhY3QudXNlTWVtbygoKSA9PiB7CiAgICByZXR1cm4gYCR7TWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogNDApICsgNTB9JWA7CiAgfSwgW10pOwoKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9InNpZGViYXItbWVudS1za2VsZXRvbiIKICAgICAgZGF0YS1zaWRlYmFyPSJtZW51LXNrZWxldG9uIgogICAgICBjbGFzc05hbWU9e2NuKCdmbGV4IGgtOCBpdGVtcy1jZW50ZXIgZ2FwLTIgcm91bmRlZC1tZCBweC0yJywgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgPgogICAgICB7c2hvd0ljb24gJiYgKAogICAgICAgIDxTa2VsZXRvbgogICAgICAgICAgY2xhc3NOYW1lPSJzaXplLTQgcm91bmRlZC1tZCIKICAgICAgICAgIGRhdGEtc2lkZWJhcj0ibWVudS1za2VsZXRvbi1pY29uIgogICAgICAgIC8+CiAgICAgICl9CiAgICAgIDxTa2VsZXRvbgogICAgICAgIGNsYXNzTmFtZT0iaC00IG1heC13LVt2YXIoLS1za2VsZXRvbi13aWR0aCldIGZsZXgtMSIKICAgICAgICBkYXRhLXNpZGViYXI9Im1lbnUtc2tlbGV0b24tdGV4dCIKICAgICAgICBzdHlsZT17CiAgICAgICAgICB7CiAgICAgICAgICAgICctLXNrZWxldG9uLXdpZHRoJzogd2lkdGgsCiAgICAgICAgICB9IGFzIFJlYWN0LkNTU1Byb3BlcnRpZXMKICAgICAgICB9CiAgICAgIC8+CiAgICA8L2Rpdj4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyTWVudVN1Yih7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8J3VsJz4pIHsKICByZXR1cm4gKAogICAgPHVsCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1tZW51LXN1YiIKICAgICAgZGF0YS1zaWRlYmFyPSJtZW51LXN1YiIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAnYm9yZGVyLXNpZGViYXItYm9yZGVyIG14LTMuNSBmbGV4IG1pbi13LTAgdHJhbnNsYXRlLXgtcHggZmxleC1jb2wgZ2FwLTEgYm9yZGVyLWwgcHgtMi41IHB5LTAuNScsCiAgICAgICAgJ2dyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPWljb25dOmhpZGRlbicsCiAgICAgICAgY2xhc3NOYW1lLAogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmZ1bmN0aW9uIFNpZGViYXJNZW51U3ViSXRlbSh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdsaSc+KSB7CiAgcmV0dXJuICgKICAgIDxsaQogICAgICBkYXRhLXNsb3Q9InNpZGViYXItbWVudS1zdWItaXRlbSIKICAgICAgZGF0YS1zaWRlYmFyPSJtZW51LXN1Yi1pdGVtIgogICAgICBjbGFzc05hbWU9e2NuKCdncm91cC9tZW51LXN1Yi1pdGVtIHJlbGF0aXZlJywgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpmdW5jdGlvbiBTaWRlYmFyTWVudVN1YkJ1dHRvbih7CiAgYXNDaGlsZCA9IGZhbHNlLAogIHNpemUgPSAnbWQnLAogIGlzQWN0aXZlID0gZmFsc2UsCiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdhJz4gJiB7CiAgYXNDaGlsZD86IGJvb2xlYW47CiAgc2l6ZT86ICdzbScgfCAnbWQnOwogIGlzQWN0aXZlPzogYm9vbGVhbjsKfSkgewogIGNvbnN0IENvbXAgPSBhc0NoaWxkID8gU2xvdCA6ICdhJzsKCiAgcmV0dXJuICgKICAgIDxDb21wCiAgICAgIGRhdGEtc2xvdD0ic2lkZWJhci1tZW51LXN1Yi1idXR0b24iCiAgICAgIGRhdGEtc2lkZWJhcj0ibWVudS1zdWItYnV0dG9uIgogICAgICBkYXRhLXNpemU9e3NpemV9CiAgICAgIGRhdGEtYWN0aXZlPXtpc0FjdGl2ZX0KICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAndGV4dC1zaWRlYmFyLWZvcmVncm91bmQgcmluZy1zaWRlYmFyLXJpbmcgaG92ZXI6Ymctc2lkZWJhci1hY2NlbnQgaG92ZXI6dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIGFjdGl2ZTpiZy1zaWRlYmFyLWFjY2VudCBhY3RpdmU6dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIFsmPnN2Z106dGV4dC1zaWRlYmFyLWFjY2VudC1mb3JlZ3JvdW5kIGZsZXggaC03IG1pbi13LTAgLXRyYW5zbGF0ZS14LXB4IGl0ZW1zLWNlbnRlciBnYXAtMiBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1tZCBweC0yIG91dGxpbmUgb3V0bGluZS0yIG91dGxpbmUtdHJhbnNwYXJlbnQgb3V0bGluZS1vZmZzZXQtMiBmb2N1cy12aXNpYmxlOnJpbmctMiBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgYXJpYS1kaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGFyaWEtZGlzYWJsZWQ6b3BhY2l0eS01MCBbJj5zcGFuOmxhc3QtY2hpbGRdOnRydW5jYXRlIFsmPnN2Z106c2l6ZS00IFsmPnN2Z106c2hyaW5rLTAnLAogICAgICAgICdkYXRhLVthY3RpdmU9dHJ1ZV06Ymctc2lkZWJhci1hY2NlbnQgZGF0YS1bYWN0aXZlPXRydWVdOnRleHQtc2lkZWJhci1hY2NlbnQtZm9yZWdyb3VuZCcsCiAgICAgICAgc2l6ZSA9PT0gJ3NtJyAmJiAndGV4dC14cycsCiAgICAgICAgc2l6ZSA9PT0gJ21kJyAmJiAndGV4dC1zbScsCiAgICAgICAgJ2dyb3VwLWRhdGEtW2NvbGxhcHNpYmxlPWljb25dOmhpZGRlbicsCiAgICAgICAgY2xhc3NOYW1lLAogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICk7Cn0KCmV4cG9ydCB7CiAgU2lkZWJhciwKICBTaWRlYmFyQ29udGVudCwKICBTaWRlYmFyRm9vdGVyLAogIFNpZGViYXJHcm91cCwKICBTaWRlYmFyR3JvdXBBY3Rpb24sCiAgU2lkZWJhckdyb3VwQ29udGVudCwKICBTaWRlYmFyR3JvdXBMYWJlbCwKICBTaWRlYmFySGVhZGVyLAogIFNpZGViYXJJbnB1dCwKICBTaWRlYmFySW5zZXQsCiAgU2lkZWJhck1lbnUsCiAgU2lkZWJhck1lbnVBY3Rpb24sCiAgU2lkZWJhck1lbnVCYWRnZSwKICBTaWRlYmFyTWVudUJ1dHRvbiwKICBTaWRlYmFyTWVudUl0ZW0sCiAgU2lkZWJhck1lbnVTa2VsZXRvbiwKICBTaWRlYmFyTWVudVN1YiwKICBTaWRlYmFyTWVudVN1YkJ1dHRvbiwKICBTaWRlYmFyTWVudVN1Ykl0ZW0sCiAgU2lkZWJhclByb3ZpZGVyLAogIFNpZGViYXJSYWlsLAogIFNpZGViYXJTZXBhcmF0b3IsCiAgU2lkZWJhclRyaWdnZXIsCiAgdXNlU2lkZWJhciwKfTsK
+'use client';
+
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
+import { Skeleton } from '@/components/ui/skeleton';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
+import { cva, VariantProps } from 'class-variance-authority';
+import { PanelLeftIcon } from 'lucide-react';
+
+const SIDEBAR_COOKIE_NAME = 'sidebar_state';
+const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
+const SIDEBAR_WIDTH = '16rem';
+const SIDEBAR_WIDTH_MOBILE = '18rem';
+const SIDEBAR_WIDTH_ICON = '3rem';
+const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
+
+type SidebarContextProps = {
+  state: 'expanded' | 'collapsed';
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  openMobile: boolean;
+  setOpenMobile: (open: boolean) => void;
+  isMobile: boolean;
+  toggleSidebar: () => void;
+};
+
+const SidebarContext = React.createContext<SidebarContextProps | null>(null);
+
+function useSidebar() {
+  const context = React.useContext(SidebarContext);
+  if (!context) {
+    throw new Error('useSidebar must be used within a SidebarProvider.');
+  }
+
+  return context;
+}
+
+function SidebarProvider({
+  defaultOpen = true,
+  open: openProp,
+  onOpenChange: setOpenProp,
+  className,
+  style,
+  children,
+  ...props
+}: React.ComponentProps<'div'> & {
+  defaultOpen?: boolean;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}) {
+  const isMobile = useIsMobile();
+  const [openMobile, setOpenMobile] = React.useState(false);
+
+  // This is the internal state of the sidebar.
+  // We use openProp and setOpenProp for control from outside the component.
+  const [_open, _setOpen] = React.useState(defaultOpen);
+  const open = openProp ?? _open;
+  const setOpen = React.useCallback(
+    (value: boolean | ((value: boolean) => boolean)) => {
+      const openState = typeof value === 'function' ? value(open) : value;
+      if (setOpenProp) {
+        setOpenProp(openState);
+      } else {
+        _setOpen(openState);
+      }
+
+      // This sets the cookie to keep the sidebar state.
+      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+    },
+    [setOpenProp, open],
+  );
+
+  // Helper to toggle the sidebar.
+  const toggleSidebar = React.useCallback(() => {
+    return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open);
+  }, [isMobile, setOpen, setOpenMobile]);
+
+  // Adds a keyboard shortcut to toggle the sidebar.
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
+        (event.metaKey || event.ctrlKey)
+      ) {
+        event.preventDefault();
+        toggleSidebar();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [toggleSidebar]);
+
+  // We add a state so that we can do data-state="expanded" or "collapsed".
+  // This makes it easier to style the sidebar with Tailwind classes.
+  const state = open ? 'expanded' : 'collapsed';
+
+  const contextValue = React.useMemo<SidebarContextProps>(
+    () => ({
+      state,
+      open,
+      setOpen,
+      isMobile,
+      openMobile,
+      setOpenMobile,
+      toggleSidebar,
+    }),
+    [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar],
+  );
+
+  return (
+    <SidebarContext.Provider value={contextValue}>
+      <TooltipProvider delayDuration={0}>
+        <div
+          data-slot="sidebar-wrapper"
+          style={
+            {
+              '--sidebar-width': SIDEBAR_WIDTH,
+              '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
+              ...style,
+            } as React.CSSProperties
+          }
+          className={cn(
+            'group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full',
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </div>
+      </TooltipProvider>
+    </SidebarContext.Provider>
+  );
+}
+
+function Sidebar({
+  side = 'left',
+  variant = 'sidebar',
+  collapsible = 'offcanvas',
+  className,
+  children,
+  ...props
+}: React.ComponentProps<'div'> & {
+  side?: 'left' | 'right';
+  variant?: 'sidebar' | 'floating' | 'inset';
+  collapsible?: 'offcanvas' | 'icon' | 'none';
+}) {
+  const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
+
+  if (collapsible === 'none') {
+    return (
+      <div
+        data-slot="sidebar"
+        className={cn(
+          'bg-sidebar text-sidebar-foreground flex h-full w-[var(--sidebar-width)] flex-col',
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
+
+  if (isMobile) {
+    return (
+      <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+        <SheetContent
+          data-sidebar="sidebar"
+          data-slot="sidebar"
+          data-mobile="true"
+          className="bg-sidebar text-sidebar-foreground w-[var(--sidebar-width)] p-0 [&>button]:hidden"
+          style={
+            {
+              '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
+            } as React.CSSProperties
+          }
+          side={side}
+        >
+          <SheetHeader className="sr-only">
+            <SheetTitle>Sidebar</SheetTitle>
+            <SheetDescription>Displays the mobile sidebar.</SheetDescription>
+          </SheetHeader>
+          <div className="flex h-full w-full flex-col">{children}</div>
+        </SheetContent>
+      </Sheet>
+    );
+  }
+
+  return (
+    <div
+      className="group peer text-sidebar-foreground hidden md:block"
+      data-state={state}
+      data-collapsible={state === 'collapsed' ? collapsible : ''}
+      data-variant={variant}
+      data-side={side}
+      data-slot="sidebar"
+    >
+      {/* This is what handles the sidebar gap on desktop */}
+      <div
+        data-slot="sidebar-gap"
+        className={cn(
+          'relative w-[var(--sidebar-width)] bg-transparent transition-[width] duration-200 ease-linear',
+          'group-data-[collapsible=offcanvas]:w-0',
+          'group-data-[side=right]:rotate-180',
+          variant === 'floating' || variant === 'inset'
+            ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+var(--spacing-4))]'
+            : 'group-data-[collapsible=icon]:w-[var(--sidebar-width-icon)]',
+        )}
+      />
+      <div
+        data-slot="sidebar-container"
+        className={cn(
+          'fixed inset-y-0 z-10 hidden h-svh w-[var(--sidebar-width)] transition-[left,right,width] duration-200 ease-linear md:flex',
+          side === 'left'
+            ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
+            : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
+          // Adjust the padding for floating and inset variants.
+          variant === 'floating' || variant === 'inset'
+            ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+var(--spacing-4)+2px)]'
+            : 'group-data-[collapsible=icon]:w-[var(--sidebar-width-icon)] group-data-[side=left]:border-r group-data-[side=right]:border-l',
+          className,
+        )}
+        {...props}
+      >
+        <div
+          data-sidebar="sidebar"
+          data-slot="sidebar-inner"
+          className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+        >
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SidebarTrigger({
+  className,
+  onClick,
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { toggleSidebar } = useSidebar();
+
+  return (
+    <Button
+      data-sidebar="trigger"
+      data-slot="sidebar-trigger"
+      variant="ghost"
+      size="icon"
+      className={cn('h-7 w-7', className)}
+      onClick={(event) => {
+        onClick?.(event);
+        toggleSidebar();
+      }}
+      {...props}
+    >
+      <PanelLeftIcon />
+      <span className="sr-only">Toggle Sidebar</span>
+    </Button>
+  );
+}
+
+function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
+  const { toggleSidebar } = useSidebar();
+
+  // Note: Tailwind v3.4 doesn't support "in-" selectors. So the rail won't work perfectly.
+  return (
+    <button
+      data-sidebar="rail"
+      data-slot="sidebar-rail"
+      aria-label="Toggle Sidebar"
+      tabIndex={-1}
+      onClick={toggleSidebar}
+      title="Toggle Sidebar"
+      className={cn(
+        'hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] sm:flex',
+        'in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize',
+        '[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
+        'hover:group-data-[collapsible=offcanvas]:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full',
+        '[[data-side=left][data-collapsible=offcanvas]_&]:-right-2',
+        '[[data-side=right][data-collapsible=offcanvas]_&]:-left-2',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarInset({ className, ...props }: React.ComponentProps<'main'>) {
+  return (
+    <main
+      data-slot="sidebar-inset"
+      className={cn(
+        'bg-background relative flex w-full flex-1 flex-col',
+        'md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarInput({
+  className,
+  ...props
+}: React.ComponentProps<typeof Input>) {
+  return (
+    <Input
+      data-slot="sidebar-input"
+      data-sidebar="input"
+      className={cn('bg-background h-8 w-full shadow-none', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarHeader({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="sidebar-header"
+      data-sidebar="header"
+      className={cn('flex flex-col gap-2 p-2', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarFooter({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="sidebar-footer"
+      data-sidebar="footer"
+      className={cn('flex flex-col gap-2 p-2', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof Separator>) {
+  return (
+    <Separator
+      data-slot="sidebar-separator"
+      data-sidebar="separator"
+      className={cn('bg-sidebar-border mx-2 w-auto', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarContent({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="sidebar-content"
+      data-sidebar="content"
+      className={cn(
+        'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="sidebar-group"
+      data-sidebar="group"
+      className={cn('relative flex w-full min-w-0 flex-col p-2', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarGroupLabel({
+  className,
+  asChild = false,
+  ...props
+}: React.ComponentProps<'div'> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : 'div';
+
+  return (
+    <Comp
+      data-slot="sidebar-group-label"
+      data-sidebar="group-label"
+      className={cn(
+        'text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:shrink-0',
+        'group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarGroupAction({
+  className,
+  asChild = false,
+  ...props
+}: React.ComponentProps<'button'> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : 'button';
+
+  return (
+    <Comp
+      data-slot="sidebar-group-action"
+      data-sidebar="group-action"
+      className={cn(
+        'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
+        // Increases the hit area of the button on mobile.
+        'after:absolute after:-inset-2 md:after:hidden',
+        'group-data-[collapsible=icon]:hidden',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarGroupContent({
+  className,
+  ...props
+}: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="sidebar-group-content"
+      data-sidebar="group-content"
+      className={cn('w-full text-sm', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarMenu({ className, ...props }: React.ComponentProps<'ul'>) {
+  return (
+    <ul
+      data-slot="sidebar-menu"
+      data-sidebar="menu"
+      className={cn('flex w-full min-w-0 flex-col gap-1', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarMenuItem({ className, ...props }: React.ComponentProps<'li'>) {
+  return (
+    <li
+      data-slot="sidebar-menu-item"
+      data-sidebar="menu-item"
+      className={cn('group/menu-item relative', className)}
+      {...props}
+    />
+  );
+}
+
+const sidebarMenuButtonVariants = cva(
+  'peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-hidden ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:w-8! group-data-[collapsible=icon]:h-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
+  {
+    variants: {
+      variant: {
+        default: 'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
+        outline:
+          'bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
+      },
+      size: {
+        default: 'h-8 text-sm',
+        sm: 'h-7 text-xs',
+        lg: 'h-12 text-sm group-data-[collapsible=icon]:p-0!',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  },
+);
+
+function SidebarMenuButton({
+  asChild = false,
+  isActive = false,
+  variant = 'default',
+  size = 'default',
+  tooltip,
+  className,
+  ...props
+}: React.ComponentProps<'button'> & {
+  asChild?: boolean;
+  isActive?: boolean;
+  tooltip?: string | React.ComponentProps<typeof TooltipContent>;
+} & VariantProps<typeof sidebarMenuButtonVariants>) {
+  const Comp = asChild ? Slot : 'button';
+  const { isMobile, state } = useSidebar();
+
+  const button = (
+    <Comp
+      data-slot="sidebar-menu-button"
+      data-sidebar="menu-button"
+      data-size={size}
+      data-active={isActive}
+      className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+      {...props}
+    />
+  );
+
+  if (!tooltip) {
+    return button;
+  }
+
+  if (typeof tooltip === 'string') {
+    tooltip = {
+      children: tooltip,
+    };
+  }
+
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>{button}</TooltipTrigger>
+      <TooltipContent
+        side="right"
+        align="center"
+        hidden={state !== 'collapsed' || isMobile}
+        {...tooltip}
+      />
+    </Tooltip>
+  );
+}
+
+function SidebarMenuAction({
+  className,
+  asChild = false,
+  showOnHover = false,
+  ...props
+}: React.ComponentProps<'button'> & {
+  asChild?: boolean;
+  showOnHover?: boolean;
+}) {
+  const Comp = asChild ? Slot : 'button';
+
+  return (
+    <Comp
+      data-slot="sidebar-menu-action"
+      data-sidebar="menu-action"
+      className={cn(
+        'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer-hover/menu-button:text-sidebar-accent-foreground absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
+        // Increases the hit area of the button on mobile.
+        'after:absolute after:-inset-2 md:after:hidden',
+        'peer-data-[size=sm]/menu-button:top-1',
+        'peer-data-[size=default]/menu-button:top-1.5',
+        'peer-data-[size=lg]/menu-button:top-2.5',
+        'group-data-[collapsible=icon]:hidden',
+        showOnHover &&
+          'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 md:opacity-0',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarMenuBadge({
+  className,
+  ...props
+}: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="sidebar-menu-badge"
+      data-sidebar="menu-badge"
+      className={cn(
+        'text-sidebar-foreground pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums select-none',
+        'peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground',
+        'peer-data-[size=sm]/menu-button:top-1',
+        'peer-data-[size=default]/menu-button:top-1.5',
+        'peer-data-[size=lg]/menu-button:top-2.5',
+        'group-data-[collapsible=icon]:hidden',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarMenuSkeleton({
+  className,
+  showIcon = false,
+  ...props
+}: React.ComponentProps<'div'> & {
+  showIcon?: boolean;
+}) {
+  // Random width between 50 to 90%.
+  const width = React.useMemo(() => {
+    return `${Math.floor(Math.random() * 40) + 50}%`;
+  }, []);
+
+  return (
+    <div
+      data-slot="sidebar-menu-skeleton"
+      data-sidebar="menu-skeleton"
+      className={cn('flex h-8 items-center gap-2 rounded-md px-2', className)}
+      {...props}
+    >
+      {showIcon && (
+        <Skeleton
+          className="size-4 rounded-md"
+          data-sidebar="menu-skeleton-icon"
+        />
+      )}
+      <Skeleton
+        className="h-4 max-w-[var(--skeleton-width)] flex-1"
+        data-sidebar="menu-skeleton-text"
+        style={
+          {
+            '--skeleton-width': width,
+          } as React.CSSProperties
+        }
+      />
+    </div>
+  );
+}
+
+function SidebarMenuSub({ className, ...props }: React.ComponentProps<'ul'>) {
+  return (
+    <ul
+      data-slot="sidebar-menu-sub"
+      data-sidebar="menu-sub"
+      className={cn(
+        'border-sidebar-border mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l px-2.5 py-0.5',
+        'group-data-[collapsible=icon]:hidden',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function SidebarMenuSubItem({
+  className,
+  ...props
+}: React.ComponentProps<'li'>) {
+  return (
+    <li
+      data-slot="sidebar-menu-sub-item"
+      data-sidebar="menu-sub-item"
+      className={cn('group/menu-sub-item relative', className)}
+      {...props}
+    />
+  );
+}
+
+function SidebarMenuSubButton({
+  asChild = false,
+  size = 'md',
+  isActive = false,
+  className,
+  ...props
+}: React.ComponentProps<'a'> & {
+  asChild?: boolean;
+  size?: 'sm' | 'md';
+  isActive?: boolean;
+}) {
+  const Comp = asChild ? Slot : 'a';
+
+  return (
+    <Comp
+      data-slot="sidebar-menu-sub-button"
+      data-sidebar="menu-sub-button"
+      data-size={size}
+      data-active={isActive}
+      className={cn(
+        'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground [&>svg]:text-sidebar-accent-foreground flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 outline outline-2 outline-transparent outline-offset-2 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
+        'data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground',
+        size === 'sm' && 'text-xs',
+        size === 'md' && 'text-sm',
+        'group-data-[collapsible=icon]:hidden',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
+  useSidebar,
+};

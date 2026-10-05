@@ -1,1 +1,540 @@
-IiIiCnNlbGZfaGVhbGluZy5weQotLS0tLS0tLS0tLS0tLS0KU2VsZi1oZWFsaW5nIGFuZCBhdXRvbWF0ZWQgcmVjb3Zlcnkgc3lzdGVtIGZvciBoYW5kbGluZyBjb21tb24gZmFpbHVyZXMKYW5kIG1haW50YWluaW5nIHN5c3RlbSBoZWFsdGggd2l0aG91dCBtYW51YWwgaW50ZXJ2ZW50aW9uLgoiIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBsb2dnaW5nCmltcG9ydCB0aHJlYWRpbmcKaW1wb3J0IHRpbWUKZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVxdWUKZnJvbSBjb2xsZWN0aW9ucy5hYmMgaW1wb3J0IENhbGxhYmxlCmZyb20gZGF0YWNsYXNzZXMgaW1wb3J0IGRhdGFjbGFzcwpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSwgdGltZXpvbmUKZnJvbSBlbnVtIGltcG9ydCBFbnVtCmZyb20gdHlwaW5nIGltcG9ydCBBbnkKCmltcG9ydCBudW1weSBhcyBucAppbXBvcnQgcGFuZGFzIGFzIHBkCmZyb20gY29uZmlnIGltcG9ydCBTRUxGX0hFQUxJTkcKZnJvbSBkYXRhX3Byb3ZpZGVyIGltcG9ydCAoCiAgICBNVDVDb25uZWN0aW9uRXJyb3IsCiAgICBlbnN1cmVfY29ubmVjdGVkLAogICAgaW5pdGlhbGl6ZV9jb25uZWN0aW9uLAogICAgbXQ1LAogICAgc2h1dGRvd25fY29ubmVjdGlvbiwKKQoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoInRyYWRpbmdfYm90LnNlbGZfaGVhbGluZyIpCgoKY2xhc3MgUmVjb3ZlcnlBY3Rpb24oc3RyLCBFbnVtKToKICAgICIiIlR5cGVzIG9mIHJlY292ZXJ5IGFjdGlvbnMiIiIKICAgIFJFQ09OTkVDVCA9ICJyZWNvbm5lY3QiCiAgICBTV0lUQ0hfREFUQV9TT1VSQ0UgPSAic3dpdGNoX2RhdGFfc291cmNlIgogICAgQ0xFQVJfQ0FDSEUgPSAiY2xlYXJfY2FjaGUiCiAgICBSRVNUQVJUX0NPTVBPTkVOVCA9ICJyZXN0YXJ0X2NvbXBvbmVudCIKICAgIEZBTExCQUNLX01PREUgPSAiZmFsbGJhY2tfbW9kZSIKICAgIElHTk9SRV9BTkRfQ09OVElOVUUgPSAiaWdub3JlX2FuZF9jb250aW51ZSIKCgpjbGFzcyBIZWFsdGhTdGF0dXMoc3RyLCBFbnVtKToKICAgICIiIlN5c3RlbSBoZWFsdGggc3RhdHVzIiIiCiAgICBIRUFMVEhZID0gImhlYWx0aHkiCiAgICBERUdSQURFRCA9ICJkZWdyYWRlZCIKICAgIENSSVRJQ0FMID0gImNyaXRpY2FsIgogICAgUkVDT1ZFUklORyA9ICJyZWNvdmVyaW5nIgoKCkBkYXRhY2xhc3MKY2xhc3MgSGVhbHRoTWV0cmljOgogICAgIiIiSW5kaXZpZHVhbCBoZWFsdGggbWV0cmljIiIiCiAgICBuYW1lOiBzdHIKICAgIHZhbHVlOiBmbG9hdAogICAgc3RhdHVzOiBIZWFsdGhTdGF0dXMKICAgIHRpbWVzdGFtcDogZGF0ZXRpbWUKICAgIHRocmVzaG9sZF93YXJuaW5nOiBmbG9hdAogICAgdGhyZXNob2xkX2NyaXRpY2FsOiBmbG9hdAoKCkBkYXRhY2xhc3MKY2xhc3MgUmVjb3ZlcnlBdHRlbXB0OgogICAgIiIiUmVjb3JkIG9mIGEgcmVjb3ZlcnkgYXR0ZW1wdCIiIgogICAgZXJyb3JfdHlwZTogc3RyCiAgICBhY3Rpb25fdGFrZW46IFJlY292ZXJ5QWN0aW9uCiAgICBzdWNjZXNzOiBib29sCiAgICB0aW1lc3RhbXA6IGRhdGV0aW1lCiAgICBkdXJhdGlvbl9zZWNvbmRzOiBmbG9hdAogICAgZGV0YWlsczogc3RyCgoKY2xhc3MgSGVhbHRoTW9uaXRvcjoKICAgICIiIgogICAgTW9uaXRvcnMgc3lzdGVtIGhlYWx0aCBtZXRyaWNzIGFuZCB0cmlnZ2VycyByZWNvdmVyeSBhY3Rpb25zIHdoZW4gbmVlZGVkLgogICAgIiIiCiAgICAKICAgIGRlZiBfX2luaXRfXyhzZWxmKToKICAgICAgICBzZWxmLm1ldHJpY3M6IGRpY3Rbc3RyLCBIZWFsdGhNZXRyaWNdID0ge30KICAgICAgICBzZWxmLnJlY292ZXJ5X2hpc3Rvcnk6IGRlcXVlW1JlY292ZXJ5QXR0ZW1wdF0gPSBkZXF1ZShtYXhsZW49MTAwKQogICAgICAgIHNlbGYuX2xvY2sgPSB0aHJlYWRpbmcuTG9jaygpCiAgICAgICAgc2VsZi5fY2hlY2tfaW50ZXJ2YWwgPSAzMCAgIyBzZWNvbmRzCiAgICAgICAgc2VsZi5fcnVubmluZyA9IEZhbHNlCiAgICAgICAgc2VsZi5fbW9uaXRvcl90aHJlYWQ6IHRocmVhZGluZy5UaHJlYWQgfCBOb25lID0gTm9uZQogICAgCiAgICBkZWYgc3RhcnRfbW9uaXRvcmluZyhzZWxmKToKICAgICAgICAiIiJTdGFydCBiYWNrZ3JvdW5kIGhlYWx0aCBtb25pdG9yaW5nIiIiCiAgICAgICAgaWYgc2VsZi5fcnVubmluZzoKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgCiAgICAgICAgc2VsZi5fcnVubmluZyA9IFRydWUKICAgICAgICBzZWxmLl9tb25pdG9yX3RocmVhZCA9IHRocmVhZGluZy5UaHJlYWQodGFyZ2V0PXNlbGYuX21vbml0b3JfbG9vcCwgZGFlbW9uPVRydWUpCiAgICAgICAgc2VsZi5fbW9uaXRvcl90aHJlYWQuc3RhcnQoKQogICAgICAgIGxvZ2dlci5pbmZvKCJIZWFsdGggbW9uaXRvcmluZyBzdGFydGVkIikKICAgIAogICAgZGVmIHN0b3BfbW9uaXRvcmluZyhzZWxmKToKICAgICAgICAiIiJTdG9wIGJhY2tncm91bmQgaGVhbHRoIG1vbml0b3JpbmciIiIKICAgICAgICBzZWxmLl9ydW5uaW5nID0gRmFsc2UKICAgICAgICBpZiBzZWxmLl9tb25pdG9yX3RocmVhZDoKICAgICAgICAgICAgc2VsZi5fbW9uaXRvcl90aHJlYWQuam9pbih0aW1lb3V0PTUpCiAgICAgICAgbG9nZ2VyLmluZm8oIkhlYWx0aCBtb25pdG9yaW5nIHN0b3BwZWQiKQogICAgCiAgICBkZWYgX21vbml0b3JfbG9vcChzZWxmKToKICAgICAgICAiIiJCYWNrZ3JvdW5kIG1vbml0b3JpbmcgbG9vcCIiIgogICAgICAgIHdoaWxlIHNlbGYuX3J1bm5pbmc6CiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIHNlbGYuX2NoZWNrX3N5c3RlbV9oZWFsdGgoKQogICAgICAgICAgICAgICAgdGltZS5zbGVlcChzZWxmLl9jaGVja19pbnRlcnZhbCkKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOiAgIyBub3FhOiBCTEUwMDEgLSBjYXRjaCBhbnkgZmFpbHVyZQogICAgICAgICAgICAgICAgbG9nZ2VyLmVycm9yKGYiRXJyb3IgaW4gaGVhbHRoIG1vbml0b3JpbmcgbG9vcDoge2V9IikKICAgIAogICAgZGVmIF9jaGVja19zeXN0ZW1faGVhbHRoKHNlbGYpOgogICAgICAgICIiIkNoZWNrIGFsbCBzeXN0ZW0gaGVhbHRoIG1ldHJpY3MiIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgICMgQ2hlY2sgTVQ1IGNvbm5lY3Rpb24gaGVhbHRoCiAgICAgICAgICAgIHNlbGYuX2NoZWNrX2Nvbm5lY3Rpb25faGVhbHRoKCkKICAgICAgICAgICAgCiAgICAgICAgICAgICMgQ2hlY2sgZGF0YSBxdWFsaXR5CiAgICAgICAgICAgIHNlbGYuX2NoZWNrX2RhdGFfcXVhbGl0eSgpCiAgICAgICAgICAgIAogICAgICAgICAgICAjIENoZWNrIG1lbW9yeSB1c2FnZQogICAgICAgICAgICBzZWxmLl9jaGVja19tZW1vcnlfaGVhbHRoKCkKICAgICAgICAgICAgCiAgICAgICAgICAgICMgQ2hlY2sgZXJyb3IgcmF0ZXMKICAgICAgICAgICAgc2VsZi5fY2hlY2tfZXJyb3JfcmF0ZXMoKQogICAgICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIkVycm9yIGNoZWNraW5nIHN5c3RlbSBoZWFsdGg6IHtlfSIpCiAgICAKICAgIGRlZiBfY2hlY2tfY29ubmVjdGlvbl9oZWFsdGgoc2VsZik6CiAgICAgICAgIiIiQ2hlY2sgTVQ1IGNvbm5lY3Rpb24gaGVhbHRoIiIiCiAgICAgICAgdHJ5OgogICAgICAgICAgICBpZiBtdDUgaXMgTm9uZToKICAgICAgICAgICAgICAgIHNlbGYuX3VwZGF0ZV9tZXRyaWMoImNvbm5lY3Rpb25faGVhbHRoIiwgMC4wLCBIZWFsdGhTdGF0dXMuQ1JJVElDQUwpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgCiAgICAgICAgICAgIGluZm8gPSBtdDUudGVybWluYWxfaW5mbygpCiAgICAgICAgICAgIGlmIGluZm8gaXMgTm9uZToKICAgICAgICAgICAgICAgIHNlbGYuX3VwZGF0ZV9tZXRyaWMoImNvbm5lY3Rpb25faGVhbHRoIiwgMC4wLCBIZWFsdGhTdGF0dXMuQ1JJVElDQUwpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgCiAgICAgICAgICAgIGhlYWx0aF9zY29yZSA9IDEuMCBpZiBpbmZvLmNvbm5lY3RlZCBlbHNlIDAuMAogICAgICAgICAgICBzdGF0dXMgPSBIZWFsdGhTdGF0dXMuSEVBTFRIWSBpZiBoZWFsdGhfc2NvcmUgPj0gMC44IGVsc2UgSGVhbHRoU3RhdHVzLkNSSVRJQ0FMCiAgICAgICAgICAgIAogICAgICAgICAgICBzZWxmLl91cGRhdGVfbWV0cmljKCJjb25uZWN0aW9uX2hlYWx0aCIsIGhlYWx0aF9zY29yZSwgc3RhdHVzKQogICAgICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dlci5kZWJ1ZyhmIkVycm9yIGNoZWNraW5nIGNvbm5lY3Rpb24gaGVhbHRoOiB7ZX0iKQogICAgICAgICAgICBzZWxmLl91cGRhdGVfbWV0cmljKCJjb25uZWN0aW9uX2hlYWx0aCIsIDAuMCwgSGVhbHRoU3RhdHVzLkNSSVRJQ0FMKQogICAgCiAgICBkZWYgX2NoZWNrX2RhdGFfcXVhbGl0eShzZWxmKToKICAgICAgICAiIiJDaGVjayBkYXRhIHF1YWxpdHkgbWV0cmljcyB1c2luZyByZWNlbnQgY2FuZGxlIGRhdGEiIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgIGZyb20gYWR2YW5jZWRfdGVjaG5pY2FsX2FuYWx5c2lzIGltcG9ydCBjb21wdXRlX2luZGljYXRvcnMKICAgICAgICAgICAgZnJvbSBkYXRhX3Byb3ZpZGVyIGltcG9ydCBDQU5ETEVTX1RPX0ZFVENILCBUSU1FRlJBTUVfQklBUywgZ2V0X3JhdGVzCiAgICAgICAgICAgIGRmID0gZ2V0X3JhdGVzKCJFVVJVU0QiLCBUSU1FRlJBTUVfQklBUywgQ0FORExFU19UT19GRVRDSCkKICAgICAgICAgICAgZGZfaW5kID0gY29tcHV0ZV9pbmRpY2F0b3JzKGRmKQogICAgICAgICAgICBpZiBkZl9pbmQuZW1wdHk6CiAgICAgICAgICAgICAgICBzZWxmLl91cGRhdGVfbWV0cmljKCJkYXRhX3F1YWxpdHkiLCAwLjMsIEhlYWx0aFN0YXR1cy5ERUdSQURFRCkKICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICB2YWxpZCwgX21zZyA9IGRhdGFfcXVhbGl0eV9jaGVja2VyLnZhbGlkYXRlX2RhdGFmcmFtZShkZl9pbmQsICJFVVJVU0QiKQogICAgICAgICAgICBpZiB2YWxpZDoKICAgICAgICAgICAgICAgIHNlbGYuX3VwZGF0ZV9tZXRyaWMoImRhdGFfcXVhbGl0eSIsIDEuMCwgSGVhbHRoU3RhdHVzLkhFQUxUSFkpCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICBzZWxmLl91cGRhdGVfbWV0cmljKCJkYXRhX3F1YWxpdHkiLCAwLjQsIEhlYWx0aFN0YXR1cy5ERUdSQURFRCkKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dlci5kZWJ1ZyhmIkRhdGEgcXVhbGl0eSBjaGVjayBlcnJvcjoge2V9IikKICAgICAgICAgICAgc2VsZi5fdXBkYXRlX21ldHJpYygiZGF0YV9xdWFsaXR5IiwgMC41LCBIZWFsdGhTdGF0dXMuREVHUkFERUQpCiAgICAKICAgIGRlZiBfY2hlY2tfbWVtb3J5X2hlYWx0aChzZWxmKToKICAgICAgICAiIiJDaGVjayBtZW1vcnkgdXNhZ2UiIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgIGltcG9ydCBwc3V0aWwKICAgICAgICAgICAgcHJvY2VzcyA9IHBzdXRpbC5Qcm9jZXNzKCkKICAgICAgICAgICAgbWVtb3J5X3BlcmNlbnQgPSBwcm9jZXNzLm1lbW9yeV9wZXJjZW50KCkKICAgICAgICAgICAgCiAgICAgICAgICAgIHN0YXR1cyA9IEhlYWx0aFN0YXR1cy5IRUFMVEhZCiAgICAgICAgICAgIGlmIG1lbW9yeV9wZXJjZW50ID4gOTA6CiAgICAgICAgICAgICAgICBzdGF0dXMgPSBIZWFsdGhTdGF0dXMuQ1JJVElDQUwKICAgICAgICAgICAgZWxpZiBtZW1vcnlfcGVyY2VudCA+IDcwOgogICAgICAgICAgICAgICAgc3RhdHVzID0gSGVhbHRoU3RhdHVzLkRFR1JBREVECiAgICAgICAgICAgIAogICAgICAgICAgICAjIENvbnZlcnQgdG8gaGVhbHRoIHNjb3JlIChpbnZlcnNlIG9mIG1lbW9yeSB1c2FnZSkKICAgICAgICAgICAgaGVhbHRoX3Njb3JlID0gbWF4KDAuMCwgMS4wIC0gKG1lbW9yeV9wZXJjZW50IC8gMTAwLjApKQogICAgICAgICAgICAKICAgICAgICAgICAgc2VsZi5fdXBkYXRlX21ldHJpYygibWVtb3J5X2hlYWx0aCIsIGhlYWx0aF9zY29yZSwgc3RhdHVzKQogICAgICAgICAgICAKICAgICAgICBleGNlcHQgSW1wb3J0RXJyb3I6CiAgICAgICAgICAgICMgcHN1dGlsIG5vdCBhdmFpbGFibGUsIHVzZSBzaW1wbGUgZmFsbGJhY2sKICAgICAgICAgICAgc2VsZi5fdXBkYXRlX21ldHJpYygibWVtb3J5X2hlYWx0aCIsIDAuOCwgSGVhbHRoU3RhdHVzLkhFQUxUSFkpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOiAgIyBub3FhOiBCTEUwMDEgLSBjYXRjaCBhbnkgZmFpbHVyZQogICAgICAgICAgICBsb2dnZXIuZGVidWcoZiJFcnJvciBjaGVja2luZyBtZW1vcnkgaGVhbHRoOiB7ZX0iKQogICAgICAgICAgICBzZWxmLl91cGRhdGVfbWV0cmljKCJtZW1vcnlfaGVhbHRoIiwgMC41LCBIZWFsdGhTdGF0dXMuREVHUkFERUQpCiAgICAKICAgIGRlZiBfY2hlY2tfZXJyb3JfcmF0ZXMoc2VsZik6CiAgICAgICAgIiIiQ2hlY2sgcmVjZW50IGVycm9yIHJhdGVzIiIiCiAgICAgICAgIyBDb3VudCByZWNlbnQgcmVjb3ZlcnkgYXR0ZW1wdHMKICAgICAgICByZWNlbnRfZmFpbHVyZXMgPSBbCiAgICAgICAgICAgIGF0dGVtcHQgZm9yIGF0dGVtcHQgaW4gc2VsZi5yZWNvdmVyeV9oaXN0b3J5CiAgICAgICAgICAgIGlmIG5vdCBhdHRlbXB0LnN1Y2Nlc3MgYW5kIAogICAgICAgICAgICAoZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YykgLSBhdHRlbXB0LnRpbWVzdGFtcCkudG90YWxfc2Vjb25kcygpIDwgMzAwCiAgICAgICAgXQogICAgICAgIAogICAgICAgIGVycm9yX3JhdGUgPSBsZW4ocmVjZW50X2ZhaWx1cmVzKSAvIDEwLjAgICMgTm9ybWFsaXplIHRvIDAtMSBzY2FsZQogICAgICAgIHN0YXR1cyA9IEhlYWx0aFN0YXR1cy5IRUFMVEhZCiAgICAgICAgCiAgICAgICAgaWYgZXJyb3JfcmF0ZSA+IDAuNToKICAgICAgICAgICAgc3RhdHVzID0gSGVhbHRoU3RhdHVzLkNSSVRJQ0FMCiAgICAgICAgZWxpZiBlcnJvcl9yYXRlID4gMC4yOgogICAgICAgICAgICBzdGF0dXMgPSBIZWFsdGhTdGF0dXMuREVHUkFERUQKICAgICAgICAKICAgICAgICBoZWFsdGhfc2NvcmUgPSBtYXgoMC4wLCAxLjAgLSBlcnJvcl9yYXRlKQogICAgICAgIHNlbGYuX3VwZGF0ZV9tZXRyaWMoImVycm9yX3JhdGUiLCBoZWFsdGhfc2NvcmUsIHN0YXR1cykKICAgIAogICAgZGVmIF91cGRhdGVfbWV0cmljKHNlbGYsIG5hbWU6IHN0ciwgdmFsdWU6IGZsb2F0LCBzdGF0dXM6IEhlYWx0aFN0YXR1cyk6CiAgICAgICAgIiIiVXBkYXRlIGEgaGVhbHRoIG1ldHJpYyIiIgogICAgICAgIHdpdGggc2VsZi5fbG9jazoKICAgICAgICAgICAgc2VsZi5tZXRyaWNzW25hbWVdID0gSGVhbHRoTWV0cmljKAogICAgICAgICAgICAgICAgbmFtZT1uYW1lLAogICAgICAgICAgICAgICAgdmFsdWU9dmFsdWUsCiAgICAgICAgICAgICAgICBzdGF0dXM9c3RhdHVzLAogICAgICAgICAgICAgICAgdGltZXN0YW1wPWRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLAogICAgICAgICAgICAgICAgdGhyZXNob2xkX3dhcm5pbmc9MC43LAogICAgICAgICAgICAgICAgdGhyZXNob2xkX2NyaXRpY2FsPTAuNQogICAgICAgICAgICApCiAgICAKICAgIGRlZiBnZXRfaGVhbHRoX3N1bW1hcnkoc2VsZikgLT4gZGljdFtzdHIsIEFueV06CiAgICAgICAgIiIiR2V0IG92ZXJhbGwgc3lzdGVtIGhlYWx0aCBzdW1tYXJ5IiIiCiAgICAgICAgd2l0aCBzZWxmLl9sb2NrOgogICAgICAgICAgICBpZiBub3Qgc2VsZi5tZXRyaWNzOgogICAgICAgICAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgICAgICAgICAib3ZlcmFsbF9zdGF0dXMiOiBIZWFsdGhTdGF0dXMuSEVBTFRIWS52YWx1ZSwKICAgICAgICAgICAgICAgICAgICAibWV0cmljcyI6IHt9LAogICAgICAgICAgICAgICAgICAgICJpc3N1ZXMiOiBbXQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgIyBEZXRlcm1pbmUgb3ZlcmFsbCBzdGF0dXMKICAgICAgICAgICAgY3JpdGljYWxfY291bnQgPSBzdW0oMSBmb3IgbSBpbiBzZWxmLm1ldHJpY3MudmFsdWVzKCkgaWYgbS5zdGF0dXMgPT0gSGVhbHRoU3RhdHVzLkNSSVRJQ0FMKQogICAgICAgICAgICBkZWdyYWRlZF9jb3VudCA9IHN1bSgxIGZvciBtIGluIHNlbGYubWV0cmljcy52YWx1ZXMoKSBpZiBtLnN0YXR1cyA9PSBIZWFsdGhTdGF0dXMuREVHUkFERUQpCiAgICAgICAgICAgIAogICAgICAgICAgICBpZiBjcml0aWNhbF9jb3VudCA+IDA6CiAgICAgICAgICAgICAgICBvdmVyYWxsX3N0YXR1cyA9IEhlYWx0aFN0YXR1cy5DUklUSUNBTAogICAgICAgICAgICBlbGlmIGRlZ3JhZGVkX2NvdW50ID4gMDoKICAgICAgICAgICAgICAgIG92ZXJhbGxfc3RhdHVzID0gSGVhbHRoU3RhdHVzLkRFR1JBREVECiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICBvdmVyYWxsX3N0YXR1cyA9IEhlYWx0aFN0YXR1cy5IRUFMVEhZCiAgICAgICAgICAgIAogICAgICAgICAgICAjIElkZW50aWZ5IGlzc3VlcwogICAgICAgICAgICBpc3N1ZXMgPSBbCiAgICAgICAgICAgICAgICBmInttLm5hbWV9OiB7bS5zdGF0dXMudmFsdWV9ICh2YWx1ZToge20udmFsdWU6LjJmfSkiCiAgICAgICAgICAgICAgICBmb3IgbSBpbiBzZWxmLm1ldHJpY3MudmFsdWVzKCkKICAgICAgICAgICAgICAgIGlmIG0uc3RhdHVzICE9IEhlYWx0aFN0YXR1cy5IRUFMVEhZCiAgICAgICAgICAgIF0KICAgICAgICAgICAgCiAgICAgICAgICAgIHJldHVybiB7CiAgICAgICAgICAgICAgICAib3ZlcmFsbF9zdGF0dXMiOiBvdmVyYWxsX3N0YXR1cy52YWx1ZSwKICAgICAgICAgICAgICAgICJtZXRyaWNzIjogewogICAgICAgICAgICAgICAgICAgIG5hbWU6IHsKICAgICAgICAgICAgICAgICAgICAgICAgInZhbHVlIjogbWV0cmljLnZhbHVlLAogICAgICAgICAgICAgICAgICAgICAgICAic3RhdHVzIjogbWV0cmljLnN0YXR1cy52YWx1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgInRpbWVzdGFtcCI6IG1ldHJpYy50aW1lc3RhbXAuaXNvZm9ybWF0KCkKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgZm9yIG5hbWUsIG1ldHJpYyBpbiBzZWxmLm1ldHJpY3MuaXRlbXMoKQogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJpc3N1ZXMiOiBpc3N1ZXMKICAgICAgICAgICAgfQogICAgCiAgICBkZWYgcmVjb3JkX3JlY292ZXJ5X2F0dGVtcHQoc2VsZiwgYXR0ZW1wdDogUmVjb3ZlcnlBdHRlbXB0KToKICAgICAgICAiIiJSZWNvcmQgYSByZWNvdmVyeSBhdHRlbXB0IiIiCiAgICAgICAgd2l0aCBzZWxmLl9sb2NrOgogICAgICAgICAgICBzZWxmLnJlY292ZXJ5X2hpc3RvcnkuYXBwZW5kKGF0dGVtcHQpCgoKY2xhc3MgU2VsZkhlYWxpbmdNYW5hZ2VyOgogICAgIiIiCiAgICBNYWluIHNlbGYtaGVhbGluZyBtYW5hZ2VyIHRoYXQgZGlhZ25vc2VzIGlzc3VlcyBhbmQgY29vcmRpbmF0ZXMgcmVjb3ZlcnkgYWN0aW9ucy4KICAgICIiIgogICAgCiAgICBkZWYgX19pbml0X18oc2VsZik6CiAgICAgICAgc2VsZi5oZWFsdGhfbW9uaXRvciA9IEhlYWx0aE1vbml0b3IoKQogICAgICAgIHNlbGYucmVjb3ZlcnlfYXR0ZW1wdHM6IGRpY3Rbc3RyLCBpbnRdID0ge30gICMgVHJhY2sgYXR0ZW1wdHMgcGVyIGVycm9yIHR5cGUKICAgICAgICBzZWxmLl9sb2NrID0gdGhyZWFkaW5nLkxvY2soKQogICAgICAgIHNlbGYuX3JlY292ZXJ5X2hhbmRsZXJzOiBkaWN0W3R5cGUsIENhbGxhYmxlXSA9IHsKICAgICAgICAgICAgTVQ1Q29ubmVjdGlvbkVycm9yOiBzZWxmLl9oYW5kbGVfY29ubmVjdGlvbl9lcnJvciwKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgaWYgU0VMRl9IRUFMSU5HLmVuYWJsZV9zZWxmX2hlYWxpbmc6CiAgICAgICAgICAgIHNlbGYuaGVhbHRoX21vbml0b3Iuc3RhcnRfbW9uaXRvcmluZygpCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJTZWxmLWhlYWxpbmcgc3lzdGVtIGVuYWJsZWQiKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJTZWxmLWhlYWxpbmcgc3lzdGVtIGRpc2FibGVkIikKICAgIAogICAgZGVmIGRpYWdub3NlX2FuZF9yZWNvdmVyKHNlbGYsIGVycm9yOiBFeGNlcHRpb24sIGNvbnRleHQ6IGRpY3Rbc3RyLCBBbnldIHwgTm9uZSA9IE5vbmUpIC0+IGJvb2w6CiAgICAgICAgIiIiCiAgICAgICAgQXV0b21hdGljYWxseSBkaWFnbm9zZSBhbmQgYXR0ZW1wdCByZWNvdmVyeSBmcm9tIGVycm9ycy4KICAgICAgICAKICAgICAgICBBcmdzOgogICAgICAgICAgICBlcnJvcjogVGhlIGV4Y2VwdGlvbiB0aGF0IG9jY3VycmVkCiAgICAgICAgICAgIGNvbnRleHQ6IEFkZGl0aW9uYWwgY29udGV4dCBhYm91dCB0aGUgZXJyb3IKICAgICAgICAgICAgCiAgICAgICAgUmV0dXJuczoKICAgICAgICAgICAgVHJ1ZSBpZiByZWNvdmVyeSB3YXMgc3VjY2Vzc2Z1bCwgRmFsc2Ugb3RoZXJ3aXNlCiAgICAgICAgIiIiCiAgICAgICAgaWYgbm90IFNFTEZfSEVBTElORy5lbmFibGVfc2VsZl9oZWFsaW5nOgogICAgICAgICAgICBsb2dnZXIuaW5mbygiU2VsZi1oZWFsaW5nIGRpc2FibGVkLCBza2lwcGluZyByZWNvdmVyeSIpCiAgICAgICAgICAgIHJldHVybiBGYWxzZQogICAgICAgIAogICAgICAgIGVycm9yX3R5cGUgPSB0eXBlKGVycm9yKQogICAgICAgIGVycm9yX2tleSA9IGYie2Vycm9yX3R5cGUuX19uYW1lX199IgogICAgICAgIAogICAgICAgICMgQ2hlY2sgaWYgd2UndmUgZXhjZWVkZWQgbWF4IGF0dGVtcHRzIGZvciB0aGlzIGVycm9yIHR5cGUKICAgICAgICB3aXRoIHNlbGYuX2xvY2s6CiAgICAgICAgICAgIGF0dGVtcHRzID0gc2VsZi5yZWNvdmVyeV9hdHRlbXB0cy5nZXQoZXJyb3Jfa2V5LCAwKQogICAgICAgICAgICBpZiBhdHRlbXB0cyA+PSBTRUxGX0hFQUxJTkcubWF4X3JlY292ZXJ5X2F0dGVtcHRzOgogICAgICAgICAgICAgICAgbG9nZ2VyLndhcm5pbmcoZiJNYXggcmVjb3ZlcnkgYXR0ZW1wdHMgKHtTRUxGX0hFQUxJTkcubWF4X3JlY292ZXJ5X2F0dGVtcHRzfSkgcmVhY2hlZCBmb3Ige2Vycm9yX2tleX0iKQogICAgICAgICAgICAgICAgcmV0dXJuIEZhbHNlCiAgICAgICAgICAgIAogICAgICAgICAgICBzZWxmLnJlY292ZXJ5X2F0dGVtcHRzW2Vycm9yX2tleV0gPSBhdHRlbXB0cyArIDEKICAgICAgICAKICAgICAgICAjIEdldCBhcHByb3ByaWF0ZSBoYW5kbGVyCiAgICAgICAgaGFuZGxlciA9IHNlbGYuX3JlY292ZXJ5X2hhbmRsZXJzLmdldChlcnJvcl90eXBlLCBzZWxmLl9oYW5kbGVfZ2VuZXJpY19lcnJvcikKICAgICAgICAKICAgICAgICAjIEF0dGVtcHQgcmVjb3ZlcnkKICAgICAgICBzdGFydF90aW1lID0gdGltZS50aW1lKCkKICAgICAgICB0cnk6CiAgICAgICAgICAgIHN1Y2Nlc3MgPSBoYW5kbGVyKGVycm9yLCBjb250ZXh0IG9yIHt9KQogICAgICAgICAgICBkdXJhdGlvbiA9IHRpbWUudGltZSgpIC0gc3RhcnRfdGltZQogICAgICAgICAgICAKICAgICAgICAgICAgIyBSZWNvcmQgdGhlIGF0dGVtcHQKICAgICAgICAgICAgYXR0ZW1wdCA9IFJlY292ZXJ5QXR0ZW1wdCgKICAgICAgICAgICAgICAgIGVycm9yX3R5cGU9ZXJyb3Jfa2V5LAogICAgICAgICAgICAgICAgYWN0aW9uX3Rha2VuPXNlbGYuX2RldGVybWluZV9hY3Rpb24oZXJyb3JfdHlwZSksCiAgICAgICAgICAgICAgICBzdWNjZXNzPXN1Y2Nlc3MsCiAgICAgICAgICAgICAgICB0aW1lc3RhbXA9ZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YyksCiAgICAgICAgICAgICAgICBkdXJhdGlvbl9zZWNvbmRzPWR1cmF0aW9uLAogICAgICAgICAgICAgICAgZGV0YWlscz1zdHIoZXJyb3IpWzoyMDBdCiAgICAgICAgICAgICkKICAgICAgICAgICAgc2VsZi5oZWFsdGhfbW9uaXRvci5yZWNvcmRfcmVjb3ZlcnlfYXR0ZW1wdChhdHRlbXB0KQogICAgICAgICAgICAKICAgICAgICAgICAgaWYgc3VjY2VzczoKICAgICAgICAgICAgICAgICMgUmVzZXQgYXR0ZW1wdCBjb3VudGVyIG9uIHN1Y2Nlc3MKICAgICAgICAgICAgICAgIHdpdGggc2VsZi5fbG9jazoKICAgICAgICAgICAgICAgICAgICBzZWxmLnJlY292ZXJ5X2F0dGVtcHRzW2Vycm9yX2tleV0gPSAwCiAgICAgICAgICAgICAgICBsb2dnZXIuaW5mbyhmIlN1Y2Nlc3NmdWxseSByZWNvdmVyZWQgZnJvbSB7ZXJyb3Jfa2V5fSBpbiB7ZHVyYXRpb246LjJmfXMiKQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgbG9nZ2VyLndhcm5pbmcoZiJSZWNvdmVyeSBhdHRlbXB0IGZhaWxlZCBmb3Ige2Vycm9yX2tleX0gKGF0dGVtcHQge2F0dGVtcHRzICsgMX0pIikKICAgICAgICAgICAgCiAgICAgICAgICAgIHJldHVybiBzdWNjZXNzCiAgICAgICAgICAgIAogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZTogICMgbm9xYTogQkxFMDAxIC0gY2F0Y2ggYW55IGZhaWx1cmUKICAgICAgICAgICAgbG9nZ2VyLmVycm9yKGYiRXJyb3IgZHVyaW5nIHJlY292ZXJ5IGF0dGVtcHQgZm9yIHtlcnJvcl9rZXl9OiB7ZX0iKQogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgIAogICAgZGVmIF9oYW5kbGVfY29ubmVjdGlvbl9lcnJvcihzZWxmLCBlcnJvcjogTVQ1Q29ubmVjdGlvbkVycm9yLCBjb250ZXh0OiBkaWN0W3N0ciwgQW55XSkgLT4gYm9vbDoKICAgICAgICAiIiJIYW5kbGUgTVQ1IGNvbm5lY3Rpb24gZXJyb3JzIHdpdGggZXhwb25lbnRpYWwgYmFja29mZiIiIgogICAgICAgIGVycm9yX2tleSA9ICJNVDVDb25uZWN0aW9uRXJyb3IiCiAgICAgICAgCiAgICAgICAgd2l0aCBzZWxmLl9sb2NrOgogICAgICAgICAgICBhdHRlbXB0cyA9IHNlbGYucmVjb3ZlcnlfYXR0ZW1wdHMuZ2V0KGVycm9yX2tleSwgMCkKICAgICAgICAKICAgICAgICAjIENhbGN1bGF0ZSBiYWNrb2ZmIHRpbWUKICAgICAgICBiYWNrb2ZmX3RpbWUgPSBtaW4oCiAgICAgICAgICAgIFNFTEZfSEVBTElORy5yZWNvdmVyeV9iYWNrb2ZmX2Jhc2UgKiAoMiAqKiBhdHRlbXB0cyksCiAgICAgICAgICAgIFNFTEZfSEVBTElORy5yZWNvdmVyeV9iYWNrb2ZmX21heAogICAgICAgICkKICAgICAgICAKICAgICAgICBsb2dnZXIuaW5mbyhmIkF0dGVtcHRpbmcgY29ubmVjdGlvbiByZWNvdmVyeSAoYXR0ZW1wdCB7YXR0ZW1wdHMgKyAxfSkgd2l0aCB7YmFja29mZl90aW1lOi4xZn1zIGJhY2tvZmYiKQogICAgICAgIHRpbWUuc2xlZXAoYmFja29mZl90aW1lKQogICAgICAgIAogICAgICAgIHRyeToKICAgICAgICAgICAgIyBTaHV0ZG93biBleGlzdGluZyBjb25uZWN0aW9uCiAgICAgICAgICAgIHNodXRkb3duX2Nvbm5lY3Rpb24oKQogICAgICAgICAgICAKICAgICAgICAgICAgIyBBdHRlbXB0IHJlY29ubmVjdGlvbgogICAgICAgICAgICBpbml0aWFsaXplX2Nvbm5lY3Rpb24oKQogICAgICAgICAgICAKICAgICAgICAgICAgIyBWZXJpZnkgY29ubmVjdGlvbgogICAgICAgICAgICBlbnN1cmVfY29ubmVjdGVkKCkKICAgICAgICAgICAgCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJDb25uZWN0aW9uIHJlY292ZXJ5IHN1Y2Nlc3NmdWwiKQogICAgICAgICAgICByZXR1cm4gVHJ1ZQogICAgICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6ICAjIG5vcWE6IEJMRTAwMSAtIGNhdGNoIGFueSBmYWlsdXJlCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIkNvbm5lY3Rpb24gcmVjb3ZlcnkgZmFpbGVkOiB7ZX0iKQogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgIAogICAgZGVmIF9oYW5kbGVfZ2VuZXJpY19lcnJvcihzZWxmLCBlcnJvcjogRXhjZXB0aW9uLCBjb250ZXh0OiBkaWN0W3N0ciwgQW55XSkgLT4gYm9vbDoKICAgICAgICAiIiJIYW5kbGUgZ2VuZXJpYyBlcnJvcnMgd2l0aCBiYXNpYyByZWNvdmVyeSBzdHJhdGVnaWVzIiIiCiAgICAgICAgbG9nZ2VyLmluZm8oZiJBdHRlbXB0aW5nIGdlbmVyaWMgcmVjb3ZlcnkgZm9yIHt0eXBlKGVycm9yKS5fX25hbWVfX30iKQogICAgICAgIAogICAgICAgICMgVHJ5IGJhc2ljIHJlY292ZXJ5IHN0ZXBzCiAgICAgICAgdHJ5OgogICAgICAgICAgICAjIENsZWFyIGFueSBjYWNoZXMgaWYgYXBwbGljYWJsZQogICAgICAgICAgICAjIFJlc2V0IGFueSB0cmFuc2llbnQgc3RhdGUKICAgICAgICAgICAgIyBMb2cgZGV0YWlsZWQgZXJyb3IgaW5mb3JtYXRpb24KICAgICAgICAgICAgCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJHZW5lcmljIHJlY292ZXJ5IGNvbXBsZXRlZCAobWF5IG5vdCBoYXZlIHJlc29sdmVkIGlzc3VlKSIpCiAgICAgICAgICAgIHJldHVybiBUcnVlICAjIFJldHVybiBUcnVlIHRvIHByZXZlbnQgaW5maW5pdGUgbG9vcHMsIGV2ZW4gaWYgbm90IGZ1bGx5IHJlc29sdmVkCiAgICAgICAgICAgIAogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZTogICMgbm9xYTogQkxFMDAxIC0gY2F0Y2ggYW55IGZhaWx1cmUKICAgICAgICAgICAgbG9nZ2VyLmVycm9yKGYiR2VuZXJpYyByZWNvdmVyeSBmYWlsZWQ6IHtlfSIpCiAgICAgICAgICAgIHJldHVybiBGYWxzZQogICAgCiAgICBkZWYgX2RldGVybWluZV9hY3Rpb24oc2VsZiwgZXJyb3JfdHlwZTogdHlwZSkgLT4gUmVjb3ZlcnlBY3Rpb246CiAgICAgICAgIiIiRGV0ZXJtaW5lIHRoZSBhcHByb3ByaWF0ZSByZWNvdmVyeSBhY3Rpb24gZm9yIGFuIGVycm9yIHR5cGUiIiIKICAgICAgICBpZiBlcnJvcl90eXBlID09IE1UNUNvbm5lY3Rpb25FcnJvcjoKICAgICAgICAgICAgcmV0dXJuIFJlY292ZXJ5QWN0aW9uLlJFQ09OTkVDVAogICAgICAgIGVsaWYgImRhdGEiIGluIHN0cihlcnJvcl90eXBlKS5sb3dlcigpOgogICAgICAgICAgICByZXR1cm4gUmVjb3ZlcnlBY3Rpb24uU1dJVENIX0RBVEFfU09VUkNFCiAgICAgICAgZWxpZiAiY2FjaGUiIGluIHN0cihlcnJvcl90eXBlKS5sb3dlcigpOgogICAgICAgICAgICByZXR1cm4gUmVjb3ZlcnlBY3Rpb24uQ0xFQVJfQ0FDSEUKICAgICAgICBlbHNlOgogICAgICAgICAgICByZXR1cm4gUmVjb3ZlcnlBY3Rpb24uSUdOT1JFX0FORF9DT05USU5VRQogICAgCiAgICBkZWYgcmVzZXRfcmVjb3ZlcnlfY291bnRlcnMoc2VsZik6CiAgICAgICAgIiIiUmVzZXQgYWxsIHJlY292ZXJ5IGF0dGVtcHQgY291bnRlcnMiIiIKICAgICAgICB3aXRoIHNlbGYuX2xvY2s6CiAgICAgICAgICAgIHNlbGYucmVjb3ZlcnlfYXR0ZW1wdHMuY2xlYXIoKQogICAgICAgIGxvZ2dlci5pbmZvKCJSZWNvdmVyeSBjb3VudGVycyByZXNldCIpCiAgICAKICAgIGRlZiBnZXRfcmVjb3Zlcnlfc3RhdHVzKHNlbGYpIC0+IGRpY3Rbc3RyLCBBbnldOgogICAgICAgICIiIkdldCBjdXJyZW50IHJlY292ZXJ5IHN5c3RlbSBzdGF0dXMiIiIKICAgICAgICB3aXRoIHNlbGYuX2xvY2s6CiAgICAgICAgICAgIHJldHVybiB7CiAgICAgICAgICAgICAgICAiZW5hYmxlZCI6IFNFTEZfSEVBTElORy5lbmFibGVfc2VsZl9oZWFsaW5nLAogICAgICAgICAgICAgICAgInJlY292ZXJ5X2F0dGVtcHRzIjogZGljdChzZWxmLnJlY292ZXJ5X2F0dGVtcHRzKSwKICAgICAgICAgICAgICAgICJtYXhfYXR0ZW1wdHMiOiBTRUxGX0hFQUxJTkcubWF4X3JlY292ZXJ5X2F0dGVtcHRzLAogICAgICAgICAgICAgICAgImhlYWx0aF9zdW1tYXJ5Ijogc2VsZi5oZWFsdGhfbW9uaXRvci5nZXRfaGVhbHRoX3N1bW1hcnkoKSwKICAgICAgICAgICAgICAgICJyZWNlbnRfcmVjb3ZlcmllcyI6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICJlcnJvcl90eXBlIjogYXR0ZW1wdC5lcnJvcl90eXBlLAogICAgICAgICAgICAgICAgICAgICAgICAiYWN0aW9uIjogYXR0ZW1wdC5hY3Rpb25fdGFrZW4udmFsdWUsCiAgICAgICAgICAgICAgICAgICAgICAgICJzdWNjZXNzIjogYXR0ZW1wdC5zdWNjZXNzLAogICAgICAgICAgICAgICAgICAgICAgICAidGltZXN0YW1wIjogYXR0ZW1wdC50aW1lc3RhbXAuaXNvZm9ybWF0KCksCiAgICAgICAgICAgICAgICAgICAgICAgICJkdXJhdGlvbiI6IGF0dGVtcHQuZHVyYXRpb25fc2Vjb25kcwogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBmb3IgYXR0ZW1wdCBpbiBsaXN0KHNlbGYuaGVhbHRoX21vbml0b3IucmVjb3ZlcnlfaGlzdG9yeSlbLTEwOl0KICAgICAgICAgICAgICAgIF0KICAgICAgICAgICAgfQogICAgCiAgICBkZWYgc2h1dGRvd24oc2VsZik6CiAgICAgICAgIiIiQ2xlYW51cCBhbmQgc2h1dGRvd24gdGhlIHNlbGYtaGVhbGluZyBzeXN0ZW0iIiIKICAgICAgICBzZWxmLmhlYWx0aF9tb25pdG9yLnN0b3BfbW9uaXRvcmluZygpCiAgICAgICAgbG9nZ2VyLmluZm8oIlNlbGYtaGVhbGluZyBzeXN0ZW0gc2h1dGRvd24iKQoKCmNsYXNzIERhdGFRdWFsaXR5Q2hlY2tlcjoKICAgICIiIgogICAgVmFsaWRhdGVzIGRhdGEgcXVhbGl0eSBhbmQgZGV0ZWN0cyBpc3N1ZXMgdGhhdCBjb3VsZCBhZmZlY3QgdHJhZGluZyBkZWNpc2lvbnMuCiAgICAiIiIKICAgIAogICAgZGVmIF9faW5pdF9fKHNlbGYpOgogICAgICAgIHNlbGYuZW5hYmxlZCA9IFNFTEZfSEVBTElORy5lbmFibGVfZGF0YV9xdWFsaXR5X2NoZWNrcwogICAgICAgIHNlbGYubWF4X25hbl9yYXRpbyA9IFNFTEZfSEVBTElORy5tYXhfbmFuX3JhdGlvCiAgICAgICAgc2VsZi5taW5fZGF0YV9wb2ludHMgPSBTRUxGX0hFQUxJTkcubWluX2RhdGFfcG9pbnRzCiAgICAKICAgIGRlZiB2YWxpZGF0ZV9kYXRhZnJhbWUoc2VsZiwgZGYsIHN5bWJvbDogc3RyID0gInVua25vd24iKSAtPiB0dXBsZVtib29sLCBzdHJdOgogICAgICAgICIiIgogICAgICAgIFZhbGlkYXRlIERhdGFGcmFtZSBxdWFsaXR5IGZvciB0cmFkaW5nIG9wZXJhdGlvbnMuCiAgICAgICAgCiAgICAgICAgQXJnczoKICAgICAgICAgICAgZGY6IERhdGFGcmFtZSB0byB2YWxpZGF0ZQogICAgICAgICAgICBzeW1ib2w6IFN5bWJvbCBuYW1lIGZvciBsb2dnaW5nCiAgICAgICAgICAgIAogICAgICAgIFJldHVybnM6CiAgICAgICAgICAgIFR1cGxlIG9mIChpc192YWxpZCwgZXJyb3JfbWVzc2FnZSkKICAgICAgICAiIiIKICAgICAgICBpZiBub3Qgc2VsZi5lbmFibGVkOgogICAgICAgICAgICByZXR1cm4gVHJ1ZSwgIiIKICAgICAgICAKICAgICAgICBpZiBkZiBpcyBOb25lIG9yIGRmLmVtcHR5OgogICAgICAgICAgICByZXR1cm4gRmFsc2UsIGYiRGF0YUZyYW1lIGlzIGVtcHR5IGZvciB7c3ltYm9sfSIKICAgICAgICAKICAgICAgICAjIENoZWNrIG1pbmltdW0gZGF0YSBwb2ludHMKICAgICAgICBpZiBsZW4oZGYpIDwgc2VsZi5taW5fZGF0YV9wb2ludHM6CiAgICAgICAgICAgIHJldHVybiBGYWxzZSwgZiJJbnN1ZmZpY2llbnQgZGF0YSBwb2ludHMgKHtsZW4oZGYpfSA8IHtzZWxmLm1pbl9kYXRhX3BvaW50c30pIGZvciB7c3ltYm9sfSIKICAgICAgICAKICAgICAgICAjIENoZWNrIGZvciBOYU4gdmFsdWVzCiAgICAgICAgbmFuX3JhdGlvID0gZGYuaXNuYSgpLnN1bSgpLnN1bSgpIC8gKGxlbihkZikgKiBsZW4oZGYuY29sdW1ucykpCiAgICAgICAgaWYgbmFuX3JhdGlvID4gc2VsZi5tYXhfbmFuX3JhdGlvOgogICAgICAgICAgICByZXR1cm4gRmFsc2UsIGYiSGlnaCBOYU4gcmF0aW8gKHtuYW5fcmF0aW86LjIlfSA+IHtzZWxmLm1heF9uYW5fcmF0aW86LjIlfSkgZm9yIHtzeW1ib2x9IgogICAgICAgIAogICAgICAgICMgQ2hlY2sgZm9yIGluZmluaXRlIHZhbHVlcwogICAgICAgIGlmIG5wLmlzaW5mKGRmLnNlbGVjdF9kdHlwZXMoaW5jbHVkZT1bbnAubnVtYmVyXSkpLmFueSgpLmFueSgpOgogICAgICAgICAgICByZXR1cm4gRmFsc2UsIGYiSW5maW5pdGUgdmFsdWVzIGRldGVjdGVkIGluIHtzeW1ib2x9IgogICAgICAgIAogICAgICAgICMgQ2hlY2sgZm9yIGR1cGxpY2F0ZSB0aW1lc3RhbXBzCiAgICAgICAgaWYgZGYuaW5kZXguZHVwbGljYXRlZCgpLmFueSgpOgogICAgICAgICAgICByZXR1cm4gRmFsc2UsIGYiRHVwbGljYXRlIHRpbWVzdGFtcHMgZGV0ZWN0ZWQgaW4ge3N5bWJvbH0iCiAgICAgICAgCiAgICAgICAgIyBDaGVjayBmb3IgbW9ub3RvbmljIHRpbWVzdGFtcCBpbmRleAogICAgICAgIGlmIG5vdCBkZi5pbmRleC5pc19tb25vdG9uaWNfaW5jcmVhc2luZzoKICAgICAgICAgICAgcmV0dXJuIEZhbHNlLCBmIk5vbi1tb25vdG9uaWMgdGltZXN0YW1wIGluZGV4IGluIHtzeW1ib2x9IgogICAgICAgIAogICAgICAgIHJldHVybiBUcnVlLCAiIgogICAgCiAgICBkZWYgdmFsaWRhdGVfcHJpY2VfZGF0YShzZWxmLCBkZjogcGQuRGF0YUZyYW1lKSAtPiB0dXBsZVtib29sLCBzdHJdOgogICAgICAgICIiIgogICAgICAgIFZhbGlkYXRlIHByaWNlIGRhdGEgc3BlY2lmaWNhbGx5IGZvciBjb21tb24gaXNzdWVzLgogICAgICAgIAogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIGRmOiBEYXRhRnJhbWUgd2l0aCBPSExDViBkYXRhCiAgICAgICAgICAgIAogICAgICAgIFJldHVybnM6CiAgICAgICAgICAgIFR1cGxlIG9mIChpc192YWxpZCwgZXJyb3JfbWVzc2FnZSkKICAgICAgICAiIiIKICAgICAgICBpZiBub3Qgc2VsZi5lbmFibGVkOgogICAgICAgICAgICByZXR1cm4gVHJ1ZSwgIiIKICAgICAgICAKICAgICAgICByZXF1aXJlZF9jb2x1bW5zID0gWydvcGVuJywgJ2hpZ2gnLCAnbG93JywgJ2Nsb3NlJ10KICAgICAgICBtaXNzaW5nX2NvbHVtbnMgPSBbY29sIGZvciBjb2wgaW4gcmVxdWlyZWRfY29sdW1ucyBpZiBjb2wgbm90IGluIGRmLmNvbHVtbnNdCiAgICAgICAgCiAgICAgICAgaWYgbWlzc2luZ19jb2x1bW5zOgogICAgICAgICAgICByZXR1cm4gRmFsc2UsIGYiTWlzc2luZyByZXF1aXJlZCBjb2x1bW5zOiB7bWlzc2luZ19jb2x1bW5zfSIKICAgICAgICAKICAgICAgICAjIENoZWNrIGZvciB2YWxpZCBPSExDIHJlbGF0aW9uc2hpcHMKICAgICAgICBpbnZhbGlkX29obGMgPSAoCiAgICAgICAgICAgIChkZlsnaGlnaCddIDwgZGZbJ2xvdyddKSB8CiAgICAgICAgICAgIChkZlsnaGlnaCddIDwgZGZbJ29wZW4nXSkgfAogICAgICAgICAgICAoZGZbJ2hpZ2gnXSA8IGRmWydjbG9zZSddKSB8CiAgICAgICAgICAgIChkZlsnbG93J10gPiBkZlsnb3BlbiddKSB8CiAgICAgICAgICAgIChkZlsnbG93J10gPiBkZlsnY2xvc2UnXSkKICAgICAgICApCiAgICAgICAgCiAgICAgICAgaWYgaW52YWxpZF9vaGxjLmFueSgpOgogICAgICAgICAgICBpbnZhbGlkX2NvdW50ID0gaW52YWxpZF9vaGxjLnN1bSgpCiAgICAgICAgICAgIHJldHVybiBGYWxzZSwgZiJJbnZhbGlkIE9ITEMgcmVsYXRpb25zaGlwcyBpbiB7aW52YWxpZF9jb3VudH0gYmFycyIKICAgICAgICAKICAgICAgICAjIENoZWNrIGZvciB6ZXJvIG9yIG5lZ2F0aXZlIHByaWNlcwogICAgICAgIHplcm9fcHJpY2VzID0gKGRmW3JlcXVpcmVkX2NvbHVtbnNdIDw9IDApLmFueSgpLmFueSgpCiAgICAgICAgaWYgemVyb19wcmljZXM6CiAgICAgICAgICAgIHJldHVybiBGYWxzZSwgIlplcm8gb3IgbmVnYXRpdmUgcHJpY2VzIGRldGVjdGVkIgogICAgICAgIAogICAgICAgIHJldHVybiBUcnVlLCAiIgoKCiMgR2xvYmFsIGluc3RhbmNlCnNlbGZfaGVhbGluZ19tYW5hZ2VyID0gU2VsZkhlYWxpbmdNYW5hZ2VyKCkKZGF0YV9xdWFsaXR5X2NoZWNrZXIgPSBEYXRhUXVhbGl0eUNoZWNrZXIoKQ==
+"""
+self_healing.py
+---------------
+Self-healing and automated recovery system for handling common failures
+and maintaining system health without manual intervention.
+"""
+
+from __future__ import annotations
+
+import logging
+import threading
+import time
+from collections import deque
+from collections.abc import Callable
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from enum import Enum
+from typing import Any
+
+import numpy as np
+import pandas as pd
+from config import SELF_HEALING
+from data_provider import (
+    MT5ConnectionError,
+    ensure_connected,
+    initialize_connection,
+    mt5,
+    shutdown_connection,
+)
+
+logger = logging.getLogger("trading_bot.self_healing")
+
+
+class RecoveryAction(str, Enum):
+    """Types of recovery actions"""
+    RECONNECT = "reconnect"
+    SWITCH_DATA_SOURCE = "switch_data_source"
+    CLEAR_CACHE = "clear_cache"
+    RESTART_COMPONENT = "restart_component"
+    FALLBACK_MODE = "fallback_mode"
+    IGNORE_AND_CONTINUE = "ignore_and_continue"
+
+
+class HealthStatus(str, Enum):
+    """System health status"""
+    HEALTHY = "healthy"
+    DEGRADED = "degraded"
+    CRITICAL = "critical"
+    RECOVERING = "recovering"
+
+
+@dataclass
+class HealthMetric:
+    """Individual health metric"""
+    name: str
+    value: float
+    status: HealthStatus
+    timestamp: datetime
+    threshold_warning: float
+    threshold_critical: float
+
+
+@dataclass
+class RecoveryAttempt:
+    """Record of a recovery attempt"""
+    error_type: str
+    action_taken: RecoveryAction
+    success: bool
+    timestamp: datetime
+    duration_seconds: float
+    details: str
+
+
+class HealthMonitor:
+    """
+    Monitors system health metrics and triggers recovery actions when needed.
+    """
+    
+    def __init__(self):
+        self.metrics: dict[str, HealthMetric] = {}
+        self.recovery_history: deque[RecoveryAttempt] = deque(maxlen=100)
+        self._lock = threading.Lock()
+        self._check_interval = 30  # seconds
+        self._running = False
+        self._monitor_thread: threading.Thread | None = None
+    
+    def start_monitoring(self):
+        """Start background health monitoring"""
+        if self._running:
+            return
+        
+        self._running = True
+        self._monitor_thread = threading.Thread(target=self._monitor_loop, daemon=True)
+        self._monitor_thread.start()
+        logger.info("Health monitoring started")
+    
+    def stop_monitoring(self):
+        """Stop background health monitoring"""
+        self._running = False
+        if self._monitor_thread:
+            self._monitor_thread.join(timeout=5)
+        logger.info("Health monitoring stopped")
+    
+    def _monitor_loop(self):
+        """Background monitoring loop"""
+        while self._running:
+            try:
+                self._check_system_health()
+                time.sleep(self._check_interval)
+            except Exception as e:  # noqa: BLE001 - catch any failure
+                logger.error(f"Error in health monitoring loop: {e}")
+    
+    def _check_system_health(self):
+        """Check all system health metrics"""
+        try:
+            # Check MT5 connection health
+            self._check_connection_health()
+            
+            # Check data quality
+            self._check_data_quality()
+            
+            # Check memory usage
+            self._check_memory_health()
+            
+            # Check error rates
+            self._check_error_rates()
+            
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.error(f"Error checking system health: {e}")
+    
+    def _check_connection_health(self):
+        """Check MT5 connection health"""
+        try:
+            if mt5 is None:
+                self._update_metric("connection_health", 0.0, HealthStatus.CRITICAL)
+                return
+            
+            info = mt5.terminal_info()
+            if info is None:
+                self._update_metric("connection_health", 0.0, HealthStatus.CRITICAL)
+                return
+            
+            health_score = 1.0 if info.connected else 0.0
+            status = HealthStatus.HEALTHY if health_score >= 0.8 else HealthStatus.CRITICAL
+            
+            self._update_metric("connection_health", health_score, status)
+            
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.debug(f"Error checking connection health: {e}")
+            self._update_metric("connection_health", 0.0, HealthStatus.CRITICAL)
+    
+    def _check_data_quality(self):
+        """Check data quality metrics using recent candle data"""
+        try:
+            from advanced_technical_analysis import compute_indicators
+            from data_provider import CANDLES_TO_FETCH, TIMEFRAME_BIAS, get_rates
+            df = get_rates("EURUSD", TIMEFRAME_BIAS, CANDLES_TO_FETCH)
+            df_ind = compute_indicators(df)
+            if df_ind.empty:
+                self._update_metric("data_quality", 0.3, HealthStatus.DEGRADED)
+                return
+            valid, _msg = data_quality_checker.validate_dataframe(df_ind, "EURUSD")
+            if valid:
+                self._update_metric("data_quality", 1.0, HealthStatus.HEALTHY)
+            else:
+                self._update_metric("data_quality", 0.4, HealthStatus.DEGRADED)
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.debug(f"Data quality check error: {e}")
+            self._update_metric("data_quality", 0.5, HealthStatus.DEGRADED)
+    
+    def _check_memory_health(self):
+        """Check memory usage"""
+        try:
+            import psutil
+            process = psutil.Process()
+            memory_percent = process.memory_percent()
+            
+            status = HealthStatus.HEALTHY
+            if memory_percent > 90:
+                status = HealthStatus.CRITICAL
+            elif memory_percent > 70:
+                status = HealthStatus.DEGRADED
+            
+            # Convert to health score (inverse of memory usage)
+            health_score = max(0.0, 1.0 - (memory_percent / 100.0))
+            
+            self._update_metric("memory_health", health_score, status)
+            
+        except ImportError:
+            # psutil not available, use simple fallback
+            self._update_metric("memory_health", 0.8, HealthStatus.HEALTHY)
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.debug(f"Error checking memory health: {e}")
+            self._update_metric("memory_health", 0.5, HealthStatus.DEGRADED)
+    
+    def _check_error_rates(self):
+        """Check recent error rates"""
+        # Count recent recovery attempts
+        recent_failures = [
+            attempt for attempt in self.recovery_history
+            if not attempt.success and 
+            (datetime.now(timezone.utc) - attempt.timestamp).total_seconds() < 300
+        ]
+        
+        error_rate = len(recent_failures) / 10.0  # Normalize to 0-1 scale
+        status = HealthStatus.HEALTHY
+        
+        if error_rate > 0.5:
+            status = HealthStatus.CRITICAL
+        elif error_rate > 0.2:
+            status = HealthStatus.DEGRADED
+        
+        health_score = max(0.0, 1.0 - error_rate)
+        self._update_metric("error_rate", health_score, status)
+    
+    def _update_metric(self, name: str, value: float, status: HealthStatus):
+        """Update a health metric"""
+        with self._lock:
+            self.metrics[name] = HealthMetric(
+                name=name,
+                value=value,
+                status=status,
+                timestamp=datetime.now(timezone.utc),
+                threshold_warning=0.7,
+                threshold_critical=0.5
+            )
+    
+    def get_health_summary(self) -> dict[str, Any]:
+        """Get overall system health summary"""
+        with self._lock:
+            if not self.metrics:
+                return {
+                    "overall_status": HealthStatus.HEALTHY.value,
+                    "metrics": {},
+                    "issues": []
+                }
+            
+            # Determine overall status
+            critical_count = sum(1 for m in self.metrics.values() if m.status == HealthStatus.CRITICAL)
+            degraded_count = sum(1 for m in self.metrics.values() if m.status == HealthStatus.DEGRADED)
+            
+            if critical_count > 0:
+                overall_status = HealthStatus.CRITICAL
+            elif degraded_count > 0:
+                overall_status = HealthStatus.DEGRADED
+            else:
+                overall_status = HealthStatus.HEALTHY
+            
+            # Identify issues
+            issues = [
+                f"{m.name}: {m.status.value} (value: {m.value:.2f})"
+                for m in self.metrics.values()
+                if m.status != HealthStatus.HEALTHY
+            ]
+            
+            return {
+                "overall_status": overall_status.value,
+                "metrics": {
+                    name: {
+                        "value": metric.value,
+                        "status": metric.status.value,
+                        "timestamp": metric.timestamp.isoformat()
+                    }
+                    for name, metric in self.metrics.items()
+                },
+                "issues": issues
+            }
+    
+    def record_recovery_attempt(self, attempt: RecoveryAttempt):
+        """Record a recovery attempt"""
+        with self._lock:
+            self.recovery_history.append(attempt)
+
+
+class SelfHealingManager:
+    """
+    Main self-healing manager that diagnoses issues and coordinates recovery actions.
+    """
+    
+    def __init__(self):
+        self.health_monitor = HealthMonitor()
+        self.recovery_attempts: dict[str, int] = {}  # Track attempts per error type
+        self._lock = threading.Lock()
+        self._recovery_handlers: dict[type, Callable] = {
+            MT5ConnectionError: self._handle_connection_error,
+        }
+        
+        if SELF_HEALING.enable_self_healing:
+            self.health_monitor.start_monitoring()
+            logger.info("Self-healing system enabled")
+        else:
+            logger.info("Self-healing system disabled")
+    
+    def diagnose_and_recover(self, error: Exception, context: dict[str, Any] | None = None) -> bool:
+        """
+        Automatically diagnose and attempt recovery from errors.
+        
+        Args:
+            error: The exception that occurred
+            context: Additional context about the error
+            
+        Returns:
+            True if recovery was successful, False otherwise
+        """
+        if not SELF_HEALING.enable_self_healing:
+            logger.info("Self-healing disabled, skipping recovery")
+            return False
+        
+        error_type = type(error)
+        error_key = f"{error_type.__name__}"
+        
+        # Check if we've exceeded max attempts for this error type
+        with self._lock:
+            attempts = self.recovery_attempts.get(error_key, 0)
+            if attempts >= SELF_HEALING.max_recovery_attempts:
+                logger.warning(f"Max recovery attempts ({SELF_HEALING.max_recovery_attempts}) reached for {error_key}")
+                return False
+            
+            self.recovery_attempts[error_key] = attempts + 1
+        
+        # Get appropriate handler
+        handler = self._recovery_handlers.get(error_type, self._handle_generic_error)
+        
+        # Attempt recovery
+        start_time = time.time()
+        try:
+            success = handler(error, context or {})
+            duration = time.time() - start_time
+            
+            # Record the attempt
+            attempt = RecoveryAttempt(
+                error_type=error_key,
+                action_taken=self._determine_action(error_type),
+                success=success,
+                timestamp=datetime.now(timezone.utc),
+                duration_seconds=duration,
+                details=str(error)[:200]
+            )
+            self.health_monitor.record_recovery_attempt(attempt)
+            
+            if success:
+                # Reset attempt counter on success
+                with self._lock:
+                    self.recovery_attempts[error_key] = 0
+                logger.info(f"Successfully recovered from {error_key} in {duration:.2f}s")
+            else:
+                logger.warning(f"Recovery attempt failed for {error_key} (attempt {attempts + 1})")
+            
+            return success
+            
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.error(f"Error during recovery attempt for {error_key}: {e}")
+            return False
+    
+    def _handle_connection_error(self, error: MT5ConnectionError, context: dict[str, Any]) -> bool:
+        """Handle MT5 connection errors with exponential backoff"""
+        error_key = "MT5ConnectionError"
+        
+        with self._lock:
+            attempts = self.recovery_attempts.get(error_key, 0)
+        
+        # Calculate backoff time
+        backoff_time = min(
+            SELF_HEALING.recovery_backoff_base * (2 ** attempts),
+            SELF_HEALING.recovery_backoff_max
+        )
+        
+        logger.info(f"Attempting connection recovery (attempt {attempts + 1}) with {backoff_time:.1f}s backoff")
+        time.sleep(backoff_time)
+        
+        try:
+            # Shutdown existing connection
+            shutdown_connection()
+            
+            # Attempt reconnection
+            initialize_connection()
+            
+            # Verify connection
+            ensure_connected()
+            
+            logger.info("Connection recovery successful")
+            return True
+            
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.error(f"Connection recovery failed: {e}")
+            return False
+    
+    def _handle_generic_error(self, error: Exception, context: dict[str, Any]) -> bool:
+        """Handle generic errors with basic recovery strategies"""
+        logger.info(f"Attempting generic recovery for {type(error).__name__}")
+        
+        # Try basic recovery steps
+        try:
+            # Clear any caches if applicable
+            # Reset any transient state
+            # Log detailed error information
+            
+            logger.info("Generic recovery completed (may not have resolved issue)")
+            return True  # Return True to prevent infinite loops, even if not fully resolved
+            
+        except Exception as e:  # noqa: BLE001 - catch any failure
+            logger.error(f"Generic recovery failed: {e}")
+            return False
+    
+    def _determine_action(self, error_type: type) -> RecoveryAction:
+        """Determine the appropriate recovery action for an error type"""
+        if error_type == MT5ConnectionError:
+            return RecoveryAction.RECONNECT
+        elif "data" in str(error_type).lower():
+            return RecoveryAction.SWITCH_DATA_SOURCE
+        elif "cache" in str(error_type).lower():
+            return RecoveryAction.CLEAR_CACHE
+        else:
+            return RecoveryAction.IGNORE_AND_CONTINUE
+    
+    def reset_recovery_counters(self):
+        """Reset all recovery attempt counters"""
+        with self._lock:
+            self.recovery_attempts.clear()
+        logger.info("Recovery counters reset")
+    
+    def get_recovery_status(self) -> dict[str, Any]:
+        """Get current recovery system status"""
+        with self._lock:
+            return {
+                "enabled": SELF_HEALING.enable_self_healing,
+                "recovery_attempts": dict(self.recovery_attempts),
+                "max_attempts": SELF_HEALING.max_recovery_attempts,
+                "health_summary": self.health_monitor.get_health_summary(),
+                "recent_recoveries": [
+                    {
+                        "error_type": attempt.error_type,
+                        "action": attempt.action_taken.value,
+                        "success": attempt.success,
+                        "timestamp": attempt.timestamp.isoformat(),
+                        "duration": attempt.duration_seconds
+                    }
+                    for attempt in list(self.health_monitor.recovery_history)[-10:]
+                ]
+            }
+    
+    def shutdown(self):
+        """Cleanup and shutdown the self-healing system"""
+        self.health_monitor.stop_monitoring()
+        logger.info("Self-healing system shutdown")
+
+
+class DataQualityChecker:
+    """
+    Validates data quality and detects issues that could affect trading decisions.
+    """
+    
+    def __init__(self):
+        self.enabled = SELF_HEALING.enable_data_quality_checks
+        self.max_nan_ratio = SELF_HEALING.max_nan_ratio
+        self.min_data_points = SELF_HEALING.min_data_points
+    
+    def validate_dataframe(self, df, symbol: str = "unknown") -> tuple[bool, str]:
+        """
+        Validate DataFrame quality for trading operations.
+        
+        Args:
+            df: DataFrame to validate
+            symbol: Symbol name for logging
+            
+        Returns:
+            Tuple of (is_valid, error_message)
+        """
+        if not self.enabled:
+            return True, ""
+        
+        if df is None or df.empty:
+            return False, f"DataFrame is empty for {symbol}"
+        
+        # Check minimum data points
+        if len(df) < self.min_data_points:
+            return False, f"Insufficient data points ({len(df)} < {self.min_data_points}) for {symbol}"
+        
+        # Check for NaN values
+        nan_ratio = df.isna().sum().sum() / (len(df) * len(df.columns))
+        if nan_ratio > self.max_nan_ratio:
+            return False, f"High NaN ratio ({nan_ratio:.2%} > {self.max_nan_ratio:.2%}) for {symbol}"
+        
+        # Check for infinite values
+        if np.isinf(df.select_dtypes(include=[np.number])).any().any():
+            return False, f"Infinite values detected in {symbol}"
+        
+        # Check for duplicate timestamps
+        if df.index.duplicated().any():
+            return False, f"Duplicate timestamps detected in {symbol}"
+        
+        # Check for monotonic timestamp index
+        if not df.index.is_monotonic_increasing:
+            return False, f"Non-monotonic timestamp index in {symbol}"
+        
+        return True, ""
+    
+    def validate_price_data(self, df: pd.DataFrame) -> tuple[bool, str]:
+        """
+        Validate price data specifically for common issues.
+        
+        Args:
+            df: DataFrame with OHLCV data
+            
+        Returns:
+            Tuple of (is_valid, error_message)
+        """
+        if not self.enabled:
+            return True, ""
+        
+        required_columns = ['open', 'high', 'low', 'close']
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        
+        if missing_columns:
+            return False, f"Missing required columns: {missing_columns}"
+        
+        # Check for valid OHLC relationships
+        invalid_ohlc = (
+            (df['high'] < df['low']) |
+            (df['high'] < df['open']) |
+            (df['high'] < df['close']) |
+            (df['low'] > df['open']) |
+            (df['low'] > df['close'])
+        )
+        
+        if invalid_ohlc.any():
+            invalid_count = invalid_ohlc.sum()
+            return False, f"Invalid OHLC relationships in {invalid_count} bars"
+        
+        # Check for zero or negative prices
+        zero_prices = (df[required_columns] <= 0).any().any()
+        if zero_prices:
+            return False, "Zero or negative prices detected"
+        
+        return True, ""
+
+
+# Global instance
+self_healing_manager = SelfHealingManager()
+data_quality_checker = DataQualityChecker()

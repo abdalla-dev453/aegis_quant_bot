@@ -1,1 +1,116 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgeyBCdXR0b25Qcm9wcywgYnV0dG9uVmFyaWFudHMgfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvYnV0dG9uJzsKaW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CmltcG9ydCB7IENoZXZyb25MZWZ0LCBDaGV2cm9uUmlnaHQsIE1vcmVIb3Jpem9udGFsIH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKCmNvbnN0IFBhZ2luYXRpb24gPSAoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCduYXYnPikgPT4gKAogIDxuYXYKICAgIHJvbGU9Im5hdmlnYXRpb24iCiAgICBhcmlhLWxhYmVsPSJwYWdpbmF0aW9uIgogICAgY2xhc3NOYW1lPXtjbignbXgtYXV0byBmbGV4IHctZnVsbCBqdXN0aWZ5LWNlbnRlcicsIGNsYXNzTmFtZSl9CiAgICB7Li4ucHJvcHN9CiAgLz4KKTsKUGFnaW5hdGlvbi5kaXNwbGF5TmFtZSA9ICdQYWdpbmF0aW9uJzsKCmNvbnN0IFBhZ2luYXRpb25Db250ZW50ID0gUmVhY3QuZm9yd2FyZFJlZjwKICBIVE1MVUxpc3RFbGVtZW50LAogIFJlYWN0LkNvbXBvbmVudFByb3BzPCd1bCc+Cj4oKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8dWwKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbignZmxleCBmbGV4LXJvdyBpdGVtcy1jZW50ZXIgZ2FwLTEnLCBjbGFzc05hbWUpfQogICAgey4uLnByb3BzfQogIC8+CikpOwpQYWdpbmF0aW9uQ29udGVudC5kaXNwbGF5TmFtZSA9ICdQYWdpbmF0aW9uQ29udGVudCc7Cgpjb25zdCBQYWdpbmF0aW9uSXRlbSA9IFJlYWN0LmZvcndhcmRSZWY8CiAgSFRNTExJRWxlbWVudCwKICBSZWFjdC5Db21wb25lbnRQcm9wczwnbGknPgo+KCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPGxpIHJlZj17cmVmfSBjbGFzc05hbWU9e2NuKCcnLCBjbGFzc05hbWUpfSB7Li4ucHJvcHN9IC8+CikpOwpQYWdpbmF0aW9uSXRlbS5kaXNwbGF5TmFtZSA9ICdQYWdpbmF0aW9uSXRlbSc7Cgp0eXBlIFBhZ2luYXRpb25MaW5rUHJvcHMgPSB7CiAgaXNBY3RpdmU/OiBib29sZWFuOwp9ICYgUGljazxCdXR0b25Qcm9wcywgJ3NpemUnPiAmCiAgUmVhY3QuQ29tcG9uZW50UHJvcHM8J2EnPjsKCmNvbnN0IFBhZ2luYXRpb25MaW5rID0gKHsKICBjbGFzc05hbWUsCiAgaXNBY3RpdmUsCiAgc2l6ZSA9ICdpY29uJywKICAuLi5wcm9wcwp9OiBQYWdpbmF0aW9uTGlua1Byb3BzKSA9PiAoCiAgPGEKICAgIGFyaWEtY3VycmVudD17aXNBY3RpdmUgPyAncGFnZScgOiB1bmRlZmluZWR9CiAgICBjbGFzc05hbWU9e2NuKAogICAgICBidXR0b25WYXJpYW50cyh7CiAgICAgICAgdmFyaWFudDogaXNBY3RpdmUgPyAnb3V0bGluZScgOiAnZ2hvc3QnLAogICAgICAgIHNpemUsCiAgICAgIH0pLAogICAgICBjbGFzc05hbWUsCiAgICApfQogICAgey4uLnByb3BzfQogIC8+Cik7ClBhZ2luYXRpb25MaW5rLmRpc3BsYXlOYW1lID0gJ1BhZ2luYXRpb25MaW5rJzsKCmNvbnN0IFBhZ2luYXRpb25QcmV2aW91cyA9ICh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBQYWdpbmF0aW9uTGluaz4pID0+ICgKICA8UGFnaW5hdGlvbkxpbmsKICAgIGFyaWEtbGFiZWw9IkdvIHRvIHByZXZpb3VzIHBhZ2UiCiAgICBzaXplPSJkZWZhdWx0IgogICAgY2xhc3NOYW1lPXtjbignZ2FwLTEgcGwtMi41JywgY2xhc3NOYW1lKX0KICAgIHsuLi5wcm9wc30KICA+CiAgICA8Q2hldnJvbkxlZnQgY2xhc3NOYW1lPSJoLTQgdy00IiAvPgogICAgPHNwYW4+UHJldmlvdXM8L3NwYW4+CiAgPC9QYWdpbmF0aW9uTGluaz4KKTsKUGFnaW5hdGlvblByZXZpb3VzLmRpc3BsYXlOYW1lID0gJ1BhZ2luYXRpb25QcmV2aW91cyc7Cgpjb25zdCBQYWdpbmF0aW9uTmV4dCA9ICh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBQYWdpbmF0aW9uTGluaz4pID0+ICgKICA8UGFnaW5hdGlvbkxpbmsKICAgIGFyaWEtbGFiZWw9IkdvIHRvIG5leHQgcGFnZSIKICAgIHNpemU9ImRlZmF1bHQiCiAgICBjbGFzc05hbWU9e2NuKCdnYXAtMSBwci0yLjUnLCBjbGFzc05hbWUpfQogICAgey4uLnByb3BzfQogID4KICAgIDxzcGFuPk5leHQ8L3NwYW4+CiAgICA8Q2hldnJvblJpZ2h0IGNsYXNzTmFtZT0iaC00IHctNCIgLz4KICA8L1BhZ2luYXRpb25MaW5rPgopOwpQYWdpbmF0aW9uTmV4dC5kaXNwbGF5TmFtZSA9ICdQYWdpbmF0aW9uTmV4dCc7Cgpjb25zdCBQYWdpbmF0aW9uRWxsaXBzaXMgPSAoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwnc3Bhbic+KSA9PiAoCiAgPHNwYW4KICAgIGFyaWEtaGlkZGVuCiAgICBjbGFzc05hbWU9e2NuKCdmbGV4IGgtOSB3LTkgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyJywgY2xhc3NOYW1lKX0KICAgIHsuLi5wcm9wc30KICA+CiAgICA8TW9yZUhvcml6b250YWwgY2xhc3NOYW1lPSJoLTQgdy00IiAvPgogICAgPHNwYW4gY2xhc3NOYW1lPSJzci1vbmx5Ij5Nb3JlIHBhZ2VzPC9zcGFuPgogIDwvc3Bhbj4KKTsKUGFnaW5hdGlvbkVsbGlwc2lzLmRpc3BsYXlOYW1lID0gJ1BhZ2luYXRpb25FbGxpcHNpcyc7CgpleHBvcnQgewogIFBhZ2luYXRpb24sCiAgUGFnaW5hdGlvbkNvbnRlbnQsCiAgUGFnaW5hdGlvbkxpbmssCiAgUGFnaW5hdGlvbkl0ZW0sCiAgUGFnaW5hdGlvblByZXZpb3VzLAogIFBhZ2luYXRpb25OZXh0LAogIFBhZ2luYXRpb25FbGxpcHNpcywKfTsK
+import * as React from 'react';
+import { ButtonProps, buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
+
+const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
+  <nav
+    role="navigation"
+    aria-label="pagination"
+    className={cn('mx-auto flex w-full justify-center', className)}
+    {...props}
+  />
+);
+Pagination.displayName = 'Pagination';
+
+const PaginationContent = React.forwardRef<
+  HTMLUListElement,
+  React.ComponentProps<'ul'>
+>(({ className, ...props }, ref) => (
+  <ul
+    ref={ref}
+    className={cn('flex flex-row items-center gap-1', className)}
+    {...props}
+  />
+));
+PaginationContent.displayName = 'PaginationContent';
+
+const PaginationItem = React.forwardRef<
+  HTMLLIElement,
+  React.ComponentProps<'li'>
+>(({ className, ...props }, ref) => (
+  <li ref={ref} className={cn('', className)} {...props} />
+));
+PaginationItem.displayName = 'PaginationItem';
+
+type PaginationLinkProps = {
+  isActive?: boolean;
+} & Pick<ButtonProps, 'size'> &
+  React.ComponentProps<'a'>;
+
+const PaginationLink = ({
+  className,
+  isActive,
+  size = 'icon',
+  ...props
+}: PaginationLinkProps) => (
+  <a
+    aria-current={isActive ? 'page' : undefined}
+    className={cn(
+      buttonVariants({
+        variant: isActive ? 'outline' : 'ghost',
+        size,
+      }),
+      className,
+    )}
+    {...props}
+  />
+);
+PaginationLink.displayName = 'PaginationLink';
+
+const PaginationPrevious = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) => (
+  <PaginationLink
+    aria-label="Go to previous page"
+    size="default"
+    className={cn('gap-1 pl-2.5', className)}
+    {...props}
+  >
+    <ChevronLeft className="h-4 w-4" />
+    <span>Previous</span>
+  </PaginationLink>
+);
+PaginationPrevious.displayName = 'PaginationPrevious';
+
+const PaginationNext = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) => (
+  <PaginationLink
+    aria-label="Go to next page"
+    size="default"
+    className={cn('gap-1 pr-2.5', className)}
+    {...props}
+  >
+    <span>Next</span>
+    <ChevronRight className="h-4 w-4" />
+  </PaginationLink>
+);
+PaginationNext.displayName = 'PaginationNext';
+
+const PaginationEllipsis = ({
+  className,
+  ...props
+}: React.ComponentProps<'span'>) => (
+  <span
+    aria-hidden
+    className={cn('flex h-9 w-9 items-center justify-center', className)}
+    {...props}
+  >
+    <MoreHorizontal className="h-4 w-4" />
+    <span className="sr-only">More pages</span>
+  </span>
+);
+PaginationEllipsis.displayName = 'PaginationEllipsis';
+
+export {
+  Pagination,
+  PaginationContent,
+  PaginationLink,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+};

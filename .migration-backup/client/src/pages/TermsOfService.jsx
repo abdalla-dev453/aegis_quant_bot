@@ -1,1 +1,153 @@
-aW1wb3J0IHsgdXNlRWZmZWN0IH0gZnJvbSAicmVhY3QiOwppbXBvcnQgeyBIZWxtZXQgfSBmcm9tICJyZWFjdC1oZWxtZXQtYXN5bmMiOwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gVGVybXNPZlNlcnZpY2UoKSB7CiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGRvY3VtZW50LnRpdGxlID0gIlRlcm1zIG9mIFNlcnZpY2UgfCBPbnl4IEZYIjsKICB9LCBbXSk7CgogIHJldHVybiAoCiAgICA8PgogICAgICA8SGVsbWV0PgogICAgICAgIDx0aXRsZT5UZXJtcyBvZiBTZXJ2aWNlIHwgT255eCBGWDwvdGl0bGU+CiAgICAgICAgPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9Ik9ueXggRlggVGVybXMgb2YgU2VydmljZSDigJQgWW91ciB1c2Ugb2YgdGhlIGFsZ29yaXRobWljIHRyYWRpbmcgZGFzaGJvYXJkLiIgLz4KICAgICAgICA8bWV0YSBwcm9wZXJ0eT0ib2c6dGl0bGUiIGNvbnRlbnQ9IlRlcm1zIG9mIFNlcnZpY2UgfCBPbnl4IEZYIiAvPgogICAgICAgIDxtZXRhIHByb3BlcnR5PSJvZzpkZXNjcmlwdGlvbiIgY29udGVudD0iWW91ciB1c2Ugb2YgdGhlIGFsZ29yaXRobWljIHRyYWRpbmcgZGFzaGJvYXJkLiIgLz4KICAgICAgPC9IZWxtZXQ+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBtaW4taC1zY3JlZW4gZmxleC1jb2wiPgogICAgICAgIDxoZWFkZXIgY2xhc3NOYW1lPSJib3JkZXItYiBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UgcHgtNCBweS00IG1kOnB4LTgiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctNHhsIj4KICAgICAgICAgICAgPGEgaHJlZj0iLyIgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiB0ZXh0LWluayIgb25DbGljaz17KGUpID0+IHsgZS5wcmV2ZW50RGVmYXVsdCgpOyB3aW5kb3cuaGlzdG9yeS5iYWNrKCk7IH19PgogICAgICAgICAgICAgIDxzdmcgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2VXaWR0aD0iMiI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTkgMTJINU0xMiAxOWwtNy03IDctNyIgLz4KICAgICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtc20gZm9udC1zZW1pYm9sZCB0cmFja2luZy13aWRlIj5Pbnl4IEZYPC9zcGFuPgogICAgICAgICAgICA8L2E+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2hlYWRlcj4KCiAgICAgICAgPG1haW4gY2xhc3NOYW1lPSJmbGV4LTEgcHgtNCBweS04IG1kOnB4LTgiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctM3hsIHNwYWNlLXktOCI+CiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT0idGV4dC0yeGwgbWQ6dGV4dC0zeGwgZm9udC1zZW1pYm9sZCB0ZXh0LWluayI+VGVybXMgb2YgU2VydmljZTwvaDE+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0yIHRleHQtc20gdGV4dC1pbmstZmFpbnQiPkxhc3QgdXBkYXRlZDogU2VwdGVtYmVyIDIwMjY8L3A+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJzcGFjZS15LTMiPgogICAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtbGcgZm9udC1tZWRpdW0gdGV4dC1pbmsiPjEuIEFjY2VwdGFuY2Ugb2YgVGVybXM8L2gyPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LWluay1kaW0gbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICAgIEJ5IGFjY2Vzc2luZyBhbmQgdXNpbmcgdGhlIE9ueXggRlggYWxnb3JpdGhtaWMgdHJhZGluZyBkYXNoYm9hcmQgKCJ0aGUgU29mdHdhcmUiKSwgeW91IGFncmVlIHRvIGJlIGJvdW5kCiAgICAgICAgICAgICAgICBieSB0aGVzZSBUZXJtcyBvZiBTZXJ2aWNlICgiVGVybXMiKS4gSWYgeW91IGRvIG5vdCBhZ3JlZSwgZG8gbm90IHVzZSB0aGUgU29mdHdhcmUuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+Mi4gTmF0dXJlIG9mIHRoZSBTb2Z0d2FyZTwvaDI+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibWwtNCBsaXN0LWRpc2Mgc3BhY2UteS0xIHRleHQtc20gdGV4dC1pbmstZGltIj4KICAgICAgICAgICAgICAgIDxsaT5Pbnl4IEZYIGlzIGEgPHN0cm9uZz5zZWxmLWhvc3RlZCwgb3Blbi1zb3VyY2U8L3N0cm9uZz4gdHJhZGluZyBkYXNoYm9hcmQgYW5kIGV4ZWN1dGlvbiBlbmdpbmUuPC9saT4KICAgICAgICAgICAgICAgIDxsaT5JdCBydW5zIGVudGlyZWx5IG9uIHlvdXIgaW5mcmFzdHJ1Y3R1cmUgKGxvY2FsIG1hY2hpbmUsIFZQUywgb3IgcHJpdmF0ZSBuZXR3b3JrKS48L2xpPgogICAgICAgICAgICAgICAgPGxpPlRoZXJlIGlzIG5vIFNhYVMgb2ZmZXJpbmcsIG5vIGNsb3VkIGJhY2tlbmQgb3BlcmF0ZWQgYnkgdXMsIGFuZCBubyBtYW5hZ2VkIHNlcnZpY2UuPC9saT4KICAgICAgICAgICAgICAgIDxsaT5Zb3UgYXJlIHNvbGVseSByZXNwb25zaWJsZSBmb3IgZGVwbG95bWVudCwgY29uZmlndXJhdGlvbiwgYW5kIG9wZXJhdGlvbi48L2xpPgogICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgIDwvc2VjdGlvbj4KCiAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtaW5rIj4zLiBObyBGaW5hbmNpYWwgQWR2aWNlPC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1pbmstZGltIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgICAgICAgICA8c3Ryb25nPlRoZSBTb2Z0d2FyZSBkb2VzIG5vdCBwcm92aWRlIGZpbmFuY2lhbCwgaW52ZXN0bWVudCwgb3IgdHJhZGluZyBhZHZpY2UuPC9zdHJvbmc+IEFsbCB0cmFkaW5nIGRlY2lzaW9ucywKICAgICAgICAgICAgICAgIHN0cmF0ZWdpZXMsIHBhcmFtZXRlcnMsIGFuZCByaXNrIHNldHRpbmdzIGFyZSBjb25maWd1cmVkIGJ5IHlvdS4gQUktZ2VuZXJhdGVkIHByb3Bvc2FscyBhcmUgYWxnb3JpdGhtaWMKICAgICAgICAgICAgICAgIG91dHB1dHMgYmFzZWQgb24gdGVjaG5pY2FsIGluZGljYXRvcnMgYW5kIG5ld3Mgc2VudGltZW50IOKAlCB0aGV5IGFyZSBub3QgcmVjb21tZW5kYXRpb25zLiBZb3UgYWxvbmUgYmVhcgogICAgICAgICAgICAgICAgcmVzcG9uc2liaWxpdHkgZm9yIGFsbCB0cmFkZXMgZXhlY3V0ZWQgdGhyb3VnaCB0aGUgU29mdHdhcmUuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+NC4gUmlzayBEaXNjbG9zdXJlPC9oMj4KICAgICAgICAgICAgICA8dWwgY2xhc3NOYW1lPSJtbC00IGxpc3QtZGlzYyBzcGFjZS15LTEgdGV4dC1zbSB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgPGxpPlRyYWRpbmcgZm9yZWlnbiBleGNoYW5nZSwgbWV0YWxzLCBhbmQgQ0ZEcyBvbiBtYXJnaW4gY2FycmllcyBhIGhpZ2ggbGV2ZWwgb2Ygcmlzay48L2xpPgogICAgICAgICAgICAgICAgPGxpPllvdSBtYXkgbG9zZSBhbGwgb3IgbW9yZSB0aGFuIHlvdXIgaW5pdGlhbCBkZXBvc2l0LjwvbGk+CiAgICAgICAgICAgICAgICA8bGk+UGFzdCBwZXJmb3JtYW5jZSAoYmFja3Rlc3RzLCBwYXBlciB0cmFkaW5nLCBvciBsaXZlIGhpc3RvcnkpIGRvZXMgbm90IGd1YXJhbnRlZSBmdXR1cmUgcmVzdWx0cy48L2xpPgogICAgICAgICAgICAgICAgPGxpPkF1dG9tYXRlZCBleGVjdXRpb24gY2FuIGFtcGxpZnkgbG9zc2VzIGR1cmluZyBhZHZlcnNlIG1hcmtldCBjb25kaXRpb25zLCBjb25uZWN0aXZpdHkgaXNzdWVzLCBvciBzb2Z0d2FyZSBlcnJvcnMuPC9saT4KICAgICAgICAgICAgICAgIDxsaT5UZXN0IHRob3JvdWdobHkgaW4gcGFwZXIvZGVtbyBtb2RlIGJlZm9yZSBlbmFibGluZyBsaXZlIHRyYWRpbmcuPC9saT4KICAgICAgICAgICAgICA8L3VsPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+NS4gTGljZW5zZTwvaDI+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgICAgVGhlIFNvZnR3YXJlIGlzIHByb3ZpZGVkIHVuZGVyIHRoZSBNSVQgTGljZW5zZS4gWW91IGFyZSBmcmVlIHRvIHVzZSwgbW9kaWZ5LCBhbmQgZGlzdHJpYnV0ZSBpdCBzdWJqZWN0CiAgICAgICAgICAgICAgICB0byB0aGUgbGljZW5zZSB0ZXJtcy4gU2VlIHRoZSA8Y29kZT5MSUNFTlNFPC9jb2RlPiBmaWxlIGluIHRoZSByZXBvc2l0b3J5IGZvciBmdWxsIGRldGFpbHMuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L3NlY3Rpb24+CgogICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwYWNlLXktMyI+CiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LWluayI+Ni4gTm8gV2FycmFudHk8L2gyPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LWluay1kaW0gbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICAgIFRIRSBTT0ZUV0FSRSBJUyBQUk9WSURFRCAiQVMgSVMiLCBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELCBFWFBSRVNTIE9SIElNUExJRUQsIElOQ0xVRElORyBCVVQgTk9UCiAgICAgICAgICAgICAgICBMSU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTIE9GIE1FUkNIQU5UQUJJTElUWSwgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UsIEFORCBOT05JTkZSSU5HRU1FTlQuCiAgICAgICAgICAgICAgICBJTiBOTyBFVkVOVCBTSEFMTCBUSEUgQVVUSE9SUyBPUiBDT1BZUklHSFQgSE9MREVSUyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUywgT1IgT1RIRVIgTElBQklMSVRZLAogICAgICAgICAgICAgICAgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0YgQ09OVFJBQ1QsIFRPUlQsIE9SIE9USEVSV0lTRSwgQVJJU0lORyBGUk9NLCBPVVQgT0YsIE9SIElOIENPTk5FQ1RJT04gV0lUSCBUSEUKICAgICAgICAgICAgICAgIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IgT1RIRVIgREVBTElOR1MgSU4gVEhFIFNPRlRXQVJFLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgPC9zZWN0aW9uPgoKICAgICAgICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJzcGFjZS15LTMiPgogICAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtbGcgZm9udC1tZWRpdW0gdGV4dC1pbmsiPjcuIFRoaXJkLVBhcnR5IERlcGVuZGVuY2llczwvaDI+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgICAgVGhlIFNvZnR3YXJlIGludGVncmF0ZXMgd2l0aCB0aGlyZC1wYXJ0eSBzZXJ2aWNlcyBzdWJqZWN0IHRvIHRoZWlyIG93biB0ZXJtczoKICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibXQtMiBtbC00IGxpc3QtZGlzYyBzcGFjZS15LTEgdGV4dC1zbSB0ZXh0LWluay1kaW0iPgogICAgICAgICAgICAgICAgPGxpPk1ldGFUcmFkZXIgNSAoTWV0YVF1b3Rlcykg4oCUIHRlcm1pbmFsIGFuZCBBUEk8L2xpPgogICAgICAgICAgICAgICAgPGxpPk9wZW5BSSBBUEkg4oCUIEFJIHRyYWRlIHByb3Bvc2FscyAob3B0aW9uYWwpPC9saT4KICAgICAgICAgICAgICAgIDxsaT5OZXdzQVBJLm9yZyAvIFlhaG9vIEZpbmFuY2UgUlNTIOKAlCBlY29ub21pYyBjYWxlbmRhciBkYXRhPC9saT4KICAgICAgICAgICAgICAgIDxsaT5QeXRob24gcGFja2FnZXMgKEZhc3RBUEksIHBhbmRhcywgTWV0YVRyYWRlcjUsIGV0Yy4pIOKAlCB0aGVpciByZXNwZWN0aXZlIGxpY2Vuc2VzIGFwcGx5PC9saT4KICAgICAgICAgICAgICA8L3VsPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMiB0ZXh0LXNtIHRleHQtaW5rLWRpbSI+CiAgICAgICAgICAgICAgICBZb3UgYXJlIHJlc3BvbnNpYmxlIGZvciBjb21wbHlpbmcgd2l0aCBhbGwgdGhpcmQtcGFydHkgdGVybXMgb2Ygc2VydmljZSBhbmQgbGljZW5zaW5nLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgPC9zZWN0aW9uPgoKICAgICAgICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJzcGFjZS15LTMiPgogICAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtbGcgZm9udC1tZWRpdW0gdGV4dC1pbmsiPjguIERhdGEgJiBQcml2YWN5PC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1pbmstZGltIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgICAgICAgICBTZWUgb3VyIDxhIGhyZWY9Ii9wcml2YWN5IiBjbGFzc05hbWU9InVuZGVybGluZSBob3Zlcjp0ZXh0LWFjY2VudCI+UHJpdmFjeSBQb2xpY3k8L2E+IGZvciBkZXRhaWxzIG9uIGRhdGEgaGFuZGxpbmcuCiAgICAgICAgICAgICAgICBJbiBzdW1tYXJ5OiBubyBkYXRhIGxlYXZlcyB5b3VyIGluZnJhc3RydWN0dXJlIGV4Y2VwdCBvcHRpb25hbCBBSSByZXF1ZXN0cyB0byBPcGVuQUkgYW5kIHB1YmxpYyBuZXdzIEFQSSBjYWxscy4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvc2VjdGlvbj4KCiAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtaW5rIj45LiBJbmRlbW5pZmljYXRpb248L2gyPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LWluay1kaW0gbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICAgIFlvdSBhZ3JlZSB0byBpbmRlbW5pZnkgYW5kIGhvbGQgaGFybWxlc3MgdGhlIGF1dGhvcnMgYW5kIGNvbnRyaWJ1dG9ycyBmcm9tIGFueSBjbGFpbXMsIGRhbWFnZXMsIGxvc3NlcywKICAgICAgICAgICAgICAgIG9yIGV4cGVuc2VzIChpbmNsdWRpbmcgbGVnYWwgZmVlcykgYXJpc2luZyBmcm9tIHlvdXIgdXNlIG9mIHRoZSBTb2Z0d2FyZSwgaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0bwogICAgICAgICAgICAgICAgdHJhZGluZyBsb3NzZXMsIHJlZ3VsYXRvcnkgdmlvbGF0aW9ucywgb3IgdGhpcmQtcGFydHkgY2xhaW1zLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgPC9zZWN0aW9uPgoKICAgICAgICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJzcGFjZS15LTMiPgogICAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtbGcgZm9udC1tZWRpdW0gdGV4dC1pbmsiPjEwLiBHb3Zlcm5pbmcgTGF3PC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1pbmstZGltIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgICAgICAgICBUaGVzZSBUZXJtcyBhcmUgZ292ZXJuZWQgYnkgdGhlIGxhd3Mgb2YgdGhlIGp1cmlzZGljdGlvbiB3aGVyZSB0aGUgU29mdHdhcmUgaXMgZGVwbG95ZWQsIHdpdGhvdXQgcmVnYXJkCiAgICAgICAgICAgICAgICB0byBjb25mbGljdCBvZiBsYXcgcHJpbmNpcGxlcy4gRGlzcHV0ZXMgc2hhbGwgYmUgcmVzb2x2ZWQgaW4gdGhlIGNvdXJ0cyBvZiB0aGF0IGp1cmlzZGljdGlvbi4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvc2VjdGlvbj4KCiAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtaW5rIj4xMS4gQ2hhbmdlczwvaDI+CiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtaW5rLWRpbSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgICAgV2UgbWF5IHVwZGF0ZSB0aGVzZSBUZXJtcyBhdCBhbnkgdGltZS4gQ29udGludWVkIHVzZSBhZnRlciBjaGFuZ2VzIGNvbnN0aXR1dGVzIGFjY2VwdGFuY2UuIENoZWNrIHRoaXMgcGFnZSBwZXJpb2RpY2FsbHkuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L3NlY3Rpb24+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L21haW4+CgogICAgICAgIDxmb290ZXIgY2xhc3NOYW1lPSJib3JkZXItdCBib3JkZXItYm9yZGVyIHB4LTQgcHktNiBtZDpweC04Ij4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJteC1hdXRvIG1heC13LTN4bCB0ZXh0LWNlbnRlciB0ZXh0LXhzIHRleHQtaW5rLWZhaW50Ij4KICAgICAgICAgICAgwqkgMjAyNiBPbnl4IEZYIMK3IEFsZ29yaXRobWljIFRyYWRpbmcgRW5naW5lCiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Zvb3Rlcj4KICAgICAgPC9kaXY+CiAgICA8Lz4KICApOwp9
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+
+export default function TermsOfService() {
+  useEffect(() => {
+    document.title = "Terms of Service | Onyx FX";
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>Terms of Service | Onyx FX</title>
+        <meta name="description" content="Onyx FX Terms of Service — Your use of the algorithmic trading dashboard." />
+        <meta property="og:title" content="Terms of Service | Onyx FX" />
+        <meta property="og:description" content="Your use of the algorithmic trading dashboard." />
+      </Helmet>
+
+      <div className="flex min-h-screen flex-col">
+        <header className="border-b border-border bg-surface px-4 py-4 md:px-8">
+          <div className="mx-auto max-w-4xl">
+            <a href="/" className="flex items-center gap-2 text-ink" onClick={(e) => { e.preventDefault(); window.history.back(); }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              <span className="text-sm font-semibold tracking-wide">Onyx FX</span>
+            </a>
+          </div>
+        </header>
+
+        <main className="flex-1 px-4 py-8 md:px-8">
+          <div className="mx-auto max-w-3xl space-y-8">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-semibold text-ink">Terms of Service</h1>
+              <p className="mt-2 text-sm text-ink-faint">Last updated: September 2026</p>
+            </div>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">1. Acceptance of Terms</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                By accessing and using the Onyx FX algorithmic trading dashboard ("the Software"), you agree to be bound
+                by these Terms of Service ("Terms"). If you do not agree, do not use the Software.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">2. Nature of the Software</h2>
+              <ul className="ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>Onyx FX is a <strong>self-hosted, open-source</strong> trading dashboard and execution engine.</li>
+                <li>It runs entirely on your infrastructure (local machine, VPS, or private network).</li>
+                <li>There is no SaaS offering, no cloud backend operated by us, and no managed service.</li>
+                <li>You are solely responsible for deployment, configuration, and operation.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">3. No Financial Advice</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                <strong>The Software does not provide financial, investment, or trading advice.</strong> All trading decisions,
+                strategies, parameters, and risk settings are configured by you. AI-generated proposals are algorithmic
+                outputs based on technical indicators and news sentiment — they are not recommendations. You alone bear
+                responsibility for all trades executed through the Software.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">4. Risk Disclosure</h2>
+              <ul className="ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>Trading foreign exchange, metals, and CFDs on margin carries a high level of risk.</li>
+                <li>You may lose all or more than your initial deposit.</li>
+                <li>Past performance (backtests, paper trading, or live history) does not guarantee future results.</li>
+                <li>Automated execution can amplify losses during adverse market conditions, connectivity issues, or software errors.</li>
+                <li>Test thoroughly in paper/demo mode before enabling live trading.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">5. License</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                The Software is provided under the MIT License. You are free to use, modify, and distribute it subject
+                to the license terms. See the <code>LICENSE</code> file in the repository for full details.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">6. No Warranty</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+                LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+                IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY,
+                WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+                SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">7. Third-Party Dependencies</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                The Software integrates with third-party services subject to their own terms:
+              </p>
+              <ul className="mt-2 ml-4 list-disc space-y-1 text-sm text-ink-dim">
+                <li>MetaTrader 5 (MetaQuotes) — terminal and API</li>
+                <li>OpenAI API — AI trade proposals (optional)</li>
+                <li>NewsAPI.org / Yahoo Finance RSS — economic calendar data</li>
+                <li>Python packages (FastAPI, pandas, MetaTrader5, etc.) — their respective licenses apply</li>
+              </ul>
+              <p className="mt-2 text-sm text-ink-dim">
+                You are responsible for complying with all third-party terms of service and licensing.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">8. Data & Privacy</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                See our <a href="/privacy" className="underline hover:text-accent">Privacy Policy</a> for details on data handling.
+                In summary: no data leaves your infrastructure except optional AI requests to OpenAI and public news API calls.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">9. Indemnification</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                You agree to indemnify and hold harmless the authors and contributors from any claims, damages, losses,
+                or expenses (including legal fees) arising from your use of the Software, including but not limited to
+                trading losses, regulatory violations, or third-party claims.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">10. Governing Law</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                These Terms are governed by the laws of the jurisdiction where the Software is deployed, without regard
+                to conflict of law principles. Disputes shall be resolved in the courts of that jurisdiction.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-lg font-medium text-ink">11. Changes</h2>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                We may update these Terms at any time. Continued use after changes constitutes acceptance. Check this page periodically.
+              </p>
+            </section>
+          </div>
+        </main>
+
+        <footer className="border-t border-border px-4 py-6 md:px-8">
+          <div className="mx-auto max-w-3xl text-center text-xs text-ink-faint">
+            © 2026 Onyx FX · Algorithmic Trading Engine
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}

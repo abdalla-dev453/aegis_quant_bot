@@ -1,1 +1,8 @@
-aW1wb3J0IHR5cGUgeyBOZXh0Q29uZmlnIH0gZnJvbSAibmV4dCI7Cgpjb25zdCBuZXh0Q29uZmlnOiBOZXh0Q29uZmlnID0gewogIHJlYWN0U3RyaWN0TW9kZTogdHJ1ZSwKICB0cmFuc3BpbGVQYWNrYWdlczogWyJAYWVnaXMtcXVhbnQvY29udHJhY3RzIiwgIkBhZWdpcy1xdWFudC91aSJdLAp9OwoKZXhwb3J0IGRlZmF1bHQgbmV4dENvbmZpZzsK
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ["@aegis-quant/contracts", "@aegis-quant/ui"],
+};
+
+export default nextConfig;

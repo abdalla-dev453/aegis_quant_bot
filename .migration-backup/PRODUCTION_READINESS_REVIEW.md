@@ -1,1 +1,300 @@
-IyBBSSBCb3QgUHJvZHVjdGlvbiBSZWFkaW5lc3MgUmV2aWV3CgojIyBFeGVjdXRpdmUgU3VtbWFyeQoKVGhlIE9ueXggRlggYWxnb3JpdGhtaWMgdHJhZGluZyBzeXN0ZW0gaGFzIGEgc29saWQgYXJjaGl0ZWN0dXJhbCBmb3VuZGF0aW9uIGJ1dCByZXF1aXJlcyBzZXZlcmFsIGNyaXRpY2FsIGltcHJvdmVtZW50cyBiZWZvcmUgcHJvZHVjdGlvbiBkZXBsb3ltZW50LiBUaGlzIHJldmlldyBpZGVudGlmaWVzIGJvdHRsZW5lY2tzLCByZWxpYWJpbGl0eSBjb25jZXJucywgYW5kIG9wdGltaXphdGlvbiBvcHBvcnR1bml0aWVzLgoKLS0tCgojIyBDcml0aWNhbCBJc3N1ZXMgKE11c3QgRml4IEJlZm9yZSBQcm9kdWN0aW9uKQoKIyMjIDEuICoqQUkgRW5naW5lIC0gU2luZ2xlIFBvaW50IG9mIEZhaWx1cmUqKgoqKkZpbGU6KiogYHNlcnZlci9haV9lbmdpbmUucHk6ODItMTM2YAoKKipQcm9ibGVtOioqIFRoZSBgcHJvcG9zZV90cmFkZSgpYCBmdW5jdGlvbiBjcmVhdGVzIGEgbmV3IGBBc3luY09wZW5BSWAgY2xpZW50IG9uIGV2ZXJ5IGNhbGwuIFRoaXMgY3JlYXRlcyBjb25uZWN0aW9uIG92ZXJoZWFkIGFuZCBubyBjb25uZWN0aW9uIHBvb2xpbmcuCgoqKkltcGFjdDoqKiB+MjAwLTUwMG1zIGxhdGVuY3kgcGVyIEFJIGNhbGwgZHVlIHRvIG5ldyBUTFMgaGFuZHNoYWtlLgoKKipGaXg6KioKYGBgcHl0aG9uCiMgTW9kdWxlLWxldmVsIHNpbmdsZXRvbgpfY2xpZW50ID0gTm9uZQoKYXN5bmMgZGVmIGdldF9jbGllbnQoKToKICAgIGdsb2JhbCBfY2xpZW50CiAgICBpZiBfY2xpZW50IGlzIE5vbmU6CiAgICAgICAgX2NsaWVudCA9IEFzeW5jT3BlbkFJKAogICAgICAgICAgICBhcGlfa2V5PUFJLmFwaV9rZXksCiAgICAgICAgICAgIHRpbWVvdXQ9QUkudGltZW91dF9zZWNvbmRzLAogICAgICAgICAgICBtYXhfcmV0cmllcz0yLAogICAgICAgICkKICAgIHJldHVybiBfY2xpZW50Cgphc3luYyBkZWYgcHJvcG9zZV90cmFkZSguLi4pOgogICAgY2xpZW50ID0gYXdhaXQgZ2V0X2NsaWVudCgpCiAgICAuLi4KYGBgCgojIyMgMi4gKipObyBDaXJjdWl0IEJyZWFrZXIgZm9yIE9wZW5BSSBBUEkqKgoqKkZpbGU6KiogYHNlcnZlci9haV9lbmdpbmUucHk6MTI4LTEzNmAKCioqUHJvYmxlbToqKiBGYWlsdXJlcyBmYWxsIGJhY2sgdG8gSE9MRCBidXQgdGhlcmUncyBubyBjaXJjdWl0IGJyZWFrZXIgdG8gc3RvcCBoYW1tZXJpbmcgYSBmYWlsaW5nIEFQSS4KCioqSW1wYWN0OioqIER1cmluZyBPcGVuQUkgb3V0YWdlcywgdGhlIGJvdCB3aWxsIHNwYW0gZmFpbGVkIHJlcXVlc3RzIGV2ZXJ5IDE1IHNlY29uZHMuCgoqKkZpeDoqKiBBZGQgY2lyY3VpdCBicmVha2VyIHBhdHRlcm46CmBgYHB5dGhvbgpmcm9tIGNpcmN1aXRicmVha2VyIGltcG9ydCBjaXJjdWl0CgpAY2lyY3VpdChmYWlsdXJlX3RocmVzaG9sZD01LCByZWNvdmVyeV90aW1lb3V0PTYwKQphc3luYyBkZWYgX2NhbGxfb3BlbmFpKC4uLik6CiAgICAuLi4KYGBgCgojIyMgMy4gKipNVDUgQ29ubmVjdGlvbiAtIEhlYWx0aCBFbmRwb2ludCBSZWFkaW5lc3MqKgoqKkZpbGU6KiogYHNlcnZlci9hcGkucHk6MTU3LTIwNWAKCioqUHJvYmxlbToqKiBgL2FwaS9oZWFsdGhgIG9ubHkgcmV0dXJuZWQgY29ubmVjdGlvbiBzdGF0ZSBhbmQgYWx3YXlzIHVzZWQgSFRUUCAyMDAsIHNvIGEgbG9hZCBiYWxhbmNlciBjb3VsZCByb3V0ZSB0cmFmZmljIHRvIGEgZGlzY29ubmVjdGVkIG9yIHN0YWxlIE1UNSBzZXJ2aWNlLgoKKipSZXNvbHZlZDoqKiBUaGUgZW5kcG9pbnQgbm93IGNoZWNrcyB0ZXJtaW5hbCBjb25uZWN0aXZpdHksIGNsb3NlZC1jYW5kbGUgZnJlc2huZXNzLCBhbmQgcmV0dXJucyBIVFRQIDUwMyB3aGVuIHJlYWRpbmVzcyBmYWlscy4gQSBzZXBhcmF0ZSB1bmF1dGhlbnRpY2F0ZWQgYC9oZWFsdGh6YCBlbmRwb2ludCBwcm92aWRlcyBwcm9jZXNzIGxpdmVuZXNzIGZvciBzeXN0ZW1kIGFuZCBsb2FkIGJhbGFuY2Vycy4KCiMjIyA0LiAqKkRhdGEgUHJvdmlkZXIgLSBCbG9ja2luZyBDYWxscyBpbiBBc3luYyBDb250ZXh0KioKKipGaWxlOioqIGBzZXJ2ZXIvZGF0YV9wcm92aWRlci5weTozMjQtMzkwYAoKKipQcm9ibGVtOioqIGBnZXRfcmF0ZXMoKWAgaXMgZGVjb3JhdGVkIHdpdGggYEBtdDVfc2VyaWFsaXplZGAgKHRocmVhZCBsb2NrKSBidXQgY2FsbGVkIHZpYSBgYXN5bmNpby50b190aHJlYWQoKWAuIFRoaXMgaXMgY29ycmVjdCwgYnV0IHRoZSBsb2NrIGlzIGhlbGQgZm9yIHRoZSBlbnRpcmUgSVBDIGNhbGwgKyBEYXRhRnJhbWUgY29uc3RydWN0aW9uLgoKKipJbXBhY3Q6KiogU2VyaWFsaXplcyBhbGwgZGF0YSBmZXRjaGluZyBhY3Jvc3Mgc3ltYm9scy4gV2l0aCAzIHN5bWJvbHMgw5cgMiB0aW1lZnJhbWVzID0gNiBzZXF1ZW50aWFsIE1UNSBjYWxscyBwZXIgY3ljbGUuCgoqKkZpeDoqKiBVc2UgY29ubmVjdGlvbiBwb29saW5nIG9yIGJhdGNoIHJlcXVlc3RzIHdoZXJlIHBvc3NpYmxlLiBDb25zaWRlcjoKYGBgcHl0aG9uCiMgRmV0Y2ggYWxsIHN5bWJvbHMgaW4gb25lIHRocmVhZCBjYWxsCmFzeW5jIGRlZiBnZXRfbXVsdGlfcmF0ZXMoc3ltYm9scywgdGltZWZyYW1lLCBuX2JhcnMpOgogICAgcmV0dXJuIGF3YWl0IGFzeW5jaW8udG9fdGhyZWFkKF9mZXRjaF9tdWx0aV9yYXRlcywgc3ltYm9scywgdGltZWZyYW1lLCBuX2JhcnMpCmBgYAoKIyMjIDUuICoqTm8gR3JhY2VmdWwgRGVncmFkYXRpb24gZm9yIE5ld3MgRmVlZCoqCioqRmlsZToqKiBgc2VydmVyL3N0cmF0ZWd5LnB5OjIxMS0yMjlgCgoqKlByb2JsZW06KiogYGFuYWx5emVfbWFya2V0X3NlbnRpbWVudCgpYCBjYWxscyBgZ2V0X2xhdGVzdF9oaWdoX2ltcGFjdF9uZXdzKClgIHdoaWNoIGNhbiBibG9jayBmb3IgMTArIHNlY29uZHMgb24gbmV0d29yayB0aW1lb3V0cy4KCioqSW1wYWN0OioqIEJsb2NrcyB0aGUgZW50aXJlIHRyYWRpbmcgbG9vcCBjeWNsZS4KCioqRml4OioqIE1ha2UgbmV3cyBmZXRjaGluZyBmdWxseSBhc3luYyB3aXRoIHRpbWVvdXQ6CmBgYHB5dGhvbgphc3luYyBkZWYgYW5hbHl6ZV9tYXJrZXRfc2VudGltZW50KHN5bWJvbDogc3RyKSAtPiBTZW50aW1lbnRSZWFkaW5nOgogICAgdHJ5OgogICAgICAgIHJlc3VsdCA9IGF3YWl0IGFzeW5jaW8ud2FpdF9mb3IoCiAgICAgICAgICAgIGFzeW5jaW8udG9fdGhyZWFkKGdldF9sYXRlc3RfaGlnaF9pbXBhY3RfbmV3cywgMTAsIDI0KSwKICAgICAgICAgICAgdGltZW91dD01LjAKICAgICAgICApCiAgICAgICAgLi4uCiAgICBleGNlcHQgYXN5bmNpby5UaW1lb3V0RXJyb3I6CiAgICAgICAgcmV0dXJuIF9uZXV0cmFsX3JlYWRpbmcoKQpgYGAKCi0tLQoKIyMgSGlnaC1Qcmlvcml0eSBPcHRpbWl6YXRpb25zCgojIyMgNi4gKipQYW5kYXMtVEEgUGVyZm9ybWFuY2UqKgoqKkZpbGU6KiogYHNlcnZlci9zdHJhdGVneS5weTo2Ny03MGAKCioqUHJvYmxlbToqKiBgcGFuZGFzX3RhYCBpcyBjb252ZW5pZW50IGJ1dCBzbG93LiBFYWNoIGluZGljYXRvciBjYWxsIGNyZWF0ZXMgaW50ZXJtZWRpYXRlIFNlcmllcy4KCioqT3B0aW1pemF0aW9uOioqIFByZS1jb21wdXRlIHdpdGggdmVjdG9yaXplZCBvcGVyYXRpb25zIG9yIHVzZSBgdGEtbGliYCAoQyBiaW5kaW5ncyk6CmBgYHB5dGhvbgojIEN1cnJlbnQ6IH4xNW1zIHBlciBzeW1ib2wgcGVyIHRpbWVmcmFtZQojIFdpdGggdGEtbGliOiB+Mm1zIHBlciBzeW1ib2wgcGVyIHRpbWVmcmFtZQppbXBvcnQgdGFsaWIKb3V0WyJlbWFfNTAiXSA9IHRhbGliLkVNQShvdXRbImNsb3NlIl0udmFsdWVzLCB0aW1lcGVyaW9kPTUwKQpgYGAKCiMjIyA3LiAqKlN5bWJvbCBJbmZvIENhY2hlIEludmFsaWRhdGlvbioqCioqRmlsZToqKiBgc2VydmVyL2V4ZWN1dGlvbi5weTo5Mi0xNDJgCgoqKlByb2JsZW06KiogYF9zeW1ib2xfY2FjaGVgIGhhcyBubyBUVEwgYW5kIG9ubHkgaW52YWxpZGF0ZXMgb24gZXhwbGljaXQgY2FsbC4gQnJva2VyIGNoYW5nZXMgKG1hcmdpbiwgY29udHJhY3Qgc3BlY3MpIHdvbid0IGJlIHJlZmxlY3RlZC4KCioqRml4OioqIEFkZCBUVEwtYmFzZWQgaW52YWxpZGF0aW9uOgpgYGBweXRob24KX3N5bWJvbF9jYWNoZTogRGljdFtzdHIsIHR1cGxlW19TeW1ib2xEYXRhLCBmbG9hdF1dID0ge30gICMgKGRhdGEsIHRpbWVzdGFtcCkKX0NBQ0hFX1RUTCA9IDMwMCAgIyA1IG1pbnV0ZXMKCmRlZiBfZ2V0X3N5bWJvbChzeW1ib2w6IHN0cikgLT4gX1N5bWJvbERhdGE6CiAgICBub3cgPSB0aW1lLnRpbWUoKQogICAgd2l0aCBfY2FjaGVfbG9jazoKICAgICAgICBpZiBzeW1ib2wgaW4gX3N5bWJvbF9jYWNoZToKICAgICAgICAgICAgZGF0YSwgdHMgPSBfc3ltYm9sX2NhY2hlW3N5bWJvbF0KICAgICAgICAgICAgaWYgbm93IC0gdHMgPCBfQ0FDSEVfVFRMOgogICAgICAgICAgICAgICAgcmV0dXJuIGRhdGEKICAgICMgLi4uIGZldGNoIGFuZCBjYWNoZSB3aXRoIHRpbWVzdGFtcApgYGAKCiMjIyA4LiAqKkVycm9yIExvZ2dpbmcgLSBTZW5zaXRpdmUgRGF0YSBFeHBvc3VyZSoqCioqRmlsZToqKiBgc2VydmVyL2FpX2VuZ2luZS5weToxMzAtMTMyYAoKKipQcm9ibGVtOioqIFJhdyBBSSByZXNwb25zZSBsb2dnZWQgdG8gZXJyb3IgbG9nIG9uIHZhbGlkYXRpb24gZmFpbHVyZS4gQ291bGQgY29udGFpbiBtYXJrZXQgZGF0YSBvciBwcm9tcHRzLgoKKipGaXg6KiogU2FuaXRpemUgYmVmb3JlIGxvZ2dpbmc6CmBgYHB5dGhvbgpfZXJyb3JfbG9nZ2VyLmVycm9yKAogICAgIkludmFsaWQgQUkgcmVzcG9uc2UgZm9yICVzOiAlcyB8IHJhd19sZW49JWQiLAogICAgc3ltYm9sLCBleGMsIGxlbihyYXdfcmVzcG9uc2UpCikKYGBgCgojIyMgOS4gKipQb3NpdGlvbiBTdGF0ZSBQZXJzaXN0ZW5jZSAtIFJhY2UgQ29uZGl0aW9uKioKKipGaWxlOioqIGBzZXJ2ZXIvZXhlY3V0aW9uLnB5OjE1Ny0xNzlgCgoqKlByb2JsZW06KiogYF9zYXZlX3Bvc2l0aW9uX3N0YXRlKClgIHdyaXRlcyB0byB0ZW1wIGZpbGUgdGhlbiByZW5hbWVzLiBPbiBXaW5kb3dzLCByZW5hbWUgY2FuIGZhaWwgaWYgZmlsZSBpcyBvcGVuIGVsc2V3aGVyZS4KCioqRml4OioqIFVzZSBwcm9wZXIgZmlsZSBsb2NraW5nIG9yIFNRTGl0ZToKYGBgcHl0aG9uCmltcG9ydCBzcWxpdGUzCiMgVXNlIFNRTGl0ZSB3aXRoIFdBTCBtb2RlIGZvciBjb25jdXJyZW50IGFjY2VzcwpgYGAKCi0tLQoKIyMgTWVkaXVtLVByaW9yaXR5IEltcHJvdmVtZW50cwoKIyMjIDEwLiAqKlRyYWRpbmcgTG9vcCAtIE5vIERlYWQgTWFuJ3MgU3dpdGNoKioKKipGaWxlOioqIGBzZXJ2ZXIvbWFpbi5weToyMjAtMjY0YAoKKipQcm9ibGVtOioqIElmIHRoZSBldmVudCBsb29wIGJsb2NrcyAoR0MgcGF1c2UsIENQVSBzdGFydmF0aW9uKSwgdGhlIGJvdCBzdG9wcyBwcm9jZXNzaW5nIGNhbmRsZXMgYnV0IHBvc2l0aW9ucyByZW1haW4gb3Blbi4KCioqRml4OioqIEFkZCB3YXRjaGRvZyB0aHJlYWQ6CmBgYHB5dGhvbgppbXBvcnQgdGhyZWFkaW5nCl9sYXN0X2hlYXJ0YmVhdCA9IHRpbWUudGltZSgpCgpkZWYgaGVhcnRiZWF0KCk6CiAgICBnbG9iYWwgX2xhc3RfaGVhcnRiZWF0CiAgICBfbGFzdF9oZWFydGJlYXQgPSB0aW1lLnRpbWUoKQoKIyBXYXRjaGRvZyB0aHJlYWQKZGVmIHdhdGNoZG9nKCk6CiAgICB3aGlsZSBUcnVlOgogICAgICAgIHRpbWUuc2xlZXAoMTApCiAgICAgICAgaWYgdGltZS50aW1lKCkgLSBfbGFzdF9oZWFydGJlYXQgPiAzMDoKICAgICAgICAgICAgbG9nZ2VyLmNyaXRpY2FsKCJNYWluIGxvb3Agc3RhbGxlZCEgSW5pdGlhdGluZyBlbWVyZ2VuY3kgaGFsdC4iKQogICAgICAgICAgICAjIFRyaWdnZXIgZW1lcmdlbmN5IGhhbHQKYGBgCgojIyMgMTEuICoqUmF0ZSBMaW1pdGluZyBvbiBBUEkgLSBObyBQZXItVXNlciBRdW90YXMqKgoqKkZpbGU6KiogYHNlcnZlci9hcGkucHk6NDktNjJgCgoqKlByb2JsZW06KiogUmF0ZSBsaW1pdGluZyBpcyBwZXItSVAgb25seS4gTm8gcGVyLXVzZXIgb3IgcGVyLWVuZHBvaW50IHF1b3Rhcy4KCioqRml4OioqIEFkZCB0b2tlbi1idWNrZXQgcGVyIEFQSSBrZXk6CmBgYHB5dGhvbgpfcmF0ZV9idWNrZXRzOiBkaWN0W3N0ciwgVG9rZW5CdWNrZXRdID0ge30KCmRlZiByYXRlX2xpbWl0KHJlcXVlc3Q6IFJlcXVlc3QsIGJ1Y2tldDogc3RyLCBsaW1pdDogaW50LCB3aW5kb3c6IGludCA9IDYwKToKICAgIGFwaV9rZXkgPSByZXF1ZXN0LmhlYWRlcnMuZ2V0KCJYLUFQSS1LZXkiLCAiYW5vbnltb3VzIikKICAgIGJ1Y2tldF9rZXkgPSBmInthcGlfa2V5fTp7YnVja2V0fSIKICAgIC4uLgpgYGAKCiMjIyAxMi4gKipDb25maWd1cmF0aW9uIC0gTm8gSG90IFJlbG9hZCoqCioqRmlsZToqKiBgc2VydmVyL2NvbmZpZy5weWAKCioqUHJvYmxlbToqKiBDb25maWcgY2hhbmdlcyByZXF1aXJlIHJlc3RhcnQuIFJpc2sgcGFyYW1ldGVycyBzaG91bGQgYmUgYWRqdXN0YWJsZSBhdCBydW50aW1lLgoKKipGaXg6KiogQWRkIGAvYXBpL3NldHRpbmdzL3Jpc2tgIFBPU1QgZW5kcG9pbnQgd2l0aCB2YWxpZGF0aW9uLgoKLS0tCgojIyBMb3ctUHJpb3JpdHkgLyBOaWNlIHRvIEhhdmUKCiMjIyAxMy4gKipNZXRyaWNzIC8gT2JzZXJ2YWJpbGl0eSoqCi0gUHJvbWV0aGV1cyBgL21ldHJpY3NgIGVuZHBvaW50IGFuZCByZXF1ZXN0L2xhdGVuY3kgZ2F1Z2VzIGFyZSBwcmVzZW50LgotIFRyYWNrOiBvcmRlcnMgcGxhY2VkLCBsYXRlbmN5IHBlcmNlbnRpbGVzLCBBSSBBUEkgbGF0ZW5jeSwgTVQ1IElQQyBsYXRlbmN5Ci0gQWRkIHN0cnVjdHVyZWQgbG9nZ2luZyAoSlNPTikgZm9yIGxvZyBhZ2dyZWdhdGlvbgoKIyMjIDE0LiAqKlRlc3QgQ292ZXJhZ2UqKgotIFVuaXQgdGVzdHMgZm9yIGBjb21wdXRlX2luZGljYXRvcnNgLCBgZ2VuZXJhdGVfc2lnbmFsYCwgYGNhbGN1bGF0ZV9sb3Rfc2l6ZWAKLSBJbnRlZ3JhdGlvbiB0ZXN0cyB3aXRoIG1vY2sgTVQ1Ci0gQ2hhb3MgdGVzdGluZzogbmV0d29yayBwYXJ0aXRpb24sIE1UNSByZXN0YXJ0LCBBUEkgdGltZW91dAoKIyMjIDE1LiAqKkRlcGxveW1lbnQgSGFyZGVuaW5nKioKLSBzeXN0ZW1kIHNlcnZpY2Ugd2l0aCBgUmVzdGFydD1vbi1mYWlsdXJlYCwgYFdhdGNoZG9nU2VjPTEyMGAsIG5vbi1yb290IHVzZXIsIGFuZCByZXN0cmljdGVkIGZpbGVzeXN0ZW0gcGF0aHMKLSBTRUxpbnV4L0FwcEFybW9yIHByb2ZpbGUKLSBTZXBhcmF0ZSBkYXRhIGRpcmVjdG9yeSB3aXRoIHJlc3RyaWN0ZWQgcGVybWlzc2lvbnMKCi0tLQoKIyMgSGlnaC1TcGVlZCBFeGVjdXRpb24gT3B0aW1pemF0aW9uIFBsYW4KCkZvciBzdWItc2Vjb25kIG9yZGVyIGV4ZWN1dGlvbiAoY3JpdGljYWwgZm9yIHNjYWxwaW5nL0hGVC1zdHlsZSBzdHJhdGVnaWVzKToKCnwgQ29tcG9uZW50IHwgQ3VycmVudCB8IFRhcmdldCB8IEFjdGlvbiB8CnwtLS0tLS0tLS0tLXwtLS0tLS0tLS18LS0tLS0tLS18LS0tLS0tLS18CnwgTVQ1IElQQyBsYXRlbmN5IHwgfjUtMTVtcyB8IDw1bXMgfCBLZWVwIHRlcm1pbmFsIGxvY2FsLCBkaXNhYmxlIFdpbmRvd3MgRGVmZW5kZXIgb24gTVQ1IGRpciB8CnwgRGF0YSBmZXRjaCAoSDErSDQpIHwgfjUwLTEwMG1zIHwgPDIwbXMgfCBCYXRjaCBzeW1ib2xzLCB1c2UgYGNvcHlfcmF0ZXNfZnJvbV9wb3NgIG9uY2UgcGVyIHN5bWJvbCB8CnwgSW5kaWNhdG9yIGNhbGMgfCB+MTVtcyB8IDwzbXMgfCBTd2l0Y2ggdG8gYHRhbGliYCAoQyBiaW5kaW5ncykgfAp8IEFJIHByb3Bvc2FsIHwgfjItNXMgfCA8NTAwbXMgfCBDYWNoZSBjbGllbnQsIHJlZHVjZSBjb250ZXh0LCB1c2UgR1BULTRvLW1pbmkgZm9yIHNwZWVkIHwKfCBPcmRlciB2YWxpZGF0aW9uIHwgfjEwLTIwbXMgfCA8NW1zIHwgQ2FjaGUgc3ltYm9sIGluZm8sIHByZS12YWxpZGF0ZSB8CnwgT3JkZXIgc2VuZCB8IH41MC0yMDBtcyB8IDwxMDBtcyB8IFVzZSBgT1JERVJfRklMTElOR19GT0tgLCByZWR1Y2UgZGV2aWF0aW9uIHwKCiMjIyBSZWNvbW1lbmRlZCBBcmNoaXRlY3R1cmUgZm9yIEhpZ2gtU3BlZWQ6CmBgYArilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAK4pSCICAgICAgICAgICAgICAgICAgICBUcmFkaW5nIExvb3AgKGFzeW5jKSAgICAgICAgICAgICAgICAgICAgIOKUggrilJzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKQK4pSCICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICDilIIK4pSCICDilIIgRGF0YSBGZXRjaCAg4pSCICDilIIgIFNpZ25hbHMgICAg4pSCICDilIIgIEV4ZWN1dGlvbiAgICAgICAgICDilIIgIOKUggrilIIgIOKUgiAocGFyYWxsZWwpICDilILilIDilrbilIIgKHZlY3Rvcml6ZWQp4pSC4pSA4pa24pSCICAoc2VyaWFsaXplZCwgICAgICAg4pSCICDilIIK4pSCICDilIIgcGVyIHN5bWJvbCAg4pSCICDilIIgIHBlciBzeW1ib2wg4pSCICDilIIgICBwcmlvcml0aXplZCkgICAgICDilIIgIOKUggrilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJggIOKUggrilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKYGBgCgojIyMgS2V5IENvZGUgQ2hhbmdlcyBmb3IgU3BlZWQ6CgoxLiAqKlBhcmFsbGVsaXplIGRhdGEgZmV0Y2hpbmcgYWNyb3NzIHN5bWJvbHM6KioKYGBgcHl0aG9uCiMgSW4gdHJhZGluZ19sb29wOgp0YXNrcyA9IFtldmFsdWF0ZV9zeW1ib2woc3ltLCB0cmFja2VyKSBmb3Igc3ltIGluIHN5bWJvbHNdCnJlc3VsdHMgPSBhd2FpdCBhc3luY2lvLmdhdGhlcigqdGFza3MsIHJldHVybl9leGNlcHRpb25zPVRydWUpCmBgYAoKMi4gKipVc2UgYHRhbGliYCBpbnN0ZWFkIG9mIGBwYW5kYXNfdGFgOioqCmBgYHB5dGhvbgojIHN0cmF0ZWd5LnB5CmltcG9ydCB0YWxpYgpvdXRbImVtYV81MCJdID0gdGFsaWIuRU1BKG91dFsiY2xvc2UiXS52YWx1ZXMsIDUwKQpvdXRbImVtYV8yMDAiXSA9IHRhbGliLkVNQShvdXRbImNsb3NlIl0udmFsdWVzLCAyMDApCm91dFsicnNpIl0gPSB0YWxpYi5SU0kob3V0WyJjbG9zZSJdLnZhbHVlcywgMTQpCm91dFsiYXRyIl0gPSB0YWxpYi5BVFIob3V0WyJoaWdoIl0udmFsdWVzLCBvdXRbImxvdyJdLnZhbHVlcywgb3V0WyJjbG9zZSJdLnZhbHVlcywgMTQpCmBgYAoKMy4gKipDYWNoZSBBSSBjbGllbnQgYW5kIHJlZHVjZSBwcm9tcHQgc2l6ZToqKgpgYGBweXRob24KIyBhaV9lbmdpbmUucHkgLSBzdHJpcCBub24tZXNzZW50aWFsIGNvbnRleHQgZm9yIHNwZWVkCmBgYAoKNC4gKipQcmUtd2FybSBNVDUgY29ubmVjdGlvbiBhbmQgc3ltYm9sIHNlbGVjdGlvbiBhdCBzdGFydHVwOioqCmBgYHB5dGhvbgojIG1haW4ucHkgLSBtb3ZlIHJlc29sdmVfYW5kX3ZhbGlkYXRlX3N5bWJvbHMgYmVmb3JlIGxvb3AKYGBgCgotLS0KCiMjIERlcGxveW1lbnQgQ2hlY2tsaXN0CgotIFsgXSBGaXggYWxsIENyaXRpY2FsIElzc3VlcyAoIzEtNSkKLSBbIF0gSW1wbGVtZW50IEhpZ2gtUHJpb3JpdHkgT3B0aW1pemF0aW9ucyAoIzYtOSkKLSBbeF0gQWRkIGhlYWx0aCBlbmRwb2ludCB3aXRoIE1UNSB0ZXJtaW5hbCBhbmQgY2FuZGxlLWZyZXNobmVzcyBjaGVja3MKLSBbeF0gQWRkIFByb21ldGhldXMgbWV0cmljcyBlbmRwb2ludAotIFt4XSBDb25maWd1cmUgc3lzdGVtZCBzZXJ2aWNlIHdpdGggd2F0Y2hkb2cgYW5kIG5vbi1yb290IGhhcmRlbmluZwotIFsgXSBSdW4gbG9hZCB0ZXN0OiAxMDAwIG9yZGVycyBzaW11bGF0ZWQsIHZlcmlmeSA8MTAwbXMgcDk5Ci0gWyBdIENoYW9zIHRlc3Q6IGtpbGwgTVQ1IHRlcm1pbmFsLCB2ZXJpZnkgYXV0by1yZWNvbm5lY3QKLSBbIF0gQ2hhb3MgdGVzdDogYmxvY2sgT3BlbkFJIEFQSSwgdmVyaWZ5IGNpcmN1aXQgYnJlYWtlcgotIFsgXSBWZXJpZnkgbm8gc2Vuc2l0aXZlIGRhdGEgaW4gbG9ncwotIFsgXSBEb2N1bWVudCBydW5ib29rIGZvciBjb21tb24gZmFpbHVyZXMKCi0tLQoKIyMgQ29uY2x1c2lvbgoKVGhlIGJvdCBpcyAqKmFyY2hpdGVjdHVyYWxseSBzb3VuZCoqIGZvciBhIHJlc2VhcmNoL2FscGhhIGRlcGxveW1lbnQgYnV0ICoqbm90IHByb2R1Y3Rpb24tcmVhZHkqKiBmb3IgbGl2ZSBjYXBpdGFsIHdpdGhvdXQgYWRkcmVzc2luZyB0aGUgQ3JpdGljYWwgSXNzdWVzLiBUaGUgYXN5bmMgYXJjaGl0ZWN0dXJlIHdpdGggdGhyZWFkLXBvb2wgTVQ1IGNhbGxzIGlzIGNvcnJlY3QgZm9yIFB5dGhvbidzIEdJTCBsaW1pdGF0aW9ucy4gV2l0aCB0aGUgZml4ZXMgYWJvdmUsIHRoZSBzeXN0ZW0gY2FuIGFjaGlldmUgcmVsaWFibGUgc3ViLXNlY29uZCBvcmRlciBleGVjdXRpb24gc3VpdGFibGUgZm9yIHN5c3RlbWF0aWMgc3dpbmcvZGF5IHRyYWRpbmcgc3RyYXRlZ2llcy4=
+# AI Bot Production Readiness Review
+
+## Executive Summary
+
+The Onyx FX algorithmic trading system has a solid architectural foundation but requires several critical improvements before production deployment. This review identifies bottlenecks, reliability concerns, and optimization opportunities.
+
+---
+
+## Critical Issues (Must Fix Before Production)
+
+### 1. **AI Engine - Single Point of Failure**
+**File:** `server/ai_engine.py:82-136`
+
+**Problem:** The `propose_trade()` function creates a new `AsyncOpenAI` client on every call. This creates connection overhead and no connection pooling.
+
+**Impact:** ~200-500ms latency per AI call due to new TLS handshake.
+
+**Fix:**
+```python
+# Module-level singleton
+_client = None
+
+async def get_client():
+    global _client
+    if _client is None:
+        _client = AsyncOpenAI(
+            api_key=AI.api_key,
+            timeout=AI.timeout_seconds,
+            max_retries=2,
+        )
+    return _client
+
+async def propose_trade(...):
+    client = await get_client()
+    ...
+```
+
+### 2. **No Circuit Breaker for OpenAI API**
+**File:** `server/ai_engine.py:128-136`
+
+**Problem:** Failures fall back to HOLD but there's no circuit breaker to stop hammering a failing API.
+
+**Impact:** During OpenAI outages, the bot will spam failed requests every 15 seconds.
+
+**Fix:** Add circuit breaker pattern:
+```python
+from circuitbreaker import circuit
+
+@circuit(failure_threshold=5, recovery_timeout=60)
+async def _call_openai(...):
+    ...
+```
+
+### 3. **MT5 Connection - Health Endpoint Readiness**
+**File:** `server/api.py:157-205`
+
+**Problem:** `/api/health` only returned connection state and always used HTTP 200, so a load balancer could route traffic to a disconnected or stale MT5 service.
+
+**Resolved:** The endpoint now checks terminal connectivity, closed-candle freshness, and returns HTTP 503 when readiness fails. A separate unauthenticated `/healthz` endpoint provides process liveness for systemd and load balancers.
+
+### 4. **Data Provider - Blocking Calls in Async Context**
+**File:** `server/data_provider.py:324-390`
+
+**Problem:** `get_rates()` is decorated with `@mt5_serialized` (thread lock) but called via `asyncio.to_thread()`. This is correct, but the lock is held for the entire IPC call + DataFrame construction.
+
+**Impact:** Serializes all data fetching across symbols. With 3 symbols × 2 timeframes = 6 sequential MT5 calls per cycle.
+
+**Fix:** Use connection pooling or batch requests where possible. Consider:
+```python
+# Fetch all symbols in one thread call
+async def get_multi_rates(symbols, timeframe, n_bars):
+    return await asyncio.to_thread(_fetch_multi_rates, symbols, timeframe, n_bars)
+```
+
+### 5. **No Graceful Degradation for News Feed**
+**File:** `server/strategy.py:211-229`
+
+**Problem:** `analyze_market_sentiment()` calls `get_latest_high_impact_news()` which can block for 10+ seconds on network timeouts.
+
+**Impact:** Blocks the entire trading loop cycle.
+
+**Fix:** Make news fetching fully async with timeout:
+```python
+async def analyze_market_sentiment(symbol: str) -> SentimentReading:
+    try:
+        result = await asyncio.wait_for(
+            asyncio.to_thread(get_latest_high_impact_news, 10, 24),
+            timeout=5.0
+        )
+        ...
+    except asyncio.TimeoutError:
+        return _neutral_reading()
+```
+
+---
+
+## High-Priority Optimizations
+
+### 6. **Pandas-TA Performance**
+**File:** `server/strategy.py:67-70`
+
+**Problem:** `pandas_ta` is convenient but slow. Each indicator call creates intermediate Series.
+
+**Optimization:** Pre-compute with vectorized operations or use `ta-lib` (C bindings):
+```python
+# Current: ~15ms per symbol per timeframe
+# With ta-lib: ~2ms per symbol per timeframe
+import talib
+out["ema_50"] = talib.EMA(out["close"].values, timeperiod=50)
+```
+
+### 7. **Symbol Info Cache Invalidation**
+**File:** `server/execution.py:92-142`
+
+**Problem:** `_symbol_cache` has no TTL and only invalidates on explicit call. Broker changes (margin, contract specs) won't be reflected.
+
+**Fix:** Add TTL-based invalidation:
+```python
+_symbol_cache: Dict[str, tuple[_SymbolData, float]] = {}  # (data, timestamp)
+_CACHE_TTL = 300  # 5 minutes
+
+def _get_symbol(symbol: str) -> _SymbolData:
+    now = time.time()
+    with _cache_lock:
+        if symbol in _symbol_cache:
+            data, ts = _symbol_cache[symbol]
+            if now - ts < _CACHE_TTL:
+                return data
+    # ... fetch and cache with timestamp
+```
+
+### 8. **Error Logging - Sensitive Data Exposure**
+**File:** `server/ai_engine.py:130-132`
+
+**Problem:** Raw AI response logged to error log on validation failure. Could contain market data or prompts.
+
+**Fix:** Sanitize before logging:
+```python
+_error_logger.error(
+    "Invalid AI response for %s: %s | raw_len=%d",
+    symbol, exc, len(raw_response)
+)
+```
+
+### 9. **Position State Persistence - Race Condition**
+**File:** `server/execution.py:157-179`
+
+**Problem:** `_save_position_state()` writes to temp file then renames. On Windows, rename can fail if file is open elsewhere.
+
+**Fix:** Use proper file locking or SQLite:
+```python
+import sqlite3
+# Use SQLite with WAL mode for concurrent access
+```
+
+---
+
+## Medium-Priority Improvements
+
+### 10. **Trading Loop - No Dead Man's Switch**
+**File:** `server/main.py:220-264`
+
+**Problem:** If the event loop blocks (GC pause, CPU starvation), the bot stops processing candles but positions remain open.
+
+**Fix:** Add watchdog thread:
+```python
+import threading
+_last_heartbeat = time.time()
+
+def heartbeat():
+    global _last_heartbeat
+    _last_heartbeat = time.time()
+
+# Watchdog thread
+def watchdog():
+    while True:
+        time.sleep(10)
+        if time.time() - _last_heartbeat > 30:
+            logger.critical("Main loop stalled! Initiating emergency halt.")
+            # Trigger emergency halt
+```
+
+### 11. **Rate Limiting on API - No Per-User Quotas**
+**File:** `server/api.py:49-62`
+
+**Problem:** Rate limiting is per-IP only. No per-user or per-endpoint quotas.
+
+**Fix:** Add token-bucket per API key:
+```python
+_rate_buckets: dict[str, TokenBucket] = {}
+
+def rate_limit(request: Request, bucket: str, limit: int, window: int = 60):
+    api_key = request.headers.get("X-API-Key", "anonymous")
+    bucket_key = f"{api_key}:{bucket}"
+    ...
+```
+
+### 12. **Configuration - No Hot Reload**
+**File:** `server/config.py`
+
+**Problem:** Config changes require restart. Risk parameters should be adjustable at runtime.
+
+**Fix:** Add `/api/settings/risk` POST endpoint with validation.
+
+---
+
+## Low-Priority / Nice to Have
+
+### 13. **Metrics / Observability**
+- Prometheus `/metrics` endpoint and request/latency gauges are present.
+- Track: orders placed, latency percentiles, AI API latency, MT5 IPC latency
+- Add structured logging (JSON) for log aggregation
+
+### 14. **Test Coverage**
+- Unit tests for `compute_indicators`, `generate_signal`, `calculate_lot_size`
+- Integration tests with mock MT5
+- Chaos testing: network partition, MT5 restart, API timeout
+
+### 15. **Deployment Hardening**
+- systemd service with `Restart=on-failure`, `WatchdogSec=120`, non-root user, and restricted filesystem paths
+- SELinux/AppArmor profile
+- Separate data directory with restricted permissions
+
+---
+
+## High-Speed Execution Optimization Plan
+
+For sub-second order execution (critical for scalping/HFT-style strategies):
+
+| Component | Current | Target | Action |
+|-----------|---------|--------|--------|
+| MT5 IPC latency | ~5-15ms | <5ms | Keep terminal local, disable Windows Defender on MT5 dir |
+| Data fetch (H1+H4) | ~50-100ms | <20ms | Batch symbols, use `copy_rates_from_pos` once per symbol |
+| Indicator calc | ~15ms | <3ms | Switch to `talib` (C bindings) |
+| AI proposal | ~2-5s | <500ms | Cache client, reduce context, use GPT-4o-mini for speed |
+| Order validation | ~10-20ms | <5ms | Cache symbol info, pre-validate |
+| Order send | ~50-200ms | <100ms | Use `ORDER_FILLING_FOK`, reduce deviation |
+
+### Recommended Architecture for High-Speed:
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Trading Loop (async)                     │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ Data Fetch  │  │  Signals    │  │  Execution          │  │
+│  │ (parallel)  │─▶│ (vectorized)│─▶│  (serialized,       │  │
+│  │ per symbol  │  │  per symbol │  │   prioritized)      │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Key Code Changes for Speed:
+
+1. **Parallelize data fetching across symbols:**
+```python
+# In trading_loop:
+tasks = [evaluate_symbol(sym, tracker) for sym in symbols]
+results = await asyncio.gather(*tasks, return_exceptions=True)
+```
+
+2. **Use `talib` instead of `pandas_ta`:**
+```python
+# strategy.py
+import talib
+out["ema_50"] = talib.EMA(out["close"].values, 50)
+out["ema_200"] = talib.EMA(out["close"].values, 200)
+out["rsi"] = talib.RSI(out["close"].values, 14)
+out["atr"] = talib.ATR(out["high"].values, out["low"].values, out["close"].values, 14)
+```
+
+3. **Cache AI client and reduce prompt size:**
+```python
+# ai_engine.py - strip non-essential context for speed
+```
+
+4. **Pre-warm MT5 connection and symbol selection at startup:**
+```python
+# main.py - move resolve_and_validate_symbols before loop
+```
+
+---
+
+## Deployment Checklist
+
+- [ ] Fix all Critical Issues (#1-5)
+- [ ] Implement High-Priority Optimizations (#6-9)
+- [x] Add health endpoint with MT5 terminal and candle-freshness checks
+- [x] Add Prometheus metrics endpoint
+- [x] Configure systemd service with watchdog and non-root hardening
+- [ ] Run load test: 1000 orders simulated, verify <100ms p99
+- [ ] Chaos test: kill MT5 terminal, verify auto-reconnect
+- [ ] Chaos test: block OpenAI API, verify circuit breaker
+- [ ] Verify no sensitive data in logs
+- [ ] Document runbook for common failures
+
+---
+
+## Conclusion
+
+The bot is **architecturally sound** for a research/alpha deployment but **not production-ready** for live capital without addressing the Critical Issues. The async architecture with thread-pool MT5 calls is correct for Python's GIL limitations. With the fixes above, the system can achieve reliable sub-second order execution suitable for systematic swing/day trading strategies.

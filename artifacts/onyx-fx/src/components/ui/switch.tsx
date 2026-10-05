@@ -1,1 +1,26 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnOwppbXBvcnQgKiBhcyBTd2l0Y2hQcmltaXRpdmVzIGZyb20gJ0ByYWRpeC11aS9yZWFjdC1zd2l0Y2gnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKCmNvbnN0IFN3aXRjaCA9IFJlYWN0LmZvcndhcmRSZWY8CiAgUmVhY3QuRWxlbWVudFJlZjx0eXBlb2YgU3dpdGNoUHJpbWl0aXZlcy5Sb290PiwKICBSZWFjdC5Db21wb25lbnRQcm9wc1dpdGhvdXRSZWY8dHlwZW9mIFN3aXRjaFByaW1pdGl2ZXMuUm9vdD4KPigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDxTd2l0Y2hQcmltaXRpdmVzLlJvb3QKICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICdwZWVyIGlubGluZS1mbGV4IGgtNSB3LTkgc2hyaW5rLTAgY3Vyc29yLXBvaW50ZXIgaXRlbXMtY2VudGVyIHJvdW5kZWQtZnVsbCBib3JkZXItMiBib3JkZXItdHJhbnNwYXJlbnQgc2hhZG93LXNtIHRyYW5zaXRpb24tY29sb3JzIGZvY3VzLXZpc2libGU6b3V0bGluZS1ub25lIGZvY3VzLXZpc2libGU6cmluZy0yIGZvY3VzLXZpc2libGU6cmluZy1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1vZmZzZXQtMiBmb2N1cy12aXNpYmxlOnJpbmctb2Zmc2V0LWJhY2tncm91bmQgZGlzYWJsZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAgZGF0YS1bc3RhdGU9Y2hlY2tlZF06YmctcHJpbWFyeSBkYXRhLVtzdGF0ZT11bmNoZWNrZWRdOmJnLWlucHV0JywKICAgICAgY2xhc3NOYW1lLAogICAgKX0KICAgIHsuLi5wcm9wc30KICAgIHJlZj17cmVmfQogID4KICAgIDxTd2l0Y2hQcmltaXRpdmVzLlRodW1iCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgJ3BvaW50ZXItZXZlbnRzLW5vbmUgYmxvY2sgaC00IHctNCByb3VuZGVkLWZ1bGwgYmctYmFja2dyb3VuZCBzaGFkb3ctbGcgcmluZy0wIHRyYW5zaXRpb24tdHJhbnNmb3JtIGRhdGEtW3N0YXRlPWNoZWNrZWRdOnRyYW5zbGF0ZS14LTQgZGF0YS1bc3RhdGU9dW5jaGVja2VkXTp0cmFuc2xhdGUteC0wJywKICAgICAgKX0KICAgIC8+CiAgPC9Td2l0Y2hQcmltaXRpdmVzLlJvb3Q+CikpOwpTd2l0Y2guZGlzcGxheU5hbWUgPSBTd2l0Y2hQcmltaXRpdmVzLlJvb3QuZGlzcGxheU5hbWU7CgpleHBvcnQgeyBTd2l0Y2ggfTsK
+import * as React from 'react';
+import * as SwitchPrimitives from '@radix-ui/react-switch';
+import { cn } from '@/lib/utils';
+
+const Switch = React.forwardRef<
+  React.ElementRef<typeof SwitchPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
+>(({ className, ...props }, ref) => (
+  <SwitchPrimitives.Root
+    className={cn(
+      'peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input',
+      className,
+    )}
+    {...props}
+    ref={ref}
+  >
+    <SwitchPrimitives.Thumb
+      className={cn(
+        'pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0',
+      )}
+    />
+  </SwitchPrimitives.Root>
+));
+Switch.displayName = SwitchPrimitives.Root.displayName;
+
+export { Switch };

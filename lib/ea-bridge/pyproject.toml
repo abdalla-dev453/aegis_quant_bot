@@ -1,1 +1,46 @@
-W2J1aWxkLXN5c3RlbV0KcmVxdWlyZXMgPSBbInNldHVwdG9vbHM+PTc1IiwgIndoZWVsIl0KYnVpbGQtYmFja2VuZCA9ICJzZXR1cHRvb2xzLmJ1aWxkX21ldGEiCgpbcHJvamVjdF0KbmFtZSA9ICJvbnl4LWZ4LWFwaSIKdmVyc2lvbiA9ICIwLjEuMCIKZGVzY3JpcHRpb24gPSAiT255eCBGWCBFQSBicmlkZ2UgYW5kIHVzZXIgQVBJIgpyZXF1aXJlcy1weXRob24gPSAiPj0zLjEyIgpkZXBlbmRlbmNpZXMgPSBbCiAgImFsZW1iaWM+PTEuMTQsPDIiLAogICJhc3luY3BnPj0wLjMwLDwxIiwKICAiZmFzdGFwaT49MC4xMTUsPDEiLAogICJwd2RsaWJbYXJnb24yXT49MC4yLDwxIiwKICAicHlkYW50aWMtc2V0dGluZ3M+PTIuNyw8MyIsCiAgInJlZGlzPj01LDw3IiwKICAic3FsYWxjaGVteVthc3luY2lvXT49Mi4wLDwzIiwKICAidXZpY29ybltzdGFuZGFyZF0+PTAuMzQsPDEiLApdCgpbcHJvamVjdC5vcHRpb25hbC1kZXBlbmRlbmNpZXNdCmRldiA9IFsKICAiYWlvc3FsaXRlPj0wLjIwLDwxIiwKICAiaHR0cHg+PTAuMjgsPDEiLAogICJteXB5Pj0xLjE1LDwyIiwKICAicHl0ZXN0Pj04LjMsPDkiLAogICJweXRlc3QtYXN5bmNpbz49MC4yNSw8MSIsCiAgInJlZGlzPj01LDw3IiwKICAicnVmZj49MC4xMSw8MSIsCl0KClt0b29sLnNldHVwdG9vbHMucGFja2FnZXMuZmluZF0KaW5jbHVkZSA9IFsiYXBwKiJdCgpbdG9vbC5weXRlc3QuaW5pX29wdGlvbnNdCmFzeW5jaW9fbW9kZSA9ICJhdXRvIgp0ZXN0cGF0aHMgPSBbInRlc3RzIl0KClt0b29sLnJ1ZmZdCnRhcmdldC12ZXJzaW9uID0gInB5MzEyIgpsaW5lLWxlbmd0aCA9IDEwMAoKW3Rvb2wubXlweV0KcHl0aG9uX3ZlcnNpb24gPSAiMy4xMiIKc3RyaWN0ID0gdHJ1ZQpwbHVnaW5zID0gWyJweWRhbnRpYy5teXB5Il0=
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onyx-fx-api"
+version = "0.1.0"
+description = "Onyx FX EA bridge and user API"
+requires-python = ">=3.12"
+dependencies = [
+  "alembic>=1.14,<2",
+  "asyncpg>=0.30,<1",
+  "fastapi>=0.115,<1",
+  "pwdlib[argon2]>=0.2,<1",
+  "pydantic-settings>=2.7,<3",
+  "redis>=5,<7",
+  "sqlalchemy[asyncio]>=2.0,<3",
+  "uvicorn[standard]>=0.34,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "aiosqlite>=0.20,<1",
+  "httpx>=0.28,<1",
+  "mypy>=1.15,<2",
+  "pytest>=8.3,<9",
+  "pytest-asyncio>=0.25,<1",
+  "redis>=5,<7",
+  "ruff>=0.11,<1",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]

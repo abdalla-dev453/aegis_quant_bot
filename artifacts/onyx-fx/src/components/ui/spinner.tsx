@@ -1,1 +1,15 @@
-aW1wb3J0IHsgY24gfSBmcm9tICdAL2xpYi91dGlscyc7CmltcG9ydCB7IExvYWRlcjJJY29uIH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKCmZ1bmN0aW9uIFNwaW5uZXIoeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCdzdmcnPikgewogIHJldHVybiAoCiAgICA8TG9hZGVyMkljb24KICAgICAgcm9sZT0ic3RhdHVzIgogICAgICBhcmlhLWxhYmVsPSJMb2FkaW5nIgogICAgICBjbGFzc05hbWU9e2NuKCdzaXplLTQgYW5pbWF0ZS1zcGluJywgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApOwp9CgpleHBvcnQgeyBTcGlubmVyIH07Cg==
+import { cn } from '@/lib/utils';
+import { Loader2Icon } from 'lucide-react';
+
+function Spinner({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <Loader2Icon
+      role="status"
+      aria-label="Loading"
+      className={cn('size-4 animate-spin', className)}
+      {...props}
+    />
+  );
+}
+
+export { Spinner };

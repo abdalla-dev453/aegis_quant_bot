@@ -1,1 +1,9 @@
-IiIiTWFrZSB0aGUgc3RhbmRhbG9uZSBzZXJ2ZXIgbW9kdWxlcyBpbXBvcnRhYmxlIHdoZW4gcHl0ZXN0IHJ1bnMgZnJvbSByZXBvIHJvb3QuIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgc3lzCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKU0VSVkVSX0RJUiA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnRzWzFdCnN5cy5wYXRoLmluc2VydCgwLCBzdHIoU0VSVkVSX0RJUikpCg==
+"""Make the standalone server modules importable when pytest runs from repo root."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+SERVER_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SERVER_DIR))

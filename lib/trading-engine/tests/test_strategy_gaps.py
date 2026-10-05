@@ -1,1 +1,203 @@
-IiIiVGVzdHMgZm9yIGluZGljYXRvciBjb21wdXRhdGlvbiwgdHJlbmQgbG9naWMsIGFuZCBzaWduYWwgZ2F0ZXMuIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgbnVtcHkgYXMgbnAKaW1wb3J0IHBhbmRhcyBhcyBwZAppbXBvcnQgcHl0ZXN0CmltcG9ydCBzdHJhdGVneQpmcm9tIHN0cmF0ZWd5IGltcG9ydCAoCiAgICBTZW50aW1lbnRSZWFkaW5nLAogICAgVHJhZGVEaXJlY3Rpb24sCiAgICBUcmVuZCwKICAgIGNvbXB1dGVfaW5kaWNhdG9ycywKICAgIGdlbmVyYXRlX3NpZ25hbCwKICAgIGdldF9tdWx0aV90aW1lZnJhbWVfdHJlbmQsCiAgICBnZXRfdHJlbmQsCiAgICBoYXNfbXVsdGlfdGltZWZyYW1lX2VtYV9yc2lfY29uZmlybWF0aW9uLAogICAgaXNfbmV3c19ibGFja291dCwKICAgIHJzaV9maWx0ZXJfb2ssCikKCgpkZWYgX21ha2VfcHJpY2VzKHJvd3M6IGludCwgc3RhcnQ6IGZsb2F0ID0gMS4xMCkgLT4gcGQuRGF0YUZyYW1lOgogICAgaWR4ID0gcGQuZGF0ZV9yYW5nZSgiMjAyNC0wMS0wMSIsIHBlcmlvZHM9cm93cywgZnJlcT0iaCIpCiAgICBkcmlmdCA9IG5wLmxpbnNwYWNlKDAsIDAuMDIsIHJvd3MpCiAgICBjbG9zZXMgPSBzdGFydCArIGRyaWZ0ICsgbnAucmFuZG9tLlJhbmRvbVN0YXRlKDQyKS5ub3JtYWwoMCwgMC4wMDEsIHJvd3MpCiAgICBoaWdocyA9IGNsb3NlcyArIDAuMDAxCiAgICBsb3dzID0gY2xvc2VzIC0gMC4wMDEKICAgIHJldHVybiBwZC5EYXRhRnJhbWUoCiAgICAgICAgeyJvcGVuIjogY2xvc2VzLCAiaGlnaCI6IGhpZ2hzLCAibG93IjogbG93cywgImNsb3NlIjogY2xvc2VzLCAidm9sdW1lIjogMTAwfSwKICAgICAgICBpbmRleD1pZHgsCiAgICApCgoKY2xhc3MgVGVzdENvbXB1dGVJbmRpY2F0b3JzOgogICAgZGVmIHRlc3RfcmV0dXJuc19lbXB0eV9vbl9ub25lKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgYXNzZXJ0IGNvbXB1dGVfaW5kaWNhdG9ycyhOb25lKS5lbXB0eQoKICAgIGRlZiB0ZXN0X3JldHVybnNfZW1wdHlfb25fbWlzc2luZ19jb2x1bW5zKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJvcGVuIjogWzEuMF0sICJoaWdoIjogWzEuMF0sICJsb3ciOiBbMS4wXX0pCiAgICAgICAgYXNzZXJ0IGNvbXB1dGVfaW5kaWNhdG9ycyhkZikuZW1wdHkKCiAgICBkZWYgdGVzdF9yZXR1cm5zX2VtcHR5X29uX3Rvb19mZXdfcm93cyhzZWxmKSAtPiBOb25lOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lKAogICAgICAgICAgICB7Im9wZW4iOiBbMS4wXSwgImhpZ2giOiBbMS4wXSwgImxvdyI6IFsxLjBdLCAiY2xvc2UiOiBbMS4wXX0KICAgICAgICApCiAgICAgICAgYXNzZXJ0IGNvbXB1dGVfaW5kaWNhdG9ycyhkZikuZW1wdHkKCiAgICBkZWYgdGVzdF9yZXR1cm5zX2VtcHR5X29uX2FsbF9uYW5fb2hsYyhzZWxmKSAtPiBOb25lOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lKAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAib3BlbiI6IFtucC5uYW4sIG5wLm5hbl0sCiAgICAgICAgICAgICAgICAiaGlnaCI6IFtucC5uYW4sIG5wLm5hbl0sCiAgICAgICAgICAgICAgICAibG93IjogW25wLm5hbiwgbnAubmFuXSwKICAgICAgICAgICAgICAgICJjbG9zZSI6IFtucC5uYW4sIG5wLm5hbl0sCiAgICAgICAgICAgIH0KICAgICAgICApCiAgICAgICAgYXNzZXJ0IGNvbXB1dGVfaW5kaWNhdG9ycyhkZikuZW1wdHkKCiAgICBkZWYgdGVzdF9hZGRzX2FsbF9pbmRpY2F0b3JfY29sdW1ucyhzZWxmKSAtPiBOb25lOgogICAgICAgIGRmID0gX21ha2VfcHJpY2VzKDMwMCkKICAgICAgICByZXN1bHQgPSBjb21wdXRlX2luZGljYXRvcnMoZGYpCiAgICAgICAgYXNzZXJ0IG5vdCByZXN1bHQuZW1wdHkKICAgICAgICBhc3NlcnQgZiJlbWFfe3N0cmF0ZWd5LklORElDQVRPUlMuZW1hX2Zhc3R9IiBpbiByZXN1bHQuY29sdW1ucwogICAgICAgIGFzc2VydCBmImVtYV97c3RyYXRlZ3kuSU5ESUNBVE9SUy5lbWFfc2xvd30iIGluIHJlc3VsdC5jb2x1bW5zCiAgICAgICAgYXNzZXJ0ICJyc2kiIGluIHJlc3VsdC5jb2x1bW5zCiAgICAgICAgYXNzZXJ0ICJhdHIiIGluIHJlc3VsdC5jb2x1bW5zCiAgICAgICAgYXNzZXJ0IG5vdCByZXN1bHRbImVtYV81MCJdLmlzbmEoKS5hbnkoKQogICAgICAgIGFzc2VydCBub3QgcmVzdWx0WyJyc2kiXS5pc25hKCkuYW55KCkKCgpjbGFzcyBUZXN0R2V0VHJlbmQ6CiAgICBkZWYgdGVzdF9idWxsaXNoX3doZW5fZmFzdF9hYm92ZV9zbG93KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJlbWFfNTAiOiBbMS4xMCwgMS4xMl0sICJlbWFfMjAwIjogWzEuMTEsIDEuMTBdfSkKICAgICAgICBhc3NlcnQgZ2V0X3RyZW5kKGRmKSA9PSBUcmVuZC5CVUxMSVNICgogICAgZGVmIHRlc3RfYmVhcmlzaF93aGVuX2Zhc3RfYmVsb3dfc2xvdyhzZWxmKSAtPiBOb25lOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lKHsiZW1hXzUwIjogWzEuMDksIDEuMDhdLCAiZW1hXzIwMCI6IFsxLjExLCAxLjEwXX0pCiAgICAgICAgYXNzZXJ0IGdldF90cmVuZChkZikgPT0gVHJlbmQuQkVBUklTSAoKICAgIGRlZiB0ZXN0X25ldXRyYWxfb25fbmFuKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJlbWFfNTAiOiBbbnAubmFuXSwgImVtYV8yMDAiOiBbMS4xMF19KQogICAgICAgIGFzc2VydCBnZXRfdHJlbmQoZGYpID09IFRyZW5kLk5FVVRSQUwKCiAgICBkZWYgdGVzdF9uZXV0cmFsX29uX2VtcHR5KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgYXNzZXJ0IGdldF90cmVuZChwZC5EYXRhRnJhbWUoKSkgPT0gVHJlbmQuTkVVVFJBTAoKCmNsYXNzIFRlc3RNdWx0aVRpbWVmcmFtZVRyZW5kOgogICAgZGVmIHRlc3RfbmV1dHJhbF93aGVuX2g0X2lzX25ldXRyYWwoc2VsZikgLT4gTm9uZToKICAgICAgICBoMSA9IHBkLkRhdGFGcmFtZSh7ImVtYV81MCI6IFsxLjEyXSwgImVtYV8yMDAiOiBbMS4xMF19KQogICAgICAgIGg0ID0gcGQuRGF0YUZyYW1lKHsiZW1hXzUwIjogWzEuMTBdLCAiZW1hXzIwMCI6IFsxLjEwXX0pCiAgICAgICAgYXNzZXJ0IGdldF9tdWx0aV90aW1lZnJhbWVfdHJlbmQoaDEsIGg0KSA9PSBUcmVuZC5ORVVUUkFMCgogICAgZGVmIHRlc3RfY29uZmlybWVkX2J1bGxpc2goc2VsZikgLT4gTm9uZToKICAgICAgICBoMSA9IHBkLkRhdGFGcmFtZSh7ImVtYV81MCI6IFsxLjEyXSwgImVtYV8yMDAiOiBbMS4xMF19KQogICAgICAgIGg0ID0gcGQuRGF0YUZyYW1lKHsiZW1hXzUwIjogWzEuMTNdLCAiZW1hXzIwMCI6IFsxLjExXX0pCiAgICAgICAgYXNzZXJ0IGdldF9tdWx0aV90aW1lZnJhbWVfdHJlbmQoaDEsIGg0KSA9PSBUcmVuZC5CVUxMSVNICgogICAgZGVmIHRlc3RfaDFfYWdhaW5zdF9oNF9pc19uZXV0cmFsKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgaDEgPSBwZC5EYXRhRnJhbWUoeyJlbWFfNTAiOiBbMS4wOF0sICJlbWFfMjAwIjogWzEuMTBdfSkKICAgICAgICBoNCA9IHBkLkRhdGFGcmFtZSh7ImVtYV81MCI6IFsxLjEzXSwgImVtYV8yMDAiOiBbMS4xMV19KQogICAgICAgIGFzc2VydCBnZXRfbXVsdGlfdGltZWZyYW1lX3RyZW5kKGgxLCBoNCkgPT0gVHJlbmQuTkVVVFJBTAoKCmNsYXNzIFRlc3RSc2lGaWx0ZXI6CiAgICBkZWYgdGVzdF9yZWplY3RzX2VtcHR5KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgYXNzZXJ0IG5vdCByc2lfZmlsdGVyX29rKHBkLkRhdGFGcmFtZSgpLCBUcmVuZC5CVUxMSVNIKQoKICAgIGRlZiB0ZXN0X2J1bGxpc2hfb2tfd2l0aF9yaXNpbmdfcnNpKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgZGYgPSBwZC5EYXRhRnJhbWUoeyJyc2kiOiBbNTAuMCwgNTUuMF19KQogICAgICAgIGFzc2VydCByc2lfZmlsdGVyX29rKGRmLCBUcmVuZC5CVUxMSVNIKQoKICAgIGRlZiB0ZXN0X2J1bGxpc2hfYmxvY2tzX292ZXJib3VnaHQoc2VsZikgLT4gTm9uZToKICAgICAgICBkZiA9IHBkLkRhdGFGcmFtZSh7InJzaSI6IFs1MC4wLCA3NS4wXX0pCiAgICAgICAgYXNzZXJ0IG5vdCByc2lfZmlsdGVyX29rKGRmLCBUcmVuZC5CVUxMSVNIKQoKICAgIGRlZiB0ZXN0X2JlYXJpc2hfb2tfd2l0aF9mYWxsaW5nX3JzaShzZWxmKSAtPiBOb25lOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lKHsicnNpIjogWzUwLjAsIDQ1LjBdfSkKICAgICAgICBhc3NlcnQgcnNpX2ZpbHRlcl9vayhkZiwgVHJlbmQuQkVBUklTSCkKCiAgICBkZWYgdGVzdF9iZWFyaXNoX2Jsb2Nrc19vdmVyc29sZChzZWxmKSAtPiBOb25lOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lKHsicnNpIjogWzUwLjAsIDI1LjBdfSkKICAgICAgICBhc3NlcnQgbm90IHJzaV9maWx0ZXJfb2soZGYsIFRyZW5kLkJFQVJJU0gpCgoKY2xhc3MgVGVzdE11bHRpVGltZWZyYW1lQ29uZmlybWF0aW9uOgogICAgZGVmIHRlc3RfcmVxdWlyZXNfcnNpX2Jvb3N0X2Zvcl9idWxsaXNoKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgaDEgPSBwZC5EYXRhRnJhbWUoCiAgICAgICAgICAgIHsiZW1hXzUwIjogWzEuMTIsIDEuMTNdLCAiZW1hXzIwMCI6IFsxLjEwLCAxLjEwXSwgInJzaSI6IFs0MC4wLCA0NS4wXX0KICAgICAgICApCiAgICAgICAgaDQgPSBwZC5EYXRhRnJhbWUoCiAgICAgICAgICAgIHsiZW1hXzUwIjogWzEuMTMsIDEuMTRdLCAiZW1hXzIwMCI6IFsxLjExLCAxLjExXSwgInJzaSI6IFs0MC4wLCA0NS4wXX0KICAgICAgICApCiAgICAgICAgYXNzZXJ0IG5vdCBoYXNfbXVsdGlfdGltZWZyYW1lX2VtYV9yc2lfY29uZmlybWF0aW9uKGgxLCBoNCwgVHJlbmQuQlVMTElTSCkKCiAgICBkZWYgdGVzdF9yZXF1aXJlc19yc2lfZHJvcF9mb3JfYmVhcmlzaChzZWxmKSAtPiBOb25lOgogICAgICAgIGgxID0gcGQuRGF0YUZyYW1lKAogICAgICAgICAgICB7ImVtYV81MCI6IFsxLjA3LCAxLjA2XSwgImVtYV8yMDAiOiBbMS4xMCwgMS4xMF0sICJyc2kiOiBbNjAuMCwgNTUuMF19CiAgICAgICAgKQogICAgICAgIGg0ID0gcGQuRGF0YUZyYW1lKAogICAgICAgICAgICB7ImVtYV81MCI6IFsxLjA4LCAxLjA3XSwgImVtYV8yMDAiOiBbMS4xMSwgMS4xMV0sICJyc2kiOiBbNjAuMCwgNTUuMF19CiAgICAgICAgKQogICAgICAgIGFzc2VydCBub3QgaGFzX211bHRpX3RpbWVmcmFtZV9lbWFfcnNpX2NvbmZpcm1hdGlvbihoMSwgaDQsIFRyZW5kLkJFQVJJU0gpCgoKY2xhc3MgVGVzdE5ld3NCbGFja291dDoKICAgIGRlZiB0ZXN0X2JsYWNrb3V0X2p1c3RfYmVmb3JlX2V2ZW50KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgcmVhZGluZyA9IFNlbnRpbWVudFJlYWRpbmcoMC4wLCAxLCAiTkZQIiwgNSwgbmV4dF9ldmVudF9pbXBhY3Q9IkhJR0giKQogICAgICAgIGFzc2VydCBpc19uZXdzX2JsYWNrb3V0KHJlYWRpbmcpIGlzIFRydWUKCiAgICBkZWYgdGVzdF9ibGFja291dF9hZnRlcl9ldmVudChzZWxmKSAtPiBOb25lOgogICAgICAgIHJlYWRpbmcgPSBTZW50aW1lbnRSZWFkaW5nKDAuMCwgMSwgIkNQSSIsIC0xMCwgbmV4dF9ldmVudF9pbXBhY3Q9IkhJR0giKQogICAgICAgIGFzc2VydCBpc19uZXdzX2JsYWNrb3V0KHJlYWRpbmcpIGlzIFRydWUKCiAgICBkZWYgdGVzdF9ub19ibGFja291dF9vdXRzaWRlX3dpbmRvdyhzZWxmKSAtPiBOb25lOgogICAgICAgIHJlYWRpbmcgPSBTZW50aW1lbnRSZWFkaW5nKDAuMCwgMSwgIk5GUCIsIDMxLCBuZXh0X2V2ZW50X2ltcGFjdD0iSElHSCIpCiAgICAgICAgYXNzZXJ0IGlzX25ld3NfYmxhY2tvdXQocmVhZGluZykgaXMgRmFsc2UKCiAgICBkZWYgdGVzdF9ub19ibGFja291dF9mb3JfbG93X2ltcGFjdChzZWxmKSAtPiBOb25lOgogICAgICAgIHJlYWRpbmcgPSBTZW50aW1lbnRSZWFkaW5nKDAuMCwgMSwgIlJldGFpbCBTYWxlcyIsIDUsIG5leHRfZXZlbnRfaW1wYWN0PSJMT1ciKQogICAgICAgIGFzc2VydCBpc19uZXdzX2JsYWNrb3V0KHJlYWRpbmcpIGlzIEZhbHNlCgogICAgZGVmIHRlc3Rfbm9fYmxhY2tvdXRfd2hlbl9ub19ldmVudChzZWxmKSAtPiBOb25lOgogICAgICAgIHJlYWRpbmcgPSBTZW50aW1lbnRSZWFkaW5nKDAuMCwgMCwgTm9uZSwgTm9uZSkKICAgICAgICBhc3NlcnQgaXNfbmV3c19ibGFja291dChyZWFkaW5nKSBpcyBGYWxzZQoKCmNsYXNzIFRlc3RHZW5lcmF0ZVNpZ25hbDoKICAgIGRlZiBfZGYoc2VsZiwgZmFzdDogZmxvYXQsIHNsb3c6IGZsb2F0LCByc2lfbGFzdDogZmxvYXQsIHJzaV9wcmV2OiBmbG9hdCkgLT4gcGQuRGF0YUZyYW1lOgogICAgICAgIHJldHVybiBwZC5EYXRhRnJhbWUoCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJlbWFfNTAiOiBbZmFzdCwgZmFzdF0sCiAgICAgICAgICAgICAgICAiZW1hXzIwMCI6IFtzbG93LCBzbG93XSwKICAgICAgICAgICAgICAgICJyc2kiOiBbcnNpX3ByZXYsIHJzaV9sYXN0XSwKICAgICAgICAgICAgICAgICJhdHIiOiBbMC4wMDEsIDAuMDAxXSwKICAgICAgICAgICAgfQogICAgICAgICkKCiAgICBkZWYgdGVzdF9pbnN1ZmZpY2llbnRfZGF0YShzZWxmKSAtPiBOb25lOgogICAgICAgIHNpZ25hbCA9IGdlbmVyYXRlX3NpZ25hbCgiRVVSVVNEIiwgcGQuRGF0YUZyYW1lKCksIHBkLkRhdGFGcmFtZSgpKQogICAgICAgIGFzc2VydCBzaWduYWwuZGlyZWN0aW9uID09IFRyYWRlRGlyZWN0aW9uLk5PTkUKCiAgICBkZWYgdGVzdF9kZWdlbmVyYXRlX2F0cl9ibG9ja3Moc2VsZikgLT4gTm9uZToKICAgICAgICBoMSA9IHNlbGYuX2RmKDEuMTIsIDEuMTAsIDU1LjAsIDUzLjApLmFzc2lnbihhdHI9WzAuMCwgMC4wXSkKICAgICAgICBoNCA9IHNlbGYuX2RmKDEuMTMsIDEuMTEsIDUwLjAsIDUwLjApCiAgICAgICAgc2lnbmFsID0gZ2VuZXJhdGVfc2lnbmFsKCJFVVJVU0QiLCBoMSwgaDQpCiAgICAgICAgYXNzZXJ0IHNpZ25hbC5kaXJlY3Rpb24gPT0gVHJhZGVEaXJlY3Rpb24uTk9ORQogICAgICAgIGFzc2VydCAiQVRSIiBpbiBzaWduYWwucmVhc29uCgogICAgZGVmIHRlc3RfdW5hdmFpbGFibGVfc2VudGltZW50X2Jsb2Nrc19lbnRyaWVzKAogICAgICAgIHNlbGYsIG1vbmtleXBhdGNoOiBweXRlc3QuTW9ua2V5UGF0Y2gKICAgICkgLT4gTm9uZToKICAgICAgICBoMSA9IHNlbGYuX2RmKDEuMTIsIDEuMTAsIDU1LjAsIDUzLjApCiAgICAgICAgaDQgPSBzZWxmLl9kZigxLjEzLCAxLjExLCA1MC4wLCA1MC4wKQogICAgICAgIG1vbmtleXBhdGNoLnNldGF0dHIoCiAgICAgICAgICAgIHN0cmF0ZWd5LAogICAgICAgICAgICAiYW5hbHl6ZV9tYXJrZXRfc2VudGltZW50IiwKICAgICAgICAgICAgbGFtYmRhIF9zOiBTZW50aW1lbnRSZWFkaW5nKDAuMCwgMCwgTm9uZSwgTm9uZSwgZmVlZF9hdmFpbGFibGU9RmFsc2UpLAogICAgICAgICkKICAgICAgICBzaWduYWwgPSBnZW5lcmF0ZV9zaWduYWwoIkVVUlVTRCIsIGgxLCBoNCkKICAgICAgICBhc3NlcnQgc2lnbmFsLmRpcmVjdGlvbiA9PSBUcmFkZURpcmVjdGlvbi5OT05FCiAgICAgICAgYXNzZXJ0ICJ1bmF2YWlsYWJsZSIgaW4gc2lnbmFsLnJlYXNvbi5sb3dlcigpCg==
+"""Tests for indicator computation, trend logic, and signal gates."""
+
+from __future__ import annotations
+
+import numpy as np
+import pandas as pd
+import pytest
+import strategy
+from strategy import (
+    SentimentReading,
+    TradeDirection,
+    Trend,
+    compute_indicators,
+    generate_signal,
+    get_multi_timeframe_trend,
+    get_trend,
+    has_multi_timeframe_ema_rsi_confirmation,
+    is_news_blackout,
+    rsi_filter_ok,
+)
+
+
+def _make_prices(rows: int, start: float = 1.10) -> pd.DataFrame:
+    idx = pd.date_range("2024-01-01", periods=rows, freq="h")
+    drift = np.linspace(0, 0.02, rows)
+    closes = start + drift + np.random.RandomState(42).normal(0, 0.001, rows)
+    highs = closes + 0.001
+    lows = closes - 0.001
+    return pd.DataFrame(
+        {"open": closes, "high": highs, "low": lows, "close": closes, "volume": 100},
+        index=idx,
+    )
+
+
+class TestComputeIndicators:
+    def test_returns_empty_on_none(self) -> None:
+        assert compute_indicators(None).empty
+
+    def test_returns_empty_on_missing_columns(self) -> None:
+        df = pd.DataFrame({"open": [1.0], "high": [1.0], "low": [1.0]})
+        assert compute_indicators(df).empty
+
+    def test_returns_empty_on_too_few_rows(self) -> None:
+        df = pd.DataFrame(
+            {"open": [1.0], "high": [1.0], "low": [1.0], "close": [1.0]}
+        )
+        assert compute_indicators(df).empty
+
+    def test_returns_empty_on_all_nan_ohlc(self) -> None:
+        df = pd.DataFrame(
+            {
+                "open": [np.nan, np.nan],
+                "high": [np.nan, np.nan],
+                "low": [np.nan, np.nan],
+                "close": [np.nan, np.nan],
+            }
+        )
+        assert compute_indicators(df).empty
+
+    def test_adds_all_indicator_columns(self) -> None:
+        df = _make_prices(300)
+        result = compute_indicators(df)
+        assert not result.empty
+        assert f"ema_{strategy.INDICATORS.ema_fast}" in result.columns
+        assert f"ema_{strategy.INDICATORS.ema_slow}" in result.columns
+        assert "rsi" in result.columns
+        assert "atr" in result.columns
+        assert not result["ema_50"].isna().any()
+        assert not result["rsi"].isna().any()
+
+
+class TestGetTrend:
+    def test_bullish_when_fast_above_slow(self) -> None:
+        df = pd.DataFrame({"ema_50": [1.10, 1.12], "ema_200": [1.11, 1.10]})
+        assert get_trend(df) == Trend.BULLISH
+
+    def test_bearish_when_fast_below_slow(self) -> None:
+        df = pd.DataFrame({"ema_50": [1.09, 1.08], "ema_200": [1.11, 1.10]})
+        assert get_trend(df) == Trend.BEARISH
+
+    def test_neutral_on_nan(self) -> None:
+        df = pd.DataFrame({"ema_50": [np.nan], "ema_200": [1.10]})
+        assert get_trend(df) == Trend.NEUTRAL
+
+    def test_neutral_on_empty(self) -> None:
+        assert get_trend(pd.DataFrame()) == Trend.NEUTRAL
+
+
+class TestMultiTimeframeTrend:
+    def test_neutral_when_h4_is_neutral(self) -> None:
+        h1 = pd.DataFrame({"ema_50": [1.12], "ema_200": [1.10]})
+        h4 = pd.DataFrame({"ema_50": [1.10], "ema_200": [1.10]})
+        assert get_multi_timeframe_trend(h1, h4) == Trend.NEUTRAL
+
+    def test_confirmed_bullish(self) -> None:
+        h1 = pd.DataFrame({"ema_50": [1.12], "ema_200": [1.10]})
+        h4 = pd.DataFrame({"ema_50": [1.13], "ema_200": [1.11]})
+        assert get_multi_timeframe_trend(h1, h4) == Trend.BULLISH
+
+    def test_h1_against_h4_is_neutral(self) -> None:
+        h1 = pd.DataFrame({"ema_50": [1.08], "ema_200": [1.10]})
+        h4 = pd.DataFrame({"ema_50": [1.13], "ema_200": [1.11]})
+        assert get_multi_timeframe_trend(h1, h4) == Trend.NEUTRAL
+
+
+class TestRsiFilter:
+    def test_rejects_empty(self) -> None:
+        assert not rsi_filter_ok(pd.DataFrame(), Trend.BULLISH)
+
+    def test_bullish_ok_with_rising_rsi(self) -> None:
+        df = pd.DataFrame({"rsi": [50.0, 55.0]})
+        assert rsi_filter_ok(df, Trend.BULLISH)
+
+    def test_bullish_blocks_overbought(self) -> None:
+        df = pd.DataFrame({"rsi": [50.0, 75.0]})
+        assert not rsi_filter_ok(df, Trend.BULLISH)
+
+    def test_bearish_ok_with_falling_rsi(self) -> None:
+        df = pd.DataFrame({"rsi": [50.0, 45.0]})
+        assert rsi_filter_ok(df, Trend.BEARISH)
+
+    def test_bearish_blocks_oversold(self) -> None:
+        df = pd.DataFrame({"rsi": [50.0, 25.0]})
+        assert not rsi_filter_ok(df, Trend.BEARISH)
+
+
+class TestMultiTimeframeConfirmation:
+    def test_requires_rsi_boost_for_bullish(self) -> None:
+        h1 = pd.DataFrame(
+            {"ema_50": [1.12, 1.13], "ema_200": [1.10, 1.10], "rsi": [40.0, 45.0]}
+        )
+        h4 = pd.DataFrame(
+            {"ema_50": [1.13, 1.14], "ema_200": [1.11, 1.11], "rsi": [40.0, 45.0]}
+        )
+        assert not has_multi_timeframe_ema_rsi_confirmation(h1, h4, Trend.BULLISH)
+
+    def test_requires_rsi_drop_for_bearish(self) -> None:
+        h1 = pd.DataFrame(
+            {"ema_50": [1.07, 1.06], "ema_200": [1.10, 1.10], "rsi": [60.0, 55.0]}
+        )
+        h4 = pd.DataFrame(
+            {"ema_50": [1.08, 1.07], "ema_200": [1.11, 1.11], "rsi": [60.0, 55.0]}
+        )
+        assert not has_multi_timeframe_ema_rsi_confirmation(h1, h4, Trend.BEARISH)
+
+
+class TestNewsBlackout:
+    def test_blackout_just_before_event(self) -> None:
+        reading = SentimentReading(0.0, 1, "NFP", 5, next_event_impact="HIGH")
+        assert is_news_blackout(reading) is True
+
+    def test_blackout_after_event(self) -> None:
+        reading = SentimentReading(0.0, 1, "CPI", -10, next_event_impact="HIGH")
+        assert is_news_blackout(reading) is True
+
+    def test_no_blackout_outside_window(self) -> None:
+        reading = SentimentReading(0.0, 1, "NFP", 31, next_event_impact="HIGH")
+        assert is_news_blackout(reading) is False
+
+    def test_no_blackout_for_low_impact(self) -> None:
+        reading = SentimentReading(0.0, 1, "Retail Sales", 5, next_event_impact="LOW")
+        assert is_news_blackout(reading) is False
+
+    def test_no_blackout_when_no_event(self) -> None:
+        reading = SentimentReading(0.0, 0, None, None)
+        assert is_news_blackout(reading) is False
+
+
+class TestGenerateSignal:
+    def _df(self, fast: float, slow: float, rsi_last: float, rsi_prev: float) -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "ema_50": [fast, fast],
+                "ema_200": [slow, slow],
+                "rsi": [rsi_prev, rsi_last],
+                "atr": [0.001, 0.001],
+            }
+        )
+
+    def test_insufficient_data(self) -> None:
+        signal = generate_signal("EURUSD", pd.DataFrame(), pd.DataFrame())
+        assert signal.direction == TradeDirection.NONE
+
+    def test_degenerate_atr_blocks(self) -> None:
+        h1 = self._df(1.12, 1.10, 55.0, 53.0).assign(atr=[0.0, 0.0])
+        h4 = self._df(1.13, 1.11, 50.0, 50.0)
+        signal = generate_signal("EURUSD", h1, h4)
+        assert signal.direction == TradeDirection.NONE
+        assert "ATR" in signal.reason
+
+    def test_unavailable_sentiment_blocks_entries(
+        self, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        h1 = self._df(1.12, 1.10, 55.0, 53.0)
+        h4 = self._df(1.13, 1.11, 50.0, 50.0)
+        monkeypatch.setattr(
+            strategy,
+            "analyze_market_sentiment",
+            lambda _s: SentimentReading(0.0, 0, None, None, feed_available=False),
+        )
+        signal = generate_signal("EURUSD", h1, h4)
+        assert signal.direction == TradeDirection.NONE
+        assert "unavailable" in signal.reason.lower()

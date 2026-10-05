@@ -1,1 +1,67 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIENvbmZsdWVuY2VHYXVnZSh7IGNvbmZsdWVuY2UgfSkgewogIC8vIE1hcCBzY29yZSByYW5nZSBbLTEsIDFdIHRvIGEgc2VtaWNpcmNsZSBzd2VlcCBmcm9tIDE4MGRlZyAobGVmdCkgdG8gMGRlZyAocmlnaHQpCiAgY29uc3QgY2xhbXBlZCA9IE1hdGgubWF4KC0xLCBNYXRoLm1pbigxLCBjb25mbHVlbmNlLmNvbXBvc2l0ZSkpOwogIGNvbnN0IGFuZ2xlID0gMTgwIC0gKChjbGFtcGVkICsgMSkgLyAyKSAqIDE4MDsKICBjb25zdCBuZWVkbGVDb2xvciA9IGNsYW1wZWQgPj0gMC4zID8gIiMyMmQ2N2UiIDogY2xhbXBlZCA8PSAtMC4zID8gIiNmZjRkNWUiIDogIiNmNWE2MjMiOwoKICBjb25zdCByYWQgPSAoYW5nbGUgKiBNYXRoLlBJKSAvIDE4MDsKICBjb25zdCBjeCA9IDEwMDsKICBjb25zdCBjeSA9IDkyOwogIGNvbnN0IHIgPSA3MDsKICBjb25zdCBueCA9IGN4ICsgciAqIE1hdGguY29zKHJhZCk7CiAgY29uc3QgbnkgPSBjeSAtIHIgKiBNYXRoLnNpbihyYWQpOwoKICByZXR1cm4gKAogICAgPFBhbmVsIHRpdGxlPSJBSSBGdXNpb24gQ29uZmx1ZW5jZSBTY29yZSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtY29sIGl0ZW1zLWNlbnRlciI+CiAgICAgICAgPHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExMCIgdmlld0JveD0iMCAwIDIwMCAxMTAiPgogICAgICAgICAgPHBhdGggZD0iTSAzMCA5MiBBIDcwIDcwIDAgMCAxIDE3MCA5MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWUyNTMwIiBzdHJva2VXaWR0aD0iMTAiIHN0cm9rZUxpbmVjYXA9InJvdW5kIiAvPgogICAgICAgICAgPHBhdGgKICAgICAgICAgICAgZD0iTSAzMCA5MiBBIDcwIDcwIDAgMCAxIDE3MCA5MiIKICAgICAgICAgICAgZmlsbD0ibm9uZSIKICAgICAgICAgICAgc3Ryb2tlPSJ1cmwoI2dhdWdlR3JhZGllbnQpIgogICAgICAgICAgICBzdHJva2VXaWR0aD0iMTAiCiAgICAgICAgICAgIHN0cm9rZUxpbmVjYXA9InJvdW5kIgogICAgICAgICAgICBzdHJva2VEYXNoYXJyYXk9e2AkeygoY2xhbXBlZCArIDEpIC8gMikgKiAyMjB9IDIyMGB9CiAgICAgICAgICAvPgogICAgICAgICAgPGRlZnM+CiAgICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ2F1Z2VHcmFkaWVudCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3BDb2xvcj0iI2ZmNGQ1ZSIgLz4KICAgICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcENvbG9yPSIjZjVhNjIzIiAvPgogICAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcENvbG9yPSIjMjJkNjdlIiAvPgogICAgICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgICAgPC9kZWZzPgogICAgICAgICAgPGxpbmUgeDE9e2N4fSB5MT17Y3l9IHgyPXtueH0geTI9e255fSBzdHJva2U9e25lZWRsZUNvbG9yfSBzdHJva2VXaWR0aD0iMi41IiBzdHJva2VMaW5lY2FwPSJyb3VuZCIgLz4KICAgICAgICAgIDxjaXJjbGUgY3g9e2N4fSBjeT17Y3l9IHI9IjQiIGZpbGw9e25lZWRsZUNvbG9yfSAvPgogICAgICAgIDwvc3ZnPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSItbXQtMiBmb250LW1vbm8gdGV4dC0yeGwgZm9udC1zZW1pYm9sZCIgc3R5bGU9e3sgY29sb3I6IG5lZWRsZUNvbG9yIH19PgogICAgICAgICAge2NsYW1wZWQgPj0gMCA/ICIrIiA6ICIifQogICAgICAgICAge2NsYW1wZWQudG9GaXhlZCgyKX0KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1bMTBweF0gdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVyIHRleHQtaW5rLWZhaW50Ij57Y29uZmx1ZW5jZS5sYWJlbH08L2Rpdj4KICAgICAgPC9kaXY+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtNCBncmlkIGdyaWQtY29scy0zIGdhcC0yIj4KICAgICAgICA8U3ViU2NvcmUgbGFiZWw9IlRlY2huaWNhbCIgdmFsdWU9e2NvbmZsdWVuY2UudGVjaG5pY2FsfSAvPgogICAgICAgIDxTdWJTY29yZSBsYWJlbD0iU2VudGltZW50IiB2YWx1ZT17Y29uZmx1ZW5jZS5zZW50aW1lbnR9IC8+CiAgICAgICAgPFN1YlNjb3JlIGxhYmVsPSJNb21lbnR1bSIgdmFsdWU9e2NvbmZsdWVuY2UubW9tZW50dW19IC8+CiAgICAgIDwvZGl2PgogICAgPC9QYW5lbD4KICApOwp9CgpmdW5jdGlvbiBTdWJTY29yZSh7IGxhYmVsLCB2YWx1ZSB9KSB7CiAgY29uc3QgdG9uZSA9IHZhbHVlID49IDAuMyA/ICJ0ZXh0LWJ1bGwiIDogdmFsdWUgPD0gLTAuMyA/ICJ0ZXh0LWJlYXIiIDogInRleHQtd2FybiI7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJyb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLXN1cmZhY2UtYWx0IHB4LTIgcHktMS41IHRleHQtY2VudGVyIj4KICAgICAgPGRpdiBjbGFzc05hbWU9e2Bmb250LW1vbm8gdGV4dC1bMTJweF0gJHt0b25lfWB9PgogICAgICAgIHt2YWx1ZSA+PSAwID8gIisiIDogIiJ9CiAgICAgICAge3ZhbHVlLnRvRml4ZWQoMil9CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMC41IHRleHQtWzlweF0gdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVyIHRleHQtaW5rLWZhaW50Ij57bGFiZWx9PC9kaXY+CiAgICA8L2Rpdj4KICApOwp9
+import React from "react";
+import Panel from "./Panel.jsx";
+
+export default function ConfluenceGauge({ confluence }) {
+  // Map score range [-1, 1] to a semicircle sweep from 180deg (left) to 0deg (right)
+  const clamped = Math.max(-1, Math.min(1, confluence.composite));
+  const angle = 180 - ((clamped + 1) / 2) * 180;
+  const needleColor = clamped >= 0.3 ? "#22d67e" : clamped <= -0.3 ? "#ff4d5e" : "#f5a623";
+
+  const rad = (angle * Math.PI) / 180;
+  const cx = 100;
+  const cy = 92;
+  const r = 70;
+  const nx = cx + r * Math.cos(rad);
+  const ny = cy - r * Math.sin(rad);
+
+  return (
+    <Panel title="AI Fusion Confluence Score">
+      <div className="flex flex-col items-center">
+        <svg width="200" height="110" viewBox="0 0 200 110">
+          <path d="M 30 92 A 70 70 0 0 1 170 92" fill="none" stroke="#1e2530" strokeWidth="10" strokeLinecap="round" />
+          <path
+            d="M 30 92 A 70 70 0 0 1 170 92"
+            fill="none"
+            stroke="url(#gaugeGradient)"
+            strokeWidth="10"
+            strokeLinecap="round"
+            strokeDasharray={`${((clamped + 1) / 2) * 220} 220`}
+          />
+          <defs>
+            <linearGradient id="gaugeGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#ff4d5e" />
+              <stop offset="50%" stopColor="#f5a623" />
+              <stop offset="100%" stopColor="#22d67e" />
+            </linearGradient>
+          </defs>
+          <line x1={cx} y1={cy} x2={nx} y2={ny} stroke={needleColor} strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx={cx} cy={cy} r="4" fill={needleColor} />
+        </svg>
+        <div className="-mt-2 font-mono text-2xl font-semibold" style={{ color: needleColor }}>
+          {clamped >= 0 ? "+" : ""}
+          {clamped.toFixed(2)}
+        </div>
+        <div className="text-[10px] uppercase tracking-wider text-ink-faint">{confluence.label}</div>
+      </div>
+
+      <div className="mt-4 grid grid-cols-3 gap-2">
+        <SubScore label="Technical" value={confluence.technical} />
+        <SubScore label="Sentiment" value={confluence.sentiment} />
+        <SubScore label="Momentum" value={confluence.momentum} />
+      </div>
+    </Panel>
+  );
+}
+
+function SubScore({ label, value }) {
+  const tone = value >= 0.3 ? "text-bull" : value <= -0.3 ? "text-bear" : "text-warn";
+  return (
+    <div className="rounded-md border border-border bg-surface-alt px-2 py-1.5 text-center">
+      <div className={`font-mono text-[12px] ${tone}`}>
+        {value >= 0 ? "+" : ""}
+        {value.toFixed(2)}
+      </div>
+      <div className="mt-0.5 text-[9px] uppercase tracking-wider text-ink-faint">{label}</div>
+    </div>
+  );
+}

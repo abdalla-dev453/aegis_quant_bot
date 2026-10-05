@@ -1,1 +1,72 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKCmNvbnN0IGN1cnJlbmN5ID0gKHZhbHVlKSA9PgogIG5ldyBJbnRsLk51bWJlckZvcm1hdCgiZW4tVVMiLCB7IHN0eWxlOiAiY3VycmVuY3kiLCBjdXJyZW5jeTogIlVTRCIgfSkuZm9ybWF0KHZhbHVlID8/IDApOwoKZnVuY3Rpb24gc2lnbmFsVGltZSh2YWx1ZSkgewogIGlmICghdmFsdWUpIHJldHVybiAiLS06LS0iOwogIGNvbnN0IGRhdGUgPSBuZXcgRGF0ZSh2YWx1ZSk7CiAgcmV0dXJuIE51bWJlci5pc05hTihkYXRlLmdldFRpbWUoKSkKICAgID8gIi0tOi0tIgogICAgOiBkYXRlLnRvTG9jYWxlVGltZVN0cmluZyhbXSwgeyBob3VyOiAiMi1kaWdpdCIsIG1pbnV0ZTogIjItZGlnaXQiLCBob3VyMTI6IGZhbHNlIH0pOwp9CgpmdW5jdGlvbiBNZXRyaWMoeyBsYWJlbCwgdmFsdWUsIHRvbmUgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0ibWluLXctMCBib3JkZXItbCBib3JkZXItYm9yZGVyIHBsLTMgZmlyc3Q6Ym9yZGVyLWwtMCBmaXJzdDpwbC0wIj4KICAgICAgPGR0IGNsYXNzTmFtZT0idGV4dC1bMTBweF0gdXBwZXJjYXNlIHRleHQtaW5rLWZhaW50Ij57bGFiZWx9PC9kdD4KICAgICAgPGRkIGNsYXNzTmFtZT17YG10LTEgdHJ1bmNhdGUgZm9udC1tb25vIHRleHQtc20gJHt0b25lID8/ICJ0ZXh0LWluayJ9YH0+e3ZhbHVlfTwvZGQ+CiAgICA8L2Rpdj4KICApOwp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBCb3RTdGF0dXNQYW5lbCh7CiAgYWNjb3VudCwKICByaXNrLAogIGNvbnRyb2wsCiAgcHJvcG9zYWxzLAogIG9yZGVycywKICBsb2dzLAogIGNvbm5lY3RlZCwKICBhaUNvbmZpZ3VyZWQsCiAgdHJhZGluZ01vZGUsCn0pIHsKICBjb25zdCBsYXN0U2lnbmFsID0gcHJvcG9zYWxzLmF0KC0xKTsKICBjb25zdCBsYXN0T3JkZXIgPSBvcmRlcnMuYXQoLTEpOwogIGNvbnN0IGxhc3RFdmVudCA9IGxvZ3MuYXQoLTEpOwogIGNvbnN0IHN0YXR1cyA9IGNvbnRyb2w/LnN0YXR1cyA/PyAiUlVOTklORyI7CiAgY29uc3Qgc2lnbmFsID0gbGFzdFNpZ25hbAogICAgPyBgJHtsYXN0U2lnbmFsLmFjdGlvbn0gJHtsYXN0U2lnbmFsLnN5bWJvbH0gJHtzaWduYWxUaW1lKGxhc3RTaWduYWwuY2FuZGxlX3RpbWUpfWAKICAgIDogIk5PTkUiOwogIGNvbnN0IG9yZGVyID0gbGFzdE9yZGVyCiAgICA/IGAke2xhc3RPcmRlci5zdGF0dXMudG9VcHBlckNhc2UoKX0gJHtsYXN0T3JkZXIuZGlyZWN0aW9ufSAke2xhc3RPcmRlci5zeW1ib2x9YAogICAgOiAiTk9ORSI7CgogIHJldHVybiAoCiAgICA8UGFuZWwKICAgICAgdGl0bGU9IkFJIFRyYWRpbmcgQm90IgogICAgICBiYWRnZT17KAogICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YGZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUgZm9udC1tb25vIHRleHQtWzExcHhdICR7c3RhdHVzID09PSAiUlVOTklORyIgPyAidGV4dC1idWxsIiA6ICJ0ZXh0LXdhcm4ifWB9PgogICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPXtgaC0xLjUgdy0xLjUgcm91bmRlZC1mdWxsICR7c3RhdHVzID09PSAiUlVOTklORyIgPyAiYmctYnVsbCIgOiAiYmctd2FybiJ9YH0gLz4KICAgICAgICAgIHt0cmFkaW5nTW9kZX0gLyB7c3RhdHVzfQogICAgICAgIDwvc3Bhbj4KICAgICAgKX0KICAgID4KICAgICAgPGRsIGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMiBnYXAteC00IGdhcC15LTQgc206Z3JpZC1jb2xzLTQgeGw6Z3JpZC1jb2xzLTgiPgogICAgICAgIDxNZXRyaWMgbGFiZWw9IkVxdWl0eSIgdmFsdWU9e2N1cnJlbmN5KGFjY291bnQubmV0RXF1aXR5KX0gLz4KICAgICAgICA8TWV0cmljIGxhYmVsPSJEYWlseSBQL0wiIHZhbHVlPXtjdXJyZW5jeShhY2NvdW50LnRvZGF5c1BubCl9IHRvbmU9e2FjY291bnQudG9kYXlzUG5sIDwgMCA/ICJ0ZXh0LWJlYXIiIDogInRleHQtYnVsbCJ9IC8+CiAgICAgICAgPE1ldHJpYyBsYWJlbD0iRHJhd2Rvd24iIHZhbHVlPXtgJHtyaXNrLmRyYXdkb3duUGN0LnRvRml4ZWQoMil9JWB9IC8+CiAgICAgICAgPE1ldHJpYyBsYWJlbD0iT3BlbiBwb3NpdGlvbnMiIHZhbHVlPXtyaXNrLm9wZW5Qb3NpdGlvbnN9IC8+CiAgICAgICAgPE1ldHJpYyBsYWJlbD0iUmlzayAvIHRyYWRlIiB2YWx1ZT17cmlzay5yaXNrUGVyVHJhZGVQY3QgPT0gbnVsbCA/ICItLSIgOiBgJHtyaXNrLnJpc2tQZXJUcmFkZVBjdC50b0ZpeGVkKDIpfSVgfSAvPgogICAgICAgIDxNZXRyaWMgbGFiZWw9IkFJIEFQSSIgdmFsdWU9e2FpQ29uZmlndXJlZCA/ICJDT05GSUdVUkVEIiA6ICJOT1QgQ09ORklHVVJFRCJ9IHRvbmU9e2FpQ29uZmlndXJlZCA/ICJ0ZXh0LWJ1bGwiIDogInRleHQtd2FybiJ9IC8+CiAgICAgICAgPE1ldHJpYyBsYWJlbD0iRmVlZCIgdmFsdWU9e2Nvbm5lY3RlZCA/ICJDT05ORUNURUQiIDogIk9GRkxJTkUifSB0b25lPXtjb25uZWN0ZWQgPyAidGV4dC1idWxsIiA6ICJ0ZXh0LWJlYXIifSAvPgogICAgICAgIDxNZXRyaWMgbGFiZWw9Ikxhc3Qgc2lnbmFsIiB2YWx1ZT17c2lnbmFsfSAvPgogICAgICA8L2RsPgogICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtNCBncmlkIGdhcC0zIGJvcmRlci10IGJvcmRlci1ib3JkZXIgcHQtMyB0ZXh0LVsxMXB4XSBzbTpncmlkLWNvbHMtMiI+CiAgICAgICAgPHAgY2xhc3NOYW1lPSJtaW4tdy0wIHRydW5jYXRlIHRleHQtaW5rLWRpbSI+PHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LWluay1mYWludCI+TGFzdCBvcmRlcjwvc3Bhbj48c3BhbiBjbGFzc05hbWU9Im14LTIgdGV4dC1ib3JkZXIiPi88L3NwYW4+e29yZGVyfTwvcD4KICAgICAgICA8cCBjbGFzc05hbWU9Im1pbi13LTAgd3JhcC1icmVhay13b3JkIHRleHQtaW5rLWRpbSI+PHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LWluay1mYWludCI+TGFzdCBldmVudDwvc3Bhbj48c3BhbiBjbGFzc05hbWU9Im14LTIgdGV4dC1ib3JkZXIiPi88L3NwYW4+e2xhc3RFdmVudD8ubWVzc2FnZSA/PyAiLS0ifTwvcD4KICAgICAgPC9kaXY+CiAgICA8L1BhbmVsPgogICk7Cn0=
+import React from "react";
+import Panel from "./Panel.jsx";
+
+const currency = (value) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value ?? 0);
+
+function signalTime(value) {
+  if (!value) return "--:--";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "--:--"
+    : date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+}
+
+function Metric({ label, value, tone }) {
+  return (
+    <div className="min-w-0 border-l border-border pl-3 first:border-l-0 first:pl-0">
+      <dt className="text-[10px] uppercase text-ink-faint">{label}</dt>
+      <dd className={`mt-1 truncate font-mono text-sm ${tone ?? "text-ink"}`}>{value}</dd>
+    </div>
+  );
+}
+
+export default function BotStatusPanel({
+  account,
+  risk,
+  control,
+  proposals,
+  orders,
+  logs,
+  connected,
+  aiConfigured,
+  tradingMode,
+}) {
+  const lastSignal = proposals.at(-1);
+  const lastOrder = orders.at(-1);
+  const lastEvent = logs.at(-1);
+  const status = control?.status ?? "RUNNING";
+  const signal = lastSignal
+    ? `${lastSignal.action} ${lastSignal.symbol} ${signalTime(lastSignal.candle_time)}`
+    : "NONE";
+  const order = lastOrder
+    ? `${lastOrder.status.toUpperCase()} ${lastOrder.direction} ${lastOrder.symbol}`
+    : "NONE";
+
+  return (
+    <Panel
+      title="AI Trading Bot"
+      badge={(
+        <span className={`flex items-center gap-1.5 font-mono text-[11px] ${status === "RUNNING" ? "text-bull" : "text-warn"}`}>
+          <span className={`h-1.5 w-1.5 rounded-full ${status === "RUNNING" ? "bg-bull" : "bg-warn"}`} />
+          {tradingMode} / {status}
+        </span>
+      )}
+    >
+      <dl className="grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4 xl:grid-cols-8">
+        <Metric label="Equity" value={currency(account.netEquity)} />
+        <Metric label="Daily P/L" value={currency(account.todaysPnl)} tone={account.todaysPnl < 0 ? "text-bear" : "text-bull"} />
+        <Metric label="Drawdown" value={`${risk.drawdownPct.toFixed(2)}%`} />
+        <Metric label="Open positions" value={risk.openPositions} />
+        <Metric label="Risk / trade" value={risk.riskPerTradePct == null ? "--" : `${risk.riskPerTradePct.toFixed(2)}%`} />
+        <Metric label="AI API" value={aiConfigured ? "CONFIGURED" : "NOT CONFIGURED"} tone={aiConfigured ? "text-bull" : "text-warn"} />
+        <Metric label="Feed" value={connected ? "CONNECTED" : "OFFLINE"} tone={connected ? "text-bull" : "text-bear"} />
+        <Metric label="Last signal" value={signal} />
+      </dl>
+      <div className="mt-4 grid gap-3 border-t border-border pt-3 text-[11px] sm:grid-cols-2">
+        <p className="min-w-0 truncate text-ink-dim"><span className="text-ink-faint">Last order</span><span className="mx-2 text-border">/</span>{order}</p>
+        <p className="min-w-0 wrap-break-word text-ink-dim"><span className="text-ink-faint">Last event</span><span className="mx-2 text-border">/</span>{lastEvent?.message ?? "--"}</p>
+      </div>
+    </Panel>
+  );
+}

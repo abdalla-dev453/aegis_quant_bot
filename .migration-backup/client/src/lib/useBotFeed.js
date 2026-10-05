@@ -1,1 +1,156 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VSZWYsIHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwppbXBvcnQgKiBhcyBmZWVkIGZyb20gIi4vYm90RmVlZC5qcyI7CgovKioKICogdXNlQm90RmVlZAogKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogKiBUaGUgb25lIGhvb2sgZXZlcnkgcGFnZSByZWFkcyBib3Qgc3RhdGUgZnJvbS4gUG9sbHMgdGhlIGJvdCdzIEZhc3RBUEkKICogYnJpZGdlIChzZWUgYm90RmVlZC5qcykgb24gaW50ZXJ2YWxzLCB3aXRoIHBlci1lbmRwb2ludCBmYWlsdXJlCiAqIHRvbGVyYW5jZTogaWYgb25lIGVuZHBvaW50IGVycm9ycywgdGhlIG90aGVycyBrZWVwIHVwZGF0aW5nIGFuZCB0aGUKICogZmFpbGVkIHNsaWNlIHNpbXBseSByZXRhaW5zIGl0cyBsYXN0IGdvb2QgdmFsdWUuCiAqLwoKLy8gRW1wdHkgYnV0IHNoYXBlLWNvcnJlY3QgaW5pdGlhbCBzdGF0ZXMgKG1pcnJvcnMgc2VydmVyL21vZGVscy5weSkuCmNvbnN0IEVNUFRZID0gewogIGFjY291bnQ6IHsgbmV0RXF1aXR5OiAwLCBiYWxhbmNlOiAwLCB0b2RheXNQbmw6IDAsIGZyZWVNYXJnaW46IDAsIG1hcmdpbkxldmVsOiAwIH0sCiAgcmlzazogeyBkcmF3ZG93blBjdDogMCwgbWF4RHJhd2Rvd25DZWlsaW5nUGN0OiA1LjAsIGRhaWx5TG9zc0NlaWxpbmdQY3Q6IDQuMCwgbWFyZ2luVXRpbGl6ZWRQY3Q6IDAsIG9wZW5Qb3NpdGlvbnM6IDAsIHRyYWRlc1RvZGF5OiAwLCBtYXhUcmFkZXNQZXJEYXk6IDAsIHBlYWtEcmF3ZG93bkhhbHRlZDogZmFsc2UsIHJpc2tQZXJUcmFkZVBjdDogbnVsbCB9LAogIHBlcmZvcm1hbmNlOiB7IHdpblJhdGVQY3Q6IDAsIHByb2ZpdEZhY3RvcjogMCwgdG90YWxUcmFkZXM6IDAsIGF2Z1dpbjogMCwgYXZnTG9zczogMCB9LAogIGNvbmZsdWVuY2U6IHsgY29tcG9zaXRlOiAwLCBsYWJlbDogIk5FVVRSQUwiLCB0ZWNobmljYWw6IDAsIHNlbnRpbWVudDogMCwgbW9tZW50dW06IDAgfSwKICBjYWxlbmRhcjogeyBhdXRvSGFsdEFjdGl2ZTogZmFsc2UsIGF1dG9IYWx0RXRhU2Vjb25kczogMCwgbmV4dEV2ZW50OiBudWxsIH0sCiAgY29udHJvbDogeyBzdGF0dXM6ICJSVU5OSU5HIiwgZW50cmllc0FsbG93ZWQ6IHRydWUsIG1hbmFnZW1lbnRBbGxvd2VkOiB0cnVlLCByZWFzb246IG51bGwsIHNvdXJjZTogIlNUQVJUVVAiLCBjaGFuZ2VkQXQ6ICIiLCByZXZpc2lvbjogMCB9LAogIHNldHRpbmdzOiB7IGFpQ29uZmlndXJlZDogZmFsc2UsIHRyYWRpbmdNb2RlOiAiVU5LTk9XTiIgfSwKICBwcm9wb3NhbHM6IFtdLAogIG9yZGVyczogW10sCiAgdHJhZGVBbmFseXNpczogeyBzdW1tYXJ5OiB7IHRvdGFsVHJhZGVzOiAwLCBuZXRQbmw6IDAuMCB9LCByZWNlbnRUcmFkZXM6IFtdIH0sCn07Cgpjb25zdCBJTlRFR1JBTFMgPSBbCiAgWyJhY2NvdW50IiwgZmVlZC5mZXRjaEFjY291bnQsIDMwMDBdLAogIFsicmlzayIsIGZlZWQuZmV0Y2hSaXNrLCAzMDAwXSwKICBbInBlcmZvcm1hbmNlIiwgZmVlZC5mZXRjaFBlcmZvcm1hbmNlLCAxMDAwMF0sCiAgWyJjb25mbHVlbmNlIiwgZmVlZC5mZXRjaENvbmZsdWVuY2UsIDMwMDBdLAogIFsiY2FsZW5kYXIiLCBmZWVkLmZldGNoQ2FsZW5kYXIsIDUwMDBdLAogIFsiY29udHJvbCIsIGZlZWQuZmV0Y2hDb250cm9sLCAzMDAwXSwKICBbInNldHRpbmdzIiwgZmVlZC5mZXRjaFNldHRpbmdzLCAxNTAwMF0sCiAgWyJ0cmFkZUFuYWx5c2lzIiwgZmVlZC5mZXRjaFRyYWRlQW5hbHlzaXMsIDEwMDAwXSwKXTsKCmV4cG9ydCBmdW5jdGlvbiB1c2VCb3RGZWVkKCkgewogIGNvbnN0IFthY2NvdW50LCBzZXRBY2NvdW50XSA9IHVzZVN0YXRlKEVNUFRZLmFjY291bnQpOwogIGNvbnN0IFtyaXNrLCBzZXRSaXNrXSA9IHVzZVN0YXRlKEVNUFRZLnJpc2spOwogIGNvbnN0IFtwZXJmb3JtYW5jZSwgc2V0UGVyZm9ybWFuY2VdID0gdXNlU3RhdGUoRU1QVFkucGVyZm9ybWFuY2UpOwogIGNvbnN0IFtjb25mbHVlbmNlLCBzZXRDb25mbHVlbmNlXSA9IHVzZVN0YXRlKEVNUFRZLmNvbmZsdWVuY2UpOwogIGNvbnN0IFtjYWxlbmRhciwgc2V0Q2FsZW5kYXJdID0gdXNlU3RhdGUoRU1QVFkuY2FsZW5kYXIpOwogIGNvbnN0IFtjb250cm9sLCBzZXRDb250cm9sXSA9IHVzZVN0YXRlKEVNUFRZLmNvbnRyb2wpOwogIGNvbnN0IFtzZXR0aW5ncywgc2V0U2V0dGluZ3NdID0gdXNlU3RhdGUoRU1QVFkuc2V0dGluZ3MpOwogIGNvbnN0IFtwcm9wb3NhbHMsIHNldFByb3Bvc2Fsc10gPSB1c2VTdGF0ZShbXSk7CiAgY29uc3QgW29yZGVycywgc2V0T3JkZXJzXSA9IHVzZVN0YXRlKFtdKTsKICBjb25zdCBbdHJhZGVBbmFseXNpcywgc2V0VHJhZGVBbmFseXNpc10gPSB1c2VTdGF0ZShFTVBUWS50cmFkZUFuYWx5c2lzKTsKICBjb25zdCBbcG9zaXRpb25zLCBzZXRQb3NpdGlvbnNdID0gdXNlU3RhdGUoW10pOwogIGNvbnN0IFtwcmljZVNlcmllcywgc2V0UHJpY2VTZXJpZXNdID0gdXNlU3RhdGUoeyBzeW1ib2w6ICIiLCBwb2ludHM6IFtdIH0pOwogIGNvbnN0IFtlcXVpdHlDdXJ2ZSwgc2V0RXF1aXR5Q3VydmVdID0gdXNlU3RhdGUoW10pOwogIGNvbnN0IFtsb2dzLCBzZXRMb2dzXSA9IHVzZVN0YXRlKFtdKTsKICBjb25zdCBbY29ubmVjdGVkLCBzZXRDb25uZWN0ZWRdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKHsKICAgIGFjY291bnQ6IHRydWUsCiAgICByaXNrOiB0cnVlLAogICAgcGVyZm9ybWFuY2U6IHRydWUsCiAgICBjb25mbHVlbmNlOiB0cnVlLAogICAgY2FsZW5kYXI6IHRydWUsCiAgICBjb250cm9sOiB0cnVlLAogICAgdHJhZGVBbmFseXNpczogdHJ1ZSwKICAgIHBvc2l0aW9uczogdHJ1ZSwKICAgIHByaWNlU2VyaWVzOiB0cnVlLAogICAgZXF1aXR5Q3VydmU6IHRydWUsCiAgICBsb2dzOiB0cnVlLAogIH0pOwoKICBjb25zdCBjb25uZWN0ZWRSZWYgPSB1c2VSZWYoZmFsc2UpOwogIGNvbnN0IGZhaWx1cmVzUmVmID0gdXNlUmVmKDApOwoKICB1c2VFZmZlY3QoKCkgPT4gewogICAgY29uc3QgdGltZXJzID0gW107CgogICAgLy8gUG9sbCBlYWNoIHNuYXBzaG90IGVuZHBvaW50IG9uIGl0cyBvd24gY2FkZW5jZS4KICAgIGZvciAoY29uc3QgW2tleSwgZm4sIG1zXSBvZiBJTlRFR1JBTFMpIHsKICAgICAgY29uc3Qgc2V0dGVyID0gewogICAgICAgIGFjY291bnQ6IHNldEFjY291bnQsCiAgICAgICAgcmlzazogc2V0UmlzaywKICAgICAgICBwZXJmb3JtYW5jZTogc2V0UGVyZm9ybWFuY2UsCiAgICAgICAgY29uZmx1ZW5jZTogc2V0Q29uZmx1ZW5jZSwKICAgICAgICBjYWxlbmRhcjogc2V0Q2FsZW5kYXIsCiAgICAgICAgY29udHJvbDogc2V0Q29udHJvbCwKICAgICAgICBzZXR0aW5nczogc2V0U2V0dGluZ3MsCiAgICAgICAgdHJhZGVBbmFseXNpczogc2V0VHJhZGVBbmFseXNpcywKICAgICAgfVtrZXldOwogICAgICBjb25zdCB0aWNrID0gYXN5bmMgKCkgPT4gewogICAgICAgIHRyeSB7CiAgICAgICAgICBzZXR0ZXIoYXdhaXQgZm4oKSk7CiAgICAgICAgICBzZXRMb2FkaW5nKChwcmV2KSA9PiAoeyAuLi5wcmV2LCBba2V5XTogZmFsc2UgfSkpOwogICAgICAgICAgZmFpbHVyZXNSZWYuY3VycmVudCA9IDA7CiAgICAgICAgICBpZiAoIWNvbm5lY3RlZFJlZi5jdXJyZW50KSB7CiAgICAgICAgICAgIGNvbm5lY3RlZFJlZi5jdXJyZW50ID0gdHJ1ZTsKICAgICAgICAgICAgc2V0Q29ubmVjdGVkKHRydWUpOwogICAgICAgICAgfQogICAgICAgIH0gY2F0Y2ggewogICAgICAgICAgLy8gS2VlcCB0aGUgZmVlZCBjb25uZWN0ZWQgdGhyb3VnaCB0cmFuc2llbnQgZmFpbHVyZXM7IGRpc2Nvbm5lY3QgYWZ0ZXIgMy4KICAgICAgICAgIGZhaWx1cmVzUmVmLmN1cnJlbnQgKz0gMTsKICAgICAgICAgIHNldExvYWRpbmcoKHByZXYpID0+ICh7IC4uLnByZXYsIFtrZXldOiBmYWxzZSB9KSk7CiAgICAgICAgICBpZiAoZmFpbHVyZXNSZWYuY3VycmVudCA+PSAzICYmIGNvbm5lY3RlZFJlZi5jdXJyZW50KSB7CiAgICAgICAgICAgIGNvbm5lY3RlZFJlZi5jdXJyZW50ID0gZmFsc2U7CiAgICAgICAgICAgIHNldENvbm5lY3RlZChmYWxzZSk7CiAgICAgICAgICB9CiAgICAgICAgfQogICAgICB9OwogICAgICB0aWNrKCk7CiAgICAgIHRpbWVycy5wdXNoKHNldEludGVydmFsKHRpY2ssIG1zKSk7CiAgICB9CgogICAgLy8gTGlzdHMgLyBzZXJpZXMuCiAgICBjb25zdCBwb2xsID0gYXN5bmMgKGZuLCBzZXR0ZXIsIGxvYWRpbmdLZXkpID0+IHsKICAgICAgdHJ5IHsKICAgICAgICBzZXR0ZXIoYXdhaXQgZm4oKSk7CiAgICAgICAgc2V0TG9hZGluZygocHJldikgPT4gKHsgLi4ucHJldiwgW2xvYWRpbmdLZXldOiBmYWxzZSB9KSk7CiAgICAgIH0gY2F0Y2ggewogICAgICAgIC8qIGtlZXAgbGFzdCBnb29kIHZhbHVlICovCiAgICAgICAgc2V0TG9hZGluZygocHJldikgPT4gKHsgLi4ucHJldiwgW2xvYWRpbmdLZXldOiBmYWxzZSB9KSk7CiAgICAgIH0KICAgIH07CiAgICBjb25zdCBwcm9wb3NhbHNUaWNrID0gKCkgPT4gcG9sbChmZWVkLmZldGNoUHJvcG9zYWxzLCBzZXRQcm9wb3NhbHMsICJwcm9wb3NhbHMiKTsKICAgIGNvbnN0IG9yZGVyc1RpY2sgPSAoKSA9PiBwb2xsKGZlZWQuZmV0Y2hPcmRlcnMsIHNldE9yZGVycywgIm9yZGVycyIpOwogICAgY29uc3QgcG9zaXRpb25zVGljayA9ICgpID0+IHBvbGwoZmVlZC5mZXRjaFBvc2l0aW9ucywgc2V0UG9zaXRpb25zLCAicG9zaXRpb25zIik7CiAgICBjb25zdCBzZXJpZXNUaWNrID0gKCkgPT4gcG9sbChmZWVkLmZldGNoUHJpY2VTZXJpZXMsIHNldFByaWNlU2VyaWVzLCAicHJpY2VTZXJpZXMiKTsKICAgIGNvbnN0IGN1cnZlVGljayA9ICgpID0+IHBvbGwoZmVlZC5mZXRjaEVxdWl0eUN1cnZlLCBzZXRFcXVpdHlDdXJ2ZSwgImVxdWl0eUN1cnZlIik7CiAgICBjb25zdCBsb2dzVGljayA9ICgpID0+IHBvbGwoZmVlZC5mZXRjaExvZ3MsIHNldExvZ3MsICJsb2dzIik7CgogICAgcHJvcG9zYWxzVGljaygpOwogICAgb3JkZXJzVGljaygpOwogICAgcG9zaXRpb25zVGljaygpOwogICAgc2VyaWVzVGljaygpOwogICAgY3VydmVUaWNrKCk7CiAgICBsb2dzVGljaygpOwogICAgdGltZXJzLnB1c2goc2V0SW50ZXJ2YWwocHJvcG9zYWxzVGljaywgNTAwMCkpOwogICAgdGltZXJzLnB1c2goc2V0SW50ZXJ2YWwob3JkZXJzVGljaywgNTAwMCkpOwogICAgdGltZXJzLnB1c2goc2V0SW50ZXJ2YWwocG9zaXRpb25zVGljaywgMzAwMCkpOwogICAgdGltZXJzLnB1c2goc2V0SW50ZXJ2YWwoc2VyaWVzVGljaywgODAwMCkpOwogICAgdGltZXJzLnB1c2goc2V0SW50ZXJ2YWwoY3VydmVUaWNrLCA2MDAwMCkpOwogICAgdGltZXJzLnB1c2goc2V0SW50ZXJ2YWwobG9nc1RpY2ssIDQwMDApKTsKCiAgICAvLyBDbGllbnQtc2lkZSAxcyBjb3VudGRvd24gZm9yIHRoZSBhdXRvLWhhbHQgYmFubmVyIChzZXJ2ZXIgaXMgYXV0aG9yaXRhdGl2ZSkuCiAgICB0aW1lcnMucHVzaCgKICAgICAgc2V0SW50ZXJ2YWwoKCkgPT4gewogICAgICAgIHNldENhbGVuZGFyKChwcmV2KSA9PiB7CiAgICAgICAgICBpZiAoIXByZXYuYXV0b0hhbHRBY3RpdmUpIHJldHVybiBwcmV2OwogICAgICAgICAgY29uc3QgbmV4dEV0YSA9IHByZXYuYXV0b0hhbHRFdGFTZWNvbmRzIC0gMTsKICAgICAgICAgIHJldHVybiBuZXh0RXRhIDw9IDAKICAgICAgICAgICAgPyB7IC4uLnByZXYsIGF1dG9IYWx0QWN0aXZlOiBmYWxzZSwgYXV0b0hhbHRFdGFTZWNvbmRzOiAwIH0KICAgICAgICAgICAgOiB7IC4uLnByZXYsIGF1dG9IYWx0RXRhU2Vjb25kczogbmV4dEV0YSB9OwogICAgICAgIH0pOwogICAgICB9LCAxMDAwKSwKICAgICk7CgogICAgcmV0dXJuICgpID0+IHRpbWVycy5mb3JFYWNoKGNsZWFySW50ZXJ2YWwpOwogIH0sIFtdKTsKCiAgcmV0dXJuIHsgYWNjb3VudCwgcmlzaywgcGVyZm9ybWFuY2UsIGNvbmZsdWVuY2UsIGNhbGVuZGFyLCBjb250cm9sLCBzZXR0aW5ncywgcHJvcG9zYWxzLCBvcmRlcnMsIHRyYWRlQW5hbHlzaXMsIHBvc2l0aW9ucywgcHJpY2VTZXJpZXMsIGVxdWl0eUN1cnZlLCBsb2dzLCBjb25uZWN0ZWQsIGxvYWRpbmcgfTsKfQ==
+import { useEffect, useRef, useState } from "react";
+import * as feed from "./botFeed.js";
+
+/**
+ * useBotFeed
+ * -----------------------------------------------------------------------
+ * The one hook every page reads bot state from. Polls the bot's FastAPI
+ * bridge (see botFeed.js) on intervals, with per-endpoint failure
+ * tolerance: if one endpoint errors, the others keep updating and the
+ * failed slice simply retains its last good value.
+ */
+
+// Empty but shape-correct initial states (mirrors server/models.py).
+const EMPTY = {
+  account: { netEquity: 0, balance: 0, todaysPnl: 0, freeMargin: 0, marginLevel: 0 },
+  risk: { drawdownPct: 0, maxDrawdownCeilingPct: 5.0, dailyLossCeilingPct: 4.0, marginUtilizedPct: 0, openPositions: 0, tradesToday: 0, maxTradesPerDay: 0, peakDrawdownHalted: false, riskPerTradePct: null },
+  performance: { winRatePct: 0, profitFactor: 0, totalTrades: 0, avgWin: 0, avgLoss: 0 },
+  confluence: { composite: 0, label: "NEUTRAL", technical: 0, sentiment: 0, momentum: 0 },
+  calendar: { autoHaltActive: false, autoHaltEtaSeconds: 0, nextEvent: null },
+  control: { status: "RUNNING", entriesAllowed: true, managementAllowed: true, reason: null, source: "STARTUP", changedAt: "", revision: 0 },
+  settings: { aiConfigured: false, tradingMode: "UNKNOWN" },
+  proposals: [],
+  orders: [],
+  tradeAnalysis: { summary: { totalTrades: 0, netPnl: 0.0 }, recentTrades: [] },
+};
+
+const INTEGRALS = [
+  ["account", feed.fetchAccount, 3000],
+  ["risk", feed.fetchRisk, 3000],
+  ["performance", feed.fetchPerformance, 10000],
+  ["confluence", feed.fetchConfluence, 3000],
+  ["calendar", feed.fetchCalendar, 5000],
+  ["control", feed.fetchControl, 3000],
+  ["settings", feed.fetchSettings, 15000],
+  ["tradeAnalysis", feed.fetchTradeAnalysis, 10000],
+];
+
+export function useBotFeed() {
+  const [account, setAccount] = useState(EMPTY.account);
+  const [risk, setRisk] = useState(EMPTY.risk);
+  const [performance, setPerformance] = useState(EMPTY.performance);
+  const [confluence, setConfluence] = useState(EMPTY.confluence);
+  const [calendar, setCalendar] = useState(EMPTY.calendar);
+  const [control, setControl] = useState(EMPTY.control);
+  const [settings, setSettings] = useState(EMPTY.settings);
+  const [proposals, setProposals] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [tradeAnalysis, setTradeAnalysis] = useState(EMPTY.tradeAnalysis);
+  const [positions, setPositions] = useState([]);
+  const [priceSeries, setPriceSeries] = useState({ symbol: "", points: [] });
+  const [equityCurve, setEquityCurve] = useState([]);
+  const [logs, setLogs] = useState([]);
+  const [connected, setConnected] = useState(false);
+  const [loading, setLoading] = useState({
+    account: true,
+    risk: true,
+    performance: true,
+    confluence: true,
+    calendar: true,
+    control: true,
+    tradeAnalysis: true,
+    positions: true,
+    priceSeries: true,
+    equityCurve: true,
+    logs: true,
+  });
+
+  const connectedRef = useRef(false);
+  const failuresRef = useRef(0);
+
+  useEffect(() => {
+    const timers = [];
+
+    // Poll each snapshot endpoint on its own cadence.
+    for (const [key, fn, ms] of INTEGRALS) {
+      const setter = {
+        account: setAccount,
+        risk: setRisk,
+        performance: setPerformance,
+        confluence: setConfluence,
+        calendar: setCalendar,
+        control: setControl,
+        settings: setSettings,
+        tradeAnalysis: setTradeAnalysis,
+      }[key];
+      const tick = async () => {
+        try {
+          setter(await fn());
+          setLoading((prev) => ({ ...prev, [key]: false }));
+          failuresRef.current = 0;
+          if (!connectedRef.current) {
+            connectedRef.current = true;
+            setConnected(true);
+          }
+        } catch {
+          // Keep the feed connected through transient failures; disconnect after 3.
+          failuresRef.current += 1;
+          setLoading((prev) => ({ ...prev, [key]: false }));
+          if (failuresRef.current >= 3 && connectedRef.current) {
+            connectedRef.current = false;
+            setConnected(false);
+          }
+        }
+      };
+      tick();
+      timers.push(setInterval(tick, ms));
+    }
+
+    // Lists / series.
+    const poll = async (fn, setter, loadingKey) => {
+      try {
+        setter(await fn());
+        setLoading((prev) => ({ ...prev, [loadingKey]: false }));
+      } catch {
+        /* keep last good value */
+        setLoading((prev) => ({ ...prev, [loadingKey]: false }));
+      }
+    };
+    const proposalsTick = () => poll(feed.fetchProposals, setProposals, "proposals");
+    const ordersTick = () => poll(feed.fetchOrders, setOrders, "orders");
+    const positionsTick = () => poll(feed.fetchPositions, setPositions, "positions");
+    const seriesTick = () => poll(feed.fetchPriceSeries, setPriceSeries, "priceSeries");
+    const curveTick = () => poll(feed.fetchEquityCurve, setEquityCurve, "equityCurve");
+    const logsTick = () => poll(feed.fetchLogs, setLogs, "logs");
+
+    proposalsTick();
+    ordersTick();
+    positionsTick();
+    seriesTick();
+    curveTick();
+    logsTick();
+    timers.push(setInterval(proposalsTick, 5000));
+    timers.push(setInterval(ordersTick, 5000));
+    timers.push(setInterval(positionsTick, 3000));
+    timers.push(setInterval(seriesTick, 8000));
+    timers.push(setInterval(curveTick, 60000));
+    timers.push(setInterval(logsTick, 4000));
+
+    // Client-side 1s countdown for the auto-halt banner (server is authoritative).
+    timers.push(
+      setInterval(() => {
+        setCalendar((prev) => {
+          if (!prev.autoHaltActive) return prev;
+          const nextEta = prev.autoHaltEtaSeconds - 1;
+          return nextEta <= 0
+            ? { ...prev, autoHaltActive: false, autoHaltEtaSeconds: 0 }
+            : { ...prev, autoHaltEtaSeconds: nextEta };
+        });
+      }, 1000),
+    );
+
+    return () => timers.forEach(clearInterval);
+  }, []);
+
+  return { account, risk, performance, confluence, calendar, control, settings, proposals, orders, tradeAnalysis, positions, priceSeries, equityCurve, logs, connected, loading };
+}

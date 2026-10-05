@@ -1,1 +1,65 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFBhbmVsIGZyb20gIi4vUGFuZWwuanN4IjsKaW1wb3J0IHsgZm9ybWF0UHJpY2UgfSBmcm9tICIuLi9saWIvYm90RmVlZC5qcyI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQb3NpdGlvbnNUYWJsZSh7IHBvc2l0aW9ucyB9KSB7CiAgcmV0dXJuICgKICAgIDxQYW5lbAogICAgICB0aXRsZT0iT3BlbiBQb3NpdGlvbnMgwrcgTGl2ZSBFeGVjdXRpb24gTGVkZ2VyIgogICAgICBiYWRnZT17CiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJyb3VuZGVkIGJnLWJ1bGwtZGltIHB4LTIgcHktMC41IHRleHQtWzEwcHhdIGZvbnQtbWVkaXVtIHRleHQtYnVsbCI+CiAgICAgICAgICB7cG9zaXRpb25zLmxlbmd0aH0gQUNUSVZFCiAgICAgICAgPC9zcGFuPgogICAgICB9CiAgICA+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJvdmVyZmxvdy14LWF1dG8iPgogICAgICAgIDx0YWJsZSBjbGFzc05hbWU9InctZnVsbCBtaW4tdy1bNzIwcHhdIHRleHQtbGVmdCB0ZXh0LVsxMnB4XSI+CiAgICAgICAgICA8dGhlYWQ+CiAgICAgICAgICAgIDx0ciBjbGFzc05hbWU9InRleHQtWzEwcHhdIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciB0ZXh0LWluay1mYWludCI+CiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT0icGItMiBmb250LW1lZGl1bSI+VGlja2V0PC90aD4KICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPSJwYi0yIGZvbnQtbWVkaXVtIj5Bc3NldDwvdGg+CiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT0icGItMiBmb250LW1lZGl1bSI+VHlwZTwvdGg+CiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT0icGItMiBmb250LW1lZGl1bSI+TG90PC90aD4KICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPSJwYi0yIGZvbnQtbWVkaXVtIj5FbnRyeTwvdGg+CiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT0icGItMiBmb250LW1lZGl1bSI+Q3VycmVudDwvdGg+CiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT0icGItMiBmb250LW1lZGl1bSI+U0w8L3RoPgogICAgICAgICAgICAgIDx0aCBjbGFzc05hbWU9InBiLTIgZm9udC1tZWRpdW0iPlRQPC90aD4KICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPSJwYi0yIGZvbnQtbWVkaXVtIj5UcmFpbDwvdGg+CiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT0icGItMiB0ZXh0LXJpZ2h0IGZvbnQtbWVkaXVtIj5Qbkw8L3RoPgogICAgICAgICAgICA8L3RyPgogICAgICAgICAgPC90aGVhZD4KICAgICAgICAgIDx0Ym9keSBjbGFzc05hbWU9ImZvbnQtbW9ubyI+CiAgICAgICAgICAgIHtwb3NpdGlvbnMubWFwKChwKSA9PiB7CiAgICAgICAgICAgICAgY29uc3QgaXNCdXkgPSBwLnR5cGUgPT09ICJCVVkiOwogICAgICAgICAgICAgIGNvbnN0IHBubFBvc2l0aXZlID0gcC5wbmwgPj0gMDsKICAgICAgICAgICAgICByZXR1cm4gKAogICAgICAgICAgICAgICAgPHRyIGtleT17cC50aWNrZXR9IGNsYXNzTmFtZT0iYm9yZGVyLXQgYm9yZGVyLWJvcmRlciI+CiAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9InB5LTIgdGV4dC1pbmstZGltIj57cC50aWNrZXR9PC90ZD4KICAgICAgICAgICAgICAgICAgPHRkIGNsYXNzTmFtZT0icHktMiB0ZXh0LWluayI+e3Auc3ltYm9sfTwvdGQ+CiAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9InB5LTIiPgogICAgICAgICAgICAgICAgICAgIDxzcGFuCiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2Byb3VuZGVkIHB4LTEuNSBweS0wLjUgdGV4dC1bMTBweF0gZm9udC1zZW1pYm9sZCAkewogICAgICAgICAgICAgICAgICAgICAgICBpc0J1eSA/ICJiZy1idWxsLWRpbSB0ZXh0LWJ1bGwiIDogImJnLWJlYXItZGltIHRleHQtYmVhciIKICAgICAgICAgICAgICAgICAgICAgIH1gfQogICAgICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgICAgIHtwLnR5cGV9CiAgICAgICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPSJweS0yIHRleHQtaW5rLWRpbSI+e3AubG90LnRvRml4ZWQoMil9PC90ZD4KICAgICAgICAgICAgICAgICAgPHRkIGNsYXNzTmFtZT0icHktMiB0ZXh0LWluay1kaW0iPntmb3JtYXRQcmljZShwLnN5bWJvbCwgcC5lbnRyeSwgcC5kaWdpdHMpfTwvdGQ+CiAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9InB5LTIgdGV4dC1pbmsiPntmb3JtYXRQcmljZShwLnN5bWJvbCwgcC5jdXJyZW50LCBwLmRpZ2l0cyl9PC90ZD4KICAgICAgICAgICAgICAgICAgPHRkIGNsYXNzTmFtZT0icHktMiB0ZXh0LWJlYXIvODAiPntmb3JtYXRQcmljZShwLnN5bWJvbCwgcC5zbCwgcC5kaWdpdHMpfTwvdGQ+CiAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9InB5LTIgdGV4dC1idWxsLzgwIj57Zm9ybWF0UHJpY2UocC5zeW1ib2wsIHAudHAsIHAuZGlnaXRzKX08L3RkPgogICAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPSJweS0yIHRleHQtaW5rLWZhaW50Ij57cC50cmFpbGluZyA/ICJvbiIgOiAib2ZmIn08L3RkPgogICAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPXtgcHktMiB0ZXh0LXJpZ2h0IGZvbnQtc2VtaWJvbGQgJHtwbmxQb3NpdGl2ZSA/ICJ0ZXh0LWJ1bGwiIDogInRleHQtYmVhciJ9YH0+CiAgICAgICAgICAgICAgICAgICAge3BubFBvc2l0aXZlID8gIisiIDogIiJ9JHtwLnBubC50b0ZpeGVkKDIpfQogICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICApOwogICAgICAgICAgICB9KX0KICAgICAgICAgIDwvdGJvZHk+CiAgICAgICAgPC90YWJsZT4KICAgICAgPC9kaXY+CiAgICA8L1BhbmVsPgogICk7Cn0=
+import React from "react";
+import Panel from "./Panel.jsx";
+import { formatPrice } from "../lib/botFeed.js";
+
+export default function PositionsTable({ positions }) {
+  return (
+    <Panel
+      title="Open Positions · Live Execution Ledger"
+      badge={
+        <span className="rounded bg-bull-dim px-2 py-0.5 text-[10px] font-medium text-bull">
+          {positions.length} ACTIVE
+        </span>
+      }
+    >
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[720px] text-left text-[12px]">
+          <thead>
+            <tr className="text-[10px] uppercase tracking-wider text-ink-faint">
+              <th className="pb-2 font-medium">Ticket</th>
+              <th className="pb-2 font-medium">Asset</th>
+              <th className="pb-2 font-medium">Type</th>
+              <th className="pb-2 font-medium">Lot</th>
+              <th className="pb-2 font-medium">Entry</th>
+              <th className="pb-2 font-medium">Current</th>
+              <th className="pb-2 font-medium">SL</th>
+              <th className="pb-2 font-medium">TP</th>
+              <th className="pb-2 font-medium">Trail</th>
+              <th className="pb-2 text-right font-medium">PnL</th>
+            </tr>
+          </thead>
+          <tbody className="font-mono">
+            {positions.map((p) => {
+              const isBuy = p.type === "BUY";
+              const pnlPositive = p.pnl >= 0;
+              return (
+                <tr key={p.ticket} className="border-t border-border">
+                  <td className="py-2 text-ink-dim">{p.ticket}</td>
+                  <td className="py-2 text-ink">{p.symbol}</td>
+                  <td className="py-2">
+                    <span
+                      className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${
+                        isBuy ? "bg-bull-dim text-bull" : "bg-bear-dim text-bear"
+                      }`}
+                    >
+                      {p.type}
+                    </span>
+                  </td>
+                  <td className="py-2 text-ink-dim">{p.lot.toFixed(2)}</td>
+                  <td className="py-2 text-ink-dim">{formatPrice(p.symbol, p.entry, p.digits)}</td>
+                  <td className="py-2 text-ink">{formatPrice(p.symbol, p.current, p.digits)}</td>
+                  <td className="py-2 text-bear/80">{formatPrice(p.symbol, p.sl, p.digits)}</td>
+                  <td className="py-2 text-bull/80">{formatPrice(p.symbol, p.tp, p.digits)}</td>
+                  <td className="py-2 text-ink-faint">{p.trailing ? "on" : "off"}</td>
+                  <td className={`py-2 text-right font-semibold ${pnlPositive ? "text-bull" : "text-bear"}`}>
+                    {pnlPositive ? "+" : ""}${p.pnl.toFixed(2)}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </Panel>
+  );
+}

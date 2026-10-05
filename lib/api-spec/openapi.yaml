@@ -1,1 +1,36 @@
-b3BlbmFwaTogMy4xLjAKaW5mbzoKICAjIERvIG5vdCBjaGFuZ2UgdGhlIHRpdGxlLCBpZiB0aGUgdGl0bGUgY2hhbmdlcywgdGhlIGltcG9ydCBwYXRocyB3aWxsIGJlIGJyb2tlbgogIHRpdGxlOiBBcGkKICB2ZXJzaW9uOiAwLjEuMAogIGRlc2NyaXB0aW9uOiBBUEkgc3BlY2lmaWNhdGlvbgpzZXJ2ZXJzOgogIC0gdXJsOiAvYXBpCiAgICBkZXNjcmlwdGlvbjogQmFzZSBBUEkgcGF0aAp0YWdzOgogIC0gbmFtZTogaGVhbHRoCiAgICBkZXNjcmlwdGlvbjogSGVhbHRoIG9wZXJhdGlvbnMKcGF0aHM6CiAgL2hlYWx0aHo6CiAgICBnZXQ6CiAgICAgIG9wZXJhdGlvbklkOiBoZWFsdGhDaGVjawogICAgICB0YWdzOiBbaGVhbHRoXQogICAgICBzdW1tYXJ5OiBIZWFsdGggY2hlY2sKICAgICAgZGVzY3JpcHRpb246IFJldHVybnMgc2VydmVyIGhlYWx0aCBzdGF0dXMKICAgICAgcmVzcG9uc2VzOgogICAgICAgICIyMDAiOgogICAgICAgICAgZGVzY3JpcHRpb246IEhlYWx0aHkKICAgICAgICAgIGNvbnRlbnQ6CiAgICAgICAgICAgIGFwcGxpY2F0aW9uL2pzb246CiAgICAgICAgICAgICAgc2NoZW1hOgogICAgICAgICAgICAgICAgJHJlZjogIiMvY29tcG9uZW50cy9zY2hlbWFzL0hlYWx0aFN0YXR1cyIKY29tcG9uZW50czoKICBzY2hlbWFzOgogICAgSGVhbHRoU3RhdHVzOgogICAgICB0eXBlOiBvYmplY3QKICAgICAgcHJvcGVydGllczoKICAgICAgICBzdGF0dXM6CiAgICAgICAgICB0eXBlOiBzdHJpbmcKICAgICAgcmVxdWlyZWQ6CiAgICAgICAgLSBzdGF0dXMKCg==
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+

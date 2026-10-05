@@ -1,1 +1,106 @@
-aW1wb3J0IHsKICBDb21wb25lbnQsCiAgdHlwZSBDb21wb25lbnRUeXBlLAogIHR5cGUgRXJyb3JJbmZvLAogIHR5cGUgUmVhY3ROb2RlLAp9IGZyb20gJ3JlYWN0JzsKCmV4cG9ydCBpbnRlcmZhY2UgRXJyb3JGYWxsYmFja1Byb3BzIHsKICBlcnJvcjogRXJyb3I7CiAgcmVzZXRFcnJvcjogKCkgPT4gdm9pZDsKfQoKaW50ZXJmYWNlIEVycm9yQm91bmRhcnlQcm9wcyB7CiAgY2hpbGRyZW46IFJlYWN0Tm9kZTsKICBGYWxsYmFja0NvbXBvbmVudD86IENvbXBvbmVudFR5cGU8RXJyb3JGYWxsYmFja1Byb3BzPjsKICAvKiogQ2hhbmdpbmcgdGhpcyBjbGVhcnMgYSBjYXVnaHQgZXJyb3IuIFBhc3MgdGhlIHJvdXRlIHRvIHJlY292ZXIgb24gbmF2aWdhdGlvbi4gKi8KICByZXNldEtleT86IHVua25vd247Cn0KCmludGVyZmFjZSBFcnJvckJvdW5kYXJ5U3RhdGUgewogIGVycm9yOiBFcnJvciB8IG51bGw7Cn0KCmZ1bmN0aW9uIHRvRXJyb3IodmFsdWU6IHVua25vd24pOiBFcnJvciB7CiAgaWYgKHZhbHVlIGluc3RhbmNlb2YgRXJyb3IpIHsKICAgIHJldHVybiB2YWx1ZTsKICB9CiAgaWYgKHR5cGVvZiB2YWx1ZSA9PT0gJ3N0cmluZycpIHsKICAgIHJldHVybiBuZXcgRXJyb3IodmFsdWUpOwogIH0KICB0cnkgewogICAgcmV0dXJuIG5ldyBFcnJvcihKU09OLnN0cmluZ2lmeSh2YWx1ZSkpOwogIH0gY2F0Y2ggewogICAgcmV0dXJuIG5ldyBFcnJvcihTdHJpbmcodmFsdWUpKTsKICB9Cn0KCmZ1bmN0aW9uIERlZmF1bHRGYWxsYmFjayh7IGVycm9yLCByZXNldEVycm9yIH06IEVycm9yRmFsbGJhY2tQcm9wcykgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0ibWluLWgtc2NyZWVuIHctZnVsbCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBiZy1ncmF5LTUwIHAtNiI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYXgtdy1sZyB3LWZ1bGwgdGV4dC1jZW50ZXIiPgogICAgICAgIDxoMSBjbGFzc05hbWU9InRleHQteGwgZm9udC1zZW1pYm9sZCB0ZXh0LWdyYXktOTAwIj4KICAgICAgICAgIFNvbWV0aGluZyB3ZW50IHdyb25nCiAgICAgICAgPC9oMT4KICAgICAgICA8cCBjbGFzc05hbWU9Im10LTIgdGV4dC1zbSB0ZXh0LWdyYXktNjAwIj4KICAgICAgICAgIFRoaXMgcGFydCBvZiB0aGUgYXBwIGhpdCBhbiBlcnJvci4gVGhlIHJlc3Qgb2YgdGhlIGFwcCBpcyBzdGlsbAogICAgICAgICAgcnVubmluZy4KICAgICAgICA8L3A+CiAgICAgICAgey8qIERldiBvbmx5OiBtZXNzYWdlcyBjYW4gY2FycnkgQVBJIHJlc3BvbnNlcyBhbmQgb3RoZXIgaW50ZXJuYWxzLiAqL30KICAgICAgICB7aW1wb3J0Lm1ldGEuZW52LkRFViA/ICgKICAgICAgICAgIDxwcmUgY2xhc3NOYW1lPSJtdC00IG92ZXJmbG93LXgtYXV0byByb3VuZGVkIGJnLWdyYXktMTAwIHAtMyB0ZXh0LWxlZnQgdGV4dC14cyB0ZXh0LWdyYXktODAwIj4KICAgICAgICAgICAge2Vycm9yLm1lc3NhZ2UgfHwgU3RyaW5nKGVycm9yKX0KICAgICAgICAgIDwvcHJlPgogICAgICAgICkgOiBudWxsfQogICAgICAgIDxidXR0b24KICAgICAgICAgIHR5cGU9ImJ1dHRvbiIKICAgICAgICAgIG9uQ2xpY2s9e3Jlc2V0RXJyb3J9CiAgICAgICAgICBjbGFzc05hbWU9Im10LTQgcm91bmRlZCBiZy1ncmF5LTkwMCBweC00IHB5LTIgdGV4dC1zbSB0ZXh0LXdoaXRlIGhvdmVyOmJnLWdyYXktNzAwIgogICAgICAgID4KICAgICAgICAgIFRyeSBhZ2FpbgogICAgICAgIDwvYnV0dG9uPgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0KCmV4cG9ydCBjbGFzcyBFcnJvckJvdW5kYXJ5IGV4dGVuZHMgQ29tcG9uZW50PAogIEVycm9yQm91bmRhcnlQcm9wcywKICBFcnJvckJvdW5kYXJ5U3RhdGUKPiB7CiAgc3RhdGU6IEVycm9yQm91bmRhcnlTdGF0ZSA9IHsgZXJyb3I6IG51bGwgfTsKCiAgc3RhdGljIGdldERlcml2ZWRTdGF0ZUZyb21FcnJvcihlcnJvcjogdW5rbm93bik6IEVycm9yQm91bmRhcnlTdGF0ZSB7CiAgICByZXR1cm4geyBlcnJvcjogdG9FcnJvcihlcnJvcikgfTsKICB9CgogIGNvbXBvbmVudERpZENhdGNoKGVycm9yOiB1bmtub3duLCBpbmZvOiBFcnJvckluZm8pOiB2b2lkIHsKICAgIGNvbnNvbGUuZXJyb3IoCiAgICAgICdFcnJvckJvdW5kYXJ5IGNhdWdodCBhbiBlcnJvcjonLAogICAgICB0b0Vycm9yKGVycm9yKSwKICAgICAgaW5mby5jb21wb25lbnRTdGFjaywKICAgICk7CiAgfQoKICBjb21wb25lbnREaWRVcGRhdGUocHJldlByb3BzOiBFcnJvckJvdW5kYXJ5UHJvcHMpOiB2b2lkIHsKICAgIGlmICgKICAgICAgdGhpcy5zdGF0ZS5lcnJvciAhPT0gbnVsbCAmJgogICAgICBwcmV2UHJvcHMucmVzZXRLZXkgIT09IHRoaXMucHJvcHMucmVzZXRLZXkKICAgICkgewogICAgICB0aGlzLnJlc2V0RXJyb3IoKTsKICAgIH0KICB9CgogIHJlc2V0RXJyb3IgPSAoKTogdm9pZCA9PiB7CiAgICB0aGlzLnNldFN0YXRlKHsgZXJyb3I6IG51bGwgfSk7CiAgfTsKCiAgcmVuZGVyKCk6IFJlYWN0Tm9kZSB7CiAgICBjb25zdCB7IGVycm9yIH0gPSB0aGlzLnN0YXRlOwogICAgaWYgKGVycm9yID09PSBudWxsKSB7CiAgICAgIHJldHVybiB0aGlzLnByb3BzLmNoaWxkcmVuOwogICAgfQogICAgY29uc3QgRmFsbGJhY2sgPSB0aGlzLnByb3BzLkZhbGxiYWNrQ29tcG9uZW50ID8/IERlZmF1bHRGYWxsYmFjazsKICAgIHJldHVybiA8RmFsbGJhY2sgZXJyb3I9e2Vycm9yfSByZXNldEVycm9yPXt0aGlzLnJlc2V0RXJyb3J9IC8+OwogIH0KfQo=
+import {
+  Component,
+  type ComponentType,
+  type ErrorInfo,
+  type ReactNode,
+} from 'react';
+
+export interface ErrorFallbackProps {
+  error: Error;
+  resetError: () => void;
+}
+
+interface ErrorBoundaryProps {
+  children: ReactNode;
+  FallbackComponent?: ComponentType<ErrorFallbackProps>;
+  /** Changing this clears a caught error. Pass the route to recover on navigation. */
+  resetKey?: unknown;
+}
+
+interface ErrorBoundaryState {
+  error: Error | null;
+}
+
+function toError(value: unknown): Error {
+  if (value instanceof Error) {
+    return value;
+  }
+  if (typeof value === 'string') {
+    return new Error(value);
+  }
+  try {
+    return new Error(JSON.stringify(value));
+  } catch {
+    return new Error(String(value));
+  }
+}
+
+function DefaultFallback({ error, resetError }: ErrorFallbackProps) {
+  return (
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-6">
+      <div className="max-w-lg w-full text-center">
+        <h1 className="text-xl font-semibold text-gray-900">
+          Something went wrong
+        </h1>
+        <p className="mt-2 text-sm text-gray-600">
+          This part of the app hit an error. The rest of the app is still
+          running.
+        </p>
+        {/* Dev only: messages can carry API responses and other internals. */}
+        {import.meta.env.DEV ? (
+          <pre className="mt-4 overflow-x-auto rounded bg-gray-100 p-3 text-left text-xs text-gray-800">
+            {error.message || String(error)}
+          </pre>
+        ) : null}
+        <button
+          type="button"
+          onClick={resetError}
+          className="mt-4 rounded bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-700"
+        >
+          Try again
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
+  state: ErrorBoundaryState = { error: null };
+
+  static getDerivedStateFromError(error: unknown): ErrorBoundaryState {
+    return { error: toError(error) };
+  }
+
+  componentDidCatch(error: unknown, info: ErrorInfo): void {
+    console.error(
+      'ErrorBoundary caught an error:',
+      toError(error),
+      info.componentStack,
+    );
+  }
+
+  componentDidUpdate(prevProps: ErrorBoundaryProps): void {
+    if (
+      this.state.error !== null &&
+      prevProps.resetKey !== this.props.resetKey
+    ) {
+      this.resetError();
+    }
+  }
+
+  resetError = (): void => {
+    this.setState({ error: null });
+  };
+
+  render(): ReactNode {
+    const { error } = this.state;
+    if (error === null) {
+      return this.props.children;
+    }
+    const Fallback = this.props.FallbackComponent ?? DefaultFallback;
+    return <Fallback error={error} resetError={this.resetError} />;
+  }
+}

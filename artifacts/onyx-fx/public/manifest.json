@@ -1,1 +1,32 @@
-ewogICJuYW1lIjogIk9ueXggRlgg4oCUIEFsZ29yaXRobWljIFRyYWRpbmcgRW5naW5lIiwKICAic2hvcnRfbmFtZSI6ICJPbnl4IEZYIiwKICAiZGVzY3JpcHRpb24iOiAiQUktZHJpdmVuIGFsZ29yaXRobWljIHRyYWRpbmcgd2l0aCByZWFsLXRpbWUgTVQ1IGV4ZWN1dGlvbiBhbmQgaW5zdGl0dXRpb25hbCByaXNrIG1hbmFnZW1lbnQuIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwYTBkMTQiLAogICJ0aGVtZV9jb2xvciI6ICIjMGEwZDE0IiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQtcHJpbWFyeSIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogIi90cmFkaW5nLWZhdmljb24uc3ZnIiwKICAgICAgInNpemVzIjogImFueSIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9LAogICAgewogICAgICAic3JjIjogIi9mYXZpY29uLTE5Mi5wbmciLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSIKICAgIH0sCiAgICB7CiAgICAgICJzcmMiOiAiL2Zhdmljb24tNTEyLnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0sCiAgImNhdGVnb3JpZXMiOiBbImZpbmFuY2UiLCAiYnVzaW5lc3MiLCAicHJvZHVjdGl2aXR5Il0sCiAgInNjcmVlbnNob3RzIjogW10KfQ==
+{
+  "name": "Onyx FX — Algorithmic Trading Engine",
+  "short_name": "Onyx FX",
+  "description": "AI-driven algorithmic trading with real-time MT5 execution and institutional risk management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d14",
+  "theme_color": "#0a0d14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/trading-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business", "productivity"],
+  "screenshots": []
+}

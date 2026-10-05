@@ -1,1 +1,13 @@
-aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IFJlYWN0RG9tIGZyb20gInJlYWN0LWRvbS9jbGllbnQiOwppbXBvcnQgeyBIZWxtZXRQcm92aWRlciB9IGZyb20gInJlYWN0LWhlbG1ldC1hc3luYyI7CmltcG9ydCAnLi9pbmRleC5jc3MnCmltcG9ydCBBcHAgZnJvbSAnLi9BcHAuanN4JwoKUmVhY3REb20uY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpKS5yZW5kZXIoCiAgPFJlYWN0LlN0cmljdE1vZGU+CiAgICA8SGVsbWV0UHJvdmlkZXI+CiAgICAgIDxBcHAgLz4KICAgIDwvSGVsbWV0UHJvdmlkZXI+CiAgPC9SZWFjdC5TdHJpY3RNb2RlPiwKKQo=
+import React from "react";
+import ReactDom from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
+import './index.css'
+import App from './App.jsx'
+
+ReactDom.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>,
+)

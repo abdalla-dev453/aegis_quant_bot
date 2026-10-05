@@ -1,1 +1,118 @@
-IiIiVGhyZWFkLXNhZmUgcnVudGltZSBzbmFwc2hvdHMgc2hhcmVkIGJ5IHRoZSB0cmFkaW5nIGxvb3AgYW5kIEFQSS4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmZyb20gY29weSBpbXBvcnQgZGVlcGNvcHkKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUsIHRpbWV6b25lCmZyb20gdGhyZWFkaW5nIGltcG9ydCBMb2NrCmZyb20gdHlwaW5nIGltcG9ydCBBbnkKCl9sb2NrID0gTG9jaygpCl9zbmFwc2hvdDogZGljdFtzdHIsIEFueV0gPSB7CiAgICAiY29ubmVjdGVkIjogRmFsc2UsCiAgICAibGFzdF9zaWduYWwiOiB7fSwKICAgICJsb2dzIjogW10sCiAgICAicHJvcG9zYWxzIjogW10sCiAgICAib3JkZXJzIjogW10sCiAgICAidHJhZGVfYW5hbHlzaXMiOiB7InN1bW1hcnkiOiB7InRvdGFsVHJhZGVzIjogMCwgIm5ldFBubCI6IDAuMH0sICJyZWNlbnRUcmFkZXMiOiBbXX0sCiAgICAibGFzdF9jeWNsZSI6IE5vbmUsCiAgICAibGFzdF9mYXVsdCI6IE5vbmUsCiAgICAiY29udHJvbCI6IHsKICAgICAgICAic3RhdHVzIjogIlJVTk5JTkciLAogICAgICAgICJlbnRyaWVzQWxsb3dlZCI6IFRydWUsCiAgICAgICAgIm1hbmFnZW1lbnRBbGxvd2VkIjogVHJ1ZSwKICAgICAgICAicmVhc29uIjogTm9uZSwKICAgICAgICAic291cmNlIjogIlNUQVJUVVAiLAogICAgICAgICJjaGFuZ2VkQXQiOiBkYXRldGltZS5ub3codGltZXpvbmUudXRjKS5pc29mb3JtYXQoKSwKICAgICAgICAicmV2aXNpb24iOiAwLAogICAgfSwKICAgICJzdGFydGVkX2F0IjogZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YykuaXNvZm9ybWF0KCksCn0KCgpkZWYgX3RpbWVzdGFtcCgpIC0+IHN0cjoKICAgIHJldHVybiBkYXRldGltZS5ub3codGltZXpvbmUudXRjKS5pc29mb3JtYXQoKQoKCmRlZiB1cGRhdGUoKip2YWx1ZXM6IEFueSkgLT4gTm9uZToKICAgIHdpdGggX2xvY2s6CiAgICAgICAgZm9yIGtleSwgdmFsdWUgaW4gdmFsdWVzLml0ZW1zKCk6CiAgICAgICAgICAgIF9zbmFwc2hvdFtrZXldID0gZGVlcGNvcHkodmFsdWUpCgoKZGVmIHJlYWQoKSAtPiBkaWN0W3N0ciwgQW55XToKICAgIHdpdGggX2xvY2s6CiAgICAgICAgcmVzdWx0ID0gZGVlcGNvcHkoX3NuYXBzaG90KQogICAgICAgIHJlc3VsdFsibG9ncyJdID0gbGlzdChfc25hcHNob3QuZ2V0KCJsb2dzIiwgW10pKQogICAgICAgIHJldHVybiByZXN1bHQKCgpkZWYgYWRkX2xvZyhsZXZlbDogc3RyLCBtZXNzYWdlOiBzdHIpIC0+IE5vbmU6CiAgICB3aXRoIF9sb2NrOgogICAgICAgIGxvZ3MgPSBfc25hcHNob3Quc2V0ZGVmYXVsdCgibG9ncyIsIFtdKQogICAgICAgIGxvZ3MuYXBwZW5kKAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiBmIntkYXRldGltZS5ub3codGltZXpvbmUudXRjKS50aW1lc3RhbXAoKTouNmZ9IiwKICAgICAgICAgICAgICAgICJ0aW1lIjogZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0Yykuc3RyZnRpbWUoIiVIOiVNOiVTIiksCiAgICAgICAgICAgICAgICAibGV2ZWwiOiBsZXZlbCwKICAgICAgICAgICAgICAgICJtZXNzYWdlIjogbWVzc2FnZSwKICAgICAgICAgICAgfQogICAgICAgICkKICAgICAgICBkZWwgbG9nc1s6LTIwMF0KCgpkZWYgc2V0X2NvbnRyb2woc3RhdHVzOiBzdHIsIHJlYXNvbjogc3RyIHwgTm9uZSA9IE5vbmUsIHNvdXJjZTogc3RyID0gIk9QRVJBVE9SIikgLT4gZGljdFtzdHIsIEFueV06CiAgICBub3JtYWxpemVkID0gc3RhdHVzLnVwcGVyKCkKICAgIGlmIG5vcm1hbGl6ZWQgbm90IGluIHsiUlVOTklORyIsICJQQVVTRUQiLCAiSEFMVEVEIn06CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiQ29udHJvbCBzdGF0dXMgbXVzdCBiZSBSVU5OSU5HLCBQQVVTRUQsIG9yIEhBTFRFRCIpCiAgICB3aXRoIF9sb2NrOgogICAgICAgIGNvbnRyb2wgPSBfc25hcHNob3RbImNvbnRyb2wiXQogICAgICAgIGNvbnRyb2xbInJldmlzaW9uIl0gPSBpbnQoY29udHJvbC5nZXQoInJldmlzaW9uIiwgMCkpICsgMQogICAgICAgIGNvbnRyb2wudXBkYXRlKAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAic3RhdHVzIjogbm9ybWFsaXplZCwKICAgICAgICAgICAgICAgICJlbnRyaWVzQWxsb3dlZCI6IG5vcm1hbGl6ZWQgPT0gIlJVTk5JTkciLAogICAgICAgICAgICAgICAgIm1hbmFnZW1lbnRBbGxvd2VkIjogbm9ybWFsaXplZCAhPSAiSEFMVEVEIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiByZWFzb24sCiAgICAgICAgICAgICAgICAic291cmNlIjogc291cmNlLAogICAgICAgICAgICAgICAgImNoYW5nZWRBdCI6IF90aW1lc3RhbXAoKSwKICAgICAgICAgICAgfQogICAgICAgICkKICAgICAgICByZXR1cm4gZGVlcGNvcHkoY29udHJvbCkKCgpkZWYgY29udHJvbF9zdGF0ZSgpIC0+IGRpY3Rbc3RyLCBBbnldOgogICAgd2l0aCBfbG9jazoKICAgICAgICByZXR1cm4gZGVlcGNvcHkoX3NuYXBzaG90WyJjb250cm9sIl0pCgoKZGVmIHJlY29yZF9wcm9wb3NhbChwcm9wb3NhbDogZGljdFtzdHIsIEFueV0pIC0+IE5vbmU6CiAgICB3aXRoIF9sb2NrOgogICAgICAgIHByb3Bvc2FscyA9IF9zbmFwc2hvdC5zZXRkZWZhdWx0KCJwcm9wb3NhbHMiLCBbXSkKICAgICAgICBwcm9wb3NhbHMuYXBwZW5kKGRlZXBjb3B5KHByb3Bvc2FsKSkKICAgICAgICBkZWwgcHJvcG9zYWxzWzotMTAwXQogICAgICAgIF9zbmFwc2hvdFsibGFzdF9zaWduYWwiXSA9IGRlZXBjb3B5KHByb3Bvc2FsKQoKCmRlZiByZWNvcmRfb3JkZXIob3JkZXI6IGRpY3Rbc3RyLCBBbnldKSAtPiBOb25lOgogICAgd2l0aCBfbG9jazoKICAgICAgICBvcmRlcnMgPSBfc25hcHNob3Quc2V0ZGVmYXVsdCgib3JkZXJzIiwgW10pCiAgICAgICAgb3JkZXJzLmFwcGVuZChkZWVwY29weShvcmRlcikpCiAgICAgICAgZGVsIG9yZGVyc1s6LTEwMF0KICAgICAgICBhbmFseXNpcyA9IF9zbmFwc2hvdC5zZXRkZWZhdWx0KCJ0cmFkZV9hbmFseXNpcyIsIHt9KQogICAgICAgIHJlY2VudCA9IGFuYWx5c2lzLnNldGRlZmF1bHQoInJlY2VudFRyYWRlcyIsIFtdKQogICAgICAgIHJlY2VudC5hcHBlbmQoZGVlcGNvcHkob3JkZXIpKQogICAgICAgIGRlbCByZWNlbnRbOi01MF0KICAgICAgICBzdW1tYXJ5ID0gYW5hbHlzaXMuc2V0ZGVmYXVsdCgic3VtbWFyeSIsIHsidG90YWxUcmFkZXMiOiAwLCAibmV0UG5sIjogMC4wfSkKICAgICAgICBzdW1tYXJ5WyJ0b3RhbFRyYWRlcyJdID0gaW50KHN1bW1hcnkuZ2V0KCJ0b3RhbFRyYWRlcyIsIDApKSArIDEKICAgICAgICBzdW1tYXJ5WyJuZXRQbmwiXSA9IGZsb2F0KHN1bW1hcnkuZ2V0KCJuZXRQbmwiLCAwLjApKSArIGZsb2F0KG9yZGVyLmdldCgicG5sIiwgMC4wKSBvciAwLjApCgoKZGVmIHJlY29yZF9jeWNsZShjeWNsZTogZGljdFtzdHIsIEFueV0pIC0+IE5vbmU6CiAgICB1cGRhdGUobGFzdF9jeWNsZT1kZWVwY29weShjeWNsZSkpCgoKZGVmIHJlY29yZF9mYXVsdChmYXVsdDogZGljdFtzdHIsIEFueV0pIC0+IE5vbmU6CiAgICB1cGRhdGUobGFzdF9mYXVsdD1kZWVwY29weShmYXVsdCkpCiAgICBhZGRfbG9nKCJFUlJPUiIsIHN0cihmYXVsdC5nZXQoIm1lc3NhZ2UiLCAiUnVudGltZSBmYXVsdCIpKSkKCg==
+"""Thread-safe runtime snapshots shared by the trading loop and API."""
+
+from __future__ import annotations
+
+from copy import deepcopy
+from datetime import datetime, timezone
+from threading import Lock
+from typing import Any
+
+_lock = Lock()
+_snapshot: dict[str, Any] = {
+    "connected": False,
+    "last_signal": {},
+    "logs": [],
+    "proposals": [],
+    "orders": [],
+    "trade_analysis": {"summary": {"totalTrades": 0, "netPnl": 0.0}, "recentTrades": []},
+    "last_cycle": None,
+    "last_fault": None,
+    "control": {
+        "status": "RUNNING",
+        "entriesAllowed": True,
+        "managementAllowed": True,
+        "reason": None,
+        "source": "STARTUP",
+        "changedAt": datetime.now(timezone.utc).isoformat(),
+        "revision": 0,
+    },
+    "started_at": datetime.now(timezone.utc).isoformat(),
+}
+
+
+def _timestamp() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def update(**values: Any) -> None:
+    with _lock:
+        for key, value in values.items():
+            _snapshot[key] = deepcopy(value)
+
+
+def read() -> dict[str, Any]:
+    with _lock:
+        result = deepcopy(_snapshot)
+        result["logs"] = list(_snapshot.get("logs", []))
+        return result
+
+
+def add_log(level: str, message: str) -> None:
+    with _lock:
+        logs = _snapshot.setdefault("logs", [])
+        logs.append(
+            {
+                "id": f"{datetime.now(timezone.utc).timestamp():.6f}",
+                "time": datetime.now(timezone.utc).strftime("%H:%M:%S"),
+                "level": level,
+                "message": message,
+            }
+        )
+        del logs[:-200]
+
+
+def set_control(status: str, reason: str | None = None, source: str = "OPERATOR") -> dict[str, Any]:
+    normalized = status.upper()
+    if normalized not in {"RUNNING", "PAUSED", "HALTED"}:
+        raise ValueError("Control status must be RUNNING, PAUSED, or HALTED")
+    with _lock:
+        control = _snapshot["control"]
+        control["revision"] = int(control.get("revision", 0)) + 1
+        control.update(
+            {
+                "status": normalized,
+                "entriesAllowed": normalized == "RUNNING",
+                "managementAllowed": normalized != "HALTED",
+                "reason": reason,
+                "source": source,
+                "changedAt": _timestamp(),
+            }
+        )
+        return deepcopy(control)
+
+
+def control_state() -> dict[str, Any]:
+    with _lock:
+        return deepcopy(_snapshot["control"])
+
+
+def record_proposal(proposal: dict[str, Any]) -> None:
+    with _lock:
+        proposals = _snapshot.setdefault("proposals", [])
+        proposals.append(deepcopy(proposal))
+        del proposals[:-100]
+        _snapshot["last_signal"] = deepcopy(proposal)
+
+
+def record_order(order: dict[str, Any]) -> None:
+    with _lock:
+        orders = _snapshot.setdefault("orders", [])
+        orders.append(deepcopy(order))
+        del orders[:-100]
+        analysis = _snapshot.setdefault("trade_analysis", {})
+        recent = analysis.setdefault("recentTrades", [])
+        recent.append(deepcopy(order))
+        del recent[:-50]
+        summary = analysis.setdefault("summary", {"totalTrades": 0, "netPnl": 0.0})
+        summary["totalTrades"] = int(summary.get("totalTrades", 0)) + 1
+        summary["netPnl"] = float(summary.get("netPnl", 0.0)) + float(order.get("pnl", 0.0) or 0.0)
+
+
+def record_cycle(cycle: dict[str, Any]) -> None:
+    update(last_cycle=deepcopy(cycle))
+
+
+def record_fault(fault: dict[str, Any]) -> None:
+    update(last_fault=deepcopy(fault))
+    add_log("ERROR", str(fault.get("message", "Runtime fault")))
+
