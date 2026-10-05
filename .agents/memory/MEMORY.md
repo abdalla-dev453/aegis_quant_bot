@@ -1,0 +1,1 @@
+- [GitHub publishing from Replit](github-publishing.md) — use the authenticated connector when git push lacks credentials, then compare Git trees before claiming parity.
