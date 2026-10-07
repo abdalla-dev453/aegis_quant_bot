@@ -1,0 +1,265 @@
+
+ 🏆 Recommended Deployment Options
+
+ Option 1: Oracle Cloud Free Tier (BEST for Free)
+
+ Cost: $0 (Always Free)
+
+   • Pros: 4 ARM Ampere A1 cores, 24GB RAM, 200GB storage
+   • Cons: ARM architecture may have compatibility issues with some libraries
+   • Best for: Learning, testing, initial deployment
+   • MT5 Bridge: Will work, but you'll need to configure mt5linux properly
+
+ Option 2: Google Cloud Free Tier ($300 Credit)
+
+ **Cost: $0 initially, then pay-as-you-go
+
+   • Pros: $300 free credit, Intel/AMD processors, excellent performance
+   • Cons: Credit expires after 12 months
+   • Best for: Production deployment with real money
+   • MT5 Bridge: Excellent compatibility
+
+ Option 3: DigitalOcean ($5-10/month)
+
+ Cost: $5-10/month (depending on region)
+
+   • Pros: Reliable, Intel/AMD processors, excellent performance
+   • Cons: Not free after initial trial
+   • Best for: Consistent production deployment
+   • MT5 Bridge: Perfect compatibility
+
+ Option 4: AWS Free Tier (12 Months Free)
+
+ Cost: $0 for 12 months, then pay-as-you-go
+
+   • Pros: t2.micro instances free for 12 months, excellent infrastructure
+   • Cons: After 12 months, costs increase significantly
+   • Best for: Testing and initial production
+   • MT5 Bridge: Good compatibility
+
+ 🚀 Recommended Deployment Strategy
+
+ Phase 1: Free Tier Testing (Oracle Cloud)
+
+   1. Create Oracle Cloud Free Account
+     • Go to https://www.oracle.com/cloud/free/
+     • Sign up with your email
+     • Get 4 ARM cores, 24GB RAM, 200GB storage
+   2. Deploy Your Bot
+
+
+ 
+   # SSH into your Oracle Cloud instance
+   ssh ubuntu@your-oracle-ip
+ 
+   # Clone your repository
+   git clone your-repo-url
+   cd aegis_quant
+ 
+   # Install Python and dependencies
+   sudo apt update
+   sudo apt install python3 python3-pip python3-venv -y
+ 
+   # Create virtual environment
+   python3 -m venv .venv
+   source .venv/bin/activate
+ 
+   # Install dependencies
+   cd server
+   pip install -r requirements.txt
+ 
+   # Configure .env file
+   cp .env.example .env
+   nano .env  # Add your MT5 credentials and API keys
+ 
+
+   3. Configure MT5 Bridge
+
+
+ 
+   # Install mt5linux
+   pip install mt5linux
+ 
+   # Configure your MT5 bridge connection
+   # You'll need either:
+   # - A Windows VPS with MT5 terminal
+   # - A service that provides MT5 access
+   # - Local MT5 terminal with port forwarding
+ 
+
+ Phase 2: Production (Google Cloud or DigitalOcean)
+
+ After successful testing, upgrade to:
+
+   • Google Cloud: Use your $300 credit for high-performance Intel/AMD instances
+   • DigitalOcean: $5-10/month for consistent performance
+
+ 🛠️  MT5 Bridge Configuration
+
+ Since you're using Linux VPS + MT5 bridge, you have several options:
+
+ Option A: Local MT5 + Port Forwarding (Free Option)
+
+
+ 
+   # On your local Windows machine with MT5:
+   # 1. Enable port forwarding for MT5
+   # 2. Run a tunnel to your Linux VPS
+   # 3. Configure mt5linux to connect to your local MT5
+ 
+
+ Option B: Windows VPS (Budget Option)
+
+   • Contabo: $6-9/month for Windows VPS
+   • HostHatch: $4-6/month for Windows VPS
+   • Low-end Linux Windows VPS: Can run MT5 directly
+
+ Option C: MT5 Bridge Service
+
+   • Use a service that provides MT5 terminal access
+   • Some forex brokers offer cloud VPS with MT5 pre-installed
+   • Ask your broker if they provide cloud trading servers
+
+ 📋 Step-by-Step Deployment Guide
+
+ For Oracle Cloud Free Tier:
+
+   1. Create Oracle Cloud Account
+     • Visit https://www.oracle.com/cloud/free/
+     • Sign up and create your account
+     • Create a compute instance (ARM architecture)
+   2. Setup Your Instance
+
+
+ 
+   # SSH into your instance
+   ssh ubuntu@your-public-ip
+ 
+   # Update system
+   sudo apt update && sudo apt upgrade -y
+ 
+   # Install Python and dependencies
+   sudo apt install python3 python3-pip python3-venv git -y
+ 
+   # Clone your repository
+   git clone https://github.com/your-username/aegis_quant.git
+   cd aegis_quant/server
+ 
+   # Create virtual environment
+   python3 -m venv .venv
+   source .venv/bin/activate
+ 
+   # Install dependencies
+   pip install -r requirements.txt
+ 
+
+   3. Configure Your Bot
+
+
+ 
+   # Copy example .env file
+   cp .env.example .env
+ 
+   # Edit configuration
+   nano .env
+   # Add your MT5 credentials, API keys, etc.
+ 
+
+   4. Install MT5 Linux Bridge
+
+
+ 
+   # Install mt5linux
+   pip install mt5linux
+ 
+   # Enable it in config
+   # Add to .env: MT5LINUX_ENABLED=1
+ 
+
+   5. Run Your Bot
+
+
+ 
+   # Start the bot
+   python main.py
+ 
+
+ For DigitalOcean ($5/month):
+
+   1. Create DigitalOcean Account
+     • Go to https://www.digitalocean.com/
+     • Sign up and add payment method ($5)
+     • Create a droplet (Ubuntu 22.04, 2GB RAM, 1 CPU, $5/month)
+   2. Follow same setup as Oracle Cloud
+     • The process is identical after SSH access
+
+ 🎯 My Strong Recommendation
+
+ For your budget and requirements:
+
+   1. Start with Oracle Cloud Free Tier for testing
+     • Cost: $0
+     • Resources: 4 ARM cores, 24GB RAM (very generous)
+     • Good for: Initial testing, learning, small-scale trading
+   2. Then upgrade to DigitalOcean ($5/month) for production
+     • Cost: $5/month
+     • Resources: Intel/AMD processors, 2GB RAM, 1 CPU
+     • Good for: Consistent production trading, reliable performance
+   3. For MT5 Bridge:
+     • Use local MT5 + SSH tunneling (free option)
+     • Or get a cheap Windows VPS ($6-9/month from Contabo)
+
+ 🔧 Additional Deployment Tips
+
+ Security:
+
+   • Use strong SSH keys (disable password auth)
+   • Configure firewall rules
+   • Use environment variables for sensitive data
+   • Keep MT5 credentials secure
+
+ Monitoring:
+
+   • Set up log rotation
+   • Monitor resource usage
+   • Set up alerts for failures
+   • Use the  /api/system-health  endpoint
+
+ Performance:
+
+   • Start with 1-2 trading symbols
+   • Monitor CPU/memory usage
+   • Adjust polling frequency if needed
+   • Use the feature flags to disable heavy features
+
+ 📊 Performance Expectations
+
+ On Oracle Cloud Free Tier:
+
+   • Performance: Good for 1-2 symbols
+   • Memory: 24GB is more than sufficient
+   • CPU: 4 ARM cores adequate for your bot
+   • Storage: 200GB plenty for logs and data
+
+ On DigitalOcean ($5/month):
+
+   • Performance: Excellent for 2-3 symbols
+   • Memory: 2GB sufficient for your bot
+   • CPU: 1 core good for your async operations
+   • Storage: 25GB adequate
+
+ 🎁 Bonus: Free Options to Consider
+
+ Always Free Options:
+
+   • Oracle Cloud Free Tier: 4 ARM cores, 24GB RAM (always free)
+   • Google Cloud Free Tier: $300 credit for 12 months
+   • AWS Free Tier: 12 months free t2.micro
+   • GitHub Codespaces: Free development environment
+
+ Low-Cost Options:
+
+   • Oracle Cloud "Always Free": $0 forever
+   • DigitalOcean: $5/month
+   • Linode: $5/month
+   • Vultr: $5/month1
