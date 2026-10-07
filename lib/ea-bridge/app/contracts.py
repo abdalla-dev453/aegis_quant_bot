@@ -418,3 +418,55 @@ class DashboardResponse(APIModel):
     devices: list[DeviceView]
     accounts: list[DashboardAccount]
     positions: list[DashboardPosition]
+
+
+# --- News & Macro Protection Contracts ---
+
+class NewsEventView(APIModel):
+    id: str
+    title: str
+    currency: str
+    impact: str
+    scheduled_at: datetime
+    forecast: str | None = None
+    previous: str | None = None
+    actual: str | None = None
+
+
+class NewsHeadlineView(APIModel):
+    id: str
+    title: str
+    source: str
+    impact: str
+    timestamp: datetime
+    sentiment_score: float
+    currencies: list[str]
+
+
+class SymbolSentimentResponse(APIModel):
+    symbol: str
+    overall_sentiment: str
+    sentiment_score: float
+    confidence: float
+    headline_count: int
+    headlines: list[NewsHeadlineView]
+    trade_recommendation: str
+
+
+class NewsCalendarResponse(APIModel):
+    events: list[NewsEventView]
+    blackout_active: bool
+    active_blackout_event: str | None = None
+
+
+# --- Prop-Firm Compliance Contracts ---
+
+class PropFirmStatusResponse(APIModel):
+    device_id: UUID
+    prop_firm_mode_enabled: bool
+    starting_daily_balance: Decimal
+    current_equity: Decimal
+    daily_drawdown_pct: Decimal
+    max_allowed_daily_drawdown_pct: Decimal
+    drawdown_breached: bool
+    remaining_drawdown_budget: Decimal

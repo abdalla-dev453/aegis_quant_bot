@@ -29,7 +29,11 @@ from app.contracts import (
     EquityPoint,
     ErrorResponse,
     JournalMetrics,
+    NewsCalendarResponse,
+    NewsEventView,
+    NewsHeadlineView,
     PairingCodeView,
+    PropFirmStatusResponse,
     RiskProfileUpdate,
     RiskProfileView,
     SignalAction,
@@ -38,6 +42,7 @@ from app.contracts import (
     SignalRationale,
     SignalState,
     SignalView,
+    SymbolSentimentResponse,
     UserLogin,
     UserSignup,
     UserView,
@@ -57,6 +62,8 @@ from app.models import (
     User,
     UserSession,
 )
+from app.news import macro_news_service
+from app.notifications import notification_service
 from app.realtime import publish_user_event
 from app.security import AuthenticatedUser, enforce_rate_limit, get_current_user, sha256_hex
 from app.signals.provider import RuleBasedProvider
@@ -111,7 +118,10 @@ def _user_view(user: User) -> UserView:
 def _calculate_presence(last_seen_at: datetime | None) -> DevicePresence:
     if last_seen_at is None:
         return DevicePresence.OFFLINE
-    elapsed = (datetime.now(UTC) - last_seen_at).total_seconds()
+    now = datetime.now(UTC)
+    if last_seen_at.tzinfo is None:
+        last_seen_at = last_seen_at.replace(tzinfo=UTC)
+    elapsed = (now - last_seen_at).total_seconds()
     if elapsed <= 15:
         return DevicePresence.ONLINE
     elif elapsed <= 60:
@@ -631,6 +641,12 @@ async def activate_kill_switch(
         {"timestamp": datetime.now(UTC).isoformat()},
     )
 
+    await notification_service.notify_kill_switch(
+        None,
+        user_id=current.user.id,
+        reason="Manual user kill switch activated from dashboard",
+    )
+
     return {"kill_switch_active": True, "message": "Kill switch triggered. Auto-execution disabled."}
 
 
@@ -754,14 +770,17 @@ async def dispatch_signal(
         raise APIError("device_not_found", "Active device not found", status.HTTP_404_NOT_FOUND)
 
     point_size = Decimal("0.00001") if "JPY" not in symbol.upper() else Decimal("0.001")
-    sig_create = await signal_provider.generate_signal(
-        device_id=device.id,
-        user_id=current.user.id,
-        symbol=symbol,
-        current_price=price,
-        point_size=point_size,
-        action=action,
-    )
+    try:
+        sig_create = await signal_provider.generate_signal(
+            device_id=device.id,
+            user_id=current.user.id,
+            symbol=symbol,
+            current_price=price,
+            point_size=point_size,
+            action=action,
+        )
+    except ValueError as e:
+        raise APIError("news_blackout_active", str(e), status.HTTP_422_UNPROCESSABLE_ENTITY)
 
     signal = Signal(
         id=sig_create.signal_id,
@@ -776,7 +795,7 @@ async def dispatch_signal(
         stop_loss=sig_create.stop_loss,
         take_profit=sig_create.take_profit,
         confidence=sig_create.confidence,
-        rationale=sig_create.rationale.model_dump(),
+        rationale=sig_create.rationale.model_dump(mode="json"),
         model_version=sig_create.model_version,
         state=SignalState.CREATED.value,
         expires_at=sig_create.expires_at,
@@ -917,4 +936,148 @@ async def stream_events(
         event_stream(),
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
+# --- News & Macro Economic Calendar ---
+
+@router.get("/news/calendar", response_model=NewsCalendarResponse)
+async def get_news_calendar(_current: CurrentUserDep) -> NewsCalendarResponse:
+    events = macro_news_service.get_upcoming_events(48)
+    usd_blackout = macro_news_service.check_blackout("EURUSD")
+    return NewsCalendarResponse(
+        events=[
+            NewsEventView(
+                id=e.id,
+                title=e.title,
+                currency=e.currency,
+                impact=e.impact,
+                scheduled_at=e.scheduled_at,
+                forecast=e.forecast,
+                previous=e.previous,
+                actual=e.actual,
+            )
+            for e in events
+        ],
+        blackout_active=usd_blackout.is_blackout,
+        active_blackout_event=usd_blackout.event_title if usd_blackout.is_blackout else None,
+    )
+
+
+@router.get("/news/blackout-check")
+async def check_news_blackout(
+    _current: CurrentUserDep,
+    symbol: Annotated[str, Query()] = "EURUSD",
+) -> dict[str, str | bool | float | None]:
+    status_obj = macro_news_service.check_blackout(symbol)
+    return status_obj.model_dump()
+
+
+@router.get("/news/sentiment", response_model=SymbolSentimentResponse)
+async def get_symbol_sentiment(
+    _current: CurrentUserDep,
+    symbol: Annotated[str, Query()] = "EURUSD",
+) -> SymbolSentimentResponse:
+    res = macro_news_service.analyze_symbol_sentiment(symbol)
+    return SymbolSentimentResponse(
+        symbol=res.symbol,
+        overall_sentiment=res.overall_sentiment,
+        sentiment_score=res.sentiment_score,
+        confidence=res.confidence,
+        headline_count=res.headline_count,
+        headlines=[
+            NewsHeadlineView(
+                id=h.id,
+                title=h.title,
+                source=h.source,
+                impact=h.impact,
+                timestamp=h.timestamp,
+                sentiment_score=h.sentiment_score,
+                currencies=h.currencies,
+            )
+            for h in res.headlines
+        ],
+        trade_recommendation=res.trade_recommendation,
+    )
+
+
+@router.get("/news/headlines", response_model=list[NewsHeadlineView])
+async def get_news_headlines(
+    _current: CurrentUserDep,
+    limit: Annotated[int, Query(ge=1, le=100)] = 20,
+) -> list[NewsHeadlineView]:
+    headlines = macro_news_service.get_recent_headlines(limit)
+    return [
+        NewsHeadlineView(
+            id=h.id,
+            title=h.title,
+            source=h.source,
+            impact=h.impact,
+            timestamp=h.timestamp,
+            sentiment_score=h.sentiment_score,
+            currencies=h.currencies,
+        )
+        for h in headlines
+    ]
+
+
+@router.post("/news/headlines", response_model=NewsHeadlineView, status_code=status.HTTP_201_CREATED)
+async def ingest_news_headline(
+    payload: NewsHeadlineView,
+    _current: CurrentUserDep,
+) -> NewsHeadlineView:
+    from app.news import NewsHeadline
+    headline = NewsHeadline(
+        id=payload.id,
+        title=payload.title,
+        source=payload.source,
+        impact=payload.impact,
+        timestamp=payload.timestamp,
+        sentiment_score=payload.sentiment_score,
+        currencies=payload.currencies,
+    )
+    macro_news_service.add_headline(headline)
+    return payload
+
+
+# --- Prop-Firm Compliance Monitoring ---
+
+@router.get("/accounts/{device_id}/prop-firm-status", response_model=PropFirmStatusResponse)
+async def get_prop_firm_status(
+    device_id: UUID,
+    current: CurrentUserDep,
+    session: SessionDep,
+) -> PropFirmStatusResponse:
+    device = await session.scalar(
+        select(Device).where(Device.id == device_id, Device.user_id == current.user.id)
+    )
+    if device is None:
+        raise APIError("device_not_found", "Device was not found", status.HTTP_404_NOT_FOUND)
+
+    snapshot = await session.scalar(
+        select(AccountSnapshot)
+        .where(AccountSnapshot.device_id == device_id)
+        .order_by(AccountSnapshot.captured_at.desc())
+    )
+    risk_profile = await session.scalar(
+        select(RiskProfile).where(RiskProfile.device_id == device_id)
+    )
+
+    starting_bal = snapshot.balance if snapshot else Decimal("10000.00")
+    current_eq = snapshot.equity if snapshot else Decimal("10000.00")
+    max_allowed_dd = risk_profile.max_daily_loss_pct if risk_profile else Decimal("4.5000")
+
+    daily_dd_pct = max(Decimal(0), ((starting_bal - current_eq) / starting_bal) * Decimal(100)) if starting_bal > 0 else Decimal(0)
+    breached = daily_dd_pct >= max_allowed_dd
+    remaining_budget = max(Decimal(0), starting_bal * (max_allowed_dd / Decimal(100)) - (starting_bal - current_eq))
+
+    return PropFirmStatusResponse(
+        device_id=device_id,
+        prop_firm_mode_enabled=True,
+        starting_daily_balance=starting_bal,
+        current_equity=current_eq,
+        daily_drawdown_pct=round(daily_dd_pct, 4),
+        max_allowed_daily_drawdown_pct=max_allowed_dd,
+        drawdown_breached=breached,
+        remaining_drawdown_budget=round(remaining_budget, 2),
     )
