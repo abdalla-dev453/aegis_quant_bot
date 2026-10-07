@@ -30,6 +30,21 @@ input double   InpMaxDailyLossPct         = 2.0;                    // Max Daily
 input int      InpMaxOpenPositions        = 5;                      // Max Concurrent Open Positions
 input ulong    InpMagicNumber             = 884400;                 // Magic Number for Orders
 input bool     InpAutoExecuteDefault      = false;                  // Local Auto-Execute Initial State
+input int      InpMaxSpreadPts            = 30;                     // Max Allowed Spread Filter (points)
+
+input group "=== Active Trade Management (Trailing, BE & Scale-Out) ==="
+input bool     InpEnableBreakEven         = true;                   // Move SL to Break-Even at +1R
+input double   InpBreakEvenTriggerR       = 1.0;                    // Break-Even Trigger (R-Multiple)
+input int      InpBreakEvenBufferPts      = 5;                      // Break-Even Profit Buffer (points)
+input bool     InpEnableTrailingStop      = true;                   // Dynamic Trailing Stop
+input int      InpTrailingStopPts         = 150;                    // Trailing Stop Distance (points)
+input int      InpTrailingStepPts         = 20;                     // Trailing Step (points)
+input bool     InpEnablePartialTP         = true;                   // Scale-Out Partial Close at 1R
+input double   InpPartialTPRatio          = 0.5;                    // Partial Close Ratio (0.5 = 50%)
+
+input group "=== Session Protections ==="
+input bool     InpAutoCloseFriday         = false;                  // Auto-Close Positions on Friday
+input int      InpFridayCloseHour         = 21;                     // Friday Close Hour (UTC)
 
 //+------------------------------------------------------------------+
 //| CONSTANTS & ENUMS                                                |
@@ -493,6 +508,13 @@ public:
       }
       symInfo.RefreshRates();
 
+      // Step 3.1: Spread Spike Filter
+      if(symInfo.Spread() > InpMaxSpreadPts)
+      {
+         SendSignalAck(sigId, "REJECTED", StringFormat("SPREAD_TOO_HIGH: %d pts > %d limit", symInfo.Spread(), InpMaxSpreadPts));
+         return;
+      }
+
       // Step 4: Price Deviation Check
       bool isBuy = (action == "BUY");
       double curPrice = isBuy ? symInfo.Ask() : symInfo.Bid();
@@ -657,6 +679,144 @@ public:
       }
    }
 
+   void ManageActivePositions(CTrade &tradeEngine)
+   {
+      // 1. Check Friday auto-close window
+      if(InpAutoCloseFriday)
+      {
+         MqlDateTime dt;
+         TimeCurrent(dt);
+         if(dt.day_of_week == 5 && dt.hour >= InpFridayCloseHour)
+         {
+            Print("[AegisQuant] Friday auto-close window active. Flattening intraday positions.");
+            FlattenAllPositions(tradeEngine);
+            return;
+         }
+      }
+
+      // 2. Scan and manage open positions
+      for(int i = PositionsTotal() - 1; i >= 0; i--)
+      {
+         CPositionInfo pos;
+         if(!pos.SelectByIndex(i)) continue;
+         if(pos.Magic() != InpMagicNumber) continue;
+
+         string symbol = pos.Symbol();
+         CSymbolInfo symInfo;
+         if(!symInfo.Name(symbol) || !symInfo.Select()) continue;
+         symInfo.RefreshRates();
+
+         double point = symInfo.Point();
+         double openPrice = pos.PriceOpen();
+         double curPrice = (pos.PositionType() == POSITION_TYPE_BUY) ? symInfo.Bid() : symInfo.Ask();
+         double sl = pos.StopLoss();
+         double tp = pos.TakeProfit();
+         double volume = pos.Volume();
+         ulong ticket = pos.Ticket();
+
+         if(pos.PositionType() == POSITION_TYPE_BUY)
+         {
+            double profitPts = (curPrice - openPrice) / point;
+            double riskPts = (sl > 0) ? (openPrice - sl) / point : 100.0;
+            if(riskPts <= 0) riskPts = 100.0;
+
+            // A. Break-Even Check (+1R)
+            if(InpEnableBreakEven && profitPts >= (InpBreakEvenTriggerR * riskPts))
+            {
+               double beSL = openPrice + InpBreakEvenBufferPts * point;
+               if(sl < beSL)
+               {
+                  if(tradeEngine.PositionModify(ticket, beSL, tp))
+                  {
+                     PrintFormat("[AegisQuant] Break-Even moved for BUY #%I64u at %.5f", ticket, beSL);
+                     sl = beSL;
+                  }
+               }
+            }
+
+            // B. Trailing Stop Check
+            if(InpEnableTrailingStop && profitPts >= InpTrailingStopPts)
+            {
+               double trailSL = curPrice - InpTrailingStopPts * point;
+               if(trailSL > sl + InpTrailingStepPts * point && trailSL > openPrice)
+               {
+                  if(tradeEngine.PositionModify(ticket, trailSL, tp))
+                  {
+                     PrintFormat("[AegisQuant] Trailing Stop updated for BUY #%I64u at %.5f", ticket, trailSL);
+                  }
+               }
+            }
+
+            // C. Scale-out partial close at +1R
+            if(InpEnablePartialTP && profitPts >= riskPts && StringFind(pos.Comment(), "[SCALED]") < 0)
+            {
+               double closeVol = NormalizeDouble(volume * InpPartialTPRatio, 2);
+               double minLot = symInfo.LotsMin();
+               double lotStep = symInfo.LotsStep();
+               closeVol = MathFloor(closeVol / lotStep) * lotStep;
+
+               if(closeVol >= minLot && closeVol < volume)
+               {
+                  if(tradeEngine.PositionClosePartial(ticket, closeVol))
+                  {
+                     PrintFormat("[AegisQuant] Scaled-out %.2f lots at +1R for BUY #%I64u", closeVol, ticket);
+                  }
+               }
+            }
+         }
+         else if(pos.PositionType() == POSITION_TYPE_SELL)
+         {
+            double profitPts = (openPrice - curPrice) / point;
+            double riskPts = (sl > 0) ? (sl - openPrice) / point : 100.0;
+            if(riskPts <= 0) riskPts = 100.0;
+
+            // A. Break-Even Check (+1R)
+            if(InpEnableBreakEven && profitPts >= (InpBreakEvenTriggerR * riskPts))
+            {
+               double beSL = openPrice - InpBreakEvenBufferPts * point;
+               if(sl == 0 || sl > beSL)
+               {
+                  if(tradeEngine.PositionModify(ticket, beSL, tp))
+                  {
+                     PrintFormat("[AegisQuant] Break-Even moved for SELL #%I64u at %.5f", ticket, beSL);
+                     sl = beSL;
+                  }
+               }
+            }
+
+            // B. Trailing Stop Check
+            if(InpEnableTrailingStop && profitPts >= InpTrailingStopPts)
+            {
+               double trailSL = curPrice + InpTrailingStopPts * point;
+               if((sl == 0 || trailSL < sl - InpTrailingStepPts * point) && trailSL < openPrice)
+               {
+                  if(tradeEngine.PositionModify(ticket, trailSL, tp))
+                  {
+                     PrintFormat("[AegisQuant] Trailing Stop updated for SELL #%I64u at %.5f", ticket, trailSL);
+                  }
+               }
+            }
+
+            // C. Scale-out partial close at +1R
+            if(InpEnablePartialTP && profitPts >= riskPts && StringFind(pos.Comment(), "[SCALED]") < 0)
+            {
+               double closeVol = NormalizeDouble(volume * InpPartialTPRatio, 2);
+               double minLot = symInfo.LotsMin();
+               double lotStep = symInfo.LotsStep();
+               closeVol = MathFloor(closeVol / lotStep) * lotStep;
+
+               if(closeVol >= minLot && closeVol < volume)
+               {
+                  if(tradeEngine.PositionClosePartial(ticket, closeVol))
+                  {
+                     PrintFormat("[AegisQuant] Scaled-out %.2f lots at +1R for SELL #%I64u", closeVol, ticket);
+                  }
+               }
+            }
+         }
+      }
+   }
+
    // State & Panel accessors
    ENUM_BRIDGE_STATE GetState() const { return m_state; }
    bool IsLocalAutoExecute() const { return m_localAutoExecute; }
@@ -800,7 +960,7 @@ void RemoveDashboardPanel()
 //+------------------------------------------------------------------+
 int OnInit()
 {
-   Print("[AegisQuant] Initializing EA Bridge v2.0...");
+   Print("[AegisQuant] Initializing EA Bridge v2.0 with Active Trade Management...");
 
    g_bridge.Initialize(InpServerUrl, InpPairingCode, InpAutoExecuteDefault);
    RenderDashboardPanel();
@@ -820,12 +980,13 @@ void OnDeinit(const int reason)
 }
 
 //+------------------------------------------------------------------+
-//| ON TIMER: HEARTBEAT & SIGNAL POLLING                             |
+//| ON TIMER: HEARTBEAT, SIGNAL POLLING & POSITION MANAGEMENT        |
 //+------------------------------------------------------------------+
 void OnTimer()
 {
    g_bridge.SendHeartbeat();
    g_bridge.PollSignals(g_trade);
+   g_bridge.ManageActivePositions(g_trade);
 
    if(g_bridge.IsKillSwitchActive())
    {
@@ -836,11 +997,11 @@ void OnTimer()
 }
 
 //+------------------------------------------------------------------+
-//| ON TICK: BACKUP EXECUTION TICK                                   |
+//| ON TICK: REAL-TIME TRAILING STOP & BREAK-EVEN UPDATES            |
 //+------------------------------------------------------------------+
 void OnTick()
 {
-   // Keep local trailing stops and position safety monitored
+   g_bridge.ManageActivePositions(g_trade);
 }
 
 //+------------------------------------------------------------------+
