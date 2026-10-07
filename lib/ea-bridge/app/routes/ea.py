@@ -286,6 +286,9 @@ async def poll_signals(
         select(RiskProfile).where(RiskProfile.device_id == device.id)
     )
     auto_execute = risk_profile.auto_execute if risk_profile else False
+    if risk_profile and risk_profile.allowed_symbols:
+        allowed_set = {s.upper() for s in risk_profile.allowed_symbols}
+        signals = [s for s in signals if s.symbol.upper() in allowed_set]
 
     for sig in signals:
         if sig.state == SignalState.CREATED.value:
@@ -327,7 +330,7 @@ async def poll_signals(
 @router.post(
     "/signals/{signal_id}/ack",
     response_model=SignalAckResponse,
-    responses={401: {"model": ErrorResponse}, 404: {"model": ErrorResponse}},
+    responses={401: {"model": ErrorResponse}},
 )
 async def ack_signal(
     signal_id: UUID,
@@ -390,6 +393,22 @@ async def create_trade_report(
     redis: RedisDep,
 ) -> dict[str, str | bool]:
     device = current_device.device
+
+    existing = await session.scalar(
+        select(TradeReport).where(
+            TradeReport.device_id == device.id,
+            TradeReport.external_order_id == payload.ticket,
+        )
+    )
+    if existing is not None:
+        if payload.exit_price is not None:
+            existing.exit_price = payload.exit_price
+        if payload.profit is not None:
+            existing.realized_pnl = payload.profit
+        if payload.closed_at is not None:
+            existing.closed_at = payload.closed_at
+        await session.commit()
+        return {"accepted": True}
 
     report = TradeReport(
         user_id=device.user_id,
