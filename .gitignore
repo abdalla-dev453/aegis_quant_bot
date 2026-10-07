@@ -70,3 +70,4 @@ client/dist/
 # Local tooling
 .kilo/
 execution.log
+server/mt5setup.exe
