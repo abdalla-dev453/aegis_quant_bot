@@ -54,3 +54,19 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Logs
+*.log
+log/
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+# Node client build output (client has its own dist)
+client/dist/
+# Local tooling
+.kilo/
+execution.log
