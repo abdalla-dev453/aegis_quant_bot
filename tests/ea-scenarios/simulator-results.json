@@ -1,0 +1,42 @@
+[
+  {
+    "scenario": "heartbeat",
+    "passed": true,
+    "response": "{'accepted': True, 'server_time': '2026-10-07T18:22:37.079524Z', 'auto_execute': False, 'kill_switch': False}"
+  },
+  {
+    "scenario": "heartbeat_with_positions",
+    "passed": true,
+    "response": "{'accepted': True, 'server_time': '2026-10-07T18:22:37.140707Z', 'auto_execute': False, 'kill_switch': False}"
+  },
+  {
+    "scenario": "poll_signals_empty",
+    "passed": true,
+    "response": "[]"
+  },
+  {
+    "scenario": "replay_attack_blocked",
+    "passed": true,
+    "response": "first=200 replay=401"
+  },
+  {
+    "scenario": "stale_timestamp_blocked",
+    "passed": true,
+    "response": "401"
+  },
+  {
+    "scenario": "device_revoke_blocks_heartbeat",
+    "passed": true,
+    "response": "hb={'code': 'invalid_device_auth', 'message': 'Device token is invalid or revoked'}"
+  },
+  {
+    "scenario": "trade_report_201",
+    "passed": true,
+    "response": "{'accepted': True}"
+  },
+  {
+    "scenario": "ack_signal_not_found_404",
+    "passed": true,
+    "response": "{'code': 'signal_not_found', 'message': 'Signal not found for this device'}"
+  }
+]

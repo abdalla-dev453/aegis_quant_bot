@@ -14,28 +14,53 @@ from app.models import Base, Device, PairingCode, Position, RiskProfile, Signal,
 from app.security import sha256_hex, sign_ea_request
 
 
+class FakeRedis:
+    def __init__(self) -> None:
+        self._data: dict[str, str] = {}
+        self._counters: dict[str, int] = {}
+
+    async def incr(self, key: str) -> int:
+        self._counters[key] = self._counters.get(key, 0) + 1
+        return self._counters[key]
+
+    async def expire(self, key: str, seconds: int) -> None:
+        pass
+
+    async def get(self, key: str) -> str | None:
+        return self._data.get(key)
+
+    async def set(self, key: str, value: str, ex: int | None = None, nx: bool | None = None, **kwargs) -> bool:
+        if nx and key in self._data:
+            return False
+        self._data[key] = value
+        return True
+
+    async def delete(self, key: str) -> None:
+        self._data.pop(key, None)
+
+    async def publish(self, channel: str, message: str) -> int:
+        return 0
+
+    async def aclose(self) -> None:
+        pass
+
+
 @pytest.fixture
 async def test_app():
-    # Set up in-memory sqlite engine for integration tests
     engine = create_async_engine("sqlite+aiosqlite:///:memory:")
     session_factory = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
-    redis = Redis.from_url("redis://127.0.0.1:6379/15", decode_responses=True)
+    fake_redis = FakeRedis()
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
     app.state.engine = engine
     app.state.session_factory = session_factory
-    app.state.redis = redis
+    app.state.redis = fake_redis
 
     try:
         yield app
     finally:
-        try:
-            await redis.flushdb()
-            await redis.aclose()
-        except Exception:
-            pass
         await engine.dispose()
 
 
