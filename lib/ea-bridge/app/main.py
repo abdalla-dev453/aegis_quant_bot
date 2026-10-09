@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from redis.asyncio import Redis, from_url
+from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 from app.config import get_settings
@@ -63,9 +64,11 @@ def create_app() -> FastAPI:
 
     @app.get("/readyz", tags=["observability"])
     async def readyz(request: Request) -> dict[str, str]:
-        # Test Redis ping
+        # Readiness only succeeds when both persistent dependencies are reachable.
         redis: Redis = request.app.state.redis
         await redis.ping()
+        async with request.app.state.engine.connect() as connection:
+            await connection.execute(text("SELECT 1"))
         return {"status": "ready"}
 
     return app

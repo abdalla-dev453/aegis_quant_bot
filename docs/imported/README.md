@@ -126,6 +126,7 @@ These checks validate software behavior and packaging only. They do not establis
 
 ## Related documentation
 
+- [Vercel, Netlify, Railway, and Render deployment runbook](../PLATFORM_DEPLOYMENT.md)
 - [MT5 runbook](RUNNING_MT5_BOT.md)
 - [Deployment guide](deploy/DEPLOYMENT.md)
 - [Production release checklist](PRODUCTION_RELEASE_CHECKLIST.md)
