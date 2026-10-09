@@ -209,6 +209,32 @@ def _neutral_reading(feed_available: bool = False) -> SentimentReading:
     )
 
 
+def sentiment_from_news_result(
+    items: list[dict[str, str]], warning: str | None = None
+) -> SentimentReading:
+    """Build the strategy gate input from the already-fetched news snapshot."""
+    if not items:
+        return _neutral_reading(feed_available=warning is None)
+    item = items[0]
+    try:
+        event_time = datetime.fromisoformat(item["timestamp"])
+        if event_time.tzinfo is None:
+            event_time = event_time.replace(tzinfo=UTC)
+    except (KeyError, TypeError, ValueError):
+        return _neutral_reading(feed_available=False)
+    minutes = (event_time.astimezone(UTC) - datetime.now(UTC)).total_seconds() / 60.0
+    return SentimentReading(
+        score=0.0,
+        headline_count=len(items),
+        next_high_impact_event=item.get("title"),
+        minutes_to_next_event=minutes,
+        next_event_currency=item.get("currency_affected"),
+        next_event_impact=item.get("impact_level", "HIGH"),
+        next_event_time_utc=item.get("timestamp"),
+        feed_available=warning is None,
+    )
+
+
 def analyze_market_sentiment(symbol: str) -> SentimentReading:
     """Compatibility adapter backed by the live terminal/RSS news pipeline."""
     result = get_latest_high_impact_news(limit=10, hours=24)
@@ -272,6 +298,7 @@ def generate_signal(
     symbol: str,
     df_h1_ind: pd.DataFrame,
     df_h4_ind: pd.DataFrame,
+    sentiment: SentimentReading | None = None,
 ) -> TradeSignal:
     """
     A signal is valid ONLY when:
@@ -294,7 +321,7 @@ def generate_signal(
         )
 
     trend = get_multi_timeframe_trend(df_h1_ind, df_h4_ind)
-    sentiment = analyze_market_sentiment(symbol)
+    sentiment = sentiment if sentiment is not None else analyze_market_sentiment(symbol)
 
     if is_news_blackout(sentiment):
         return TradeSignal(

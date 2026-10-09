@@ -12,6 +12,7 @@ Usage:
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import logging
 import logging.handlers
 import os
@@ -81,7 +82,12 @@ from runtime_state import (
     update,
 )
 from self_healing import data_quality_checker, self_healing_manager
-from strategy import TradeDirection, compute_indicators, generate_signal
+from strategy import (
+    TradeDirection,
+    compute_indicators,
+    generate_signal,
+    sentiment_from_news_result,
+)
 
 logger = logging.getLogger("trading_bot.main")
 
@@ -348,7 +354,12 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             return
 
         if direction in (TradeDirection.BUY, TradeDirection.SELL):
-            signal = generate_signal(symbol, df_h1, df_h4)
+            signal = generate_signal(
+                symbol,
+                df_h1,
+                df_h4,
+                sentiment=sentiment_from_news_result(news_result.items, news_result.warning),
+            )
             if news_result.warning:
                 signal.direction = TradeDirection.NONE
                 signal.reason = f"News feed warning: {news_result.warning}"
@@ -387,6 +398,9 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             record_proposal(proposal_record)
 
             audit_context = {
+                "signal_id": hashlib.sha256(
+                    f"{symbol.upper()}|{latest_candle_time.isoformat()}|{direction.value}".encode()
+                ).hexdigest()[:16],
                 "candle_time": latest_candle_time.isoformat(),
                 "ai_confidence_score": proposal.confidence_score,
                 "ai_market_context": market_context,

@@ -73,4 +73,6 @@ execution.log
 control_state.json
 risk_guard_state.json
 position_state.json
+execution_intents.json
+emergency.kill
 server/mt5setup.exe

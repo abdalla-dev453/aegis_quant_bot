@@ -13,6 +13,12 @@ from pathlib import Path
 from threading import Lock
 from typing import Any
 
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, Response
+from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
+from pydantic import BaseModel, Field
+
 from adaptive_optimization import adaptive_optimizer
 from config import (
     ADVANCED_ANALYSIS,
@@ -35,10 +41,13 @@ from data_provider import (
     resolve_and_validate_symbols,
     shutdown_connection,
 )
-from execution import close_bot_positions, reset_max_drawdown_guard, risk_guard_status
-from fastapi import Depends, FastAPI, Header, HTTPException, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, Response
+from execution import (
+    close_bot_positions,
+    execution_intents,
+    reconcile_execution_intent,
+    reset_max_drawdown_guard,
+    risk_guard_status,
+)
 from metrics import (
     API_LATENCY,
     API_REQUESTS,
@@ -50,8 +59,6 @@ from metrics import (
 )
 from news_provider import get_latest_high_impact_news
 from portfolio_risk_manager import portfolio_risk_manager
-from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
-from pydantic import BaseModel, Field
 from runtime_state import (
     add_log,
     control_state,
@@ -131,6 +138,11 @@ class ControlPayload(BaseModel):
     status: str = Field(..., pattern="^(RUNNING|PAUSED|HALTED)$")
     reason: str | None = None
     source: str = "OPERATOR"
+
+
+class IntentReconciliationPayload(BaseModel):
+    broker_state: str = Field(..., pattern="^(filled|not_filled)$")
+    evidence: str = Field(..., min_length=8, max_length=500)
 
 
 def _account() -> Any:
@@ -362,7 +374,40 @@ def get_control() -> dict[str, Any]:
 
 @app.post("/api/control", dependencies=[Depends(protected_credentials)])
 def set_control_endpoint(payload: ControlPayload) -> dict[str, Any]:
+    if payload.status == "RUNNING":
+        unresolved = {
+            key: row for key, row in execution_intents().items()
+            if row.get("status") in {"SUBMITTING", "UNKNOWN", "PARTIAL"}
+        }
+        if unresolved:
+            raise HTTPException(
+                status_code=409,
+                detail={"error": "execution_intents_need_reconciliation", "signal_ids": sorted(unresolved)},
+            )
     return set_control(payload.status, payload.reason, payload.source)
+
+
+@app.get("/api/execution/intents", dependencies=[Depends(protected)])
+def get_execution_intents() -> dict[str, dict[str, Any]]:
+    return execution_intents()
+
+
+@app.post(
+    "/api/execution/intents/{signal_id}/reconcile",
+    dependencies=[Depends(protected_credentials)],
+)
+def reconcile_execution_intent_endpoint(
+    signal_id: str, payload: IntentReconciliationPayload
+) -> dict[str, Any]:
+    try:
+        result = reconcile_execution_intent(signal_id, payload.broker_state, payload.evidence)
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    add_log(
+        "WARN",
+        f"Operator reconciled execution intent {signal_id} as {payload.broker_state}; evidence reference recorded",
+    )
+    return result
 
 
 @app.get("/api/proposals", dependencies=[Depends(protected)])

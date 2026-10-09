@@ -75,3 +75,24 @@ def test_technical_bearish_confluence_can_authorize_sell(monkeypatch: pytest.Mon
 
     assert signal.direction == TradeDirection.SELL
     assert "informational only" in signal.reason
+
+
+def test_strategy_uses_supplied_news_snapshot_without_second_fetch(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    h1 = _frame(1.11, 1.10, (54.0, 56.0))
+    h4 = _frame(1.12, 1.10, (50.0, 50.0))
+    monkeypatch.setattr(
+        strategy, "STRATEGY", replace(strategy.STRATEGY, require_sentiment_feed=False)
+    )
+    monkeypatch.setattr(
+        strategy,
+        "analyze_market_sentiment",
+        lambda _symbol: pytest.fail("news should come from the cycle snapshot"),
+    )
+
+    signal = strategy.generate_signal(
+        "EURUSD", h1, h4, sentiment=SentimentReading(0.0, 0, None, None, feed_available=True)
+    )
+
+    assert signal.direction == TradeDirection.BUY

@@ -305,6 +305,96 @@ _week_start_date: datetime.date | None = None
 _weekly_halted = False
 _RISK_STATE_FILE = Path(os.getenv("RISK_STATE_FILE", "risk_guard_state.json"))
 _KILL_SWITCH_FILE = Path(os.getenv("KILL_SWITCH_FILE", "emergency.kill"))
+_INTENT_STATE_FILE = Path(os.getenv("EXECUTION_INTENT_FILE", "execution_intents.json"))
+_intent_lock = threading.RLock()
+_execution_intents: dict[str, dict[str, Any]] = {}
+
+
+def _persist_execution_intents() -> None:
+    """Atomically store signal-to-order intent before contacting the broker."""
+    temporary = _INTENT_STATE_FILE.with_suffix(_INTENT_STATE_FILE.suffix + ".tmp")
+    temporary.parent.mkdir(parents=True, exist_ok=True)
+    with temporary.open("w", encoding="utf-8") as intent_file:
+        json.dump(_execution_intents, intent_file, sort_keys=True)
+        intent_file.flush()
+        os.fsync(intent_file.fileno())
+    os.chmod(temporary, 0o600)
+    temporary.replace(_INTENT_STATE_FILE)
+
+
+def _restore_execution_intents() -> None:
+    global _execution_intents
+    if not _INTENT_STATE_FILE.exists():
+        return
+    try:
+        payload = json.loads(_INTENT_STATE_FILE.read_text(encoding="utf-8"))
+        if not isinstance(payload, dict) or any(
+            not isinstance(key, str) or not isinstance(value, dict)
+            or value.get("status") not in {"SUBMITTING", "UNKNOWN", "PARTIAL", "FILLED", "REJECTED"}
+            for key, value in payload.items()
+        ):
+            raise ValueError("invalid execution intent ledger")
+        _execution_intents = payload
+    except Exception as exc:
+        logger.critical("Execution intent ledger is corrupt; refusing startup: %s", exc)
+        raise RuntimeError("execution_intents.json is corrupt; reconcile broker history before recovery") from exc
+
+
+def execution_intents() -> dict[str, dict[str, Any]]:
+    """Return a copy for operator visibility; unresolved entries require reconciliation."""
+    with _intent_lock:
+        return json.loads(json.dumps(_execution_intents))
+
+
+def _has_unresolved_execution_intent() -> bool:
+    with _intent_lock:
+        return any(
+            row.get("status") in {"SUBMITTING", "UNKNOWN", "PARTIAL"}
+            for row in _execution_intents.values()
+        )
+
+
+def reconcile_execution_intent(signal_id: str, broker_state: str, evidence: str) -> dict[str, Any]:
+    """Record an operator's broker-history reconciliation for an ambiguous send."""
+    if broker_state not in {"filled", "not_filled"} or not evidence.strip():
+        raise ValueError("broker_state must be filled/not_filled and evidence must be provided")
+    with _intent_lock:
+        row = _execution_intents.get(signal_id)
+        if row is None or row.get("status") not in {"SUBMITTING", "UNKNOWN", "PARTIAL"}:
+            raise ValueError("signal does not have an unresolved execution intent")
+        row.update(
+            status="FILLED" if broker_state == "filled" else "REJECTED",
+            reconciled_at=datetime.datetime.now(datetime.UTC).isoformat(),
+            reconciliation_evidence=evidence.strip()[:500],
+        )
+        _persist_execution_intents()
+        return dict(row)
+
+
+def _reserve_execution_intent(signal_id: str, details: dict[str, Any]) -> bool:
+    """Reserve a stable candle signal before order_send; never send twice."""
+    with _intent_lock:
+        if signal_id in _execution_intents:
+            return False
+        _execution_intents[signal_id] = {**details, "status": "SUBMITTING", "updated_at": datetime.datetime.now(datetime.UTC).isoformat()}
+        _persist_execution_intents()
+        return True
+
+
+def _update_execution_intent(signal_id: str, status: str, **details: Any) -> None:
+    with _intent_lock:
+        row = _execution_intents[signal_id]
+        row.update(details, status=status, updated_at=datetime.datetime.now(datetime.UTC).isoformat())
+        try:
+            _persist_execution_intents()
+        except OSError as exc:
+            reason = f"Execution intent state could not be persisted after broker response: {exc}"
+            logger.critical(reason)
+            set_control("PAUSED", reason=reason, source="INTENT_PERSISTENCE")
+            raise
+
+
+_restore_execution_intents()
 
 
 def _persist_risk_state() -> None:
@@ -740,6 +830,12 @@ def place_order(
     if _apply_host_kill_switch():
         return None
 
+    if _has_unresolved_execution_intent():
+        reason = "Unresolved broker execution intent exists; reconcile before any further entry"
+        set_control("PAUSED", reason=reason, source="INTENT_RECONCILIATION")
+        logger.critical(reason)
+        return None
+
     if check_daily_loss_guard():
         logger.info("Skipping %s %s: daily loss guard active.", symbol, direction.value)
         return None
@@ -897,9 +993,46 @@ def place_order(
         )
         return {"paper": True, "request": request}
 
-    result = mt5.order_send(request)
+    signal_id = str((audit_context or {}).get("signal_id", ""))
+    if len(signal_id) != 16 or any(char not in "0123456789abcdef" for char in signal_id):
+        logger.error("Live order blocked: stable 16-character signal_id is required")
+        return None
+    # Preserve the id in broker history so ambiguous sends can be reconciled
+    # to the exact intent without relying on symbol/time heuristics.
+    request["comment"] = f"AQ-{signal_id}"
+    try:
+        reserved = _reserve_execution_intent(signal_id, {
+            "symbol": symbol,
+            "direction": direction.value,
+            "volume": lots,
+            "stop_loss": sl,
+            "take_profit": tp,
+            "magic": RISK.magic_number,
+        })
+    except OSError as exc:
+        logger.critical("Live order blocked: could not durably reserve execution intent: %s", exc)
+        set_control("PAUSED", reason="Execution intent persistence failed", source="INTENT_PERSISTENCE")
+        return None
+    if not reserved:
+        prior = execution_intents().get(signal_id, {})
+        status = prior.get("status", "UNKNOWN")
+        logger.error("Duplicate signal blocked id=%s previous_status=%s", signal_id, status)
+        if status in {"SUBMITTING", "UNKNOWN", "PARTIAL"}:
+            set_control("PAUSED", reason=f"Signal {signal_id} needs broker reconciliation", source="INTENT_RECONCILIATION")
+        return None
+
+    try:
+        result = mt5.order_send(request)
+    except Exception as exc:  # an exception leaves broker acceptance ambiguous
+        _update_execution_intent(signal_id, "UNKNOWN", broker_error=str(exc)[:500])
+        reason = f"Order outcome for signal {signal_id} is unknown after MT5 exception; reconcile broker history"
+        set_control("PAUSED", reason=reason, source="INTENT_RECONCILIATION")
+        logger.exception(reason)
+        return None
     if result is None:
         logger.error("order_send returned None for %s: %s", symbol, mt5.last_error())
+        _update_execution_intent(signal_id, "UNKNOWN", broker_error=str(mt5.last_error()))
+        set_control("PAUSED", reason=f"Order outcome for signal {signal_id} is unknown; reconcile broker history", source="INTENT_RECONCILIATION")
         return None
 
     if result.retcode == getattr(mt5, "TRADE_RETCODE_DONE_PARTIAL", -1):
@@ -912,6 +1045,7 @@ def place_order(
         set_control("PAUSED", reason=reason, source="PARTIAL_FILL_RECOVERY")
         _record_fill_risk_or_halt(result, symbol, sl_distance)
         _record_filled_trade()
+        _update_execution_intent(signal_id, "PARTIAL", order=int(result.order or 0), deal=int(result.deal or 0), filled_volume=float(result.volume or 0.0))
         partial_result = result._asdict()
         partial_result["partial_fill"] = True
         return partial_result
@@ -941,6 +1075,19 @@ def place_order(
             logger.warning(
                 "Broker returned a transient execution error for %s; order skipped.", symbol
             )
+        ambiguous = result.retcode in {
+            mt5.TRADE_RETCODE_TIMEOUT,
+            mt5.TRADE_RETCODE_CONNECTION,
+            getattr(mt5, "TRADE_RETCODE_PLACED", -2),
+        }
+        _update_execution_intent(
+            signal_id,
+            "UNKNOWN" if ambiguous else "REJECTED",
+            broker_retcode=int(result.retcode),
+            broker_comment=str(result.comment or ""),
+        )
+        if ambiguous:
+            set_control("PAUSED", reason=f"Order outcome for signal {signal_id} is unknown; reconcile broker history", source="INTENT_RECONCILIATION")
         return None
 
     # --- Post-fill slippage verification ---
@@ -971,8 +1118,16 @@ def place_order(
         result.order,
         slippage,
     )
-    _record_fill_risk_or_halt(result, symbol, sl_distance)
+    risk_state_saved = _record_fill_risk_or_halt(result, symbol, sl_distance)
     _record_filled_trade()
+    _update_execution_intent(
+        signal_id,
+        "FILLED" if risk_state_saved else "UNKNOWN",
+        order=int(result.order or 0),
+        deal=int(result.deal or 0),
+        fill_price=fill_price,
+        filled_volume=float(getattr(result, "volume", lots) or lots),
+    )
     audit_record = {
         "ticket": int(result.order or 0),
         "symbol": symbol,
