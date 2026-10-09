@@ -22,6 +22,7 @@ import threading
 import time
 
 import pandas as pd
+
 from adaptive_optimization import adaptive_optimizer
 from advanced_technical_analysis import (
     analyze_trend_maturity,
@@ -108,6 +109,7 @@ def notify_systemd(message: str) -> None:
 
 def start_dashboard_api() -> None:
     import uvicorn
+
     from api import app
 
     config = uvicorn.Config(
@@ -290,11 +292,17 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
         proposal = await propose_trade(
             symbol, market_context, news_result.items, news_result.warning
         )
+        confidence_blocked = (
+            proposal.action != ProposalAction.HOLD
+            and proposal.confidence_score < AI.min_confidence
+        )
         direction = {
             ProposalAction.BUY: TradeDirection.BUY,
             ProposalAction.SELL: TradeDirection.SELL,
             ProposalAction.HOLD: TradeDirection.NONE,
         }[proposal.action]
+        if confidence_blocked:
+            direction = TradeDirection.NONE
         technical = 1.0 if direction == TradeDirection.BUY else -1.0 if direction == TradeDirection.SELL else 0.0
         logger.info("%s | candle=%s | AI action=%s | confidence=%.2f | reason=%s", symbol, latest_candle_time, proposal.action.value, proposal.confidence_score, proposal.reasoning)
         update(
@@ -326,6 +334,17 @@ async def evaluate_symbol(symbol: str, tracker: LastCandleTracker) -> None:
             proposal_record["blocked_by"] = f"control={control['status']}"
             record_proposal(proposal_record)
             add_log("INFO", f"{symbol} proposal blocked by control={control['status']}")
+            return
+
+        if confidence_blocked:
+            proposal_record["status"] = "blocked"
+            proposal_record["blocked_by"] = "ai_confidence_threshold"
+            proposal_record["signal_reason"] = (
+                f"Model confidence {proposal.confidence_score:.2f} is below "
+                f"configured minimum {AI.min_confidence:.2f}"
+            )
+            record_proposal(proposal_record)
+            add_log("INFO", f"{symbol} AI proposal blocked by confidence policy")
             return
 
         if direction in (TradeDirection.BUY, TradeDirection.SELL):
@@ -432,7 +451,7 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
             notify_systemd("WATCHDOG=1")
             try:
                 await asyncio.wait_for(stop_event.wait(), timeout=30)
-            except asyncio.TimeoutError:
+            except TimeoutError:
                 continue
             break
 
@@ -521,7 +540,7 @@ async def trading_loop(stop_event: asyncio.Event) -> None:
 
         try:
             await asyncio.wait_for(stop_event.wait(), timeout=poll)
-        except asyncio.TimeoutError:
+        except TimeoutError:
             pass  # normal — just means it's time to poll again
 
 

@@ -70,4 +70,7 @@ client/dist/
 # Local tooling
 .kilo/
 execution.log
+control_state.json
+risk_guard_state.json
+position_state.json
 server/mt5setup.exe

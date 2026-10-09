@@ -11,11 +11,12 @@ from __future__ import annotations
 import logging
 import math
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import Enum
 
 import pandas as pd
 import pandas_ta as ta
+
 from config import INDICATORS, NEWS_CONFIG, STRATEGY
 from news_provider import get_latest_high_impact_news
 
@@ -200,11 +201,11 @@ class SentimentReading:
     next_event_time_utc: str | None = None
     feed_available: bool = True
 
-def _neutral_reading() -> SentimentReading:
+def _neutral_reading(feed_available: bool = False) -> SentimentReading:
     """Neutral fallback used whenever the sentiment feed is unavailable."""
     return SentimentReading(
         score=0.0, headline_count=0, next_high_impact_event=None, minutes_to_next_event=None,
-        feed_available=False,
+        feed_available=feed_available,
     )
 
 
@@ -214,10 +215,10 @@ def analyze_market_sentiment(symbol: str) -> SentimentReading:
     if not result.items:
         if result.warning:
             logger.warning("Live news unavailable for %s: %s", symbol, result.warning)
-        return _neutral_reading()
+        return _neutral_reading(feed_available=result.warning is None)
     item = result.items[0]
-    event_time = datetime.fromisoformat(item["timestamp"].replace("Z", "+00:00"))
-    minutes = (event_time - datetime.now(timezone.utc)).total_seconds() / 60.0
+    event_time = datetime.fromisoformat(item["timestamp"])
+    minutes = (event_time - datetime.now(UTC)).total_seconds() / 60.0
     return SentimentReading(
         score=0.0,
         headline_count=len(result.items),
@@ -305,6 +306,15 @@ def generate_signal(
             atr,
         )
 
+    if STRATEGY.require_news_feed and not sentiment.feed_available:
+        return TradeSignal(
+            TradeDirection.NONE,
+            "News source unavailable; entry blocked by configured feed policy",
+            trend,
+            sentiment.score,
+            atr,
+        )
+
     if trend == Trend.NEUTRAL:
         return TradeSignal(
             TradeDirection.NONE, "No H1/H4 trend agreement", trend, sentiment.score, atr
@@ -324,7 +334,11 @@ def generate_signal(
             TradeDirection.NONE, "RSI filter blocked entry", trend, sentiment.score, atr
         )
 
-    if trend == Trend.BULLISH and sentiment.score > STRATEGY.sentiment_bullish_threshold:
+    if (
+        STRATEGY.require_sentiment_feed
+        and trend == Trend.BULLISH
+        and sentiment.score > STRATEGY.sentiment_bullish_threshold
+    ):
         return TradeSignal(
             TradeDirection.BUY,
             "Technical bullish + sentiment confirms",
@@ -333,7 +347,11 @@ def generate_signal(
             atr,
         )
 
-    if trend == Trend.BEARISH and sentiment.score < STRATEGY.sentiment_bearish_threshold:
+    if (
+        STRATEGY.require_sentiment_feed
+        and trend == Trend.BEARISH
+        and sentiment.score < STRATEGY.sentiment_bearish_threshold
+    ):
         return TradeSignal(
             TradeDirection.SELL,
             "Technical bearish + sentiment confirms",
@@ -342,11 +360,20 @@ def generate_signal(
             atr,
         )
 
-    # Graceful degradation: if no sentiment data available, allow technical signal
-    if not sentiment.feed_available and STRATEGY.require_sentiment_feed:
+    if STRATEGY.require_sentiment_feed and not sentiment.feed_available:
         return TradeSignal(
             TradeDirection.NONE,
             "Sentiment feed unavailable; technical-only trading is blocked",
+            trend,
+            sentiment.score,
+            atr,
+        )
+
+    if not STRATEGY.require_sentiment_feed:
+        direction = TradeDirection.BUY if trend == Trend.BULLISH else TradeDirection.SELL
+        return TradeSignal(
+            direction,
+            f"Technical {trend.value} H1/H4 EMA and RSI confluence; sentiment is informational only",
             trend,
             sentiment.score,
             atr,

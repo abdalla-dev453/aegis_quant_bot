@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+from dataclasses import replace
+
 import pandas as pd
 import pytest
+
 import strategy
 from strategy import SentimentReading, TradeDirection, Trend
 
@@ -38,15 +41,37 @@ def test_news_blackout_only_applies_inside_high_impact_window(
     assert strategy.is_news_blackout(reading) is expected
 
 
-def test_generate_signal_requires_sentiment_confirmation(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_technical_confluence_can_authorize_without_fake_sentiment(monkeypatch: pytest.MonkeyPatch) -> None:
     h1 = _frame(1.11, 1.10, (54.0, 56.0))
     h4 = _frame(1.12, 1.10, (50.0, 50.0))
     monkeypatch.setattr(
+        strategy, "STRATEGY", replace(strategy.STRATEGY, require_sentiment_feed=False)
+    )
+    monkeypatch.setattr(
         strategy,
         "analyze_market_sentiment",
-        lambda _symbol: SentimentReading(0.8, 1, None, None),
+        lambda _symbol: SentimentReading(-0.8, 1, None, None),
     )
 
     signal = strategy.generate_signal("EURUSD", h1, h4)
 
     assert signal.direction == TradeDirection.BUY
+    assert "informational only" in signal.reason
+
+
+def test_technical_bearish_confluence_can_authorize_sell(monkeypatch: pytest.MonkeyPatch) -> None:
+    h1 = _frame(1.09, 1.10, (44.0, 42.0))
+    h4 = _frame(1.08, 1.10, (50.0, 50.0))
+    monkeypatch.setattr(
+        strategy, "STRATEGY", replace(strategy.STRATEGY, require_sentiment_feed=False)
+    )
+    monkeypatch.setattr(
+        strategy,
+        "analyze_market_sentiment",
+        lambda _symbol: SentimentReading(0.9, 1, None, None),
+    )
+
+    signal = strategy.generate_signal("EURUSD", h1, h4)
+
+    assert signal.direction == TradeDirection.SELL
+    assert "informational only" in signal.reason

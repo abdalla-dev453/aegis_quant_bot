@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pytest
+
 import runtime_state
 
 
@@ -30,6 +31,31 @@ def test_set_control_updates_status_and_permissions(status: str) -> None:
 def test_set_control_rejects_invalid_status() -> None:
     with pytest.raises(ValueError):
         runtime_state.set_control("STOPPED")
+
+
+def test_running_control_requires_operator_rearm_after_restart(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(runtime_state, "_CONTROL_STATE_FILE", tmp_path / "control.json")
+    runtime_state.set_control("RUNNING", reason="armed", source="test")
+
+    runtime_state._restore_control()
+
+    control = runtime_state.control_state()
+    assert control["status"] == "PAUSED"
+    assert not control["entriesAllowed"]
+    assert control["source"] == "RESTART_RECOVERY"
+
+
+def test_control_persistence_failure_fails_closed(monkeypatch) -> None:
+    def fail_persist(_control):
+        raise OSError("disk unavailable")
+
+    monkeypatch.setattr(runtime_state, "_persist_control", fail_persist)
+    with pytest.raises(OSError):
+        runtime_state.set_control("RUNNING", source="test")
+
+    control = runtime_state.control_state()
+    assert control["status"] == "HALTED"
+    assert not control["entriesAllowed"]
 
 
 def test_record_proposal_updates_last_signal() -> None:

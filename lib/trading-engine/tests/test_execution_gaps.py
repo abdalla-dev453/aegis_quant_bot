@@ -4,8 +4,9 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
-import execution
 import pytest
+
+import execution
 from execution import (
     OrderError,
     calculate_lot_size,
@@ -162,6 +163,7 @@ class TestTradeGuards:
         monkeypatch.setattr(execution, "control_state", lambda: {"status": "RUNNING", "entriesAllowed": True})
         monkeypatch.setattr(execution, "check_daily_loss_guard", lambda: False)
         monkeypatch.setattr(execution, "check_max_drawdown_guard", lambda: False)
+        monkeypatch.setattr(execution, "check_weekly_loss_guard", lambda: False)
         monkeypatch.setattr(execution, "check_max_trades_guard", lambda: True)
         monkeypatch.setattr(execution, "is_correlated_exposure_blocked", lambda *a, **k: False)
         monkeypatch.setattr(execution, "get_open_positions", lambda **kw: list(range(5)))
