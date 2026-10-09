@@ -40,6 +40,7 @@ except ImportError:  # pragma: no cover - Linux/test environment only.
 
 from config import (
     CREDENTIALS,
+    EXECUTION,
     INITIAL_BACKOFF_SECONDS,
     MAX_BACKOFF_SECONDS,
     MAX_RECONNECT_ATTEMPTS,
@@ -180,6 +181,28 @@ def _initialize_connection(
                     err,
                 )
             else:
+                if EXECUTION.live_orders_enabled:
+                    expected_mode = {
+                        "demo": getattr(mt5, "ACCOUNT_TRADE_MODE_DEMO", 0),
+                        "real": getattr(mt5, "ACCOUNT_TRADE_MODE_REAL", 2),
+                    }[CREDENTIALS.expected_trade_mode]
+                    expected_margin_mode = {
+                        "hedging": getattr(mt5, "ACCOUNT_MARGIN_MODE_RETAIL_HEDGING", 2),
+                        "netting": getattr(mt5, "ACCOUNT_MARGIN_MODE_RETAIL_NETTING", 0),
+                    }[CREDENTIALS.expected_margin_mode]
+                    identity_matches = (
+                        CREDENTIALS.expected_login is not None
+                        and int(account_info.login) == CREDENTIALS.expected_login
+                        and CREDENTIALS.expected_server == str(account_info.server)
+                        and int(account_info.trade_mode) == expected_mode
+                        and int(account_info.margin_mode) == expected_margin_mode
+                    )
+                    if not identity_matches:
+                        mt5.shutdown()
+                        raise MT5ConnectionError(
+                            "Connected MT5 account does not match configured expected login, "
+                            "server, demo/real mode, and hedging/netting mode; live trading remains disabled."
+                        )
                 _state.connected = True
                 _state.last_error = None
                 logger.info(

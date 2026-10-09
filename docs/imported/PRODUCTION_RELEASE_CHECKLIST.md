@@ -1,6 +1,11 @@
-# Aegis Quant Production Release Checklist
+# Archived Production Release Checklist — MQL5 Candidate
 
-**Status as of 2026-10-02: NOT APPROVED for funded/live execution.** This is a release gate, not a declaration that the checks have passed. No owner approval, MetaEditor build, broker test, Strategy Tester report, or supervised demo evidence was supplied to this workspace.
+> **Superseded for the current qualification candidate.** The selected executor
+> is the Python MT5 runtime documented in [`../PRE_DEPLOYMENT_RELEASE_PLAN.md`](../PRE_DEPLOYMENT_RELEASE_PLAN.md).
+> This historical checklist describes the standalone MQL5 candidate; do not use
+> its EA-specific source/build gates as the current release record.
+
+**Status as of 2026-10-09: NOT APPROVED for funded/live execution.** Code-level safeguards were added, but there is still no owner approval, MetaEditor build, broker test, Strategy Tester report, or supervised demo evidence.
 
 ## Release Candidate
 
@@ -19,16 +24,16 @@ No numeric limit in this file is an account-owner approval. The EA defaults are 
 | Allowed symbol(s) and trading sessions | Pending | `InpSymbol`, broker symbol specification |
 | Risk per trade (% equity) | Pending | `InpRiskPerTradePct` |
 | Daily loss/drawdown threshold and reset timezone | Pending | `InpMaxDailyDrawdownPct`; document server-day baseline behavior |
-| Maximum aggregate open stop-loss risk | Pending | Not implemented in candidate; must be implemented and tested before live |
+| Maximum aggregate open stop-loss risk | Implemented in source; runtime proof pending | Python and preferred EA calculate aggregate stop risk; broker tick values, all supported account modes and unknown-stop blocking must be verified on demo |
 | Maximum concurrent positions | Pending | `InpMaxConcurrentPositions` |
 | Maximum trades per day / consecutive losses | Pending | Not implemented in candidate; decision and enforcement required before live |
-| Peak/weekly loss limits and re-arm authority | Pending | Not implemented/persisted in candidate; decision and enforcement required before live |
+| Peak/weekly loss limits and re-arm authority | Implemented in source; runtime proof pending | Python JSON state and EA terminal globals persist weekly/peak latches; exercise rollover, restart, manual reset and kill recovery before live |
 | Spread, slippage and gap limits | Pending | `InpMaxSpreadPoints`, `InpDeviationPoints`; post-fill policy also required |
 | News/rollover/weekend blackout and open-position policy | Pending | Calendar/manual timestamp behavior must be tested; position policy must be signed |
 | On any loss guard, outage, or kill switch: hold or close positions | Pending | Candidate does not automatically liquidate; document operator procedure |
 | Maximum pilot capital / notional and maximum daily loss in currency | Pending | External broker/account limit plus operator-approved cap |
 
-The EA currently has an in-memory daily baseline, default 1% per-trade risk, default 3% daily drawdown block, and a position-count limit. These are not durable across EA removal/restart, do not provide aggregate open-risk protection, and must not be represented as complete account safeguards. Changing inputs does not add missing controls.
+The dated worktree update below supersedes this baseline description for the preferred EA: daily/weekly/peak latches and managed aggregate stop risk are now implemented with terminal global variables and account/magic scoped state. They remain uncompiled and unverified against a broker. The root EA remains a separate, lower-quality implementation and is not the qualification candidate.
 
 ## Gate 1: Source And Build
 
@@ -91,14 +96,34 @@ All prior gates must pass before this gate starts. Live authorization is a separ
 
 ## Current Closure Status
 
+### Worktree progress (2026-10-09)
+
+| Work item | Status | Evidence / remaining action |
+| --- | --- | --- |
+| Bridge fabricated BUY/fixed-risk signal removed | Complete as fail-closed behavior | `dispatch-signal` responds `503 signal_engine_unavailable`; a real timestamped strategy is still required before this endpoint can issue signals. |
+| Python account identity pins | Implemented; broker unverified | Live mode requires expected login/server/trade mode/margin mode and compares them after MT5 connection. Validate against the selected broker. |
+| Python durable risk/control state | Implemented locally | Atomic state files; startup is PAUSED and restart requires re-arm. Verify filesystem permissions, backup and recovery procedure on target host. |
+| Python spread/aggregate risk/tick grid guards | Implemented; broker unverified | Configured spread and aggregate SL-risk caps; stop levels snap outward to tick grid. Broker tick values, supported filling, margin and gap behavior need demo evidence. |
+| Preferred EA account pin, sync default, tick grid, aggregate risk, persistent daily/weekly/peak guards and terminal kill latch | Source implemented; compile blocked | `mt5/AegisConfluenceEA.mq5`; pins login/server/margin mode and stores state in terminal global variables keyed by account/magic. Compile with target MetaEditor and prove persistence, kill, partial-fill containment and re-arm behavior on broker terminal. |
+| Python trading-engine tests | Passed locally | 116 passed, one pandas-ta deprecation warning. |
+| EA bridge tests | Partially passed | Provider fail-closed unit test: 1 passed. Integration tests need Redis on `127.0.0.1:6379`; this workspace cannot open local sockets. |
+| Strategy performance evidence | Not started | No selected historical dataset or broker-cost assumptions supplied; backtest/OOS/robustness reports are absent. |
+| Demo qualification and live approval | Blocked | Requires Windows MT5/MetaEditor, chosen broker/account, owner-approved limits and supervised demo evidence. |
+
+#### Kill and recovery operation
+
+- Python: create the configured `KILL_SWITCH_FILE` (default `emergency.kill`) from the trading host to block new entries. Existing-position management remains enabled. After broker positions, orders and history have been reconciled, remove the marker and explicitly re-arm through the operator control.
+- Preferred EA: set terminal Global Variable `AQ.<login>.<magic>.KILL` to `1` to block entries. Set it to `0` only after the same broker reconciliation. Peak drawdown latch `AQ.<login>.<magic>.PEAK_HALT` also requires an authorized manual reset; weekly latch resets at the next broker-server Monday baseline. Never clear either latch just to resume trading.
+- A partial fill or partial close requires a broker-side review of residual orders and actual position volume before re-arm. These source controls have not yet been drilled on a demo account.
+
 | Item | Status | Evidence / remaining action |
 | --- | --- | --- |
 | Sole qualification candidate named | Complete | `mt5/AegisConfluenceEA.mq5`; no other execution path is in this release |
 | Python risk environment variables applied and validated | Complete for Python path only | `RISK_PER_TRADE_PCT`, `MAX_DAILY_LOSS_PCT`, `MAX_DRAWDOWN_FROM_PEAK_PCT`, `MAX_TRADES_PER_DAY`, `MAX_CONCURRENT_POSITIONS`, and related limits now load/validate at startup; regression tests added. This does not configure the EA. |
 | Account-owner limits and pilot authorization | Blocked | Owner values/signature not supplied |
 | EA compile and exact binary | Blocked | Requires Windows MetaEditor and target build |
-| Broker/account controls and hard aggregate risk | Open, release-blocking | Candidate lacks complete account identity, durable aggregate-risk, and restart-safe loss controls |
-| Partial-fill/idempotency and restart reconciliation | Open, release-blocking | Requires implementation plus broker-connected tests |
+| Broker/account controls and hard aggregate risk | Implemented in source; broker proof pending | Python checks account pins, aggregate stop risk and supported constraints; EA pins identity and checks managed aggregate risk. Broker-specific behavior remains unverified. |
+| Partial-fill/idempotency and restart reconciliation | Partially implemented; release-blocking | Python and EA pause/kill on partial fills and Python persists stable position risk. Durable intent deduplication, residual-order reconciliation, restart recovery and broker-connected tests remain open. |
 | Strategy Tester and robustness evidence | Blocked | No tester or reports available here |
 | Full supervised demo week | Blocked | Requires demo account/operator and retained broker evidence |
 | Host security, alert, and rollback drills | Blocked | Requires deployment environment and operator evidence |

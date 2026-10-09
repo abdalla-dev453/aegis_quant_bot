@@ -60,6 +60,10 @@ class MT5Credentials:
     terminal_path: str | None = os.getenv("MT5_TERMINAL_PATH") or None
     # Milliseconds to wait for the terminal to respond before giving up.
     timeout_ms: int = 60_000
+    expected_login: int | None = _env_int("MT5_EXPECTED_LOGIN", 0) or None
+    expected_server: str | None = os.getenv("MT5_EXPECTED_SERVER") or None
+    expected_trade_mode: str = os.getenv("MT5_EXPECTED_TRADE_MODE", "demo").lower()
+    expected_margin_mode: str = os.getenv("MT5_EXPECTED_MARGIN_MODE", "hedging").lower()
 
     def is_configured(self) -> bool:
         return bool(self.login and self.password and self.server)
@@ -74,6 +78,12 @@ class MT5Credentials:
             missing.append("MT5_SERVER")
         if missing:
             raise ValueError("Missing MT5 live-trading configuration: " + ", ".join(missing))
+        if self.expected_login is None or not self.expected_server:
+            raise ValueError("Live trading requires MT5_EXPECTED_LOGIN and MT5_EXPECTED_SERVER")
+        if self.expected_trade_mode not in {"demo", "real"}:
+            raise ValueError("MT5_EXPECTED_TRADE_MODE must be 'demo' or 'real'")
+        if self.expected_margin_mode not in {"hedging", "netting"}:
+            raise ValueError("MT5_EXPECTED_MARGIN_MODE must be 'hedging' or 'netting'")
 
 
 # -------------------------------------------------------
@@ -110,6 +120,7 @@ class AIConfig:
     model: str = os.getenv("OPENAI_MODEL", "gpt-4o")
     api_key: str = os.getenv("OPENAI_API_KEY", "")
     timeout_seconds: float = float(os.getenv("OPENAI_TIMEOUT_SECONDS", "30"))
+    min_confidence: float = _env_float("AI_MIN_CONFIDENCE", 0.70)
 
     def validate(self) -> None:
         if self.provider != "openai":
@@ -118,6 +129,8 @@ class AIConfig:
             raise ValueError("Missing OPENAI_API_KEY. Set it in server/.env or the environment.")
         if self.timeout_seconds <= 0:
             raise ValueError("OPENAI_TIMEOUT_SECONDS must be greater than zero.")
+        if not 0.0 <= self.min_confidence <= 1.0:
+            raise ValueError("AI_MIN_CONFIDENCE must be between 0 and 1")
 
 
 @dataclass(frozen=True)
@@ -194,6 +207,7 @@ class IndicatorConfig:
 class RiskConfig:
     risk_per_trade_pct: float = _env_float("RISK_PER_TRADE_PCT", 1.5)  # % of equity risked per trade
     max_daily_loss_pct: float = _env_float("MAX_DAILY_LOSS_PCT", 4.0)  # halt new entries for the rest of the day past this drawdown
+    max_weekly_loss_pct: float = _env_float("MAX_WEEKLY_LOSS_PCT", 6.0)
     # This is intentionally independent of the daily-loss guard.  It is a
     # high-water-mark circuit breaker and remains latched until manually reset.
     max_drawdown_from_peak_pct: float = _env_float("MAX_DRAWDOWN_FROM_PEAK_PCT", 8.0)
@@ -204,6 +218,11 @@ class RiskConfig:
     trailing_trigger_rr: float = _env_float("TRAILING_TRIGGER_RR", 1.0)  # start trailing once trade hits 1:1 RR
     trailing_atr_multiplier: float = _env_float("TRAILING_ATR_MULTIPLIER", 1.0)  # trailing distance once triggered
     max_concurrent_positions: int = _env_int("MAX_CONCURRENT_POSITIONS", 3)
+    max_aggregate_risk_pct: float = _env_float("MAX_AGGREGATE_RISK_PCT", 3.0)
+    max_spread_points: float = _env_float("MAX_SPREAD_POINTS", 50.0)
+    max_stop_atr_multiplier: float = _env_float("MAX_STOP_ATR_MULTIPLIER", 3.0)
+    min_reward_risk_ratio: float = _env_float("MIN_REWARD_RISK_RATIO", 1.0)
+    max_reward_risk_ratio: float = _env_float("MAX_REWARD_RISK_RATIO", 5.0)
     magic_number: int = 990011
     deviation_points: int = _env_int("DEVIATION_POINTS", 20)  # max slippage tolerance
 
@@ -211,12 +230,18 @@ class RiskConfig:
         float_settings = {
             "RISK_PER_TRADE_PCT": self.risk_per_trade_pct,
             "MAX_DAILY_LOSS_PCT": self.max_daily_loss_pct,
+            "MAX_WEEKLY_LOSS_PCT": self.max_weekly_loss_pct,
             "MAX_DRAWDOWN_FROM_PEAK_PCT": self.max_drawdown_from_peak_pct,
             "CORRELATION_THRESHOLD": self.correlation_threshold,
             "ATR_SL_MULTIPLIER": self.atr_sl_multiplier,
             "ATR_TP_MULTIPLIER": self.atr_tp_multiplier,
             "TRAILING_TRIGGER_RR": self.trailing_trigger_rr,
             "TRAILING_ATR_MULTIPLIER": self.trailing_atr_multiplier,
+            "MAX_AGGREGATE_RISK_PCT": self.max_aggregate_risk_pct,
+            "MAX_SPREAD_POINTS": self.max_spread_points,
+            "MAX_STOP_ATR_MULTIPLIER": self.max_stop_atr_multiplier,
+            "MIN_REWARD_RISK_RATIO": self.min_reward_risk_ratio,
+            "MAX_REWARD_RISK_RATIO": self.max_reward_risk_ratio,
         }
         for name, value in float_settings.items():
             if not math.isfinite(value):
@@ -224,7 +249,9 @@ class RiskConfig:
         percentages = {
             "RISK_PER_TRADE_PCT": self.risk_per_trade_pct,
             "MAX_DAILY_LOSS_PCT": self.max_daily_loss_pct,
+            "MAX_WEEKLY_LOSS_PCT": self.max_weekly_loss_pct,
             "MAX_DRAWDOWN_FROM_PEAK_PCT": self.max_drawdown_from_peak_pct,
+            "MAX_AGGREGATE_RISK_PCT": self.max_aggregate_risk_pct,
         }
         for name, value in percentages.items():
             if not 0.0 < value <= 100.0:
@@ -233,6 +260,14 @@ class RiskConfig:
             raise ValueError("MAX_TRADES_PER_DAY must be at least 1")
         if self.max_concurrent_positions < 1:
             raise ValueError("MAX_CONCURRENT_POSITIONS must be at least 1")
+        if self.max_spread_points <= 0:
+            raise ValueError("MAX_SPREAD_POINTS must be greater than zero")
+        if self.max_aggregate_risk_pct < self.risk_per_trade_pct:
+            raise ValueError("MAX_AGGREGATE_RISK_PCT must be at least RISK_PER_TRADE_PCT")
+        if self.max_stop_atr_multiplier <= 0:
+            raise ValueError("MAX_STOP_ATR_MULTIPLIER must be greater than zero")
+        if self.min_reward_risk_ratio <= 0 or self.max_reward_risk_ratio < self.min_reward_risk_ratio:
+            raise ValueError("Reward/risk ratio bounds are invalid")
         if not 0.0 <= self.correlation_threshold <= 1.0:
             raise ValueError("CORRELATION_THRESHOLD must be between 0 and 1")
         for name, value in (
@@ -277,7 +312,10 @@ SYMBOL_CORRELATIONS: Final[dict[tuple[str, str], float]] = {
 # ------------------------------------------------------------
 @dataclass(frozen=True)
 class StrategyConfig:
-    require_sentiment_feed: bool = os.getenv("REQUIRE_SENTIMENT_FEED", "true").lower() == "true"
+    # Sentiment is optional by design; when disabled, only technical
+    # confluence authorizes direction. News availability remains a separate gate.
+    require_sentiment_feed: bool = os.getenv("REQUIRE_SENTIMENT_FEED", "false").lower() == "true"
+    require_news_feed: bool = os.getenv("REQUIRE_NEWS_FEED", "true").lower() == "true"
     sentiment_bullish_threshold: float = 0.5
     sentiment_bearish_threshold: float = -0.5
     loop_poll_seconds: int = 15  # how often the main loop checks for a new closed candle

@@ -15,6 +15,7 @@ import json
 import logging
 import logging.handlers
 import math
+import os
 import threading
 import time
 from collections import namedtuple
@@ -36,7 +37,7 @@ from data_provider import (
     mt5_serialized,
 )
 from metrics import ORDERS_PLACED
-from runtime_state import add_log, control_state
+from runtime_state import add_log, control_state, set_control
 from strategy import TradeDirection
 
 logger = logging.getLogger("trading_bot.execution")
@@ -87,6 +88,13 @@ def close_bot_positions() -> dict[str, list[dict[str, str]] | list[str]]:
                 detail = result.comment if result is not None else str(mt5.last_error())
                 if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE_PARTIAL:
                     detail = detail or "Broker only partially closed position"
+                    reason = (
+                        f"Partial close for position {ticket} ({position.symbol}); "
+                        "broker reconciliation required before new entries"
+                    )
+                    set_control("PAUSED", reason=reason, source="PARTIAL_CLOSE_RECOVERY")
+                    add_log("ERROR", reason)
+                    detail = f"{detail}; {reason}"
                 failed.append({"ticket": ticket, "error": detail or "Broker rejected close request"})
 
     return {"closed": closed, "failed": failed}
@@ -164,7 +172,7 @@ def _get_symbol(symbol: str) -> _SymbolData:
         raise OrderError(f"symbol_info returned None for {symbol}")
 
     tick_size = info.trade_tick_size or info.point
-    tick_value = info.trade_tick_value
+    tick_value = getattr(info, "trade_tick_value_loss", 0.0) or info.trade_tick_value
     step = info.volume_step or 0.01
     step_decimals = max(0, -math.floor(math.log10(step)))
     min_stop_points = max(info.trade_stops_level, 1) * info.point
@@ -203,15 +211,15 @@ MAX_MARGIN_UTILIZATION_PCT = 80.0  # refuse trades that would push margin use pa
 
 _POSITION_STATE_FILE = Path("position_state.json")
 _position_state_lock = threading.Lock()
-_original_risk_by_ticket: dict[int, float] = {}
+_original_risk_by_position: dict[int, float] = {}
 
 
 def _load_position_state() -> None:
-    global _original_risk_by_ticket
+    global _original_risk_by_position
     if _POSITION_STATE_FILE.exists():
         try:
             with open(_POSITION_STATE_FILE, "r") as state_file:
-                _original_risk_by_ticket = {
+                _original_risk_by_position = {
                     int(ticket): float(risk) for ticket, risk in json.load(state_file).items()
                 }
         except Exception as exc:
@@ -222,27 +230,69 @@ def _load_position_state() -> None:
 
 def _save_position_state() -> None:
     with _position_state_lock:
-        try:
-            temporary_file = _POSITION_STATE_FILE.with_suffix(".tmp")
-            with open(temporary_file, "w") as state_file:
-                json.dump(_original_risk_by_ticket, state_file)
-            temporary_file.replace(_POSITION_STATE_FILE)
-        except Exception:
-            logger.exception("Failed to persist position_state.json")
+        temporary_file = _POSITION_STATE_FILE.with_suffix(_POSITION_STATE_FILE.suffix + ".tmp")
+        temporary_file.parent.mkdir(parents=True, exist_ok=True)
+        with temporary_file.open("w", encoding="utf-8") as state_file:
+            json.dump(_original_risk_by_position, state_file)
+            state_file.flush()
+            os.fsync(state_file.fileno())
+        os.chmod(temporary_file, 0o600)
+        temporary_file.replace(_POSITION_STATE_FILE)
 
 
-def _record_original_risk(ticket: int, risk_distance: float) -> None:
+def _record_original_risk(position_id: int, risk_distance: float) -> None:
     with _position_state_lock:
-        _original_risk_by_ticket[ticket] = risk_distance
+        _original_risk_by_position[position_id] = risk_distance
     _save_position_state()
 
 
-def _get_original_risk(ticket: int, fallback: float) -> float:
+def _get_original_risk(position_id: int, fallback: float) -> float:
     with _position_state_lock:
-        return _original_risk_by_ticket.get(ticket, fallback)
+        return _original_risk_by_position.get(position_id, fallback)
 
 
-_daily_guard_lock = threading.Lock()
+def _position_identifier_from_result(result: Any, symbol: str) -> int | None:
+    """Resolve the stable MT5 position identifier through the fill deal."""
+    deal_ticket = int(getattr(result, "deal", 0) or 0)
+    if not deal_ticket:
+        return None
+    try:
+        deals = mt5.history_deals_get(ticket=deal_ticket)
+    except (AttributeError, TypeError):
+        return None
+    if not deals:
+        return None
+    for deal in deals:
+        position_id = int(getattr(deal, "position_id", 0) or 0)
+        if position_id and getattr(deal, "symbol", symbol) == symbol:
+            return position_id
+    return None
+
+
+def _record_fill_risk_or_halt(result: Any, symbol: str, risk_distance: float) -> bool:
+    """Persist risk by stable position ID, halting entries if mapping fails."""
+    position_id = _position_identifier_from_result(result, symbol)
+    if position_id is None:
+        reason = (
+            f"Filled {symbol} order {getattr(result, 'order', 0)} could not be mapped "
+            "to a stable position identifier; broker reconciliation required"
+        )
+        logger.critical(reason)
+        add_log("ERROR", reason)
+        set_control("PAUSED", reason=reason, source="POSITION_RECONCILIATION")
+        return False
+    try:
+        _record_original_risk(position_id, risk_distance)
+    except OSError as exc:
+        reason = f"Filled {symbol} position {position_id} risk state could not be persisted: {exc}"
+        logger.critical(reason)
+        add_log("ERROR", reason)
+        set_control("PAUSED", reason=reason, source="POSITION_RECONCILIATION")
+        return False
+    return True
+
+
+_daily_guard_lock = threading.RLock()
 _day_start_equity: float | None = None
 _day_start_date: datetime.date | None = None
 _trading_halted_today = False
@@ -250,11 +300,160 @@ _trades_today = 0
 _trades_today_date: datetime.date | None = None
 _peak_equity: float | None = None
 _peak_equity_halted = False
+_week_start_equity: float | None = None
+_week_start_date: datetime.date | None = None
+_weekly_halted = False
+_RISK_STATE_FILE = Path(os.getenv("RISK_STATE_FILE", "risk_guard_state.json"))
+_KILL_SWITCH_FILE = Path(os.getenv("KILL_SWITCH_FILE", "emergency.kill"))
+_INTENT_STATE_FILE = Path(os.getenv("EXECUTION_INTENT_FILE", "execution_intents.json"))
+_intent_lock = threading.RLock()
+_execution_intents: dict[str, dict[str, Any]] = {}
+
+
+def _persist_execution_intents() -> None:
+    """Atomically store signal-to-order intent before contacting the broker."""
+    temporary = _INTENT_STATE_FILE.with_suffix(_INTENT_STATE_FILE.suffix + ".tmp")
+    temporary.parent.mkdir(parents=True, exist_ok=True)
+    with temporary.open("w", encoding="utf-8") as intent_file:
+        json.dump(_execution_intents, intent_file, sort_keys=True)
+        intent_file.flush()
+        os.fsync(intent_file.fileno())
+    os.chmod(temporary, 0o600)
+    temporary.replace(_INTENT_STATE_FILE)
+
+
+def _restore_execution_intents() -> None:
+    global _execution_intents
+    if not _INTENT_STATE_FILE.exists():
+        return
+    try:
+        payload = json.loads(_INTENT_STATE_FILE.read_text(encoding="utf-8"))
+        if not isinstance(payload, dict) or any(
+            not isinstance(key, str) or not isinstance(value, dict)
+            or value.get("status") not in {"SUBMITTING", "UNKNOWN", "PARTIAL", "FILLED", "REJECTED"}
+            for key, value in payload.items()
+        ):
+            raise ValueError("invalid execution intent ledger")
+        _execution_intents = payload
+    except Exception as exc:
+        logger.critical("Execution intent ledger is corrupt; refusing startup: %s", exc)
+        raise RuntimeError("execution_intents.json is corrupt; reconcile broker history before recovery") from exc
+
+
+def execution_intents() -> dict[str, dict[str, Any]]:
+    """Return a copy for operator visibility; unresolved entries require reconciliation."""
+    with _intent_lock:
+        return json.loads(json.dumps(_execution_intents))
+
+
+def _has_unresolved_execution_intent() -> bool:
+    with _intent_lock:
+        return any(
+            row.get("status") in {"SUBMITTING", "UNKNOWN", "PARTIAL"}
+            for row in _execution_intents.values()
+        )
+
+
+def reconcile_execution_intent(signal_id: str, broker_state: str, evidence: str) -> dict[str, Any]:
+    """Record an operator's broker-history reconciliation for an ambiguous send."""
+    if broker_state not in {"filled", "not_filled"} or not evidence.strip():
+        raise ValueError("broker_state must be filled/not_filled and evidence must be provided")
+    with _intent_lock:
+        row = _execution_intents.get(signal_id)
+        if row is None or row.get("status") not in {"SUBMITTING", "UNKNOWN", "PARTIAL"}:
+            raise ValueError("signal does not have an unresolved execution intent")
+        row.update(
+            status="FILLED" if broker_state == "filled" else "REJECTED",
+            reconciled_at=datetime.datetime.now(datetime.UTC).isoformat(),
+            reconciliation_evidence=evidence.strip()[:500],
+        )
+        _persist_execution_intents()
+        return dict(row)
+
+
+def _reserve_execution_intent(signal_id: str, details: dict[str, Any]) -> bool:
+    """Reserve a stable candle signal before order_send; never send twice."""
+    with _intent_lock:
+        if signal_id in _execution_intents:
+            return False
+        _execution_intents[signal_id] = {**details, "status": "SUBMITTING", "updated_at": datetime.datetime.now(datetime.UTC).isoformat()}
+        _persist_execution_intents()
+        return True
+
+
+def _update_execution_intent(signal_id: str, status: str, **details: Any) -> None:
+    with _intent_lock:
+        row = _execution_intents[signal_id]
+        row.update(details, status=status, updated_at=datetime.datetime.now(datetime.UTC).isoformat())
+        try:
+            _persist_execution_intents()
+        except OSError as exc:
+            reason = f"Execution intent state could not be persisted after broker response: {exc}"
+            logger.critical(reason)
+            set_control("PAUSED", reason=reason, source="INTENT_PERSISTENCE")
+            raise
+
+
+_restore_execution_intents()
+
+
+def _persist_risk_state() -> None:
+    """Atomically persist loss latches and counters so a restart cannot re-arm."""
+    with _daily_guard_lock:
+        payload = {
+            "day_start_date": _day_start_date.isoformat() if _day_start_date else None,
+            "day_start_equity": _day_start_equity,
+            "trading_halted_today": _trading_halted_today,
+            "trades_today_date": _trades_today_date.isoformat() if _trades_today_date else None,
+            "trades_today": _trades_today,
+            "peak_equity": _peak_equity,
+            "peak_equity_halted": _peak_equity_halted,
+            "week_start_date": _week_start_date.isoformat() if _week_start_date else None,
+            "week_start_equity": _week_start_equity,
+            "weekly_halted": _weekly_halted,
+        }
+        temporary_file = _RISK_STATE_FILE.with_suffix(_RISK_STATE_FILE.suffix + ".tmp")
+        temporary_file.parent.mkdir(parents=True, exist_ok=True)
+        with temporary_file.open("w", encoding="utf-8") as state_file:
+            json.dump(payload, state_file)
+            state_file.flush()
+            os.fsync(state_file.fileno())
+        os.chmod(temporary_file, 0o600)
+        temporary_file.replace(_RISK_STATE_FILE)
+
+
+def _restore_risk_state() -> None:
+    global _day_start_date, _day_start_equity, _trading_halted_today
+    global _trades_today_date, _trades_today, _peak_equity, _peak_equity_halted
+    global _week_start_date, _week_start_equity, _weekly_halted
+    if not _RISK_STATE_FILE.exists():
+        return
+    try:
+        with _RISK_STATE_FILE.open(encoding="utf-8") as state_file:
+            state = json.load(state_file)
+        _day_start_date = datetime.date.fromisoformat(state["day_start_date"]) if state.get("day_start_date") else None
+        _day_start_equity = float(state["day_start_equity"]) if state.get("day_start_equity") is not None else None
+        _trading_halted_today = bool(state.get("trading_halted_today", False))
+        _trades_today_date = datetime.date.fromisoformat(state["trades_today_date"]) if state.get("trades_today_date") else None
+        _trades_today = int(state.get("trades_today", 0))
+        _peak_equity = float(state["peak_equity"]) if state.get("peak_equity") is not None else None
+        _peak_equity_halted = bool(state.get("peak_equity_halted", False))
+        _week_start_date = datetime.date.fromisoformat(state["week_start_date"]) if state.get("week_start_date") else None
+        _week_start_equity = float(state["week_start_equity"]) if state.get("week_start_equity") is not None else None
+        _weekly_halted = bool(state.get("weekly_halted", False))
+        if _trades_today < 0 or (_day_start_equity is not None and _day_start_equity <= 0):
+            raise ValueError("invalid persisted risk values")
+    except Exception as exc:
+        logger.critical("Risk guard state is corrupt; refusing startup: %s", exc)
+        raise RuntimeError("risk_guard_state.json is corrupt; restore a verified state before trading") from exc
+
+
+_restore_risk_state()
 
 
 def _refresh_daily_guard() -> None:
     global _day_start_equity, _day_start_date, _trading_halted_today, _trades_today, _trades_today_date
-    today = datetime.datetime.now(datetime.timezone.utc).date()
+    today = datetime.datetime.now(datetime.UTC).date()
     with _daily_guard_lock:
         if _day_start_date != today:
             _day_start_date = today
@@ -262,6 +461,7 @@ def _refresh_daily_guard() -> None:
             _trading_halted_today = False
             _trades_today_date, _trades_today = today, 0
             logger.info("Daily risk guard reset. Baseline equity=%.2f", _day_start_equity)
+            _persist_risk_state()
 
 
 def check_daily_loss_guard() -> bool:
@@ -275,6 +475,7 @@ def check_daily_loss_guard() -> bool:
         if drawdown_pct >= RISK.max_daily_loss_pct:
             with _daily_guard_lock:
                 _trading_halted_today = True
+                _persist_risk_state()
             logger.error(
                 "Daily loss limit hit: %.2f%% (limit %.2f%%). Entries halted for today.",
                 drawdown_pct,
@@ -292,6 +493,7 @@ def check_max_drawdown_guard() -> bool:
     with _daily_guard_lock:
         if _peak_equity is None or equity > _peak_equity:
             _peak_equity = equity
+            _persist_risk_state()
         if _peak_equity_halted:
             return True
         drawdown_pct = (
@@ -299,6 +501,7 @@ def check_max_drawdown_guard() -> bool:
         )
         if drawdown_pct >= RISK.max_drawdown_from_peak_pct:
             _peak_equity_halted = True
+            _persist_risk_state()
             logger.error(
                 "Peak drawdown limit hit: %.2f%% (limit %.2f%%). Manual reset required.",
                 drawdown_pct,
@@ -308,6 +511,60 @@ def check_max_drawdown_guard() -> bool:
     return False
 
 
+def check_weekly_loss_guard() -> bool:
+    """Latch entries after UTC Monday-to-now equity loss reaches its cap."""
+    global _week_start_date, _week_start_equity, _weekly_halted
+    today = datetime.datetime.now(datetime.UTC).date()
+    monday = today - datetime.timedelta(days=today.weekday())
+    with _daily_guard_lock:
+        if _week_start_date != monday or _week_start_equity is None:
+            _week_start_date = monday
+            _week_start_equity = get_account_equity()
+            _weekly_halted = False
+            _persist_risk_state()
+        if _weekly_halted:
+            return True
+        equity = get_account_equity()
+        loss_pct = (
+            (_week_start_equity - equity) / _week_start_equity * 100.0
+            if _week_start_equity and _week_start_equity > 0
+            else 0.0
+        )
+        if loss_pct >= RISK.max_weekly_loss_pct:
+            _weekly_halted = True
+            _persist_risk_state()
+            logger.error(
+                "Weekly loss limit hit: %.2f%% (limit %.2f%%); entries halted until next UTC week.",
+                loss_pct,
+                RISK.max_weekly_loss_pct,
+            )
+            add_log("WARN", "Weekly loss limit reached; trading blocked")
+            return True
+    return False
+
+
+def activate_emergency_kill(reason: str = "Independent host kill switch") -> None:
+    """Create a host-local kill marker independent of the dashboard/API."""
+    temporary = _KILL_SWITCH_FILE.with_suffix(_KILL_SWITCH_FILE.suffix + ".tmp")
+    temporary.parent.mkdir(parents=True, exist_ok=True)
+    with temporary.open("w", encoding="utf-8") as kill_file:
+        kill_file.write(reason[:500])
+        kill_file.flush()
+        os.fsync(kill_file.fileno())
+    os.chmod(temporary, 0o600)
+    temporary.replace(_KILL_SWITCH_FILE)
+
+
+def _apply_host_kill_switch() -> bool:
+    if not _KILL_SWITCH_FILE.exists():
+        return False
+    reason = "Host emergency kill marker is present; remove it only after position reconciliation"
+    # Stop fresh entries while leaving normal position management available.
+    set_control("PAUSED", reason=reason, source="HOST_KILL_SWITCH")
+    add_log("ERROR", reason)
+    return True
+
+
 def reset_max_drawdown_guard() -> None:
     """Manually re-enable entries, establishing the current equity as the new peak."""
     global _peak_equity, _peak_equity_halted
@@ -315,6 +572,7 @@ def reset_max_drawdown_guard() -> None:
     with _daily_guard_lock:
         _peak_equity = equity
         _peak_equity_halted = False
+        _persist_risk_state()
     logger.warning("Peak drawdown guard manually reset. New peak equity=%.2f", equity)
 
 
@@ -328,6 +586,8 @@ def risk_guard_status() -> dict[str, float | bool | int]:
             "peakDrawdownPct": max(0.0, peak_drawdown),
             "peakDrawdownHalted": _peak_equity_halted,
             "tradesToday": _trades_today,
+            "weeklyLossHalted": _weekly_halted,
+            "weekStartEquity": _week_start_equity or 0.0,
         }
 
 
@@ -342,6 +602,7 @@ def _record_filled_trade() -> None:
     _refresh_daily_guard()
     with _daily_guard_lock:
         _trades_today += 1
+        _persist_risk_state()
 
 
 def _canonical_symbol(symbol: str) -> str:
@@ -467,15 +728,45 @@ def calculate_sl_tp(
     tp_dist = max(atr * RISK.atr_tp_multiplier, sym.min_stop_points)
 
     if direction == TradeDirection.BUY:
-        sl = round(entry_price - sl_dist, sym.info.digits)
-        tp = round(entry_price + tp_dist, sym.info.digits)
+        sl = _snap_price(entry_price - sl_dist, sym.tick_size, "down", sym.info.digits)
+        tp = _snap_price(entry_price + tp_dist, sym.tick_size, "up", sym.info.digits)
     elif direction == TradeDirection.SELL:
-        sl = round(entry_price + sl_dist, sym.info.digits)
-        tp = round(entry_price - tp_dist, sym.info.digits)
+        sl = _snap_price(entry_price + sl_dist, sym.tick_size, "up", sym.info.digits)
+        tp = _snap_price(entry_price - tp_dist, sym.tick_size, "down", sym.info.digits)
     else:
         raise OrderError("calculate_sl_tp called with TradeDirection.NONE")
 
     return sl, tp
+
+
+def _snap_price(price: float, tick_size: float, mode: str, digits: int) -> float:
+    """Align a price to the broker tick grid, rounding protective levels outward."""
+    if tick_size <= 0 or not math.isfinite(price):
+        raise OrderError("Invalid price or broker tick size")
+    units = price / tick_size
+    snapped = math.floor(units + 1e-10) if mode == "down" else math.ceil(units - 1e-10)
+    return round(snapped * tick_size, digits)
+
+
+def _managed_open_risk(positions: list[Any], pending_orders: list[Any]) -> float:
+    """Estimate account-currency loss to SL; unknown exposure fails closed."""
+    risk = 0.0
+    for exposure in [*positions, *pending_orders]:
+        stop = float(getattr(exposure, "sl", 0.0) or 0.0)
+        volume = float(
+            getattr(exposure, "volume", None)
+            or getattr(exposure, "volume_current", None)
+            or getattr(exposure, "volume_initial", 0.0)
+        )
+        if stop <= 0 or volume <= 0:
+            raise OrderError("Managed open exposure has no valid stop/volume; aggregate risk is unknown")
+        symbol = str(exposure.symbol)
+        info = _get_symbol(symbol)
+        entry = float(getattr(exposure, "price_open", None) or getattr(exposure, "price_current", None) or getattr(exposure, "price_open", 0.0))
+        if entry <= 0:
+            raise OrderError(f"Managed open exposure for {symbol} has no valid price")
+        risk += abs(entry - stop) / info.tick_size * info.tick_value * volume
+    return risk
 
 
 def _retcode_to_text(code: int) -> str:
@@ -536,11 +827,23 @@ def place_order(
         )
         return None
 
+    if _apply_host_kill_switch():
+        return None
+
+    if _has_unresolved_execution_intent():
+        reason = "Unresolved broker execution intent exists; reconcile before any further entry"
+        set_control("PAUSED", reason=reason, source="INTENT_RECONCILIATION")
+        logger.critical(reason)
+        return None
+
     if check_daily_loss_guard():
         logger.info("Skipping %s %s: daily loss guard active.", symbol, direction.value)
         return None
     if check_max_drawdown_guard():
         logger.info("Skipping %s %s: peak drawdown guard active.", symbol, direction.value)
+        return None
+    if check_weekly_loss_guard():
+        logger.info("Skipping %s %s: weekly loss guard active.", symbol, direction.value)
         return None
     if check_max_trades_guard():
         logger.info("Skipping %s %s: daily trade limit reached (%d).", symbol, direction.value, RISK.max_trades_per_day)
@@ -550,6 +853,7 @@ def place_order(
     open_positions = get_open_positions(magic=RISK.magic_number)
     pending_orders = list(mt5.orders_get() or [])
     managed_pending = [order for order in pending_orders if getattr(order, "magic", RISK.magic_number) == RISK.magic_number]
+    account_positions = get_open_positions()
     exposure_count = len(open_positions) + len(managed_pending)
     if exposure_count >= RISK.max_concurrent_positions:
         logger.info(
@@ -570,24 +874,48 @@ def place_order(
     if entry_price <= 0:
         logger.error("Invalid tick price %.5f for %s — skipping.", entry_price, symbol)
         return None
+    sym = _get_symbol(symbol)
+    spread_points = (float(tick.ask) - float(tick.bid)) / float(sym.info.point)
+    if spread_points > RISK.max_spread_points:
+        logger.warning(
+            "Skipping %s %s: spread %.1f points exceeds configured cap %.1f",
+            symbol, direction.value, spread_points, RISK.max_spread_points,
+        )
+        return None
 
     try:
+        if not math.isfinite(atr) or atr <= 0:
+            raise OrderError("ATR must be finite and positive for bounded stop calculation")
         if requested_stop_loss is None or requested_take_profit is None:
             sl, tp = calculate_sl_tp(symbol, direction, entry_price, atr)
         else:
-            sl, tp = requested_stop_loss, requested_take_profit
+            sl, tp = float(requested_stop_loss), float(requested_take_profit)
             if direction == TradeDirection.BUY and not (sl < entry_price < tp):
                 raise OrderError("BUY proposal must have stop_loss < entry < take_profit")
             if direction == TradeDirection.SELL and not (tp < entry_price < sl):
                 raise OrderError("SELL proposal must have take_profit < entry < stop_loss")
+            sl_mode, tp_mode = ("down", "up") if direction == TradeDirection.BUY else ("up", "down")
+            sl = _snap_price(sl, sym.tick_size, sl_mode, sym.info.digits)
+            tp = _snap_price(tp, sym.tick_size, tp_mode, sym.info.digits)
         sl_distance = abs(entry_price - sl)
+        tp_distance = abs(tp - entry_price)
+        maximum_stop_distance = max(atr * RISK.max_stop_atr_multiplier, sym.min_stop_points)
+        reward_risk = tp_distance / sl_distance if sl_distance > 0 else 0.0
+        if sl_distance <= 0 or sl_distance > maximum_stop_distance:
+            raise OrderError(
+                f"Stop distance {sl_distance:.8f} exceeds bounded maximum {maximum_stop_distance:.8f}"
+            )
+        if not RISK.min_reward_risk_ratio <= reward_risk <= RISK.max_reward_risk_ratio:
+            raise OrderError(
+                f"Reward/risk ratio {reward_risk:.2f} is outside configured bounds "
+                f"[{RISK.min_reward_risk_ratio:.2f}, {RISK.max_reward_risk_ratio:.2f}]"
+            )
         max_risk_lots = calculate_lot_size(symbol, sl_distance, direction)
         lots = requested_volume if requested_volume is not None else max_risk_lots
         if requested_volume is not None and requested_volume > max_risk_lots:
             raise OrderError(
                 f"AI volume {requested_volume} exceeds risk-capped volume {max_risk_lots}"
             )
-        sym = _get_symbol(symbol)
         if lots < sym.info.volume_min or lots > sym.info.volume_max:
             raise OrderError(f"AI volume {lots} is outside broker bounds for {symbol}")
         # Always round down: an AI-proposed volume must never be rounded into
@@ -601,6 +929,21 @@ def place_order(
     if lots <= 0:
         logger.warning(
             "Computed lot size is 0 for %s — skipping trade (risk too small vs. min lot).", symbol
+        )
+        return None
+
+    try:
+        total_open_risk = _managed_open_risk(account_positions, pending_orders)
+    except OrderError as exc:
+        logger.error("Aggregate-risk check blocked %s: %s", symbol, exc)
+        return None
+    account_equity = get_account_equity()
+    proposed_risk = abs(entry_price - sl) / sym.tick_size * sym.tick_value * lots
+    aggregate_limit = account_equity * RISK.max_aggregate_risk_pct / 100.0
+    if total_open_risk + proposed_risk > aggregate_limit:
+        logger.warning(
+            "Skipping %s %s: aggregate stop risk %.2f + proposed %.2f exceeds cap %.2f",
+            symbol, direction.value, total_open_risk, proposed_risk, aggregate_limit,
         )
         return None
 
@@ -650,10 +993,62 @@ def place_order(
         )
         return {"paper": True, "request": request}
 
-    result = mt5.order_send(request)
+    signal_id = str((audit_context or {}).get("signal_id", ""))
+    if len(signal_id) != 16 or any(char not in "0123456789abcdef" for char in signal_id):
+        logger.error("Live order blocked: stable 16-character signal_id is required")
+        return None
+    # Preserve the id in broker history so ambiguous sends can be reconciled
+    # to the exact intent without relying on symbol/time heuristics.
+    request["comment"] = f"AQ-{signal_id}"
+    try:
+        reserved = _reserve_execution_intent(signal_id, {
+            "symbol": symbol,
+            "direction": direction.value,
+            "volume": lots,
+            "stop_loss": sl,
+            "take_profit": tp,
+            "magic": RISK.magic_number,
+        })
+    except OSError as exc:
+        logger.critical("Live order blocked: could not durably reserve execution intent: %s", exc)
+        set_control("PAUSED", reason="Execution intent persistence failed", source="INTENT_PERSISTENCE")
+        return None
+    if not reserved:
+        prior = execution_intents().get(signal_id, {})
+        status = prior.get("status", "UNKNOWN")
+        logger.error("Duplicate signal blocked id=%s previous_status=%s", signal_id, status)
+        if status in {"SUBMITTING", "UNKNOWN", "PARTIAL"}:
+            set_control("PAUSED", reason=f"Signal {signal_id} needs broker reconciliation", source="INTENT_RECONCILIATION")
+        return None
+
+    try:
+        result = mt5.order_send(request)
+    except Exception as exc:  # an exception leaves broker acceptance ambiguous
+        _update_execution_intent(signal_id, "UNKNOWN", broker_error=str(exc)[:500])
+        reason = f"Order outcome for signal {signal_id} is unknown after MT5 exception; reconcile broker history"
+        set_control("PAUSED", reason=reason, source="INTENT_RECONCILIATION")
+        logger.exception(reason)
+        return None
     if result is None:
         logger.error("order_send returned None for %s: %s", symbol, mt5.last_error())
+        _update_execution_intent(signal_id, "UNKNOWN", broker_error=str(mt5.last_error()))
+        set_control("PAUSED", reason=f"Order outcome for signal {signal_id} is unknown; reconcile broker history", source="INTENT_RECONCILIATION")
         return None
+
+    if result.retcode == getattr(mt5, "TRADE_RETCODE_DONE_PARTIAL", -1):
+        reason = (
+            f"Partial fill for {symbol} {direction.value}; broker reconciliation required "
+            f"(order={result.order}, filled={result.volume})"
+        )
+        logger.critical(reason)
+        add_log("ERROR", reason)
+        set_control("PAUSED", reason=reason, source="PARTIAL_FILL_RECOVERY")
+        _record_fill_risk_or_halt(result, symbol, sl_distance)
+        _record_filled_trade()
+        _update_execution_intent(signal_id, "PARTIAL", order=int(result.order or 0), deal=int(result.deal or 0), filled_volume=float(result.volume or 0.0))
+        partial_result = result._asdict()
+        partial_result["partial_fill"] = True
+        return partial_result
 
     if result.retcode != mt5.TRADE_RETCODE_DONE:
         code_name = _retcode_to_text(result.retcode)
@@ -680,6 +1075,19 @@ def place_order(
             logger.warning(
                 "Broker returned a transient execution error for %s; order skipped.", symbol
             )
+        ambiguous = result.retcode in {
+            mt5.TRADE_RETCODE_TIMEOUT,
+            mt5.TRADE_RETCODE_CONNECTION,
+            getattr(mt5, "TRADE_RETCODE_PLACED", -2),
+        }
+        _update_execution_intent(
+            signal_id,
+            "UNKNOWN" if ambiguous else "REJECTED",
+            broker_retcode=int(result.retcode),
+            broker_comment=str(result.comment or ""),
+        )
+        if ambiguous:
+            set_control("PAUSED", reason=f"Order outcome for signal {signal_id} is unknown; reconcile broker history", source="INTENT_RECONCILIATION")
         return None
 
     # --- Post-fill slippage verification ---
@@ -695,6 +1103,9 @@ def place_order(
             fill_price,
             entry_price,
         )
+        reason = f"Fill slippage {slippage:.8f} exceeded tolerance {max_slippage:.8f} on {symbol}"
+        add_log("ERROR", reason)
+        set_control("PAUSED", reason=reason, source="SLIPPAGE_GUARD")
 
     logger.info(
         "Order filled: %s %s %.2f lots @ %.5f | SL=%.5f TP=%.5f | ticket=%s | slippage=%.5f",
@@ -707,9 +1118,16 @@ def place_order(
         result.order,
         slippage,
     )
-    if result.order:
-        _record_original_risk(int(result.order), sl_distance)
+    risk_state_saved = _record_fill_risk_or_halt(result, symbol, sl_distance)
     _record_filled_trade()
+    _update_execution_intent(
+        signal_id,
+        "FILLED" if risk_state_saved else "UNKNOWN",
+        order=int(result.order or 0),
+        deal=int(result.deal or 0),
+        fill_price=fill_price,
+        filled_volume=float(getattr(result, "volume", lots) or lots),
+    )
     audit_record = {
         "ticket": int(result.order or 0),
         "symbol": symbol,
@@ -754,11 +1172,11 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
     ensure_connected()
     positions = get_open_positions(symbol=symbol, magic=RISK.magic_number)
     if symbol is None:
-        open_tickets = {p.ticket for p in positions}
-        stale = set(_original_risk_by_ticket) - open_tickets
-        for ticket in stale:
+        open_identifiers = {int(getattr(p, "identifier", p.ticket)) for p in positions}
+        stale = set(_original_risk_by_position) - open_identifiers
+        for position_id in stale:
             with _position_state_lock:
-                _original_risk_by_ticket.pop(ticket, None)
+                _original_risk_by_position.pop(position_id, None)
         if stale:
             _save_position_state()
     if not positions:
@@ -787,7 +1205,7 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
         current_price = tick.bid if is_buy else tick.ask
 
         fallback = abs(pos.price_open - pos.sl) if pos.sl else 0.0
-        original_risk = _get_original_risk(pos.ticket, fallback)
+        original_risk = _get_original_risk(int(getattr(pos, "identifier", pos.ticket)), fallback)
         if not original_risk or original_risk <= 0:
             continue
 
@@ -803,10 +1221,10 @@ def manage_trailing_stops(symbol: str | None = None) -> None:
         trail_distance = atr_estimate * RISK.trailing_atr_multiplier
 
         if is_buy:
-            new_sl = round(current_price - trail_distance, sym.info.digits)
+            new_sl = _snap_price(current_price - trail_distance, sym.tick_size, "down", sym.info.digits)
             should_update = new_sl > pos.sl
         else:
-            new_sl = round(current_price + trail_distance, sym.info.digits)
+            new_sl = _snap_price(current_price + trail_distance, sym.tick_size, "up", sym.info.digits)
             should_update = new_sl < pos.sl
 
         if not should_update:

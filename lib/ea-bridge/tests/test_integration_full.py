@@ -292,13 +292,13 @@ async def test_get_signal_detail_404(client, session_factory):
 
 
 @pytest.mark.asyncio
-async def test_dispatch_signal_201(client, session_factory):
+async def test_dispatch_signal_unavailable_until_qualified_engine(client, session_factory):
     user_id, _ = await _create_user(session_factory)
     device_id = await _create_device(session_factory, user_id)
     await _auth_client(client, session_factory, user_id)
     resp = await client.post(f"/app/v1/devices/{device_id}/dispatch-signal?symbol=EURUSD&action=BUY")
-    assert resp.status_code == 201
-    assert resp.json()["symbol"] == "EURUSD"
+    assert resp.status_code == 503
+    assert resp.json()["code"] == "signal_engine_unavailable"
 
 
 @pytest.mark.asyncio

@@ -4,8 +4,9 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
-import execution
 import pytest
+
+import execution
 from execution import (
     OrderError,
     calculate_lot_size,
@@ -51,6 +52,26 @@ def _fake_mt5(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 class TestLotSize:
+    def test_execution_intent_is_durable_and_only_operator_reconciliation_resolves_it(
+        self, tmp_path, monkeypatch
+    ):
+        monkeypatch.setattr(execution, "_INTENT_STATE_FILE", tmp_path / "execution_intents.json")
+        monkeypatch.setattr(execution, "_execution_intents", {})
+        details = {"symbol": "EURUSD", "direction": "buy", "volume": 0.1}
+
+        assert execution._reserve_execution_intent("0123456789abcdef", details)
+        assert execution._has_unresolved_execution_intent()
+        assert not execution._reserve_execution_intent("0123456789abcdef", details)
+        saved = (tmp_path / "execution_intents.json").read_text(encoding="utf-8")
+        assert '"status": "SUBMITTING"' in saved
+
+        resolved = execution.reconcile_execution_intent(
+            "0123456789abcdef", "not_filled", "Broker history confirms no order/deal"
+        )
+        assert resolved["status"] == "REJECTED"
+        assert resolved["reconciliation_evidence"] == "Broker history confirms no order/deal"
+        assert not execution._has_unresolved_execution_intent()
+
     def test_symbol_metadata_refreshes_after_ttl(self, monkeypatch):
         current_time = [100.0]
         lookups = []
@@ -162,6 +183,7 @@ class TestTradeGuards:
         monkeypatch.setattr(execution, "control_state", lambda: {"status": "RUNNING", "entriesAllowed": True})
         monkeypatch.setattr(execution, "check_daily_loss_guard", lambda: False)
         monkeypatch.setattr(execution, "check_max_drawdown_guard", lambda: False)
+        monkeypatch.setattr(execution, "check_weekly_loss_guard", lambda: False)
         monkeypatch.setattr(execution, "check_max_trades_guard", lambda: True)
         monkeypatch.setattr(execution, "is_correlated_exposure_blocked", lambda *a, **k: False)
         monkeypatch.setattr(execution, "get_open_positions", lambda **kw: list(range(5)))
