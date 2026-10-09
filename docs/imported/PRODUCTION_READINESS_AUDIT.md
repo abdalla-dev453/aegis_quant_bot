@@ -4,6 +4,21 @@
 **Baseline revision:** `ce6da2d`; follow-up changes below are in the current worktree.  
 **Verdict:** **NOT READY** for live trading. The code may be used for source-level research and controlled paper testing. Do not promote either EA or the Python runner to funded execution until the blockers and critical findings below are closed and evidenced.
 
+## Implementation Follow-Up (2026-10-09)
+
+The current worktree adds these code-level safety changes; they do not change the NO-GO verdict:
+
+- The EA bridge signal provider no longer emits a default BUY, fixed 0.10 volume, or fabricated indicator rationale. Dispatch returns `503 signal_engine_unavailable` until qualified market data and a real strategy are wired in.
+- Python live mode requires expected account login, server, demo/real mode, and hedging/netting mode pins; the connected account is checked before the connection is accepted.
+- Python risk/control state is persisted atomically. A missing control-state file starts PAUSED; a persisted RUNNING control returns as PAUSED after restart; corrupt state aborts startup. Daily/weekly/peak guards, trade count, and their latches are retained.
+- Python order placement now applies configurable spread and aggregate stop-risk caps and rounds protective prices to broker tick size. Stop-risk assessment blocks when existing managed exposure has unknown risk.
+- Python partial fills and excessive post-fill slippage now persistently pause new entries; partial fills are surfaced with their actual broker result for reconciliation. This is a safety pause, not a complete pending/residual order reconciler.
+- Python original stop distance is keyed by the stable MT5 position identifier and durably persisted; an unmappable or unpersistable fill pauses entries. A host-local kill marker blocks entries while preserving position management.
+- The preferred MQL5 EA defaults to synchronous execution, requires expected login/server/margin-mode inputs, blocks real accounts unless explicitly enabled, rounds prices to tick size, fails closed on calendar lookup errors, checks managed aggregate stop risk, persists daily/weekly/peak loss state, and exposes an independent terminal kill global variable. Partial fills set the kill latch pending reconciliation; async is rejected at initialization.
+- Local Python trading-engine suite: **116 passed, 1 upstream pandas-ta deprecation warning**. The isolated bridge-provider regression test passed (**1 passed**). Bridge integration test execution could not complete because its test fixture requires Redis at `127.0.0.1:6379`, and this workspace cannot open local sockets. Python syntax compilation passed. No MetaEditor, broker, Strategy Tester, demo, or live evidence was available.
+
+Remaining release blockers include MQL5 compile proof, broker-tested account-mode and order paths, complete fill/order/position reconciliation and idempotency across restart, a qualified bridge signal engine, API production identity/security review, strategy performance evidence, and supervised demo qualification. No strategy profitability claim is made.
+
 ## Scope And Evidence Standard
 
 Reviewed both MQL5 files, Python strategy/data/execution/AI/API/risk code, deployment templates, runbooks, security notes, and the unit tests. The preferred EA is `mt5/AegisConfluenceEA.mq5`; the root `AegisQuantEA.mq5` is a separate and materially less complete implementation. The Python runner is a third execution path; protections in one path do not carry over to the others.
@@ -21,9 +36,11 @@ Applied from the pasted security/code-quality audit after checking each claim ag
 
 The following claims from the attachment were already fixed or do not match the current code and were not reintroduced: pending orders are counted with managed positions; SELL margin uses `ORDER_TYPE_SELL`; paper responses are not passed to `record_order()`; HOLD maps to no trade and has zero volume; portfolio pre-trade exceptions return blocked (the swallowed analysis exception was the indirect hole fixed above); empty API tokens are rejected by protected routes, including localhost; `.env` is git-ignored; broker credentials are only submitted from HTTPS except localhost; corrupt position state aborts startup; the ML predictor is opt-in, checks minimum class sample counts, and its EMA fallback reports 0.0 confidence; news warnings are supplied to the AI and the main loop explicitly blocks entry on a warning; the currency parser explicitly handles XAU/XAG; and the old `test_neutral_drift_allows_both_directions` assertion contradicted the current fail-closed sentiment policy.
 
-Still unresolved from that attachment: indices/custom instrument currency exposure parsing; live MT5 news/calendar capability and coverage; stable original-risk-to-position-ticket reconciliation; MT5 async pending/partial-fill reconciliation and compile proof; account identity/mode controls; external API token architecture; persistent control/risk latches; and production-grade alerting. These require more than a safe text substitution and remain deployment gates.
+At the time of that attachment, unresolved items included indices/custom instrument currency exposure parsing; live MT5 news/calendar capability and coverage; original-risk-to-position reconciliation; MT5 async pending/partial-fill reconciliation and compile proof; account identity/mode controls; external API token architecture; persistent control/risk latches; and production-grade alerting. Later source changes in this worktree address some of those items; the dated implementation update below identifies what remains open.
 
 ## Strategy Behavior
+
+The detailed findings below document the baseline revision and should be read with the dated implementation follow-up above. Where a baseline issue is addressed in source, it remains open until runtime evidence is collected.
 
 ### Preferred MQL5 confluence EA
 
@@ -33,7 +50,7 @@ Still unresolved from that attachment: indices/custom instrument currency exposu
 - One market deal only. No limit/stop-entry implementation. Entry filters include fully tradable symbol and spread <= `InpMaxSpreadPoints`; high-impact EA calendar events and optional manual event timestamp block new entries.
 - SL distance is `max(ATR * 1.5, broker stop-level distance)` by default; TP distance is `max(ATR * 3, SL distance)`. Sizing targets `InpRiskPerTradePct` (default 1%) using equity and loss tick value, then floors to volume step. Below minimum lot is rejected; maximum is broker maximum capped by `InpMaxLot`.
 - Position management runs on every tick before the entry guards. At >= `InpBreakevenR` (default 1R), it raises/lowers the stop toward breakeven and trails by `InpAtrTrailMult` (default 1.25 ATR). SL only moves in a favorable direction. TP is not dynamically changed.
-- `InpMaxDailyDrawdownPct` (default 3%) blocks new entries only. The baseline is in memory and reset by server date; it is not persisted. No daily flatten, weekly loss limit, total-open-risk limit, max trades/day, consecutive-loss limit, peak-drawdown latch, or account-wide/symbol exposure budget exists in this EA.
+- Daily, weekly and peak drawdown latches now persist via terminal global variables; the EA blocks new entries and continues managing open positions. These controls have not been compiler- or broker-tested. No daily flatten, max trades/day, consecutive-loss limit, or cross-symbol aggregate budget exists beyond managed stop-risk accounting.
 
 ### Root MQL5 EA
 
@@ -44,9 +61,9 @@ Still unresolved from that attachment: indices/custom instrument currency exposu
 ### Python runner
 
 - `get_rates()` starts at MT5 position 1, and indicator generation consumes the newest returned candle, so the ordinary Python H1/H4 frames exclude the forming candle. The last-seen H1 timestamp is in-memory only. Data is fetched concurrently but through a serialized MT5 lock; no explicit H4 age/alignment gate is applied.
-- Deterministic strategy requires H1/H4 EMA agreement, H1 RSI confirmation and slope, sentiment threshold, and no high-impact blackout. The current sentiment adapter assigns `score=0.0` for every successfully retrieved feed item. With configured thresholds of +0.5/-0.5, it cannot authorize a directional signal; unavailable feed also blocks by default. Therefore the live proposal path is fail-closed and currently cannot pass a BUY/SELL through its deterministic gate without a local code/config behavior change.
+- The deterministic strategy now permits BUY/SELL on H1/H4 EMA agreement and H1 RSI confirmation when sentiment is informational. Neutral news sentiment never authorizes direction. News source availability is a separate required-by-default gate, and high-impact events still block entries. The Python decision path can therefore produce directional proposals when its gates pass; broker execution remains unverified.
 - AI proposes action, volume, SL and TP. Pydantic rejects extra fields and malformed values; proposal symbol and presence/orientation of stops are checked, and execution independently computes a risk-capped maximum volume and broker preflight. Confidence is not thresholded, proposed stop distance/reward ratio is not bounded by policy, and untrusted news text is placed in the system-message content. AI outage/malformed responses become HOLD; repeated *losses* do not open a circuit breaker.
-- Python ATR SL/TP are generated when AI stops are not supplied. Trailing uses a stored original-risk distance where available, but the stored file is keyed by `result.order` while management looks up position tickets; this identity equivalence is not guaranteed by MT5. If missing, it falls back to the current SL distance, so R multiple can drift after a stop update.
+- Python ATR SL/TP are generated when AI stops are not supplied. Original risk is now persisted under the stable deal position identifier; if fill-to-position mapping or persistence fails, entries are paused and the fill requires reconciliation. Existing positions can still use current stop distance as fallback where old state has no identifier mapping.
 
 ## Findings By Severity
 
