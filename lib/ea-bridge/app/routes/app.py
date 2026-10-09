@@ -66,7 +66,7 @@ from app.news import macro_news_service
 from app.notifications import notification_service
 from app.realtime import publish_user_event
 from app.security import AuthenticatedUser, enforce_rate_limit, get_current_user, sha256_hex
-from app.signals.provider import RuleBasedProvider
+from app.signals.provider import RuleBasedProvider, SignalGenerationUnavailable
 
 router = APIRouter(prefix="/app/v1", tags=["app"])
 password_hash = PasswordHash.recommended()
@@ -781,6 +781,8 @@ async def dispatch_signal(
         )
     except ValueError as e:
         raise APIError("news_blackout_active", str(e), status.HTTP_422_UNPROCESSABLE_ENTITY)
+    except SignalGenerationUnavailable as e:
+        raise APIError("signal_engine_unavailable", str(e), status.HTTP_503_SERVICE_UNAVAILABLE)
 
     signal = Signal(
         id=sig_create.signal_id,
