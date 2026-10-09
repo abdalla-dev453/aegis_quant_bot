@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | React/Vite dashboard (`artifacts/onyx-fx`) | Vercel or Netlify | Static UI only; browser calls the API over HTTPS. |
 | EA bridge API (`lib/ea-bridge`) | Railway or Render | User/device auth, telemetry, database and Redis-backed replay/rate limiting. |
-| MT5 terminal and preferred EA (`mt5/AegisConfluenceEA.mq5`) | Windows VPS with desktop MT5 | Broker connection and EA execution. |
-| Python execution engine (`lib/trading-engine`) | Windows VPS with MT5 terminal | Uses the MetaTrader5 Python package and terminal IPC; it is not a Railway/Render Linux worker. |
+| MT5 terminal + selected Python executor (`lib/trading-engine`) | Dedicated Windows VPS with desktop MT5 | Python uses the MetaTrader5 package and terminal IPC. |
+| MQL5 EAs (`mt5/`, `ea/`) | Not part of the selected candidate | Keep detached while qualifying Python; avoid duplicate execution. |
 
-The EA bridge's signal dispatch intentionally returns `503 signal_engine_unavailable` until a qualified signal engine and timestamped market-data path are implemented. Deploying the dashboard and API does **not** make automated BUY/SELL execution available. The Python execution engine can make deterministic directional proposals, but remains a separate runtime and has not been broker-qualified.
+The EA bridge's signal dispatch intentionally returns `503 signal_engine_unavailable`. The hosted bridge is a control/telemetry application, not the selected executor. The selected qualification path is the Python engine beside MT5 on Windows. It remains unqualified with the target broker; NO-GO still applies.
 
 ## Recommended split
 
@@ -83,14 +83,16 @@ Attach `app.example.com`, then make the bridge `WEB_ORIGIN` match exactly. Trigg
 
 ## 5. Run MT5 on Windows
 
-1. Provision a supported Windows VPS and install the broker's MetaTrader 5 terminal. Keep the terminal, EA and broker account on the same Windows machine.
-2. Compile `mt5/AegisConfluenceEA.mq5` in the target broker's MetaEditor, resolve all compiler errors, then install the resulting EA in that terminal. Compilation has not yet been verified from this repository.
-3. Start with a broker demo account. Configure the EA's expected login, server and margin mode exactly; keep `InpAllowRealAccount=false`.
-4. In MT5, allow outbound WebRequest to `https://api.example.com` only if using the bridge EA client. Protect the device-pairing secret and never place it in screenshots or logs.
-5. Observe the terminal and API logs, verify heartbeat and position reconciliation, and exercise pause/kill/restart recovery. The current bridge dispatch remains disabled, so this setup only provides the bridge's currently implemented functionality; it does not authorize its generated signals to trade.
+1. Provision a supported, patched Windows VPS and install the broker's MT5 terminal. Use a dedicated demo account and log into it manually once.
+2. Install the Python service requirements in `lib/trading-engine` and configure its `.env.example`: expected account identity pins, `TRADING_MODE=paper`, private API bind address, protected API token, risk state paths, and broker-specific symbols.
+3. Start with `python main.py` from `lib/trading-engine`. Keep the API loopback/private behind an authenticated gateway if remote operator access is required. Never place `API_TOKEN` in a public Vite build variable.
+4. Verify `/api/health`, candle freshness, account identity, positions, logs, restart behavior, kill marker, and the reconciliation workflow while still in paper mode.
+5. Keep all standalone MQL5 EAs detached and bridge signal execution disabled. Do not run two Python processes against the same account/magic number.
 
-For the Python execution engine instead, install and run `lib/trading-engine` on Windows beside the MT5 terminal using its `.env.example`, with `TRADING_MODE=paper` and its local control API private behind an authenticated reverse proxy. Do not publish its shared `API_TOKEN` in a Vite variable. A Linux web-service deployment is not a substitute for Windows MT5 terminal IPC.
+A Linux web service is not a substitute for Windows MT5 terminal IPC. Use
+[`PRE_DEPLOYMENT_RELEASE_PLAN.md`](PRE_DEPLOYMENT_RELEASE_PLAN.md) for the full
+qualification gates; this setup does not authorize funded trading.
 
 ## Go-live gates
 
-The platform setup is ready only when the deployment is reachable, `/readyz` passes with database and Redis available, migrations are current, browser login works on the custom domain, the MT5 demo terminal heartbeats correctly, and logs/backup/restart/kill procedures have been rehearsed. Before funded trading, separately require a successful EA compile, broker-specific demo qualification, exact order/deal/position reconciliation, historical backtest and out-of-sample reports, security review, and owner approval. The current release checklist remains **NO-GO for live trading**.
+The platform setup is ready only when deployment health and logs/backup/restart/kill procedures are verified. Before funded trading, require the Python execution candidate's broker-specific qualification, exact order/deal/position reconciliation, historical backtest and out-of-sample reports, security review, and owner approval. See [`PRE_DEPLOYMENT_RELEASE_PLAN.md`](PRE_DEPLOYMENT_RELEASE_PLAN.md). The current release remains **NO-GO for live trading**.

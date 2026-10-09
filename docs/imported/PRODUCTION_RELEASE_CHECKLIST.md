@@ -1,4 +1,9 @@
-# Aegis Quant Production Release Checklist
+# Archived Production Release Checklist — MQL5 Candidate
+
+> **Superseded for the current qualification candidate.** The selected executor
+> is the Python MT5 runtime documented in [`../PRE_DEPLOYMENT_RELEASE_PLAN.md`](../PRE_DEPLOYMENT_RELEASE_PLAN.md).
+> This historical checklist describes the standalone MQL5 candidate; do not use
+> its EA-specific source/build gates as the current release record.
 
 **Status as of 2026-10-09: NOT APPROVED for funded/live execution.** Code-level safeguards were added, but there is still no owner approval, MetaEditor build, broker test, Strategy Tester report, or supervised demo evidence.
 

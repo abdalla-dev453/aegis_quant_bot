@@ -96,6 +96,23 @@ Then update the **Passing?** column from the output.
 
 ---
 
+## Selected Python MT5 execution candidate
+
+The current qualification candidate is `lib/trading-engine` on Windows beside
+MT5, as recorded in [`PRE_DEPLOYMENT_RELEASE_PLAN.md`](PRE_DEPLOYMENT_RELEASE_PLAN.md).
+Rows remain ⬜ until broker/demo evidence is attached; code and local tests alone
+do not qualify execution.
+
+| Task | Description | Code location | Test / local evidence | Demo evidence | Status |
+|---|---|---|---|---|---|
+| P-01 | Closed-candle H1/H4 technical proposal gate | `lib/trading-engine/strategy.py`, `main.py` | `tests/test_strategy.py`, `tests/test_strategy_gaps.py` | Target-broker terminal journal and data freshness record | ⬜ |
+| P-02 | Durable signal idempotency before broker send; ambiguous/partial outcome pauses | `lib/trading-engine/execution.py`, `api.py` | `tests/test_execution_gaps.py::TestLotSize::test_execution_intent_is_durable_and_only_operator_reconciliation_resolves_it` | Restart/outcome ambiguity drill; broker history must match intent comment and volumes | ⬜ |
+| P-03 | Operator reconciliation required before re-arm | `lib/trading-engine/api.py` | Authenticated route behavior; source-level only | Reconciliation and re-arm audit record from demo | ⬜ |
+| P-04 | Cost-aware historical development/OOS screening report | `scripts/backtest_python_strategy.py` | CLI smoke run only; synthetic data is not performance evidence | Broker history, contract-cost inputs, report hash, separate MT5 Strategy Tester report | ⬜ |
+| P-05 | Broker qualification, risk response, exact order/deal/position reconciliation | `lib/trading-engine/execution.py` | Local unit tests do not cover broker execution | Full supervised demo-week log and broker statement reconciliation | ⬜ |
+
+---
+
 ## Known gaps (must be closed before launch)
 
 | Gap | Impact | Ticket |
