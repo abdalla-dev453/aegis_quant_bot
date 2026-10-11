@@ -1,0 +1,68 @@
+# Render Blueprint for AegisQuant backend stack
+# Deploy with: render blueprint launch (or connect repo in Render dashboard -> New -> Blueprint)
+#
+# NOTE: The MT5 terminal + EA CANNOT run on Render (Linux-only, no GUI, no MT5).
+# Run the MT5 EA on a Windows VPS; it connects OUT to the ea-bridge service below.
+
+databases:
+  - name: aegis-postgres
+    databaseName: aegis
+    user: aegis
+    plan: basic-256mb          # free/starter tier; bump for production
+    postgresMajorVersion: "16"
+
+services:
+  # ------------------------------------------------------------------
+  # 1. EA bridge + user-facing API (FastAPI, lib/ea-bridge)
+  #    The Vercel dashboard talks to this via /app/v1/*.
+  # ------------------------------------------------------------------
+  - type: web
+    name: aegis-api
+    runtime: docker
+    dockerfilePath: lib/ea-bridge/Dockerfile
+    dockerContext: lib/ea-bridge
+    plan: starter
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: WEB_ORIGIN
+        sync: false            # <-- set to your Vercel URL e.g. https://aegis.vercel.app
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aegis-postgres
+          property: connectionString
+      - key: REDIS_URL
+        value: redis://aegis-redis:6379/0
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+      - key: API_TOKEN
+        generateValue: true    # long random token, also set on the EA side
+
+  # ------------------------------------------------------------------
+  # 2. Redis (session cache, pub/sub, rate limits)
+  # ------------------------------------------------------------------
+  - type: redis
+    name: aegis-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []            # empty = only services inside the same Render env
+
+  # ------------------------------------------------------------------
+  # 3. Alembic migration job (runs once on each deploy)
+  # ------------------------------------------------------------------
+  - type: job
+    name: aegis-migrate
+    runtime: docker
+    dockerfilePath: lib/ea-bridge/Dockerfile
+    dockerContext: lib/ea-bridge
+    plan: starter
+    dockerCommand: sh -c "alembic upgrade head"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aegis-postgres
+          property: connectionString
+    envVersion:
+      value: "{{.SERVICE_AEGIS_API.Version}}"
