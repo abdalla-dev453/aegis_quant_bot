@@ -264,7 +264,12 @@ def settings() -> dict[str, Any]:
 def save_credentials(payload: CredentialsPayload) -> dict[str, Any]:
     try:
         if payload.terminal_path:
+            allowed_base = Path(os.getenv("MT5_TERMINAL_BASE_DIR", str(Path.home()))).expanduser().resolve()
             terminal = Path(payload.terminal_path).expanduser().resolve()
+            try:
+                terminal.relative_to(allowed_base)
+            except ValueError as exc:
+                raise ValueError("Invalid MT5 terminal path") from exc
             if terminal.name.lower() != "terminal64.exe" or not terminal.is_file():
                 raise ValueError("Invalid MT5 terminal path")
         with mt5_operation_lock():
