@@ -63,6 +63,7 @@ log/
 venv/
 __pycache__/
 *.py[cod]
+*.egg-info/
 .pytest_cache/
 *.db
 # Node client build output (client has its own dist)
