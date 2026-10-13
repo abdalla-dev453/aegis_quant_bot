@@ -5,14 +5,14 @@ is already on Vercel.
 
 ## Architecture overview
 
-| Piece | Runs on | Repo path | Notes |
-|---|---|---|---|
-| Dashboard (web) | ✅ Vercel (done) | `artifacts/onyx-fx` (built as `@workspace/onyx-fx`) | Static SPA, rewrites to `index.html` |
-| FastAPI backend (EA bridge + user API) | Render Web Service | `lib/ea-bridge` (`app.main:app`) | Serves `/app/v1/*` and `/ea/v1/*` |
-| Postgres | Render Postgres | — | `DATABASE_URL` |
-| Redis | Render Redis | — | `REDIS_URL` (sessions, cache, rate limits) |
-| Migrations | Render Job (`alembic upgrade head`) | `lib/ea-bridge/alembic` | Runs on each deploy |
-| MT5 terminal + EA | **Windows VPS** (NOT Render/Railway) | `AegisQuantEA.mq5`, `server/mt5setup.exe` | MT5 is Windows-only; the VPS calls OUT to the Render bridge URL |
+| Piece                                  | Runs on                              | Repo path                                           | Notes                                                           |
+| -------------------------------------- | ------------------------------------ | --------------------------------------------------- | --------------------------------------------------------------- |
+| Dashboard (web)                        | ✅ Vercel (done)                     | `artifacts/onyx-fx` (built as `@workspace/onyx-fx`) | Static SPA, rewrites to `index.html`                            |
+| FastAPI backend (EA bridge + user API) | Render Web Service                   | `lib/ea-bridge` (`app.main:app`)                    | Serves `/app/v1/*` and `/ea/v1/*`                               |
+| Postgres                               | Render Postgres                      | —                                                   | `DATABASE_URL`                                                  |
+| Redis                                  | Render Redis                         | —                                                   | `REDIS_URL` (sessions, cache, rate limits)                      |
+| Migrations                             | Render Job (`alembic upgrade head`)  | `lib/ea-bridge/alembic`                             | Runs on each deploy                                             |
+| MT5 terminal + EA                      | **Windows VPS** (NOT Render/Railway) | `AegisQuantEA.mq5`, `server/mt5setup.exe`           | MT5 is Windows-only; the VPS calls OUT to the Render bridge URL |
 
 > ⚠️ Do **not** try to host MT5 on Render or Railway. They are Linux hosts
 > without a GUI — MetaTrader 5 will not run there. A cheap Windows VPS
@@ -39,6 +39,7 @@ Health checks: `GET /healthz` (liveness) and `GET /readyz` (checks Postgres + Re
 ### Manual alternative (no blueprint)
 
 New → Web Service:
+
 - **Runtime:** Docker (uses `lib/ea-bridge/Dockerfile`) — or Python 3.12 with
   build `pip install .` and start command
   `uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers`
@@ -49,14 +50,14 @@ New → Web Service:
 
 ## 2. Environment variables (Render → service → Environment)
 
-| Variable | Value | Why |
-|---|---|---|
-| `APP_ENV` | `production` | Enables secure-cookie/HTTPS validation |
-| `WEB_ORIGIN` | `https://<your-vercel-app>.vercel.app` | The ONLY allowed CORS origin; must be HTTPS in production |
-| `DATABASE_URL` | from the Render Postgres `connectionString` (auto-wired by blueprint) | App rewrites `postgres://` → `postgresql+asyncpg://` automatically |
-| `REDIS_URL` | from the Render Redis instance (auto-wired) | Sessions/cache/pubsub |
-| `SESSION_COOKIE_SECURE` | `true` | Required in production; login cookie is `SameSite=Strict` |
-| `API_TOKEN` | long random string (`openssl rand -hex 32`) | Guards protected routes; same token goes into the EA |
+| Variable                | Value                                                                 | Why                                                                |
+| ----------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `APP_ENV`               | `production`                                                          | Enables secure-cookie/HTTPS validation                             |
+| `WEB_ORIGIN`            | `https://<your-vercel-app>.vercel.app`                                | The ONLY allowed CORS origin; must be HTTPS in production          |
+| `DATABASE_URL`          | from the Render Postgres `connectionString` (auto-wired by blueprint) | App rewrites `postgres://` → `postgresql+asyncpg://` automatically |
+| `REDIS_URL`             | from the Render Redis instance (auto-wired)                           | Sessions/cache/pubsub                                              |
+| `SESSION_COOKIE_SECURE` | `true`                                                                | Required in production; login cookie is `SameSite=Strict`          |
+| `API_TOKEN`             | long random string (`openssl rand -hex 32`)                           | Guards protected routes; same token goes into the EA               |
 
 Optional (EA-bridge tuning, defaults are sane):
 `SESSION_TTL_SECONDS`, `PAIRING_CODE_TTL_SECONDS`, `SIGNAL_TTL_SECONDS`,
@@ -64,7 +65,9 @@ Optional (EA-bridge tuning, defaults are sane):
 `APP_RATE_LIMIT_PER_MINUTE`.
 
 ### Optional: the legacy MT5 monitor API (`lib/trading-engine/api.py`)
+
 If you also deploy the older read-only dashboard bridge, it needs:
+
 - `API_TOKEN` (**mandatory** — it refuses to start without it)
 - `CORS_ORIGINS` → comma-separated absolute origins, e.g.
   `https://aegis-quant.vercel.app` — no `*`, no trailing slash
@@ -77,8 +80,8 @@ If you also deploy the older read-only dashboard bridge, it needs:
 
 In Vercel → Project → Settings → Environment Variables:
 
-| Variable | Value |
-|---|---|
+| Variable       | Value                             |
+| -------------- | --------------------------------- |
 | `VITE_API_URL` | `https://<render-api-url>/app/v1` |
 
 `artifacts/onyx-fx/src/lib/api.js` reads `VITE_API_URL` and falls back to
@@ -128,7 +131,7 @@ alembic upgrade head
 3. Copy `AegisQuantEA.mq5` into `MQL5/Experts`, compile in MetaEditor, attach to chart, enable Algo Trading.
 4. In the EA inputs set the bridge URL to your Render URL
    (`https://aegis-api-xxxx.onrender.com`) and the `API_TOKEN` from Render.
-   Make sure MT5's *Tools → Options → Expert Advisors → Allow WebRequest* lists
+   Make sure MT5's _Tools → Options → Expert Advisors → Allow WebRequest_ lists
    the Render domain.
 5. Pair the device from the Vercel dashboard (**Devices → pairing code**) — the
    EA registers using the pairing code.
@@ -146,6 +149,7 @@ alembic upgrade head
       BetterStack/UptimeRobot if you want external alerting).
 
 ### Railway alternative
+
 If you prefer Railway over Render: `railway up` with a `railway.toml`/Nixpacks
 using the same Dockerfile, add Postgres + Redis plugins, and set the same env
 vars (`WEB_ORIGIN`, `DATABASE_URL`, `REDIS_URL`, `APP_ENV`, `API_TOKEN`).
