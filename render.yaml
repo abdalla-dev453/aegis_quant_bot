@@ -4,6 +4,8 @@
 # NOTE: The MT5 terminal + EA CANNOT run on Render (Linux-only, no GUI, no MT5).
 # Run the MT5 EA on a Windows VPS; it connects OUT to the ea-bridge service below.
 
+version: "1"
+
 databases:
   - name: aegis-postgres
     databaseName: aegis
@@ -15,6 +17,7 @@ services:
   # ------------------------------------------------------------------
   # 1. EA bridge + user-facing API (FastAPI, lib/ea-bridge)
   #    The Vercel dashboard talks to this via /app/v1/*.
+  #    preDeployCommand runs Alembic migrations before each deploy.
   # ------------------------------------------------------------------
   - type: web
     name: aegis-api
@@ -24,6 +27,7 @@ services:
     plan: starter
     healthCheckPath: /healthz
     autoDeploy: true
+    preDeployCommand: alembic upgrade head
     envVars:
       - key: APP_ENV
         value: production
@@ -41,28 +45,11 @@ services:
         generateValue: true # long random token, also set on the EA side
 
   # ------------------------------------------------------------------
-  # 2. Redis (session cache, pub/sub, rate limits)
+  # 2. Key Value (Redis-compatible: session cache, pub/sub, rate limits)
   # ------------------------------------------------------------------
-  - type: redis
+  - type: keyvalue
     name: aegis-redis
     plan: free
     maxmemoryPolicy: allkeys-lru
     ipAllowList: [] # empty = only services inside the same Render env
 
-  # ------------------------------------------------------------------
-  # 3. Alembic migration job (runs once on each deploy)
-  # ------------------------------------------------------------------
-  - type: job
-    name: aegis-migrate
-    runtime: docker
-    dockerfilePath: lib/ea-bridge/Dockerfile
-    dockerContext: lib/ea-bridge
-    plan: starter
-    dockerCommand: sh -c "alembic upgrade head"
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: aegis-postgres
-          property: connectionString
-    envVersion:
-      value: "{{.SERVICE_AEGIS_API.Version}}"

@@ -11,7 +11,7 @@ from decimal import Decimal
 from typing import Protocol
 from uuid import UUID
 
-from app.contracts import SignalCreate
+from app.contracts import SignalAction, SignalCreate
 
 
 class SignalGenerationUnavailable(RuntimeError):
@@ -26,6 +26,7 @@ class SignalProvider(Protocol):
         symbol: str,
         current_price: Decimal,
         point_size: Decimal,
+        action: SignalAction = SignalAction.BUY,
     ) -> SignalCreate | None: ...
 
 
@@ -41,6 +42,7 @@ class RuleBasedProvider:
         symbol: str,
         current_price: Decimal,
         point_size: Decimal,
+        action: SignalAction = SignalAction.BUY,
     ) -> SignalCreate | None:
         raise SignalGenerationUnavailable(
             "Signal dispatch is disabled: no qualified market-data strategy is configured."

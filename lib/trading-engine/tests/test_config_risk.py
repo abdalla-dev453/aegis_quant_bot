@@ -17,7 +17,7 @@ def _run_config_check(**overrides: str) -> subprocess.CompletedProcess[str]:
     ):
         environment.pop(name, None)
     environment.update(overrides)
-    server_dir = str(Path(__file__).resolve().parents[1] / "server")
+    server_dir = str(Path(__file__).resolve().parents[1])
     environment["PYTHONPATH"] = os.pathsep.join(
         path for path in (server_dir, environment.get("PYTHONPATH", "")) if path
     )

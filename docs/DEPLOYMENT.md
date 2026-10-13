@@ -11,7 +11,7 @@ is already on Vercel.
 | FastAPI backend (EA bridge + user API) | Render Web Service                   | `lib/ea-bridge` (`app.main:app`)                    | Serves `/app/v1/*` and `/ea/v1/*`                               |
 | Postgres                               | Render Postgres                      | —                                                   | `DATABASE_URL`                                                  |
 | Redis                                  | Render Redis                         | —                                                   | `REDIS_URL` (sessions, cache, rate limits)                      |
-| Migrations                             | Render Job (`alembic upgrade head`)  | `lib/ea-bridge/alembic`                             | Runs on each deploy                                             |
+| Migrations                             | `preDeployCommand` (`alembic upgrade head`) | `lib/ea-bridge/alembic`                             | Runs automatically before each deploy           |
 | MT5 terminal + EA                      | **Windows VPS** (NOT Render/Railway) | `AegisQuantEA.mq5`, `server/mt5setup.exe`           | MT5 is Windows-only; the VPS calls OUT to the Render bridge URL |
 
 > ⚠️ Do **not** try to host MT5 on Render or Railway. They are Linux hosts
@@ -23,7 +23,7 @@ is already on Vercel.
 ## 1. Deploy the backend on Render (Blueprint, one click)
 
 A `render.yaml` blueprint is included at the repo root. It provisions
-Postgres + Redis + the FastAPI web service + a migration job.
+Postgres + Key Value (Redis) + the FastAPI web service (with auto-migrations on deploy).
 
 1. Push this repo to GitHub.
 2. In Render: **New → Blueprint**, pick the repo. Render reads `render.yaml`.
