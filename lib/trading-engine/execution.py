@@ -79,7 +79,7 @@ def close_bot_positions() -> dict[str, list[dict[str, str]] | list[str]]:
                 "magic": RISK.magic_number,
                 "comment": "Aegis operator close-all",
                 "type_time": mt5.ORDER_TIME_GTC,
-                "type_filling": mt5.ORDER_FILLING_IOC,
+                "type_filling": _resolve_filling_mode(position.symbol),
             }
             result = mt5.order_send(request)
             if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
@@ -205,6 +205,41 @@ class OrderError(RuntimeError):
     pass
 
 
+def _resolve_filling_mode(symbol: str, info: Any | None = None) -> int:
+    """Resolve broker-supported filling mode dynamically (FOK -> IOC -> RETURN)."""
+    default_ioc = getattr(mt5, "ORDER_FILLING_IOC", 1) if mt5 else 1
+    if info is None and mt5 is not None:
+        try:
+            info = mt5.symbol_info(symbol)
+        except Exception:
+            info = None
+
+    if info is None:
+        return default_ioc
+
+    filling_mode = getattr(info, "filling_mode", None)
+    if filling_mode is None:
+        return default_ioc
+
+    # Bitmask flags in MetaTrader 5
+    fok_flag = getattr(mt5, "SYMBOL_FILLING_FOK", 1)
+    ioc_flag = getattr(mt5, "SYMBOL_FILLING_IOC", 2)
+    order_fok = getattr(mt5, "ORDER_FILLING_FOK", 0)
+    order_ioc = getattr(mt5, "ORDER_FILLING_IOC", 1)
+    order_return = getattr(mt5, "ORDER_FILLING_RETURN", 2)
+
+    try:
+        flags = int(filling_mode)
+    except (TypeError, ValueError):
+        return default_ioc
+
+    if flags & fok_flag:
+        return order_fok
+    if flags & ioc_flag:
+        return order_ioc
+    return order_return
+
+
 # Absolute guardrails — hard ceilings that override any config value.
 MAX_SINGLE_ORDER_LOTS = 50.0  # never send an order larger than this
 MAX_MARGIN_UTILIZATION_PCT = 80.0  # refuse trades that would push margin use past this
@@ -303,6 +338,8 @@ _peak_equity_halted = False
 _week_start_equity: float | None = None
 _week_start_date: datetime.date | None = None
 _weekly_halted = False
+_consecutive_losses = 0
+_consecutive_loss_halted = False
 _RISK_STATE_FILE = Path(os.getenv("RISK_STATE_FILE", "risk_guard_state.json"))
 _KILL_SWITCH_FILE = Path(os.getenv("KILL_SWITCH_FILE", "emergency.kill"))
 _INTENT_STATE_FILE = Path(os.getenv("EXECUTION_INTENT_FILE", "execution_intents.json"))
@@ -411,6 +448,8 @@ def _persist_risk_state() -> None:
             "week_start_date": _week_start_date.isoformat() if _week_start_date else None,
             "week_start_equity": _week_start_equity,
             "weekly_halted": _weekly_halted,
+            "consecutive_losses": _consecutive_losses,
+            "consecutive_loss_halted": _consecutive_loss_halted,
         }
         temporary_file = _RISK_STATE_FILE.with_suffix(_RISK_STATE_FILE.suffix + ".tmp")
         temporary_file.parent.mkdir(parents=True, exist_ok=True)
@@ -426,6 +465,7 @@ def _restore_risk_state() -> None:
     global _day_start_date, _day_start_equity, _trading_halted_today
     global _trades_today_date, _trades_today, _peak_equity, _peak_equity_halted
     global _week_start_date, _week_start_equity, _weekly_halted
+    global _consecutive_losses, _consecutive_loss_halted
     if not _RISK_STATE_FILE.exists():
         return
     try:
@@ -441,6 +481,8 @@ def _restore_risk_state() -> None:
         _week_start_date = datetime.date.fromisoformat(state["week_start_date"]) if state.get("week_start_date") else None
         _week_start_equity = float(state["week_start_equity"]) if state.get("week_start_equity") is not None else None
         _weekly_halted = bool(state.get("weekly_halted", False))
+        _consecutive_losses = int(state.get("consecutive_losses", 0))
+        _consecutive_loss_halted = bool(state.get("consecutive_loss_halted", False))
         if _trades_today < 0 or (_day_start_equity is not None and _day_start_equity <= 0):
             raise ValueError("invalid persisted risk values")
     except Exception as exc:
@@ -588,7 +630,46 @@ def risk_guard_status() -> dict[str, float | bool | int]:
             "tradesToday": _trades_today,
             "weeklyLossHalted": _weekly_halted,
             "weekStartEquity": _week_start_equity or 0.0,
+            "consecutiveLosses": _consecutive_losses,
+            "consecutiveLossHalted": _consecutive_loss_halted,
         }
+
+
+def check_consecutive_loss_guard() -> bool:
+    """Latch trading if consecutive losses reach the configured threshold."""
+    max_losses = getattr(RISK, "max_consecutive_losses", 5)
+    with _daily_guard_lock:
+        return _consecutive_loss_halted or _consecutive_losses >= max_losses
+
+
+def record_trade_outcome(pnl: float) -> None:
+    """Update consecutive loss counter upon closed trade outcome."""
+    global _consecutive_losses, _consecutive_loss_halted
+    max_losses = getattr(RISK, "max_consecutive_losses", 5)
+    with _daily_guard_lock:
+        if pnl < 0:
+            _consecutive_losses += 1
+            if _consecutive_losses >= max_losses:
+                _consecutive_loss_halted = True
+                logger.error(
+                    "Consecutive loss limit reached (%d). Entry halted pending operator review.",
+                    _consecutive_losses,
+                )
+                add_log("WARN", f"Consecutive loss limit ({_consecutive_losses}) hit; entries halted")
+        elif pnl > 0:
+            _consecutive_losses = 0
+            _consecutive_loss_halted = False
+        _persist_risk_state()
+
+
+def reset_consecutive_loss_guard() -> None:
+    """Reset the consecutive loss circuit breaker after manual operator review."""
+    global _consecutive_losses, _consecutive_loss_halted
+    with _daily_guard_lock:
+        _consecutive_losses = 0
+        _consecutive_loss_halted = False
+        _persist_risk_state()
+    logger.info("Consecutive loss guard manually reset.")
 
 
 def check_max_trades_guard() -> bool:
@@ -845,6 +926,9 @@ def place_order(
     if check_weekly_loss_guard():
         logger.info("Skipping %s %s: weekly loss guard active.", symbol, direction.value)
         return None
+    if check_consecutive_loss_guard():
+        logger.info("Skipping %s %s: consecutive loss guard active.", symbol, direction.value)
+        return None
     if check_max_trades_guard():
         logger.info("Skipping %s %s: daily trade limit reached (%d).", symbol, direction.value, RISK.max_trades_per_day)
         return None
@@ -969,7 +1053,7 @@ def place_order(
         "magic": RISK.magic_number,
         "comment": "ai-proposal-bot",
         "type_time": mt5.ORDER_TIME_GTC,
-        "type_filling": mt5.ORDER_FILLING_IOC,
+        "type_filling": _resolve_filling_mode(symbol, sym.info),
     }
 
     # Broker-side preflight catches account/symbol constraints which can only
