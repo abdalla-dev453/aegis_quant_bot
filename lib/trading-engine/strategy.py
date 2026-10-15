@@ -282,6 +282,29 @@ def is_news_blackout(sentiment: SentimentReading) -> bool:
     return -NEWS_CONFIG.blackout_minutes_after <= m < 0
 
 
+def is_session_blackout(dt: datetime | None = None) -> tuple[bool, str]:
+    """Check if the given UTC timestamp falls in rollover or weekend gap blackout."""
+    now_utc = dt.astimezone(UTC) if dt else datetime.now(UTC)
+    weekday = now_utc.weekday()  # Monday=0, Sunday=6
+
+    # Weekend protection: Friday evening to Sunday market open
+    if STRATEGY.enable_weekend_protection:
+        if weekday == 4 and now_utc.hour >= STRATEGY.weekend_close_friday_hour_utc:
+            return True, f"Weekend blackout active (Friday after {STRATEGY.weekend_close_friday_hour_utc}:00 UTC)"
+        if weekday == 5:
+            return True, "Weekend blackout active (Saturday market closed)"
+        if weekday == 6 and now_utc.hour < STRATEGY.weekend_open_sunday_hour_utc:
+            return True, f"Weekend blackout active (Sunday before {STRATEGY.weekend_open_sunday_hour_utc}:00 UTC)"
+
+    # Daily rollover protection: typically 21:55 - 22:15 UTC
+    if STRATEGY.enable_rollover_protection:
+        current_minute = now_utc.hour * 60 + now_utc.minute
+        if STRATEGY.rollover_start_minute_utc <= current_minute <= STRATEGY.rollover_end_minute_utc:
+            return True, "Rollover liquidity/spread blackout active (21:55 - 22:15 UTC)"
+
+    return False, ""
+
+
 # ---------------------------------------------------------------------------
 # Confluence — technical + fundamental fusion
 # ---------------------------------------------------------------------------
@@ -318,6 +341,16 @@ def generate_signal(
         # A zero/NaN ATR would produce degenerate SL/TP and unsafe sizing — block.
         return TradeSignal(
             TradeDirection.NONE, "ATR unavailable/degenerate", Trend.NEUTRAL, 0.0, 0.0
+        )
+
+    in_session_blackout, session_reason = is_session_blackout()
+    if in_session_blackout:
+        return TradeSignal(
+            TradeDirection.NONE,
+            session_reason,
+            Trend.NEUTRAL,
+            0.0,
+            atr,
         )
 
     trend = get_multi_timeframe_trend(df_h1_ind, df_h4_ind)

@@ -96,3 +96,31 @@ def test_strategy_uses_supplied_news_snapshot_without_second_fetch(
     )
 
     assert signal.direction == TradeDirection.BUY
+
+
+def test_session_blackout_rollover_and_weekend() -> None:
+    from datetime import datetime, timezone
+    from strategy import is_session_blackout
+
+    # Wednesday 12:00 UTC -> should NOT be blackout
+    wed_noon = datetime(2026, 10, 14, 12, 0, tzinfo=timezone.utc)
+    blocked, _ = is_session_blackout(wed_noon)
+    assert not blocked
+
+    # Wednesday 22:05 UTC -> rollover blackout
+    wed_rollover = datetime(2026, 10, 14, 22, 5, tzinfo=timezone.utc)
+    blocked, reason = is_session_blackout(wed_rollover)
+    assert blocked
+    assert "Rollover" in reason
+
+    # Friday 21:30 UTC -> weekend blackout
+    fri_night = datetime(2026, 10, 16, 21, 30, tzinfo=timezone.utc)
+    blocked, reason = is_session_blackout(fri_night)
+    assert blocked
+    assert "Weekend" in reason
+
+    # Saturday -> weekend blackout
+    sat = datetime(2026, 10, 17, 10, 0, tzinfo=timezone.utc)
+    blocked, reason = is_session_blackout(sat)
+    assert blocked
+    assert "Saturday" in reason
