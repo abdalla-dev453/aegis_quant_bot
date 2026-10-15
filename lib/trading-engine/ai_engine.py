@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import logging.handlers
+import re
 import time
 from enum import Enum
 from pathlib import Path
@@ -127,6 +128,28 @@ def validate_ai_configuration() -> None:
     AI.validate()
 
 
+def _sanitize_news_items(items: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """Clean and strip potentially adversarial instruction tokens from news items."""
+    sanitized = []
+    # Common prompt injection patterns
+    injection_pattern = re.compile(
+        r"(ignore\s+(all\s+)?(previous|prior|above)\s+instructions|system\s+prompt|system\s+override|you\s+must\s+execute|forget\s+all\s+rules)",
+        re.IGNORECASE,
+    )
+    for it in items[:15]:
+        clean_item = {}
+        for k, v in it.items():
+            if not isinstance(v, str):
+                clean_item[k] = str(v)
+                continue
+            # Strip control characters, quotes, and known override phrases
+            cleaned = re.sub(r"[\r\n\t]+", " ", v)
+            cleaned = injection_pattern.sub("[FILTERED_PHRASE]", cleaned)
+            clean_item[k] = cleaned[:250].strip()
+        sanitized.append(clean_item)
+    return sanitized
+
+
 def _proposal_schema() -> dict[str, Any]:
     return TradeProposal.model_json_schema()
 
@@ -139,6 +162,8 @@ async def propose_trade(
     if not _check_circuit():
         logger.warning("OpenAI circuit breaker open, failing closed to HOLD for %s", symbol)
         return TradeProposal.hold(symbol, "AI service circuit breaker open; fail-closed HOLD.")
+
+    sanitized_news = _sanitize_news_items(live_news)
 
     try:
         AI.validate()
@@ -159,7 +184,7 @@ async def propose_trade(
                             "requested_symbol": symbol,
                             "trade_proposal_schema": _proposal_schema(),
                             "market_context": market_context,
-                            "untrusted_news_data": live_news,
+                            "untrusted_news_data": sanitized_news,
                             "news_feed_warning": news_warning,
                         },
                         sort_keys=True,

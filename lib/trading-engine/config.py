@@ -225,6 +225,7 @@ class RiskConfig:
     max_reward_risk_ratio: float = _env_float("MAX_REWARD_RISK_RATIO", 5.0)
     magic_number: int = 990011
     deviation_points: int = _env_int("DEVIATION_POINTS", 20)  # max slippage tolerance
+    max_consecutive_losses: int = _env_int("MAX_CONSECUTIVE_LOSSES", 5)  # halt entries after N consecutive losses
 
     def validate(self) -> None:
         float_settings = {
@@ -319,6 +320,12 @@ class StrategyConfig:
     sentiment_bullish_threshold: float = 0.5
     sentiment_bearish_threshold: float = -0.5
     loop_poll_seconds: int = 15  # how often the main loop checks for a new closed candle
+    enable_rollover_protection: bool = os.getenv("ENABLE_ROLLOVER_PROTECTION", "true").lower() == "true"
+    rollover_start_minute_utc: int = 21 * 60 + 55  # 21:55 UTC
+    rollover_end_minute_utc: int = 22 * 60 + 15    # 22:15 UTC (post 5pm EST fix)
+    enable_weekend_protection: bool = os.getenv("ENABLE_WEEKEND_PROTECTION", "true").lower() == "true"
+    weekend_close_friday_hour_utc: int = 21        # 21:00 UTC Friday
+    weekend_open_sunday_hour_utc: int = 22         # 22:00 UTC Sunday
 
 
 # ---------------------------------------------------------------

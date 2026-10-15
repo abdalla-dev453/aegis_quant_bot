@@ -268,3 +268,48 @@ def test_trailing_stops_respect_halted_control(monkeypatch) -> None:
     )
 
     execution.manage_trailing_stops()
+
+
+def test_resolve_filling_mode_dynamic(monkeypatch) -> None:
+    # Test FOK flag
+    info_fok = SimpleNamespace(filling_mode=1)
+    monkeypatch.setattr(execution, "mt5", SimpleNamespace(
+        SYMBOL_FILLING_FOK=1,
+        SYMBOL_FILLING_IOC=2,
+        ORDER_FILLING_FOK=0,
+        ORDER_FILLING_IOC=1,
+        ORDER_FILLING_RETURN=2,
+        symbol_info=lambda _: info_fok,
+    ))
+    assert execution._resolve_filling_mode("EURUSD", info_fok) == 0
+
+    # Test IOC flag
+    info_ioc = SimpleNamespace(filling_mode=2)
+    assert execution._resolve_filling_mode("EURUSD", info_ioc) == 1
+
+    # Test RETURN fallback
+    info_return = SimpleNamespace(filling_mode=0)
+    assert execution._resolve_filling_mode("EURUSD", info_return) == 2
+
+
+def test_consecutive_loss_guard(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(execution, "_RISK_STATE_FILE", tmp_path / "risk_guard_state.json")
+    execution.reset_consecutive_loss_guard()
+
+    assert not execution.check_consecutive_loss_guard()
+
+    # Simulate 5 losses (threshold is default 5)
+    for _ in range(5):
+        execution.record_trade_outcome(-50.0)
+
+    assert execution.check_consecutive_loss_guard()
+
+    # Reset
+    execution.reset_consecutive_loss_guard()
+    assert not execution.check_consecutive_loss_guard()
+
+    # A winning trade resets the streak
+    execution.record_trade_outcome(-50.0)
+    assert not execution.check_consecutive_loss_guard()
+    execution.record_trade_outcome(100.0)
+    assert execution._consecutive_losses == 0
